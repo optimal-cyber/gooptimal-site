@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Optimal - Modern Cybersecurity Website
 
 A modern, investor-appealing website for Optimal, showcasing cybersecurity and compliance expertise for the Defense Industrial Base and federal government.
@@ -179,3 +180,6 @@ Copyright © 2025 Optimal - All Rights Reserved.
 ---
 
 **Built with ❤️ for Optimal's mission to secure and accelerate defense technology.** 
+=======
+# gooptimal-site
+>>>>>>> 248bfd4ebaa8e5d68db993595389074c0fa77766
