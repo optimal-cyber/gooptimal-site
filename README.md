@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Optimal - Modern Cybersecurity Website
 
 A modern, investor-appealing website for Optimal, showcasing cybersecurity and compliance expertise for the Defense Industrial Base and federal government.
