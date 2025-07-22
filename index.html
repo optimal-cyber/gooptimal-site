@@ -11,9 +11,14 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: '#1e40af',
-                        secondary: '#0f172a',
-                        accent: '#3b82f6'
+                        primary: '#000000',
+                        secondary: '#1e40af',
+                        accent: '#3b82f6',
+                        optimal: {
+                            black: '#000000',
+                            blue: '#1e40af',
+                            gray: '#6b7280'
+                        }
                     },
                     animation: {
                         'fade-in': 'fadeIn 0.6s ease-in-out',
@@ -37,11 +42,16 @@
             0%, 100% { transform: translateY(0px); }
             50% { transform: translateY(-10px); }
         }
-        .gradient-bg {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        }
         .hero-gradient {
-            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #60a5fa 100%);
+            background: linear-gradient(135deg, #000000 0%, #1e40af 50%, #3b82f6 100%);
+        }
+        .optimal-logo {
+            background: linear-gradient(45deg, #000000 25%, transparent 25%), 
+                        linear-gradient(-45deg, #000000 25%, transparent 25%), 
+                        linear-gradient(45deg, transparent 75%, #000000 75%), 
+                        linear-gradient(-45deg, transparent 75%, #000000 75%);
+            background-size: 20px 20px;
+            background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
         }
     </style>
 </head>
@@ -52,10 +62,10 @@
             <div class="flex justify-between items-center h-16">
                 <!-- Logo -->
                 <div class="flex items-center space-x-2">
-                    <div class="w-8 h-8 bg-gradient-to-r from-blue-600 to-blue-800 rounded-lg flex items-center justify-center">
+                    <div class="w-8 h-8 bg-black rounded-lg flex items-center justify-center">
                         <div class="w-4 h-4 bg-white rounded-sm"></div>
                     </div>
-                    <span class="text-xl font-bold text-gray-900">OPTIMAL</span>
+                    <span class="text-xl font-bold text-black">OPTIMAL</span>
                 </div>
                 
                 <!-- Desktop Navigation -->
@@ -64,7 +74,7 @@
                     <a href="#about" class="text-gray-700 hover:text-blue-600 transition-colors">About</a>
                     <a href="#services" class="text-gray-700 hover:text-blue-600 transition-colors">Services</a>
                     <a href="#team" class="text-gray-700 hover:text-blue-600 transition-colors">Team</a>
-                    <a href="#contact" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">Contact</a>
+                    <a href="#contact" class="bg-black text-white px-6 py-2 rounded-lg hover:bg-gray-800 transition-colors">Contact</a>
                 </div>
                 
                 <!-- Mobile menu button -->
@@ -96,10 +106,10 @@
                         cybersecurity and compliance expertise.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="#contact" class="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors text-center">
+                        <a href="#contact" class="bg-white text-black px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors text-center">
                             Get Started
                         </a>
-                        <a href="#about" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors text-center">
+                        <a href="#about" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-black transition-colors text-center">
                             Our Story
                         </a>
                     </div>
@@ -156,14 +166,14 @@
     <section id="about" class="py-20 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-900 mb-4">Our Mission</h2>
-                <div class="w-24 h-1 bg-blue-600 mx-auto"></div>
+                <h2 class="text-4xl font-bold text-black mb-4">Our Mission</h2>
+                <div class="w-24 h-1 bg-black mx-auto"></div>
             </div>
             
             <div class="grid lg:grid-cols-2 gap-12 items-center">
                 <div class="animate-slide-up">
                     <div class="bg-white rounded-2xl shadow-xl p-8">
-                        <h3 class="text-2xl font-bold text-gray-900 mb-6">Accelerating Defense Technology</h3>
+                        <h3 class="text-2xl font-bold text-black mb-6">Accelerating Defense Technology</h3>
                         <p class="text-gray-600 leading-relaxed mb-6">
                             Optimal's mission is to accelerate the delivery of cutting-edge technology within the Defense Industrial Base (DIB) and across the federal government. We augment AI and human intelligence, strengthening our nation's resilience and enhancing its security.
                         </p>
@@ -174,40 +184,41 @@
                 </div>
                 <div class="animate-fade-in">
                     <div class="grid grid-cols-2 gap-6">
-                        <div class="bg-gradient-to-br from-blue-500 to-blue-700 rounded-xl p-6 text-white">
+                        <div class="bg-gradient-to-br from-black to-gray-800 rounded-xl p-6 text-white">
                             <div class="w-12 h-12 bg-white/20 rounded-lg mb-4 flex items-center justify-center">
                                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
                                 </svg>
                             </div>
                             <h4 class="font-semibold mb-2">Cybersecurity</h4>
-                            <p class="text-blue-100 text-sm">Advanced threat protection and security frameworks</p>
+                            <p class="text-gray-300 text-sm">Advanced threat protection and security frameworks</p>
                         </div>
-                        <div class="bg-gradient-to-br from-green-500 to-green-700 rounded-xl p-6 text-white">
+                        <div class="bg-gradient-to-br from-blue-600 to-blue-800 rounded-xl p-6 text-white">
                             <div class="w-12 h-12 bg-white/20 rounded-lg mb-4 flex items-center justify-center">
                                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                 </svg>
                             </div>
                             <h4 class="font-semibold mb-2">Compliance</h4>
-                            <p class="text-green-100 text-sm">FedRAMP, CMMC, and regulatory expertise</p>
+                            <p class="text-blue-100 text-sm">FedRAMP, CMMC, and regulatory expertise</p>
                         </div>
-                        <div class="bg-gradient-to-br from-purple-500 to-purple-700 rounded-xl p-6 text-white">
+                        <div class="bg-gradient-to-br from-blue-600 to-blue-800 rounded-xl p-6 text-white">
                             <div class="w-12 h-12 bg-white/20 rounded-lg mb-4 flex items-center justify-center">
                                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                                 </svg>
                             </div>
                             <h4 class="font-semibold mb-2">Innovation</h4>
-                            <p class="text-purple-100 text-sm">AI and cloud-native solutions</p>
+                            <p class="text-blue-100 text-sm">AI and cloud-native solutions</p>
                         </div>
-                        <div class="bg-gradient-to-br from-orange-500 to-orange-700 rounded-xl p-6 text-white">
+                        <div class="bg-gradient-to-br from-black to-gray-800 rounded-xl p-6 text-white">
                             <div class="w-12 h-12 bg-white/20 rounded-lg mb-4 flex items-center justify-center">
                                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                </svg>
                             </div>
                             <h4 class="font-semibold mb-2">Veteran-Led</h4>
-                            <p class="text-orange-100 text-sm">Combat-tested leadership and expertise</p>
+                            <p class="text-gray-300 text-sm">Combat-tested leadership and expertise</p>
                         </div>
                     </div>
                 </div>
@@ -219,7 +230,7 @@
     <section id="services" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-900 mb-4">Our Services</h2>
+                <h2 class="text-4xl font-bold text-black mb-4">Our Services</h2>
                 <p class="text-xl text-gray-600 max-w-3xl mx-auto">
                     Comprehensive cybersecurity and compliance solutions designed for the modern defense landscape
                 </p>
@@ -233,11 +244,11 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-4">Software Supply Chain</h3>
+                    <h3 class="text-xl font-bold text-black mb-4">Software Supply Chain</h3>
                     <p class="text-gray-600 mb-6">
                         Building trust in every line of code with comprehensive security and provenance checks for your software dependencies.
                     </p>
-                    <a href="#" class="text-blue-600 font-semibold hover:text-blue-700 transition-colors">Learn More →</a>
+                    <a href="software-supply-chain.html" class="text-blue-600 font-semibold hover:text-blue-700 transition-colors">Learn More →</a>
                 </div>
 
                 <!-- DevSecOps -->
@@ -247,11 +258,11 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-4">DevSecOps</h3>
+                    <h3 class="text-xl font-bold text-black mb-4">DevSecOps</h3>
                     <p class="text-gray-600 mb-6">
                         Custom DevSecOps pipelines that streamline development, enhance security, and optimize operational efficiency.
                     </p>
-                    <a href="#" class="text-green-600 font-semibold hover:text-green-700 transition-colors">Learn More →</a>
+                    <a href="devsecops.html" class="text-green-600 font-semibold hover:text-green-700 transition-colors">Learn More →</a>
                 </div>
 
                 <!-- Vulnerability Management -->
@@ -261,11 +272,11 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-4">Vulnerability Management</h3>
+                    <h3 class="text-xl font-bold text-black mb-4">Vulnerability Management</h3>
                     <p class="text-gray-600 mb-6">
                         Identify and prioritize vulnerabilities with precision, providing clear breakdowns of critical security issues.
                     </p>
-                    <a href="#" class="text-red-600 font-semibold hover:text-red-700 transition-colors">Learn More →</a>
+                    <a href="vulnerability-management.html" class="text-red-600 font-semibold hover:text-red-700 transition-colors">Learn More →</a>
                 </div>
 
                 <!-- Cloud Security -->
@@ -275,11 +286,11 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-4">Cloud Security</h3>
+                    <h3 class="text-xl font-bold text-black mb-4">Cloud Security</h3>
                     <p class="text-gray-600 mb-6">
                         Robust cloud security solutions with compliance and financial visibility across AWS, Azure, and GCP.
                     </p>
-                    <a href="#" class="text-purple-600 font-semibold hover:text-purple-700 transition-colors">Learn More →</a>
+                    <a href="cloud-security.html" class="text-purple-600 font-semibold hover:text-purple-700 transition-colors">Learn More →</a>
                 </div>
 
                 <!-- GRC -->
@@ -289,11 +300,11 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-4">GRC</h3>
+                    <h3 class="text-xl font-bold text-black mb-4">GRC</h3>
                     <p class="text-gray-600 mb-6">
                         Governance, risk management, and compliance solutions with continuous ATO and FedRAMP preparation.
                     </p>
-                    <a href="#" class="text-orange-600 font-semibold hover:text-orange-700 transition-colors">Learn More →</a>
+                    <a href="grc.html" class="text-orange-600 font-semibold hover:text-orange-700 transition-colors">Learn More →</a>
                 </div>
 
                 <!-- GovLaunch -->
@@ -303,11 +314,11 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-4">GovLaunch</h3>
+                    <h3 class="text-xl font-bold text-black mb-4">GovLaunch</h3>
                     <p class="text-gray-600 mb-6">
                         Cut through red tape with pre-authorized infrastructure environments for government applications.
                     </p>
-                    <a href="#" class="text-indigo-600 font-semibold hover:text-indigo-700 transition-colors">Learn More →</a>
+                    <a href="govlaunch.html" class="text-indigo-600 font-semibold hover:text-indigo-700 transition-colors">Learn More →</a>
                 </div>
             </div>
         </div>
@@ -317,7 +328,7 @@
     <section id="team" class="py-20 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-900 mb-4">Our Team</h2>
+                <h2 class="text-4xl font-bold text-black mb-4">Our Team</h2>
                 <p class="text-xl text-gray-600 max-w-3xl mx-auto">
                     Veteran-led expertise with over 15 years of cybersecurity and cloud architecture leadership
                 </p>
@@ -326,11 +337,11 @@
             <div class="max-w-4xl mx-auto">
                 <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12">
                     <div class="flex flex-col md:flex-row items-center md:items-start gap-8">
-                        <div class="w-48 h-48 bg-gradient-to-br from-blue-500 to-blue-700 rounded-full flex items-center justify-center text-white text-6xl font-bold">
+                        <div class="w-48 h-48 bg-gradient-to-br from-black to-blue-600 rounded-full flex items-center justify-center text-white text-6xl font-bold">
                             RG
                         </div>
                         <div class="flex-1 text-center md:text-left">
-                            <h3 class="text-2xl font-bold text-gray-900 mb-2">Ryan Gutwein</h3>
+                            <h3 class="text-2xl font-bold text-black mb-2">Ryan Gutwein</h3>
                             <p class="text-blue-600 font-semibold mb-4">CEO & Founder</p>
                             <p class="text-gray-600 leading-relaxed mb-6">
                                 With over 15 years of cybersecurity and cloud architecture leadership, Ryan delivers DoD-tested strategies that secure mission-critical operations. As a U.S. Air Force veteran, he pioneered modern compliance frameworks at U.S. Central Command (CENTCOM) and advanced cloud security solutions in AWS and Azure GovCloud environments.
@@ -352,14 +363,14 @@
     <section id="contact" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-900 mb-4">Get In Touch</h2>
+                <h2 class="text-4xl font-bold text-black mb-4">Get In Touch</h2>
                 <p class="text-xl text-gray-600 max-w-3xl mx-auto">
                     Ready to secure your mission? Let's discuss how Optimal can accelerate your cybersecurity and compliance objectives.
                 </p>
             </div>
             
             <div class="grid lg:grid-cols-2 gap-12">
-                <div class="bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl p-8 text-white">
+                <div class="bg-gradient-to-br from-black to-blue-600 rounded-2xl p-8 text-white">
                     <h3 class="text-2xl font-bold mb-6">Questions or Comments?</h3>
                     <p class="text-blue-100 mb-8 leading-relaxed">
                         We know that our clients have unique needs. Send us a message, and we will get back to you soon with tailored solutions for your compliance, cybersecurity, or risk management requirements.
@@ -385,7 +396,7 @@
                 </div>
                 
                 <div class="bg-gray-50 rounded-2xl p-8">
-                    <h3 class="text-2xl font-bold text-gray-900 mb-6">Send us a message</h3>
+                    <h3 class="text-2xl font-bold text-black mb-6">Send us a message</h3>
                     <form class="space-y-6">
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-2">Name</label>
@@ -399,7 +410,7 @@
                             <label class="block text-sm font-medium text-gray-700 mb-2">Message</label>
                             <textarea rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Tell us about your project, tech stack, and compliance needs..."></textarea>
                         </div>
-                        <button type="submit" class="w-full bg-blue-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                        <button type="submit" class="w-full bg-black text-white py-3 px-6 rounded-lg font-semibold hover:bg-gray-800 transition-colors">
                             Send Message
                         </button>
                     </form>
@@ -409,12 +420,12 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
+    <footer class="bg-black text-white py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center">
                 <div class="flex items-center justify-center space-x-2 mb-6">
-                    <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
-                        <div class="w-4 h-4 bg-white rounded-sm"></div>
+                    <div class="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
+                        <div class="w-4 h-4 bg-black rounded-sm"></div>
                     </div>
                     <span class="text-xl font-bold">OPTIMAL</span>
                 </div>
