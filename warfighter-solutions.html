@@ -36,6 +36,29 @@
                     <a href="index.html#team" class="text-gray-700 hover:text-blue-600 transition-colors">Team</a>
                     <a href="index.html#contact" class="bg-black text-white px-6 py-2 rounded-lg hover:bg-gray-800 transition-colors">Contact</a>
                 </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-black">
+                        <svg id="menu-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                        <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Navigation Menu -->
+            <div id="mobile-menu" class="md:hidden hidden">
+                <div class="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-gray-100">
+                    <a href="index.html" class="block px-3 py-2 text-gray-700 hover:text-black font-medium transition-colors">Home</a>
+                    <a href="index.html#about" class="block px-3 py-2 text-gray-700 hover:text-black font-medium transition-colors">About</a>
+                    <a href="index.html#services" class="block px-3 py-2 text-gray-700 hover:text-black font-medium transition-colors">Services</a>
+                    <a href="index.html#team" class="block px-3 py-2 text-gray-700 hover:text-black font-medium transition-colors">Team</a>
+                    <a href="index.html#contact" class="block mx-3 my-2 px-4 py-2 bg-black text-white rounded-lg font-semibold text-center hover:bg-gray-800 transition-colors">Contact</a>
+                </div>
             </div>
         </div>
     </nav>
@@ -44,8 +67,8 @@
     <section class="pt-20 pb-16 bg-gradient-to-br from-red-600 to-orange-600 text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center">
-                <h1 class="text-5xl font-bold mb-6">Warfighter Solutions</h1>
-                <p class="text-xl text-red-100 max-w-3xl mx-auto">
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">Warfighter Solutions</h1>
+                <p class="text-lg sm:text-xl text-red-100 max-w-3xl mx-auto">
                     Combat-tested software development for warfighters including drone detection, friend-or-foe identification, and real-time battlefield intelligence systems.
                 </p>
             </div>
@@ -53,43 +76,43 @@
     </section>
 
     <!-- Content Section -->
-    <section class="py-20">
+    <section class="py-16 sm:py-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-12 mb-16">
+            <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 mb-12 lg:mb-16">
                 <div>
-                    <h2 class="text-3xl font-bold text-black mb-6">Mission-Critical Software for the Battlefield</h2>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-black mb-6">Mission-Critical Software for the Battlefield</h2>
                     <p class="text-gray-600 mb-6">
                         Built by combat veterans who understand the life-and-death importance of reliable technology in the field. 
                         Our warfighter solutions leverage AI, real-time data processing, and edge computing to deliver 
                         split-second decision support when it matters most.
                     </p>
-                    <div class="bg-gray-50 rounded-xl p-6 mb-6">
-                        <h3 class="text-xl font-bold text-black mb-3">Real Combat Experience</h3>
-                        <p class="text-gray-600 italic">
+                    <div class="bg-gray-50 rounded-xl p-4 sm:p-6 mb-6">
+                        <h3 class="text-lg sm:text-xl font-bold text-black mb-3">Real Combat Experience</h3>
+                        <p class="text-gray-600 italic text-sm sm:text-base">
                             "We had a coyote in route to intercept a drone with a 30kg payload. Someone in 
                             Iraq marked it friendly, so the missile pulled off. The drone landed on our outdoor gym but did not detonate."
                         </p>
-                        <p class="text-gray-500 text-sm mt-2">— Combat scenario requiring better friend-or-foe identification</p>
+                        <p class="text-gray-500 text-xs sm:text-sm mt-2">— Combat scenario requiring better friend-or-foe identification</p>
                     </div>
                 </div>
-                <div class="bg-gradient-to-br from-red-50 to-orange-50 rounded-2xl p-8 border border-red-100">
-                    <h3 class="text-2xl font-bold text-black mb-6">Core Capabilities</h3>
+                <div class="bg-gradient-to-br from-red-50 to-orange-50 rounded-2xl p-6 sm:p-8 border border-red-100">
+                    <h3 class="text-xl sm:text-2xl font-bold text-black mb-6">Core Capabilities</h3>
                     <div class="space-y-4">
-                        <div class="bg-white rounded-lg p-4 border border-red-200 shadow-sm">
-                            <h4 class="font-semibold text-black mb-2">🎯 Drone Detection & Classification</h4>
-                            <p class="text-gray-600 text-sm">AI-powered systems to distinguish friendly from enemy drones using advanced sensor fusion</p>
+                        <div class="bg-white rounded-lg p-3 sm:p-4 border border-red-200 shadow-sm">
+                            <h4 class="font-semibold text-black mb-2 text-sm sm:text-base">🎯 Drone Detection & Classification</h4>
+                            <p class="text-gray-600 text-xs sm:text-sm">AI-powered systems to distinguish friendly from enemy drones using advanced sensor fusion</p>
                         </div>
-                        <div class="bg-white rounded-lg p-4 border border-red-200 shadow-sm">
-                            <h4 class="font-semibold text-black mb-2">⚡ Real-Time Threat Assessment</h4>
-                            <p class="text-gray-600 text-sm">Instant analysis and classification of incoming threats with automated response recommendations</p>
+                        <div class="bg-white rounded-lg p-3 sm:p-4 border border-red-200 shadow-sm">
+                            <h4 class="font-semibold text-black mb-2 text-sm sm:text-base">⚡ Real-Time Threat Assessment</h4>
+                            <p class="text-gray-600 text-xs sm:text-sm">Instant analysis and classification of incoming threats with automated response recommendations</p>
                         </div>
-                        <div class="bg-white rounded-lg p-4 border border-red-200 shadow-sm">
-                            <h4 class="font-semibold text-black mb-2">🛡️ Edge Computing Solutions</h4>
-                            <p class="text-gray-600 text-sm">Battlefield-hardened computing that works in disconnected, austere environments</p>
+                        <div class="bg-white rounded-lg p-3 sm:p-4 border border-red-200 shadow-sm">
+                            <h4 class="font-semibold text-black mb-2 text-sm sm:text-base">🛡️ Edge Computing Solutions</h4>
+                            <p class="text-gray-600 text-xs sm:text-sm">Battlefield-hardened computing that works in disconnected, austere environments</p>
                         </div>
-                        <div class="bg-white rounded-lg p-4 border border-red-200 shadow-sm">
-                            <h4 class="font-semibold text-black mb-2">🔗 C-RAM Integration</h4>
-                            <p class="text-gray-600 text-sm">Seamless integration with Counter-Rocket, Artillery, and Mortar defense systems</p>
+                        <div class="bg-white rounded-lg p-3 sm:p-4 border border-red-200 shadow-sm">
+                            <h4 class="font-semibold text-black mb-2 text-sm sm:text-base">🔗 C-RAM Integration</h4>
+                            <p class="text-gray-600 text-xs sm:text-sm">Seamless integration with Counter-Rocket, Artillery, and Mortar defense systems</p>
                         </div>
                     </div>
                 </div>
@@ -253,5 +276,39 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // Mobile menu functionality
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const closeIcon = document.getElementById('close-icon');
+
+        if (mobileMenuButton) {
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+                menuIcon.classList.toggle('hidden');
+                closeIcon.classList.toggle('hidden');
+            });
+
+            // Close mobile menu when clicking on links
+            document.querySelectorAll('#mobile-menu a').forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenu.classList.add('hidden');
+                    menuIcon.classList.remove('hidden');
+                    closeIcon.classList.add('hidden');
+                });
+            });
+
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function(event) {
+                if (!mobileMenuButton.contains(event.target) && !mobileMenu.contains(event.target)) {
+                    mobileMenu.classList.add('hidden');
+                    menuIcon.classList.remove('hidden');
+                    closeIcon.classList.add('hidden');
+                }
+            });
+        }
+    </script>
 </body>
 </html> 
