@@ -5,19 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Social Media Preview Generator - Optimal</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+        
         .social-preview {
             width: 1200px;
             height: 630px;
-            background: linear-gradient(135deg, #000000 0%, #1e40af 50%, #3b82f6 100%);
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
-            font-family: 'Arial', sans-serif;
+            color: #000000;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             position: relative;
             margin: 20px auto;
             border-radius: 8px;
             overflow: hidden;
+            border: 1px solid #e2e8f0;
         }
         
         .content {
@@ -25,50 +28,46 @@
             z-index: 10;
         }
         
-        .logo {
-            width: 80px;
-            height: 80px;
-            background: white;
-            border-radius: 12px;
-            margin: 0 auto 30px;
+        .logo-container {
+            margin: 0 auto 40px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: bold;
-            color: #000;
-            font-size: 24px;
         }
         
-        .title {
-            font-size: 64px;
-            font-weight: 900;
-            margin-bottom: 20px;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        .logo {
+            width: 120px;
+            height: 120px;
+            background-image: url('public/optimal-logo.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
         }
         
-        .subtitle {
+        .company-name {
+            font-size: 48px;
+            font-weight: 700;
+            margin: 0 0 0 30px;
+            color: #000000;
+            letter-spacing: -0.5px;
+        }
+        
+        .tagline {
             font-size: 32px;
-            font-weight: 600;
+            font-weight: 500;
             margin-bottom: 30px;
-            opacity: 0.9;
+            color: #1e40af;
+            letter-spacing: 0.5px;
         }
         
         .description {
             font-size: 24px;
-            max-width: 800px;
+            font-weight: 400;
+            max-width: 900px;
             line-height: 1.4;
-            opacity: 0.8;
-        }
-        
-        .pattern {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: 
-                radial-gradient(circle at 20% 80%, rgba(255,255,255,0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(255,255,255,0.1) 0%, transparent 50%);
+            color: #4b5563;
+            margin: 0 auto;
+            letter-spacing: 0.2px;
         }
         
         .grid-pattern {
@@ -78,25 +77,76 @@
             right: 0;
             bottom: 0;
             background-image: 
-                linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+                linear-gradient(rgba(30, 64, 175, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(30, 64, 175, 0.03) 1px, transparent 1px);
             background-size: 40px 40px;
-            opacity: 0.3;
+        }
+        
+        /* Alternative: Dark version */
+        .social-preview.dark {
+            background: linear-gradient(135deg, #000000 0%, #1e293b 100%);
+            color: #ffffff;
+            border: 1px solid #334155;
+        }
+        
+        .social-preview.dark .company-name {
+            color: #ffffff;
+        }
+        
+        .social-preview.dark .tagline {
+            color: #60a5fa;
+        }
+        
+        .social-preview.dark .description {
+            color: #cbd5e1;
+        }
+        
+        .social-preview.dark .grid-pattern {
+            background-image: 
+                linear-gradient(rgba(96, 165, 250, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(96, 165, 250, 0.05) 1px, transparent 1px);
+        }
+        
+        /* Gradient version */
+        .social-preview.gradient {
+            background: linear-gradient(135deg, #000000 0%, #1e40af 50%, #3b82f6 100%);
+            color: #ffffff;
+            border: none;
+        }
+        
+        .social-preview.gradient .company-name {
+            color: #ffffff;
+        }
+        
+        .social-preview.gradient .tagline {
+            color: #bfdbfe;
+        }
+        
+        .social-preview.gradient .description {
+            color: #dbeafe;
+        }
+        
+        .social-preview.gradient .grid-pattern {
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
         }
     </style>
 </head>
 <body>
-    <h1>Social Media Preview Image Generator</h1>
-    <p>Use this template to create your social media preview image. Right-click and "Save as Image" or use screenshot tools.</p>
+    <h1>Social Media Preview Image Generator - Updated</h1>
+    <p>Choose your preferred style below. Right-click and "Save as Image" or use screenshot tools to capture the 1200x630 image.</p>
     
-    <!-- Main Preview -->
+    <!-- Clean White Version (Recommended) -->
+    <h2>Option 1: Clean & Professional (Recommended)</h2>
     <div class="social-preview">
-        <div class="pattern"></div>
         <div class="grid-pattern"></div>
         <div class="content">
-            <div class="logo">OPT</div>
-            <div class="title">OPTIMAL</div>
-            <div class="subtitle">Secure • Accelerate • Innovate</div>
+            <div class="logo-container">
+                <div class="logo"></div>
+                <div class="company-name">Optimal</div>
+            </div>
+            <div class="tagline">Secure • Accelerate • Innovate</div>
             <div class="description">
                 Combat-tested cybersecurity and warfighter software solutions<br>
                 for the Defense Industrial Base
@@ -104,44 +154,61 @@
         </div>
     </div>
     
-    <!-- Warfighter Variant -->
-    <div class="social-preview" style="background: linear-gradient(135deg, #dc2626 0%, #ea580c 50%, #f97316 100%);">
-        <div class="pattern"></div>
+    <!-- Dark Version -->
+    <h2>Option 2: Dark & Sophisticated</h2>
+    <div class="social-preview dark">
         <div class="grid-pattern"></div>
         <div class="content">
-            <div class="logo">🎯</div>
-            <div class="title">WARFIGHTER</div>
-            <div class="subtitle">Combat-Tested Software Solutions</div>
+            <div class="logo-container">
+                <div class="logo"></div>
+                <div class="company-name">Optimal</div>
+            </div>
+            <div class="tagline">Secure • Accelerate • Innovate</div>
             <div class="description">
-                AI-powered drone detection • Friend-or-foe identification<br>
-                Real-time threat assessment for the battlefield
+                Combat-tested cybersecurity and warfighter software solutions<br>
+                for the Defense Industrial Base
+            </div>
+        </div>
+    </div>
+    
+    <!-- Gradient Version -->
+    <h2>Option 3: Brand Gradient</h2>
+    <div class="social-preview gradient">
+        <div class="grid-pattern"></div>
+        <div class="content">
+            <div class="logo-container">
+                <div class="logo"></div>
+                <div class="company-name">Optimal</div>
+            </div>
+            <div class="tagline">Secure • Accelerate • Innovate</div>
+            <div class="description">
+                Combat-tested cybersecurity and warfighter software solutions<br>
+                for the Defense Industrial Base
             </div>
         </div>
     </div>
     
     <div style="max-width: 1200px; margin: 40px auto; padding: 20px; background: #f5f5f5; border-radius: 8px;">
-        <h2>Instructions:</h2>
+        <h2>Next Steps:</h2>
         <ol>
-            <li><strong>Take a screenshot</strong> of the preview image above (1200x630 pixels)</li>
+            <li><strong>Choose your preferred design</strong> from the options above</li>
+            <li><strong>Right-click on the design</strong> and select "Save as Image" or take a screenshot</li>
             <li><strong>Save it as:</strong> <code>optimal-social-preview.png</code></li>
-            <li><strong>Replace</strong> the current file in your <code>public/</code> folder</li>
-            <li><strong>Alternative:</strong> Use design tools like Canva, Figma, or Photoshop with these dimensions</li>
+            <li><strong>Replace the file:</strong> Copy it to your <code>public/</code> folder</li>
+            <li><strong>Commit and push:</strong> Update your repository</li>
         </ol>
         
-        <h3>Design Tips:</h3>
-        <ul>
-            <li>Keep important text/logos in the center 1000x560 area (safe zone)</li>
-            <li>Use high contrast for text readability</li>
-            <li>Test how it looks when scaled down to thumbnail size</li>
-            <li>Include your logo and key value proposition</li>
-        </ul>
+        <h3>Recommended: Option 1 (Clean & Professional)</h3>
+        <p>The clean white background with your actual logo and professional typography will work best across all social media platforms and maintain brand consistency.</p>
         
-        <h3>Testing Your Preview:</h3>
-        <ul>
-            <li><strong>Facebook:</strong> <a href="https://developers.facebook.com/tools/debug/" target="_blank">Facebook Sharing Debugger</a></li>
-            <li><strong>Twitter:</strong> <a href="https://cards-dev.twitter.com/validator" target="_blank">Twitter Card Validator</a></li>
-            <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/post-inspector/" target="_blank">LinkedIn Post Inspector</a></li>
-        </ul>
+        <h3>Quick Commands:</h3>
+        <pre style="background: #e5e7eb; padding: 10px; border-radius: 4px;">
+# After saving your chosen image as optimal-social-preview.png:
+cp /path/to/your/optimal-social-preview.png public/optimal-social-preview.png
+git add public/optimal-social-preview.png
+git commit -m "Update social media preview with professional design"
+git push
+        </pre>
     </div>
 </body>
 </html> 
