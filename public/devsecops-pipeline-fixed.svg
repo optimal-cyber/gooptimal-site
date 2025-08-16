@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1967" height="1212" viewBox="0 0 1967 1212">
+  <defs>
+    <style>
+      .title { font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; fill: #232f3e; }
+      .subtitle { font-family: Arial, sans-serif; font-size: 14px; fill: #3a414a; }
+      .label { font-family: Arial, sans-serif; font-size: 12px; fill: #3a414a; }
+      .flow-arrow { stroke: #3a414a; stroke-width: 2; fill: none; stroke-dasharray: 5,5; }
+      .flow-arrow-blue { stroke: #1071e5; stroke-width: 3; fill: none; stroke-dasharray: 5,5; }
+      .box { fill: #ffffff; stroke: #3a414a; stroke-width: 2; rx: 8; }
+      .box-highlight { fill: #f0f8ff; stroke: #1071e5; stroke-width: 3; rx: 8; }
+      .cloud-icon { fill: #87CEEB; stroke: #4682B4; stroke-width: 2; }
+      .server-icon { fill: #f5f5f5; stroke: #666; stroke-width: 2; }
+      .s3-bucket { fill: #3f8624; stroke: #2d5a1a; stroke-width: 2; }
+    </style>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="#f8f9fa"/>
+  
+  <!-- Main Container -->
+  <rect x="120" y="90" width="1710" height="1155" fill="none" stroke="#232f3e" stroke-width="3" rx="15" opacity="0.1"/>
+  <text x="300" y="120" class="title">DevSecOps Pipeline Architecture</text>
+  
+  <!-- GitLab Repo -->
+  <rect x="435" y="150" width="120" height="120" class="box"/>
+  <text x="495" y="210" text-anchor="middle" class="title">GitLab Repo</text>
+  
+  <!-- GitLab Runner -->
+  <rect x="660" y="150" width="135" height="120" class="box"/>
+  <text x="727" y="210" text-anchor="middle" class="title">GitLab Runner</text>
+  
+  <!-- Connection -->
+  <path d="M 555 210 L 660 210" class="flow-arrow" marker-end="url(#arrowhead)"/>
+  <text x="607" y="200" text-anchor="middle" class="label">Random High Port</text>
+  
+  <!-- ClamAV -->
+  <rect x="1050" y="150" width="135" height="120" class="box"/>
+  <text x="1117" y="210" text-anchor="middle" class="title">ClamAV</text>
+  
+  <!-- Connection -->
+  <path d="M 795 210 L 1050 210" class="flow-arrow" marker-end="url(#arrowhead)"/>
+  <text x="922" y="200" text-anchor="middle" class="label">HTTPS: 443</text>
+  
+  <!-- Download Dependencies -->
+  <rect x="915" y="100" width="165" height="45" fill="none" stroke="none"/>
+  <text x="997" y="125" text-anchor="middle" class="subtitle">Download Dependencies</text>
+  
+  <!-- Vendor Dependencies (Server) -->
+  <rect x="0" y="115" width="180" height="45" fill="none" stroke="none"/>
+  <text x="90" y="140" text-anchor="middle" class="subtitle">Vendor Dependencies</text>
+  
+  <!-- Server Icon -->
+  <rect x="30" y="25" width="90" height="90" class="server-icon"/>
+  <rect x="40" y="35" width="70" height="10" fill="#ddd"/>
+  <rect x="40" y="50" width="70" height="10" fill="#ddd"/>
+  <rect x="40" y="65" width="70" height="10" fill="#ddd"/>
+  <rect x="40" y="80" width="70" height="10" fill="#ddd"/>
+  
+  <!-- Connection to Vendor -->
+  <path d="M 997 100 L 90 100" class="flow-arrow" marker-end="url(#arrowhead)"/>
+  
+  <!-- Image_Repo (Top Right - Fixed Cloud Icon) -->
+  <rect x="1470" y="415" width="135" height="120" class="box-highlight"/>
+  <text x="1537" y="480" text-anchor="middle" class="title">Image_Repo</text>
+  
+  <!-- Cloud Icon (Embedded) -->
+  <path d="M 1490 430 Q 1490 410 1510 410 Q 1530 410 1530 430 Q 1530 450 1510 450 Q 1490 450 1490 430 Z" class="cloud-icon"/>
+  <circle cx="1510" cy="420" r="8" fill="#FFD700" stroke="#FFA500" stroke-width="1"/>
+  <path d="M 1495 440 L 1525 440 M 1500 445 L 1520 445 M 1505 450 L 1515 450" stroke="#4682B4" stroke-width="2" fill="none"/>
+  
+  <!-- Push Scanned Dependencies -->
+  <rect x="1305" y="165" width="165" height="45" fill="none" stroke="none"/>
+  <text x="1387" y="190" text-anchor="middle" class="subtitle">Push Scanned Dependencies</text>
+  
+  <!-- Connection from ClamAV to Image_Repo -->
+  <path d="M 1185 210 L 1470 475" class="flow-arrow-blue" marker-end="url(#arrowhead-blue)"/>
+  
+  <!-- Build Server -->
+  <rect x="1170" y="415" width="120" height="120" class="box"/>
+  <text x="1230" y="480" text-anchor="middle" class="title">Build Server</text>
+  
+  <!-- Connection from Build Server to Image_Repo -->
+  <path d="M 1290 475 L 1470 475" class="flow-arrow-blue" marker-end="url(#arrowhead-blue)"/>
+  
+  <!-- Push Container Image -->
+  <rect x="1298" y="475" width="165" height="45" fill="none" stroke="none"/>
+  <text x="1380" y="500" text-anchor="middle" class="subtitle">Push Container Image</text>
+  
+  <!-- GitLab Runners No Egress -->
+  <rect x="435" y="450" width="120" height="120" class="box"/>
+  <text x="495" y="480" text-anchor="middle" class="title">GitLab Runners</text>
+  <text x="495" y="500" text-anchor="middle" class="subtitle">No Egress</text>
+  
+  <!-- Connection to Build Server -->
+  <path d="M 555 510 L 1170 475" class="flow-arrow" marker-end="url(#arrowhead)"/>
+  
+  <!-- Prebuild.sh -->
+  <rect x="548" y="525" width="165" height="45" fill="none" stroke="none"/>
+  <text x="630" y="550" text-anchor="middle" class="subtitle">Prebuild.sh</text>
+  
+  <!-- HTTPS Connection -->
+  <rect x="638" y="480" width="180" height="45" fill="none" stroke="none"/>
+  <text x="728" y="505" text-anchor="middle" class="label">HTTPS: 443</text>
+  
+  <!-- Security Scanning Tools -->
+  <rect x="585" y="675" width="128" height="75" class="box"/>
+  <text x="649" y="715" text-anchor="middle" class="title">Twistlock/</text>
+  <text x="649" y="735" text-anchor="middle" class="title">Prisma Cloud</text>
+  
+  <rect x="585" y="780" width="128" height="75" class="box"/>
+  <text x="649" y="820" text-anchor="middle" class="title">Anchore</text>
+  
+  <rect x="585" y="885" width="128" height="75" class="box"/>
+  <text x="649" y="925" text-anchor="middle" class="title">OpenSCAP</text>
+  
+  <!-- Pull Image to Security Tools -->
+  <path d="M 1470 535 L 585 675" class="flow-arrow-blue" marker-end="url(#arrowhead-blue)"/>
+  <text x="1027" y="620" text-anchor="middle" class="subtitle">Pull Image</text>
+  
+  <!-- Whitelist Generator SBOM -->
+  <rect x="915" y="780" width="120" height="120" class="box"/>
+  <text x="975" y="820" text-anchor="middle" class="title">Whitelist</text>
+  <text x="975" y="840" text-anchor="middle" class="title">Generator</text>
+  <text x="975" y="860" text-anchor="middle" class="title">SBOM</text>
+  
+  <!-- Connection from Anchore -->
+  <path d="M 713 780 L 915 780" class="flow-arrow" marker-end="url(#arrowhead)"/>
+  
+  <!-- S3 Bucket -->
+  <rect x="1170" y="795" width="58" height="60" class="s3-bucket"/>
+  <text x="1199" y="835" text-anchor="middle" class="title">S3</text>
+  <text x="1199" y="850" text-anchor="middle" class="title">Bucket</text>
+  
+  <!-- Connection to S3 -->
+  <path d="M 1035 795 L 1170 795" class="flow-arrow" marker-end="url(#arrowhead)"/>
+  
+  <!-- Image Repo (Final) -->
+  <rect x="1560" y="730" width="120" height="120" class="box"/>
+  <text x="1620" y="795" text-anchor="middle" class="title">Image Repo</text>
+  
+  <!-- Security Scorecard -->
+  <rect x="585" y="970" width="128" height="75" class="box"/>
+  <text x="649" y="1010" text-anchor="middle" class="title">Security</text>
+  <text x="649" y="1030" text-anchor="middle" class="title">Scorecard</text>
+  
+  <!-- Scorecard Report -->
+  <rect x="915" y="925" width="120" height="120" class="box"/>
+  <text x="975" y="965" text-anchor="middle" class="title">Scorecard</text>
+  <text x="975" y="985" text-anchor="middle" class="title">Report</text>
+  
+  <!-- Connections -->
+  <path d="M 649 970 L 649 970" class="flow-arrow" marker-end="url(#arrowhead)"/>
+  <path d="M 975 925 L 975 925" class="flow-arrow" marker-end="url(#arrowhead)"/>
+  
+  <!-- Copy Dependencies DockerFile -->
+  <rect x="700" y="375" width="165" height="45" fill="none" stroke="none"/>
+  <text x="782" y="400" text-anchor="middle" class="subtitle">Copy Dependencies</text>
+  <text x="782" y="415" text-anchor="middle" class="subtitle">DockerFile</text>
+  
+  <!-- HTTPS Connections -->
+  <rect x="900" y="715" width="180" height="45" fill="none" stroke="none"/>
+  <text x="990" y="740" text-anchor="middle" class="label">HTTPS: 443</text>
+  
+  <rect x="1155" y="730" width="180" height="45" fill="none" stroke="none"/>
+  <text x="1245" y="755" text-anchor="middle" class="label">HTTPS: 443</text>
+  
+  <rect x="1290" y="415" width="180" height="45" fill="none" stroke="none"/>
+  <text x="1380" y="440" text-anchor="middle" class="label">HTTPS: 443</text>
+  
+  <rect x="1035" y="360" width="180" height="45" fill="none" stroke="none"/>
+  <text x="1125" y="385" text-anchor="middle" class="label">HTTPS: 443</text>
+  
+  <rect x="855" y="165" width="180" height="45" fill="none" stroke="none"/>
+  <text x="945" y="190" text-anchor="middle" class="label">HTTPS: 443</text>
+  
+  <rect x="773" y="355" width="180" height="45" fill="none" stroke="none"/>
+  <text x="863" y="380" text-anchor="middle" class="label">HTTPS: 443</text>
+  
+  <rect x="1020" y="340" width="165" height="45" fill="none" stroke="none"/>
+  <text x="1102" y="365" text-anchor="middle" class="subtitle">Pull Scanned</text>
+  <text x="1102" y="380" text-anchor="middle" class="subtitle">Dependencies</text>
+  
+  <rect x="1290" y="610" width="165" height="45" fill="none" stroke="none"/>
+  <text x="1372" y="635" text-anchor="middle" class="subtitle">Pull Image</text>
+  
+  <rect x="1215" y="825" width="180" height="45" fill="none" stroke="none"/>
+  <text x="1305" y="850" text-anchor="middle" class="label">HTTPS: 443</text>
+  
+  <rect x="420" y="645" width="105" height="45" fill="none" stroke="none"/>
+  <text x="472" y="670" text-anchor="middle" class="label">Random High Port</text>
+  
+  <!-- download.sh -->
+  <rect x="795" y="225" width="165" height="45" fill="none" stroke="none"/>
+  <text x="877" y="250" text-anchor="middle" class="subtitle">download.sh</text>
+  
+  <!-- Prebuild.sh -->
+  <rect x="683" y="490" width="165" height="45" fill="none" stroke="none"/>
+  <text x="765" y="515" text-anchor="middle" class="subtitle">Prebuild.sh</text>
+  
+  <!-- Arrow Markers -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#3a414a"/>
+    </marker>
+    <marker id="arrowhead-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#1071e5"/>
+    </marker>
+  </defs>
+</svg>
