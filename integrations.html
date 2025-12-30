@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integrations | Optimal - 500+ Security Tool Integrations</title>
+    <meta name="description" content="Optimal integrates with 500+ security scanners, cloud providers, CI/CD tools, and more. Connect your entire security stack.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --cyber-black: #0a0a0f;
+            --cyber-dark: #12121a;
+            --cyber-green: #00ff88;
+            --cyber-blue: #00d4ff;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--cyber-black);
+            color: #e4e4e7;
+        }
+
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+
+        .nav-fixed {
+            backdrop-filter: blur(12px);
+            background: rgba(10, 10, 15, 0.9);
+            border-bottom: 1px solid rgba(0, 255, 136, 0.1);
+        }
+
+        .nav-link { color: #a1a1aa; transition: color 0.2s; }
+        .nav-link:hover { color: var(--cyber-green); }
+
+        .btn-platform {
+            background: linear-gradient(135deg, #00ff88 0%, #00cc6a 100%);
+            color: #0a0a0f;
+            font-weight: 600;
+            border-radius: 6px;
+            transition: all 0.3s;
+        }
+
+        .btn-platform:hover {
+            box-shadow: 0 0 30px rgba(0, 255, 136, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border: 1px solid rgba(0, 255, 136, 0.5);
+            color: var(--cyber-green);
+            border-radius: 6px;
+            transition: all 0.3s;
+        }
+
+        .btn-outline:hover {
+            background: rgba(0, 255, 136, 0.1);
+            border-color: var(--cyber-green);
+        }
+
+        .section-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--cyber-green);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #00ff88 0%, #00d4ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .card-dark {
+            background: rgba(18, 18, 26, 0.8);
+            border: 1px solid rgba(0, 255, 136, 0.1);
+            border-radius: 12px;
+            transition: all 0.3s;
+        }
+
+        .card-dark:hover {
+            border-color: rgba(0, 255, 136, 0.3);
+            box-shadow: 0 0 40px rgba(0, 255, 136, 0.1);
+        }
+
+        .integration-card {
+            background: rgba(18, 18, 26, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .integration-card:hover {
+            border-color: rgba(0, 255, 136, 0.3);
+            background: rgba(18, 18, 26, 0.9);
+            transform: translateY(-2px);
+        }
+
+        .integration-logo {
+            width: 48px;
+            height: 48px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .category-badge {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.65rem;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .badge-scanner { background: rgba(0, 255, 136, 0.15); color: #00ff88; }
+        .badge-cloud { background: rgba(0, 212, 255, 0.15); color: #00d4ff; }
+        .badge-cicd { background: rgba(168, 85, 247, 0.15); color: #a855f7; }
+        .badge-ticketing { background: rgba(255, 184, 0, 0.15); color: #ffb800; }
+        .badge-registry { background: rgba(59, 130, 246, 0.15); color: #3b82f6; }
+        .badge-siem { background: rgba(239, 68, 68, 0.15); color: #ef4444; }
+        .badge-iam { background: rgba(34, 197, 94, 0.15); color: #22c55e; }
+
+        .status-supported { color: var(--cyber-green); font-size: 0.75rem; }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+        .filter-btn {
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-size: 0.875rem;
+            transition: all 0.2s;
+            border: 1px solid transparent;
+        }
+
+        .filter-btn:hover { background: rgba(0, 255, 136, 0.1); }
+
+        .filter-btn.active {
+            background: rgba(0, 255, 136, 0.15);
+            border-color: rgba(0, 255, 136, 0.3);
+            color: var(--cyber-green);
+        }
+
+        .search-input {
+            background: rgba(18, 18, 26, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 0.75rem 1rem 0.75rem 2.75rem;
+            color: #fff;
+            transition: all 0.2s;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: rgba(0, 255, 136, 0.5);
+            box-shadow: 0 0 20px rgba(0, 255, 136, 0.1);
+        }
+
+        .search-input::placeholder { color: #71717a; }
+    </style>
+</head>
+<body class="antialiased">
+    <!-- Navigation -->
+    <nav class="nav-fixed fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="/" class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-cyber-green to-cyan-400 flex items-center justify-center">
+                        <span class="text-black font-bold text-sm">O</span>
+                    </div>
+                    <span class="font-mono text-lg font-semibold text-white">optimal</span>
+                </a>
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="/platform" class="nav-link font-mono text-sm">Platform</a>
+                    <a href="/integrations" class="nav-link font-mono text-sm" style="color: var(--cyber-green);">Integrations</a>
+                    <a href="/#capabilities" class="nav-link font-mono text-sm">Capabilities</a>
+                    <a href="/#team" class="nav-link font-mono text-sm">Team</a>
+                    <a href="https://docs.gooptimal.io/" target="_blank" class="nav-link font-mono text-sm">Docs</a>
+                    <a href="/demo" class="btn-platform text-sm px-6 py-2">Request Demo</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-16 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto fade-in">
+                <span class="section-label">Integrations</span>
+                <h1 class="text-4xl md:text-5xl font-bold text-white mt-4 mb-6 leading-tight">
+                    Connect Your <span class="gradient-text">Entire Stack</span>
+                </h1>
+                <p class="text-xl text-zinc-400 mb-8">
+                    500+ native integrations with security scanners, cloud providers, CI/CD tools, ticketing systems, and more.
+                </p>
+                <div class="relative max-w-md mx-auto">
+                    <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-zinc-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                    </svg>
+                    <input type="text" id="search" class="search-input w-full" placeholder="Search integrations...">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Category Filters -->
+    <section class="pb-8 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-wrap justify-center gap-2 fade-in">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="scanner">Scanners</button>
+                <button class="filter-btn" data-filter="cloud">Cloud</button>
+                <button class="filter-btn" data-filter="cicd">CI/CD</button>
+                <button class="filter-btn" data-filter="ticketing">Ticketing</button>
+                <button class="filter-btn" data-filter="registry">Registries</button>
+                <button class="filter-btn" data-filter="siem">SIEM</button>
+                <button class="filter-btn" data-filter="iam">IAM</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vulnerability Scanners -->
+    <section class="py-12 px-6">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-2xl font-bold text-white mb-8 fade-in">Vulnerability Scanners</h2>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                <div class="integration-card fade-in" data-category="scanner" data-name="Snyk">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="integration-logo">🔍</div>
+                        <span class="category-badge badge-scanner">Scanner</span>
+                    </div>
+                    <h3 class="text-white font-semibold mb-1">Snyk</h3>
+                    <p class="text-zinc-500 text-sm mb-3">Code, container & IaC security</p>
+                    <span class="status-supported">✓ Supported</span>
+                </div>
+
+                <div class="integration-card fade-in" data-category="scanner" data-name="Qualys">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="integration-logo">🛡️</div>
+                        <span class="category-badge badge-scanner">Scanner</span>
+                    </div>
+                    <h3 class="text-white font-semibold mb-1">Qualys</h3>
+                    <p class="text-zinc-500 text-sm mb-3">Enterprise vulnerability management</p>
+                    <span class="status-supported">✓ Supported</span>
+                </div>
+
+                <div class="integration-card fade-in" data-category="scanner" data-name="Tenable">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="integration-logo">📊</div>
+                        <span class="category-badge badge-scanner">Scanner</span>
+                    </div>
+                    <h3 class="text-white font-semibold mb-1">Tenable</h3>
+                    <p class="text-zinc-500 text-sm mb-3">Exposure management platform</p>
+                    <span class="status-supported">✓ Supported</span>
+                </div>
+
+                <div class="integration-card fade-in" data-category="scanner" data-name="Rapid7">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="integration-logo">⚡</div>
+                        <span class="category-badge badge-scanner">Scanner</span>
+                    </div>
+                    <h3 class="text-white font-semibold mb-1">Rapid7</h3>
+                    <p class="text-zinc-500 text-sm mb-3">InsightVM vulnerability scanner</p>
+                    <span class="status-supported">✓ Supported</span>
+                </div>
+
+                <div class="integration-card fade-in" data-category="scanner" data-name="Trivy">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="integration-logo">🐳</div>
+                        <span class="category-badge badge-scanner">Scanner</span>
+                    </div>
+                    <h3 class="text-white font-semibold mb-1">Trivy</h3>
+                    <p class="text-zinc-500 text-sm mb-3">Container & IaC scanner</p>
+                    <span class="status-supported">✓ Supported</span>
+                </div>
+
+                <div class="integration-card fade-in" data-category="scanner" data-name="Wiz">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="integration-logo">✨</div>
+                        <span class="category-badge badge-scanner">Scanner</span>
+                    </div>
+                    <h3 class="text-white font-semibold mb-1">Wiz</h3>
+                    <p class="text-zinc-500 text-sm mb-3">Cloud security platform</p>
+                    <span class="status-supported">✓ Supported</span>
+                </div>
+
+                <div class="integration-card fade-in" data-category="scanner" data-name="Grype">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="integration-logo">🔎</div>
+                        <span class="category-badge badge-scanner">Scanner</span>
+                    </div>
+                    <h3 class="text-white font-semibold mb-1">Grype</h3>
+                    <p class="text-zinc-500 text-sm mb-3">SBOM vulnerability scanner</p>
+                    <span class="status-supported">✓ Supported</span>
+                </div>
+
+                <div class="integration-card fade-in" data-category="scanner" data-name="Semgrep">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="integration-logo">📝</div>
+                        <span class="category-badge badge-scanner">Scanner</span>
+                    </div>
+                    <h3 class="text-white font-semibold mb-1">Semgrep</h3>
+                    <p class="text-zinc-500 text-sm mb-3">Static code analysis</p>
+                    <span class="status-supported">✓ Supported</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cloud Providers -->
+    <section class="py-12 px-6 bg-gradient-to-b from-transparent via-zinc-900/20 to-transparent">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-2xl font-bold text-white mb-8 fade-in">Cloud Providers</h2>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                <div class="integration-card fade-in" data-category="cloud" data-name="AWS">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="integration-logo">☁️</div>
+                        <span class="category-badge badge-cloud">Cloud</span>
+                    </div>
+                    <h3 class="text-white font-semibold mb-1">AWS</h3>
+                    <p class="text-zinc-500 text-sm mb-3">Amazon Web Services</p>
+                    <span class="status-supported">✓ Supported</span>
+                </div>
+
+                <div class="integration-card fade-in" data-category="cloud" data-name="Azure">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="integration-logo">🔷</div>
+                        <span class="category-badge badge-cloud">Cloud</span>
+                    </div>
+                    <h3 class="text-white font-semibold mb-1">Azure</h3>
+                    <p class="text-zinc-500 text-sm mb-3">Microsoft Azure</p>
+                    <span class="status-supported">✓ Supported</span>
+                </div>
+
+                <div class="integration-card fade-in" data-category="cloud" data-name="GCP">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="integration-logo">🌐</div>
+                        <span class="category-badge badge-cloud">Cloud</span>
+                    </div>
+                    <h3 class="text-white font-semibold mb-1">Google Cloud</h3>
+                    <p class="text-zinc-500 text-sm mb-3">GCP services</p>
+                    <span class="status-supported">✓ Supported</span>
+                </div>
+
+                <div class="integration-card fade-in" data-category="cloud" data-name="Oracle">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="integration-logo">🔴</div>
+                        <span class="category-badge badge-cloud">Cloud</span>
+                    </div>
+                    <h3 class="text-white font-semibold mb-1">Oracle Cloud</h3>
+                    <p class="text-zinc-500 text-sm mb-3">OCI infrastructure</p>
+                    <span class="status-supported">✓ Supported</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CI/CD Pipelines -->
+    <section class="py-12 px-6">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-2xl font-bold text-white mb-8 fade-in">CI/CD Pipelines</h2>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                <div class="integration-card fade-in" data-category="cicd" data-name="GitHub Actions">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="integration-logo">🐙</div>
+                        <span class="category-badge badge-cicd">CI/CD</span>
+                    </div>
+                    <h3 class="text-white font-semibold mb-1">GitHub Actions</h3>
+                    <p class="text-zinc-500 text-sm mb-3">GitHub-native CI/CD</p>
+                    <span class="status-supported">✓ Supported</span>
+                </div>
+
+                <div class="integration-card fade-in" data-category="cicd" data-name="GitLab CI">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="integration-logo">🦊</div>
+                        <span class="category-badge badge-cicd">CI/CD</span>
+                    </div>
+                    <h3 class="text-white font-semibold mb-1">GitLab CI</h3>
+                    <p class="text-zinc-500 text-sm mb-3">GitLab pipelines</p>
+                    <span class="status-supported">✓ Supported</span>
+                </div>
+
+                <div class="integration-card fade-in" data-category="cicd" data-name="Jenkins">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="integration-logo">🤖</div>
+                        <span class="category-badge badge-cicd">CI/CD</span>
+                    </div>
+                    <h3 class="text-white font-semibold mb-1">Jenkins</h3>
+                    <p class="text-zinc-500 text-sm mb-3">Open source automation</p>
+                    <span class="status-supported">✓ Supported</span>
+                </div>
+
+                <div class="integration-card fade-in" data-category="cicd" data-name="CircleCI">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="integration-logo">⭕</div>
+                        <span class="category-badge badge-cicd">CI/CD</span>
+                    </div>
+                    <h3 class="text-white font-semibold mb-1">CircleCI</h3>
+                    <p class="text-zinc-500 text-sm mb-3">Cloud CI/CD platform</p>
+                    <span class="status-supported">✓ Supported</span>
+                </div>
+
+                <div class="integration-card fade-in" data-category="cicd" data-name="Azure DevOps">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="integration-logo">🔷</div>
+                        <span class="category-badge badge-cicd">CI/CD</span>
+                    </div>
+                    <h3 class="text-white font-semibold mb-1">Azure DevOps</h3>
+                    <p class="text-zinc-500 text-sm mb-3">Microsoft Azure pipelines</p>
+                    <span class="status-supported">✓ Supported</span>
+                </div>
+
+                <div class="integration-card fade-in" data-category="cicd" data-name="Bitbucket">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="integration-logo">🪣</div>
+                        <span class="category-badge badge-cicd">CI/CD</span>
+                    </div>
+                    <h3 class="text-white font-semibold mb-1">Bitbucket Pipelines</h3>
+                    <p class="text-zinc-500 text-sm mb-3">Atlassian CI/CD</p>
+                    <span class="status-supported">✓ Supported</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ticketing Systems -->
+    <section class="py-12 px-6 bg-gradient-to-b from-transparent via-zinc-900/20 to-transparent">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-2xl font-bold text-white mb-8 fade-in">Ticketing & Collaboration</h2>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                <div class="integration-card fade-in" data-category="ticketing" data-name="Jira">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="integration-logo">📋</div>
+                        <span class="category-badge badge-ticketing">Ticketing</span>
+                    </div>
+                    <h3 class="text-white font-semibold mb-1">Jira</h3>
+                    <p class="text-zinc-500 text-sm mb-3">Atlassian issue tracking</p>
+                    <span class="status-supported">✓ Supported</span>
+                </div>
+
+                <div class="integration-card fade-in" data-category="ticketing" data-name="ServiceNow">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="integration-logo">🎫</div>
+                        <span class="category-badge badge-ticketing">Ticketing</span>
+                    </div>
+                    <h3 class="text-white font-semibold mb-1">ServiceNow</h3>
+                    <p class="text-zinc-500 text-sm mb-3">Enterprise ITSM</p>
+                    <span class="status-supported">✓ Supported</span>
+                </div>
+
+                <div class="integration-card fade-in" data-category="ticketing" data-name="Slack">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="integration-logo">💬</div>
+                        <span class="category-badge badge-ticketing">Messaging</span>
+                    </div>
+                    <h3 class="text-white font-semibold mb-1">Slack</h3>
+                    <p class="text-zinc-500 text-sm mb-3">Team communication</p>
+                    <span class="status-supported">✓ Supported</span>
+                </div>
+
+                <div class="integration-card fade-in" data-category="ticketing" data-name="PagerDuty">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="integration-logo">🚨</div>
+                        <span class="category-badge badge-ticketing">Alerting</span>
+                    </div>
+                    <h3 class="text-white font-semibold mb-1">PagerDuty</h3>
+                    <p class="text-zinc-500 text-sm mb-3">Incident management</p>
+                    <span class="status-supported">✓ Supported</span>
+                </div>
+
+                <div class="integration-card fade-in" data-category="ticketing" data-name="Microsoft Teams">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="integration-logo">👥</div>
+                        <span class="category-badge badge-ticketing">Messaging</span>
+                    </div>
+                    <h3 class="text-white font-semibold mb-1">Microsoft Teams</h3>
+                    <p class="text-zinc-500 text-sm mb-3">Enterprise collaboration</p>
+                    <span class="status-supported">✓ Supported</span>
+                </div>
+
+                <div class="integration-card fade-in" data-category="ticketing" data-name="Linear">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="integration-logo">📐</div>
+                        <span class="category-badge badge-ticketing">Ticketing</span>
+                    </div>
+                    <h3 class="text-white font-semibold mb-1">Linear</h3>
+                    <p class="text-zinc-500 text-sm mb-3">Modern issue tracking</p>
+                    <span class="status-supported">✓ Supported</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Container Registries -->
+    <section class="py-12 px-6">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-2xl font-bold text-white mb-8 fade-in">Container Registries</h2>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                <div class="integration-card fade-in" data-category="registry" data-name="Docker Hub">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="integration-logo">🐳</div>
+                        <span class="category-badge badge-registry">Registry</span>
+                    </div>
+                    <h3 class="text-white font-semibold mb-1">Docker Hub</h3>
+                    <p class="text-zinc-500 text-sm mb-3">Container image registry</p>
+                    <span class="status-supported">✓ Supported</span>
+                </div>
+
+                <div class="integration-card fade-in" data-category="registry" data-name="ECR">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="integration-logo">📦</div>
+                        <span class="category-badge badge-registry">Registry</span>
+                    </div>
+                    <h3 class="text-white font-semibold mb-1">Amazon ECR</h3>
+                    <p class="text-zinc-500 text-sm mb-3">AWS container registry</p>
+                    <span class="status-supported">✓ Supported</span>
+                </div>
+
+                <div class="integration-card fade-in" data-category="registry" data-name="GCR">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="integration-logo">📦</div>
+                        <span class="category-badge badge-registry">Registry</span>
+                    </div>
+                    <h3 class="text-white font-semibold mb-1">Google GCR</h3>
+                    <p class="text-zinc-500 text-sm mb-3">GCP container registry</p>
+                    <span class="status-supported">✓ Supported</span>
+                </div>
+
+                <div class="integration-card fade-in" data-category="registry" data-name="Harbor">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="integration-logo">⚓</div>
+                        <span class="category-badge badge-registry">Registry</span>
+                    </div>
+                    <h3 class="text-white font-semibold mb-1">Harbor</h3>
+                    <p class="text-zinc-500 text-sm mb-3">Cloud native registry</p>
+                    <span class="status-supported">✓ Supported</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SIEM & SOAR -->
+    <section class="py-12 px-6 bg-gradient-to-b from-transparent via-zinc-900/20 to-transparent">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-2xl font-bold text-white mb-8 fade-in">SIEM & SOAR</h2>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                <div class="integration-card fade-in" data-category="siem" data-name="Splunk">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="integration-logo">📈</div>
+                        <span class="category-badge badge-siem">SIEM</span>
+                    </div>
+                    <h3 class="text-white font-semibold mb-1">Splunk</h3>
+                    <p class="text-zinc-500 text-sm mb-3">Data platform for security</p>
+                    <span class="status-supported">✓ Supported</span>
+                </div>
+
+                <div class="integration-card fade-in" data-category="siem" data-name="Elastic">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="integration-logo">🔍</div>
+                        <span class="category-badge badge-siem">SIEM</span>
+                    </div>
+                    <h3 class="text-white font-semibold mb-1">Elastic Security</h3>
+                    <p class="text-zinc-500 text-sm mb-3">Elastic SIEM solution</p>
+                    <span class="status-supported">✓ Supported</span>
+                </div>
+
+                <div class="integration-card fade-in" data-category="siem" data-name="Sentinel">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="integration-logo">🛡️</div>
+                        <span class="category-badge badge-siem">SIEM</span>
+                    </div>
+                    <h3 class="text-white font-semibold mb-1">Microsoft Sentinel</h3>
+                    <p class="text-zinc-500 text-sm mb-3">Cloud-native SIEM</p>
+                    <span class="status-supported">✓ Supported</span>
+                </div>
+
+                <div class="integration-card fade-in" data-category="siem" data-name="Chronicle">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="integration-logo">📜</div>
+                        <span class="category-badge badge-siem">SIEM</span>
+                    </div>
+                    <h3 class="text-white font-semibold mb-1">Google Chronicle</h3>
+                    <p class="text-zinc-500 text-sm mb-3">Security analytics</p>
+                    <span class="status-supported">✓ Supported</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- IAM -->
+    <section class="py-12 px-6">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-2xl font-bold text-white mb-8 fade-in">Identity & Access</h2>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                <div class="integration-card fade-in" data-category="iam" data-name="Okta">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="integration-logo">🔑</div>
+                        <span class="category-badge badge-iam">IAM</span>
+                    </div>
+                    <h3 class="text-white font-semibold mb-1">Okta</h3>
+                    <p class="text-zinc-500 text-sm mb-3">Identity management</p>
+                    <span class="status-supported">✓ Supported</span>
+                </div>
+
+                <div class="integration-card fade-in" data-category="iam" data-name="Azure AD">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="integration-logo">🔐</div>
+                        <span class="category-badge badge-iam">IAM</span>
+                    </div>
+                    <h3 class="text-white font-semibold mb-1">Entra ID</h3>
+                    <p class="text-zinc-500 text-sm mb-3">Microsoft identity</p>
+                    <span class="status-supported">✓ Supported</span>
+                </div>
+
+                <div class="integration-card fade-in" data-category="iam" data-name="AWS IAM">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="integration-logo">👤</div>
+                        <span class="category-badge badge-iam">IAM</span>
+                    </div>
+                    <h3 class="text-white font-semibold mb-1">AWS IAM</h3>
+                    <p class="text-zinc-500 text-sm mb-3">AWS identity</p>
+                    <span class="status-supported">✓ Supported</span>
+                </div>
+
+                <div class="integration-card fade-in" data-category="iam" data-name="CyberArk">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="integration-logo">🔒</div>
+                        <span class="category-badge badge-iam">PAM</span>
+                    </div>
+                    <h3 class="text-white font-semibold mb-1">CyberArk</h3>
+                    <p class="text-zinc-500 text-sm mb-3">Privileged access</p>
+                    <span class="status-supported">✓ Supported</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Request Integration CTA -->
+    <section class="py-20 px-6">
+        <div class="max-w-4xl mx-auto">
+            <div class="card-dark p-12 text-center fade-in">
+                <h2 class="text-2xl font-bold text-white mb-4">Don't see your tool?</h2>
+                <p class="text-zinc-400 mb-8">We're constantly adding new integrations. Request support for your security tools.</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="/demo" class="btn-platform px-8 py-3">Request an Integration</a>
+                    <a href="https://docs.gooptimal.io/" target="_blank" class="btn-outline px-8 py-3">Build Custom Integration</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-zinc-800 py-12 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-cyber-green to-cyan-400 flex items-center justify-center">
+                            <span class="text-black font-bold text-sm">O</span>
+                        </div>
+                        <span class="font-mono text-lg font-semibold text-white">optimal</span>
+                    </div>
+                    <p class="text-zinc-500 text-sm">Unified security operations for modern enterprises.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-white mb-4">Platform</h4>
+                    <ul class="space-y-2 text-sm text-zinc-400">
+                        <li><a href="/vulnerability-management" class="hover:text-cyber-green transition-colors">Vulnerability Management</a></li>
+                        <li><a href="/runtime-security" class="hover:text-cyber-green transition-colors">Runtime Security</a></li>
+                        <li><a href="/ai-security" class="hover:text-cyber-green transition-colors">AI Security</a></li>
+                        <li><a href="/cloud-security" class="hover:text-cyber-green transition-colors">Cloud Security</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-white mb-4">Resources</h4>
+                    <ul class="space-y-2 text-sm text-zinc-400">
+                        <li><a href="https://docs.gooptimal.io/" target="_blank" class="hover:text-cyber-green transition-colors">Documentation</a></li>
+                        <li><a href="/integrations" class="hover:text-cyber-green transition-colors">Integrations</a></li>
+                        <li><a href="/demo" class="hover:text-cyber-green transition-colors">Request Demo</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-white mb-4">Company</h4>
+                    <ul class="space-y-2 text-sm text-zinc-400">
+                        <li><a href="/#team" class="hover:text-cyber-green transition-colors">Team</a></li>
+                        <li><a href="mailto:contact@gooptimal.io" class="hover:text-cyber-green transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-zinc-800 pt-8 text-center text-sm text-zinc-500">
+                <p>&copy; 2025 Optimal Security. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Fade-in animation
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Filter functionality
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const integrationCards = document.querySelectorAll('.integration-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const filter = btn.dataset.filter;
+                integrationCards.forEach(card => {
+                    card.style.display = (filter === 'all' || card.dataset.category === filter) ? 'block' : 'none';
+                });
+            });
+        });
+
+        // Search functionality
+        const searchInput = document.getElementById('search');
+        searchInput.addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase();
+            integrationCards.forEach(card => {
+                const name = card.dataset.name.toLowerCase();
+                card.style.display = name.includes(query) ? 'block' : 'none';
+            });
+            if (query) {
+                filterBtns.forEach(b => b.classList.remove('active'));
+            } else {
+                filterBtns[0].classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Platform | Optimal - Unified Security Platform</title>
+    <meta name="description" content="Optimal's unified security platform - from vulnerability discovery to remediation. AI-powered security operations for modern enterprises.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --cyber-black: #0a0a0f;
+            --cyber-dark: #12121a;
+            --cyber-green: #00ff88;
+            --cyber-blue: #00d4ff;
+            --cyber-purple: #a855f7;
+            --cyber-amber: #ffb800;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--cyber-black);
+            color: #e4e4e7;
+        }
+
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+
+        .nav-fixed {
+            backdrop-filter: blur(12px);
+            background: rgba(10, 10, 15, 0.9);
+            border-bottom: 1px solid rgba(0, 255, 136, 0.1);
+        }
+
+        .nav-link {
+            color: #a1a1aa;
+            transition: color 0.2s;
+        }
+
+        .nav-link:hover { color: var(--cyber-green); }
+
+        .btn-platform {
+            background: linear-gradient(135deg, #00ff88 0%, #00cc6a 100%);
+            color: #0a0a0f;
+            font-weight: 600;
+            border-radius: 6px;
+            transition: all 0.3s;
+        }
+
+        .btn-platform:hover {
+            box-shadow: 0 0 30px rgba(0, 255, 136, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border: 1px solid rgba(0, 255, 136, 0.5);
+            color: var(--cyber-green);
+            border-radius: 6px;
+            transition: all 0.3s;
+        }
+
+        .btn-outline:hover {
+            background: rgba(0, 255, 136, 0.1);
+            border-color: var(--cyber-green);
+        }
+
+        .section-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--cyber-green);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #00ff88 0%, #00d4ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .card-dark {
+            background: rgba(18, 18, 26, 0.8);
+            border: 1px solid rgba(0, 255, 136, 0.1);
+            border-radius: 12px;
+            transition: all 0.3s;
+        }
+
+        .card-dark:hover {
+            border-color: rgba(0, 255, 136, 0.3);
+            box-shadow: 0 0 40px rgba(0, 255, 136, 0.1);
+        }
+
+        .feature-tab {
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 1px solid transparent;
+        }
+
+        .feature-tab:hover {
+            background: rgba(0, 255, 136, 0.05);
+        }
+
+        .feature-tab.active {
+            background: rgba(0, 255, 136, 0.1);
+            border-color: rgba(0, 255, 136, 0.3);
+        }
+
+        .feature-tab.active .tab-title {
+            color: var(--cyber-green);
+        }
+
+        .glow-line {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--cyber-green), transparent);
+        }
+
+        .metric-card {
+            background: linear-gradient(135deg, rgba(0, 255, 136, 0.1) 0%, rgba(0, 212, 255, 0.05) 100%);
+            border: 1px solid rgba(0, 255, 136, 0.2);
+            border-radius: 12px;
+        }
+
+        .dashboard-frame {
+            background: linear-gradient(135deg, rgba(0, 255, 136, 0.05) 0%, rgba(0, 212, 255, 0.02) 100%);
+            border: 1px solid rgba(0, 255, 136, 0.2);
+            border-radius: 16px;
+            padding: 8px;
+        }
+
+        .dashboard-frame img {
+            border-radius: 12px;
+            width: 100%;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .integration-logo {
+            width: 48px;
+            height: 48px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .capability-icon {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, rgba(0, 255, 136, 0.2) 0%, rgba(0, 212, 255, 0.1) 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <!-- Navigation -->
+    <nav class="nav-fixed fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="/" class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-cyber-green to-cyan-400 flex items-center justify-center">
+                        <span class="text-black font-bold text-sm">O</span>
+                    </div>
+                    <span class="font-mono text-lg font-semibold text-white">optimal</span>
+                </a>
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="/platform" class="nav-link font-mono text-sm" style="color: var(--cyber-green);">Platform</a>
+                    <a href="/integrations" class="nav-link font-mono text-sm">Integrations</a>
+                    <a href="/#capabilities" class="nav-link font-mono text-sm">Capabilities</a>
+                    <a href="/#team" class="nav-link font-mono text-sm">Team</a>
+                    <a href="https://docs.gooptimal.io/" target="_blank" class="nav-link font-mono text-sm">Docs</a>
+                    <a href="/demo" class="btn-platform text-sm px-6 py-2">Request Demo</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-4xl mx-auto fade-in">
+                <span class="section-label">The Optimal Platform</span>
+                <h1 class="text-4xl md:text-6xl font-bold text-white mt-4 mb-6 leading-tight">
+                    Security Operations,<br>
+                    <span class="gradient-text">Unified & Automated</span>
+                </h1>
+                <p class="text-xl text-zinc-400 mb-8 max-w-2xl mx-auto">
+                    From vulnerability discovery to remediation tracking. One platform that brings together your entire security stack with AI-powered automation.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="/demo" class="btn-platform px-8 py-3 text-lg">Request Demo</a>
+                    <a href="https://docs.gooptimal.io/" target="_blank" class="btn-outline px-8 py-3 text-lg">View Documentation</a>
+                </div>
+            </div>
+
+            <!-- Dashboard Preview -->
+            <div class="mt-16 fade-in">
+                <div class="dashboard-frame">
+                    <img src="/command-center.png" alt="Optimal Command Center Dashboard" class="shadow-2xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Platform Stats -->
+    <section class="py-16 px-6 border-y border-zinc-800">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="text-center fade-in">
+                    <div class="text-4xl md:text-5xl font-bold gradient-text mb-2">500+</div>
+                    <div class="text-zinc-400 text-sm">Integrations</div>
+                </div>
+                <div class="text-center fade-in">
+                    <div class="text-4xl md:text-5xl font-bold gradient-text mb-2">24hr</div>
+                    <div class="text-zinc-400 text-sm">CVE Response SLA</div>
+                </div>
+                <div class="text-center fade-in">
+                    <div class="text-4xl md:text-5xl font-bold gradient-text mb-2">95%</div>
+                    <div class="text-zinc-400 text-sm">Noise Reduction</div>
+                </div>
+                <div class="text-center fade-in">
+                    <div class="text-4xl md:text-5xl font-bold gradient-text mb-2">10x</div>
+                    <div class="text-zinc-400 text-sm">Faster Remediation</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Capabilities -->
+    <section class="py-24 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 fade-in">
+                <span class="section-label">Core Capabilities</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-white mt-4">Everything You Need for Modern Security</h2>
+                <p class="text-zinc-400 mt-4 max-w-2xl mx-auto">A comprehensive platform that covers the entire security lifecycle</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Vulnerability Management -->
+                <a href="/vulnerability-management" class="card-dark p-8 fade-in group">
+                    <div class="capability-icon mb-6">
+                        <svg class="w-7 h-7 text-cyber-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-3 group-hover:text-cyber-green transition-colors">Vulnerability Management</h3>
+                    <p class="text-zinc-400 text-sm leading-relaxed">Unified vulnerability aggregation from 500+ scanners with intelligent deduplication and risk-based prioritization.</p>
+                </a>
+
+                <!-- Runtime Security -->
+                <a href="/runtime-security" class="card-dark p-8 fade-in group">
+                    <div class="capability-icon mb-6">
+                        <svg class="w-7 h-7 text-cyber-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-3 group-hover:text-cyber-blue transition-colors">Runtime Security</h3>
+                    <p class="text-zinc-400 text-sm leading-relaxed">Real-time threat detection and response with eBPF-powered observability across your entire infrastructure.</p>
+                </a>
+
+                <!-- AI Security -->
+                <a href="/ai-security" class="card-dark p-8 fade-in group">
+                    <div class="capability-icon mb-6" style="background: linear-gradient(135deg, rgba(168, 85, 247, 0.2) 0%, rgba(0, 212, 255, 0.1) 100%);">
+                        <svg class="w-7 h-7 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-3 group-hover:text-purple-400 transition-colors">AI Security</h3>
+                    <p class="text-zinc-400 text-sm leading-relaxed">Protect your AI/ML pipelines with model vulnerability scanning, prompt injection detection, and LLM security controls.</p>
+                </a>
+
+                <!-- Software Supply Chain -->
+                <a href="/software-supply-chain" class="card-dark p-8 fade-in group">
+                    <div class="capability-icon mb-6" style="background: linear-gradient(135deg, rgba(255, 184, 0, 0.2) 0%, rgba(0, 212, 255, 0.1) 100%);">
+                        <svg class="w-7 h-7 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-3 group-hover:text-amber-400 transition-colors">Software Supply Chain</h3>
+                    <p class="text-zinc-400 text-sm leading-relaxed">End-to-end supply chain security with SBOM management, dependency tracking, and artifact integrity verification.</p>
+                </a>
+
+                <!-- Cloud Security -->
+                <a href="/cloud-security" class="card-dark p-8 fade-in group">
+                    <div class="capability-icon mb-6" style="background: linear-gradient(135deg, rgba(59, 130, 246, 0.2) 0%, rgba(0, 212, 255, 0.1) 100%);">
+                        <svg class="w-7 h-7 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-3 group-hover:text-blue-400 transition-colors">Cloud Security</h3>
+                    <p class="text-zinc-400 text-sm leading-relaxed">Multi-cloud posture management with real-time misconfiguration detection and automated remediation workflows.</p>
+                </a>
+
+                <!-- GRC -->
+                <a href="/grc" class="card-dark p-8 fade-in group">
+                    <div class="capability-icon mb-6" style="background: linear-gradient(135deg, rgba(34, 197, 94, 0.2) 0%, rgba(0, 212, 255, 0.1) 100%);">
+                        <svg class="w-7 h-7 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-3 group-hover:text-green-400 transition-colors">GRC & Compliance</h3>
+                    <p class="text-zinc-400 text-sm leading-relaxed">Automated compliance mapping to SOC 2, ISO 27001, NIST, and more. Continuous control monitoring with audit-ready reports.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="py-24 px-6 bg-gradient-to-b from-transparent via-zinc-900/30 to-transparent">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 fade-in">
+                <span class="section-label">How It Works</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-white mt-4">From Chaos to Clarity</h2>
+                <p class="text-zinc-400 mt-4 max-w-2xl mx-auto">Optimal brings together your entire security ecosystem in three simple steps</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center fade-in">
+                    <div class="w-16 h-16 rounded-full bg-gradient-to-br from-cyber-green/20 to-cyber-blue/10 border border-cyber-green/30 flex items-center justify-center mx-auto mb-6">
+                        <span class="text-2xl font-bold gradient-text">1</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-3">Connect</h3>
+                    <p class="text-zinc-400 text-sm">Integrate your existing security tools, scanners, and data sources through our 500+ native integrations or custom API.</p>
+                </div>
+
+                <div class="text-center fade-in">
+                    <div class="w-16 h-16 rounded-full bg-gradient-to-br from-cyber-green/20 to-cyber-blue/10 border border-cyber-green/30 flex items-center justify-center mx-auto mb-6">
+                        <span class="text-2xl font-bold gradient-text">2</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-3">Correlate</h3>
+                    <p class="text-zinc-400 text-sm">Our AI engine deduplicates findings, enriches context, and correlates data across your entire attack surface.</p>
+                </div>
+
+                <div class="text-center fade-in">
+                    <div class="w-16 h-16 rounded-full bg-gradient-to-br from-cyber-green/20 to-cyber-blue/10 border border-cyber-green/30 flex items-center justify-center mx-auto mb-6">
+                        <span class="text-2xl font-bold gradient-text">3</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-3">Remediate</h3>
+                    <p class="text-zinc-400 text-sm">Prioritize by actual risk, assign to the right teams, and track remediation with automated workflows and SLA management.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Integrations Preview -->
+    <section class="py-24 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="fade-in">
+                    <span class="section-label">Ecosystem</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mt-4 mb-6">Connects to Your Entire Security Stack</h2>
+                    <p class="text-zinc-400 mb-8">Native integrations with the tools you already use. No rip-and-replace required.</p>
+
+                    <div class="grid grid-cols-2 gap-4 mb-8">
+                        <div class="flex items-center gap-3 text-zinc-300">
+                            <svg class="w-5 h-5 text-cyber-green" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-sm">Vulnerability Scanners</span>
+                        </div>
+                        <div class="flex items-center gap-3 text-zinc-300">
+                            <svg class="w-5 h-5 text-cyber-green" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-sm">Cloud Providers</span>
+                        </div>
+                        <div class="flex items-center gap-3 text-zinc-300">
+                            <svg class="w-5 h-5 text-cyber-green" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-sm">CI/CD Pipelines</span>
+                        </div>
+                        <div class="flex items-center gap-3 text-zinc-300">
+                            <svg class="w-5 h-5 text-cyber-green" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-sm">Ticketing Systems</span>
+                        </div>
+                        <div class="flex items-center gap-3 text-zinc-300">
+                            <svg class="w-5 h-5 text-cyber-green" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-sm">Container Registries</span>
+                        </div>
+                        <div class="flex items-center gap-3 text-zinc-300">
+                            <svg class="w-5 h-5 text-cyber-green" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-sm">SIEM & SOAR</span>
+                        </div>
+                    </div>
+
+                    <a href="/integrations" class="btn-outline px-6 py-3 inline-flex items-center gap-2">
+                        View All Integrations
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="fade-in">
+                    <div class="grid grid-cols-4 gap-4">
+                        <!-- Integration logos grid -->
+                        <div class="integration-logo"><span class="text-2xl">🔍</span></div>
+                        <div class="integration-logo"><span class="text-2xl">☁️</span></div>
+                        <div class="integration-logo"><span class="text-2xl">🐳</span></div>
+                        <div class="integration-logo"><span class="text-2xl">🔐</span></div>
+                        <div class="integration-logo"><span class="text-2xl">📊</span></div>
+                        <div class="integration-logo"><span class="text-2xl">🛡️</span></div>
+                        <div class="integration-logo"><span class="text-2xl">⚡</span></div>
+                        <div class="integration-logo"><span class="text-2xl">🔗</span></div>
+                        <div class="integration-logo"><span class="text-2xl">📁</span></div>
+                        <div class="integration-logo"><span class="text-2xl">🔧</span></div>
+                        <div class="integration-logo"><span class="text-2xl">📡</span></div>
+                        <div class="integration-logo"><span class="text-2xl">🎯</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enterprise Ready -->
+    <section class="py-24 px-6 bg-gradient-to-b from-transparent via-zinc-900/30 to-transparent">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 fade-in">
+                <span class="section-label">Enterprise Ready</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-white mt-4">Built for Scale & Security</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="card-dark p-8 text-center fade-in">
+                    <div class="text-4xl mb-4">🔒</div>
+                    <h3 class="text-xl font-semibold text-white mb-3">SOC 2 Type II</h3>
+                    <p class="text-zinc-400 text-sm">Certified compliant with rigorous security and availability standards.</p>
+                </div>
+
+                <div class="card-dark p-8 text-center fade-in">
+                    <div class="text-4xl mb-4">⚡</div>
+                    <h3 class="text-xl font-semibold text-white mb-3">99.9% Uptime SLA</h3>
+                    <p class="text-zinc-400 text-sm">Enterprise-grade reliability with guaranteed availability.</p>
+                </div>
+
+                <div class="card-dark p-8 text-center fade-in">
+                    <div class="text-4xl mb-4">🛡️</div>
+                    <h3 class="text-xl font-semibold text-white mb-3">24hr CVE SLA</h3>
+                    <p class="text-zinc-400 text-sm">New vulnerabilities analyzed and available within 24 hours of disclosure.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 px-6">
+        <div class="max-w-4xl mx-auto text-center fade-in">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Transform Your Security Operations?</h2>
+            <p class="text-xl text-zinc-400 mb-8">Join leading security teams using Optimal to unify their security posture.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="/demo" class="btn-platform px-8 py-4 text-lg">Request a Demo</a>
+                <a href="https://docs.gooptimal.io/" target="_blank" class="btn-outline px-8 py-4 text-lg">Read the Docs</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-zinc-800 py-12 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-cyber-green to-cyan-400 flex items-center justify-center">
+                            <span class="text-black font-bold text-sm">O</span>
+                        </div>
+                        <span class="font-mono text-lg font-semibold text-white">optimal</span>
+                    </div>
+                    <p class="text-zinc-500 text-sm">Unified security operations for modern enterprises.</p>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold text-white mb-4">Platform</h4>
+                    <ul class="space-y-2 text-sm text-zinc-400">
+                        <li><a href="/vulnerability-management" class="hover:text-cyber-green transition-colors">Vulnerability Management</a></li>
+                        <li><a href="/runtime-security" class="hover:text-cyber-green transition-colors">Runtime Security</a></li>
+                        <li><a href="/ai-security" class="hover:text-cyber-green transition-colors">AI Security</a></li>
+                        <li><a href="/cloud-security" class="hover:text-cyber-green transition-colors">Cloud Security</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold text-white mb-4">Resources</h4>
+                    <ul class="space-y-2 text-sm text-zinc-400">
+                        <li><a href="https://docs.gooptimal.io/" target="_blank" class="hover:text-cyber-green transition-colors">Documentation</a></li>
+                        <li><a href="/integrations" class="hover:text-cyber-green transition-colors">Integrations</a></li>
+                        <li><a href="/demo" class="hover:text-cyber-green transition-colors">Request Demo</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold text-white mb-4">Company</h4>
+                    <ul class="space-y-2 text-sm text-zinc-400">
+                        <li><a href="/#team" class="hover:text-cyber-green transition-colors">Team</a></li>
+                        <li><a href="mailto:contact@gooptimal.io" class="hover:text-cyber-green transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-zinc-800 pt-8 text-center text-sm text-zinc-500">
+                <p>&copy; 2025 Optimal Security. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Fade-in animation
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
