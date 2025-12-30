@@ -5,213 +5,234 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GRC Solutions - Optimal | Governance, Risk & Compliance</title>
     <meta name="description" content="Governance, risk management, and compliance solutions with continuous ATO, FedRAMP preparation, and comprehensive POA&M tracking for enterprise organizations.">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="public/optimal-logo.png">
-    <link rel="shortcut icon" type="image/png" href="public/optimal-logo.png">
-    <link rel="apple-touch-icon" href="public/optimal-logo.png">
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://gooptimal.io/grc.html">
-    <meta property="og:title" content="GRC Solutions - Optimal | Governance, Risk & Compliance">
-    <meta property="og:description" content="Governance, risk management, and compliance solutions with continuous ATO, FedRAMP preparation, and comprehensive POA&M tracking for enterprise organizations.">
+
+    <link rel="icon" type="image/png" href="/public/optimal-logo.png">
+    <link rel="shortcut icon" type="image/png" href="/public/optimal-logo.png">
+    <meta property="og:title" content="GRC Solutions - Optimal">
+    <meta property="og:description" content="Governance, risk management, and compliance solutions with continuous ATO.">
     <meta property="og:image" content="https://gooptimal.io/public/optimal-social-preview.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:site_name" content="Optimal">
-    
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://gooptimal.io/grc.html">
-    <meta property="twitter:title" content="GRC Solutions - Optimal | Governance, Risk & Compliance">
-    <meta property="twitter:description" content="Governance, risk management, and compliance solutions with continuous ATO, FedRAMP preparation, and comprehensive POA&M tracking for enterprise organizations.">
-    <meta property="twitter:image" content="https://gooptimal.io/public/optimal-social-preview.png">
-    
-    <!-- Additional SEO -->
-    <meta name="author" content="Optimal">
-    <meta name="keywords" content="GRC, governance risk compliance, FedRAMP, CMMC, continuous ATO, POA&M, compliance automation, regulatory compliance, security compliance, enterprise governance, risk management">
-    <link rel="canonical" href="https://gooptimal.io/grc.html">
-    
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "name": "GRC Solutions",
-        "description": "Governance, risk management, and compliance solutions with continuous ATO and FedRAMP preparation.",
-        "provider": {
-            "@type": "Organization",
-            "name": "Optimal",
-            "url": "https://gooptimal.io"
-        },
-        "serviceType": "Governance, Risk & Compliance",
-        "areaServed": "Worldwide",
-        "hasOfferCatalog": {
-            "@type": "OfferCatalog",
-            "name": "GRC Services",
-            "itemListElement": [
-                {
-                    "@type": "Offer",
-                    "itemOffered": {
-                        "@type": "Service",
-                        "name": "FedRAMP and CMMC Audit Preparation"
-                    }
-                },
-                {
-                    "@type": "Offer",
-                    "itemOffered": {
-                        "@type": "Service",
-                        "name": "Continuous ATO Implementation"
-                    }
-                },
-                {
-                    "@type": "Offer",
-                    "itemOffered": {
-                        "@type": "Service",
-                        "name": "Compliance Automation"
-                    }
-                },
-                {
-                    "@type": "Offer",
-                    "itemOffered": {
-                        "@type": "Service",
-                        "name": "POA&M Tracking"
-                    }
-                }
-            ]
-        }
-    }
-    </script>
-    
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        primary: '#000000',
-                        secondary: '#1e40af',
-                        accent: '#3b82f6'
+                        'cyber-black': '#0a0a0f',
+                        'cyber-dark': '#0d1117',
+                        'cyber-gray': '#161b22',
+                        'cyber-border': '#21262d',
+                        'cyber-green': '#00ff88',
+                        'cyber-green-dim': '#00cc6a',
+                        'cyber-blue': '#00d4ff',
+                        'cyber-amber': '#ffb800',
+                        'cyber-red': '#ff3366',
+                    },
+                    fontFamily: {
+                        'mono': ['JetBrains Mono', 'monospace'],
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
                     }
                 }
             }
         }
     </script>
+    <style>
+        body { background: #0a0a0f; overflow-x: hidden; }
+        .grid-bg { background-image: linear-gradient(rgba(255, 184, 0, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 184, 0, 0.03) 1px, transparent 1px); background-size: 50px 50px; }
+        .nav-fixed { backdrop-filter: blur(12px); background: rgba(10, 10, 15, 0.9); border-bottom: 1px solid rgba(33, 38, 45, 0.5); }
+        .nav-link { color: #8b949e; transition: color 0.3s ease; }
+        .nav-link:hover { color: #00ff88; }
+        .btn-platform { background: linear-gradient(135deg, #00ff88 0%, #00cc6a 100%); color: #0a0a0f; font-weight: 600; transition: all 0.3s ease; }
+        .btn-platform:hover { transform: translateY(-2px); box-shadow: 0 10px 40px rgba(0, 255, 136, 0.3); }
+        .btn-outline { border: 1px solid #00ff88; color: #00ff88; transition: all 0.3s ease; background: transparent; }
+        .btn-outline:hover { background: rgba(0, 255, 136, 0.1); }
+        .section-label { font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: #ffb800; }
+        .section-label::before { content: '// '; opacity: 0.5; }
+        .feature-card { background: rgba(13, 17, 23, 0.8); border: 1px solid #21262d; border-radius: 8px; padding: 24px; transition: all 0.3s ease; }
+        .feature-card:hover { border-color: #ffb800; transform: translateY(-4px); }
+        .metric-card { background: linear-gradient(135deg, rgba(255, 184, 0, 0.05) 0%, rgba(0, 212, 255, 0.02) 100%); border: 1px solid rgba(255, 184, 0, 0.2); }
+        .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+    </style>
 </head>
-<body class="bg-white">
+<body class="bg-cyber-black text-gray-100 font-sans antialiased">
     <!-- Navigation -->
-    <nav class="fixed w-full bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex items-center space-x-2">
-                    <img src="public/optimal-logo.png" alt="Optimal Logo" class="w-8 h-8">
-                    <span class="text-xl font-bold text-black">OPTIMAL</span>
-                </div>
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="index.html" class="text-gray-700 hover:text-blue-600 transition-colors">Home</a>
-                    <a href="index.html#about" class="text-gray-700 hover:text-blue-600 transition-colors">About</a>
-                    <a href="index.html#services" class="text-gray-700 hover:text-blue-600 transition-colors">Services</a>
-                    <a href="index.html#team" class="text-gray-700 hover:text-blue-600 transition-colors">Team</a>
-                    <a href="https://docs.gooptimal.io/" target="_blank" class="text-gray-700 hover:text-blue-600 transition-colors">Docs</a>
-                    <a href="index.html#contact" class="bg-black text-white px-6 py-2 rounded-lg hover:bg-gray-800 transition-colors">Contact</a>
+    <nav class="fixed top-0 left-0 right-0 z-50 nav-fixed">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="flex items-center gap-3">
+                    <img src="/public/optimal-logo.png" alt="Optimal Logo" class="w-10 h-10">
+                    <span class="font-bold text-xl text-white">Optimal</span>
+                </a>
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="index.html#platform" class="nav-link font-mono text-sm">Platform</a>
+                    <a href="index.html#capabilities" class="nav-link font-mono text-sm">Capabilities</a>
+                    <a href="index.html#team" class="nav-link font-mono text-sm">Team</a>
+                    <a href="https://docs.gooptimal.io/" target="_blank" class="nav-link font-mono text-sm">Docs</a>
+                    <a href="demo.html" class="btn-platform text-sm px-6 py-2 rounded">Request Demo</a>
                 </div>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="pt-20 pb-16 bg-gradient-to-br from-black to-blue-600 text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center">
-                <h1 class="text-5xl font-bold mb-6">GRC</h1>
-                <p class="text-xl text-blue-100 max-w-3xl mx-auto">
-                    Governance, risk management, and compliance solutions with continuous ATO and FedRAMP preparation.
-                </p>
+    <section class="relative pt-32 pb-20 grid-bg">
+        <div class="absolute inset-0 bg-gradient-to-b from-cyber-black via-transparent to-cyber-black"></div>
+        <div class="absolute top-1/4 right-1/4 w-96 h-96 bg-cyber-amber/5 rounded-full blur-3xl"></div>
+        <div class="relative max-w-7xl mx-auto px-6 text-center">
+            <span class="section-label mb-4 inline-block">Governance, Risk & Compliance</span>
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                <span class="text-white">Streamlined</span><br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyber-amber to-cyber-green">GRC Solutions</span>
+            </h1>
+            <p class="text-xl text-gray-400 max-w-3xl mx-auto mb-10">
+                Governance, risk management, and compliance solutions with continuous ATO, FedRAMP preparation, and comprehensive POA&M tracking.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="demo.html" class="btn-platform text-lg px-8 py-4 rounded">Request Demo</a>
+                <a href="https://github.com/optimal-cyber/launchpad" target="_blank" class="btn-outline text-lg px-8 py-4 rounded">Deploy Free</a>
             </div>
         </div>
     </section>
 
-    <!-- Content Section -->
-    <section class="py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- Dashboard Showcase -->
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-black mb-6">Live Plan of Action and Milestones (POA&M) Dashboard</h2>
-                <p class="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-                    See our GRC platform in action with comprehensive POA&M tracking, vulnerability remediation, and compliance management.
+    <!-- Key Metrics -->
+    <section class="py-16 bg-cyber-dark border-y border-cyber-border/30">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-6">
+                <div class="metric-card rounded-xl p-6 text-center">
+                    <div class="text-4xl font-bold text-cyber-amber mb-2">FedRAMP</div>
+                    <div class="text-gray-400 text-sm">Ready</div>
+                </div>
+                <div class="metric-card rounded-xl p-6 text-center">
+                    <div class="text-4xl font-bold text-cyber-green mb-2">CMMC</div>
+                    <div class="text-gray-400 text-sm">Compliant</div>
+                </div>
+                <div class="metric-card rounded-xl p-6 text-center">
+                    <div class="text-4xl font-bold text-cyber-blue mb-2">CATO</div>
+                    <div class="text-gray-400 text-sm">Continuous ATO</div>
+                </div>
+                <div class="metric-card rounded-xl p-6 text-center">
+                    <div class="text-4xl font-bold text-purple-400 mb-2">OSCAL</div>
+                    <div class="text-gray-400 text-sm">SSP Support</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard Showcase -->
+    <section class="py-20 bg-cyber-black">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-12 fade-in">
+                <span class="section-label mb-4 block">POA&M Dashboard</span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    <span class="text-white">Plan of Action &</span>
+                    <span class="text-cyber-amber">Milestones</span>
+                </h2>
+                <p class="text-lg text-gray-400 max-w-2xl mx-auto">
+                    Comprehensive POA&M tracking with vulnerability remediation and compliance management.
                 </p>
-                <div class="bg-gray-900 rounded-2xl p-4 shadow-2xl">
-                    <img src="public/poam.png" alt="POA&M Dashboard" class="w-full rounded-lg shadow-lg">
-                    <div class="mt-4 text-center">
-                        <p class="text-gray-400 text-sm">Live dashboard showing 3 total POA&M items with 1 open, 1 in progress, and 1 resolved</p>
+            </div>
+            <div class="bg-cyber-gray border border-cyber-border rounded-xl overflow-hidden mb-16 fade-in">
+                <div class="bg-cyber-dark px-4 py-3 border-b border-cyber-border flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                        <span class="w-3 h-3 rounded-full bg-cyber-red"></span>
+                        <span class="w-3 h-3 rounded-full bg-cyber-amber"></span>
+                        <span class="w-3 h-3 rounded-full bg-cyber-green"></span>
                     </div>
+                    <span class="font-mono text-xs text-gray-500">POA&M Dashboard</span>
+                </div>
+                <img src="/public/poam.png" alt="POA&M Dashboard" class="w-full">
+                <div class="px-6 py-4 bg-cyber-dark/50">
+                    <p class="text-gray-400 text-sm text-center">Live dashboard showing 3 total POA&M items with 1 open, 1 in progress, and 1 resolved</p>
                 </div>
             </div>
 
-            <!-- Cyber POA&M Dashboard -->
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-black mb-6">Cyber POA&M Management</h2>
-                <p class="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+            <!-- Cyber POA&M -->
+            <div class="text-center mb-12 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    <span class="text-white">Cyber POA&M</span>
+                    <span class="text-cyber-blue">Management</span>
+                </h2>
+                <p class="text-lg text-gray-400 max-w-2xl mx-auto">
                     Comprehensive Plan of Action and Milestones tracking with severity-based prioritization, assignment tracking, and due date management.
                 </p>
-                <div class="bg-gray-900 rounded-2xl p-4 shadow-2xl">
-                    <img src="public/optimal-cato.png" alt="Cyber POA&M Dashboard" class="w-full rounded-lg shadow-lg">
-                    <div class="mt-4 text-center">
-                        <p class="text-gray-400 text-sm">Cyber POA&M dashboard showing items by control ID, severity, status, and due dates with integrated OSCAL SSP and Authorization management</p>
+            </div>
+            <div class="bg-cyber-gray border border-cyber-border rounded-xl overflow-hidden fade-in">
+                <div class="bg-cyber-dark px-4 py-3 border-b border-cyber-border flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                        <span class="w-3 h-3 rounded-full bg-cyber-red"></span>
+                        <span class="w-3 h-3 rounded-full bg-cyber-amber"></span>
+                        <span class="w-3 h-3 rounded-full bg-cyber-green"></span>
                     </div>
+                    <span class="font-mono text-xs text-gray-500">Cyber POA&M</span>
+                </div>
+                <img src="/public/optimal-cato.png" alt="Cyber POA&M Dashboard" class="w-full">
+                <div class="px-6 py-4 bg-cyber-dark/50">
+                    <p class="text-gray-400 text-sm text-center">Cyber POA&M dashboard showing items by control ID, severity, status, and due dates with integrated OSCAL SSP and Authorization management</p>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div class="grid lg:grid-cols-2 gap-12">
-                <div>
-                    <h2 class="text-3xl font-bold text-black mb-6">Comprehensive GRC Solutions</h2>
-                    <p class="text-gray-600 mb-6">
-                        Our GRC services provide end-to-end governance, risk management, and compliance solutions, 
-                        helping organizations navigate complex regulatory requirements and maintain continuous compliance.
+    <!-- Features Grid -->
+    <section class="py-20 bg-cyber-dark">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-12 items-start">
+                <div class="fade-in">
+                    <span class="section-label mb-4 block">GRC Capabilities</span>
+                    <h2 class="text-3xl font-bold mb-6">
+                        <span class="text-white">Comprehensive GRC</span>
+                        <span class="text-cyber-amber">Solutions</span>
+                    </h2>
+                    <p class="text-gray-400 mb-8">
+                        Our GRC services provide end-to-end governance, risk management, and compliance solutions, helping organizations navigate complex regulatory requirements.
                     </p>
-                    <ul class="space-y-4 text-gray-600">
-                        <li class="flex items-start">
-                            <svg class="w-6 h-6 text-blue-600 mr-3 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                            </svg>
-                            FedRAMP and CMMC audit preparation
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="w-6 h-6 text-blue-600 mr-3 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                            </svg>
-                            Continuous ATO (CATO) implementation
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="w-6 h-6 text-blue-600 mr-3 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                            </svg>
-                            Compliance automation and monitoring
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="w-6 h-6 text-blue-600 mr-3 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                            </svg>
-                            System architecture design and optimization
-                        </li>
-                    </ul>
-                </div>
-                <div class="bg-gray-50 rounded-2xl p-8">
-                    <h3 class="text-2xl font-bold text-black mb-4">GRC Services</h3>
                     <div class="space-y-4">
-                        <div class="bg-white rounded-lg p-4 border border-gray-200">
-                            <h4 class="font-semibold text-black mb-2">Audit & Certification Prep</h4>
-                            <p class="text-gray-600 text-sm">Comprehensive preparation for FedRAMP and CMMC audits</p>
+                        <div class="flex items-start gap-4">
+                            <div class="w-8 h-8 bg-cyber-amber/10 rounded flex items-center justify-center flex-shrink-0 mt-1">
+                                <svg class="w-4 h-4 text-cyber-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-white mb-1">FedRAMP and CMMC Audit Preparation</h4>
+                                <p class="text-gray-400 text-sm">Complete preparation for federal compliance audits</p>
+                            </div>
                         </div>
-                        <div class="bg-white rounded-lg p-4 border border-gray-200">
-                            <h4 class="font-semibold text-black mb-2">Compliance Automation</h4>
-                            <p class="text-gray-600 text-sm">Automated assessments and continuous monitoring</p>
+                        <div class="flex items-start gap-4">
+                            <div class="w-8 h-8 bg-cyber-amber/10 rounded flex items-center justify-center flex-shrink-0 mt-1">
+                                <svg class="w-4 h-4 text-cyber-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-white mb-1">Continuous ATO (CATO) Implementation</h4>
+                                <p class="text-gray-400 text-sm">Automate your authority to operate process</p>
+                            </div>
                         </div>
-                        <div class="bg-white rounded-lg p-4 border border-gray-200">
-                            <h4 class="font-semibold text-black mb-2">System Architecture</h4>
-                            <p class="text-gray-600 text-sm">Secure and scalable architecture design</p>
+                        <div class="flex items-start gap-4">
+                            <div class="w-8 h-8 bg-cyber-amber/10 rounded flex items-center justify-center flex-shrink-0 mt-1">
+                                <svg class="w-4 h-4 text-cyber-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-white mb-1">Compliance Automation & Monitoring</h4>
+                                <p class="text-gray-400 text-sm">Automated assessments and continuous compliance tracking</p>
+                            </div>
                         </div>
+                    </div>
+                </div>
+                <div class="space-y-6 fade-in">
+                    <div class="feature-card">
+                        <h3 class="text-xl font-bold text-white mb-3">Audit & Certification Prep</h3>
+                        <p class="text-gray-400 text-sm">Comprehensive preparation for FedRAMP, CMMC, and SOC 2 audits with automated evidence collection</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3 class="text-xl font-bold text-white mb-3">Compliance Automation</h3>
+                        <p class="text-gray-400 text-sm">Automated assessments, continuous monitoring, and real-time compliance dashboards</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3 class="text-xl font-bold text-white mb-3">System Architecture</h3>
+                        <p class="text-gray-400 text-sm">Secure and scalable architecture design with OSCAL SSP generation</p>
                     </div>
                 </div>
             </div>
@@ -219,30 +240,48 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="py-20 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl font-bold text-black mb-6">Ready to Streamline Your GRC Processes?</h2>
-            <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+    <section class="py-20 bg-cyber-black">
+        <div class="relative max-w-4xl mx-auto px-6 text-center">
+            <span class="section-label mb-4 block">Get Started</span>
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">
+                <span class="text-white">Ready to Streamline Your</span><br>
+                <span class="text-cyber-amber">GRC Processes?</span>
+            </h2>
+            <p class="text-lg text-gray-400 mb-10 max-w-2xl mx-auto">
                 Let's discuss how Optimal can help you achieve and maintain compliance while optimizing your governance and risk management processes.
             </p>
-            <a href="index.html#contact" class="bg-black text-white px-8 py-4 rounded-lg font-semibold hover:bg-gray-800 transition-colors">
-                Get Started
-            </a>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="demo.html" class="btn-platform text-lg px-8 py-4 rounded">Request Demo</a>
+                <a href="https://github.com/optimal-cyber/launchpad" target="_blank" class="btn-outline text-lg px-8 py-4 rounded">Deploy on GitHub</a>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-black text-white py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center">
-                <div class="flex items-center justify-center space-x-2 mb-6">
-                    <img src="public/optimal-logo.png" alt="Optimal Logo" class="w-8 h-8">
-                    <span class="text-xl font-bold">OPTIMAL</span>
+    <footer class="bg-cyber-black border-t border-cyber-border py-12">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                <div class="flex items-center gap-3">
+                    <img src="/public/optimal-logo.png" alt="Optimal Logo" class="w-8 h-8">
+                    <span class="font-bold text-lg text-white">Optimal</span>
                 </div>
-                <p class="text-gray-400 mb-4">Secure. Accelerate. Innovate.</p>
-                <p class="text-gray-500 text-sm">Copyright © 2025 Optimal - All Rights Reserved.</p>
+                <p class="text-gray-500 text-sm font-mono">&copy; 2025 Optimal. All rights reserved.</p>
+                <div class="flex items-center gap-4">
+                    <a href="https://github.com/optimal-cyber" target="_blank" class="text-gray-400 hover:text-cyber-green transition-colors">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    </a>
+                    <a href="https://linkedin.com/company/optimal-cyber" target="_blank" class="text-gray-400 hover:text-cyber-green transition-colors">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    </a>
+                </div>
             </div>
         </div>
     </footer>
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
 </body>
-</html> 
+</html>
