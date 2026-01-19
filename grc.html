@@ -57,6 +57,135 @@
         .metric-card { background: linear-gradient(135deg, rgba(255, 184, 0, 0.05) 0%, rgba(0, 212, 255, 0.02) 100%); border: 1px solid rgba(255, 184, 0, 0.2); }
         .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
         .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+        /* Scan Reveal Effect */
+        .scan-container {
+            position: relative;
+            overflow: hidden;
+        }
+        .scan-container img {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .scan-container.scanned img {
+            opacity: 1;
+        }
+        .scan-line {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, #ffb800, #00d4ff, #ffb800, transparent);
+            box-shadow: 0 0 20px #ffb800, 0 0 40px #ffb800, 0 0 60px rgba(255, 184, 0, 0.5);
+            transform: translateY(-100%);
+            z-index: 10;
+        }
+        .scan-container.scanning .scan-line {
+            animation: scanDown 2s ease-in-out forwards;
+        }
+        @keyframes scanDown {
+            0% { transform: translateY(-4px); }
+            100% { transform: translateY(calc(100% * var(--scan-height, 300))); }
+        }
+        .scan-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg, rgba(255, 184, 0, 0.03) 0%, transparent 100%);
+            z-index: 5;
+            opacity: 0;
+        }
+        .scan-container.scanning .scan-overlay {
+            animation: overlayPulse 2s ease-in-out;
+        }
+        @keyframes overlayPulse {
+            0%, 100% { opacity: 0; }
+            50% { opacity: 1; }
+        }
+        .scan-reveal {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: #0a0a0f;
+            z-index: 3;
+            transform-origin: top;
+        }
+        .scan-container.scanning .scan-reveal {
+            animation: revealDown 2s ease-in-out forwards;
+        }
+        @keyframes revealDown {
+            0% { transform: scaleY(1); }
+            100% { transform: scaleY(0); }
+        }
+        .scan-data {
+            position: absolute;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 10px;
+            color: #ffb800;
+            z-index: 15;
+            opacity: 0;
+            text-shadow: 0 0 10px #ffb800;
+        }
+        .scan-container.scanning .scan-data {
+            animation: dataFlash 0.5s ease-out forwards;
+        }
+        .scan-data:nth-child(1) { top: 20%; left: 10%; animation-delay: 0.4s; }
+        .scan-data:nth-child(2) { top: 40%; right: 15%; animation-delay: 0.8s; }
+        .scan-data:nth-child(3) { top: 60%; left: 20%; animation-delay: 1.2s; }
+        .scan-data:nth-child(4) { top: 80%; right: 10%; animation-delay: 1.6s; }
+        @keyframes dataFlash {
+            0% { opacity: 0; transform: scale(0.5); }
+            50% { opacity: 1; transform: scale(1.2); }
+            100% { opacity: 0; transform: scale(1); }
+        }
+        .scan-status {
+            position: absolute;
+            bottom: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            color: #ffb800;
+            z-index: 20;
+            opacity: 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .scan-container.scanning .scan-status {
+            animation: statusType 2s steps(20) forwards;
+        }
+        @keyframes statusType {
+            0% { opacity: 1; }
+            100% { opacity: 1; }
+        }
+        .scan-complete {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 14px;
+            color: #ffb800;
+            z-index: 25;
+            opacity: 0;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 0 0 20px #ffb800;
+        }
+        .scan-container.scanned .scan-complete {
+            animation: completeFlash 0.8s ease-out forwards;
+            animation-delay: 0.1s;
+        }
+        @keyframes completeFlash {
+            0% { opacity: 1; transform: translate(-50%, -50%) scale(1.5); }
+            50% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+            100% { opacity: 0; transform: translate(-50%, -50%) scale(1); }
+        }
     </style>
 </head>
 <body class="bg-cyber-black text-gray-100 font-sans antialiased">
@@ -147,7 +276,18 @@
                     </div>
                     <span class="font-mono text-xs text-gray-500">POA&M Dashboard</span>
                 </div>
-                <img src="/public/poam.png" alt="POA&M Dashboard" class="w-full">
+                <div class="scan-container" data-scan>
+                    <div class="scan-line"></div>
+                    <div class="scan-overlay"></div>
+                    <div class="scan-reveal"></div>
+                    <span class="scan-data">POA&M: 3 ITEMS</span>
+                    <span class="scan-data">OPEN: 1</span>
+                    <span class="scan-data">IN PROGRESS: 1</span>
+                    <span class="scan-data">ANALYZING...</span>
+                    <span class="scan-status">Loading compliance data...</span>
+                    <span class="scan-complete">POA&M LOADED</span>
+                    <img src="/public/poam.png" alt="POA&M Dashboard" class="w-full">
+                </div>
                 <div class="px-6 py-4 bg-cyber-dark/50">
                     <p class="text-gray-400 text-sm text-center">Live dashboard showing 3 total POA&M items with 1 open, 1 in progress, and 1 resolved</p>
                 </div>
@@ -172,7 +312,18 @@
                     </div>
                     <span class="font-mono text-xs text-gray-500">Cyber POA&M</span>
                 </div>
-                <img src="/public/poam-updated.png" alt="Cyber POA&M Dashboard" class="w-full">
+                <div class="scan-container" data-scan>
+                    <div class="scan-line"></div>
+                    <div class="scan-overlay"></div>
+                    <div class="scan-reveal"></div>
+                    <span class="scan-data">OSCAL: READY</span>
+                    <span class="scan-data">CONTROLS: OK</span>
+                    <span class="scan-data">FedRAMP</span>
+                    <span class="scan-data">VALIDATING...</span>
+                    <span class="scan-status">Verifying compliance controls...</span>
+                    <span class="scan-complete">ATO READY</span>
+                    <img src="/public/poam-updated.png" alt="Cyber POA&M Dashboard" class="w-full">
+                </div>
                 <div class="px-6 py-4 bg-cyber-dark/50">
                     <p class="text-gray-400 text-sm text-center">Cyber POA&M dashboard showing items by control ID, severity, status, and due dates with integrated OSCAL SSP and Authorization management</p>
                 </div>
@@ -284,6 +435,23 @@
             entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
         }, { threshold: 0.1 });
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Scan reveal animation
+        const scanObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !entry.target.classList.contains('scanned')) {
+                    const container = entry.target;
+                    const height = container.offsetHeight;
+                    container.style.setProperty('--scan-height', height / 4);
+                    container.classList.add('scanning');
+                    setTimeout(() => {
+                        container.classList.remove('scanning');
+                        container.classList.add('scanned');
+                    }, 2000);
+                }
+            });
+        }, { threshold: 0.3 });
+        document.querySelectorAll('[data-scan]').forEach(el => scanObserver.observe(el));
     </script>
 </body>
 </html>
