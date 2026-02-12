@@ -174,7 +174,7 @@ For questions about the website or deployment:
 
 ## 📄 License
 
-Copyright © 2025 Optimal - All Rights Reserved.
+Copyright © 2026 Optimal - All Rights Reserved.
 
 ---
 
