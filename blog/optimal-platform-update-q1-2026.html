@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Platform Update: What's New in Optimal Q1 2026 | Optimal Blog</title>
+    <meta name="description" content="Runtime threat detection, enhanced SBOM dependency graphs, STIG automation improvements, AI security enhancements, and more. Everything shipping in Optimal Q1 2026.">
+    <meta name="keywords" content="Optimal platform update, runtime threat detection, SBOM dependency graph, STIG automation, AI security, DevSecOps, Q1 2026">
+    <meta name="author" content="Optimal Team">
+    <link rel="canonical" href="https://gooptimal.io/blog/optimal-platform-update-q1-2026">
+
+    <link rel="icon" type="image/png" href="/public/optimal-logo.png">
+    <link rel="shortcut icon" type="image/png" href="/public/optimal-logo.png">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Platform Update: What's New in Optimal Q1 2026">
+    <meta property="og:description" content="Runtime threat detection, enhanced SBOM dependency graphs, STIG automation improvements, and more. A look at everything shipping in Optimal this quarter.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://gooptimal.io/blog/optimal-platform-update-q1-2026">
+    <meta property="og:image" content="https://gooptimal.io/public/optimal-social-preview.png">
+    <meta property="og:site_name" content="Optimal">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Platform Update: What's New in Optimal Q1 2026">
+    <meta name="twitter:description" content="Runtime threat detection, enhanced SBOM dependency graphs, STIG automation improvements, and more. Everything shipping in Optimal Q1 2026.">
+    <meta name="twitter:image" content="https://gooptimal.io/public/optimal-social-preview.png">
+
+    <!-- Structured Data - BlogPosting -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Platform Update: What's New in Optimal Q1 2026",
+        "description": "Runtime threat detection, enhanced SBOM dependency graphs, STIG automation improvements, AI security enhancements, and more. Everything shipping in Optimal Q1 2026.",
+        "datePublished": "2026-01-05",
+        "dateModified": "2026-01-05",
+        "author": {
+            "@type": "Organization",
+            "name": "Optimal Team",
+            "url": "https://gooptimal.io"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Optimal",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://gooptimal.io/public/optimal-logo.png"
+            }
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://gooptimal.io/blog/optimal-platform-update-q1-2026"
+        },
+        "url": "https://gooptimal.io/blog/optimal-platform-update-q1-2026",
+        "image": "https://gooptimal.io/public/optimal-social-preview.png",
+        "articleSection": "Products",
+        "wordCount": 800
+    }
+    </script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'cyber-black': '#0a0a0f',
+                        'cyber-dark': '#0d1117',
+                        'cyber-gray': '#161b22',
+                        'cyber-border': '#21262d',
+                        'cyber-green': '#00ff88',
+                        'cyber-green-dim': '#00cc6a',
+                        'cyber-blue': '#00d4ff',
+                        'cyber-amber': '#ffb800',
+                        'cyber-red': '#ff3366',
+                        'cyber-purple': '#a855f7',
+                    },
+                    fontFamily: {
+                        'mono': ['JetBrains Mono', 'monospace'],
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background: #0a0a0f; overflow-x: hidden; }
+        .grid-bg { background-image: linear-gradient(rgba(0, 212, 255, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 212, 255, 0.03) 1px, transparent 1px); background-size: 50px 50px; }
+        .nav-fixed { backdrop-filter: blur(12px); background: rgba(10, 10, 15, 0.9); border-bottom: 1px solid rgba(33, 38, 45, 0.5); }
+        .nav-link { color: #8b949e; transition: color 0.3s ease; }
+        .nav-link:hover { color: #00ff88; }
+        .btn-platform { background: linear-gradient(135deg, #00ff88 0%, #00cc6a 100%); color: #0a0a0f; font-weight: 600; transition: all 0.3s ease; }
+        .btn-platform:hover { transform: translateY(-2px); box-shadow: 0 10px 40px rgba(0, 255, 136, 0.3); }
+        .btn-outline { border: 1px solid #00ff88; color: #00ff88; transition: all 0.3s ease; background: transparent; }
+        .btn-outline:hover { background: rgba(0, 255, 136, 0.1); }
+        .section-label { font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: #00d4ff; }
+        .section-label::before { content: '// '; opacity: 0.5; }
+        .badge-green { background: rgba(0, 255, 136, 0.1); color: #00ff88; border: 1px solid rgba(0, 255, 136, 0.2); }
+        .badge-blue { background: rgba(0, 212, 255, 0.1); color: #00d4ff; border: 1px solid rgba(0, 212, 255, 0.2); }
+        .badge-purple { background: rgba(168, 85, 247, 0.1); color: #a855f7; border: 1px solid rgba(168, 85, 247, 0.2); }
+        .blog-card { background: rgba(13, 17, 23, 0.8); border: 1px solid #21262d; border-radius: 8px; transition: all 0.3s ease; overflow: hidden; }
+        .blog-card:hover { border-color: #00ff88; transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0, 255, 136, 0.08); }
+        .blog-card:hover .card-title { color: #00ff88; }
+        .card-thumb-green { background: linear-gradient(135deg, rgba(0, 255, 136, 0.15) 0%, rgba(0, 204, 106, 0.05) 100%); }
+        .card-thumb-blue { background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(0, 150, 200, 0.05) 100%); }
+        .card-thumb-purple { background: linear-gradient(135deg, rgba(168, 85, 247, 0.15) 0%, rgba(130, 60, 200, 0.05) 100%); }
+        .card-thumb-overlay { background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px); background-size: 20px 20px; }
+        .prose-cyber { color: #9ca3af; line-height: 1.8; }
+        .prose-cyber h2 { color: #fff; font-size: 1.5rem; font-weight: 700; margin-top: 2.5rem; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid #21262d; }
+        .prose-cyber h3 { color: #e5e7eb; font-size: 1.25rem; font-weight: 600; margin-top: 2rem; margin-bottom: 0.75rem; }
+        .prose-cyber p { margin-bottom: 1.25rem; }
+        .prose-cyber a { color: #00d4ff; text-decoration: underline; text-decoration-color: rgba(0,212,255,0.3); }
+        .prose-cyber a:hover { text-decoration-color: #00d4ff; }
+        .prose-cyber ul, .prose-cyber ol { margin-bottom: 1.25rem; padding-left: 1.5rem; }
+        .prose-cyber li { margin-bottom: 0.5rem; }
+        .prose-cyber li::marker { color: #00d4ff; }
+        .prose-cyber strong { color: #e5e7eb; }
+        .prose-cyber blockquote { border-left: 3px solid #00d4ff; padding: 1rem 1.5rem; margin: 1.5rem 0; background: rgba(0, 212, 255, 0.03); border-radius: 0 8px 8px 0; }
+        .prose-cyber blockquote p { margin-bottom: 0; color: #d1d5db; }
+        .prose-cyber code { font-family: 'JetBrains Mono', monospace; background: rgba(22, 27, 34, 0.8); border: 1px solid #21262d; padding: 2px 6px; border-radius: 4px; font-size: 0.875rem; color: #00d4ff; }
+        .prose-cyber pre { background: #161b22; border: 1px solid #21262d; border-radius: 8px; padding: 1.25rem; margin: 1.5rem 0; overflow-x: auto; }
+        .prose-cyber pre code { background: none; border: none; padding: 0; color: #e5e7eb; }
+        .line-clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+        .line-clamp-3 { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+        .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+    </style>
+    <!-- Apollo Tracker -->
+    <script>function initApollo(){var n=Math.random().toString(36).substring(7),o=document.createElement("script");
+o.src="https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache="+n,o.async=!0,o.defer=!0,
+o.onload=function(){window.trackingFunctions.onLoad({appId:"698c8b7248beb80019d50b7e"})},
+document.head.appendChild(o)}initApollo();</script>
+</head>
+<body class="bg-cyber-black text-gray-100 font-sans antialiased">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 nav-fixed">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="/index.html" class="flex items-center gap-3">
+                    <img src="/public/optimal-logo.png" alt="Optimal Logo" class="w-10 h-10">
+                    <span class="font-bold text-xl text-white">Optimal</span>
+                </a>
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="/platform" class="nav-link font-mono text-sm">Platform</a>
+                    <a href="/integrations" class="nav-link font-mono text-sm">Integrations</a>
+                    <a href="/#capabilities" class="nav-link font-mono text-sm">Capabilities</a>
+                    <a href="/#team" class="nav-link font-mono text-sm">Team</a>
+                    <a href="https://docs.gooptimal.io/" target="_blank" class="nav-link font-mono text-sm">Docs</a>
+                    <a href="/blog.html" class="nav-link font-mono text-sm" style="color: #00ff88;">Blog</a>
+                    <a href="https://app.gooptimal.io" target="_blank" class="nav-link font-mono text-sm">Login</a>
+                    <a href="/demo" class="btn-platform text-sm px-6 py-2 rounded">Request Demo</a>
+                </div>
+                <button id="mobile-menu-btn" class="md:hidden text-gray-400 hover:text-white">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t border-cyber-border pt-4">
+                <div class="flex flex-col gap-4">
+                    <a href="/platform" class="nav-link font-mono text-sm">Platform</a>
+                    <a href="/integrations" class="nav-link font-mono text-sm">Integrations</a>
+                    <a href="/#capabilities" class="nav-link font-mono text-sm">Capabilities</a>
+                    <a href="/#team" class="nav-link font-mono text-sm">Team</a>
+                    <a href="https://docs.gooptimal.io/" target="_blank" class="nav-link font-mono text-sm">Docs</a>
+                    <a href="/blog.html" class="nav-link font-mono text-sm" style="color: #00ff88;">Blog</a>
+                    <a href="https://app.gooptimal.io" target="_blank" class="nav-link font-mono text-sm">Login</a>
+                    <a href="/demo" class="btn-platform text-sm px-6 py-3 text-center mt-2 rounded">Request Demo</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <section class="pt-24 pb-0">
+        <div class="max-w-3xl mx-auto px-6">
+            <nav class="flex items-center gap-2 font-mono text-xs text-gray-500">
+                <a href="/index.html" class="hover:text-cyber-green transition-colors">Home</a>
+                <span>/</span>
+                <a href="/blog.html" class="hover:text-cyber-green transition-colors">Blog</a>
+                <span>/</span>
+                <span class="text-gray-400">Platform Update Q1 2026</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Article Hero -->
+    <section class="pt-8 pb-12">
+        <div class="max-w-3xl mx-auto px-6">
+            <div class="mb-6">
+                <span class="badge-blue font-mono text-xs px-3 py-1 rounded">Products</span>
+            </div>
+            <h1 class="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">Platform Update: What's New in Optimal Q1 2026</h1>
+            <div class="flex flex-wrap items-center gap-4 text-sm text-gray-500 font-mono mb-8">
+                <span>Jan 5, 2026</span>
+                <span class="text-cyber-border">|</span>
+                <span>Optimal Team</span>
+                <span class="text-cyber-border">|</span>
+                <span>6 min read</span>
+            </div>
+            <div class="card-thumb-blue card-thumb-overlay h-64 rounded-xl flex items-center justify-center">
+                <svg class="w-20 h-20 opacity-20 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/></svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- Article Body -->
+    <section class="pb-20">
+        <div class="max-w-3xl mx-auto px-6">
+            <article class="prose-cyber">
+                <p>Q1 2026 marks one of the most significant releases in the history of the Optimal platform. Over the past several months, our engineering team has been heads-down building the capabilities that security teams and developers have been asking for -- from real-time runtime monitoring to dramatically improved compliance automation workflows. This update covers the major features and improvements shipping this quarter, along with a preview of what we have planned for Q2.</p>
+
+                <p>Whether you are a security engineer tracking vulnerabilities across a containerized microservices architecture, a compliance lead preparing for an ATO assessment, or a developer integrating security checks into your CI/CD pipeline, there is something meaningful for you in this release.</p>
+
+                <h2>Runtime Threat Detection</h2>
+
+                <p>The most requested feature of the past year is here. Optimal now provides <strong>real-time runtime threat detection</strong> for containers and workloads running in Kubernetes environments. Built on eBPF (extended Berkeley Packet Filter) technology, our runtime agent operates at the kernel level to observe system calls, network connections, and file access patterns without introducing meaningful performance overhead.</p>
+
+                <p>What makes this different from existing runtime security tools is the integration with the rest of the Optimal platform. When our runtime agent detects anomalous behavior -- such as an unexpected outbound network connection, a privilege escalation attempt, or a binary execution that deviates from the container's baseline profile -- it automatically correlates the event with vulnerability data already tracked in your Optimal workspace. If a container image has a known CVE that matches the observed exploit pattern, the alert is enriched with that context before it reaches your security team.</p>
+
+                <ul>
+                    <li><strong>eBPF-based kernel instrumentation</strong> with less than 1% CPU overhead in production benchmarks</li>
+                    <li><strong>Behavioral baselining</strong> that learns normal container activity during a configurable observation period</li>
+                    <li><strong>Automatic CVE correlation</strong> linking runtime events to known vulnerabilities in your SBOM</li>
+                    <li><strong>Kubernetes-native deployment</strong> via Helm chart with support for EKS, GKE, AKS, and on-premise clusters</li>
+                    <li><strong>Real-time alerting</strong> through Slack, PagerDuty, and webhook integrations</li>
+                </ul>
+
+                <p>Runtime detection is available today in beta for teams on the Enterprise plan. General availability is expected by mid-March 2026.</p>
+
+                <h2>Enhanced SBOM Dependency Graphs</h2>
+
+                <p>Software Bill of Materials management has been a core capability of Optimal since day one. In Q1 2026, we are taking SBOM visibility to the next level with <strong>interactive dependency graph visualizations</strong> that make it dramatically easier to understand and act on supply chain risk.</p>
+
+                <p>The new dependency graph view renders your entire software supply chain as a navigable, zoomable tree. Direct dependencies are displayed at the top level, with transitive dependencies expanding beneath them. Each node in the graph is color-coded by risk: green for components with no known vulnerabilities, amber for components with medium-severity issues, and red for components carrying critical or high-severity CVEs.</p>
+
+                <p>Beyond vulnerability data, we have added <strong>license risk scoring</strong> to every dependency node. Optimal now evaluates license compatibility across your full dependency tree and flags potential conflicts -- for example, a GPL-licensed transitive dependency pulled into a proprietary project. This is especially critical for teams operating in regulated environments where license compliance is a contractual requirement.</p>
+
+                <ul>
+                    <li><strong>Visual dependency trees</strong> with drill-down from direct to nth-degree transitive dependencies</li>
+                    <li><strong>Transitive dependency tracking</strong> that identifies the full path from your code to a vulnerable component</li>
+                    <li><strong>License risk scoring</strong> with automatic conflict detection across dependency chains</li>
+                    <li><strong>SBOM diff view</strong> showing exactly what changed between two builds or releases</li>
+                    <li>Support for <strong>CycloneDX 1.6</strong> and <strong>SPDX 3.0</strong> formats</li>
+                </ul>
+
+                <h2>STIG Automation Improvements</h2>
+
+                <p>STIG compliance remains one of the most time-consuming aspects of achieving and maintaining an Authority to Operate. In this release, we have made substantial improvements to our STIG automation engine that reduce both the time and manual effort required to assess and remediate against DISA benchmarks.</p>
+
+                <p><strong>Benchmarking speed has improved by 3x</strong> compared to the previous release. Our assessment engine now parallelizes checks across multiple system targets simultaneously, and we have optimized the evaluation logic for several high-volume STIGs including the Windows Server 2022 STIG and the Red Hat Enterprise Linux 9 STIG. What previously took 45 minutes to assess across a fleet of 50 systems now completes in under 15 minutes.</p>
+
+                <p>We are also introducing <strong>auto-remediation scripts</strong> for a growing subset of STIG findings. When Optimal identifies a non-compliant configuration, it can now generate and optionally execute remediation scripts tailored to your specific environment. Each script is reviewed and validated against the relevant STIG checklist item before being made available, and every remediation action is logged with a full audit trail for compliance documentation.</p>
+
+                <ul>
+                    <li><strong>3x faster benchmarking</strong> through parallelized assessment and optimized check logic</li>
+                    <li><strong>Auto-remediation scripts</strong> for over 200 common STIG findings across Windows and Linux</li>
+                    <li><strong>Expanded STIG library</strong> with 15 new benchmarks added this quarter, including Kubernetes STIG v2 and PostgreSQL 15</li>
+                    <li><strong>Continuous monitoring mode</strong> that re-evaluates STIG compliance on a configurable schedule</li>
+                </ul>
+
+                <h2>AI Security Enhancements</h2>
+
+                <p>As organizations accelerate their adoption of large language models and generative AI systems, the attack surface for AI-specific threats continues to expand. Optimal's AI security module has received several important updates in Q1 2026 to help teams stay ahead of these emerging risks.</p>
+
+                <p>Our integration with <strong>NVIDIA Garak</strong>, the open-source LLM vulnerability scanner, has been significantly enhanced. Optimal now orchestrates Garak scans directly from the platform dashboard, with results automatically mapped to the OWASP AI Security Verification Standard (AISVS) framework. This means your AI security posture is assessed against an industry-recognized benchmark rather than ad-hoc test suites.</p>
+
+                <p>We have also expanded our library of <strong>prompt injection test patterns</strong> to cover the latest attack techniques documented by the research community. The new patterns include multi-turn conversation manipulation, indirect prompt injection via retrieved context (relevant for RAG architectures), and encoding-based evasion techniques that attempt to bypass input sanitization filters.</p>
+
+                <ul>
+                    <li><strong>NVIDIA Garak integration</strong> with one-click scan orchestration and automated result ingestion</li>
+                    <li><strong>OWASP AISVS scoring</strong> providing a standardized maturity score for your AI security posture</li>
+                    <li><strong>50+ new prompt injection patterns</strong> covering multi-turn, indirect, and encoding-based attacks</li>
+                    <li><strong>Model card generation</strong> that documents security properties alongside model metadata</li>
+                    <li><strong>RAG pipeline analysis</strong> evaluating retrieval-augmented generation systems for data leakage risks</li>
+                </ul>
+
+                <h2>Developer Experience Updates</h2>
+
+                <p>Security tooling only works if developers actually use it. We have invested heavily in reducing friction across every touchpoint where developers interact with Optimal.</p>
+
+                <p>The <strong>Optimal CLI</strong> (<code>optimal-cli</code>) has been rewritten in Rust for significantly faster startup and execution times. The new CLI supports all major scanning operations -- vulnerability scans, SBOM generation, STIG checks, and AI security assessments -- with a consistent command interface. Configuration is handled through a simple <code>.optimal.yml</code> file at the root of your repository.</p>
+
+                <p>For teams using GitHub, we have released an official <strong>GitHub Actions integration</strong> that runs Optimal scans as part of your pull request workflow. Scan results are posted as PR comments with inline annotations, so developers can see security findings directly in their code review flow without switching to a separate dashboard.</p>
+
+                <ul>
+                    <li><strong>Rust-based CLI</strong> with 10x faster cold start compared to the previous Node.js implementation</li>
+                    <li><strong>GitHub Actions marketplace action</strong> with PR comment annotations and status check integration</li>
+                    <li><strong>Scan time improvements</strong> averaging 40% faster across vulnerability and SBOM scans</li>
+                    <li><strong>VS Code extension</strong> (preview) providing inline vulnerability highlighting as you code</li>
+                    <li><strong>API v2</strong> with OpenAPI 3.1 specification and auto-generated client libraries for Python, Go, and TypeScript</li>
+                </ul>
+
+                <h2>What's Coming Next</h2>
+
+                <p>Looking ahead to Q2 2026, we are focused on three major initiatives. First, <strong>FedRAMP continuous monitoring dashboards</strong> that aggregate compliance data across all Optimal modules into a single view tailored for Authorizing Officials and ISSMs. Second, <strong>multi-cloud asset discovery</strong> that automatically inventories your AWS, Azure, and GCP resources and maps them to your security policies. Third, <strong>collaborative remediation workflows</strong> with built-in assignment, SLA tracking, and evidence collection for audit readiness.</p>
+
+                <p>We will share more details on the Q2 roadmap in the coming weeks. If there is a specific capability you would like to see prioritized, reach out to your account team or drop a suggestion in our <a href="https://docs.gooptimal.io/">documentation portal</a>.</p>
+
+                <blockquote>
+                    <p>"Our mission is to make security an accelerator rather than a bottleneck. Every feature we ship is measured against a simple question: does this help teams deliver secure software faster? The Q1 2026 release represents a major step forward on that promise, and we are just getting started."</p>
+                </blockquote>
+
+                <p>We are grateful to every customer, design partner, and community member who provided feedback that shaped this release. If you are not yet using Optimal and want to see these capabilities in action, <a href="/demo">request a demo</a> and our team will walk you through the platform.</p>
+            </article>
+        </div>
+    </section>
+
+    <!-- Related Posts -->
+    <section class="py-16 bg-cyber-dark border-t border-cyber-border/30 fade-in">
+        <div class="max-w-7xl mx-auto px-6">
+            <span class="section-label mb-6 block">Related Posts</span>
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Related Post 1 -->
+                <a href="/blog/accelerating-ato-process" class="blog-card block">
+                    <div class="card-thumb-green card-thumb-overlay h-40 flex items-center justify-center">
+                        <svg class="w-12 h-12 opacity-20 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/></svg>
+                    </div>
+                    <div class="p-5">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="font-mono text-xs text-gray-500">Feb 10, 2026</span>
+                            <span class="badge-green font-mono text-xs px-2 py-0.5 rounded">Industry Insights</span>
+                        </div>
+                        <h3 class="card-title text-white font-semibold mb-2 line-clamp-2 transition-colors">How to Accelerate the ATO Process Without Cutting Corners</h3>
+                        <p class="text-gray-500 text-sm line-clamp-3 mb-4">The ATO process doesn't have to take 18 months. Learn practical strategies to compress timelines while maintaining compliance rigor.</p>
+                        <span class="text-cyber-green font-mono text-xs hover:underline">Read blog &gt;&gt;</span>
+                    </div>
+                </a>
+
+                <!-- Related Post 2 -->
+                <a href="/blog/sbom-best-practices-2026" class="blog-card block">
+                    <div class="card-thumb-purple card-thumb-overlay h-40 flex items-center justify-center">
+                        <svg class="w-12 h-12 opacity-20 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/></svg>
+                    </div>
+                    <div class="p-5">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="font-mono text-xs text-gray-500">Jan 28, 2026</span>
+                            <span class="badge-purple font-mono text-xs px-2 py-0.5 rounded">Engineering</span>
+                        </div>
+                        <h3 class="card-title text-white font-semibold mb-2 line-clamp-2 transition-colors">SBOM Best Practices: From Executive Order to Operational Reality</h3>
+                        <p class="text-gray-500 text-sm line-clamp-3 mb-4">Executive orders mandate SBOMs, but generating them is only half the battle. Here's how to operationalize your software bill of materials.</p>
+                        <span class="text-cyber-green font-mono text-xs hover:underline">Read blog &gt;&gt;</span>
+                    </div>
+                </a>
+
+                <!-- Related Post 3 -->
+                <a href="/blog/ai-security-defense-sector" class="blog-card block">
+                    <div class="card-thumb-green card-thumb-overlay h-40 flex items-center justify-center">
+                        <svg class="w-12 h-12 opacity-20 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/></svg>
+                    </div>
+                    <div class="p-5">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="font-mono text-xs text-gray-500">Jan 15, 2026</span>
+                            <span class="badge-green font-mono text-xs px-2 py-0.5 rounded">Industry Insights</span>
+                        </div>
+                        <h3 class="card-title text-white font-semibold mb-2 line-clamp-2 transition-colors">Securing AI Models in the Defense Sector: Threats and Mitigations</h3>
+                        <p class="text-gray-500 text-sm line-clamp-3 mb-4">As DoD adoption of AI accelerates, so do adversarial threats. We break down the top attack vectors targeting military AI systems.</p>
+                        <span class="text-cyber-green font-mono text-xs hover:underline">Read blog &gt;&gt;</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-cyber-black border-t border-cyber-border/30 fade-in">
+        <div class="relative max-w-4xl mx-auto px-6 text-center">
+            <span class="section-label mb-4 block">Get Started</span>
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">
+                <span class="text-white">Ready to Secure Your</span><br>
+                <span class="text-cyber-green">Software Delivery?</span>
+            </h2>
+            <p class="text-lg text-gray-400 mb-10 max-w-2xl mx-auto">
+                See how Optimal can accelerate your path to ATO while strengthening your security posture.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="/demo" class="btn-platform text-lg px-8 py-4 rounded">Request Demo</a>
+                <a href="https://github.com/optimal-cyber/launchpad" target="_blank" class="btn-outline text-lg px-8 py-4 rounded">Deploy on GitHub</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-cyber-black border-t border-cyber-border py-12">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                <div class="flex items-center gap-3">
+                    <img src="/public/optimal-logo.png" alt="Optimal Logo" class="w-8 h-8">
+                    <span class="font-bold text-lg text-white">Optimal</span>
+                </div>
+                <p class="text-gray-500 text-sm font-mono">&copy; 2026 Optimal. All rights reserved.</p>
+                <div class="flex items-center gap-4">
+                    <a href="https://github.com/optimal-cyber" target="_blank" class="text-gray-400 hover:text-cyber-green transition-colors">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    </a>
+                    <a href="https://www.linkedin.com/company/111329653" target="_blank" class="text-gray-400 hover:text-cyber-green transition-colors">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        // Fade-in observer
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
