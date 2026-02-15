@@ -96,6 +96,58 @@
         .nav-fixed { backdrop-filter: blur(12px); background: rgba(10, 10, 15, 0.9); border-bottom: 1px solid rgba(33, 38, 45, 0.5); }
         .nav-link { color: #8b949e; transition: color 0.3s ease; }
         .nav-link:hover { color: #00ff88; }
+        .nav-dropdown {
+            position: relative;
+        }
+        .nav-dropdown-trigger {
+            color: #8b949e;
+            transition: color 0.3s ease;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            background: none;
+            border: none;
+            padding: 0;
+            font-family: inherit;
+        }
+        .nav-dropdown-trigger:hover {
+            color: #00ff88;
+        }
+        .nav-dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            margin-top: 16px;
+            background: rgba(10, 10, 15, 0.95);
+            border: 1px solid rgba(33, 38, 45, 0.8);
+            border-radius: 8px;
+            padding: 8px 0;
+            min-width: 200px;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.2s ease, visibility 0.2s ease;
+            backdrop-filter: blur(12px);
+            z-index: 50;
+        }
+        .nav-dropdown:hover .nav-dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+        }
+        .nav-dropdown-menu a {
+            display: block;
+            padding: 10px 16px;
+            color: #8b949e;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 13px;
+            transition: color 0.2s ease, background 0.2s ease;
+            text-decoration: none;
+        }
+        .nav-dropdown-menu a:hover {
+            color: #00ff88;
+            background: rgba(0, 255, 136, 0.05);
+        }
         .btn-platform { background: linear-gradient(135deg, #00ff88 0%, #00cc6a 100%); color: #0a0a0f; font-weight: 600; transition: all 0.3s ease; }
         .btn-platform:hover { transform: translateY(-2px); box-shadow: 0 10px 40px rgba(0, 255, 136, 0.3); }
         .btn-outline { border: 1px solid #00ff88; color: #00ff88; transition: all 0.3s ease; background: transparent; }
@@ -148,14 +200,30 @@ document.head.appendChild(o)}initApollo();</script>
                     <span class="font-bold text-xl text-white">Optimal</span>
                 </a>
                 <div class="hidden md:flex items-center gap-8">
-                    <a href="/platform" class="nav-link font-mono text-sm">Platform</a>
-                    <a href="/integrations" class="nav-link font-mono text-sm">Integrations</a>
-                    <a href="/#capabilities" class="nav-link font-mono text-sm">Capabilities</a>
+                    <div class="nav-dropdown">
+                        <button class="nav-dropdown-trigger font-mono text-sm">
+                            Platform
+                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </button>
+                        <div class="nav-dropdown-menu">
+                            <a href="/platform">Platform Overview</a>
+                            <a href="/integrations">Integrations</a>
+                            <a href="/#capabilities">Capabilities</a>
+                        </div>
+                    </div>
                     <a href="/#team" class="nav-link font-mono text-sm">Team</a>
-                    <a href="https://docs.gooptimal.io/" target="_blank" class="nav-link font-mono text-sm">Docs</a>
-                    <a href="/blog.html" class="nav-link font-mono text-sm" style="color: #00ff88;">Blog</a>
+                    <div class="nav-dropdown">
+                        <button class="nav-dropdown-trigger font-mono text-sm">
+                            Resources
+                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </button>
+                        <div class="nav-dropdown-menu">
+                            <a href="https://docs.gooptimal.io/" target="_blank">Documentation</a>
+                            <a href="/blog.html">Blog</a>
+                        </div>
+                    </div>
                     <a href="https://app.gooptimal.io" target="_blank" class="nav-link font-mono text-sm">Login</a>
-                    <a href="/demo" class="btn-platform text-sm px-6 py-2 rounded">Request Demo</a>
+                    <a href="/demo" class="btn-platform text-sm px-6 py-2">Request Demo</a>
                 </div>
                 <button id="mobile-menu-btn" class="md:hidden text-gray-400 hover:text-white">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -165,14 +233,20 @@ document.head.appendChild(o)}initApollo();</script>
             </div>
             <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t border-cyber-border pt-4">
                 <div class="flex flex-col gap-4">
-                    <a href="/platform" class="nav-link font-mono text-sm">Platform</a>
-                    <a href="/integrations" class="nav-link font-mono text-sm">Integrations</a>
-                    <a href="/#capabilities" class="nav-link font-mono text-sm">Capabilities</a>
+                    <div class="flex flex-col gap-2">
+                        <span class="font-mono text-xs text-gray-500 uppercase tracking-wider">Platform</span>
+                        <a href="/platform" class="nav-link font-mono text-sm pl-3">Overview</a>
+                        <a href="/integrations" class="nav-link font-mono text-sm pl-3">Integrations</a>
+                        <a href="/#capabilities" class="nav-link font-mono text-sm pl-3">Capabilities</a>
+                    </div>
                     <a href="/#team" class="nav-link font-mono text-sm">Team</a>
-                    <a href="https://docs.gooptimal.io/" target="_blank" class="nav-link font-mono text-sm">Docs</a>
-                    <a href="/blog.html" class="nav-link font-mono text-sm" style="color: #00ff88;">Blog</a>
+                    <div class="flex flex-col gap-2">
+                        <span class="font-mono text-xs text-gray-500 uppercase tracking-wider">Resources</span>
+                        <a href="https://docs.gooptimal.io/" target="_blank" class="nav-link font-mono text-sm pl-3">Documentation</a>
+                        <a href="/blog.html" class="nav-link font-mono text-sm pl-3">Blog</a>
+                    </div>
                     <a href="https://app.gooptimal.io" target="_blank" class="nav-link font-mono text-sm">Login</a>
-                    <a href="/demo" class="btn-platform text-sm px-6 py-3 text-center mt-2 rounded">Request Demo</a>
+                    <a href="/demo" class="btn-platform text-sm px-6 py-3 text-center mt-2">Request Demo</a>
                 </div>
             </div>
         </div>
@@ -410,9 +484,13 @@ document.head.appendChild(o)}initApollo();</script>
 
     <script>
         // Mobile menu toggle
-        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
-            document.getElementById('mobile-menu').classList.toggle('hidden');
-        });
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
 
         // Fade-in observer
         const observer = new IntersectionObserver((entries) => {
