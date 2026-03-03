@@ -159,6 +159,74 @@
             background: #0a0a0f;
             overflow-x: hidden;
         }
+
+        /* Ticker */
+        .ticker-wrapper {
+            overflow: hidden;
+        }
+
+        .ticker-fade-left,
+        .ticker-fade-right {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100px;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .ticker-fade-left {
+            left: 0;
+            background: linear-gradient(to right, #0a0a0f, transparent);
+        }
+
+        .ticker-fade-right {
+            right: 0;
+            background: linear-gradient(to left, #0a0a0f, transparent);
+        }
+
+        .ticker-track {
+            display: flex;
+            width: max-content;
+            animation: ticker-scroll 30s linear infinite;
+        }
+
+        .ticker-content {
+            display: flex;
+            align-items: center;
+            flex-shrink: 0;
+        }
+
+        .ticker-item {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 14px;
+            font-weight: 500;
+            color: #8b949e;
+            white-space: nowrap;
+            padding: 0 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: color 0.3s ease;
+        }
+
+        .ticker-divider {
+            color: #21262d;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 14px;
+        }
+
+        .ticker-track:hover {
+            animation-play-state: paused;
+        }
+
+        .ticker-track:hover .ticker-item {
+            color: #00ff88;
+        }
+
+        @keyframes ticker-scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
         
         /* Grid Background Pattern */
         .grid-bg {
@@ -1627,6 +1695,63 @@ document.head.appendChild(o)}initApollo();</script>
                         Get Started
                     </span>
                 </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trusted By Ticker -->
+    <section class="bg-cyber-black border-t border-cyber-border py-8 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 mb-6">
+            <p class="text-center text-gray-500 text-xs font-mono uppercase tracking-widest">// Trusted By Industry Leaders</p>
+        </div>
+        <div class="ticker-wrapper relative">
+            <div class="ticker-fade-left"></div>
+            <div class="ticker-fade-right"></div>
+            <div class="ticker-track">
+                <div class="ticker-content">
+                    <span class="ticker-item">Motorola</span>
+                    <span class="ticker-divider">/</span>
+                    <span class="ticker-item">United States Air Force</span>
+                    <span class="ticker-divider">/</span>
+                    <span class="ticker-item">Defense Health Agency</span>
+                    <span class="ticker-divider">/</span>
+                    <span class="ticker-item">United States Central Command</span>
+                    <span class="ticker-divider">/</span>
+                    <span class="ticker-item">Joint Special Operations Command</span>
+                    <span class="ticker-divider">/</span>
+                    <span class="ticker-item">TransUnion</span>
+                    <span class="ticker-divider">/</span>
+                    <span class="ticker-item">Tanium</span>
+                    <span class="ticker-divider">/</span>
+                    <span class="ticker-item">Epirus</span>
+                    <span class="ticker-divider">/</span>
+                    <span class="ticker-item">Valid Eval</span>
+                    <span class="ticker-divider">/</span>
+                    <span class="ticker-item">Northrop Grumman</span>
+                    <span class="ticker-divider">/</span>
+                </div>
+                <div class="ticker-content" aria-hidden="true">
+                    <span class="ticker-item">Motorola</span>
+                    <span class="ticker-divider">/</span>
+                    <span class="ticker-item">United States Air Force</span>
+                    <span class="ticker-divider">/</span>
+                    <span class="ticker-item">Defense Health Agency</span>
+                    <span class="ticker-divider">/</span>
+                    <span class="ticker-item">United States Central Command</span>
+                    <span class="ticker-divider">/</span>
+                    <span class="ticker-item">Joint Special Operations Command</span>
+                    <span class="ticker-divider">/</span>
+                    <span class="ticker-item">TransUnion</span>
+                    <span class="ticker-divider">/</span>
+                    <span class="ticker-item">Tanium</span>
+                    <span class="ticker-divider">/</span>
+                    <span class="ticker-item">Epirus</span>
+                    <span class="ticker-divider">/</span>
+                    <span class="ticker-item">Valid Eval</span>
+                    <span class="ticker-divider">/</span>
+                    <span class="ticker-item">Northrop Grumman</span>
+                    <span class="ticker-divider">/</span>
+                </div>
             </div>
         </div>
     </section>
