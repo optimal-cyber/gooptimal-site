@@ -198,29 +198,34 @@
         }
 
         .ticker-item {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 14px;
-            font-weight: 500;
-            color: #8b949e;
-            white-space: nowrap;
-            padding: 0 16px;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            padding: 0 32px;
         }
 
-        .ticker-divider {
-            color: #21262d;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 14px;
+        .ticker-logo {
+            height: 32px;
+            width: auto;
+            max-width: 140px;
+            object-fit: contain;
+            filter: grayscale(100%) brightness(0.6);
+            opacity: 0.5;
+            transition: all 0.4s ease;
+        }
+
+        .ticker-logo-tall {
+            height: 48px;
         }
 
         .ticker-track:hover {
             animation-play-state: paused;
         }
 
-        .ticker-track:hover .ticker-item {
-            color: #00ff88;
+        .ticker-track:hover .ticker-logo {
+            filter: grayscale(0%) brightness(1);
+            opacity: 0.9;
         }
 
         @keyframes ticker-scroll {
@@ -1700,8 +1705,8 @@ document.head.appendChild(o)}initApollo();</script>
     </section>
 
     <!-- Trusted By Ticker -->
-    <section class="bg-cyber-black border-t border-cyber-border py-8 overflow-hidden">
-        <div class="max-w-7xl mx-auto px-6 mb-6">
+    <section class="bg-cyber-black border-t border-cyber-border py-10 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 mb-8">
             <p class="text-center text-gray-500 text-xs font-mono uppercase tracking-widest">// Trusted By Industry Leaders</p>
         </div>
         <div class="ticker-wrapper relative">
@@ -1709,48 +1714,68 @@ document.head.appendChild(o)}initApollo();</script>
             <div class="ticker-fade-right"></div>
             <div class="ticker-track">
                 <div class="ticker-content">
-                    <span class="ticker-item">Motorola</span>
-                    <span class="ticker-divider">/</span>
-                    <span class="ticker-item">United States Air Force</span>
-                    <span class="ticker-divider">/</span>
-                    <span class="ticker-item">Defense Health Agency</span>
-                    <span class="ticker-divider">/</span>
-                    <span class="ticker-item">United States Central Command</span>
-                    <span class="ticker-divider">/</span>
-                    <span class="ticker-item">Joint Special Operations Command</span>
-                    <span class="ticker-divider">/</span>
-                    <span class="ticker-item">TransUnion</span>
-                    <span class="ticker-divider">/</span>
-                    <span class="ticker-item">Tanium</span>
-                    <span class="ticker-divider">/</span>
-                    <span class="ticker-item">Epirus</span>
-                    <span class="ticker-divider">/</span>
-                    <span class="ticker-item">Valid Eval</span>
-                    <span class="ticker-divider">/</span>
-                    <span class="ticker-item">Northrop Grumman</span>
-                    <span class="ticker-divider">/</span>
+                    <div class="ticker-item">
+                        <img src="/public/logos/motorola.svg" alt="Motorola" class="ticker-logo">
+                    </div>
+                    <div class="ticker-item">
+                        <img src="/public/logos/usaf.svg" alt="United States Air Force" class="ticker-logo ticker-logo-tall">
+                    </div>
+                    <div class="ticker-item">
+                        <img src="/public/logos/dha.svg" alt="Defense Health Agency" class="ticker-logo ticker-logo-tall">
+                    </div>
+                    <div class="ticker-item">
+                        <img src="/public/logos/centcom.svg" alt="United States Central Command" class="ticker-logo ticker-logo-tall">
+                    </div>
+                    <div class="ticker-item">
+                        <img src="/public/logos/jsoc.svg" alt="Joint Special Operations Command" class="ticker-logo ticker-logo-tall">
+                    </div>
+                    <div class="ticker-item">
+                        <img src="/public/logos/transunion.svg" alt="TransUnion" class="ticker-logo">
+                    </div>
+                    <div class="ticker-item">
+                        <img src="/public/logos/tanium.png" alt="Tanium" class="ticker-logo">
+                    </div>
+                    <div class="ticker-item">
+                        <img src="/public/logos/epirus.svg" alt="Epirus" class="ticker-logo">
+                    </div>
+                    <div class="ticker-item">
+                        <img src="/public/logos/valid-eval.svg" alt="Valid Eval" class="ticker-logo">
+                    </div>
+                    <div class="ticker-item">
+                        <img src="/public/logos/northrop-grumman.svg" alt="Northrop Grumman" class="ticker-logo">
+                    </div>
                 </div>
                 <div class="ticker-content" aria-hidden="true">
-                    <span class="ticker-item">Motorola</span>
-                    <span class="ticker-divider">/</span>
-                    <span class="ticker-item">United States Air Force</span>
-                    <span class="ticker-divider">/</span>
-                    <span class="ticker-item">Defense Health Agency</span>
-                    <span class="ticker-divider">/</span>
-                    <span class="ticker-item">United States Central Command</span>
-                    <span class="ticker-divider">/</span>
-                    <span class="ticker-item">Joint Special Operations Command</span>
-                    <span class="ticker-divider">/</span>
-                    <span class="ticker-item">TransUnion</span>
-                    <span class="ticker-divider">/</span>
-                    <span class="ticker-item">Tanium</span>
-                    <span class="ticker-divider">/</span>
-                    <span class="ticker-item">Epirus</span>
-                    <span class="ticker-divider">/</span>
-                    <span class="ticker-item">Valid Eval</span>
-                    <span class="ticker-divider">/</span>
-                    <span class="ticker-item">Northrop Grumman</span>
-                    <span class="ticker-divider">/</span>
+                    <div class="ticker-item">
+                        <img src="/public/logos/motorola.svg" alt="Motorola" class="ticker-logo">
+                    </div>
+                    <div class="ticker-item">
+                        <img src="/public/logos/usaf.svg" alt="United States Air Force" class="ticker-logo ticker-logo-tall">
+                    </div>
+                    <div class="ticker-item">
+                        <img src="/public/logos/dha.svg" alt="Defense Health Agency" class="ticker-logo ticker-logo-tall">
+                    </div>
+                    <div class="ticker-item">
+                        <img src="/public/logos/centcom.svg" alt="United States Central Command" class="ticker-logo ticker-logo-tall">
+                    </div>
+                    <div class="ticker-item">
+                        <img src="/public/logos/jsoc.svg" alt="Joint Special Operations Command" class="ticker-logo ticker-logo-tall">
+                    </div>
+                    <div class="ticker-item">
+                        <img src="/public/logos/transunion.svg" alt="TransUnion" class="ticker-logo">
+                    </div>
+                    <div class="ticker-item">
+                        <img src="/public/logos/tanium.png" alt="Tanium" class="ticker-logo">
+                    </div>
+                    <div class="ticker-item">
+                        <img src="/public/logos/epirus.svg" alt="Epirus" class="ticker-logo">
+                    </div>
+                    <div class="ticker-item">
+                        <img src="/public/logos/valid-eval.svg" alt="Valid Eval" class="ticker-logo">
+                    </div>
+                    <div class="ticker-item">
+                        <img src="/public/logos/northrop-grumman.svg" alt="Northrop Grumman" class="ticker-logo">
+                    </div>
                 </div>
             </div>
         </div>
