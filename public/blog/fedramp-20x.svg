@@ -1,134 +1,395 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
   <defs>
-    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#0a0a0f"/>
-      <stop offset="50%" style="stop-color:#0d1117"/>
-      <stop offset="100%" style="stop-color:#0a0a0f"/>
+    <!-- Left side warm/dim gradient -->
+    <linearGradient id="leftBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1510"/>
+      <stop offset="100%" style="stop-color:#12100d"/>
     </linearGradient>
-    <linearGradient id="greenGlow" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#00ff88;stop-opacity:0.15"/>
-      <stop offset="100%" style="stop-color:#00cc6a;stop-opacity:0.02"/>
+    <!-- Right side cool/tech gradient -->
+    <linearGradient id="rightBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0e17"/>
+      <stop offset="100%" style="stop-color:#0d1117"/>
     </linearGradient>
-    <linearGradient id="amberGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+    <!-- Diagonal divider gradient -->
+    <linearGradient id="divider" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffb800;stop-opacity:0.6"/>
+      <stop offset="50%" style="stop-color:#00ff88;stop-opacity:0.8"/>
+      <stop offset="100%" style="stop-color:#00d4ff;stop-opacity:0.6"/>
+    </linearGradient>
+    <!-- Warm lamp glow -->
+    <radialGradient id="lampGlow" cx="30%" cy="20%" r="40%">
       <stop offset="0%" style="stop-color:#ffb800;stop-opacity:0.12"/>
-      <stop offset="100%" style="stop-color:#ff8800;stop-opacity:0.02"/>
+      <stop offset="100%" style="stop-color:#ffb800;stop-opacity:0"/>
+    </radialGradient>
+    <!-- Cool tech glow -->
+    <radialGradient id="techGlow" cx="75%" cy="40%" r="35%">
+      <stop offset="0%" style="stop-color:#00ff88;stop-opacity:0.08"/>
+      <stop offset="100%" style="stop-color:#00ff88;stop-opacity:0"/>
+    </radialGradient>
+    <!-- Monitor screen gradient -->
+    <linearGradient id="screenGlow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#00ff88;stop-opacity:0.15"/>
+      <stop offset="100%" style="stop-color:#00d4ff;stop-opacity:0.08"/>
     </linearGradient>
-    <filter id="blur1">
-      <feGaussianBlur stdDeviation="60"/>
+    <!-- Paper gradient -->
+    <linearGradient id="paper" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#d4c9a8"/>
+      <stop offset="100%" style="stop-color:#c4b898"/>
+    </linearGradient>
+    <linearGradient id="paperShadow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#b8ad8e"/>
+      <stop offset="100%" style="stop-color:#a89e7e"/>
+    </linearGradient>
+    <!-- Dashboard bar gradients -->
+    <linearGradient id="barGreen" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00ff88"/>
+      <stop offset="100%" style="stop-color:#00cc6a"/>
+    </linearGradient>
+    <linearGradient id="barBlue" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00d4ff"/>
+      <stop offset="100%" style="stop-color:#0099cc"/>
+    </linearGradient>
+    <linearGradient id="barAmber" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ffb800"/>
+      <stop offset="100%" style="stop-color:#cc9500"/>
+    </linearGradient>
+    <filter id="softBlur">
+      <feGaussianBlur stdDeviation="2"/>
     </filter>
-    <filter id="blur2">
-      <feGaussianBlur stdDeviation="40"/>
+    <filter id="bigBlur">
+      <feGaussianBlur stdDeviation="30"/>
     </filter>
-    <filter id="glow">
-      <feGaussianBlur stdDeviation="3" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
+    <clipPath id="leftClip">
+      <polygon points="0,0 620,0 560,630 0,630"/>
+    </clipPath>
+    <clipPath id="rightClip">
+      <polygon points="640,0 1200,0 1200,630 580,630"/>
+    </clipPath>
   </defs>
 
-  <!-- Background -->
-  <rect width="1200" height="630" fill="url(#bg)"/>
+  <!-- ==================== LEFT SIDE: Old World ==================== -->
+  <g clip-path="url(#leftClip)">
+    <rect width="650" height="630" fill="url(#leftBg)"/>
+    <rect width="650" height="630" fill="url(#lampGlow)"/>
 
-  <!-- Grid pattern -->
-  <g opacity="0.06">
-    <line x1="0" y1="0" x2="0" y2="630" stroke="#00ff88" stroke-width="0.5" transform="translate(60,0)"/>
-    <line x1="0" y1="0" x2="0" y2="630" stroke="#00ff88" stroke-width="0.5" transform="translate(120,0)"/>
-    <line x1="0" y1="0" x2="0" y2="630" stroke="#00ff88" stroke-width="0.5" transform="translate(180,0)"/>
-    <line x1="0" y1="0" x2="0" y2="630" stroke="#00ff88" stroke-width="0.5" transform="translate(240,0)"/>
-    <line x1="0" y1="0" x2="0" y2="630" stroke="#00ff88" stroke-width="0.5" transform="translate(300,0)"/>
-    <line x1="0" y1="0" x2="0" y2="630" stroke="#00ff88" stroke-width="0.5" transform="translate(360,0)"/>
-    <line x1="0" y1="0" x2="0" y2="630" stroke="#00ff88" stroke-width="0.5" transform="translate(420,0)"/>
-    <line x1="0" y1="0" x2="0" y2="630" stroke="#00ff88" stroke-width="0.5" transform="translate(480,0)"/>
-    <line x1="0" y1="0" x2="0" y2="630" stroke="#00ff88" stroke-width="0.5" transform="translate(540,0)"/>
-    <line x1="0" y1="0" x2="0" y2="630" stroke="#00ff88" stroke-width="0.5" transform="translate(600,0)"/>
-    <line x1="0" y1="0" x2="0" y2="630" stroke="#00ff88" stroke-width="0.5" transform="translate(660,0)"/>
-    <line x1="0" y1="0" x2="0" y2="630" stroke="#00ff88" stroke-width="0.5" transform="translate(720,0)"/>
-    <line x1="0" y1="0" x2="0" y2="630" stroke="#00ff88" stroke-width="0.5" transform="translate(780,0)"/>
-    <line x1="0" y1="0" x2="0" y2="630" stroke="#00ff88" stroke-width="0.5" transform="translate(840,0)"/>
-    <line x1="0" y1="0" x2="0" y2="630" stroke="#00ff88" stroke-width="0.5" transform="translate(900,0)"/>
-    <line x1="0" y1="0" x2="0" y2="630" stroke="#00ff88" stroke-width="0.5" transform="translate(960,0)"/>
-    <line x1="0" y1="0" x2="0" y2="630" stroke="#00ff88" stroke-width="0.5" transform="translate(1020,0)"/>
-    <line x1="0" y1="0" x2="0" y2="630" stroke="#00ff88" stroke-width="0.5" transform="translate(1080,0)"/>
-    <line x1="0" y1="0" x2="0" y2="630" stroke="#00ff88" stroke-width="0.5" transform="translate(1140,0)"/>
-    <line x1="0" y1="0" x2="1200" y2="0" stroke="#00ff88" stroke-width="0.5" transform="translate(0,60)"/>
-    <line x1="0" y1="0" x2="1200" y2="0" stroke="#00ff88" stroke-width="0.5" transform="translate(0,120)"/>
-    <line x1="0" y1="0" x2="1200" y2="0" stroke="#00ff88" stroke-width="0.5" transform="translate(0,180)"/>
-    <line x1="0" y1="0" x2="1200" y2="0" stroke="#00ff88" stroke-width="0.5" transform="translate(0,240)"/>
-    <line x1="0" y1="0" x2="1200" y2="0" stroke="#00ff88" stroke-width="0.5" transform="translate(0,300)"/>
-    <line x1="0" y1="0" x2="1200" y2="0" stroke="#00ff88" stroke-width="0.5" transform="translate(0,360)"/>
-    <line x1="0" y1="0" x2="1200" y2="0" stroke="#00ff88" stroke-width="0.5" transform="translate(0,420)"/>
-    <line x1="0" y1="0" x2="1200" y2="0" stroke="#00ff88" stroke-width="0.5" transform="translate(0,480)"/>
-    <line x1="0" y1="0" x2="1200" y2="0" stroke="#00ff88" stroke-width="0.5" transform="translate(0,540)"/>
-  </g>
+    <!-- Desk surface -->
+    <rect x="0" y="420" width="650" height="210" fill="#1e1a14" opacity="0.8"/>
+    <line x1="0" y1="420" x2="650" y2="420" stroke="#2a2318" stroke-width="2"/>
 
-  <!-- Ambient glow blobs -->
-  <circle cx="300" cy="250" r="200" fill="url(#greenGlow)" filter="url(#blur1)"/>
-  <circle cx="900" cy="380" r="180" fill="url(#amberGlow)" filter="url(#blur1)"/>
+    <!-- Old CRT Monitor -->
+    <g transform="translate(120, 180)">
+      <!-- Monitor body -->
+      <rect x="-8" y="-8" width="186" height="156" rx="8" fill="#3a3530"/>
+      <rect x="0" y="0" width="170" height="140" rx="4" fill="#1a1a18"/>
+      <!-- Screen content - dim green text -->
+      <rect x="5" y="5" width="160" height="130" rx="2" fill="#0d0f0a"/>
+      <!-- Text lines on screen -->
+      <g opacity="0.4">
+        <text x="12" y="25" font-family="monospace" font-size="8" fill="#4a7a3a">SYSTEM SECURITY PLAN</text>
+        <text x="12" y="38" font-family="monospace" font-size="6" fill="#3a6a2a">NIST 800-53 Rev 4</text>
+        <line x1="12" y1="45" x2="155" y2="45" stroke="#3a6a2a" stroke-width="0.5" opacity="0.3"/>
+        <text x="12" y="58" font-family="monospace" font-size="5.5" fill="#3a6a2a">AC-1: Access Control Policy</text>
+        <text x="12" y="68" font-family="monospace" font-size="5.5" fill="#3a6a2a">AC-2: Account Management....</text>
+        <text x="12" y="78" font-family="monospace" font-size="5.5" fill="#3a6a2a">AC-3: Access Enforcement....</text>
+        <text x="12" y="88" font-family="monospace" font-size="5.5" fill="#3a6a2a">AC-4: Information Flow.......</text>
+        <text x="12" y="98" font-family="monospace" font-size="5.5" fill="#3a6a2a">AC-5: Separation of Duties...</text>
+        <text x="12" y="108" font-family="monospace" font-size="5.5" fill="#3a6a2a">AC-6: Least Privilege........</text>
+        <text x="12" y="118" font-family="monospace" font-size="5.5" fill="#3a6a2a">AC-7: Unsuccessful Logon.....</text>
+        <rect x="12" y="124" width="40" height="2" fill="#3a6a2a" opacity="0.6"/>
+      </g>
+      <!-- Monitor stand -->
+      <rect x="55" y="140" width="60" height="15" fill="#3a3530"/>
+      <rect x="40" y="152" width="90" height="8" rx="2" fill="#2e2a24"/>
+    </g>
 
-  <!-- Shield icon (representing FedRAMP/security) -->
-  <g transform="translate(600, 200)" filter="url(#glow)">
-    <!-- Outer shield -->
-    <path d="M0,-100 L70,-70 L70,20 Q70,80 0,110 Q-70,80 -70,20 L-70,-70 Z" fill="none" stroke="#00ff88" stroke-width="2" opacity="0.3"/>
-    <!-- Inner shield -->
-    <path d="M0,-75 L52,-52 L52,15 Q52,60 0,82 Q-52,60 -52,15 L-52,-52 Z" fill="none" stroke="#00ff88" stroke-width="1.5" opacity="0.15"/>
-    <!-- Checkmark morphing into question mark concept - using a forward arrow/progress symbol -->
-    <g opacity="0.5">
-      <!-- Arrow pointing right (progress) -->
-      <line x1="-25" y1="0" x2="15" y2="0" stroke="#ffb800" stroke-width="3" stroke-linecap="round"/>
-      <polyline points="5,-12 17,0 5,12" fill="none" stroke="#ffb800" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- Stack of papers - big pile -->
+    <g transform="translate(30, 310)">
+      <!-- Bottom papers (messy stack) -->
+      <rect x="0" y="80" width="140" height="5" rx="1" fill="#a89e7e" transform="rotate(-2, 70, 82)"/>
+      <rect x="2" y="74" width="140" height="5" rx="1" fill="#b8ad8e" transform="rotate(1, 72, 76)"/>
+      <rect x="-1" y="68" width="140" height="5" rx="1" fill="#c4b898" transform="rotate(-1, 69, 70)"/>
+      <rect x="3" y="62" width="140" height="5" rx="1" fill="#ccc0a0" transform="rotate(0.5, 73, 64)"/>
+      <rect x="1" y="56" width="140" height="5" rx="1" fill="#d4c9a8" transform="rotate(-1.5, 71, 58)"/>
+    </g>
+
+    <!-- FedRAMP SSP Document stack (prominent) -->
+    <g transform="translate(60, 280)">
+      <!-- Document 4 (bottom) -->
+      <rect x="5" y="95" width="160" height="8" rx="1" fill="#b8ad8e" transform="rotate(-1, 85, 99)"/>
+      <!-- Document 3 -->
+      <rect x="3" y="82" width="160" height="8" rx="1" fill="#c4b898" transform="rotate(0.5, 83, 86)"/>
+      <!-- Document 2 -->
+      <rect x="0" y="69" width="160" height="8" rx="1" fill="#ccc0a0" transform="rotate(-0.5, 80, 73)"/>
+      <!-- Document 1 (top - most visible) -->
+      <g transform="rotate(1, 80, 50)">
+        <rect x="0" y="42" width="160" height="22" rx="2" fill="url(#paper)"/>
+        <text x="10" y="53" font-family="sans-serif" font-size="5" font-weight="bold" fill="#3a3020">FedRAMP SSP</text>
+        <text x="10" y="59" font-family="sans-serif" font-size="3.5" fill="#5a5040">NIST 800-53 | Rev 5 | Narrative</text>
+        <!-- Lines representing text -->
+        <line x1="10" y1="62" x2="150" y2="62" stroke="#8a8060" stroke-width="0.3"/>
+      </g>
+    </g>
+
+    <!-- Scattered loose papers on desk -->
+    <g transform="translate(320, 350)">
+      <rect x="0" y="20" width="120" height="80" rx="2" fill="#d4c9a8" transform="rotate(8, 60, 60)" opacity="0.9"/>
+      <rect x="10" y="15" width="120" height="80" rx="2" fill="#ccc0a0" transform="rotate(-5, 70, 55)" opacity="0.9"/>
+      <rect x="-5" y="25" width="120" height="80" rx="2" fill="#c4b898" transform="rotate(12, 55, 65)" opacity="0.8"/>
+      <!-- Text lines on top paper -->
+      <g transform="rotate(8, 60, 60)" opacity="0.5">
+        <line x1="10" y1="35" x2="105" y2="35" stroke="#8a8060" stroke-width="0.5"/>
+        <line x1="10" y1="42" x2="95" y2="42" stroke="#8a8060" stroke-width="0.5"/>
+        <line x1="10" y1="49" x2="100" y2="49" stroke="#8a8060" stroke-width="0.5"/>
+        <line x1="10" y1="56" x2="80" y2="56" stroke="#8a8060" stroke-width="0.5"/>
+        <line x1="10" y1="63" x2="90" y2="63" stroke="#8a8060" stroke-width="0.5"/>
+      </g>
+    </g>
+
+    <!-- Red "APPROVED" stamp on paper -->
+    <g transform="translate(100, 370) rotate(-15)">
+      <rect x="0" y="0" width="70" height="22" rx="3" fill="none" stroke="#cc3333" stroke-width="2" opacity="0.7"/>
+      <text x="7" y="15" font-family="sans-serif" font-size="10" font-weight="bold" fill="#cc3333" opacity="0.7">APPROVED</text>
+    </g>
+
+    <!-- Coffee mug -->
+    <g transform="translate(440, 400)">
+      <ellipse cx="18" cy="0" rx="18" ry="5" fill="#2a2520"/>
+      <rect x="0" y="0" width="36" height="30" rx="2" fill="#3a3530"/>
+      <ellipse cx="18" cy="30" rx="18" ry="5" fill="#2a2520"/>
+      <!-- Handle -->
+      <path d="M36,8 Q50,8 50,18 Q50,28 36,28" fill="none" stroke="#3a3530" stroke-width="3"/>
+    </g>
+
+    <!-- Pen -->
+    <g transform="translate(350, 440) rotate(-25)">
+      <rect x="0" y="0" width="80" height="5" rx="1" fill="#1a1a3a"/>
+      <polygon points="80,0 88,2.5 80,5" fill="#ccaa44"/>
+    </g>
+
+    <!-- "THE OLD WAY" label -->
+    <g transform="translate(40, 530)">
+      <text x="0" y="0" font-family="monospace" font-size="11" fill="#ffb800" opacity="0.5" letter-spacing="3">THE OLD WAY</text>
+      <text x="0" y="18" font-family="sans-serif" font-size="9" fill="#8a7a5a" opacity="0.6">325+ narrative controls | Point-in-time | Paper-heavy</text>
     </g>
   </g>
 
-  <!-- Decorative circuit-like lines -->
-  <g opacity="0.08" stroke="#00ff88" stroke-width="1">
-    <!-- Left side circuits -->
-    <path d="M100,315 L200,315 L200,280 L280,280" fill="none"/>
-    <circle cx="280" cy="280" r="3" fill="#00ff88"/>
-    <path d="M100,350 L180,350 L180,390 L260,390" fill="none"/>
-    <circle cx="260" cy="390" r="3" fill="#00ff88"/>
-    <!-- Right side circuits -->
-    <path d="M1100,315 L1000,315 L1000,280 L920,280" fill="none"/>
-    <circle cx="920" cy="280" r="3" fill="#00ff88"/>
-    <path d="M1100,350 L1020,350 L1020,390 L940,390" fill="none"/>
-    <circle cx="940" cy="390" r="3" fill="#00ff88"/>
+  <!-- ==================== RIGHT SIDE: New World ==================== -->
+  <g clip-path="url(#rightClip)">
+    <rect x="560" y="0" width="640" height="630" fill="url(#rightBg)"/>
+    <rect x="560" y="0" width="640" height="630" fill="url(#techGlow)"/>
+
+    <!-- Grid pattern -->
+    <g opacity="0.04">
+      <line x1="620" y1="0" x2="620" y2="630" stroke="#00ff88" stroke-width="0.5"/>
+      <line x1="680" y1="0" x2="680" y2="630" stroke="#00ff88" stroke-width="0.5"/>
+      <line x1="740" y1="0" x2="740" y2="630" stroke="#00ff88" stroke-width="0.5"/>
+      <line x1="800" y1="0" x2="800" y2="630" stroke="#00ff88" stroke-width="0.5"/>
+      <line x1="860" y1="0" x2="860" y2="630" stroke="#00ff88" stroke-width="0.5"/>
+      <line x1="920" y1="0" x2="920" y2="630" stroke="#00ff88" stroke-width="0.5"/>
+      <line x1="980" y1="0" x2="980" y2="630" stroke="#00ff88" stroke-width="0.5"/>
+      <line x1="1040" y1="0" x2="1040" y2="630" stroke="#00ff88" stroke-width="0.5"/>
+      <line x1="1100" y1="0" x2="1100" y2="630" stroke="#00ff88" stroke-width="0.5"/>
+      <line x1="1160" y1="0" x2="1160" y2="630" stroke="#00ff88" stroke-width="0.5"/>
+      <line x1="580" y1="60" x2="1200" y2="60" stroke="#00ff88" stroke-width="0.5"/>
+      <line x1="580" y1="120" x2="1200" y2="120" stroke="#00ff88" stroke-width="0.5"/>
+      <line x1="580" y1="180" x2="1200" y2="180" stroke="#00ff88" stroke-width="0.5"/>
+      <line x1="580" y1="240" x2="1200" y2="240" stroke="#00ff88" stroke-width="0.5"/>
+      <line x1="580" y1="300" x2="1200" y2="300" stroke="#00ff88" stroke-width="0.5"/>
+      <line x1="580" y1="360" x2="1200" y2="360" stroke="#00ff88" stroke-width="0.5"/>
+      <line x1="580" y1="420" x2="1200" y2="420" stroke="#00ff88" stroke-width="0.5"/>
+      <line x1="580" y1="480" x2="1200" y2="480" stroke="#00ff88" stroke-width="0.5"/>
+      <line x1="580" y1="540" x2="1200" y2="540" stroke="#00ff88" stroke-width="0.5"/>
+    </g>
+
+    <!-- Modern desk surface -->
+    <rect x="560" y="430" width="640" height="200" fill="#0f1318" opacity="0.6"/>
+    <line x1="560" y1="430" x2="1200" y2="430" stroke="#1a2030" stroke-width="1"/>
+
+    <!-- Main Monitor -->
+    <g transform="translate(720, 80)">
+      <!-- Monitor bezel -->
+      <rect x="-5" y="-5" width="330" height="220" rx="6" fill="#1a1e28"/>
+      <rect x="0" y="0" width="320" height="210" rx="3" fill="#0a0e14"/>
+
+      <!-- Dashboard Header -->
+      <rect x="5" y="5" width="310" height="24" rx="2" fill="#111820"/>
+      <text x="15" y="20" font-family="monospace" font-size="9" font-weight="bold" fill="#00ff88">FEDRAMP 20x</text>
+      <text x="115" y="20" font-family="monospace" font-size="7" fill="#4a5568">AUTOMATED VALIDATION DASHBOARD</text>
+
+      <!-- Status indicators in header -->
+      <circle cx="285" cy="17" r="4" fill="#00ff88" opacity="0.8"/>
+      <circle cx="296" cy="17" r="4" fill="#00ff88" opacity="0.5"/>
+      <circle cx="307" cy="17" r="4" fill="#ffb800" opacity="0.5"/>
+
+      <!-- KSI Status Panel -->
+      <rect x="5" y="34" width="150" height="80" rx="2" fill="#111820" stroke="#1a2535" stroke-width="0.5"/>
+      <text x="12" y="48" font-family="monospace" font-size="7" fill="#8b949e">KSI STATUS</text>
+      <!-- Pass/Fail bars -->
+      <g transform="translate(12, 55)">
+        <text x="0" y="7" font-family="monospace" font-size="5.5" fill="#6b7280">AC</text>
+        <rect x="22" y="1" width="110" height="7" rx="1" fill="#1a2535"/>
+        <rect x="22" y="1" width="105" height="7" rx="1" fill="url(#barGreen)" opacity="0.8"/>
+        <text x="135" y="7" font-family="monospace" font-size="5" fill="#00ff88">PASS</text>
+
+        <text x="0" y="18" font-family="monospace" font-size="5.5" fill="#6b7280">AU</text>
+        <rect x="22" y="12" width="110" height="7" rx="1" fill="#1a2535"/>
+        <rect x="22" y="12" width="98" height="7" rx="1" fill="url(#barGreen)" opacity="0.8"/>
+        <text x="135" y="18" font-family="monospace" font-size="5" fill="#00ff88">PASS</text>
+
+        <text x="0" y="29" font-family="monospace" font-size="5.5" fill="#6b7280">IA</text>
+        <rect x="22" y="23" width="110" height="7" rx="1" fill="#1a2535"/>
+        <rect x="22" y="23" width="100" height="7" rx="1" fill="url(#barGreen)" opacity="0.8"/>
+        <text x="135" y="29" font-family="monospace" font-size="5" fill="#00ff88">PASS</text>
+
+        <text x="0" y="40" font-family="monospace" font-size="5.5" fill="#6b7280">SC</text>
+        <rect x="22" y="34" width="110" height="7" rx="1" fill="#1a2535"/>
+        <rect x="22" y="34" width="72" height="7" rx="1" fill="url(#barAmber)" opacity="0.8"/>
+        <text x="135" y="40" font-family="monospace" font-size="5" fill="#ffb800">WARN</text>
+
+        <text x="0" y="51" font-family="monospace" font-size="5.5" fill="#6b7280">CM</text>
+        <rect x="22" y="45" width="110" height="7" rx="1" fill="#1a2535"/>
+        <rect x="22" y="45" width="108" height="7" rx="1" fill="url(#barGreen)" opacity="0.8"/>
+        <text x="135" y="51" font-family="monospace" font-size="5" fill="#00ff88">PASS</text>
+      </g>
+
+      <!-- OSCAL Output Panel -->
+      <rect x="160" y="34" width="155" height="80" rx="2" fill="#111820" stroke="#1a2535" stroke-width="0.5"/>
+      <text x="167" y="48" font-family="monospace" font-size="7" fill="#8b949e">OSCAL OUTPUT</text>
+      <!-- Code-like content -->
+      <g opacity="0.7">
+        <text x="167" y="60" font-family="monospace" font-size="5" fill="#00d4ff">{"system-security-plan":</text>
+        <text x="172" y="68" font-family="monospace" font-size="5" fill="#a855f7">  "metadata": {</text>
+        <text x="177" y="76" font-family="monospace" font-size="5" fill="#00ff88">    "title": "CSP-20x",</text>
+        <text x="177" y="84" font-family="monospace" font-size="5" fill="#00ff88">    "version": "2.1.0",</text>
+        <text x="172" y="92" font-family="monospace" font-size="5" fill="#a855f7">  },</text>
+        <text x="172" y="100" font-family="monospace" font-size="5" fill="#a855f7">  "control-impl": {</text>
+        <text x="177" y="108" font-family="monospace" font-size="5" fill="#ffb800">    "source": "auto"</text>
+      </g>
+
+      <!-- Telemetry Graph Panel -->
+      <rect x="5" y="119" width="310" height="60" rx="2" fill="#111820" stroke="#1a2535" stroke-width="0.5"/>
+      <text x="12" y="133" font-family="monospace" font-size="7" fill="#8b949e">CONTINUOUS TELEMETRY</text>
+      <text x="230" y="133" font-family="monospace" font-size="6" fill="#00ff88">LIVE</text>
+      <circle cx="224" cy="131" r="2" fill="#00ff88" opacity="0.8"/>
+      <!-- Line chart -->
+      <polyline points="12,165 30,158 50,162 70,150 90,155 110,145 130,148 150,140 170,142 190,135 210,138 230,130 250,132 270,125 290,128 305,122" fill="none" stroke="#00ff88" stroke-width="1.5" opacity="0.7"/>
+      <polyline points="12,168 30,165 50,170 70,162 90,165 110,160 130,163 150,158 170,162 190,155 210,158 230,152 250,156 270,148 290,152 305,146" fill="none" stroke="#00d4ff" stroke-width="1" opacity="0.4"/>
+
+      <!-- Overall score -->
+      <rect x="5" y="184" width="310" height="20" rx="2" fill="#0a1a0f" stroke="#00ff8830" stroke-width="0.5"/>
+      <text x="12" y="197" font-family="monospace" font-size="8" font-weight="bold" fill="#00ff88">AUTHORIZATION STATUS: CONTINUOUS PASS</text>
+      <text x="280" y="197" font-family="monospace" font-size="8" fill="#00ff88">97%</text>
+
+      <!-- Monitor stand -->
+      <rect x="130" y="210" width="60" height="12" fill="#1a1e28"/>
+      <rect x="110" y="220" width="100" height="6" rx="2" fill="#151920"/>
+    </g>
+
+    <!-- Integration Manager Panel (smaller, bottom right) -->
+    <g transform="translate(720, 340)">
+      <rect x="0" y="0" width="155" height="85" rx="4" fill="#111820" stroke="#1a2535" stroke-width="0.5"/>
+      <text x="8" y="15" font-family="monospace" font-size="7" font-weight="bold" fill="#8b949e">INTEGRATION MANAGER</text>
+
+      <!-- Integration icons/badges -->
+      <g transform="translate(8, 24)">
+        <rect x="0" y="0" width="42" height="16" rx="3" fill="#ff9900" fill-opacity="0.15" stroke="#ff9900" stroke-opacity="0.3" stroke-width="0.5"/>
+        <text x="21" y="11" font-family="sans-serif" font-size="6" font-weight="bold" fill="#ff9900" text-anchor="middle">aws</text>
+
+        <rect x="48" y="0" width="42" height="16" rx="3" fill="#0078d4" fill-opacity="0.15" stroke="#0078d4" stroke-opacity="0.3" stroke-width="0.5"/>
+        <text x="69" y="11" font-family="sans-serif" font-size="6" font-weight="bold" fill="#0078d4" text-anchor="middle">azure</text>
+
+        <rect x="96" y="0" width="42" height="16" rx="3" fill="#4285f4" fill-opacity="0.15" stroke="#4285f4" stroke-opacity="0.3" stroke-width="0.5"/>
+        <text x="117" y="11" font-family="sans-serif" font-size="6" font-weight="bold" fill="#4285f4" text-anchor="middle">gcp</text>
+      </g>
+
+      <g transform="translate(8, 46)">
+        <rect x="0" y="0" width="42" height="16" rx="3" fill="#00d4ff" fill-opacity="0.15" stroke="#00d4ff" stroke-opacity="0.3" stroke-width="0.5"/>
+        <text x="21" y="11" font-family="sans-serif" font-size="6" font-weight="bold" fill="#00d4ff" text-anchor="middle">splunk</text>
+
+        <rect x="48" y="0" width="42" height="16" rx="3" fill="#00ff88" fill-opacity="0.15" stroke="#00ff88" stroke-opacity="0.3" stroke-width="0.5"/>
+        <text x="69" y="11" font-family="sans-serif" font-size="6" font-weight="bold" fill="#00ff88" text-anchor="middle">okta</text>
+
+        <rect x="96" y="0" width="42" height="16" rx="3" fill="#a855f7" fill-opacity="0.15" stroke="#a855f7" stroke-opacity="0.3" stroke-width="0.5"/>
+        <text x="117" y="11" font-family="sans-serif" font-size="6" font-weight="bold" fill="#a855f7" text-anchor="middle">tenable</text>
+      </g>
+
+      <!-- Connected dots -->
+      <g opacity="0.3">
+        <circle cx="30" cy="70" r="1.5" fill="#00ff88"/>
+        <circle cx="65" cy="73" r="1.5" fill="#00ff88"/>
+        <circle cx="100" cy="71" r="1.5" fill="#00ff88"/>
+        <line x1="30" y1="70" x2="65" y2="73" stroke="#00ff88" stroke-width="0.5"/>
+        <line x1="65" y1="73" x2="100" y2="71" stroke="#00ff88" stroke-width="0.5"/>
+      </g>
+    </g>
+
+    <!-- Validation Audit Panel -->
+    <g transform="translate(885, 340)">
+      <rect x="0" y="0" width="155" height="85" rx="4" fill="#111820" stroke="#1a2535" stroke-width="0.5"/>
+      <text x="8" y="15" font-family="monospace" font-size="7" font-weight="bold" fill="#8b949e">PERSISTENT VALIDATION</text>
+
+      <!-- Audit entries -->
+      <g font-family="monospace" font-size="5.5" opacity="0.7">
+        <circle cx="12" cy="30" r="2" fill="#00ff88"/>
+        <text x="18" y="32" fill="#6b7280">TLS 1.3 Enforced</text>
+        <text x="120" y="32" fill="#00ff88">AES-256</text>
+
+        <circle cx="12" cy="43" r="2" fill="#00ff88"/>
+        <text x="18" y="45" fill="#6b7280">MFA All Users</text>
+        <text x="120" y="45" fill="#00ff88">ACTIVE</text>
+
+        <circle cx="12" cy="56" r="2" fill="#00ff88"/>
+        <text x="18" y="58" fill="#6b7280">FIPS 140-2</text>
+        <text x="120" y="58" fill="#00ff88">VALID</text>
+
+        <circle cx="12" cy="69" r="2" fill="#ffb800"/>
+        <text x="18" y="71" fill="#6b7280">Vuln Scan Age</text>
+        <text x="120" y="71" fill="#ffb800">23hrs</text>
+      </g>
+    </g>
+
+    <!-- Cloud icon (top right) -->
+    <g transform="translate(1050, 30)" opacity="0.3">
+      <path d="M0,35 Q0,15 20,15 Q22,0 40,0 Q58,0 60,15 Q80,15 80,35 Q80,50 60,50 L20,50 Q0,50 0,35Z" fill="none" stroke="#00d4ff" stroke-width="1.5"/>
+      <!-- Data flowing down from cloud -->
+      <line x1="30" y1="52" x2="30" y2="70" stroke="#00d4ff" stroke-width="0.5" stroke-dasharray="3,3"/>
+      <line x1="50" y1="52" x2="50" y2="75" stroke="#00d4ff" stroke-width="0.5" stroke-dasharray="3,3"/>
+      <line x1="40" y1="52" x2="40" y2="65" stroke="#00ff88" stroke-width="0.5" stroke-dasharray="3,3"/>
+    </g>
+
+    <!-- Floating data particles -->
+    <g opacity="0.2">
+      <circle cx="680" cy="150" r="1.5" fill="#00ff88"/>
+      <circle cx="1100" cy="200" r="1" fill="#00d4ff"/>
+      <circle cx="750" cy="450" r="1.5" fill="#a855f7"/>
+      <circle cx="1150" cy="350" r="1" fill="#00ff88"/>
+      <circle cx="900" cy="50" r="1" fill="#ffb800"/>
+      <circle cx="1050" cy="480" r="1.5" fill="#00d4ff"/>
+    </g>
+
+    <!-- Connection lines from cloud to monitor -->
+    <g opacity="0.08" stroke="#00d4ff" stroke-width="0.5">
+      <path d="M1050,80 Q1000,120 1040,180 Q1020,220 980,240" fill="none"/>
+      <path d="M1070,80 Q1100,150 1060,250 Q1040,300 1000,340" fill="none"/>
+    </g>
+
+    <!-- "THE NEW WAY" label -->
+    <g transform="translate(720, 530)">
+      <text x="0" y="0" font-family="monospace" font-size="11" fill="#00ff88" opacity="0.5" letter-spacing="3">THE 20x WAY</text>
+      <text x="0" y="18" font-family="sans-serif" font-size="9" fill="#4a6a5a" opacity="0.6">Automated telemetry | Continuous validation | Machine-readable</text>
+    </g>
   </g>
 
-  <!-- "20x" large text -->
-  <text x="600" y="345" font-family="monospace" font-size="120" font-weight="bold" fill="#00ff88" opacity="0.08" text-anchor="middle" letter-spacing="8">20x</text>
+  <!-- ==================== DIAGONAL DIVIDER ==================== -->
+  <line x1="620" y1="0" x2="560" y2="630" stroke="url(#divider)" stroke-width="3"/>
+  <!-- Glow effect on divider -->
+  <line x1="620" y1="0" x2="560" y2="630" stroke="url(#divider)" stroke-width="12" opacity="0.1" filter="url(#softBlur)"/>
 
-  <!-- Main title -->
-  <text x="600" y="420" font-family="system-ui, -apple-system, sans-serif" font-size="36" font-weight="700" fill="#ffffff" text-anchor="middle" letter-spacing="-0.5">
-    FedRAMP 20x
-  </text>
-
-  <!-- Subtitle -->
-  <text x="600" y="465" font-family="monospace" font-size="16" fill="#9ca3af" text-anchor="middle" letter-spacing="1">
-    A Step Forward on Paper. A Marathon in Practice.
-  </text>
-
-  <!-- Divider line -->
-  <line x1="500" y1="490" x2="700" y2="490" stroke="#21262d" stroke-width="1"/>
-
-  <!-- Tags -->
-  <g font-family="monospace" font-size="11" letter-spacing="1">
-    <rect x="390" y="510" width="70" height="24" rx="4" fill="#ffb800" fill-opacity="0.1" stroke="#ffb800" stroke-opacity="0.2" stroke-width="1"/>
-    <text x="425" y="526" fill="#ffb800" text-anchor="middle">DISA</text>
-
-    <rect x="475" y="510" width="60" height="24" rx="4" fill="#00ff88" fill-opacity="0.1" stroke="#00ff88" stroke-opacity="0.2" stroke-width="1"/>
-    <text x="505" y="526" fill="#00ff88" text-anchor="middle">DoW</text>
-
-    <rect x="550" y="510" width="100" height="24" rx="4" fill="#00d4ff" fill-opacity="0.1" stroke="#00d4ff" stroke-opacity="0.2" stroke-width="1"/>
-    <text x="600" y="526" fill="#00d4ff" text-anchor="middle">FedRAMP</text>
-
-    <rect x="665" y="510" width="60" height="24" rx="4" fill="#a855f7" fill-opacity="0.1" stroke="#a855f7" stroke-opacity="0.2" stroke-width="1"/>
-    <text x="695" y="526" fill="#a855f7" text-anchor="middle">3PAO</text>
-
-    <rect x="740" y="510" width="70" height="24" rx="4" fill="#00ff88" fill-opacity="0.1" stroke="#00ff88" stroke-opacity="0.2" stroke-width="1"/>
-    <text x="775" y="526" fill="#00ff88" text-anchor="middle">Cloud</text>
+  <!-- Arrow on divider pointing right -->
+  <g transform="translate(590, 305) rotate(5.5)">
+    <polygon points="0,-12 20,0 0,12" fill="#00ff88" opacity="0.4"/>
   </g>
 
   <!-- Subtle border -->
-  <rect x="0" y="0" width="1200" height="630" fill="none" stroke="#21262d" stroke-width="1" opacity="0.5"/>
+  <rect x="0" y="0" width="1200" height="630" fill="none" stroke="#21262d" stroke-width="1" opacity="0.3"/>
 </svg>
