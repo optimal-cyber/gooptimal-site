@@ -287,13 +287,8 @@ document.head.appendChild(o)}initApollo();</script>
             </div>
 
             <!-- Hero Image -->
-            <div class="h-64 rounded-xl overflow-hidden card-thumb-green">
-                <div class="w-full h-full card-thumb-overlay flex items-center justify-center">
-                    <div class="text-center">
-                        <span class="font-mono text-6xl text-cyber-green/30 font-bold">20x</span>
-                        <p class="font-mono text-sm text-cyber-green/50 mt-2">FedRAMP Modernization</p>
-                    </div>
-                </div>
+            <div class="h-64 rounded-xl overflow-hidden">
+                <img src="/public/blog/fedramp-20x.svg" alt="FedRAMP 20x - A Step Forward on Paper, A Marathon in Practice" class="w-full h-full object-cover">
             </div>
         </div>
     </section>
@@ -303,7 +298,7 @@ document.head.appendChild(o)}initApollo();</script>
         <div class="max-w-3xl mx-auto px-6 prose-cyber">
 
             <p>
-                FedRAMP 20x has generated more excitement in the federal compliance world than anything since the original program launched over a decade ago. The premise is compelling: replace the mountain of static documentation and point-in-time assessments with continuous, automated security validation. Fewer narratives, more telemetry. Less paperwork, more proof. On its face, it is exactly the kind of modernization that cloud service providers, agencies, and assessors have been begging for.
+                <a href="https://www.fedramp.gov/20x/" target="_blank">FedRAMP 20x</a> has generated more excitement in the federal compliance world than anything since the original program launched over a decade ago. The premise is compelling: replace the mountain of static documentation and point-in-time assessments with continuous, automated security validation. Fewer narratives, more telemetry. Less paperwork, more proof. On its face, it is exactly the kind of modernization that cloud service providers, agencies, and assessors have been begging for.
             </p>
 
             <p>
@@ -313,7 +308,7 @@ document.head.appendChild(o)}initApollo();</script>
             <h2>What 20x Actually Changes</h2>
 
             <p>
-                To understand the gap between the vision and reality, it helps to be precise about what FedRAMP 20x actually introduces. The traditional FedRAMP model required cloud service providers to produce exhaustive narrative documentation across 325+ NIST 800-53 controls, submit to a point-in-time assessment by a Third Party Assessment Organization (3PAO), and then maintain that authorization through monthly continuous monitoring deliverables that were largely document-based.
+                To understand the gap between the vision and reality, it helps to be precise about what FedRAMP 20x actually introduces. The traditional FedRAMP model required cloud service providers to produce exhaustive narrative documentation across 325+ <a href="https://csrc.nist.gov/publications/detail/sp/800-53/rev-5/final" target="_blank">NIST 800-53</a> controls, submit to a point-in-time assessment by a <a href="https://www.fedramp.gov/assessors/" target="_blank">Third Party Assessment Organization (3PAO)</a>, and then maintain that authorization through monthly continuous monitoring deliverables that were largely document-based.
             </p>
 
             <p>
@@ -321,7 +316,7 @@ document.head.appendChild(o)}initApollo();</script>
             </p>
 
             <p>
-                This is genuinely good. It aligns with how modern cloud environments actually operate, and it promises to dramatically reduce the time between "we are secure" and "we can prove we are secure." The FedRAMP PMO deserves credit for pushing the program in this direction.
+                This is genuinely good. It aligns with how modern cloud environments actually operate, and it promises to dramatically reduce the time between "we are secure" and "we can prove we are secure." The <a href="https://www.fedramp.gov/" target="_blank">FedRAMP PMO</a> deserves credit for pushing the program in this direction.
             </p>
 
             <p>
@@ -339,7 +334,7 @@ document.head.appendChild(o)}initApollo();</script>
             </p>
 
             <p>
-                For organizations running clean, cloud-native architectures on a single provider -- say, a greenfield application on AWS GovCloud with native tooling -- this is achievable. AWS published clean reference architectures for exactly this scenario. But most federal environments do not look like that. They are running hybrid deployments across multiple clouds and on-premises enclaves. They have heterogeneous tooling stacks -- QRadar here, Splunk there, CrowdStrike in one enclave and Carbon Black in another. The integration work to normalize telemetry across these environments is substantial, and it requires a skill set that most compliance teams simply do not have.
+                For organizations running clean, cloud-native architectures on a single provider -- say, a greenfield application on <a href="https://aws.amazon.com/govcloud-us/" target="_blank">AWS GovCloud</a> with native tooling -- this is achievable. AWS published clean reference architectures for exactly this scenario. But most federal environments do not look like that. They are running hybrid deployments across multiple clouds and on-premises enclaves -- <a href="https://cloud.google.com/assured-workloads" target="_blank">Google Cloud Assured Workloads</a>, <a href="https://azure.microsoft.com/en-us/explore/global-infrastructure/government" target="_blank">Azure Government</a>, <a href="https://www.oracle.com/government/" target="_blank">Oracle Cloud for Government</a>, and legacy on-prem stacks all in the mix. They have heterogeneous tooling stacks -- QRadar here, Splunk there, CrowdStrike in one enclave and Carbon Black in another. The integration work to normalize telemetry across these environments is substantial, and it requires a skill set that most compliance teams simply do not have.
             </p>
 
             <blockquote>
@@ -353,7 +348,7 @@ document.head.appendChild(o)}initApollo();</script>
             </p>
 
             <p>
-                For DoD cloud authorizations, the path runs through the Defense Information Systems Agency (DISA). DISA operates the Cloud Computing Security Requirements Guide (CC SRG) process, which layers additional requirements on top of FedRAMP baselines. If you want to host a DoD workload at Impact Level 4, 5, or 6, your authorization goes through DISA's provisional authorization (PA) process -- not the FedRAMP PMO's.
+                For DoD cloud authorizations, the path runs through the <a href="https://www.disa.mil/" target="_blank">Defense Information Systems Agency (DISA)</a>. DISA operates the <a href="https://public.cyber.mil/dccs/" target="_blank">Cloud Computing Security Requirements Guide (CC SRG)</a> process, which layers additional requirements on top of FedRAMP baselines. If you want to host a DoD workload at Impact Level 4, 5, or 6, your authorization goes through DISA's provisional authorization (PA) process -- not the FedRAMP PMO's.
             </p>
 
             <p>
@@ -403,7 +398,7 @@ document.head.appendChild(o)}initApollo();</script>
             </p>
 
             <p>
-                The challenge is integration breadth. Every federal environment has a different tooling stack. Your GRC platform is only as good as its connector library. If it integrates cleanly with AWS Security Hub and Tenable but your environment runs Azure with Qualys and a custom SIEM, you are writing custom integrations anyway -- which puts you right back in the engineering-heavy model that 20x was supposed to simplify.
+                The challenge is integration breadth. Every federal environment has a different tooling stack. Your GRC platform is only as good as its connector library. If it integrates cleanly with <a href="https://aws.amazon.com/security-hub/" target="_blank">AWS Security Hub</a> and Tenable but your environment runs Azure with Qualys and a custom SIEM, you are writing custom integrations anyway -- which puts you right back in the engineering-heavy model that 20x was supposed to simplify.
             </p>
 
             <p>
@@ -413,13 +408,13 @@ document.head.appendChild(o)}initApollo();</script>
             <h2>The Intelligence Community Dimension</h2>
 
             <p>
-                For completeness, it is worth noting that the Intelligence Community has its own authorization framework (ICD 503 / CNSSI 1253) that is adjacent to but distinct from FedRAMP. The IC's adoption of 20x-style automation will follow its own timeline and its own institutional logic, which tends to move more deliberately than even DoD. CSPs targeting IC workloads should not assume that FedRAMP 20x acceptance translates to IC acceptance.
+                For completeness, it is worth noting that the Intelligence Community has its own authorization framework (<a href="https://www.cnss.gov/CNSS/issuances/Instructions.cfm" target="_blank">ICD 503 / CNSSI 1253</a>) that is adjacent to but distinct from FedRAMP. The IC's adoption of 20x-style automation will follow its own timeline and its own institutional logic, which tends to move more deliberately than even DoD. CSPs targeting IC workloads should not assume that FedRAMP 20x acceptance translates to IC acceptance.
             </p>
 
             <h2>So Is 20x a Bad Idea?</h2>
 
             <p>
-                Not at all. FedRAMP 20x is directionally correct. The federal government's cloud authorization process has been too slow, too document-heavy, and too disconnected from how modern cloud security actually works. The shift toward automated, continuous validation is the right strategic move. It will, over time, produce better security outcomes than the static documentation model it replaces.
+                Not at all. FedRAMP 20x is directionally correct. The federal government's cloud authorization process has been too slow, too document-heavy, and too disconnected from how modern cloud security actually works. The shift toward automated, continuous validation -- aligned with the principles in <a href="https://csrc.nist.gov/publications/detail/sp/800-137/final" target="_blank">NIST SP 800-137</a> on continuous monitoring -- is the right strategic move. It will, over time, produce better security outcomes than the static documentation model it replaces.
             </p>
 
             <p>
