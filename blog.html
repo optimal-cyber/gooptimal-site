@@ -239,7 +239,7 @@ document.head.appendChild(o)}initApollo();</script>
         <div class="max-w-7xl mx-auto px-6">
             <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
                 <div class="flex items-center gap-4">
-                    <span id="post-count" class="font-mono text-sm text-gray-500">4 posts</span>
+                    <span id="post-count" class="font-mono text-sm text-gray-500">5 posts</span>
                     <select id="topic-filter" class="bg-cyber-gray border border-cyber-border rounded px-4 py-2 text-sm text-gray-300 font-mono focus:outline-none focus:border-cyber-green appearance-none cursor-pointer" style="background-image: url('data:image/svg+xml;utf8,<svg fill=\"%238b949e\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M7 10l5 5 5-5z\"/></svg>'); background-repeat: no-repeat; background-position: right 10px center; background-size: 18px; padding-right: 36px;">
                         <option value="all">All Topics</option>
                         <option value="Industry Insights">Industry Insights</option>
@@ -315,6 +315,17 @@ document.head.appendChild(o)}initApollo();</script>
         // Blog post data
         const blogPosts = [
             {
+                title: "FedRAMP 20x: A Step Forward on Paper, A Marathon in Practice",
+                category: "Industry Insights",
+                date: "2026-03-05",
+                excerpt: "FedRAMP 20x promises to streamline cloud authorizations with automation over documentation. But across DoD, civilian agencies, and the IC, the real challenge is institutional inertia — and DoD isn't accepting 20x packages yet.",
+                url: "/blog/fedramp-20x-reality-check",
+                image: "",
+                thumbClass: "card-thumb-amber",
+                badgeClass: "badge-amber",
+                tags: ["FedRAMP", "20x", "DISA", "DoD", "cloud authorization", "compliance", "public sector"]
+            },
+            {
                 title: "How to Accelerate the ATO Process Without Cutting Corners",
                 category: "Industry Insights",
                 date: "2026-02-10",
@@ -387,10 +398,11 @@ document.head.appendChild(o)}initApollo();</script>
                 const card = document.createElement('a');
                 card.href = post.url;
                 card.className = 'blog-card block';
+                const thumbHtml = post.image
+                    ? `<div class="h-44 overflow-hidden"><img src="${post.image}" alt="${post.title}" class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" loading="lazy"></div>`
+                    : `<div class="h-44 ${post.thumbClass} card-thumb-overlay flex items-center justify-center"><span class="font-mono text-xs text-gray-500 uppercase tracking-widest">${post.category}</span></div>`;
                 card.innerHTML = `
-                    <div class="h-44 overflow-hidden">
-                        <img src="${post.image}" alt="${post.title}" class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" loading="lazy">
-                    </div>
+                    ${thumbHtml}
                     <div class="p-5">
                         <div class="flex items-center justify-between mb-3">
                             <span class="font-mono text-xs text-gray-500">${formatDate(post.date)}</span>
