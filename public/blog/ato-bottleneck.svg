@@ -4,172 +4,114 @@
       <stop offset="0%" style="stop-color:#0d1117"/>
       <stop offset="100%" style="stop-color:#0a0a0f"/>
     </linearGradient>
-    <linearGradient id="funnelFill" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#ff3366;stop-opacity:0.12"/>
-      <stop offset="100%" style="stop-color:#ff3366;stop-opacity:0.03"/>
-    </linearGradient>
-    <linearGradient id="greenBox" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#00ff88;stop-opacity:0.12"/>
-      <stop offset="100%" style="stop-color:#00ff88;stop-opacity:0.05"/>
-    </linearGradient>
-    <linearGradient id="redBox" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#ff3366;stop-opacity:0.12"/>
-      <stop offset="100%" style="stop-color:#ff3366;stop-opacity:0.05"/>
-    </linearGradient>
-    <filter id="glow"><feGaussianBlur stdDeviation="6" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
   </defs>
 
   <!-- Background -->
   <rect width="1200" height="630" fill="url(#bg)"/>
 
-  <!-- Grid -->
-  <g opacity="0.06" stroke="#00ff88" stroke-width="0.5">
-    <line x1="100" y1="0" x2="100" y2="630"/><line x1="200" y1="0" x2="200" y2="630"/>
-    <line x1="300" y1="0" x2="300" y2="630"/><line x1="400" y1="0" x2="400" y2="630"/>
-    <line x1="500" y1="0" x2="500" y2="630"/><line x1="600" y1="0" x2="600" y2="630"/>
-    <line x1="700" y1="0" x2="700" y2="630"/><line x1="800" y1="0" x2="800" y2="630"/>
-    <line x1="900" y1="0" x2="900" y2="630"/><line x1="1000" y1="0" x2="1000" y2="630"/>
-    <line x1="1100" y1="0" x2="1100" y2="630"/>
-    <line x1="0" y1="100" x2="1200" y2="100"/><line x1="0" y1="200" x2="1200" y2="200"/>
-    <line x1="0" y1="300" x2="1200" y2="300"/><line x1="0" y1="400" x2="1200" y2="400"/>
-    <line x1="0" y1="500" x2="1200" y2="500"/>
+  <!-- Subtle grid -->
+  <g opacity="0.05" stroke="#00ff88" stroke-width="0.5">
+    <line x1="0" y1="105" x2="1200" y2="105"/><line x1="0" y1="210" x2="1200" y2="210"/>
+    <line x1="0" y1="315" x2="1200" y2="315"/><line x1="0" y1="420" x2="1200" y2="420"/>
+    <line x1="0" y1="525" x2="1200" y2="525"/>
+    <line x1="200" y1="0" x2="200" y2="630"/><line x1="400" y1="0" x2="400" y2="630"/>
+    <line x1="600" y1="0" x2="600" y2="630"/><line x1="800" y1="0" x2="800" y2="630"/>
+    <line x1="1000" y1="0" x2="1000" y2="630"/>
   </g>
 
-  <!-- ===== LEFT SIDE: Problem boxes ===== -->
+  <!-- ===== COLUMN 1: TODAY (Red/Problem) ===== -->
 
-  <!-- SSP Doc -->
-  <g transform="translate(60, 60)">
-    <rect width="200" height="100" rx="6" fill="url(#redBox)" stroke="#ff3366" stroke-width="1.5" opacity="0.9"/>
-    <text x="15" y="28" font-family="monospace" font-size="13" font-weight="bold" fill="#ff3366">SSP DOCUMENT</text>
-    <line x1="15" y1="38" x2="185" y2="38" stroke="#ff3366" stroke-width="0.5" opacity="0.4"/>
-    <text x="15" y="55" font-family="monospace" font-size="10" fill="#8b949e">325+ controls</text>
-    <text x="15" y="70" font-family="monospace" font-size="10" fill="#8b949e">500+ pages of narrative</text>
-    <text x="15" y="85" font-family="monospace" font-size="10" fill="#ff6688">Stale on delivery</text>
+  <!-- Column header -->
+  <rect x="40" y="30" width="320" height="44" rx="6" fill="#1a1215" stroke="#ff3366" stroke-width="1.5"/>
+  <text x="200" y="58" font-family="monospace" font-size="18" font-weight="bold" fill="#ff3366" text-anchor="middle">TODAY'S ATO PROCESS</text>
+
+  <!-- Box 1: Documentation -->
+  <rect x="40" y="100" width="320" height="110" rx="6" fill="#120f14" stroke="#ff3366" stroke-width="1.2"/>
+  <text x="60" y="128" font-family="monospace" font-size="14" font-weight="bold" fill="#ff3366">Documentation Overload</text>
+  <text x="60" y="152" font-family="monospace" font-size="11" fill="#9ca3af">500+ page SSPs written from memory</text>
+  <text x="60" y="170" font-family="monospace" font-size="11" fill="#9ca3af">Outdated before assessment begins</text>
+  <text x="60" y="188" font-family="monospace" font-size="11" fill="#ff6688">Describes intent, not reality</text>
+
+  <!-- Box 2: Manual Evidence -->
+  <rect x="40" y="230" width="320" height="110" rx="6" fill="#120f14" stroke="#ff3366" stroke-width="1.2"/>
+  <text x="60" y="258" font-family="monospace" font-size="14" font-weight="bold" fill="#ff3366">Manual Evidence Collection</text>
+  <text x="60" y="282" font-family="monospace" font-size="11" fill="#9ca3af">Screenshots, PDFs, spreadsheets</text>
+  <text x="60" y="300" font-family="monospace" font-size="11" fill="#9ca3af">Weeks of gathering per assessment</text>
+  <text x="60" y="318" font-family="monospace" font-size="11" fill="#ff6688">Stale evidence = rework cycles</text>
+
+  <!-- Box 3: Bottlenecks -->
+  <rect x="40" y="360" width="320" height="110" rx="6" fill="#12100d" stroke="#ffb800" stroke-width="1.2"/>
+  <text x="60" y="388" font-family="monospace" font-size="14" font-weight="bold" fill="#ffb800">Organizational Bottlenecks</text>
+  <text x="60" y="412" font-family="monospace" font-size="11" fill="#9ca3af">AO queues, 3PAO backlogs</text>
+  <text x="60" y="430" font-family="monospace" font-size="11" fill="#9ca3af">Compliance theater over risk mgmt</text>
+  <text x="60" y="448" font-family="monospace" font-size="11" fill="#ffcc44">Calendar delays compound tech ones</text>
+
+  <!-- Result badge -->
+  <rect x="80" y="496" width="240" height="50" rx="8" fill="#1a1215" stroke="#ff3366" stroke-width="2"/>
+  <text x="200" y="525" font-family="monospace" font-size="20" font-weight="bold" fill="#ff3366" text-anchor="middle">12-18 MONTHS</text>
+
+  <!-- Down arrows connecting boxes -->
+  <line x1="200" y1="210" x2="200" y2="230" stroke="#ff3366" stroke-width="1.5" opacity="0.4"/>
+  <line x1="200" y1="340" x2="200" y2="360" stroke="#ff3366" stroke-width="1.5" opacity="0.4"/>
+  <line x1="200" y1="470" x2="200" y2="496" stroke="#ff3366" stroke-width="1.5" opacity="0.4" stroke-dasharray="4,3"/>
+  <polygon points="195,494 200,502 205,494" fill="#ff3366" opacity="0.5"/>
+
+  <!-- ===== CENTER: Arrow / Transformation ===== -->
+
+  <g transform="translate(600, 290)">
+    <!-- Large arrow -->
+    <line x1="-170" y1="0" x2="130" y2="0" stroke="#21262d" stroke-width="2"/>
+    <polygon points="130,-12 155,0 130,12" fill="#21262d"/>
+
+    <!-- Glow overlay arrow -->
+    <line x1="-170" y1="0" x2="130" y2="0" stroke="#00ff88" stroke-width="1" opacity="0.3"/>
+    <polygon points="130,-10 152,0 130,10" fill="#00ff88" opacity="0.3"/>
+
+    <text x="-20" y="-20" font-family="monospace" font-size="11" fill="#8b949e" text-anchor="middle">WHAT CHANGES</text>
   </g>
 
-  <!-- Manual Evidence -->
-  <g transform="translate(60, 190)">
-    <rect width="200" height="100" rx="6" fill="url(#redBox)" stroke="#ff3366" stroke-width="1.5" opacity="0.9"/>
-    <text x="15" y="28" font-family="monospace" font-size="13" font-weight="bold" fill="#ff3366">MANUAL EVIDENCE</text>
-    <line x1="15" y1="38" x2="185" y2="38" stroke="#ff3366" stroke-width="0.5" opacity="0.4"/>
-    <text x="15" y="55" font-family="monospace" font-size="10" fill="#8b949e">Screenshots</text>
-    <text x="15" y="70" font-family="monospace" font-size="10" fill="#8b949e">PDF exports</text>
-    <text x="15" y="85" font-family="monospace" font-size="10" fill="#ff6688">Weeks to collect</text>
-  </g>
+  <!-- ===== COLUMN 2: FUTURE (Green/Solution) ===== -->
 
-  <!-- Compliance Theater -->
-  <g transform="translate(60, 320)">
-    <rect width="200" height="100" rx="6" fill="url(#redBox)" stroke="#ffb800" stroke-width="1.5" opacity="0.9"/>
-    <text x="15" y="28" font-family="monospace" font-size="13" font-weight="bold" fill="#ffb800">COMPLIANCE THEATER</text>
-    <line x1="15" y1="38" x2="185" y2="38" stroke="#ffb800" stroke-width="0.5" opacity="0.4"/>
-    <text x="15" y="55" font-family="monospace" font-size="10" fill="#8b949e">Checkbox mentality</text>
-    <text x="15" y="70" font-family="monospace" font-size="10" fill="#8b949e">"Good-looking packages"</text>
-    <text x="15" y="85" font-family="monospace" font-size="10" fill="#ffcc44">Risk aversion > risk mgmt</text>
-  </g>
+  <!-- Column header -->
+  <rect x="840" y="30" width="320" height="44" rx="6" fill="#0a1a10" stroke="#00ff88" stroke-width="1.5"/>
+  <text x="1000" y="58" font-family="monospace" font-size="18" font-weight="bold" fill="#00ff88" text-anchor="middle">THE PATH FORWARD</text>
 
-  <!-- ===== CENTER: Funnel ===== -->
-  <g transform="translate(600, 50)">
-    <!-- Funnel shape -->
-    <path d="M-180,0 L180,0 L50,280 L50,380 L-50,380 L-50,280 Z" fill="url(#funnelFill)" stroke="#ff3366" stroke-width="2" opacity="0.8"/>
+  <!-- Box 1: Automated Evidence -->
+  <rect x="840" y="100" width="320" height="110" rx="6" fill="#0c1410" stroke="#00ff88" stroke-width="1.2"/>
+  <text x="860" y="128" font-family="monospace" font-size="14" font-weight="bold" fill="#00ff88">Automated Evidence</text>
+  <text x="860" y="152" font-family="monospace" font-size="11" fill="#9ca3af">CI/CD artifacts as proof</text>
+  <text x="1140" y="152" font-family="monospace" font-size="11" fill="#00ff88" text-anchor="end">LIVE</text>
+  <text x="860" y="170" font-family="monospace" font-size="11" fill="#9ca3af">OSCAL machine-readable output</text>
+  <text x="1140" y="170" font-family="monospace" font-size="11" fill="#00ff88" text-anchor="end">AUTO</text>
+  <text x="860" y="188" font-family="monospace" font-size="11" fill="#9ca3af">Continuous scan telemetry</text>
+  <text x="1140" y="188" font-family="monospace" font-size="11" fill="#00ff88" text-anchor="end">REAL</text>
 
-    <!-- Items inside funnel -->
-    <g font-family="monospace" font-size="11" font-weight="bold">
-      <rect x="-140" y="20" width="60" height="26" rx="4" fill="#1a1520" stroke="#ff3366" stroke-width="1"/>
-      <text x="-128" y="38" fill="#ff6688">SSP</text>
+  <!-- Box 2: Secure by Design -->
+  <rect x="840" y="230" width="320" height="110" rx="6" fill="#0c1410" stroke="#00ff88" stroke-width="1.2"/>
+  <text x="860" y="258" font-family="monospace" font-size="14" font-weight="bold" fill="#00ff88">Secure-by-Design</text>
+  <text x="860" y="282" font-family="monospace" font-size="11" fill="#9ca3af">Infrastructure as Code = evidence</text>
+  <text x="860" y="300" font-family="monospace" font-size="11" fill="#9ca3af">Policy-as-code guardrails</text>
+  <text x="860" y="318" font-family="monospace" font-size="11" fill="#9ca3af">STIG-hardened from day one</text>
 
-      <rect x="-65" y="15" width="70" height="26" rx="4" fill="#1a1520" stroke="#ff3366" stroke-width="1"/>
-      <text x="-52" y="33" fill="#ff6688">POA&amp;M</text>
+  <!-- Box 3: Continuous ATO -->
+  <rect x="840" y="360" width="320" height="110" rx="6" fill="#0c1214" stroke="#00d4ff" stroke-width="1.2"/>
+  <text x="860" y="388" font-family="monospace" font-size="14" font-weight="bold" fill="#00d4ff">Continuous ATO</text>
+  <text x="860" y="412" font-family="monospace" font-size="11" fill="#9ca3af">Live dashboards for the AO</text>
+  <text x="860" y="430" font-family="monospace" font-size="11" fill="#9ca3af">Real-time security posture</text>
+  <text x="860" y="448" font-family="monospace" font-size="11" fill="#00d4ff">Risk decisions in minutes, not months</text>
 
-      <rect x="20" y="20" width="60" height="26" rx="4" fill="#1a1520" stroke="#ffb800" stroke-width="1"/>
-      <text x="32" y="38" fill="#ffcc44">SCAN</text>
+  <!-- Result badge -->
+  <rect x="880" y="496" width="240" height="50" rx="8" fill="#0a1a10" stroke="#00ff88" stroke-width="2"/>
+  <text x="1000" y="525" font-family="monospace" font-size="20" font-weight="bold" fill="#00ff88" text-anchor="middle">WEEKS, NOT MONTHS</text>
 
-      <rect x="95" y="18" width="55" height="26" rx="4" fill="#1a1520" stroke="#ff3366" stroke-width="1"/>
-      <text x="107" y="36" fill="#ff6688">SAR</text>
+  <!-- Down arrows connecting boxes -->
+  <line x1="1000" y1="210" x2="1000" y2="230" stroke="#00ff88" stroke-width="1.5" opacity="0.4"/>
+  <line x1="1000" y1="340" x2="1000" y2="360" stroke="#00ff88" stroke-width="1.5" opacity="0.4"/>
+  <line x1="1000" y1="470" x2="1000" y2="496" stroke="#00ff88" stroke-width="1.5" opacity="0.4" stroke-dasharray="4,3"/>
+  <polygon points="995,494 1000,502 1005,494" fill="#00ff88" opacity="0.5"/>
 
-      <rect x="-110" y="60" width="55" height="26" rx="4" fill="#1a1520" stroke="#ffb800" stroke-width="1"/>
-      <text x="-98" y="78" fill="#ffcc44">STIG</text>
-
-      <rect x="-40" y="55" width="55" height="26" rx="4" fill="#1a1520" stroke="#ff3366" stroke-width="1"/>
-      <text x="-28" y="73" fill="#ff6688">CRM</text>
-
-      <rect x="30" y="62" width="80" height="26" rx="4" fill="#1a1520" stroke="#ff3366" stroke-width="1"/>
-      <text x="38" y="80" fill="#ff6688">CONMON</text>
-    </g>
-
-    <!-- Jam in narrow part -->
-    <g opacity="0.6">
-      <rect x="-30" y="160" width="25" height="18" rx="3" fill="#1a1520" stroke="#ff3366" stroke-width="1"/>
-      <rect x="5" y="170" width="25" height="18" rx="3" fill="#1a1520" stroke="#ffb800" stroke-width="1"/>
-      <rect x="-15" y="195" width="25" height="18" rx="3" fill="#1a1520" stroke="#ff3366" stroke-width="1"/>
-      <rect x="12" y="205" width="25" height="18" rx="3" fill="#1a1520" stroke="#ff3366" stroke-width="1"/>
-    </g>
-
-    <!-- Drip arrow -->
-    <line x1="0" y1="385" x2="0" y2="430" stroke="#ff3366" stroke-width="2" stroke-dasharray="6,4" opacity="0.7"/>
-    <polygon points="-8,425 0,440 8,425" fill="#ff3366" opacity="0.7"/>
-
-    <!-- Time label -->
-    <rect x="-80" y="450" width="160" height="36" rx="6" fill="#1a1215" stroke="#ff3366" stroke-width="1.5"/>
-    <text x="0" y="473" font-family="monospace" font-size="16" font-weight="bold" fill="#ff3366" text-anchor="middle">12-18 MONTHS</text>
-  </g>
-
-  <!-- Arrows from left boxes to funnel -->
-  <g stroke="#ff3366" stroke-width="1.5" opacity="0.4" fill="none">
-    <path d="M260,110 Q350,110 420,120"/>
-    <path d="M260,240 Q350,230 420,200"/>
-    <path d="M260,370 Q350,350 420,280"/>
-  </g>
-
-  <!-- ===== RIGHT SIDE: Solution boxes ===== -->
-
-  <!-- Automated Evidence -->
-  <g transform="translate(940, 60)">
-    <rect width="200" height="100" rx="6" fill="url(#greenBox)" stroke="#00ff88" stroke-width="1.5" opacity="0.9"/>
-    <text x="15" y="28" font-family="monospace" font-size="13" font-weight="bold" fill="#00ff88">AUTO EVIDENCE</text>
-    <line x1="15" y1="38" x2="185" y2="38" stroke="#00ff88" stroke-width="0.5" opacity="0.4"/>
-    <text x="15" y="55" font-family="monospace" font-size="10" fill="#8b949e">CI/CD artifacts</text>
-    <text x="170" y="55" font-family="monospace" font-size="10" fill="#00ff88" text-anchor="end">LIVE</text>
-    <text x="15" y="70" font-family="monospace" font-size="10" fill="#8b949e">OSCAL output</text>
-    <text x="170" y="70" font-family="monospace" font-size="10" fill="#00ff88" text-anchor="end">AUTO</text>
-    <text x="15" y="85" font-family="monospace" font-size="10" fill="#8b949e">Scan telemetry</text>
-    <text x="170" y="85" font-family="monospace" font-size="10" fill="#00ff88" text-anchor="end">CONT</text>
-  </g>
-
-  <!-- Secure by Design -->
-  <g transform="translate(940, 190)">
-    <rect width="200" height="100" rx="6" fill="url(#greenBox)" stroke="#00ff88" stroke-width="1.5" opacity="0.9"/>
-    <text x="15" y="28" font-family="monospace" font-size="13" font-weight="bold" fill="#00ff88">SECURE BY DESIGN</text>
-    <line x1="15" y1="38" x2="185" y2="38" stroke="#00ff88" stroke-width="0.5" opacity="0.4"/>
-    <text x="15" y="55" font-family="monospace" font-size="10" fill="#8b949e">IaC = evidence</text>
-    <text x="15" y="70" font-family="monospace" font-size="10" fill="#8b949e">Policy-as-code</text>
-    <text x="15" y="85" font-family="monospace" font-size="10" fill="#8b949e">Hardened baselines</text>
-  </g>
-
-  <!-- Continuous ATO -->
-  <g transform="translate(940, 320)">
-    <rect width="200" height="100" rx="6" fill="url(#greenBox)" stroke="#00d4ff" stroke-width="1.5" opacity="0.9"/>
-    <text x="15" y="28" font-family="monospace" font-size="13" font-weight="bold" fill="#00d4ff">CONTINUOUS ATO</text>
-    <line x1="15" y1="38" x2="185" y2="38" stroke="#00d4ff" stroke-width="0.5" opacity="0.4"/>
-    <text x="15" y="55" font-family="monospace" font-size="10" fill="#8b949e">Live dashboards</text>
-    <text x="15" y="70" font-family="monospace" font-size="10" fill="#8b949e">Real-time posture</text>
-    <text x="15" y="85" font-family="monospace" font-size="10" fill="#00d4ff">AO decides in minutes</text>
-  </g>
-
-  <!-- Arrows from funnel to right boxes -->
-  <g stroke="#00ff88" stroke-width="1.5" opacity="0.4" fill="none">
-    <path d="M780,120 Q860,110 940,110"/>
-    <path d="M780,200 Q860,230 940,240"/>
-    <path d="M780,280 Q860,340 940,370"/>
-  </g>
-
-  <!-- VS label in center -->
-  <g transform="translate(600, 530)">
-    <rect x="-170" y="-20" width="140" height="34" rx="6" fill="#1a1215" stroke="#ff3366" stroke-width="1"/>
-    <text x="-100" y="4" font-family="monospace" font-size="14" font-weight="bold" fill="#ff3366" text-anchor="middle">THE PROBLEM</text>
-
-    <rect x="30" y="-20" width="140" height="34" rx="6" fill="#0a1a10" stroke="#00ff88" stroke-width="1"/>
-    <text x="100" y="4" font-family="monospace" font-size="14" font-weight="bold" fill="#00ff88" text-anchor="middle">THE FIX</text>
-  </g>
+  <!-- ===== BOTTOM LABEL ===== -->
+  <text x="600" y="600" font-family="monospace" font-size="12" fill="#4a5568" text-anchor="middle" letter-spacing="2">THE ATO BOTTLENECK: RETHINKING AUTHORIZATION</text>
 
   <!-- Border -->
   <rect x="0" y="0" width="1200" height="630" fill="none" stroke="#21262d" stroke-width="1"/>
