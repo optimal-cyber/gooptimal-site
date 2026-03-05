@@ -239,7 +239,7 @@ document.head.appendChild(o)}initApollo();</script>
         <div class="max-w-7xl mx-auto px-6">
             <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
                 <div class="flex items-center gap-4">
-                    <span id="post-count" class="font-mono text-sm text-gray-500">5 posts</span>
+                    <span id="post-count" class="font-mono text-sm text-gray-500">6 posts</span>
                     <select id="topic-filter" class="bg-cyber-gray border border-cyber-border rounded px-4 py-2 text-sm text-gray-300 font-mono focus:outline-none focus:border-cyber-green appearance-none cursor-pointer" style="background-image: url('data:image/svg+xml;utf8,<svg fill=\"%238b949e\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M7 10l5 5 5-5z\"/></svg>'); background-repeat: no-repeat; background-position: right 10px center; background-size: 18px; padding-right: 36px;">
                         <option value="all">All Topics</option>
                         <option value="Industry Insights">Industry Insights</option>
@@ -314,6 +314,17 @@ document.head.appendChild(o)}initApollo();</script>
     <script>
         // Blog post data
         const blogPosts = [
+            {
+                title: "The ATO Bottleneck: Why Authorization Takes So Long and What Actually Fixes It",
+                category: "Industry Insights",
+                date: "2026-03-05",
+                excerpt: "The ATO process was designed to manage risk. Instead, it has become the risk — delaying deployments by 12 to 18 months while security posture degrades. Here is what is broken and what the path forward looks like.",
+                url: "/blog/ato-bottleneck-rethinking-authorization",
+                image: "/public/blog/ato-bottleneck.svg",
+                thumbClass: "card-thumb-green",
+                badgeClass: "badge-green",
+                tags: ["ATO", "cATO", "RMF", "NIST", "FedRAMP", "compliance automation", "DevSecOps", "Secure-by-Design", "OSCAL"]
+            },
             {
                 title: "FedRAMP 20x: A Step Forward on Paper, A Marathon in Practice",
                 category: "Industry Insights",
