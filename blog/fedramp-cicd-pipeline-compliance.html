@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Building a Compliant CI/CD Pipeline for Public Sector: GitHub, GitLab, and the Authorization Boundary - Optimal Blog</title>
+    <meta name="description" content="A practical guide to architecting a CI/CD pipeline that crosses the authorization boundary — using GitHub or GitLab CI outside, pulling code into a secure dev environment, and promoting to production through a manual gate — for FedRAMP, DoW Impact Level, and agency ATO environments.">
+    <meta name="keywords" content="CI/CD, pipeline, DevSecOps, NIST 800-53, authorization boundary, GitHub, GitLab CI, AWS GovCloud, SAST, DAST, SCA, FIPS 140, continuous monitoring, ATO, FedRAMP, DoW, Impact Level, DISA, compliance automation, public sector">
+    <link rel="canonical" href="https://gooptimal.io/blog/fedramp-cicd-pipeline-compliance">
+
+    <link rel="icon" type="image/png" href="/public/optimal-logo.png">
+    <link rel="shortcut icon" type="image/png" href="/public/optimal-logo.png">
+    <meta property="og:title" content="Building a Compliant CI/CD Pipeline for Public Sector: GitHub, GitLab, and the Authorization Boundary">
+    <meta property="og:description" content="A practical guide to architecting a compliant CI/CD pipeline across the authorization boundary for FedRAMP, DoW IL, and agency ATO environments.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://gooptimal.io/blog/fedramp-cicd-pipeline-compliance">
+    <meta property="og:image" content="https://gooptimal.io/public/blog/cicd-fedramp.svg">
+    <meta property="og:site_name" content="Optimal">
+    <meta property="article:published_time" content="2026-03-07T00:00:00Z">
+    <meta property="article:author" content="Optimal Team">
+    <meta property="article:section" content="Engineering">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Building a Compliant CI/CD Pipeline for Public Sector: GitHub, GitLab, and the Authorization Boundary">
+    <meta name="twitter:description" content="A practical guide to architecting a compliant CI/CD pipeline across the authorization boundary for FedRAMP, DoW IL, and agency ATO environments.">
+    <meta name="twitter:image" content="https://gooptimal.io/public/blog/cicd-fedramp.svg">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Building a Compliant CI/CD Pipeline for Public Sector: GitHub, GitLab, and the Authorization Boundary",
+        "description": "A practical guide to architecting a CI/CD pipeline that crosses the authorization boundary using GitHub or GitLab CI, for FedRAMP, DoW Impact Level, and agency ATO environments.",
+        "datePublished": "2026-03-07T00:00:00Z",
+        "dateModified": "2026-03-07T00:00:00Z",
+        "author": { "@type": "Organization", "name": "Optimal Team" },
+        "publisher": { "@type": "Organization", "name": "Optimal", "logo": { "@type": "ImageObject", "url": "https://gooptimal.io/public/optimal-logo.png" } },
+        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://gooptimal.io/blog/fedramp-cicd-pipeline-compliance" },
+        "url": "https://gooptimal.io/blog/fedramp-cicd-pipeline-compliance",
+        "image": "https://gooptimal.io/public/blog/cicd-fedramp.svg",
+        "articleSection": "Engineering",
+        "wordCount": 3200
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'cyber-black': '#0a0a0f', 'cyber-dark': '#0d1117', 'cyber-gray': '#161b22',
+                        'cyber-border': '#21262d', 'cyber-green': '#00ff88', 'cyber-green-dim': '#00cc6a',
+                        'cyber-blue': '#00d4ff', 'cyber-amber': '#ffb800', 'cyber-red': '#ff3366', 'cyber-purple': '#a855f7',
+                    },
+                    fontFamily: { 'mono': ['JetBrains Mono', 'monospace'], 'sans': ['Inter', 'system-ui', 'sans-serif'], }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background: #0a0a0f; overflow-x: hidden; }
+        .grid-bg { background-image: linear-gradient(rgba(0, 255, 136, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 255, 136, 0.03) 1px, transparent 1px); background-size: 50px 50px; }
+        .nav-fixed { backdrop-filter: blur(12px); background: rgba(10, 10, 15, 0.9); border-bottom: 1px solid rgba(33, 38, 45, 0.5); }
+        .nav-link { color: #8b949e; transition: color 0.3s ease; }
+        .nav-link:hover { color: #00ff88; }
+        .nav-dropdown { position: relative; }
+        .nav-dropdown-trigger { color: #8b949e; transition: color 0.3s ease; cursor: pointer; display: flex; align-items: center; gap: 4px; background: none; border: none; padding: 0; font-family: inherit; }
+        .nav-dropdown-trigger:hover { color: #00ff88; }
+        .nav-dropdown-menu { position: absolute; top: 100%; left: 50%; transform: translateX(-50%); margin-top: 16px; background: rgba(10, 10, 15, 0.95); border: 1px solid rgba(33, 38, 45, 0.8); border-radius: 8px; padding: 8px 0; min-width: 200px; opacity: 0; visibility: hidden; transition: opacity 0.2s ease, visibility 0.2s ease; backdrop-filter: blur(12px); z-index: 50; }
+        .nav-dropdown:hover .nav-dropdown-menu { opacity: 1; visibility: visible; }
+        .nav-dropdown-menu a { display: block; padding: 10px 16px; color: #8b949e; font-family: 'JetBrains Mono', monospace; font-size: 13px; transition: color 0.2s ease, background 0.2s ease; text-decoration: none; }
+        .nav-dropdown-menu a:hover { color: #00ff88; background: rgba(0, 255, 136, 0.05); }
+        .btn-platform { background: linear-gradient(135deg, #00ff88 0%, #00cc6a 100%); color: #0a0a0f; font-weight: 600; transition: all 0.3s ease; }
+        .btn-platform:hover { transform: translateY(-2px); box-shadow: 0 10px 40px rgba(0, 255, 136, 0.3); }
+        .btn-outline { border: 1px solid #00ff88; color: #00ff88; transition: all 0.3s ease; background: transparent; }
+        .btn-outline:hover { background: rgba(0, 255, 136, 0.1); }
+        .section-label { font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: #00ff88; }
+        .section-label::before { content: '// '; opacity: 0.5; }
+        .badge-green { background: rgba(0, 255, 136, 0.1); color: #00ff88; border: 1px solid rgba(0, 255, 136, 0.2); }
+        .badge-blue { background: rgba(0, 212, 255, 0.1); color: #00d4ff; border: 1px solid rgba(0, 212, 255, 0.2); }
+        .badge-purple { background: rgba(168, 85, 247, 0.1); color: #a855f7; border: 1px solid rgba(168, 85, 247, 0.2); }
+        .badge-amber { background: rgba(255, 184, 0, 0.1); color: #ffb800; border: 1px solid rgba(255, 184, 0, 0.2); }
+        .blog-card { background: rgba(13, 17, 23, 0.8); border: 1px solid #21262d; border-radius: 8px; transition: all 0.3s ease; overflow: hidden; }
+        .blog-card:hover { border-color: #00ff88; transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0, 255, 136, 0.08); }
+        .blog-card:hover .card-title { color: #00ff88; }
+        .line-clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+        .line-clamp-3 { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+        .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+        .prose-cyber { color: #9ca3af; line-height: 1.8; }
+        .prose-cyber h2 { color: #fff; font-size: 1.5rem; font-weight: 700; margin-top: 2.5rem; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid #21262d; }
+        .prose-cyber h3 { color: #e5e7eb; font-size: 1.25rem; font-weight: 600; margin-top: 2rem; margin-bottom: 0.75rem; }
+        .prose-cyber p { margin-bottom: 1.25rem; }
+        .prose-cyber a { color: #00d4ff; text-decoration: underline; text-decoration-color: rgba(0,212,255,0.3); }
+        .prose-cyber a:hover { text-decoration-color: #00d4ff; }
+        .prose-cyber ul, .prose-cyber ol { margin-bottom: 1.25rem; padding-left: 1.5rem; }
+        .prose-cyber li { margin-bottom: 0.5rem; }
+        .prose-cyber li::marker { color: #00ff88; }
+        .prose-cyber strong { color: #e5e7eb; }
+        .prose-cyber blockquote { border-left: 3px solid #00ff88; padding: 1rem 1.5rem; margin: 1.5rem 0; background: rgba(0, 255, 136, 0.03); border-radius: 0 8px 8px 0; }
+        .prose-cyber blockquote p { margin-bottom: 0; color: #d1d5db; }
+        .prose-cyber code { font-family: 'JetBrains Mono', monospace; background: rgba(22, 27, 34, 0.8); border: 1px solid #21262d; padding: 2px 6px; border-radius: 4px; font-size: 0.875rem; color: #00ff88; }
+        .prose-cyber pre { background: #161b22; border: 1px solid #21262d; border-radius: 8px; padding: 1.25rem; margin: 1.5rem 0; overflow-x: auto; }
+        .prose-cyber pre code { background: none; border: none; padding: 0; color: #e5e7eb; }
+        /* Control table styles */
+        .control-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.875rem; }
+        .control-table th { background: #161b22; color: #e5e7eb; font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; padding: 10px 14px; text-align: left; border-bottom: 2px solid #21262d; }
+        .control-table td { padding: 10px 14px; border-bottom: 1px solid #161b22; color: #9ca3af; }
+        .control-table tr:hover td { background: rgba(0, 255, 136, 0.02); }
+        .control-id { font-family: 'JetBrains Mono', monospace; color: #00ff88; font-weight: 600; white-space: nowrap; }
+        /* Inline diagram boxes */
+        .diagram-box { background: #0d1117; border: 1px solid #21262d; border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0; overflow-x: auto; }
+        /* Schedule table */
+        .schedule-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.8rem; }
+        .schedule-table th { background: #161b22; color: #e5e7eb; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; padding: 8px 12px; text-align: left; border-bottom: 2px solid #21262d; }
+        .schedule-table td { padding: 8px 12px; border-bottom: 1px solid #161b22; color: #9ca3af; font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; }
+        .schedule-table tr:hover td { background: rgba(0, 255, 136, 0.02); }
+        .freq-continuous { color: #00ff88; }
+        .freq-monthly { color: #00d4ff; }
+        .freq-quarterly { color: #ffb800; }
+        .freq-annual { color: #a855f7; }
+    </style>
+    <script>function initApollo(){var n=Math.random().toString(36).substring(7),o=document.createElement("script");
+o.src="https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache="+n,o.async=!0,o.defer=!0,
+o.onload=function(){window.trackingFunctions.onLoad({appId:"698c8b7248beb80019d50b7e"})},
+document.head.appendChild(o)}initApollo();</script>
+</head>
+<body class="bg-cyber-black text-gray-100 font-sans antialiased">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 nav-fixed">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="/index.html" class="flex items-center gap-3">
+                    <img src="/public/optimal-logo.png" alt="Optimal Logo" class="w-10 h-10">
+                    <span class="font-bold text-xl text-white">Optimal</span>
+                </a>
+                <div class="hidden md:flex items-center gap-8">
+                    <div class="nav-dropdown">
+                        <button class="nav-dropdown-trigger font-mono text-sm">Platform <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+                        <div class="nav-dropdown-menu"><a href="/platform">Platform Overview</a><a href="/integrations">Integrations</a><a href="/#capabilities">Capabilities</a></div>
+                    </div>
+                    <a href="/#team" class="nav-link font-mono text-sm">Team</a>
+                    <div class="nav-dropdown">
+                        <button class="nav-dropdown-trigger font-mono text-sm">Resources <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+                        <div class="nav-dropdown-menu"><a href="https://docs.gooptimal.io/" target="_blank">Documentation</a><a href="/blog.html">Blog</a></div>
+                    </div>
+                    <a href="https://app.gooptimal.io" target="_blank" class="nav-link font-mono text-sm">Login</a>
+                    <a href="/demo" class="btn-platform text-sm px-6 py-2">Request Demo</a>
+                </div>
+                <button id="mobile-menu-btn" class="md:hidden text-gray-400 hover:text-white"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+            </div>
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t border-cyber-border pt-4">
+                <div class="flex flex-col gap-4">
+                    <div class="flex flex-col gap-2"><span class="font-mono text-xs text-gray-500 uppercase tracking-wider">Platform</span><a href="/platform" class="nav-link font-mono text-sm pl-3">Overview</a><a href="/integrations" class="nav-link font-mono text-sm pl-3">Integrations</a><a href="/#capabilities" class="nav-link font-mono text-sm pl-3">Capabilities</a></div>
+                    <a href="/#team" class="nav-link font-mono text-sm">Team</a>
+                    <div class="flex flex-col gap-2"><span class="font-mono text-xs text-gray-500 uppercase tracking-wider">Resources</span><a href="https://docs.gooptimal.io/" target="_blank" class="nav-link font-mono text-sm pl-3">Documentation</a><a href="/blog.html" class="nav-link font-mono text-sm pl-3">Blog</a></div>
+                    <a href="https://app.gooptimal.io" target="_blank" class="nav-link font-mono text-sm">Login</a>
+                    <a href="/demo" class="btn-platform text-sm px-6 py-3 text-center mt-2">Request Demo</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <section class="pt-24 pb-4">
+        <div class="max-w-4xl mx-auto px-6">
+            <nav class="font-mono text-sm flex items-center gap-2">
+                <a href="/index.html" class="text-gray-500 hover:text-cyber-green transition-colors">Home</a>
+                <span class="text-gray-600">/</span>
+                <a href="/blog.html" class="text-gray-500 hover:text-cyber-green transition-colors">Blog</a>
+                <span class="text-gray-600">/</span>
+                <span class="text-gray-400">FedRAMP CI/CD Pipeline Compliance</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Article Hero -->
+    <section class="relative pt-8 pb-12 grid-bg">
+        <div class="absolute inset-0 bg-gradient-to-b from-cyber-black via-transparent to-cyber-black"></div>
+        <div class="absolute top-1/4 right-1/4 w-96 h-96 bg-cyber-green/5 rounded-full blur-3xl"></div>
+        <div class="relative max-w-4xl mx-auto px-6">
+            <div class="mb-6"><span class="badge-purple font-mono text-xs px-3 py-1 rounded">Engineering</span></div>
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">Building a Compliant CI/CD Pipeline for Public Sector: GitHub, GitLab, and the Authorization Boundary</h1>
+            <div class="flex flex-wrap items-center gap-4 text-sm text-gray-500 font-mono mb-10">
+                <span>March 7, 2026</span><span class="text-cyber-border">|</span><span>Optimal Team</span><span class="text-cyber-border">|</span><span>14 min read</span>
+            </div>
+            <div class="rounded-xl overflow-hidden"><img src="/public/blog/cicd-fedramp.svg" alt="Public Sector CI/CD Pipeline Architecture - GitHub/GitLab to Dev/Test to Production across the authorization boundary" class="w-full h-auto"></div>
+        </div>
+    </section>
+
+    <!-- Article Body -->
+    <section class="py-12">
+        <div class="max-w-3xl mx-auto px-6 prose-cyber">
+
+            <p>
+                Every engineering team building for the federal government eventually hits the same question: how do we run a modern CI/CD pipeline -- one that uses tools like GitHub or GitLab CI, automated testing, and continuous deployment -- without blowing up our authorization?
+            </p>
+
+            <p>
+                Whether you are pursuing a <a href="https://www.fedramp.gov/" target="_blank">FedRAMP</a> authorization, a <a href="https://www.disa.mil/" target="_blank">DoW Impact Level</a> provisional authorization through DISA, or an agency-specific ATO, the fundamental challenge is the same: your developers want to use modern source control and CI/CD tooling, but that tooling often lives outside the authorization boundary. The answer is not "use only authorized tools for everything." The answer is understanding exactly where the boundary sits, what controls apply at each stage of the pipeline, and how to architect the data flow so that code moves from an untrusted external environment into the boundary safely, gets validated thoroughly, and reaches production only after a human says "go."
+            </p>
+
+            <p>
+                This post walks through a specific, real-world architecture: <strong>GitHub Commercial or GitLab CI as the source code repository and CI runner (outside the boundary), a dev/test environment inside the boundary for automated scanning and validation, and a manual promotion gate before production.</strong> We will cover the <a href="https://csrc.nist.gov/publications/detail/sp/800-53/rev-5/final" target="_blank">NIST 800-53 Rev 5</a> controls that apply at each stage, the documentation requirements, the risks, and the continuous monitoring obligations. The controls are the same whether you are targeting FedRAMP Moderate, DoW IL4/IL5, or a civilian agency ATO -- the implementation details shift, but the architectural pattern holds.
+            </p>
+
+            <h2>The Three-Stage Architecture</h2>
+
+            <p>
+                The pipeline follows a strict directional flow. Code moves in one direction -- from external to internal, from untrusted to validated, from dev to production -- with security gates at each transition. Here is the architecture at a high level:
+            </p>
+
+            <!-- Inline pipeline diagram -->
+            <div class="diagram-box">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-4 md:gap-2">
+                    <!-- Stage 1 -->
+                    <div class="flex-1 border border-cyber-red/40 rounded-lg p-4 bg-cyber-red/5 text-center">
+                        <p class="font-mono text-xs text-cyber-red mb-1">STAGE 1</p>
+                        <p class="font-mono text-sm text-white font-bold">GitHub / GitLab CI</p>
+                        <p class="font-mono text-xs text-gray-500 mt-1">Outside Boundary</p>
+                        <p class="font-mono text-xs text-cyber-red mt-2">Not Authorized</p>
+                    </div>
+                    <!-- Arrow -->
+                    <div class="flex flex-col items-center gap-1 py-2 md:py-0">
+                        <span class="font-mono text-xs text-cyber-amber">PULL</span>
+                        <span class="text-cyber-amber text-xl md:rotate-0 rotate-90">&#10132;</span>
+                        <span class="font-mono text-xs text-gray-600">TLS 443 / FIPS</span>
+                    </div>
+                    <!-- Stage 2 -->
+                    <div class="flex-1 border border-cyber-green/40 rounded-lg p-4 bg-cyber-green/5 text-center">
+                        <p class="font-mono text-xs text-cyber-green mb-1">STAGE 2</p>
+                        <p class="font-mono text-sm text-white font-bold">Dev/Test Environment</p>
+                        <p class="font-mono text-xs text-gray-500 mt-1">Inside Boundary</p>
+                        <p class="font-mono text-xs text-cyber-green mt-2">SAST + DAST + SCA + Integrity</p>
+                    </div>
+                    <!-- Arrow -->
+                    <div class="flex flex-col items-center gap-1 py-2 md:py-0">
+                        <span class="font-mono text-xs text-cyber-amber">MANUAL GATE</span>
+                        <span class="text-cyber-amber text-xl md:rotate-0 rotate-90">&#10132;</span>
+                        <span class="font-mono text-xs text-gray-600">Human Approval</span>
+                    </div>
+                    <!-- Stage 3 -->
+                    <div class="flex-1 border border-cyber-blue/40 rounded-lg p-4 bg-cyber-blue/5 text-center">
+                        <p class="font-mono text-xs text-cyber-blue mb-1">STAGE 3</p>
+                        <p class="font-mono text-sm text-white font-bold">Production</p>
+                        <p class="font-mono text-xs text-gray-500 mt-1">Inside Boundary</p>
+                        <p class="font-mono text-xs text-cyber-blue mt-2">Separation of Duties</p>
+                    </div>
+                </div>
+            </div>
+
+            <p>
+                Three architectural constraints are non-negotiable:
+            </p>
+
+            <ol>
+                <li><strong>No federal data in GitHub.</strong> Source code is acceptable provided it contains no embedded secrets, CUI, PII, FTI, or configuration values that expose the security architecture. This is the bright line.</li>
+                <li><strong>Pull, not push.</strong> The boundary-side system pulls code from GitHub. GitHub never pushes into the boundary. This follows the same principle FedRAMP applies to update sources: threat feeds and vulnerability definitions are pulled and validated, not pushed.</li>
+                <li><strong>Dev is isolated from production.</strong> No customer data in dev. Dev teams have no access to production systems. The <a href="https://www.fedramp.gov/agency-authorization/" target="_blank">FedRAMP ABD Job Aid</a> is explicit about this separation.</li>
+            </ol>
+
+            <h2>Stage 1: GitHub or GitLab CI (Outside the Boundary)</h2>
+
+            <p>
+                GitHub Commercial and GitLab.com (SaaS) are not FedRAMP Authorized or DoW IL-authorized. That does not make them off-limits -- it means you need to document them properly and control what touches them. The same pattern applies whether your team uses GitHub, <a href="https://docs.gitlab.com/ee/ci/" target="_blank">GitLab CI/CD</a>, or any other external SCM/CI platform. The critical controls:
+            </p>
+
+            <table class="control-table">
+                <thead>
+                    <tr><th>Control</th><th>Name</th><th>What You Must Do</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="control-id">SA-9</td>
+                        <td>External System Services</td>
+                        <td>Document GitHub or GitLab as an external, non-authorized service in the SSP. Describe its security controls (encryption in transit, access controls, audit logging). Accept the residual risk or open a POA&M item.</td>
+                    </tr>
+                    <tr>
+                        <td class="control-id">SA-10</td>
+                        <td>Dev Configuration Mgmt</td>
+                        <td>Document the full dev lifecycle: branching strategy, code review requirements, commit/merge authority, PR/MR approval workflow (GitHub PRs or GitLab MRs), and how code integrity is ensured before entering the boundary.</td>
+                    </tr>
+                    <tr>
+                        <td class="control-id">SA-11</td>
+                        <td>Dev Testing & Evaluation</td>
+                        <td>Demonstrate security testing before boundary entry: SAST, linting, peer review. Document what gates exist at the GitHub level.</td>
+                    </tr>
+                    <tr>
+                        <td class="control-id">CM-5</td>
+                        <td>Access Restrictions for Change</td>
+                        <td>Formally manage GitHub/GitLab accounts with push access. Quarterly privilege review of all users with commit or merge authority.</td>
+                    </tr>
+                    <tr>
+                        <td class="control-id">AC-22</td>
+                        <td>Publicly Accessible Content</td>
+                        <td>If the repo is public, review for non-public information. Even for private repos, ensure no credentials or sensitive config are committed.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>
+                <strong>Documentation requirements:</strong> The Authorization Boundary Diagram must show your SCM platform (GitHub, GitLab, etc.) as an external service outside the boundary. SSP Appendix M (Integrated Inventory Workbook) must list it with its authorization status noted as non-authorized. A risk acceptance statement or POA&M entry must cover the residual risk. For DoW IL environments, DISA will scrutinize this boundary crossing closely -- expect additional questions about data classification and supply chain risk during the PA review.
+            </p>
+
+            <blockquote>
+                <p>Some organizations eliminate this risk entirely by using <a href="https://aws.amazon.com/codecommit/" target="_blank">AWS CodeCommit</a> on GovCloud, GitHub Enterprise on GovCloud, or <a href="https://about.gitlab.com/solutions/public-sector/" target="_blank">GitLab on a self-managed instance</a> inside the boundary. For DoW IL5 environments in particular, DISA may require the SCM to reside within the boundary. But for FedRAMP Moderate and many DoW IL4 architectures, external GitHub or GitLab with proper controls is an acceptable and well-documented pattern.</p>
+            </blockquote>
+
+            <h2>Stage 2: Dev/Test Environment (The Security Gate)</h2>
+
+            <p>
+                This is where untrusted code from outside the boundary gets validated. Whether your authorization is FedRAMP, DoW IL4/IL5, or an agency-specific ATO, the principle is the same. The FedRAMP ABD template positions this as the <strong>Corporate Cloud Dev Subnet</strong> -- logically separated from production, no customer data, and the dev team has no access to production systems. DISA's <a href="https://public.cyber.mil/dccs/" target="_blank">CC SRG</a> applies similar isolation requirements for Impact Level environments.
+            </p>
+
+            <h3>Boundary Crossing Controls</h3>
+
+            <p>
+                The connection from dev to your external SCM (GitHub or GitLab) is the most security-sensitive link in the pipeline. Every bit of traffic crossing the boundary must be encrypted with <a href="https://csrc.nist.gov/projects/cryptographic-module-validation-program" target="_blank">FIPS 140-validated</a> cryptographic modules. For DoW IL environments, this is non-negotiable -- DISA enforces FIPS at the infrastructure level.
+            </p>
+
+            <table class="control-table">
+                <thead>
+                    <tr><th>Control</th><th>Name</th><th>What You Must Do</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="control-id">SC-8</td>
+                        <td>Transmission Confidentiality</td>
+                        <td>FIPS 140-validated encryption for the SCM-to-dev connection. <a href="https://aws.amazon.com/govcloud-us/" target="_blank">AWS GovCloud</a> and <a href="https://azure.microsoft.com/en-us/explore/global-infrastructure/government" target="_blank">Azure Government</a> handle this inherently; commercial cloud requires explicit FIPS endpoint configuration.</td>
+                    </tr>
+                    <tr>
+                        <td class="control-id">SC-7</td>
+                        <td>Boundary Protection</td>
+                        <td>Document boundary-crossing traffic: ports (443), protocols (HTTPS/TLS), direction (pull, not push), encryption status.</td>
+                    </tr>
+                    <tr>
+                        <td class="control-id">SI-7</td>
+                        <td>Software Integrity</td>
+                        <td>Verify integrity of pulled code: validate commit signatures, webhook HMAC signatures, or signed tags. Automate on every build.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Testing and Scanning</h3>
+
+            <p>
+                The dev environment is your primary defense against supply chain compromise. Every build should run through a comprehensive scan pipeline:
+            </p>
+
+            <!-- Scan pipeline visual -->
+            <div class="diagram-box">
+                <p class="font-mono text-xs text-gray-500 mb-4 uppercase tracking-wider">Build Scan Pipeline</p>
+                <div class="grid grid-cols-2 md:grid-cols-5 gap-3">
+                    <div class="border border-cyber-green/30 rounded p-3 text-center bg-cyber-green/5">
+                        <p class="font-mono text-xs text-cyber-green font-bold">SAST</p>
+                        <p class="font-mono text-xs text-gray-500 mt-1">Static Analysis</p>
+                    </div>
+                    <div class="border border-cyber-green/30 rounded p-3 text-center bg-cyber-green/5">
+                        <p class="font-mono text-xs text-cyber-green font-bold">DAST</p>
+                        <p class="font-mono text-xs text-gray-500 mt-1">Dynamic Testing</p>
+                    </div>
+                    <div class="border border-cyber-green/30 rounded p-3 text-center bg-cyber-green/5">
+                        <p class="font-mono text-xs text-cyber-green font-bold">SCA</p>
+                        <p class="font-mono text-xs text-gray-500 mt-1">Dependency Scan</p>
+                    </div>
+                    <div class="border border-cyber-blue/30 rounded p-3 text-center bg-cyber-blue/5">
+                        <p class="font-mono text-xs text-cyber-blue font-bold">SBOM</p>
+                        <p class="font-mono text-xs text-gray-500 mt-1">Bill of Materials</p>
+                    </div>
+                    <div class="border border-cyber-amber/30 rounded p-3 text-center bg-cyber-amber/5">
+                        <p class="font-mono text-xs text-cyber-amber font-bold">INTEGRITY</p>
+                        <p class="font-mono text-xs text-gray-500 mt-1">Signature Verify</p>
+                    </div>
+                </div>
+                <div class="mt-4 flex items-center gap-3">
+                    <div class="h-px flex-1 bg-cyber-green/20"></div>
+                    <span class="font-mono text-xs text-cyber-green">PASS / FAIL GATE</span>
+                    <div class="h-px flex-1 bg-cyber-green/20"></div>
+                </div>
+            </div>
+
+            <p>
+                Under <code>RA-5</code>, monthly OS, web application, and database scans are the minimum. But your pipeline should scan on <strong>every build</strong> -- the monthly cadence is the compliance floor, not the engineering target. Under <code>CM-3</code>, every code change flowing through the pipeline is a configuration change that requires a Security Impact Analysis. If the analysis concludes the change adversely affects the system's authorization, it becomes a significant change requiring AO coordination and 3PAO involvement.
+            </p>
+
+            <h3>Logging Everything</h3>
+
+            <p>
+                Under <code>AU-2</code>, log all pipeline events continuously: who triggered the pull, what commit was pulled, build results, scan results, pass/fail decisions. Pipe everything to your SIEM for automated analysis and event correlation. Under <code>CM-8(3)</code>, detect new assets with automated mechanisms within a <strong>five-minute delay maximum</strong>. If the pipeline spins up build containers or deploys new components, your inventory system must detect them.
+            </p>
+
+            <h2>Stage 3: The Manual Promotion Gate</h2>
+
+            <p>
+                The manual gate between dev and production is not a weakness -- it is a <strong>compliance strength</strong>. It demonstrates human oversight over what enters the production environment and is the final checkpoint before code impacts the operational system.
+            </p>
+
+            <table class="control-table">
+                <thead>
+                    <tr><th>Control</th><th>Name</th><th>What You Must Do</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="control-id">CM-3</td>
+                        <td>Config Change Control</td>
+                        <td>Document who has authority to approve promotions, what they verify (scans clean, tests passed, security impact analysis completed), and how approval is recorded.</td>
+                    </tr>
+                    <tr>
+                        <td class="control-id">AC-6</td>
+                        <td>Least Privilege</td>
+                        <td>The developer who wrote the code must not be the person who approves production promotion. Separate roles: developers commit, a different individual approves dev pull, another approves production.</td>
+                    </tr>
+                    <tr>
+                        <td class="control-id">AC-2</td>
+                        <td>Account Management</td>
+                        <td>Formal management of GitHub/GitLab accounts, cloud IAM roles for your CI/CD service, and all pipeline service accounts. Disable after 90 days inactive. Annual recertification.</td>
+                    </tr>
+                    <tr>
+                        <td class="control-id">SI-2</td>
+                        <td>Flaw Remediation</td>
+                        <td>Security-relevant updates remediated within 30 days. Document an SLA for security patch promotion through the pipeline.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Separation of duties diagram -->
+            <div class="diagram-box">
+                <p class="font-mono text-xs text-gray-500 mb-4 uppercase tracking-wider">Separation of Duties Model</p>
+                <div class="flex flex-col md:flex-row items-center justify-between gap-3">
+                    <div class="flex-1 border border-cyber-red/30 rounded p-4 text-center bg-cyber-red/5">
+                        <p class="font-mono text-sm text-white font-bold">Developer</p>
+                        <p class="font-mono text-xs text-gray-500 mt-1">Commits code to GitHub</p>
+                        <p class="font-mono text-xs text-cyber-red mt-2">Cannot approve promotion</p>
+                    </div>
+                    <span class="font-mono text-gray-600 text-xl">&#8800;</span>
+                    <div class="flex-1 border border-cyber-amber/30 rounded p-4 text-center bg-cyber-amber/5">
+                        <p class="font-mono text-sm text-white font-bold">Dev Approver</p>
+                        <p class="font-mono text-xs text-gray-500 mt-1">Approves pull into dev</p>
+                        <p class="font-mono text-xs text-cyber-amber mt-2">Reviews scan results</p>
+                    </div>
+                    <span class="font-mono text-gray-600 text-xl">&#8800;</span>
+                    <div class="flex-1 border border-cyber-blue/30 rounded p-4 text-center bg-cyber-blue/5">
+                        <p class="font-mono text-sm text-white font-bold">Prod Approver</p>
+                        <p class="font-mono text-xs text-gray-500 mt-1">Approves production deploy</p>
+                        <p class="font-mono text-xs text-cyber-blue mt-2">Verifies SIA complete</p>
+                    </div>
+                </div>
+            </div>
+
+            <h2>Cross-Cutting Requirements</h2>
+
+            <p>
+                Several controls apply across all three stages and must be documented holistically in the SSP.
+            </p>
+
+            <h3>Cryptographic Requirements</h3>
+
+            <p>
+                All data in transit across and within the boundary must use <a href="https://csrc.nist.gov/projects/cryptographic-module-validation-program" target="_blank">FIPS 140-validated</a> cryptographic modules. All data at rest -- artifacts, source code in object storage, CI/CD artifact stores -- must be encrypted with FIPS 140-validated modules. The <a href="https://www.fedramp.gov/documents/" target="_blank">FedRAMP Policy for Cryptographic Module Selection</a> allows CSPs to use update streams (non-validated but current) over validated-but-outdated modules when addressing known vulnerabilities, but CAVP-validated algorithms are strongly preferred. For DoW IL5, DISA requires NSA-approved cryptography for data at rest and in transit -- FIPS alone may not suffice.
+            </p>
+
+            <h3>Incident Response</h3>
+
+            <p>
+                A compromise at any stage -- GitHub/GitLab account takeover, poisoned dependency, unauthorized code promotion -- triggers the Incident Response Plan under <code>IR-6</code>. For FedRAMP, report in accordance with the FedRAMP Incident Communications Procedure and US-CERT timelines. For DoW environments, follow DISA's incident reporting requirements and notify the AO within the specified timeframes. Your IR plan should specifically address supply chain compromise scenarios that are unique to CI/CD pipelines.
+            </p>
+
+            <h3>Significant Change Considerations</h3>
+
+            <p>
+                Per the FedRAMP Continuous Monitoring Strategy Guide, before any planned change, perform a Security Impact Analysis. If the change adversely affects the system's authorization integrity, submit a <strong>Significant Change Request Form</strong> to the AO at least 30 days before implementation. This applies to pipeline changes too -- adding a new scanning tool, changing the deployment target, or modifying the boundary crossing mechanism all qualify.
+            </p>
+
+            <h2>The Continuous Monitoring Schedule</h2>
+
+            <p>
+                This architecture creates specific continuous monitoring obligations. Here is the complete schedule:
+            </p>
+
+            <table class="schedule-table">
+                <thead>
+                    <tr><th>Frequency</th><th>Activity</th><th>Control</th><th>Deliverable?</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td class="freq-continuous">Continuous</td><td>Auditable event monitoring</td><td class="control-id">AU-2</td><td>--</td></tr>
+                    <tr><td class="freq-continuous">Continuous</td><td>Asset detection (5-min max delay)</td><td class="control-id">CM-8(3)</td><td>--</td></tr>
+                    <tr><td class="freq-monthly">Monthly</td><td>Vulnerability scanning (OS, web, DB)</td><td class="control-id">RA-5</td><td>Yes</td></tr>
+                    <tr><td class="freq-monthly">Monthly</td><td>POA&M update and submission</td><td class="control-id">CA-5</td><td>Yes</td></tr>
+                    <tr><td class="freq-monthly">Monthly</td><td>Integrity scans</td><td class="control-id">SI-7(1)</td><td>--</td></tr>
+                    <tr><td class="freq-monthly">Monthly</td><td>Least functionality review</td><td class="control-id">CM-7(1)</td><td>--</td></tr>
+                    <tr><td style="color:#00d4ff;">60 Days</td><td>Authenticator/password refresh</td><td class="control-id">IA-5(g)</td><td>--</td></tr>
+                    <tr><td class="freq-quarterly">Quarterly</td><td>Developer privilege review</td><td class="control-id">CM-5(5)</td><td>--</td></tr>
+                    <tr><td class="freq-annual">Annually</td><td>Baseline configuration review</td><td class="control-id">CM-2(1)</td><td>--</td></tr>
+                    <tr><td class="freq-annual">Annually</td><td>CM Plan update and submission</td><td class="control-id">CM-9</td><td>Yes</td></tr>
+                    <tr><td class="freq-annual">Annually</td><td>SSP update and submission</td><td class="control-id">PL-2</td><td>Yes</td></tr>
+                    <tr><td class="freq-annual">Annually</td><td>Penetration testing (3PAO)</td><td class="control-id">CA-8</td><td>Yes</td></tr>
+                    <tr><td class="freq-annual">Annually</td><td>Account recertification</td><td class="control-id">AC-2(j)</td><td>--</td></tr>
+                </tbody>
+            </table>
+
+            <h2>Key Risks and Mitigations</h2>
+
+            <h3>External SCM as a Non-Authorized Service</h3>
+
+            <p>
+                The primary risk is using a non-authorized service (GitHub Commercial, GitLab.com) in the software supply chain. Mitigations: no federal data in the external SCM, documented risk in SSP and POA&M, strong integrity verification at the boundary crossing. For organizations that cannot tolerate this risk -- particularly at DoW IL5 -- self-hosted GitLab inside the boundary, AWS CodeCommit on GovCloud, or GitHub Enterprise on GovCloud eliminate it entirely.
+            </p>
+
+            <h3>Supply Chain Integrity</h3>
+
+            <p>
+                Code flowing from an external, untrusted environment into the authorization boundary is a supply chain risk by definition. The dev environment scanning pipeline (SAST, DAST, SCA, dependency analysis) is the primary mitigating control. Commit signature verification and webhook HMAC validation provide additional assurance that code was not tampered with in transit.
+            </p>
+
+            <h3>The Manual Gate Must Actually Be Manual</h3>
+
+            <p>
+                The separation of duties between dev and production is only effective if it is actually enforced. The developer, the dev approver, and the production approver must be different individuals. At minimum, the developer and the production approver must not be the same person. Automate the enforcement -- use IAM policies and pipeline configurations that structurally prevent the same identity from both committing code and approving its promotion.
+            </p>
+
+            <h2>Making This Practical</h2>
+
+            <p>
+                The controls and requirements above can feel overwhelming when read as a list. In practice, the implementation is straightforward if you approach it in layers:
+            </p>
+
+            <ol>
+                <li><strong>Get the boundary right first.</strong> Draw the ABD. Show GitHub outside, dev and prod inside. Show the pull direction, ports, and encryption. Get this approved before writing code.</li>
+                <li><strong>Build the scan pipeline in dev.</strong> SAST, DAST, SCA, integrity checks, SBOM generation. Make every scan a pass/fail gate. If it fails, code does not advance.</li>
+                <li><strong>Enforce separation of duties structurally.</strong> Use IAM policies, not just process documentation. The pipeline should not allow the same identity to commit and approve.</li>
+                <li><strong>Automate the ConMon deliverables.</strong> Monthly vulnerability scan reports, POA&M updates, integrity scan logs -- generate these from your pipeline automatically. The schedule above becomes a checklist your automation runs against.</li>
+                <li><strong>Document as you build.</strong> The SSP narrative for this architecture writes itself when you build the controls into the pipeline. Your IaC is your evidence. Your scan results are your proof. Your audit logs are your continuous monitoring.</li>
+            </ol>
+
+            <blockquote>
+                <p>The best CI/CD pipeline for FedRAMP is not the one that avoids compliance -- it is the one that generates compliance evidence as a natural byproduct of building and deploying software. When the pipeline is the proof, the ATO package assembles itself.</p>
+            </blockquote>
+
+            <p>
+                <strong>Building a compliant CI/CD pipeline for public sector?</strong> <a href="/demo">Request a demo</a> to see how Optimal automates SAST/DAST/SCA scanning, SBOM generation, evidence collection, and continuous monitoring across FedRAMP, DoW Impact Level, and agency ATO environments -- turning your pipeline into your compliance engine.
+            </p>
+
+        </div>
+    </section>
+
+    <!-- Related Posts -->
+    <section class="py-16 bg-cyber-dark border-t border-cyber-border/30">
+        <div class="max-w-7xl mx-auto px-6">
+            <span class="section-label mb-4 block">Related Posts</span>
+            <h2 class="text-2xl md:text-3xl font-bold text-white mb-10">Continue Reading</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <a href="/blog/fedramp-20x-reality-check" class="blog-card block fade-in">
+                    <div class="h-40 overflow-hidden"><img src="/public/blog/fedramp-20x.svg?v=2" alt="FedRAMP 20x" class="w-full h-full object-cover" loading="lazy"></div>
+                    <div class="p-5">
+                        <div class="flex items-center justify-between mb-3"><span class="font-mono text-xs text-gray-500">Mar 5, 2026</span><span class="badge-amber font-mono text-xs px-2 py-0.5 rounded">Industry Insights</span></div>
+                        <h3 class="card-title text-white font-semibold mb-2 line-clamp-2 transition-colors">FedRAMP 20x: A Step Forward on Paper, A Marathon in Practice</h3>
+                        <p class="text-gray-500 text-sm line-clamp-3 mb-4">FedRAMP 20x promises streamlined cloud authorizations. But across DoW, civilian agencies, and the IC, the real challenge is institutional inertia.</p>
+                        <span class="text-cyber-green font-mono text-xs hover:underline">Read blog &gt;&gt;</span>
+                    </div>
+                </a>
+                <a href="/blog/ato-bottleneck-rethinking-authorization" class="blog-card block fade-in">
+                    <div class="h-40 overflow-hidden"><img src="/public/blog/ato-bottleneck.svg?v=3" alt="ATO Bottleneck" class="w-full h-full object-cover" loading="lazy"></div>
+                    <div class="p-5">
+                        <div class="flex items-center justify-between mb-3"><span class="font-mono text-xs text-gray-500">Mar 5, 2026</span><span class="badge-green font-mono text-xs px-2 py-0.5 rounded">Industry Insights</span></div>
+                        <h3 class="card-title text-white font-semibold mb-2 line-clamp-2 transition-colors">The ATO Bottleneck: Why Authorization Takes So Long and What Actually Fixes It</h3>
+                        <p class="text-gray-500 text-sm line-clamp-3 mb-4">The ATO process was designed to manage risk. Instead, it has become the risk — delaying deployments by 12 to 18 months.</p>
+                        <span class="text-cyber-green font-mono text-xs hover:underline">Read blog &gt;&gt;</span>
+                    </div>
+                </a>
+                <a href="/blog/accelerating-ato-process" class="blog-card block fade-in">
+                    <div class="h-40 overflow-hidden"><img src="/public/blog/ato-process.jpg" alt="Accelerating ATO" class="w-full h-full object-cover" loading="lazy"></div>
+                    <div class="p-5">
+                        <div class="flex items-center justify-between mb-3"><span class="font-mono text-xs text-gray-500">Feb 10, 2026</span><span class="badge-green font-mono text-xs px-2 py-0.5 rounded">Industry Insights</span></div>
+                        <h3 class="card-title text-white font-semibold mb-2 line-clamp-2 transition-colors">How to Accelerate the ATO Process Without Cutting Corners</h3>
+                        <p class="text-gray-500 text-sm line-clamp-3 mb-4">The ATO process doesn't have to take 18 months. Learn practical strategies to compress timelines while maintaining compliance rigor.</p>
+                        <span class="text-cyber-green font-mono text-xs hover:underline">Read blog &gt;&gt;</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-20 bg-cyber-black border-t border-cyber-border/30">
+        <div class="relative max-w-4xl mx-auto px-6 text-center">
+            <span class="section-label mb-4 block">Get Started</span>
+            <h2 class="text-3xl md:text-4xl font-bold mb-6"><span class="text-white">Ready to Secure Your</span><br><span class="text-cyber-green">Software Delivery?</span></h2>
+            <p class="text-lg text-gray-400 mb-10 max-w-2xl mx-auto">See how Optimal can accelerate your path to ATO while strengthening your security posture.</p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="/demo" class="btn-platform text-lg px-8 py-4 rounded">Request Demo</a>
+                <a href="https://app.gooptimal.io" target="_blank" class="btn-outline text-lg px-8 py-4 rounded">Get Started</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-cyber-black border-t border-cyber-border py-12">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                <div class="flex items-center gap-3"><img src="/public/optimal-logo.png" alt="Optimal Logo" class="w-8 h-8"><span class="font-bold text-lg text-white">Optimal</span></div>
+                <p class="text-gray-500 text-sm font-mono">&copy; 2026 Optimal. All rights reserved.</p>
+                <div class="flex items-center gap-4">
+                    <a href="https://github.com/optimal-cyber" target="_blank" class="text-gray-400 hover:text-cyber-green transition-colors"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+                    <a href="https://www.linkedin.com/company/111329653" target="_blank" class="text-gray-400 hover:text-cyber-green transition-colors"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileMenuBtn && mobileMenu) { mobileMenuBtn.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); }); }
+        const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); }); }, { threshold: 0.1 });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>

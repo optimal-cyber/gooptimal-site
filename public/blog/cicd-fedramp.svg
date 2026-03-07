@@ -1,0 +1,135 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d1117"/><stop offset="100%" style="stop-color:#0a0a0f"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Grid -->
+  <g opacity="0.04" stroke="#00ff88" stroke-width="0.5">
+    <line x1="0" y1="100" x2="1200" y2="100"/><line x1="0" y1="200" x2="1200" y2="200"/>
+    <line x1="0" y1="300" x2="1200" y2="300"/><line x1="0" y1="400" x2="1200" y2="400"/>
+    <line x1="0" y1="500" x2="1200" y2="500"/>
+    <line x1="200" y1="0" x2="200" y2="630"/><line x1="400" y1="0" x2="400" y2="630"/>
+    <line x1="600" y1="0" x2="600" y2="630"/><line x1="800" y1="0" x2="800" y2="630"/>
+    <line x1="1000" y1="0" x2="1000" y2="630"/>
+  </g>
+
+  <!-- Authorization boundary box -->
+  <rect x="420" y="80" width="740" height="420" rx="8" fill="none" stroke="#00ff88" stroke-width="2" stroke-dasharray="8,4" opacity="0.4"/>
+  <text x="440" y="105" font-family="monospace" font-size="11" fill="#00ff88" opacity="0.6">AUTHORIZATION BOUNDARY (FedRAMP / DoW IL / AGENCY ATO)</text>
+
+  <!-- Outside boundary label -->
+  <text x="200" y="105" font-family="monospace" font-size="11" fill="#ff3366" opacity="0.6" text-anchor="middle">OUTSIDE BOUNDARY</text>
+
+  <!-- ===== STAGE 1: GitHub Commercial ===== -->
+  <g transform="translate(60, 180)">
+    <rect width="280" height="200" rx="8" fill="#120f14" stroke="#ff3366" stroke-width="1.5"/>
+    <rect x="0" y="0" width="280" height="38" rx="8" fill="#1a1215"/>
+    <rect x="0" y="20" width="280" height="18" fill="#1a1215"/>
+    <text x="20" y="25" font-family="monospace" font-size="14" font-weight="bold" fill="#ff3366">STAGE 1</text>
+    <text x="95" y="25" font-family="monospace" font-size="12" fill="#8b949e">GitHub / GitLab CI</text>
+
+    <text x="20" y="62" font-family="monospace" font-size="11" fill="#e5e7eb">Source Code + CI Runner</text>
+    <text x="20" y="80" font-family="monospace" font-size="10" fill="#6b7280">Not FedRAMP Authorized</text>
+
+    <line x1="20" y1="92" x2="260" y2="92" stroke="#21262d" stroke-width="0.5"/>
+
+    <text x="20" y="112" font-family="monospace" font-size="10" fill="#9ca3af">SA-9  External System Services</text>
+    <text x="20" y="128" font-family="monospace" font-size="10" fill="#9ca3af">SA-10 Dev Config Management</text>
+    <text x="20" y="144" font-family="monospace" font-size="10" fill="#9ca3af">SA-11 Dev Testing</text>
+    <text x="20" y="160" font-family="monospace" font-size="10" fill="#9ca3af">CM-5  Access Restrictions</text>
+
+    <line x1="20" y1="170" x2="260" y2="170" stroke="#21262d" stroke-width="0.5"/>
+    <text x="20" y="190" font-family="monospace" font-size="10" fill="#ff6688">No federal data permitted</text>
+  </g>
+
+  <!-- ===== Arrow 1: Pull (not push) ===== -->
+  <g transform="translate(345, 265)">
+    <line x1="0" y1="0" x2="90" y2="0" stroke="#ffb800" stroke-width="2"/>
+    <polygon points="88,-6 100,0 88,6" fill="#ffb800"/>
+    <text x="45" y="-12" font-family="monospace" font-size="9" fill="#ffb800" text-anchor="middle">PULL</text>
+    <text x="45" y="18" font-family="monospace" font-size="8" fill="#6b7280" text-anchor="middle">TLS 443 / FIPS</text>
+  </g>
+
+  <!-- ===== STAGE 2: Dev/Test ===== -->
+  <g transform="translate(450, 140)">
+    <rect width="300" height="280" rx="8" fill="#0c1410" stroke="#00ff88" stroke-width="1.5"/>
+    <rect x="0" y="0" width="300" height="38" rx="8" fill="#0a1a10"/>
+    <rect x="0" y="20" width="300" height="18" fill="#0a1a10"/>
+    <text x="20" y="25" font-family="monospace" font-size="14" font-weight="bold" fill="#00ff88">STAGE 2</text>
+    <text x="100" y="25" font-family="monospace" font-size="12" fill="#8b949e">Dev/Test Environment</text>
+
+    <text x="20" y="60" font-family="monospace" font-size="11" fill="#e5e7eb">Security Validation Gate</text>
+    <text x="20" y="78" font-family="monospace" font-size="10" fill="#6b7280">Inside Authorization Boundary</text>
+
+    <line x1="20" y1="90" x2="280" y2="90" stroke="#21262d" stroke-width="0.5"/>
+
+    <!-- Scan pipeline items -->
+    <rect x="20" y="100" width="75" height="28" rx="4" fill="#1a2515" stroke="#00ff88" stroke-width="0.8"/>
+    <text x="57" y="118" font-family="monospace" font-size="9" fill="#00ff88" text-anchor="middle">SAST</text>
+
+    <rect x="105" y="100" width="75" height="28" rx="4" fill="#1a2515" stroke="#00ff88" stroke-width="0.8"/>
+    <text x="142" y="118" font-family="monospace" font-size="9" fill="#00ff88" text-anchor="middle">DAST</text>
+
+    <rect x="190" y="100" width="90" height="28" rx="4" fill="#1a2515" stroke="#00ff88" stroke-width="0.8"/>
+    <text x="235" y="118" font-family="monospace" font-size="9" fill="#00ff88" text-anchor="middle">SCA/SBOM</text>
+
+    <rect x="20" y="138" width="120" height="28" rx="4" fill="#1a2515" stroke="#00d4ff" stroke-width="0.8"/>
+    <text x="80" y="156" font-family="monospace" font-size="9" fill="#00d4ff" text-anchor="middle">INTEGRITY CHECK</text>
+
+    <rect x="150" y="138" width="130" height="28" rx="4" fill="#1a2515" stroke="#00d4ff" stroke-width="0.8"/>
+    <text x="215" y="156" font-family="monospace" font-size="9" fill="#00d4ff" text-anchor="middle">DEPENDENCY SCAN</text>
+
+    <line x1="20" y1="178" x2="280" y2="178" stroke="#21262d" stroke-width="0.5"/>
+
+    <text x="20" y="198" font-family="monospace" font-size="10" fill="#9ca3af">SC-8   Transmission Confidentiality</text>
+    <text x="20" y="214" font-family="monospace" font-size="10" fill="#9ca3af">SC-7   Boundary Protection</text>
+    <text x="20" y="230" font-family="monospace" font-size="10" fill="#9ca3af">SI-7   Software Integrity</text>
+    <text x="20" y="246" font-family="monospace" font-size="10" fill="#9ca3af">RA-5   Vulnerability Scanning</text>
+    <text x="20" y="262" font-family="monospace" font-size="10" fill="#9ca3af">AU-2   Auditable Events</text>
+  </g>
+
+  <!-- ===== Arrow 2: Manual Gate ===== -->
+  <g transform="translate(755, 265)">
+    <line x1="0" y1="0" x2="80" y2="0" stroke="#ffb800" stroke-width="2"/>
+    <polygon points="78,-6 90,0 78,6" fill="#ffb800"/>
+    <!-- Gate icon -->
+    <rect x="28" y="-14" width="24" height="28" rx="3" fill="#12100d" stroke="#ffb800" stroke-width="1.2"/>
+    <text x="40" y="3" font-family="monospace" font-size="12" fill="#ffb800" text-anchor="middle">G</text>
+    <text x="45" y="-20" font-family="monospace" font-size="9" fill="#ffb800" text-anchor="middle">MANUAL GATE</text>
+    <text x="45" y="22" font-family="monospace" font-size="8" fill="#6b7280" text-anchor="middle">Human Approval</text>
+  </g>
+
+  <!-- ===== STAGE 3: Production ===== -->
+  <g transform="translate(850, 180)">
+    <rect width="280" height="200" rx="8" fill="#0c1214" stroke="#00d4ff" stroke-width="1.5"/>
+    <rect x="0" y="0" width="280" height="38" rx="8" fill="#0a1218"/>
+    <rect x="0" y="20" width="280" height="18" fill="#0a1218"/>
+    <text x="20" y="25" font-family="monospace" font-size="14" font-weight="bold" fill="#00d4ff">STAGE 3</text>
+    <text x="100" y="25" font-family="monospace" font-size="12" fill="#8b949e">Production</text>
+
+    <text x="20" y="62" font-family="monospace" font-size="11" fill="#e5e7eb">Operational Environment</text>
+    <text x="20" y="80" font-family="monospace" font-size="10" fill="#6b7280">Inside Authorization Boundary</text>
+
+    <line x1="20" y1="92" x2="260" y2="92" stroke="#21262d" stroke-width="0.5"/>
+
+    <text x="20" y="112" font-family="monospace" font-size="10" fill="#9ca3af">CM-3  Change Control</text>
+    <text x="20" y="128" font-family="monospace" font-size="10" fill="#9ca3af">AC-6  Least Privilege</text>
+    <text x="20" y="144" font-family="monospace" font-size="10" fill="#9ca3af">AC-2  Account Management</text>
+    <text x="20" y="160" font-family="monospace" font-size="10" fill="#9ca3af">SI-2  Flaw Remediation</text>
+
+    <line x1="20" y1="170" x2="260" y2="170" stroke="#21262d" stroke-width="0.5"/>
+    <text x="20" y="190" font-family="monospace" font-size="10" fill="#00d4ff">Separation of duties enforced</text>
+  </g>
+
+  <!-- Bottom bar -->
+  <rect x="40" y="530" width="1120" height="60" rx="6" fill="#111318" stroke="#21262d" stroke-width="1"/>
+  <text x="600" y="555" font-family="monospace" font-size="13" fill="#e5e7eb" text-anchor="middle">Public Sector CI/CD Pipeline — GitHub / GitLab CI → Dev/Test → Production</text>
+  <text x="600" y="575" font-family="monospace" font-size="10" fill="#6b7280" text-anchor="middle">NIST 800-53 Rev 5 | FedRAMP / DoW IL4-IL5 | FIPS 140 | Pull-Based Architecture | Manual Gate</text>
+
+  <!-- Border -->
+  <rect x="0" y="0" width="1200" height="630" fill="none" stroke="#21262d" stroke-width="1"/>
+</svg>
