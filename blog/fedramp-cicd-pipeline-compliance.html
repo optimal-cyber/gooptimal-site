@@ -14,7 +14,7 @@
     <meta property="og:description" content="A practical guide to architecting a compliant CI/CD pipeline across the authorization boundary for FedRAMP, DoW IL, and agency ATO environments.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://gooptimal.io/blog/fedramp-cicd-pipeline-compliance">
-    <meta property="og:image" content="https://gooptimal.io/public/blog/cicd-fedramp.svg">
+    <meta property="og:image" content="https://gooptimal.io/public/blog/cicd-fedramp.svg?v=3">
     <meta property="og:site_name" content="Optimal">
     <meta property="article:published_time" content="2026-03-07T00:00:00Z">
     <meta property="article:author" content="Optimal Team">
@@ -22,7 +22,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Building a Compliant CI/CD Pipeline for Public Sector: GitHub, GitLab, and the Authorization Boundary">
     <meta name="twitter:description" content="A practical guide to architecting a compliant CI/CD pipeline across the authorization boundary for FedRAMP, DoW IL, and agency ATO environments.">
-    <meta name="twitter:image" content="https://gooptimal.io/public/blog/cicd-fedramp.svg">
+    <meta name="twitter:image" content="https://gooptimal.io/public/blog/cicd-fedramp.svg?v=3">
 
     <script type="application/ld+json">
     {
@@ -36,7 +36,7 @@
         "publisher": { "@type": "Organization", "name": "Optimal", "logo": { "@type": "ImageObject", "url": "https://gooptimal.io/public/optimal-logo.png" } },
         "mainEntityOfPage": { "@type": "WebPage", "@id": "https://gooptimal.io/blog/fedramp-cicd-pipeline-compliance" },
         "url": "https://gooptimal.io/blog/fedramp-cicd-pipeline-compliance",
-        "image": "https://gooptimal.io/public/blog/cicd-fedramp.svg",
+        "image": "https://gooptimal.io/public/blog/cicd-fedramp.svg?v=3",
         "articleSection": "Engineering",
         "wordCount": 3200
     }
@@ -188,7 +188,7 @@ document.head.appendChild(o)}initApollo();</script>
             <div class="flex flex-wrap items-center gap-4 text-sm text-gray-500 font-mono mb-10">
                 <span>March 7, 2026</span><span class="text-cyber-border">|</span><span>Optimal Team</span><span class="text-cyber-border">|</span><span>14 min read</span>
             </div>
-            <div class="rounded-xl overflow-hidden"><img src="/public/blog/cicd-fedramp.svg" alt="Public Sector CI/CD Pipeline Architecture - GitHub/GitLab to Dev/Test to Production across the authorization boundary" class="w-full h-auto"></div>
+            <div class="rounded-xl overflow-hidden"><img src="/public/blog/cicd-fedramp.svg?v=3" alt="Public Sector CI/CD Pipeline Architecture - GitHub/GitLab to Dev/Test to Production across the authorization boundary" class="w-full h-auto"></div>
         </div>
     </section>
 
@@ -214,41 +214,157 @@ document.head.appendChild(o)}initApollo();</script>
                 The pipeline follows a strict directional flow. Code moves in one direction -- from external to internal, from untrusted to validated, from dev to production -- with security gates at each transition. Here is the architecture at a high level:
             </p>
 
-            <!-- Inline pipeline diagram -->
-            <div class="diagram-box">
-                <div class="flex flex-col md:flex-row items-center justify-between gap-4 md:gap-2">
-                    <!-- Stage 1 -->
-                    <div class="flex-1 border border-cyber-red/40 rounded-lg p-4 bg-cyber-red/5 text-center">
-                        <p class="font-mono text-xs text-cyber-red mb-1">STAGE 1</p>
-                        <p class="font-mono text-sm text-white font-bold">GitHub / GitLab CI</p>
-                        <p class="font-mono text-xs text-gray-500 mt-1">Outside Boundary</p>
-                        <p class="font-mono text-xs text-cyber-red mt-2">Not Authorized</p>
+            <!-- Inline pipeline diagram - detailed engineering flow -->
+            <div class="diagram-box" style="overflow-x:auto;">
+                <!-- Pipeline header bar -->
+                <div class="flex items-center gap-1 mb-4 pb-3 border-b border-cyber-border/50" style="min-width:700px;">
+                    <div class="flex items-center gap-1 flex-1">
+                        <span class="font-mono text-xs px-2 py-0.5 rounded bg-cyber-red/10 text-cyber-red border border-cyber-red/20">source</span>
+                        <span class="text-gray-600">&rarr;</span>
+                        <span class="font-mono text-xs px-2 py-0.5 rounded bg-cyber-red/10 text-cyber-red border border-cyber-red/20">lint</span>
+                        <span class="text-gray-600">&rarr;</span>
+                        <span class="font-mono text-xs px-2 py-0.5 rounded bg-cyber-amber/10 text-cyber-amber border border-cyber-amber/20">build</span>
+                        <span class="text-gray-600">&rarr;</span>
+                        <span class="font-mono text-xs px-2 py-0.5 rounded bg-cyber-amber/10 text-cyber-amber border border-cyber-amber/20">test</span>
+                        <span class="text-gray-600">&rarr;</span>
+                        <span class="font-mono text-xs px-2 py-0.5 rounded bg-cyber-green/10 text-cyber-green border border-cyber-green/20">scan</span>
+                        <span class="text-gray-600">&rarr;</span>
+                        <span class="font-mono text-xs px-2 py-0.5 rounded bg-cyber-green/10 text-cyber-green border border-cyber-green/20">image</span>
+                        <span class="text-gray-600">&rarr;</span>
+                        <span class="font-mono text-xs px-2 py-0.5 rounded bg-cyber-blue/10 text-cyber-blue border border-cyber-blue/20">deploy dev</span>
+                        <span class="text-gray-600">&rarr;</span>
+                        <span class="font-mono text-xs px-2 py-0.5 rounded bg-cyber-amber/10 text-cyber-amber border border-cyber-amber/20 font-bold">GATE</span>
+                        <span class="text-gray-600">&rarr;</span>
+                        <span class="font-mono text-xs px-2 py-0.5 rounded bg-cyber-blue/10 text-cyber-blue border border-cyber-blue/20">deploy prod</span>
+                        <span class="text-gray-600">&rarr;</span>
+                        <span class="font-mono text-xs px-2 py-0.5 rounded bg-cyber-blue/10 text-cyber-blue border border-cyber-blue/20">release</span>
                     </div>
-                    <!-- Arrow -->
-                    <div class="flex flex-col items-center gap-1 py-2 md:py-0">
-                        <span class="font-mono text-xs text-cyber-amber">PULL</span>
+                </div>
+
+                <!-- SA-3 / SA-11 spanning bar -->
+                <div class="bg-cyber-purple/5 border border-cyber-purple/20 rounded px-3 py-1 mb-4 text-center" style="min-width:700px;">
+                    <span class="font-mono text-xs text-cyber-purple">SA-3 System Development Lifecycle &nbsp;|&nbsp; SA-11 Developer Testing &amp; Evaluation</span>
+                </div>
+
+                <div class="flex flex-col md:flex-row gap-4" style="min-width:700px;">
+                    <!-- Stage 1: Outside Boundary -->
+                    <div class="md:w-1/4 border border-cyber-red/30 rounded-lg p-3 bg-cyber-red/5 relative">
+                        <div class="absolute -top-3 left-3 bg-cyber-black px-2">
+                            <span class="font-mono text-xs text-cyber-red font-bold">OUTSIDE BOUNDARY</span>
+                        </div>
+                        <p class="font-mono text-sm text-white font-bold mt-2">GitHub / GitLab CI</p>
+                        <p class="font-mono text-xs text-gray-500 mt-1">Source + CI Runner</p>
+                        <div class="mt-3 space-y-1">
+                            <div class="flex items-center gap-2">
+                                <span class="font-mono text-xs px-1.5 py-0.5 rounded bg-cyber-red/10 text-cyber-red border border-cyber-red/20" style="font-size:10px;">SA-9</span>
+                                <span class="font-mono text-gray-500" style="font-size:10px;">External Services</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <span class="font-mono text-xs px-1.5 py-0.5 rounded bg-cyber-red/10 text-cyber-red border border-cyber-red/20" style="font-size:10px;">SA-10</span>
+                                <span class="font-mono text-gray-500" style="font-size:10px;">Config Mgmt</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <span class="font-mono text-xs px-1.5 py-0.5 rounded bg-cyber-red/10 text-cyber-red border border-cyber-red/20" style="font-size:10px;">CM-5</span>
+                                <span class="font-mono text-gray-500" style="font-size:10px;">Access Control</span>
+                            </div>
+                        </div>
+                        <p class="font-mono text-xs text-cyber-red mt-3">No federal data permitted</p>
+                    </div>
+
+                    <!-- PULL arrow -->
+                    <div class="flex md:flex-col items-center justify-center gap-1 py-2 md:py-0">
+                        <div class="border border-cyber-amber/40 rounded px-2 py-1 bg-cyber-amber/5">
+                            <span class="font-mono text-xs text-cyber-amber font-bold">PULL</span>
+                        </div>
                         <span class="text-cyber-amber text-xl md:rotate-0 rotate-90">&#10132;</span>
-                        <span class="font-mono text-xs text-gray-600">TLS 443 / FIPS</span>
+                        <span class="font-mono text-gray-600" style="font-size:9px;">TLS 443 / FIPS</span>
                     </div>
-                    <!-- Stage 2 -->
-                    <div class="flex-1 border border-cyber-green/40 rounded-lg p-4 bg-cyber-green/5 text-center">
-                        <p class="font-mono text-xs text-cyber-green mb-1">STAGE 2</p>
-                        <p class="font-mono text-sm text-white font-bold">Dev/Test Environment</p>
-                        <p class="font-mono text-xs text-gray-500 mt-1">Inside Boundary</p>
-                        <p class="font-mono text-xs text-cyber-green mt-2">SAST + DAST + SCA + Integrity</p>
+
+                    <!-- Stage 2: Inside Boundary - Dev/Test -->
+                    <div class="md:w-2/5 border border-cyber-green/30 rounded-lg p-3 bg-cyber-green/5 relative">
+                        <div class="absolute -top-3 left-3 bg-cyber-black px-2">
+                            <span class="font-mono text-xs text-cyber-green font-bold">INSIDE BOUNDARY</span>
+                        </div>
+                        <p class="font-mono text-sm text-white font-bold mt-2">Dev/Test Environment</p>
+                        <p class="font-mono text-xs text-gray-500 mt-1">Security Validation Gate</p>
+
+                        <!-- Scan tools grid -->
+                        <div class="grid grid-cols-3 gap-1.5 mt-3">
+                            <div class="border border-cyber-green/20 rounded p-1.5 text-center bg-cyber-black/50">
+                                <p class="font-mono text-cyber-green font-bold" style="font-size:9px;">SAST</p>
+                                <p class="font-mono text-gray-600" style="font-size:8px;">fortify</p>
+                                <span class="font-mono px-1 rounded bg-cyber-green/10 text-cyber-green border border-cyber-green/20" style="font-size:7px;">SI-7</span>
+                            </div>
+                            <div class="border border-cyber-green/20 rounded p-1.5 text-center bg-cyber-black/50">
+                                <p class="font-mono text-cyber-green font-bold" style="font-size:9px;">DAST</p>
+                                <p class="font-mono text-gray-600" style="font-size:8px;">dynamic</p>
+                                <span class="font-mono px-1 rounded bg-cyber-green/10 text-cyber-green border border-cyber-green/20" style="font-size:7px;">RA-5</span>
+                            </div>
+                            <div class="border border-cyber-green/20 rounded p-1.5 text-center bg-cyber-black/50">
+                                <p class="font-mono text-cyber-green font-bold" style="font-size:9px;">SCA</p>
+                                <p class="font-mono text-gray-600" style="font-size:8px;">deps</p>
+                                <span class="font-mono px-1 rounded bg-cyber-blue/10 text-cyber-blue border border-cyber-blue/20" style="font-size:7px;">SI-3</span>
+                            </div>
+                            <div class="border border-cyber-blue/20 rounded p-1.5 text-center bg-cyber-black/50">
+                                <p class="font-mono text-cyber-blue font-bold" style="font-size:9px;">SBOM</p>
+                                <p class="font-mono text-gray-600" style="font-size:8px;">anchore</p>
+                                <span class="font-mono px-1 rounded bg-cyber-blue/10 text-cyber-blue border border-cyber-blue/20" style="font-size:7px;">SI-7</span>
+                            </div>
+                            <div class="border border-cyber-amber/20 rounded p-1.5 text-center bg-cyber-black/50">
+                                <p class="font-mono text-cyber-amber font-bold" style="font-size:9px;">SECRETS</p>
+                                <p class="font-mono text-gray-600" style="font-size:8px;">trufflehog</p>
+                                <span class="font-mono px-1 rounded bg-cyber-amber/10 text-cyber-amber border border-cyber-amber/20" style="font-size:7px;">SI-4</span>
+                            </div>
+                            <div class="border border-cyber-green/20 rounded p-1.5 text-center bg-cyber-black/50">
+                                <p class="font-mono text-cyber-green font-bold" style="font-size:9px;">IMAGE</p>
+                                <p class="font-mono text-gray-600" style="font-size:8px;">twistlock</p>
+                                <span class="font-mono px-1 rounded bg-cyber-green/10 text-cyber-green border border-cyber-green/20" style="font-size:7px;">SC-8</span>
+                            </div>
+                        </div>
+
+                        <div class="mt-3 flex items-center gap-2">
+                            <div class="h-px flex-1 bg-cyber-green/20"></div>
+                            <span class="font-mono text-xs text-cyber-green">PASS / FAIL</span>
+                            <div class="h-px flex-1 bg-cyber-green/20"></div>
+                        </div>
+
+                        <div class="mt-2 flex flex-wrap gap-1">
+                            <span class="font-mono px-1.5 py-0.5 rounded bg-cyber-green/10 text-cyber-green border border-cyber-green/20" style="font-size:9px;">SC-8</span>
+                            <span class="font-mono px-1.5 py-0.5 rounded bg-cyber-green/10 text-cyber-green border border-cyber-green/20" style="font-size:9px;">SC-7</span>
+                            <span class="font-mono px-1.5 py-0.5 rounded bg-cyber-green/10 text-cyber-green border border-cyber-green/20" style="font-size:9px;">SI-7</span>
+                            <span class="font-mono px-1.5 py-0.5 rounded bg-cyber-green/10 text-cyber-green border border-cyber-green/20" style="font-size:9px;">RA-5</span>
+                            <span class="font-mono px-1.5 py-0.5 rounded bg-cyber-green/10 text-cyber-green border border-cyber-green/20" style="font-size:9px;">AU-2</span>
+                        </div>
                     </div>
-                    <!-- Arrow -->
-                    <div class="flex flex-col items-center gap-1 py-2 md:py-0">
-                        <span class="font-mono text-xs text-cyber-amber">MANUAL GATE</span>
+
+                    <!-- MANUAL GATE arrow -->
+                    <div class="flex md:flex-col items-center justify-center gap-1 py-2 md:py-0">
+                        <div class="border border-cyber-amber/60 rounded px-2 py-1 bg-cyber-amber/10">
+                            <span class="font-mono text-xs text-cyber-amber font-bold">GATE</span>
+                        </div>
                         <span class="text-cyber-amber text-xl md:rotate-0 rotate-90">&#10132;</span>
-                        <span class="font-mono text-xs text-gray-600">Human Approval</span>
+                        <span class="font-mono text-gray-600" style="font-size:9px;">Human Approval</span>
                     </div>
-                    <!-- Stage 3 -->
-                    <div class="flex-1 border border-cyber-blue/40 rounded-lg p-4 bg-cyber-blue/5 text-center">
-                        <p class="font-mono text-xs text-cyber-blue mb-1">STAGE 3</p>
-                        <p class="font-mono text-sm text-white font-bold">Production</p>
-                        <p class="font-mono text-xs text-gray-500 mt-1">Inside Boundary</p>
-                        <p class="font-mono text-xs text-cyber-blue mt-2">Separation of Duties</p>
+
+                    <!-- Stage 3: Production -->
+                    <div class="md:w-1/4 border border-cyber-blue/30 rounded-lg p-3 bg-cyber-blue/5 relative">
+                        <div class="absolute -top-3 left-3 bg-cyber-black px-2">
+                            <span class="font-mono text-xs text-cyber-blue font-bold">PRODUCTION</span>
+                        </div>
+                        <p class="font-mono text-sm text-white font-bold mt-2">Production</p>
+                        <p class="font-mono text-xs text-gray-500 mt-1">Operational Environment</p>
+                        <div class="mt-3 space-y-1.5">
+                            <div class="border border-cyber-blue/20 rounded p-1.5 bg-cyber-black/50">
+                                <p class="font-mono text-gray-400" style="font-size:9px;">release major / minor / patch</p>
+                            </div>
+                        </div>
+                        <div class="mt-2 flex flex-wrap gap-1">
+                            <span class="font-mono px-1.5 py-0.5 rounded bg-cyber-blue/10 text-cyber-blue border border-cyber-blue/20" style="font-size:9px;">AC-6</span>
+                            <span class="font-mono px-1.5 py-0.5 rounded bg-cyber-blue/10 text-cyber-blue border border-cyber-blue/20" style="font-size:9px;">AC-2</span>
+                            <span class="font-mono px-1.5 py-0.5 rounded bg-cyber-blue/10 text-cyber-blue border border-cyber-blue/20" style="font-size:9px;">CM-3</span>
+                            <span class="font-mono px-1.5 py-0.5 rounded bg-cyber-blue/10 text-cyber-blue border border-cyber-blue/20" style="font-size:9px;">SI-2</span>
+                        </div>
+                        <p class="font-mono text-xs text-cyber-blue mt-3">Separation of duties enforced</p>
                     </div>
                 </div>
             </div>
@@ -351,34 +467,73 @@ document.head.appendChild(o)}initApollo();</script>
                 The dev environment is your primary defense against supply chain compromise. Every build should run through a comprehensive scan pipeline:
             </p>
 
-            <!-- Scan pipeline visual -->
+            <!-- Scan pipeline visual - detailed with tools and controls -->
             <div class="diagram-box">
-                <p class="font-mono text-xs text-gray-500 mb-4 uppercase tracking-wider">Build Scan Pipeline</p>
-                <div class="grid grid-cols-2 md:grid-cols-5 gap-3">
-                    <div class="border border-cyber-green/30 rounded p-3 text-center bg-cyber-green/5">
+                <p class="font-mono text-xs text-gray-500 mb-4 uppercase tracking-wider">Build Scan Pipeline -- per commit execution</p>
+
+                <!-- Pipeline stages as connected blocks -->
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 mb-4">
+                    <div class="border border-cyber-green/30 rounded-lg p-3 bg-cyber-green/5">
                         <p class="font-mono text-xs text-cyber-green font-bold">SAST</p>
-                        <p class="font-mono text-xs text-gray-500 mt-1">Static Analysis</p>
+                        <p class="font-mono text-gray-500 mt-1" style="font-size:10px;">Static Analysis</p>
+                        <p class="font-mono text-gray-600 mt-1" style="font-size:9px;">fortify / semgrep</p>
+                        <div class="mt-2 flex flex-wrap gap-1">
+                            <span class="font-mono px-1 rounded bg-cyber-green/10 text-cyber-green border border-cyber-green/20" style="font-size:8px;">SI-3</span>
+                            <span class="font-mono px-1 rounded bg-cyber-green/10 text-cyber-green border border-cyber-green/20" style="font-size:8px;">SI-7</span>
+                            <span class="font-mono px-1 rounded bg-cyber-purple/10 text-cyber-purple border border-cyber-purple/20" style="font-size:8px;">SA-11</span>
+                        </div>
                     </div>
-                    <div class="border border-cyber-green/30 rounded p-3 text-center bg-cyber-green/5">
+                    <div class="border border-cyber-green/30 rounded-lg p-3 bg-cyber-green/5">
                         <p class="font-mono text-xs text-cyber-green font-bold">DAST</p>
-                        <p class="font-mono text-xs text-gray-500 mt-1">Dynamic Testing</p>
+                        <p class="font-mono text-gray-500 mt-1" style="font-size:10px;">Dynamic Testing</p>
+                        <p class="font-mono text-gray-600 mt-1" style="font-size:9px;">ZAP / Burp</p>
+                        <div class="mt-2 flex flex-wrap gap-1">
+                            <span class="font-mono px-1 rounded bg-cyber-blue/10 text-cyber-blue border border-cyber-blue/20" style="font-size:8px;">RA-5</span>
+                            <span class="font-mono px-1 rounded bg-cyber-purple/10 text-cyber-purple border border-cyber-purple/20" style="font-size:8px;">SA-11</span>
+                        </div>
                     </div>
-                    <div class="border border-cyber-green/30 rounded p-3 text-center bg-cyber-green/5">
+                    <div class="border border-cyber-green/30 rounded-lg p-3 bg-cyber-green/5">
                         <p class="font-mono text-xs text-cyber-green font-bold">SCA</p>
-                        <p class="font-mono text-xs text-gray-500 mt-1">Dependency Scan</p>
+                        <p class="font-mono text-gray-500 mt-1" style="font-size:10px;">Dependency Scan</p>
+                        <p class="font-mono text-gray-600 mt-1" style="font-size:9px;">snyk / trivy</p>
+                        <div class="mt-2 flex flex-wrap gap-1">
+                            <span class="font-mono px-1 rounded bg-cyber-blue/10 text-cyber-blue border border-cyber-blue/20" style="font-size:8px;">SI-3</span>
+                            <span class="font-mono px-1 rounded bg-cyber-purple/10 text-cyber-purple border border-cyber-purple/20" style="font-size:8px;">SA-12</span>
+                        </div>
                     </div>
-                    <div class="border border-cyber-blue/30 rounded p-3 text-center bg-cyber-blue/5">
+                    <div class="border border-cyber-blue/30 rounded-lg p-3 bg-cyber-blue/5">
                         <p class="font-mono text-xs text-cyber-blue font-bold">SBOM</p>
-                        <p class="font-mono text-xs text-gray-500 mt-1">Bill of Materials</p>
+                        <p class="font-mono text-gray-500 mt-1" style="font-size:10px;">Bill of Materials</p>
+                        <p class="font-mono text-gray-600 mt-1" style="font-size:9px;">anchore / syft</p>
+                        <div class="mt-2 flex flex-wrap gap-1">
+                            <span class="font-mono px-1 rounded bg-cyber-green/10 text-cyber-green border border-cyber-green/20" style="font-size:8px;">SI-7</span>
+                            <span class="font-mono px-1 rounded bg-cyber-purple/10 text-cyber-purple border border-cyber-purple/20" style="font-size:8px;">SA-12</span>
+                        </div>
                     </div>
-                    <div class="border border-cyber-amber/30 rounded p-3 text-center bg-cyber-amber/5">
-                        <p class="font-mono text-xs text-cyber-amber font-bold">INTEGRITY</p>
-                        <p class="font-mono text-xs text-gray-500 mt-1">Signature Verify</p>
+                    <div class="border border-cyber-amber/30 rounded-lg p-3 bg-cyber-amber/5">
+                        <p class="font-mono text-xs text-cyber-amber font-bold">SECRETS</p>
+                        <p class="font-mono text-gray-500 mt-1" style="font-size:10px;">Credential Scan</p>
+                        <p class="font-mono text-gray-600 mt-1" style="font-size:9px;">trufflehog / gitleaks</p>
+                        <div class="mt-2 flex flex-wrap gap-1">
+                            <span class="font-mono px-1 rounded bg-cyber-amber/10 text-cyber-amber border border-cyber-amber/20" style="font-size:8px;">SI-4</span>
+                        </div>
+                    </div>
+                    <div class="border border-cyber-green/30 rounded-lg p-3 bg-cyber-green/5">
+                        <p class="font-mono text-xs text-cyber-green font-bold">IMAGE SCAN</p>
+                        <p class="font-mono text-gray-500 mt-1" style="font-size:10px;">Container Verify</p>
+                        <p class="font-mono text-gray-600 mt-1" style="font-size:9px;">twistlock / openSCAP</p>
+                        <div class="mt-2 flex flex-wrap gap-1">
+                            <span class="font-mono px-1 rounded bg-cyber-green/10 text-cyber-green border border-cyber-green/20" style="font-size:8px;">SI-7</span>
+                            <span class="font-mono px-1 rounded bg-cyber-blue/10 text-cyber-blue border border-cyber-blue/20" style="font-size:8px;">SC-8</span>
+                        </div>
                     </div>
                 </div>
-                <div class="mt-4 flex items-center gap-3">
+
+                <div class="flex items-center gap-3">
                     <div class="h-px flex-1 bg-cyber-green/20"></div>
-                    <span class="font-mono text-xs text-cyber-green">PASS / FAIL GATE</span>
+                    <span class="font-mono text-xs text-cyber-green font-bold">ALL PASS &rarr; ADVANCE</span>
+                    <span class="font-mono text-xs text-gray-500">|</span>
+                    <span class="font-mono text-xs text-cyber-red font-bold">ANY FAIL &rarr; BLOCK</span>
                     <div class="h-px flex-1 bg-cyber-green/20"></div>
                 </div>
             </div>
@@ -427,26 +582,108 @@ document.head.appendChild(o)}initApollo();</script>
                 </tbody>
             </table>
 
-            <!-- Separation of duties diagram -->
+            <!-- Separation of duties diagram - detailed role matrix -->
             <div class="diagram-box">
-                <p class="font-mono text-xs text-gray-500 mb-4 uppercase tracking-wider">Separation of Duties Model</p>
-                <div class="flex flex-col md:flex-row items-center justify-between gap-3">
-                    <div class="flex-1 border border-cyber-red/30 rounded p-4 text-center bg-cyber-red/5">
-                        <p class="font-mono text-sm text-white font-bold">Developer</p>
-                        <p class="font-mono text-xs text-gray-500 mt-1">Commits code to GitHub</p>
-                        <p class="font-mono text-xs text-cyber-red mt-2">Cannot approve promotion</p>
+                <p class="font-mono text-xs text-gray-500 mb-4 uppercase tracking-wider">Separation of Duties Model -- enforced via IAM policy</p>
+                <div class="flex flex-col md:flex-row items-stretch gap-3">
+                    <div class="flex-1 border border-cyber-red/30 rounded-lg overflow-hidden bg-cyber-red/5">
+                        <div class="bg-cyber-red/10 px-4 py-2 border-b border-cyber-red/20">
+                            <p class="font-mono text-sm text-white font-bold">Developer</p>
+                        </div>
+                        <div class="p-4 space-y-2">
+                            <div class="flex items-center gap-2">
+                                <span class="font-mono text-cyber-green" style="font-size:10px;">&#10003;</span>
+                                <span class="font-mono text-gray-400" style="font-size:10px;">Commits code to GitHub/GitLab</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <span class="font-mono text-cyber-green" style="font-size:10px;">&#10003;</span>
+                                <span class="font-mono text-gray-400" style="font-size:10px;">Opens pull/merge requests</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <span class="font-mono text-cyber-green" style="font-size:10px;">&#10003;</span>
+                                <span class="font-mono text-gray-400" style="font-size:10px;">Fixes scan findings</span>
+                            </div>
+                            <div class="h-px bg-cyber-red/20 my-2"></div>
+                            <div class="flex items-center gap-2">
+                                <span class="font-mono text-cyber-red" style="font-size:10px;">&#10007;</span>
+                                <span class="font-mono text-cyber-red" style="font-size:10px;">Cannot approve own PR/MR</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <span class="font-mono text-cyber-red" style="font-size:10px;">&#10007;</span>
+                                <span class="font-mono text-cyber-red" style="font-size:10px;">Cannot promote to prod</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <span class="font-mono text-cyber-red" style="font-size:10px;">&#10007;</span>
+                                <span class="font-mono text-cyber-red" style="font-size:10px;">No prod environment access</span>
+                            </div>
+                        </div>
                     </div>
-                    <span class="font-mono text-gray-600 text-xl">&#8800;</span>
-                    <div class="flex-1 border border-cyber-amber/30 rounded p-4 text-center bg-cyber-amber/5">
-                        <p class="font-mono text-sm text-white font-bold">Dev Approver</p>
-                        <p class="font-mono text-xs text-gray-500 mt-1">Approves pull into dev</p>
-                        <p class="font-mono text-xs text-cyber-amber mt-2">Reviews scan results</p>
+
+                    <div class="flex items-center justify-center">
+                        <span class="font-mono text-gray-600 text-2xl">&#8800;</span>
                     </div>
-                    <span class="font-mono text-gray-600 text-xl">&#8800;</span>
-                    <div class="flex-1 border border-cyber-blue/30 rounded p-4 text-center bg-cyber-blue/5">
-                        <p class="font-mono text-sm text-white font-bold">Prod Approver</p>
-                        <p class="font-mono text-xs text-gray-500 mt-1">Approves production deploy</p>
-                        <p class="font-mono text-xs text-cyber-blue mt-2">Verifies SIA complete</p>
+
+                    <div class="flex-1 border border-cyber-amber/30 rounded-lg overflow-hidden bg-cyber-amber/5">
+                        <div class="bg-cyber-amber/10 px-4 py-2 border-b border-cyber-amber/20">
+                            <p class="font-mono text-sm text-white font-bold">Dev Approver</p>
+                        </div>
+                        <div class="p-4 space-y-2">
+                            <div class="flex items-center gap-2">
+                                <span class="font-mono text-cyber-green" style="font-size:10px;">&#10003;</span>
+                                <span class="font-mono text-gray-400" style="font-size:10px;">Reviews scan results</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <span class="font-mono text-cyber-green" style="font-size:10px;">&#10003;</span>
+                                <span class="font-mono text-gray-400" style="font-size:10px;">Approves pull into dev env</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <span class="font-mono text-cyber-green" style="font-size:10px;">&#10003;</span>
+                                <span class="font-mono text-gray-400" style="font-size:10px;">Validates scan pipeline pass</span>
+                            </div>
+                            <div class="h-px bg-cyber-amber/20 my-2"></div>
+                            <div class="flex items-center gap-2">
+                                <span class="font-mono text-cyber-amber" style="font-size:10px;">&#10007;</span>
+                                <span class="font-mono text-cyber-amber" style="font-size:10px;">Cannot promote to prod</span>
+                            </div>
+                            <div class="mt-2">
+                                <span class="font-mono px-1.5 py-0.5 rounded bg-cyber-amber/10 text-cyber-amber border border-cyber-amber/20" style="font-size:9px;">AC-6</span>
+                                <span class="font-mono px-1.5 py-0.5 rounded bg-cyber-amber/10 text-cyber-amber border border-cyber-amber/20 ml-1" style="font-size:9px;">CM-3</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-center">
+                        <span class="font-mono text-gray-600 text-2xl">&#8800;</span>
+                    </div>
+
+                    <div class="flex-1 border border-cyber-blue/30 rounded-lg overflow-hidden bg-cyber-blue/5">
+                        <div class="bg-cyber-blue/10 px-4 py-2 border-b border-cyber-blue/20">
+                            <p class="font-mono text-sm text-white font-bold">Prod Approver</p>
+                        </div>
+                        <div class="p-4 space-y-2">
+                            <div class="flex items-center gap-2">
+                                <span class="font-mono text-cyber-green" style="font-size:10px;">&#10003;</span>
+                                <span class="font-mono text-gray-400" style="font-size:10px;">Verifies SIA completed</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <span class="font-mono text-cyber-green" style="font-size:10px;">&#10003;</span>
+                                <span class="font-mono text-gray-400" style="font-size:10px;">Approves production deploy</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <span class="font-mono text-cyber-green" style="font-size:10px;">&#10003;</span>
+                                <span class="font-mono text-gray-400" style="font-size:10px;">Signs off on release</span>
+                            </div>
+                            <div class="h-px bg-cyber-blue/20 my-2"></div>
+                            <div class="flex items-center gap-2">
+                                <span class="font-mono text-cyber-blue" style="font-size:10px;">&#10007;</span>
+                                <span class="font-mono text-cyber-blue" style="font-size:10px;">Cannot commit code</span>
+                            </div>
+                            <div class="mt-2">
+                                <span class="font-mono px-1.5 py-0.5 rounded bg-cyber-blue/10 text-cyber-blue border border-cyber-blue/20" style="font-size:9px;">AC-6</span>
+                                <span class="font-mono px-1.5 py-0.5 rounded bg-cyber-blue/10 text-cyber-blue border border-cyber-blue/20 ml-1" style="font-size:9px;">AC-2</span>
+                                <span class="font-mono px-1.5 py-0.5 rounded bg-cyber-blue/10 text-cyber-blue border border-cyber-blue/20 ml-1" style="font-size:9px;">CM-3</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -563,7 +800,7 @@ document.head.appendChild(o)}initApollo();</script>
                     </div>
                 </a>
                 <a href="/blog/ato-bottleneck-rethinking-authorization" class="blog-card block fade-in">
-                    <div class="h-40 overflow-hidden"><img src="/public/blog/ato-bottleneck.svg?v=3" alt="ATO Bottleneck" class="w-full h-full object-cover" loading="lazy"></div>
+                    <div class="h-40 overflow-hidden"><img src="/public/blog/ato-bottleneck.svg?v=4" alt="ATO Bottleneck" class="w-full h-full object-cover" loading="lazy"></div>
                     <div class="p-5">
                         <div class="flex items-center justify-between mb-3"><span class="font-mono text-xs text-gray-500">Mar 5, 2026</span><span class="badge-green font-mono text-xs px-2 py-0.5 rounded">Industry Insights</span></div>
                         <h3 class="card-title text-white font-semibold mb-2 line-clamp-2 transition-colors">The ATO Bottleneck: Why Authorization Takes So Long and What Actually Fixes It</h3>

@@ -1,118 +1,393 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" width="1200" height="700">
   <defs>
     <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#0d1117"/>
-      <stop offset="100%" style="stop-color:#0a0a0f"/>
+      <stop offset="0%" style="stop-color:#0a0a0f"/><stop offset="100%" style="stop-color:#0d1117"/>
+    </linearGradient>
+    <linearGradient id="redFlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ff3366"/><stop offset="100%" style="stop-color:#ff6688;stop-opacity:0.3"/>
+    </linearGradient>
+    <linearGradient id="greenFlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00ff88"/><stop offset="100%" style="stop-color:#00ff88;stop-opacity:0.3"/>
     </linearGradient>
   </defs>
 
-  <!-- Background -->
-  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="700" fill="url(#bg)"/>
 
-  <!-- Subtle grid -->
-  <g opacity="0.05" stroke="#00ff88" stroke-width="0.5">
-    <line x1="0" y1="105" x2="1200" y2="105"/><line x1="0" y1="210" x2="1200" y2="210"/>
-    <line x1="0" y1="315" x2="1200" y2="315"/><line x1="0" y1="420" x2="1200" y2="420"/>
-    <line x1="0" y1="525" x2="1200" y2="525"/>
-    <line x1="200" y1="0" x2="200" y2="630"/><line x1="400" y1="0" x2="400" y2="630"/>
-    <line x1="600" y1="0" x2="600" y2="630"/><line x1="800" y1="0" x2="800" y2="630"/>
-    <line x1="1000" y1="0" x2="1000" y2="630"/>
+  <!-- Grid -->
+  <g opacity="0.03" stroke="#00ff88" stroke-width="0.5">
+    <line x1="0" y1="100" x2="1200" y2="100"/><line x1="0" y1="200" x2="1200" y2="200"/>
+    <line x1="0" y1="300" x2="1200" y2="300"/><line x1="0" y1="400" x2="1200" y2="400"/>
+    <line x1="0" y1="500" x2="1200" y2="500"/><line x1="0" y1="600" x2="1200" y2="600"/>
+    <line x1="200" y1="0" x2="200" y2="700"/><line x1="400" y1="0" x2="400" y2="700"/>
+    <line x1="600" y1="0" x2="600" y2="700"/><line x1="800" y1="0" x2="800" y2="700"/>
+    <line x1="1000" y1="0" x2="1000" y2="700"/>
   </g>
 
-  <!-- ===== COLUMN 1: TODAY (Red/Problem) ===== -->
+  <!-- ===== TITLE BAR ===== -->
+  <rect x="30" y="18" width="1140" height="32" rx="4" fill="#111318" stroke="#21262d" stroke-width="1"/>
+  <text x="600" y="39" font-family="monospace" font-size="11" fill="#e5e7eb" text-anchor="middle" font-weight="bold">THE ATO BOTTLENECK: TRADITIONAL PROCESS vs. MODERN APPROACH</text>
 
-  <!-- Column header -->
-  <rect x="40" y="30" width="320" height="44" rx="6" fill="#1a1215" stroke="#ff3366" stroke-width="1.5"/>
-  <text x="200" y="58" font-family="monospace" font-size="18" font-weight="bold" fill="#ff3366" text-anchor="middle">TODAY'S ATO PROCESS</text>
+  <!-- ===== TOP HALF: TRADITIONAL ATO (RED) ===== -->
 
-  <!-- Box 1: Documentation -->
-  <rect x="40" y="100" width="320" height="110" rx="6" fill="#120f14" stroke="#ff3366" stroke-width="1.2"/>
-  <text x="60" y="128" font-family="monospace" font-size="14" font-weight="bold" fill="#ff3366">Documentation Overload</text>
-  <text x="60" y="152" font-family="monospace" font-size="11" fill="#9ca3af">500+ page SSPs written from memory</text>
-  <text x="60" y="170" font-family="monospace" font-size="11" fill="#9ca3af">Outdated before assessment begins</text>
-  <text x="60" y="188" font-family="monospace" font-size="11" fill="#ff6688">Describes intent, not reality</text>
+  <!-- Section header -->
+  <rect x="30" y="60" width="1140" height="22" rx="3" fill="rgba(255,51,102,0.06)" stroke="#ff3366" stroke-width="0.5"/>
+  <text x="600" y="75" font-family="monospace" font-size="9" fill="#ff3366" text-anchor="middle" font-weight="bold">TODAY'S ATO PROCESS -- SEQUENTIAL, MANUAL, DOCUMENT-DRIVEN</text>
 
-  <!-- Box 2: Manual Evidence -->
-  <rect x="40" y="230" width="320" height="110" rx="6" fill="#120f14" stroke="#ff3366" stroke-width="1.2"/>
-  <text x="60" y="258" font-family="monospace" font-size="14" font-weight="bold" fill="#ff3366">Manual Evidence Collection</text>
-  <text x="60" y="282" font-family="monospace" font-size="11" fill="#9ca3af">Screenshots, PDFs, spreadsheets</text>
-  <text x="60" y="300" font-family="monospace" font-size="11" fill="#9ca3af">Weeks of gathering per assessment</text>
-  <text x="60" y="318" font-family="monospace" font-size="11" fill="#ff6688">Stale evidence = rework cycles</text>
+  <!-- Traditional pipeline stages -->
+  <!-- Stage: Initiation -->
+  <g transform="translate(40, 94)">
+    <rect width="130" height="65" rx="4" fill="#120f14" stroke="#ff3366" stroke-width="1"/>
+    <text x="65" y="20" font-family="monospace" font-size="8" fill="#ff3366" text-anchor="middle" font-weight="bold">INITIATION</text>
+    <text x="65" y="35" font-family="monospace" font-size="7" fill="#9ca3af" text-anchor="middle">System categorization</text>
+    <text x="65" y="47" font-family="monospace" font-size="7" fill="#9ca3af" text-anchor="middle">FIPS 199 analysis</text>
+    <text x="65" y="59" font-family="monospace" font-size="7" fill="#6b7280" text-anchor="middle">2-4 weeks</text>
+  </g>
+  <line x1="170" y1="126" x2="188" y2="126" stroke="#ff3366" stroke-width="1" opacity="0.5"/>
+  <polygon points="186,122 194,126 186,130" fill="#ff3366" opacity="0.5"/>
 
-  <!-- Box 3: Bottlenecks -->
-  <rect x="40" y="360" width="320" height="110" rx="6" fill="#12100d" stroke="#ffb800" stroke-width="1.2"/>
-  <text x="60" y="388" font-family="monospace" font-size="14" font-weight="bold" fill="#ffb800">Organizational Bottlenecks</text>
-  <text x="60" y="412" font-family="monospace" font-size="11" fill="#9ca3af">AO queues, 3PAO backlogs</text>
-  <text x="60" y="430" font-family="monospace" font-size="11" fill="#9ca3af">Compliance theater over risk mgmt</text>
-  <text x="60" y="448" font-family="monospace" font-size="11" fill="#ffcc44">Calendar delays compound tech ones</text>
+  <!-- Stage: SSP Writing -->
+  <g transform="translate(195, 94)">
+    <rect width="130" height="65" rx="4" fill="#120f14" stroke="#ff3366" stroke-width="1"/>
+    <text x="65" y="20" font-family="monospace" font-size="8" fill="#ff3366" text-anchor="middle" font-weight="bold">SSP WRITING</text>
+    <text x="65" y="35" font-family="monospace" font-size="7" fill="#9ca3af" text-anchor="middle">500+ pages manual</text>
+    <text x="65" y="47" font-family="monospace" font-size="7" fill="#9ca3af" text-anchor="middle">Copy-paste controls</text>
+    <text x="65" y="59" font-family="monospace" font-size="7" fill="#ff6688" text-anchor="middle">3-6 months</text>
+  </g>
+  <line x1="325" y1="126" x2="343" y2="126" stroke="#ff3366" stroke-width="1" opacity="0.5"/>
+  <polygon points="341,122 349,126 341,130" fill="#ff3366" opacity="0.5"/>
 
-  <!-- Result badge -->
-  <rect x="80" y="496" width="240" height="50" rx="8" fill="#1a1215" stroke="#ff3366" stroke-width="2"/>
-  <text x="200" y="525" font-family="monospace" font-size="20" font-weight="bold" fill="#ff3366" text-anchor="middle">12-18 MONTHS</text>
+  <!-- Stage: Evidence -->
+  <g transform="translate(350, 94)">
+    <rect width="130" height="65" rx="4" fill="#120f14" stroke="#ff3366" stroke-width="1"/>
+    <text x="65" y="20" font-family="monospace" font-size="8" fill="#ff3366" text-anchor="middle" font-weight="bold">EVIDENCE</text>
+    <text x="65" y="35" font-family="monospace" font-size="7" fill="#9ca3af" text-anchor="middle">Screenshots + PDFs</text>
+    <text x="65" y="47" font-family="monospace" font-size="7" fill="#9ca3af" text-anchor="middle">Manual collection</text>
+    <text x="65" y="59" font-family="monospace" font-size="7" fill="#ff6688" text-anchor="middle">Stale on delivery</text>
+  </g>
+  <line x1="480" y1="126" x2="498" y2="126" stroke="#ff3366" stroke-width="1" opacity="0.5"/>
+  <polygon points="496,122 504,126 496,130" fill="#ff3366" opacity="0.5"/>
 
-  <!-- Down arrows connecting boxes -->
-  <line x1="200" y1="210" x2="200" y2="230" stroke="#ff3366" stroke-width="1.5" opacity="0.4"/>
-  <line x1="200" y1="340" x2="200" y2="360" stroke="#ff3366" stroke-width="1.5" opacity="0.4"/>
-  <line x1="200" y1="470" x2="200" y2="496" stroke="#ff3366" stroke-width="1.5" opacity="0.4" stroke-dasharray="4,3"/>
-  <polygon points="195,494 200,502 205,494" fill="#ff3366" opacity="0.5"/>
+  <!-- Stage: 3PAO Assessment -->
+  <g transform="translate(505, 94)">
+    <rect width="130" height="65" rx="4" fill="#120f14" stroke="#ff3366" stroke-width="1"/>
+    <text x="65" y="20" font-family="monospace" font-size="8" fill="#ff3366" text-anchor="middle" font-weight="bold">3PAO ASSESSMENT</text>
+    <text x="65" y="35" font-family="monospace" font-size="7" fill="#9ca3af" text-anchor="middle">Scheduling backlog</text>
+    <text x="65" y="47" font-family="monospace" font-size="7" fill="#9ca3af" text-anchor="middle">Finding resolution</text>
+    <text x="65" y="59" font-family="monospace" font-size="7" fill="#ff6688" text-anchor="middle">2-4 months</text>
+  </g>
+  <line x1="635" y1="126" x2="653" y2="126" stroke="#ff3366" stroke-width="1" opacity="0.5"/>
+  <polygon points="651,122 659,126 651,130" fill="#ff3366" opacity="0.5"/>
 
-  <!-- ===== CENTER: Arrow / Transformation ===== -->
+  <!-- Stage: Remediation -->
+  <g transform="translate(660, 94)">
+    <rect width="130" height="65" rx="4" fill="#12100d" stroke="#ffb800" stroke-width="1"/>
+    <text x="65" y="20" font-family="monospace" font-size="8" fill="#ffb800" text-anchor="middle" font-weight="bold">REMEDIATION</text>
+    <text x="65" y="35" font-family="monospace" font-size="7" fill="#9ca3af" text-anchor="middle">Fix findings</text>
+    <text x="65" y="47" font-family="monospace" font-size="7" fill="#9ca3af" text-anchor="middle">Re-test cycle</text>
+    <text x="65" y="59" font-family="monospace" font-size="7" fill="#ffcc44" text-anchor="middle">1-3 months</text>
+  </g>
+  <line x1="790" y1="126" x2="808" y2="126" stroke="#ffb800" stroke-width="1" opacity="0.5"/>
+  <polygon points="806,122 814,126 806,130" fill="#ffb800" opacity="0.5"/>
 
-  <g transform="translate(600, 290)">
-    <!-- Large arrow -->
-    <line x1="-170" y1="0" x2="130" y2="0" stroke="#21262d" stroke-width="2"/>
-    <polygon points="130,-12 155,0 130,12" fill="#21262d"/>
+  <!-- Stage: AO Review -->
+  <g transform="translate(815, 94)">
+    <rect width="130" height="65" rx="4" fill="#120f14" stroke="#ff3366" stroke-width="1"/>
+    <text x="65" y="20" font-family="monospace" font-size="8" fill="#ff3366" text-anchor="middle" font-weight="bold">AO REVIEW</text>
+    <text x="65" y="35" font-family="monospace" font-size="7" fill="#9ca3af" text-anchor="middle">Queue waiting</text>
+    <text x="65" y="47" font-family="monospace" font-size="7" fill="#9ca3af" text-anchor="middle">Info quality issues</text>
+    <text x="65" y="59" font-family="monospace" font-size="7" fill="#ff6688" text-anchor="middle">2-6 months</text>
+  </g>
+  <line x1="945" y1="126" x2="963" y2="126" stroke="#ff3366" stroke-width="1" opacity="0.5"/>
+  <polygon points="961,122 969,126 961,130" fill="#ff3366" opacity="0.5"/>
 
-    <!-- Glow overlay arrow -->
-    <line x1="-170" y1="0" x2="130" y2="0" stroke="#00ff88" stroke-width="1" opacity="0.3"/>
-    <polygon points="130,-10 152,0 130,10" fill="#00ff88" opacity="0.3"/>
-
-    <text x="-20" y="-20" font-family="monospace" font-size="11" fill="#8b949e" text-anchor="middle">WHAT CHANGES</text>
+  <!-- Final: ATO Badge (Red) -->
+  <g transform="translate(970, 94)">
+    <rect width="100" height="65" rx="4" fill="#1a1215" stroke="#ff3366" stroke-width="2"/>
+    <text x="50" y="25" font-family="monospace" font-size="10" fill="#ff3366" text-anchor="middle" font-weight="bold">ATO</text>
+    <text x="50" y="42" font-family="monospace" font-size="8" fill="#ff6688" text-anchor="middle">12-18 mo</text>
+    <text x="50" y="57" font-family="monospace" font-size="7" fill="#6b7280" text-anchor="middle">already stale</text>
   </g>
 
-  <!-- ===== COLUMN 2: FUTURE (Green/Solution) ===== -->
+  <!-- ===== PROBLEM DETAIL BOXES (below traditional pipeline) ===== -->
+  <g transform="translate(40, 180)">
+    <!-- Problem 1: Documentation -->
+    <rect width="220" height="130" rx="4" fill="#111318" stroke="#21262d" stroke-width="0.8"/>
+    <rect x="0" y="0" width="220" height="22" rx="4" fill="#1a1215" stroke="#ff3366" stroke-width="0.5"/>
+    <rect x="0" y="14" width="220" height="8" fill="#1a1215"/>
+    <text x="110" y="15" font-family="monospace" font-size="8" fill="#ff3366" text-anchor="middle" font-weight="bold">DOCUMENTATION OVERLOAD</text>
 
-  <!-- Column header -->
-  <rect x="840" y="30" width="320" height="44" rx="6" fill="#0a1a10" stroke="#00ff88" stroke-width="1.5"/>
-  <text x="1000" y="58" font-family="monospace" font-size="18" font-weight="bold" fill="#00ff88" text-anchor="middle">THE PATH FORWARD</text>
+    <rect x="12" y="32" width="196" height="20" rx="2" fill="rgba(255,51,102,0.04)" stroke="#21262d" stroke-width="0.3"/>
+    <text x="20" y="45" font-family="monospace" font-size="7" fill="#9ca3af">SSP: 500+ pages</text>
+    <text x="200" y="45" font-family="monospace" font-size="7" fill="#ff3366" text-anchor="end">MANUAL</text>
 
-  <!-- Box 1: Automated Evidence -->
-  <rect x="840" y="100" width="320" height="110" rx="6" fill="#0c1410" stroke="#00ff88" stroke-width="1.2"/>
-  <text x="860" y="128" font-family="monospace" font-size="14" font-weight="bold" fill="#00ff88">Automated Evidence</text>
-  <text x="860" y="152" font-family="monospace" font-size="11" fill="#9ca3af">CI/CD artifacts as proof</text>
-  <text x="1140" y="152" font-family="monospace" font-size="11" fill="#00ff88" text-anchor="end">LIVE</text>
-  <text x="860" y="170" font-family="monospace" font-size="11" fill="#9ca3af">OSCAL machine-readable output</text>
-  <text x="1140" y="170" font-family="monospace" font-size="11" fill="#00ff88" text-anchor="end">AUTO</text>
-  <text x="860" y="188" font-family="monospace" font-size="11" fill="#9ca3af">Continuous scan telemetry</text>
-  <text x="1140" y="188" font-family="monospace" font-size="11" fill="#00ff88" text-anchor="end">REAL</text>
+    <rect x="12" y="56" width="196" height="20" rx="2" fill="rgba(255,51,102,0.04)" stroke="#21262d" stroke-width="0.3"/>
+    <text x="20" y="69" font-family="monospace" font-size="7" fill="#9ca3af">POA&amp;M: spreadsheet tracking</text>
+    <text x="200" y="69" font-family="monospace" font-size="7" fill="#ff3366" text-anchor="end">MANUAL</text>
 
-  <!-- Box 2: Secure by Design -->
-  <rect x="840" y="230" width="320" height="110" rx="6" fill="#0c1410" stroke="#00ff88" stroke-width="1.2"/>
-  <text x="860" y="258" font-family="monospace" font-size="14" font-weight="bold" fill="#00ff88">Secure-by-Design</text>
-  <text x="860" y="282" font-family="monospace" font-size="11" fill="#9ca3af">Infrastructure as Code = evidence</text>
-  <text x="860" y="300" font-family="monospace" font-size="11" fill="#9ca3af">Policy-as-code guardrails</text>
-  <text x="860" y="318" font-family="monospace" font-size="11" fill="#9ca3af">STIG-hardened from day one</text>
+    <rect x="12" y="80" width="196" height="20" rx="2" fill="rgba(255,51,102,0.04)" stroke="#21262d" stroke-width="0.3"/>
+    <text x="20" y="93" font-family="monospace" font-size="7" fill="#9ca3af">CRM: copy-paste controls</text>
+    <text x="200" y="93" font-family="monospace" font-size="7" fill="#ff3366" text-anchor="end">MANUAL</text>
 
-  <!-- Box 3: Continuous ATO -->
-  <rect x="840" y="360" width="320" height="110" rx="6" fill="#0c1214" stroke="#00d4ff" stroke-width="1.2"/>
-  <text x="860" y="388" font-family="monospace" font-size="14" font-weight="bold" fill="#00d4ff">Continuous ATO</text>
-  <text x="860" y="412" font-family="monospace" font-size="11" fill="#9ca3af">Live dashboards for the AO</text>
-  <text x="860" y="430" font-family="monospace" font-size="11" fill="#9ca3af">Real-time security posture</text>
-  <text x="860" y="448" font-family="monospace" font-size="11" fill="#00d4ff">Risk decisions in minutes, not months</text>
+    <rect x="12" y="104" width="196" height="20" rx="2" fill="rgba(255,51,102,0.04)" stroke="#21262d" stroke-width="0.3"/>
+    <text x="20" y="117" font-family="monospace" font-size="7" fill="#9ca3af">Appendix M: inventory guess</text>
+    <text x="200" y="117" font-family="monospace" font-size="7" fill="#ff3366" text-anchor="end">STALE</text>
+  </g>
 
-  <!-- Result badge -->
-  <rect x="880" y="496" width="240" height="50" rx="8" fill="#0a1a10" stroke="#00ff88" stroke-width="2"/>
-  <text x="1000" y="525" font-family="monospace" font-size="20" font-weight="bold" fill="#00ff88" text-anchor="middle">WEEKS, NOT MONTHS</text>
+  <g transform="translate(280, 180)">
+    <!-- Problem 2: Evidence -->
+    <rect width="220" height="130" rx="4" fill="#111318" stroke="#21262d" stroke-width="0.8"/>
+    <rect x="0" y="0" width="220" height="22" rx="4" fill="#1a1215" stroke="#ff3366" stroke-width="0.5"/>
+    <rect x="0" y="14" width="220" height="8" fill="#1a1215"/>
+    <text x="110" y="15" font-family="monospace" font-size="8" fill="#ff3366" text-anchor="middle" font-weight="bold">EVIDENCE THEATER</text>
 
-  <!-- Down arrows connecting boxes -->
-  <line x1="1000" y1="210" x2="1000" y2="230" stroke="#00ff88" stroke-width="1.5" opacity="0.4"/>
-  <line x1="1000" y1="340" x2="1000" y2="360" stroke="#00ff88" stroke-width="1.5" opacity="0.4"/>
-  <line x1="1000" y1="470" x2="1000" y2="496" stroke="#00ff88" stroke-width="1.5" opacity="0.4" stroke-dasharray="4,3"/>
-  <polygon points="995,494 1000,502 1005,494" fill="#00ff88" opacity="0.5"/>
+    <rect x="12" y="32" width="196" height="20" rx="2" fill="rgba(255,51,102,0.04)" stroke="#21262d" stroke-width="0.3"/>
+    <text x="20" y="45" font-family="monospace" font-size="7" fill="#9ca3af">Scan screenshots (point-in-time)</text>
+    <text x="200" y="45" font-family="monospace" font-size="7" fill="#ff6688" text-anchor="end">STALE</text>
 
-  <!-- ===== BOTTOM LABEL ===== -->
-  <text x="600" y="600" font-family="monospace" font-size="12" fill="#4a5568" text-anchor="middle" letter-spacing="2">THE ATO BOTTLENECK: RETHINKING AUTHORIZATION</text>
+    <rect x="12" y="56" width="196" height="20" rx="2" fill="rgba(255,51,102,0.04)" stroke="#21262d" stroke-width="0.3"/>
+    <text x="20" y="69" font-family="monospace" font-size="7" fill="#9ca3af">Config exports (already changed)</text>
+    <text x="200" y="69" font-family="monospace" font-size="7" fill="#ff6688" text-anchor="end">STALE</text>
+
+    <rect x="12" y="80" width="196" height="20" rx="2" fill="rgba(255,51,102,0.04)" stroke="#21262d" stroke-width="0.3"/>
+    <text x="20" y="93" font-family="monospace" font-size="7" fill="#9ca3af">Access lists (quarterly audit)</text>
+    <text x="200" y="93" font-family="monospace" font-size="7" fill="#ff6688" text-anchor="end">STALE</text>
+
+    <rect x="12" y="104" width="196" height="20" rx="2" fill="rgba(255,51,102,0.04)" stroke="#21262d" stroke-width="0.3"/>
+    <text x="20" y="117" font-family="monospace" font-size="7" fill="#9ca3af">Network diagrams (Visio circa 2023)</text>
+    <text x="200" y="117" font-family="monospace" font-size="7" fill="#ff6688" text-anchor="end">STALE</text>
+  </g>
+
+  <g transform="translate(520, 180)">
+    <!-- Problem 3: Queues -->
+    <rect width="220" height="130" rx="4" fill="#111318" stroke="#21262d" stroke-width="0.8"/>
+    <rect x="0" y="0" width="220" height="22" rx="4" fill="#1a1215" stroke="#ffb800" stroke-width="0.5"/>
+    <rect x="0" y="14" width="220" height="8" fill="#1a1215"/>
+    <text x="110" y="15" font-family="monospace" font-size="8" fill="#ffb800" text-anchor="middle" font-weight="bold">ORGANIZATIONAL QUEUES</text>
+
+    <rect x="12" y="32" width="196" height="20" rx="2" fill="rgba(255,184,0,0.04)" stroke="#21262d" stroke-width="0.3"/>
+    <text x="20" y="45" font-family="monospace" font-size="7" fill="#9ca3af">3PAO scheduling</text>
+    <text x="200" y="45" font-family="monospace" font-size="7" fill="#ffb800" text-anchor="end">8-12 wks</text>
+
+    <rect x="12" y="56" width="196" height="20" rx="2" fill="rgba(255,184,0,0.04)" stroke="#21262d" stroke-width="0.3"/>
+    <text x="20" y="69" font-family="monospace" font-size="7" fill="#9ca3af">AO review queue</text>
+    <text x="200" y="69" font-family="monospace" font-size="7" fill="#ffb800" text-anchor="end">4-12 wks</text>
+
+    <rect x="12" y="80" width="196" height="20" rx="2" fill="rgba(255,184,0,0.04)" stroke="#21262d" stroke-width="0.3"/>
+    <text x="20" y="93" font-family="monospace" font-size="7" fill="#9ca3af">DISA PA review (DoW)</text>
+    <text x="200" y="93" font-family="monospace" font-size="7" fill="#ffb800" text-anchor="end">8-16 wks</text>
+
+    <rect x="12" y="104" width="196" height="20" rx="2" fill="rgba(255,184,0,0.04)" stroke="#21262d" stroke-width="0.3"/>
+    <text x="20" y="117" font-family="monospace" font-size="7" fill="#9ca3af">FedRAMP PMO review</text>
+    <text x="200" y="117" font-family="monospace" font-size="7" fill="#ffb800" text-anchor="end">4-8 wks</text>
+  </g>
+
+  <g transform="translate(760, 180)">
+    <!-- Problem 4: AO Info Quality -->
+    <rect width="310" height="130" rx="4" fill="#111318" stroke="#21262d" stroke-width="0.8"/>
+    <rect x="0" y="0" width="310" height="22" rx="4" fill="#1a1215" stroke="#ff3366" stroke-width="0.5"/>
+    <rect x="0" y="14" width="310" height="8" fill="#1a1215"/>
+    <text x="155" y="15" font-family="monospace" font-size="8" fill="#ff3366" text-anchor="middle" font-weight="bold">AO INFORMATION QUALITY PROBLEM</text>
+
+    <text x="15" y="42" font-family="monospace" font-size="7" fill="#9ca3af">AO receives:</text>
+    <rect x="15" y="50" width="280" height="16" rx="2" fill="rgba(255,51,102,0.04)" stroke="#21262d" stroke-width="0.3"/>
+    <text x="20" y="61" font-family="monospace" font-size="7" fill="#ff6688">500-page SSP they cannot verify independently</text>
+    <rect x="15" y="70" width="280" height="16" rx="2" fill="rgba(255,51,102,0.04)" stroke="#21262d" stroke-width="0.3"/>
+    <text x="20" y="81" font-family="monospace" font-size="7" fill="#ff6688">Evidence artifacts already weeks/months stale</text>
+    <rect x="15" y="90" width="280" height="16" rx="2" fill="rgba(255,51,102,0.04)" stroke="#21262d" stroke-width="0.3"/>
+    <text x="20" y="101" font-family="monospace" font-size="7" fill="#ff6688">POA&amp;M that is a wishlist, not a plan</text>
+    <rect x="15" y="110" width="280" height="16" rx="2" fill="rgba(255,184,0,0.06)" stroke="#ffb800" stroke-width="0.3"/>
+    <text x="20" y="121" font-family="monospace" font-size="7" fill="#ffb800">Result: risk decision based on stale data</text>
+  </g>
+
+  <!-- ===== DIVIDER ===== -->
+  <line x1="30" y1="328" x2="1170" y2="328" stroke="#21262d" stroke-width="1"/>
+  <rect x="530" y="318" width="140" height="20" rx="10" fill="#0a0a0f" stroke="#00ff88" stroke-width="1"/>
+  <text x="600" y="332" font-family="monospace" font-size="8" fill="#00ff88" text-anchor="middle" font-weight="bold">WHAT CHANGES</text>
+
+  <!-- ===== BOTTOM HALF: MODERN APPROACH (GREEN) ===== -->
+
+  <!-- Section header -->
+  <rect x="30" y="348" width="1140" height="22" rx="3" fill="rgba(0,255,136,0.04)" stroke="#00ff88" stroke-width="0.5"/>
+  <text x="600" y="363" font-family="monospace" font-size="9" fill="#00ff88" text-anchor="middle" font-weight="bold">THE PATH FORWARD -- CONTINUOUS, AUTOMATED, EVIDENCE-DRIVEN</text>
+
+  <!-- Modern pipeline stages -->
+  <!-- Stage: Secure-by-Design -->
+  <g transform="translate(40, 382)">
+    <rect width="160" height="70" rx="4" fill="#0c1410" stroke="#00ff88" stroke-width="1"/>
+    <text x="80" y="20" font-family="monospace" font-size="8" fill="#00ff88" text-anchor="middle" font-weight="bold">SECURE-BY-DESIGN</text>
+    <text x="80" y="35" font-family="monospace" font-size="7" fill="#9ca3af" text-anchor="middle">IaC = documentation</text>
+    <text x="80" y="47" font-family="monospace" font-size="7" fill="#9ca3af" text-anchor="middle">Policy-as-code guardrails</text>
+    <text x="80" y="62" font-family="monospace" font-size="7" fill="#00ff88" text-anchor="middle">Built compliant from day 1</text>
+  </g>
+  <line x1="200" y1="417" x2="218" y2="417" stroke="#00ff88" stroke-width="1" opacity="0.5"/>
+  <polygon points="216,413 224,417 216,421" fill="#00ff88" opacity="0.5"/>
+
+  <!-- Stage: Automated Scans -->
+  <g transform="translate(225, 382)">
+    <rect width="160" height="70" rx="4" fill="#0c1410" stroke="#00ff88" stroke-width="1"/>
+    <text x="80" y="20" font-family="monospace" font-size="8" fill="#00ff88" text-anchor="middle" font-weight="bold">CI/CD PIPELINE</text>
+    <text x="80" y="35" font-family="monospace" font-size="7" fill="#9ca3af" text-anchor="middle">SAST + DAST + SCA</text>
+    <text x="80" y="47" font-family="monospace" font-size="7" fill="#9ca3af" text-anchor="middle">SBOM + integrity checks</text>
+    <text x="80" y="62" font-family="monospace" font-size="7" fill="#00ff88" text-anchor="middle">Every commit scanned</text>
+  </g>
+  <line x1="385" y1="417" x2="403" y2="417" stroke="#00ff88" stroke-width="1" opacity="0.5"/>
+  <polygon points="401,413 409,417 401,421" fill="#00ff88" opacity="0.5"/>
+
+  <!-- Stage: OSCAL / Machine-Readable -->
+  <g transform="translate(410, 382)">
+    <rect width="160" height="70" rx="4" fill="#0c1410" stroke="#00d4ff" stroke-width="1"/>
+    <text x="80" y="20" font-family="monospace" font-size="8" fill="#00d4ff" text-anchor="middle" font-weight="bold">OSCAL OUTPUT</text>
+    <text x="80" y="35" font-family="monospace" font-size="7" fill="#9ca3af" text-anchor="middle">Machine-readable SSP</text>
+    <text x="80" y="47" font-family="monospace" font-size="7" fill="#9ca3af" text-anchor="middle">Auto-generated evidence</text>
+    <text x="80" y="62" font-family="monospace" font-size="7" fill="#00d4ff" text-anchor="middle">Always current</text>
+  </g>
+  <line x1="570" y1="417" x2="588" y2="417" stroke="#00d4ff" stroke-width="1" opacity="0.5"/>
+  <polygon points="586,413 594,417 586,421" fill="#00d4ff" opacity="0.5"/>
+
+  <!-- Stage: Continuous Monitoring -->
+  <g transform="translate(595, 382)">
+    <rect width="160" height="70" rx="4" fill="#0c1410" stroke="#00ff88" stroke-width="1"/>
+    <text x="80" y="20" font-family="monospace" font-size="8" fill="#00ff88" text-anchor="middle" font-weight="bold">CONMON TELEMETRY</text>
+    <text x="80" y="35" font-family="monospace" font-size="7" fill="#9ca3af" text-anchor="middle">Real-time dashboards</text>
+    <text x="80" y="47" font-family="monospace" font-size="7" fill="#9ca3af" text-anchor="middle">Live security posture</text>
+    <text x="80" y="62" font-family="monospace" font-size="7" fill="#00ff88" text-anchor="middle">POA&amp;M auto-populated</text>
+  </g>
+  <line x1="755" y1="417" x2="773" y2="417" stroke="#00ff88" stroke-width="1" opacity="0.5"/>
+  <polygon points="771,413 779,417 771,421" fill="#00ff88" opacity="0.5"/>
+
+  <!-- Stage: AO Dashboard -->
+  <g transform="translate(780, 382)">
+    <rect width="160" height="70" rx="4" fill="#0c1214" stroke="#00d4ff" stroke-width="1"/>
+    <text x="80" y="20" font-family="monospace" font-size="8" fill="#00d4ff" text-anchor="middle" font-weight="bold">AO DASHBOARD</text>
+    <text x="80" y="35" font-family="monospace" font-size="7" fill="#9ca3af" text-anchor="middle">Risk score in real-time</text>
+    <text x="80" y="47" font-family="monospace" font-size="7" fill="#9ca3af" text-anchor="middle">Live evidence access</text>
+    <text x="80" y="62" font-family="monospace" font-size="7" fill="#00d4ff" text-anchor="middle">Informed decisions fast</text>
+  </g>
+  <line x1="940" y1="417" x2="958" y2="417" stroke="#00d4ff" stroke-width="1" opacity="0.5"/>
+  <polygon points="956,413 964,417 956,421" fill="#00d4ff" opacity="0.5"/>
+
+  <!-- Final: cATO Badge (Green) -->
+  <g transform="translate(970, 382)">
+    <rect width="100" height="70" rx="4" fill="#0a1a10" stroke="#00ff88" stroke-width="2"/>
+    <text x="50" y="22" font-family="monospace" font-size="10" fill="#00ff88" text-anchor="middle" font-weight="bold">cATO</text>
+    <text x="50" y="40" font-family="monospace" font-size="8" fill="#00ff88" text-anchor="middle">Weeks</text>
+    <text x="50" y="55" font-family="monospace" font-size="7" fill="#00ff88" text-anchor="middle">Continuously</text>
+    <text x="50" y="65" font-family="monospace" font-size="7" fill="#00ff88" text-anchor="middle">maintained</text>
+  </g>
+
+  <!-- ===== SOLUTION DETAIL BOXES ===== -->
+  <g transform="translate(40, 470)">
+    <rect width="230" height="110" rx="4" fill="#111318" stroke="#21262d" stroke-width="0.8"/>
+    <rect x="0" y="0" width="230" height="22" rx="4" fill="#0a1a10" stroke="#00ff88" stroke-width="0.5"/>
+    <rect x="0" y="14" width="230" height="8" fill="#0a1a10"/>
+    <text x="115" y="15" font-family="monospace" font-size="8" fill="#00ff88" text-anchor="middle" font-weight="bold">AUTOMATED EVIDENCE</text>
+
+    <rect x="10" y="30" width="12" height="12" rx="2" fill="rgba(0,255,136,0.15)" stroke="#00ff88" stroke-width="0.5"/>
+    <text x="16" y="39" font-family="monospace" font-size="7" fill="#00ff88" text-anchor="middle">&#10003;</text>
+    <text x="28" y="39" font-family="monospace" font-size="7" fill="#9ca3af">CI/CD artifacts = proof</text>
+
+    <rect x="10" y="48" width="12" height="12" rx="2" fill="rgba(0,255,136,0.15)" stroke="#00ff88" stroke-width="0.5"/>
+    <text x="16" y="57" font-family="monospace" font-size="7" fill="#00ff88" text-anchor="middle">&#10003;</text>
+    <text x="28" y="57" font-family="monospace" font-size="7" fill="#9ca3af">Scan reports auto-generated</text>
+
+    <rect x="10" y="66" width="12" height="12" rx="2" fill="rgba(0,255,136,0.15)" stroke="#00ff88" stroke-width="0.5"/>
+    <text x="16" y="75" font-family="monospace" font-size="7" fill="#00ff88" text-anchor="middle">&#10003;</text>
+    <text x="28" y="75" font-family="monospace" font-size="7" fill="#9ca3af">IaC configs as documentation</text>
+
+    <rect x="10" y="84" width="12" height="12" rx="2" fill="rgba(0,255,136,0.15)" stroke="#00ff88" stroke-width="0.5"/>
+    <text x="16" y="93" font-family="monospace" font-size="7" fill="#00ff88" text-anchor="middle">&#10003;</text>
+    <text x="28" y="93" font-family="monospace" font-size="7" fill="#9ca3af">Inventory from cloud APIs</text>
+  </g>
+
+  <g transform="translate(290, 470)">
+    <rect width="230" height="110" rx="4" fill="#111318" stroke="#21262d" stroke-width="0.8"/>
+    <rect x="0" y="0" width="230" height="22" rx="4" fill="#0a1a10" stroke="#00d4ff" stroke-width="0.5"/>
+    <rect x="0" y="14" width="230" height="8" fill="#0a1a10"/>
+    <text x="115" y="15" font-family="monospace" font-size="8" fill="#00d4ff" text-anchor="middle" font-weight="bold">OSCAL + MACHINE-READABLE</text>
+
+    <rect x="10" y="30" width="12" height="12" rx="2" fill="rgba(0,212,255,0.15)" stroke="#00d4ff" stroke-width="0.5"/>
+    <text x="16" y="39" font-family="monospace" font-size="7" fill="#00d4ff" text-anchor="middle">&#10003;</text>
+    <text x="28" y="39" font-family="monospace" font-size="7" fill="#9ca3af">SSP as structured data</text>
+
+    <rect x="10" y="48" width="12" height="12" rx="2" fill="rgba(0,212,255,0.15)" stroke="#00d4ff" stroke-width="0.5"/>
+    <text x="16" y="57" font-family="monospace" font-size="7" fill="#00d4ff" text-anchor="middle">&#10003;</text>
+    <text x="28" y="57" font-family="monospace" font-size="7" fill="#9ca3af">Automated validation</text>
+
+    <rect x="10" y="66" width="12" height="12" rx="2" fill="rgba(0,212,255,0.15)" stroke="#00d4ff" stroke-width="0.5"/>
+    <text x="16" y="75" font-family="monospace" font-size="7" fill="#00d4ff" text-anchor="middle">&#10003;</text>
+    <text x="28" y="75" font-family="monospace" font-size="7" fill="#9ca3af">Cross-CSP evidence sharing</text>
+
+    <rect x="10" y="84" width="12" height="12" rx="2" fill="rgba(0,212,255,0.15)" stroke="#00d4ff" stroke-width="0.5"/>
+    <text x="16" y="93" font-family="monospace" font-size="7" fill="#00d4ff" text-anchor="middle">&#10003;</text>
+    <text x="28" y="93" font-family="monospace" font-size="7" fill="#9ca3af">FedRAMP 20x alignment</text>
+  </g>
+
+  <g transform="translate(540, 470)">
+    <rect width="230" height="110" rx="4" fill="#111318" stroke="#21262d" stroke-width="0.8"/>
+    <rect x="0" y="0" width="230" height="22" rx="4" fill="#0a1a10" stroke="#00ff88" stroke-width="0.5"/>
+    <rect x="0" y="14" width="230" height="8" fill="#0a1a10"/>
+    <text x="115" y="15" font-family="monospace" font-size="8" fill="#00ff88" text-anchor="middle" font-weight="bold">CONTINUOUS ATO (cATO)</text>
+
+    <rect x="10" y="30" width="12" height="12" rx="2" fill="rgba(0,255,136,0.15)" stroke="#00ff88" stroke-width="0.5"/>
+    <text x="16" y="39" font-family="monospace" font-size="7" fill="#00ff88" text-anchor="middle">&#10003;</text>
+    <text x="28" y="39" font-family="monospace" font-size="7" fill="#9ca3af">Authorization never expires</text>
+
+    <rect x="10" y="48" width="12" height="12" rx="2" fill="rgba(0,255,136,0.15)" stroke="#00ff88" stroke-width="0.5"/>
+    <text x="16" y="57" font-family="monospace" font-size="7" fill="#00ff88" text-anchor="middle">&#10003;</text>
+    <text x="28" y="57" font-family="monospace" font-size="7" fill="#9ca3af">Real-time risk visibility</text>
+
+    <rect x="10" y="66" width="12" height="12" rx="2" fill="rgba(0,255,136,0.15)" stroke="#00ff88" stroke-width="0.5"/>
+    <text x="16" y="75" font-family="monospace" font-size="7" fill="#00ff88" text-anchor="middle">&#10003;</text>
+    <text x="28" y="75" font-family="monospace" font-size="7" fill="#9ca3af">Faster incident response</text>
+
+    <rect x="10" y="84" width="12" height="12" rx="2" fill="rgba(0,255,136,0.15)" stroke="#00ff88" stroke-width="0.5"/>
+    <text x="16" y="93" font-family="monospace" font-size="7" fill="#00ff88" text-anchor="middle">&#10003;</text>
+    <text x="28" y="93" font-family="monospace" font-size="7" fill="#9ca3af">Deploy without re-authorization</text>
+  </g>
+
+  <g transform="translate(790, 470)">
+    <rect width="280" height="110" rx="4" fill="#111318" stroke="#21262d" stroke-width="0.8"/>
+    <rect x="0" y="0" width="280" height="22" rx="4" fill="#12100d" stroke="#ffb800" stroke-width="0.5"/>
+    <rect x="0" y="14" width="280" height="8" fill="#12100d"/>
+    <text x="140" y="15" font-family="monospace" font-size="8" fill="#ffb800" text-anchor="middle" font-weight="bold">WORKFORCE + TOOLING GAPS</text>
+
+    <text x="15" y="40" font-family="monospace" font-size="7" fill="#ffb800">Still needed:</text>
+
+    <rect x="15" y="48" width="250" height="14" rx="2" fill="rgba(255,184,0,0.04)" stroke="#21262d" stroke-width="0.3"/>
+    <text x="20" y="58" font-family="monospace" font-size="7" fill="#9ca3af">DoW 8140 certified workforce (ISSM, ISSO)</text>
+
+    <rect x="15" y="66" width="250" height="14" rx="2" fill="rgba(255,184,0,0.04)" stroke="#21262d" stroke-width="0.3"/>
+    <text x="20" y="76" font-family="monospace" font-size="7" fill="#9ca3af">3PAO capacity + skills modernization</text>
+
+    <rect x="15" y="84" width="250" height="14" rx="2" fill="rgba(255,184,0,0.04)" stroke="#21262d" stroke-width="0.3"/>
+    <text x="20" y="94" font-family="monospace" font-size="7" fill="#9ca3af">AO tooling for real-time risk dashboards</text>
+  </g>
+
+  <!-- ===== COMPARISON METRICS BAR ===== -->
+  <rect x="30" y="598" width="1140" height="70" rx="4" fill="#111318" stroke="#21262d" stroke-width="1"/>
+  <text x="600" y="616" font-family="monospace" font-size="8" fill="#e5e7eb" text-anchor="middle" font-weight="bold">TIMELINE COMPARISON</text>
+
+  <!-- Traditional metrics -->
+  <rect x="50" y="625" width="200" height="8" rx="2" fill="rgba(255,51,102,0.3)"/>
+  <rect x="50" y="625" width="200" height="8" rx="2" fill="#ff3366" opacity="0.7"/>
+  <text x="50" y="648" font-family="monospace" font-size="7" fill="#ff3366">Traditional: 12-18 months</text>
+
+  <!-- Modern metrics -->
+  <rect x="300" y="625" width="30" height="8" rx="2" fill="rgba(0,255,136,0.3)"/>
+  <rect x="300" y="625" width="30" height="8" rx="2" fill="#00ff88" opacity="0.7"/>
+  <text x="300" y="648" font-family="monospace" font-size="7" fill="#00ff88">Modern: 4-8 weeks initial</text>
+
+  <!-- Key differences -->
+  <text x="550" y="636" font-family="monospace" font-size="7" fill="#6b7280">SSP: manual vs generated</text>
+  <text x="550" y="652" font-family="monospace" font-size="7" fill="#6b7280">Evidence: screenshots vs live</text>
+  <text x="760" y="636" font-family="monospace" font-size="7" fill="#6b7280">Monitoring: annual vs continuous</text>
+  <text x="760" y="652" font-family="monospace" font-size="7" fill="#6b7280">Risk decisions: stale vs real-time</text>
+
+  <!-- Optimal callout -->
+  <rect x="985" y="622" width="170" height="36" rx="4" fill="rgba(0,255,136,0.06)" stroke="#00ff88" stroke-width="0.8"/>
+  <text x="1070" y="638" font-family="monospace" font-size="8" fill="#00ff88" text-anchor="middle" font-weight="bold">Pipeline = Compliance</text>
+  <text x="1070" y="652" font-family="monospace" font-size="7" fill="#6b7280" text-anchor="middle">Evidence as a byproduct</text>
 
   <!-- Border -->
-  <rect x="0" y="0" width="1200" height="630" fill="none" stroke="#21262d" stroke-width="1"/>
+  <rect x="0" y="0" width="1200" height="700" fill="none" stroke="#21262d" stroke-width="1"/>
 </svg>
