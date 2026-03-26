@@ -357,67 +357,69 @@ document.head.appendChild(o)}initApollo();</script>
 
             <!-- Journey Diagram -->
             <div class="diagram-box" style="padding: 2rem;">
-                <!-- Phase Labels Row -->
-                <div class="grid grid-cols-7 gap-2 mb-6">
-                    <!-- AWARENESS 1-2 -->
-                    <div class="journey-phase" style="background: rgba(255, 51, 102, 0.1); border: 1px solid rgba(255, 51, 102, 0.3);">
-                        <p class="font-mono text-[10px] font-bold text-cyber-red mb-1">1-2</p>
-                        <p class="font-mono text-[10px] font-semibold text-white leading-tight">AWARENESS</p>
-                        <p class="text-[9px] text-gray-500 mt-1 leading-tight">Identify the pathway and scope your boundary</p>
+                <!-- 9 Level Steps -->
+                <div style="display: grid; grid-template-columns: repeat(9, 1fr); gap: 4px; margin-bottom: 1.5rem;">
+                    <div style="background: rgba(33, 38, 45, 0.6); border: 1px solid #21262d; border-radius: 6px; padding: 0.75rem 0.5rem; text-align: center;">
+                        <p class="font-mono text-xs font-bold text-gray-400 mb-1">1</p>
+                        <p class="font-mono text-[9px] font-semibold text-white leading-tight">AWARE</p>
                     </div>
-                    <!-- GAP ANALYSIS 3 -->
-                    <div class="journey-phase" style="background: rgba(255, 51, 102, 0.07); border: 1px solid rgba(255, 51, 102, 0.2);">
-                        <p class="font-mono text-[10px] font-bold text-cyber-red mb-1">3</p>
-                        <p class="font-mono text-[10px] font-semibold text-white leading-tight">GAP ANALYSIS</p>
-                        <p class="text-[9px] text-gray-500 mt-1 leading-tight">Assess current state against the control baseline</p>
+                    <div style="background: rgba(33, 38, 45, 0.6); border: 1px solid #21262d; border-radius: 6px; padding: 0.75rem 0.5rem; text-align: center;">
+                        <p class="font-mono text-xs font-bold text-gray-400 mb-1">2</p>
+                        <p class="font-mono text-[9px] font-semibold text-white leading-tight">SCOPE</p>
                     </div>
-                    <!-- REMEDIATION 4 -->
-                    <div class="journey-phase" style="background: rgba(255, 184, 0, 0.08); border: 1px solid rgba(255, 184, 0, 0.25);">
-                        <p class="font-mono text-[10px] font-bold text-cyber-amber mb-1">4</p>
-                        <p class="font-mono text-[10px] font-semibold text-white leading-tight">REMEDIATION</p>
-                        <p class="text-[9px] text-gray-500 mt-1 leading-tight">Close gaps and build documentation artifacts</p>
+                    <div style="background: rgba(33, 38, 45, 0.6); border: 1px solid #21262d; border-radius: 6px; padding: 0.75rem 0.5rem; text-align: center;">
+                        <p class="font-mono text-xs font-bold text-gray-400 mb-1">3</p>
+                        <p class="font-mono text-[9px] font-semibold text-white leading-tight">GAP</p>
                     </div>
-                    <!-- ASSESSMENT 5-6 -->
-                    <div class="journey-phase" style="background: rgba(255, 184, 0, 0.1); border: 1px solid rgba(255, 184, 0, 0.3);">
-                        <p class="font-mono text-[10px] font-bold text-cyber-amber mb-1">5-6</p>
-                        <p class="font-mono text-[10px] font-semibold text-white leading-tight">ASSESSMENT</p>
-                        <p class="text-[9px] text-gray-500 mt-1 leading-tight">Engage assessors and complete formal evaluation</p>
+                    <div style="background: rgba(33, 38, 45, 0.6); border: 1px solid #21262d; border-radius: 6px; padding: 0.75rem 0.5rem; text-align: center;">
+                        <p class="font-mono text-xs font-bold text-gray-400 mb-1">4</p>
+                        <p class="font-mono text-[9px] font-semibold text-white leading-tight">REMEDIATE</p>
                     </div>
-                    <!-- AUTHORIZE 7 -->
-                    <div class="journey-phase" style="background: rgba(0, 255, 136, 0.1); border: 1px solid rgba(0, 255, 136, 0.3);">
-                        <p class="font-mono text-[10px] font-bold text-cyber-green mb-1">7</p>
-                        <p class="font-mono text-[10px] font-semibold text-white leading-tight">AUTHORIZE</p>
-                        <p class="text-[9px] text-gray-500 mt-1 leading-tight">ATO granted -- production access unlocked</p>
+                    <div style="background: rgba(33, 38, 45, 0.6); border: 1px solid #21262d; border-radius: 6px; padding: 0.75rem 0.5rem; text-align: center;">
+                        <p class="font-mono text-xs font-bold text-gray-400 mb-1">5</p>
+                        <p class="font-mono text-[9px] font-semibold text-white leading-tight">SUBMIT</p>
                     </div>
-                    <!-- OPERATE 8 -->
-                    <div class="journey-phase" style="background: rgba(0, 255, 136, 0.15); border: 1px solid rgba(0, 255, 136, 0.35);">
-                        <p class="font-mono text-[10px] font-bold text-cyber-green mb-1">8</p>
-                        <p class="font-mono text-[10px] font-semibold text-white leading-tight">OPERATE</p>
-                        <p class="text-[9px] text-gray-500 mt-1 leading-tight">Sustained compliance with continuous monitoring</p>
+                    <div style="background: rgba(33, 38, 45, 0.6); border: 1px solid #21262d; border-radius: 6px; padding: 0.75rem 0.5rem; text-align: center;">
+                        <p class="font-mono text-xs font-bold text-gray-400 mb-1">6</p>
+                        <p class="font-mono text-[9px] font-semibold text-white leading-tight">ASSESS</p>
                     </div>
-                    <!-- SCALE 9 -->
-                    <div class="journey-phase" style="background: rgba(0, 255, 136, 0.2); border: 1px solid rgba(0, 255, 136, 0.4);">
-                        <p class="font-mono text-[10px] font-bold text-cyber-green mb-1">9</p>
-                        <p class="font-mono text-[10px] font-semibold text-white leading-tight">SCALE</p>
-                        <p class="text-[9px] text-gray-500 mt-1 leading-tight">Multi-agency reuse and strategic expansion</p>
+                    <div style="background: rgba(0, 255, 136, 0.08); border: 1px solid rgba(0, 255, 136, 0.3); border-radius: 6px; padding: 0.75rem 0.5rem; text-align: center;">
+                        <p class="font-mono text-xs font-bold text-cyber-green mb-1">7</p>
+                        <p class="font-mono text-[9px] font-semibold text-white leading-tight">AUTHORIZE</p>
+                    </div>
+                    <div style="background: rgba(33, 38, 45, 0.6); border: 1px solid #21262d; border-radius: 6px; padding: 0.75rem 0.5rem; text-align: center;">
+                        <p class="font-mono text-xs font-bold text-gray-400 mb-1">8</p>
+                        <p class="font-mono text-[9px] font-semibold text-white leading-tight">OPERATE</p>
+                    </div>
+                    <div style="background: rgba(33, 38, 45, 0.6); border: 1px solid #21262d; border-radius: 6px; padding: 0.75rem 0.5rem; text-align: center;">
+                        <p class="font-mono text-xs font-bold text-gray-400 mb-1">9</p>
+                        <p class="font-mono text-[9px] font-semibold text-white leading-tight">SCALE</p>
                     </div>
                 </div>
 
-                <!-- Progress Bar -->
-                <div class="flex h-3 rounded-full overflow-hidden gap-0.5">
-                    <div class="flex-1" style="background: linear-gradient(90deg, #ff3366 0%, #ff3366 100%); border-radius: 6px 0 0 6px;"></div>
-                    <div class="flex-1" style="background: #ff3366;"></div>
-                    <div class="flex-[0.5]" style="background: linear-gradient(90deg, #ff3366, #ffb800);"></div>
-                    <div class="flex-1" style="background: #ffb800;"></div>
-                    <div class="flex-1" style="background: linear-gradient(90deg, #ffb800, #00ff88);"></div>
-                    <div class="flex-1" style="background: #00ff88;"></div>
-                    <div class="flex-1" style="background: #00ff88;"></div>
-                    <div class="flex-1" style="background: #00ff88; border-radius: 0 6px 6px 0;"></div>
+                <!-- Phase descriptions -->
+                <div style="display: grid; grid-template-columns: 2fr 1fr 2fr 1fr 2fr; gap: 0; margin-bottom: 0.75rem;">
+                    <div style="text-align: center; border-bottom: 2px solid #21262d; padding-bottom: 0.5rem;">
+                        <p class="font-mono text-[10px] text-gray-500">Levels 1-3</p>
+                        <p class="font-mono text-xs text-gray-300 font-medium">Discovery & Planning</p>
+                    </div>
+                    <div></div>
+                    <div style="text-align: center; border-bottom: 2px solid rgba(0, 255, 136, 0.2); padding-bottom: 0.5rem;">
+                        <p class="font-mono text-[10px] text-gray-500">Levels 4-6</p>
+                        <p class="font-mono text-xs text-gray-300 font-medium">Build & Assessment</p>
+                    </div>
+                    <div></div>
+                    <div style="text-align: center; border-bottom: 2px solid rgba(0, 255, 136, 0.4); padding-bottom: 0.5rem;">
+                        <p class="font-mono text-[10px] text-gray-500">Levels 7-9</p>
+                        <p class="font-mono text-xs text-gray-300 font-medium">Authorized & Scaling</p>
+                    </div>
                 </div>
-                <div class="flex justify-between mt-2">
-                    <span class="font-mono text-[10px] text-cyber-red">Pre-Authorization</span>
-                    <span class="font-mono text-[10px] text-cyber-amber">Assessment</span>
-                    <span class="font-mono text-[10px] text-cyber-green">Authorized & Scaling</span>
+
+                <!-- Subtle progress bar -->
+                <div class="flex h-1.5 rounded-full overflow-hidden mt-4" style="background: #161b22;">
+                    <div class="flex-[3]" style="background: #21262d; border-radius: 6px 0 0 6px;"></div>
+                    <div class="flex-[3]" style="background: rgba(0, 255, 136, 0.15);"></div>
+                    <div class="flex-[3]" style="background: rgba(0, 255, 136, 0.35); border-radius: 0 6px 6px 0;"></div>
                 </div>
             </div>
         </div>
@@ -701,31 +703,31 @@ document.head.appendChild(o)}initApollo();</script>
             <span class="section-label mb-4 block">Institutional Landscape</span>
             <h2 class="text-2xl md:text-3xl font-bold text-white mb-8">Who Owns Each Authorization</h2>
 
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 0.75rem;">
-                <div style="border: 1px solid rgba(0, 212, 255, 0.3); border-radius: 6px; padding: 0.75rem; text-align: center; background: rgba(0, 212, 255, 0.03);" class="fade-in">
-                    <p style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #00d4ff; font-weight: 700; margin-bottom: 4px;">FedRAMP</p>
-                    <p style="font-size: 11px; color: #e5e7eb; margin-bottom: 2px; font-weight: 500;">GSA</p>
-                    <p style="font-size: 10px; color: #6b7280; margin: 0;">FedRAMP PMO + Board</p>
+            <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem;">
+                <div class="diagram-box fade-in" style="text-align: center; padding: 1.5rem 1rem; margin: 0;">
+                    <p style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #00d4ff; font-weight: 700; margin-bottom: 0.75rem;">FedRAMP</p>
+                    <p style="font-size: 14px; color: #e5e7eb; margin-bottom: 0.25rem; font-weight: 600;">GSA</p>
+                    <p style="font-size: 12px; color: #6b7280; margin: 0; font-style: italic;">FedRAMP PMO + Board</p>
                 </div>
-                <div style="border: 1px solid rgba(0, 255, 136, 0.3); border-radius: 6px; padding: 0.75rem; text-align: center; background: rgba(0, 255, 136, 0.03);" class="fade-in">
-                    <p style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #00ff88; font-weight: 700; margin-bottom: 4px;">DoW RMF</p>
-                    <p style="font-size: 11px; color: #e5e7eb; margin-bottom: 2px; font-weight: 500;">DoW AOs</p>
-                    <p style="font-size: 10px; color: #6b7280; margin: 0;">eMASS + DoDI 8510.01</p>
+                <div class="diagram-box fade-in" style="text-align: center; padding: 1.5rem 1rem; margin: 0;">
+                    <p style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #00ff88; font-weight: 700; margin-bottom: 0.75rem;">DoW RMF</p>
+                    <p style="font-size: 14px; color: #e5e7eb; margin-bottom: 0.25rem; font-weight: 600;">DoW AOs</p>
+                    <p style="font-size: 12px; color: #6b7280; margin: 0; font-style: italic;">eMASS + DoDI 8510.01</p>
                 </div>
-                <div style="border: 1px solid rgba(255, 184, 0, 0.3); border-radius: 6px; padding: 0.75rem; text-align: center; background: rgba(255, 184, 0, 0.03);" class="fade-in">
-                    <p style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #ffb800; font-weight: 700; margin-bottom: 4px;">IL PA</p>
-                    <p style="font-size: 11px; color: #e5e7eb; margin-bottom: 2px; font-weight: 500;">DISA</p>
-                    <p style="font-size: 10px; color: #6b7280; margin: 0;">CC SRG</p>
+                <div class="diagram-box fade-in" style="text-align: center; padding: 1.5rem 1rem; margin: 0;">
+                    <p style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #ffb800; font-weight: 700; margin-bottom: 0.75rem;">IL PA</p>
+                    <p style="font-size: 14px; color: #e5e7eb; margin-bottom: 0.25rem; font-weight: 600;">DISA</p>
+                    <p style="font-size: 12px; color: #6b7280; margin: 0; font-style: italic;">CC SRG</p>
                 </div>
-                <div style="border: 1px solid rgba(168, 85, 247, 0.3); border-radius: 6px; padding: 0.75rem; text-align: center; background: rgba(168, 85, 247, 0.03);" class="fade-in">
-                    <p style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #a855f7; font-weight: 700; margin-bottom: 4px;">cATO</p>
-                    <p style="font-size: 11px; color: #e5e7eb; margin-bottom: 2px; font-weight: 500;">DoW Program AO</p>
-                    <p style="font-size: 10px; color: #6b7280; margin: 0;">DevSecOps Ref Design</p>
+                <div class="diagram-box fade-in" style="text-align: center; padding: 1.5rem 1rem; margin: 0;">
+                    <p style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #a855f7; font-weight: 700; margin-bottom: 0.75rem;">cATO</p>
+                    <p style="font-size: 14px; color: #e5e7eb; margin-bottom: 0.25rem; font-weight: 600;">DoW Program AO</p>
+                    <p style="font-size: 12px; color: #6b7280; margin: 0; font-style: italic;">DevSecOps Ref Design</p>
                 </div>
-                <div style="border: 1px solid rgba(255, 51, 102, 0.3); border-radius: 6px; padding: 0.75rem; text-align: center; background: rgba(255, 51, 102, 0.03);" class="fade-in">
-                    <p style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #ff3366; font-weight: 700; margin-bottom: 4px;">CMMC</p>
-                    <p style="font-size: 11px; color: #e5e7eb; margin-bottom: 2px; font-weight: 500;">CMMC PMO</p>
-                    <p style="font-size: 10px; color: #6b7280; margin: 0;">C3PAOs + DIBCAC</p>
+                <div class="diagram-box fade-in" style="text-align: center; padding: 1.5rem 1rem; margin: 0;">
+                    <p style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #ff3366; font-weight: 700; margin-bottom: 0.75rem;">CMMC</p>
+                    <p style="font-size: 14px; color: #e5e7eb; margin-bottom: 0.25rem; font-weight: 600;">CMMC PMO</p>
+                    <p style="font-size: 12px; color: #6b7280; margin: 0; font-style: italic;">C3PAOs + DIBCAC</p>
                 </div>
             </div>
         </div>
