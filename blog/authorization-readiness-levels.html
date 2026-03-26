@@ -209,7 +209,19 @@ document.head.appendChild(o)}initApollo();</script>
             <h1 class="text-4xl md:text-6xl font-bold text-white mb-4 leading-tight">Authorization Readiness Levels</h1>
             <p class="text-xl md:text-2xl text-gray-300 mb-3 max-w-3xl mx-auto">A Framework for Dual-Use Companies Navigating the Pathway to Authority to Operate</p>
             <p class="text-sm text-gray-500 font-mono mb-2">Ryan Gutwein</p>
-            <p class="text-sm text-gray-400 mb-10">Extending <a href="https://dualuse.mit.edu/" target="_blank" class="text-cyber-blue hover:underline">MIT's Dual-Use Readiness Levels</a> for ATO Strategy</p>
+            <p class="text-sm text-gray-400 mb-6">Extending <a href="https://dualuse.mit.edu/" target="_blank" class="text-cyber-blue hover:underline">MIT's Dual-Use Readiness Levels</a> for ATO Strategy</p>
+            <!-- Hero visual summary -->
+            <div class="flex items-center justify-center gap-3 mb-10 flex-wrap">
+                <span class="font-mono text-xs px-3 py-1.5 rounded border border-cyber-border bg-cyber-gray/50 text-gray-300">FedRAMP</span>
+                <span class="text-gray-600">+</span>
+                <span class="font-mono text-xs px-3 py-1.5 rounded border border-cyber-border bg-cyber-gray/50 text-gray-300">DoW RMF</span>
+                <span class="text-gray-600">+</span>
+                <span class="font-mono text-xs px-3 py-1.5 rounded border border-cyber-border bg-cyber-gray/50 text-gray-300">Impact Level</span>
+                <span class="text-gray-600">+</span>
+                <span class="font-mono text-xs px-3 py-1.5 rounded border border-cyber-border bg-cyber-gray/50 text-gray-300">cATO</span>
+                <span class="text-gray-600">+</span>
+                <span class="font-mono text-xs px-3 py-1.5 rounded border border-cyber-border bg-cyber-gray/50 text-gray-300">CMMC</span>
+            </div>
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <a href="/blog/authorization-readiness-levels/Authorization-Readiness-Levels.pdf" download class="btn-platform text-base px-8 py-3 rounded font-mono inline-flex items-center gap-2">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
@@ -230,6 +242,22 @@ document.head.appendChild(o)}initApollo();</script>
                 <p><a href="https://dualuse.mit.edu/" target="_blank">MIT's Dual-Use Readiness Levels</a> framework gave the defense tech ecosystem a shared language for measuring startup maturity across five dimensions: technology, commercial funding, commercial customers, mission funding, and mission customers. But for any software company selling into the Department of War or broader public sector, there is a sixth dimension that often determines whether a promising product ever reaches the warfighter: <strong>authorization to operate</strong>.</p>
 
                 <p><strong>Authorization Readiness Levels (ARL)</strong> is a complementary framework that maps the pathway from "we know we need an ATO" to "we hold production authorizations across multiple agencies and pathways." It covers five distinct authorization pathways, each with its own 9-level progression from initial awareness through scaled, multi-agency operations.</p>
+            </div>
+
+            <!-- Who is this for -->
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 2.5rem;">
+                <div class="diagram-box fade-in" style="margin: 0; padding: 1.25rem; border-left: 2px solid #00ff88;">
+                    <p style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #00ff88; font-weight: 600; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 1px;">For Founders</p>
+                    <p style="font-size: 13px; color: #9ca3af; margin: 0; line-height: 1.5;">Assess where you are, plan where to go, and communicate your ATO strategy to investors and government stakeholders</p>
+                </div>
+                <div class="diagram-box fade-in" style="margin: 0; padding: 1.25rem; border-left: 2px solid #00d4ff;">
+                    <p style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #00d4ff; font-weight: 600; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 1px;">For Investors</p>
+                    <p style="font-size: 13px; color: #9ca3af; margin: 0; line-height: 1.5;">Evaluate authorization maturity and understand the timeline and investment required to unlock government revenue</p>
+                </div>
+                <div class="diagram-box fade-in" style="margin: 0; padding: 1.25rem; border-left: 2px solid #a855f7;">
+                    <p style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #a855f7; font-weight: 600; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 1px;">For Gov Stakeholders</p>
+                    <p style="font-size: 13px; color: #9ca3af; margin: 0; line-height: 1.5;">Understand where your vendor partners are in their authorization journey and what they need to advance</p>
+                </div>
             </div>
 
             <!-- 5 Pathway Cards -->
@@ -323,26 +351,28 @@ document.head.appendChild(o)}initApollo();</script>
             <span class="section-label mb-4 block">Readiness Dimensions</span>
             <h2 class="text-2xl md:text-3xl font-bold text-white mb-8">How Authorization Intersects with Every Readiness Dimension</h2>
 
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 0.75rem;">
-                <div style="background: rgba(0, 255, 136, 0.05); border: 1px solid rgba(0, 255, 136, 0.2); border-radius: 6px; padding: 0.75rem; text-align: center;" class="fade-in">
-                    <p style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #00ff88; font-weight: 600; margin-bottom: 0.25rem;">TRL</p>
-                    <p style="font-size: 11px; color: #8b949e; margin: 0; line-height: 1.4;">Architecture at TRL 3-5 determines authorizability</p>
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 1rem;">
+                <div class="diagram-box fade-in" style="margin: 0; padding: 1.25rem; text-align: center;">
+                    <p style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #00ff88; font-weight: 700; margin-bottom: 0.5rem;">Technology (TRL)</p>
+                    <p style="font-size: 13px; color: #9ca3af; margin: 0; line-height: 1.5;">Architecture decisions at TRL 3-5 determine whether your system is authorizable at all</p>
                 </div>
-                <div style="background: rgba(0, 212, 255, 0.05); border: 1px solid rgba(0, 212, 255, 0.2); border-radius: 6px; padding: 0.75rem; text-align: center;" class="fade-in">
-                    <p style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #00d4ff; font-weight: 600; margin-bottom: 0.25rem;">MFRL</p>
-                    <p style="font-size: 11px; color: #8b949e; margin: 0; line-height: 1.4;">SBIR/OTA awards expect ATO pathway plans</p>
+                <div class="diagram-box fade-in" style="margin: 0; padding: 1.25rem; text-align: center;">
+                    <p style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #00d4ff; font-weight: 700; margin-bottom: 0.5rem;">Mission Funding (MFRL)</p>
+                    <p style="font-size: 13px; color: #9ca3af; margin: 0; line-height: 1.5;">SBIR and OTA awards increasingly expect authorization pathway plans as deliverables</p>
                 </div>
-                <div style="background: rgba(168, 85, 247, 0.05); border: 1px solid rgba(168, 85, 247, 0.2); border-radius: 6px; padding: 0.75rem; text-align: center;" class="fade-in">
-                    <p style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #a855f7; font-weight: 600; margin-bottom: 0.25rem;">MCRL</p>
-                    <p style="font-size: 11px; color: #8b949e; margin: 0; line-height: 1.4;">The AO is a mission customer stakeholder</p>
+                <div class="diagram-box fade-in" style="margin: 0; padding: 1.25rem; text-align: center;">
+                    <p style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #a855f7; font-weight: 700; margin-bottom: 0.5rem;">Mission Customer (MCRL)</p>
+                    <p style="font-size: 13px; color: #9ca3af; margin: 0; line-height: 1.5;">The Authorizing Official who signs your ATO is a mission customer stakeholder</p>
                 </div>
-                <div style="background: rgba(255, 184, 0, 0.05); border: 1px solid rgba(255, 184, 0, 0.2); border-radius: 6px; padding: 0.75rem; text-align: center;" class="fade-in">
-                    <p style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #ffb800; font-weight: 600; margin-bottom: 0.25rem;">CCRL</p>
-                    <p style="font-size: 11px; color: #8b949e; margin: 0; line-height: 1.4;">FedRAMP is a commercial trust signal</p>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem;">
+                <div class="diagram-box fade-in" style="margin: 0; padding: 1.25rem; text-align: center;">
+                    <p style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #ffb800; font-weight: 700; margin-bottom: 0.5rem;">Commercial Customer (CCRL)</p>
+                    <p style="font-size: 13px; color: #9ca3af; margin: 0; line-height: 1.5;">FedRAMP authorization is increasingly valued as a trust signal in healthcare, finance, and critical infrastructure</p>
                 </div>
-                <div style="background: rgba(255, 51, 102, 0.05); border: 1px solid rgba(255, 51, 102, 0.2); border-radius: 6px; padding: 0.75rem; text-align: center;" class="fade-in">
-                    <p style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #ff3366; font-weight: 600; margin-bottom: 0.25rem;">CFRL</p>
-                    <p style="font-size: 11px; color: #8b949e; margin: 0; line-height: 1.4;">ATO readiness = gov revenue predictability</p>
+                <div class="diagram-box fade-in" style="margin: 0; padding: 1.25rem; text-align: center;">
+                    <p style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #ff3366; font-weight: 700; margin-bottom: 0.5rem;">Commercial Funding (CFRL)</p>
+                    <p style="font-size: 13px; color: #9ca3af; margin: 0; line-height: 1.5;">Investors evaluate ATO readiness as a proxy for government revenue predictability</p>
                 </div>
             </div>
         </div>
@@ -521,6 +551,17 @@ document.head.appendChild(o)}initApollo();</script>
                 </div>
             </div>
 
+            <!-- Mid-section PDF reminder -->
+            <div style="background: rgba(0, 255, 136, 0.03); border: 1px solid rgba(0, 255, 136, 0.15); border-radius: 8px; padding: 1.25rem 1.5rem; margin: 1.5rem 0; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap;">
+                <div>
+                    <p style="color: #e5e7eb; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.25rem;">Each level includes detailed descriptions, examples, and actionable guidance</p>
+                    <p style="color: #6b7280; font-size: 0.8rem; font-family: 'JetBrains Mono', monospace; margin: 0;">29-page whitepaper with all 5 pathways</p>
+                </div>
+                <a href="/blog/authorization-readiness-levels/Authorization-Readiness-Levels.pdf" download class="btn-outline text-sm px-5 py-2 rounded font-mono inline-flex items-center gap-2" style="white-space: nowrap; text-decoration: none;">
+                    Download PDF
+                </a>
+            </div>
+
             <!-- CARL -->
             <div class="pathway-deep-card fade-in">
                 <div style="background: linear-gradient(135deg, rgba(168, 85, 247, 0.15) 0%, rgba(168, 85, 247, 0.05) 100%); padding: 1rem 1.5rem; border-bottom: 1px solid rgba(168, 85, 247, 0.2);">
@@ -664,7 +705,7 @@ document.head.appendChild(o)}initApollo();</script>
             <span class="section-label mb-4 block">Strategic Guidance</span>
             <h2 class="text-2xl md:text-3xl font-bold text-white mb-8">Key Principles for Dual-Use ATO Strategy</h2>
 
-            <div style="display: grid; grid-template-columns: 1fr; gap: 0.75rem;">
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem;">
                 <div style="background: #0d1117; border: 1px solid #21262d; border-left: 3px solid #00ff88; border-radius: 0 8px 8px 0; padding: 1rem 1.25rem;" class="fade-in">
                     <p style="color: #e5e7eb; font-weight: 700; margin-bottom: 0.5rem;"><span style="font-family: 'JetBrains Mono', monospace; color: #00ff88; font-size: 12px; margin-right: 8px;">01</span>Design for Authorization from Day One</p>
                     <p style="color: #9ca3af; font-size: 0.875rem; margin: 0;">The most expensive ATO decision is the one you don't make early enough. Selecting a FedRAMP-authorized IaaS provider, implementing FIPS-validated encryption, and designing your system boundary at TRL 3-5 saves 6-12 months and hundreds of thousands of dollars compared to retrofitting at TRL 7-8.</p>
