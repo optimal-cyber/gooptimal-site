@@ -238,6 +238,33 @@ document.head.appendChild(o)}initApollo();</script>
 
                 <p>For commercial software companies entering the defense and public sector markets, the ATO is often the single longest pole in the tent. A company can achieve MCRL 6 (letters of intent from mission stakeholders) and MFRL 5 (procurement relationships with mission partners) on MIT's framework, yet remain completely blocked from deployment because their system lacks authorization.</p>
 
+                <!-- Readiness Intersection Diagram -->
+                <div style="background: #0d1117; border: 1px solid #21262d; border-radius: 8px; padding: 1.5rem; margin: 2rem 0;">
+                    <p style="font-family: 'JetBrains Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: #00ff88; margin-bottom: 1rem; text-align: center;">How Authorization Intersects with Every Readiness Dimension</p>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 0.75rem;">
+                        <div style="background: rgba(0, 255, 136, 0.05); border: 1px solid rgba(0, 255, 136, 0.2); border-radius: 6px; padding: 0.75rem; text-align: center;">
+                            <p style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #00ff88; font-weight: 600; margin-bottom: 0.25rem;">TRL</p>
+                            <p style="font-size: 11px; color: #8b949e; margin: 0; line-height: 1.4;">Architecture at TRL 3-5 determines authorizability</p>
+                        </div>
+                        <div style="background: rgba(0, 212, 255, 0.05); border: 1px solid rgba(0, 212, 255, 0.2); border-radius: 6px; padding: 0.75rem; text-align: center;">
+                            <p style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #00d4ff; font-weight: 600; margin-bottom: 0.25rem;">MFRL</p>
+                            <p style="font-size: 11px; color: #8b949e; margin: 0; line-height: 1.4;">SBIR/OTA awards expect ATO pathway plans</p>
+                        </div>
+                        <div style="background: rgba(168, 85, 247, 0.05); border: 1px solid rgba(168, 85, 247, 0.2); border-radius: 6px; padding: 0.75rem; text-align: center;">
+                            <p style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #a855f7; font-weight: 600; margin-bottom: 0.25rem;">MCRL</p>
+                            <p style="font-size: 11px; color: #8b949e; margin: 0; line-height: 1.4;">The AO is a mission customer stakeholder</p>
+                        </div>
+                        <div style="background: rgba(255, 184, 0, 0.05); border: 1px solid rgba(255, 184, 0, 0.2); border-radius: 6px; padding: 0.75rem; text-align: center;">
+                            <p style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #ffb800; font-weight: 600; margin-bottom: 0.25rem;">CCRL</p>
+                            <p style="font-size: 11px; color: #8b949e; margin: 0; line-height: 1.4;">FedRAMP is a commercial trust signal</p>
+                        </div>
+                        <div style="background: rgba(255, 51, 102, 0.05); border: 1px solid rgba(255, 51, 102, 0.2); border-radius: 6px; padding: 0.75rem; text-align: center;">
+                            <p style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #ff3366; font-weight: 600; margin-bottom: 0.25rem;">CFRL</p>
+                            <p style="font-size: 11px; color: #8b949e; margin: 0; line-height: 1.4;">ATO readiness = gov revenue predictability</p>
+                        </div>
+                    </div>
+                </div>
+
                 <p>The authorization journey intersects with every other readiness dimension:</p>
 
                 <ul>
@@ -264,18 +291,77 @@ document.head.appendChild(o)}initApollo();</script>
 
                 <p>Not every company needs every authorization. A practical sequencing for most dual-use SaaS companies:</p>
 
-                <ul>
-                    <li><strong>Start with FedRAMP</strong> if your product serves federal civilian agencies or if you need the broadest reuse potential across government. The unified authorization model (post-JAB) and the emerging 20x pathway are making this faster and more accessible.</li>
-                    <li><strong>Start with DoW RMF</strong> if you have a specific DoW program sponsor and a defined system boundary within a DoW enclave.</li>
-                    <li><strong>Pursue IL4/IL5 PA</strong> through DISA when you need to process CUI or National Security Systems data in a DoW cloud environment.</li>
-                    <li><strong>Pursue cATO</strong> when you have a mature DevSecOps pipeline and a DoW program office willing to sponsor continuous monitoring in lieu of traditional 3-year reauthorization cycles.</li>
-                    <li><strong>Pursue CMMC</strong> if you handle Federal Contract Information (FCI) or Controlled Unclassified Information (CUI) as a defense contractor. CMMC certification is becoming a prerequisite for contract award across the defense industrial base.</li>
-                </ul>
+                <!-- Pathway Selection Decision Cards -->
+                <div style="display: grid; grid-template-columns: 1fr; gap: 0.5rem; margin: 1.5rem 0;">
+                    <div style="display: flex; align-items: center; gap: 1rem; background: #0d1117; border: 1px solid #21262d; border-radius: 8px; padding: 1rem; transition: border-color 0.2s;">
+                        <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; padding: 4px 8px; background: rgba(0, 212, 255, 0.15); color: #00d4ff; border: 1px solid rgba(0, 212, 255, 0.3); border-radius: 4px; font-weight: 600; white-space: nowrap;">FARL</span>
+                        <div>
+                            <p style="color: #e5e7eb; font-weight: 600; font-size: 0.875rem; margin-bottom: 2px;">Start with FedRAMP</p>
+                            <p style="color: #6b7280; font-size: 0.8rem; margin: 0;">Federal civilian agencies or broadest reuse potential across government</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 1rem; background: #0d1117; border: 1px solid #21262d; border-radius: 8px; padding: 1rem;">
+                        <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; padding: 4px 8px; background: rgba(0, 255, 136, 0.15); color: #00ff88; border: 1px solid rgba(0, 255, 136, 0.3); border-radius: 4px; font-weight: 600; white-space: nowrap;">RARL</span>
+                        <div>
+                            <p style="color: #e5e7eb; font-weight: 600; font-size: 0.875rem; margin-bottom: 2px;">Start with DoW RMF</p>
+                            <p style="color: #6b7280; font-size: 0.8rem; margin: 0;">Specific DoW program sponsor with a defined system boundary in a DoW enclave</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 1rem; background: #0d1117; border: 1px solid #21262d; border-radius: 8px; padding: 1rem;">
+                        <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; padding: 4px 8px; background: rgba(255, 184, 0, 0.15); color: #ffb800; border: 1px solid rgba(255, 184, 0, 0.3); border-radius: 4px; font-weight: 600; white-space: nowrap;">IARL</span>
+                        <div>
+                            <p style="color: #e5e7eb; font-weight: 600; font-size: 0.875rem; margin-bottom: 2px;">Pursue IL4/IL5 PA</p>
+                            <p style="color: #6b7280; font-size: 0.8rem; margin: 0;">Need to process CUI or NSS data in a DoW cloud environment</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 1rem; background: #0d1117; border: 1px solid #21262d; border-radius: 8px; padding: 1rem;">
+                        <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; padding: 4px 8px; background: rgba(168, 85, 247, 0.15); color: #a855f7; border: 1px solid rgba(168, 85, 247, 0.3); border-radius: 4px; font-weight: 600; white-space: nowrap;">CARL</span>
+                        <div>
+                            <p style="color: #e5e7eb; font-weight: 600; font-size: 0.875rem; margin-bottom: 2px;">Pursue cATO</p>
+                            <p style="color: #6b7280; font-size: 0.8rem; margin: 0;">Mature DevSecOps pipeline with a DoW program office willing to sponsor continuous monitoring</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 1rem; background: #0d1117; border: 1px solid #21262d; border-radius: 8px; padding: 1rem;">
+                        <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; padding: 4px 8px; background: rgba(255, 184, 0, 0.15); color: #ffb800; border: 1px solid rgba(255, 184, 0, 0.3); border-radius: 4px; font-weight: 600; white-space: nowrap;">CMRL</span>
+                        <div>
+                            <p style="color: #e5e7eb; font-weight: 600; font-size: 0.875rem; margin-bottom: 2px;">Pursue CMMC</p>
+                            <p style="color: #6b7280; font-size: 0.8rem; margin: 0;">Handle FCI or CUI as a defense contractor — certification becoming prerequisite for contract award</p>
+                        </div>
+                    </div>
+                </div>
 
                 <p style="text-align: center; margin: 3rem 0; color: #8b949e; font-size: 0.875rem;"><em>Image 2: Five ATO pathways in parallel, each progressing through 9 levels from awareness to scale. The white milestone circle marks the authorization inflection point.</em></p>
                 <img src="/public/blog/ARL-Progression-Chart.png" alt="ARL Progression Chart" style="border-radius: 0.5rem; border: 1px solid rgba(33, 38, 45, 0.3); margin: 2rem 0;">
 
                 <h2>FedRAMP Authorization Readiness Level (FARL)</h2>
+
+                <!-- FARL Pathway Banner -->
+                <div style="background: linear-gradient(135deg, rgba(0, 212, 255, 0.08) 0%, rgba(0, 212, 255, 0.02) 100%); border: 1px solid rgba(0, 212, 255, 0.25); border-radius: 8px; padding: 1.25rem; margin: 1.5rem 0 2rem 0;">
+                    <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+                        <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; padding: 3px 8px; background: rgba(0, 212, 255, 0.15); color: #00d4ff; border: 1px solid rgba(0, 212, 255, 0.3); border-radius: 4px; font-weight: 600;">FARL</span>
+                        <span style="font-size: 13px; color: #e5e7eb; font-weight: 600;">Federal Civilian Baseline</span>
+                        <span style="font-size: 11px; color: #6b7280; margin-left: auto; font-family: 'JetBrains Mono', monospace;">GSA / FedRAMP PMO</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 2px; overflow-x: auto;">
+                        <span style="font-family: 'JetBrains Mono', monospace; font-size: 9px; padding: 3px 6px; background: rgba(255, 51, 102, 0.1); color: #ff6b8a; border-radius: 3px; white-space: nowrap;">1 Aware</span>
+                        <span style="color: #21262d;">&rarr;</span>
+                        <span style="font-family: 'JetBrains Mono', monospace; font-size: 9px; padding: 3px 6px; background: rgba(255, 51, 102, 0.1); color: #ff6b8a; border-radius: 3px; white-space: nowrap;">2 Scope</span>
+                        <span style="color: #21262d;">&rarr;</span>
+                        <span style="font-family: 'JetBrains Mono', monospace; font-size: 9px; padding: 3px 6px; background: rgba(255, 184, 0, 0.1); color: #ffb800; border-radius: 3px; white-space: nowrap;">3 Gap</span>
+                        <span style="color: #21262d;">&rarr;</span>
+                        <span style="font-family: 'JetBrains Mono', monospace; font-size: 9px; padding: 3px 6px; background: rgba(255, 184, 0, 0.1); color: #ffb800; border-radius: 3px; white-space: nowrap;">4 Remediate</span>
+                        <span style="color: #21262d;">&rarr;</span>
+                        <span style="font-family: 'JetBrains Mono', monospace; font-size: 9px; padding: 3px 6px; background: rgba(255, 184, 0, 0.1); color: #ffb800; border-radius: 3px; white-space: nowrap;">5 Sponsor</span>
+                        <span style="color: #21262d;">&rarr;</span>
+                        <span style="font-family: 'JetBrains Mono', monospace; font-size: 9px; padding: 3px 6px; background: rgba(0, 212, 255, 0.1); color: #00d4ff; border-radius: 3px; white-space: nowrap;">6 Assess</span>
+                        <span style="color: #21262d;">&rarr;</span>
+                        <span style="font-family: 'JetBrains Mono', monospace; font-size: 9px; padding: 3px 8px; background: rgba(0, 255, 136, 0.15); color: #00ff88; border-radius: 3px; font-weight: 700; white-space: nowrap; border: 1px solid rgba(0, 255, 136, 0.3);">7 ATO</span>
+                        <span style="color: #21262d;">&rarr;</span>
+                        <span style="font-family: 'JetBrains Mono', monospace; font-size: 9px; padding: 3px 6px; background: rgba(0, 255, 136, 0.08); color: #00cc6a; border-radius: 3px; white-space: nowrap;">8 Reuse</span>
+                        <span style="color: #21262d;">&rarr;</span>
+                        <span style="font-family: 'JetBrains Mono', monospace; font-size: 9px; padding: 3px 6px; background: rgba(0, 255, 136, 0.08); color: #00cc6a; border-radius: 3px; white-space: nowrap;">9 Scale</span>
+                    </div>
+                </div>
 
                 <p>The FedRAMP Authorization Readiness Level assesses a dual-use company's progress in achieving and maintaining a FedRAMP Authorization. Following the <a href="https://www.fedramp.gov/docs/authority/m-24-15/" target="_blank">dissolution of the Joint Authorization Board (JAB)</a> in August 2024 and the transition to a single unified "FedRAMP Authorized" designation, all CSPs now follow one of three emerging paths: Agency Authorization (sponsored by a federal agency), Program Authorization (issued by the FedRAMP Director for widely-used services without agency sponsors), or the new <a href="https://www.fedramp.gov/20x/" target="_blank">FedRAMP 20x pathway</a> (automation-driven, sponsorless continuous validation). The FedRAMP PMO, housed at GSA, manages the program, while the new FedRAMP Board (replacing the JAB) sets strategy and policy.</p>
 
@@ -353,6 +439,34 @@ document.head.appendChild(o)}initApollo();</script>
 
                 <h2>DoW RMF Authorization Readiness Level (RARL)</h2>
 
+                <!-- RARL Pathway Banner -->
+                <div style="background: linear-gradient(135deg, rgba(0, 255, 136, 0.08) 0%, rgba(0, 255, 136, 0.02) 100%); border: 1px solid rgba(0, 255, 136, 0.25); border-radius: 8px; padding: 1.25rem; margin: 1.5rem 0 2rem 0;">
+                    <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+                        <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; padding: 3px 8px; background: rgba(0, 255, 136, 0.15); color: #00ff88; border: 1px solid rgba(0, 255, 136, 0.3); border-radius: 4px; font-weight: 600;">RARL</span>
+                        <span style="font-size: 13px; color: #e5e7eb; font-weight: 600;">DoW Risk Management Framework</span>
+                        <span style="font-size: 11px; color: #6b7280; margin-left: auto; font-family: 'JetBrains Mono', monospace;">eMASS / DISA STIGs</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 2px; overflow-x: auto;">
+                        <span style="font-family: 'JetBrains Mono', monospace; font-size: 9px; padding: 3px 6px; background: rgba(255, 51, 102, 0.1); color: #ff6b8a; border-radius: 3px; white-space: nowrap;">1 Aware</span>
+                        <span style="color: #21262d;">&rarr;</span>
+                        <span style="font-family: 'JetBrains Mono', monospace; font-size: 9px; padding: 3px 6px; background: rgba(255, 51, 102, 0.1); color: #ff6b8a; border-radius: 3px; white-space: nowrap;">2 eMASS</span>
+                        <span style="color: #21262d;">&rarr;</span>
+                        <span style="font-family: 'JetBrains Mono', monospace; font-size: 9px; padding: 3px 6px; background: rgba(255, 184, 0, 0.1); color: #ffb800; border-radius: 3px; white-space: nowrap;">3 STIGs</span>
+                        <span style="color: #21262d;">&rarr;</span>
+                        <span style="font-family: 'JetBrains Mono', monospace; font-size: 9px; padding: 3px 6px; background: rgba(255, 184, 0, 0.1); color: #ffb800; border-radius: 3px; white-space: nowrap;">4 Docs</span>
+                        <span style="color: #21262d;">&rarr;</span>
+                        <span style="font-family: 'JetBrains Mono', monospace; font-size: 9px; padding: 3px 6px; background: rgba(255, 184, 0, 0.1); color: #ffb800; border-radius: 3px; white-space: nowrap;">5 SCA</span>
+                        <span style="color: #21262d;">&rarr;</span>
+                        <span style="font-family: 'JetBrains Mono', monospace; font-size: 9px; padding: 3px 6px; background: rgba(0, 212, 255, 0.1); color: #00d4ff; border-radius: 3px; white-space: nowrap;">6 Assess</span>
+                        <span style="color: #21262d;">&rarr;</span>
+                        <span style="font-family: 'JetBrains Mono', monospace; font-size: 9px; padding: 3px 8px; background: rgba(0, 255, 136, 0.15); color: #00ff88; border-radius: 3px; font-weight: 700; white-space: nowrap; border: 1px solid rgba(0, 255, 136, 0.3);">7 ATO</span>
+                        <span style="color: #21262d;">&rarr;</span>
+                        <span style="font-family: 'JetBrains Mono', monospace; font-size: 9px; padding: 3px 6px; background: rgba(0, 255, 136, 0.08); color: #00cc6a; border-radius: 3px; white-space: nowrap;">8 ConMon</span>
+                        <span style="color: #21262d;">&rarr;</span>
+                        <span style="font-family: 'JetBrains Mono', monospace; font-size: 9px; padding: 3px 6px; background: rgba(0, 255, 136, 0.08); color: #00cc6a; border-radius: 3px; white-space: nowrap;">9 Multi</span>
+                    </div>
+                </div>
+
                 <p>The DoW RMF Authorization Readiness Level assesses progress in achieving ATO under the Department of War Risk Management Framework, implemented through eMASS and governed by <a href="https://www.esd.whs.mil/Portals/54/Documents/DD/issuances/dodi/851001p.pdf" target="_blank">DoDI 8510.01</a>, <a href="https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final" target="_blank">NIST 800-53 Rev 5</a>, <a href="https://www.dcsa.mil/portals/91/documents/ctp/nao/CNSSI_No1253.pdf" target="_blank">CNSSI 1253</a>, and <a href="https://public.cyber.mil/stigs/" target="_blank">DISA STIGs</a>.</p>
 
                 <h3>1 Mission Need and RMF Awareness</h3>
@@ -413,6 +527,34 @@ document.head.appendChild(o)}initApollo();</script>
 
                 <h2>Impact Level Authorization Readiness Level (IARL)</h2>
 
+                <!-- IARL Pathway Banner -->
+                <div style="background: linear-gradient(135deg, rgba(255, 184, 0, 0.08) 0%, rgba(255, 184, 0, 0.02) 100%); border: 1px solid rgba(255, 184, 0, 0.25); border-radius: 8px; padding: 1.25rem; margin: 1.5rem 0 2rem 0;">
+                    <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+                        <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; padding: 3px 8px; background: rgba(255, 184, 0, 0.15); color: #ffb800; border: 1px solid rgba(255, 184, 0, 0.3); border-radius: 4px; font-weight: 600;">IARL</span>
+                        <span style="font-size: 13px; color: #e5e7eb; font-weight: 600;">Impact Level Provisional Authorization</span>
+                        <span style="font-size: 11px; color: #6b7280; margin-left: auto; font-family: 'JetBrains Mono', monospace;">DISA / CC SRG</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 2px; overflow-x: auto;">
+                        <span style="font-family: 'JetBrains Mono', monospace; font-size: 9px; padding: 3px 6px; background: rgba(255, 51, 102, 0.1); color: #ff6b8a; border-radius: 3px; white-space: nowrap;">1 IL Strategy</span>
+                        <span style="color: #21262d;">&rarr;</span>
+                        <span style="font-family: 'JetBrains Mono', monospace; font-size: 9px; padding: 3px 6px; background: rgba(255, 51, 102, 0.1); color: #ff6b8a; border-radius: 3px; white-space: nowrap;">2 Arch</span>
+                        <span style="color: #21262d;">&rarr;</span>
+                        <span style="font-family: 'JetBrains Mono', monospace; font-size: 9px; padding: 3px 6px; background: rgba(255, 184, 0, 0.1); color: #ffb800; border-radius: 3px; white-space: nowrap;">3 Gap</span>
+                        <span style="color: #21262d;">&rarr;</span>
+                        <span style="font-family: 'JetBrains Mono', monospace; font-size: 9px; padding: 3px 6px; background: rgba(255, 184, 0, 0.1); color: #ffb800; border-radius: 3px; white-space: nowrap;">4 DISA</span>
+                        <span style="color: #21262d;">&rarr;</span>
+                        <span style="font-family: 'JetBrains Mono', monospace; font-size: 9px; padding: 3px 6px; background: rgba(0, 212, 255, 0.1); color: #00d4ff; border-radius: 3px; white-space: nowrap;">5 Assess</span>
+                        <span style="color: #21262d;">&rarr;</span>
+                        <span style="font-family: 'JetBrains Mono', monospace; font-size: 9px; padding: 3px 6px; background: rgba(0, 212, 255, 0.1); color: #00d4ff; border-radius: 3px; white-space: nowrap;">6 Findings</span>
+                        <span style="color: #21262d;">&rarr;</span>
+                        <span style="font-family: 'JetBrains Mono', monospace; font-size: 9px; padding: 3px 8px; background: rgba(0, 255, 136, 0.15); color: #00ff88; border-radius: 3px; font-weight: 700; white-space: nowrap; border: 1px solid rgba(0, 255, 136, 0.3);">7 PA</span>
+                        <span style="color: #21262d;">&rarr;</span>
+                        <span style="font-family: 'JetBrains Mono', monospace; font-size: 9px; padding: 3px 6px; background: rgba(0, 255, 136, 0.08); color: #00cc6a; border-radius: 3px; white-space: nowrap;">8 Ops</span>
+                        <span style="color: #21262d;">&rarr;</span>
+                        <span style="font-family: 'JetBrains Mono', monospace; font-size: 9px; padding: 3px 6px; background: rgba(0, 255, 136, 0.08); color: #00cc6a; border-radius: 3px; white-space: nowrap;">9 Multi-IL</span>
+                    </div>
+                </div>
+
                 <p>The IARL assesses progress toward Provisional Authorization (PA) at DoW Impact Levels 4, 5, or 6 under the <a href="https://public.cyber.mil/dccs/dccs-documents/" target="_blank">CC SRG</a>. This pathway is managed by DISA — distinct from FedRAMP (managed by the FedRAMP PMO at GSA). While both build on NIST 800-53, the IL PA process adds DoW-specific isolation, encryption, personnel, and incident reporting requirements.</p>
 
                 <h3>1 Impact Level Strategy and Applicability Determination</h3>
@@ -470,6 +612,34 @@ document.head.appendChild(o)}initApollo();</script>
                 <blockquote><strong>Example:</strong> The company holds IL4 and IL5 PAs and is pursuing IL6. Multi-IL capability enables DoW customers to scale from CUI to classified without changing platforms.</blockquote>
 
                 <h2>Continuous ATO Readiness Level (CARL)</h2>
+
+                <!-- CARL Pathway Banner -->
+                <div style="background: linear-gradient(135deg, rgba(168, 85, 247, 0.08) 0%, rgba(168, 85, 247, 0.02) 100%); border: 1px solid rgba(168, 85, 247, 0.25); border-radius: 8px; padding: 1.25rem; margin: 1.5rem 0 2rem 0;">
+                    <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+                        <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; padding: 3px 8px; background: rgba(168, 85, 247, 0.15); color: #a855f7; border: 1px solid rgba(168, 85, 247, 0.3); border-radius: 4px; font-weight: 600;">CARL</span>
+                        <span style="font-size: 13px; color: #e5e7eb; font-weight: 600;">Continuous Authority to Operate</span>
+                        <span style="font-size: 11px; color: #6b7280; margin-left: auto; font-family: 'JetBrains Mono', monospace;">DevSecOps / SWFT</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 2px; overflow-x: auto;">
+                        <span style="font-family: 'JetBrains Mono', monospace; font-size: 9px; padding: 3px 6px; background: rgba(255, 51, 102, 0.1); color: #ff6b8a; border-radius: 3px; white-space: nowrap;">1 DevSecOps</span>
+                        <span style="color: #21262d;">&rarr;</span>
+                        <span style="font-family: 'JetBrains Mono', monospace; font-size: 9px; padding: 3px 6px; background: rgba(255, 51, 102, 0.1); color: #ff6b8a; border-radius: 3px; white-space: nowrap;">2 Scan</span>
+                        <span style="color: #21262d;">&rarr;</span>
+                        <span style="font-family: 'JetBrains Mono', monospace; font-size: 9px; padding: 3px 6px; background: rgba(255, 184, 0, 0.1); color: #ffb800; border-radius: 3px; white-space: nowrap;">3 ConMon</span>
+                        <span style="color: #21262d;">&rarr;</span>
+                        <span style="font-family: 'JetBrains Mono', monospace; font-size: 9px; padding: 3px 6px; background: rgba(255, 184, 0, 0.1); color: #ffb800; border-radius: 3px; white-space: nowrap;">4 Harden</span>
+                        <span style="color: #21262d;">&rarr;</span>
+                        <span style="font-family: 'JetBrains Mono', monospace; font-size: 9px; padding: 3px 6px; background: rgba(255, 184, 0, 0.1); color: #ffb800; border-radius: 3px; white-space: nowrap;">5 Sponsor</span>
+                        <span style="color: #21262d;">&rarr;</span>
+                        <span style="font-family: 'JetBrains Mono', monospace; font-size: 9px; padding: 3px 8px; background: rgba(0, 255, 136, 0.15); color: #00ff88; border-radius: 3px; font-weight: 700; white-space: nowrap; border: 1px solid rgba(0, 255, 136, 0.3);">6 cATO</span>
+                        <span style="color: #21262d;">&rarr;</span>
+                        <span style="font-family: 'JetBrains Mono', monospace; font-size: 9px; padding: 3px 6px; background: rgba(0, 255, 136, 0.08); color: #00cc6a; border-radius: 3px; white-space: nowrap;">7 Ops</span>
+                        <span style="color: #21262d;">&rarr;</span>
+                        <span style="font-family: 'JetBrains Mono', monospace; font-size: 9px; padding: 3px 6px; background: rgba(0, 255, 136, 0.08); color: #00cc6a; border-radius: 3px; white-space: nowrap;">8 Expand</span>
+                        <span style="color: #21262d;">&rarr;</span>
+                        <span style="font-family: 'JetBrains Mono', monospace; font-size: 9px; padding: 3px 6px; background: rgba(0, 255, 136, 0.08); color: #00cc6a; border-radius: 3px; white-space: nowrap;">9 Reference</span>
+                    </div>
+                </div>
 
                 <p>The CARL assesses progress toward a Continuous Authority to Operate (cATO) — replacing the traditional 3-year ATO cycle with continuous, automated security monitoring and risk-based authorization decisions. Aligned with the <a href="https://dodcio.defense.gov/Portals/0/Documents/Library/DoDReferenceDesign-CNCFMulti-ClusterKubernetes.pdf" target="_blank">DoW Enterprise DevSecOps Reference Design</a>, SWFT, and the <a href="https://p1.dso.mil/ironbank" target="_blank">Platform One / Iron Bank</a> ecosystem.</p>
 
@@ -529,7 +699,53 @@ document.head.appendChild(o)}initApollo();</script>
 
                 <h2>CMMC Readiness Level (CMRL)</h2>
 
-                <p>The CMMC Readiness Level assesses a defense contractor's progress toward achieving Cybersecurity Maturity Model Certification under CMMC 2.0. Following the publication of the <a href="https://www.ecfr.gov/current/title-32/subtitle-A/chapter-I/subchapter-G/part-170" target="_blank">32 CFR final rule</a> (October 15, 2024) and the <a href="https://www.acquisition.gov/dfars/252.204-7021-contractor-compliance-cybersecurity-maturity-model-certification-level-requirements" target="_blank">DFARS 252.204-7021</a> rule (effective November 10, 2025), CMMC certification is transitioning from aspirational to mandatory across the defense industrial base. The framework covers three certification levels: Level 1 (15 <a href="https://www.acquisition.gov/far/52.204-21" target="_blank">FAR 52.204-21</a> controls for FCI), Level 2 (110 <a href="https://csrc.nist.gov/pubs/sp/800/171/r2/upd1/final" target="_blank">NIST SP 800-171 Rev 2</a> controls for CUI, requiring C3PAO assessment for most contracts), and Level 3 (Level 2 plus 24 select <a href="https://csrc.nist.gov/pubs/sp/800/172/final" target="_blank">NIST SP 800-172</a> controls, assessed by DIBCAC for highest-sensitivity programs). With an estimated 80,000 contractors needing Level 2 certification and fewer than 600 Certified CMMC Assessors available, the bottleneck is real — an estimated 33,000–44,000 companies may exit the defense market between 2025–2027. <strong>Note on NIST 800-171 Revision:</strong> NIST published <a href="https://csrc.nist.gov/pubs/sp/800/171/r3/final" target="_blank">SP 800-171 Rev 3</a> in May 2024, but CMMC 2.0 as codified in 32 CFR remains aligned to <a href="https://csrc.nist.gov/pubs/sp/800/171/r2/upd1/final" target="_blank">Rev 2</a> (110 controls). The DoD issued a class deviation postponing the Rev 3 transition; premature adoption of Rev 3 controls can result in assessment deficiencies. Future rulemaking will formally transition CMMC to Rev 3, likely no earlier than 2027–2028. This framework references Rev 2 throughout to reflect current assessment requirements.</p>
+                <!-- CMRL Pathway Banner -->
+                <div style="background: linear-gradient(135deg, rgba(255, 184, 0, 0.08) 0%, rgba(255, 51, 102, 0.04) 100%); border: 1px solid rgba(255, 184, 0, 0.25); border-radius: 8px; padding: 1.25rem; margin: 1.5rem 0 2rem 0;">
+                    <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+                        <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; padding: 3px 8px; background: rgba(255, 184, 0, 0.15); color: #ffb800; border: 1px solid rgba(255, 184, 0, 0.3); border-radius: 4px; font-weight: 600;">CMRL</span>
+                        <span style="font-size: 13px; color: #e5e7eb; font-weight: 600;">CMMC Certification</span>
+                        <span style="font-size: 11px; color: #6b7280; margin-left: auto; font-family: 'JetBrains Mono', monospace;">32 CFR / DFARS</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 2px; overflow-x: auto;">
+                        <span style="font-family: 'JetBrains Mono', monospace; font-size: 9px; padding: 3px 6px; background: rgba(255, 51, 102, 0.1); color: #ff6b8a; border-radius: 3px; white-space: nowrap;">1 Aware</span>
+                        <span style="color: #21262d;">&rarr;</span>
+                        <span style="font-family: 'JetBrains Mono', monospace; font-size: 9px; padding: 3px 6px; background: rgba(255, 51, 102, 0.1); color: #ff6b8a; border-radius: 3px; white-space: nowrap;">2 Scope</span>
+                        <span style="color: #21262d;">&rarr;</span>
+                        <span style="font-family: 'JetBrains Mono', monospace; font-size: 9px; padding: 3px 6px; background: rgba(255, 184, 0, 0.1); color: #ffb800; border-radius: 3px; white-space: nowrap;">3 SPRS</span>
+                        <span style="color: #21262d;">&rarr;</span>
+                        <span style="font-family: 'JetBrains Mono', monospace; font-size: 9px; padding: 3px 6px; background: rgba(255, 184, 0, 0.1); color: #ffb800; border-radius: 3px; white-space: nowrap;">4 SSP</span>
+                        <span style="color: #21262d;">&rarr;</span>
+                        <span style="font-family: 'JetBrains Mono', monospace; font-size: 9px; padding: 3px 6px; background: rgba(255, 184, 0, 0.1); color: #ffb800; border-radius: 3px; white-space: nowrap;">5 POA&M</span>
+                        <span style="color: #21262d;">&rarr;</span>
+                        <span style="font-family: 'JetBrains Mono', monospace; font-size: 9px; padding: 3px 6px; background: rgba(0, 212, 255, 0.1); color: #00d4ff; border-radius: 3px; white-space: nowrap;">6 C3PAO</span>
+                        <span style="color: #21262d;">&rarr;</span>
+                        <span style="font-family: 'JetBrains Mono', monospace; font-size: 9px; padding: 3px 8px; background: rgba(0, 255, 136, 0.15); color: #00ff88; border-radius: 3px; font-weight: 700; white-space: nowrap; border: 1px solid rgba(0, 255, 136, 0.3);">7 Cert</span>
+                        <span style="color: #21262d;">&rarr;</span>
+                        <span style="font-family: 'JetBrains Mono', monospace; font-size: 9px; padding: 3px 6px; background: rgba(0, 255, 136, 0.08); color: #00cc6a; border-radius: 3px; white-space: nowrap;">8 Affirm</span>
+                        <span style="color: #21262d;">&rarr;</span>
+                        <span style="font-family: 'JetBrains Mono', monospace; font-size: 9px; padding: 3px 6px; background: rgba(0, 255, 136, 0.08); color: #00cc6a; border-radius: 3px; white-space: nowrap;">9 Multi-Lvl</span>
+                    </div>
+                </div>
+
+                <p>The CMMC Readiness Level assesses a defense contractor's progress toward achieving Cybersecurity Maturity Model Certification under CMMC 2.0. Following the publication of the <a href="https://www.ecfr.gov/current/title-32/subtitle-A/chapter-I/subchapter-G/part-170" target="_blank">32 CFR final rule</a> (October 15, 2024) and the <a href="https://www.acquisition.gov/dfars/252.204-7021-contractor-compliance-cybersecurity-maturity-model-certification-level-requirements" target="_blank">DFARS 252.204-7021</a> rule (effective November 10, 2025), CMMC certification is transitioning from aspirational to mandatory across the defense industrial base. The framework covers three certification levels: Level 1 (15 <a href="https://www.acquisition.gov/far/52.204-21" target="_blank">FAR 52.204-21</a> controls for FCI), Level 2 (110 <a href="https://csrc.nist.gov/pubs/sp/800/171/r2/upd1/final" target="_blank">NIST SP 800-171 Rev 2</a> controls for CUI, requiring C3PAO assessment for most contracts), and Level 3 (Level 2 plus 24 select <a href="https://csrc.nist.gov/pubs/sp/800/172/final" target="_blank">NIST SP 800-172</a> controls, assessed by DIBCAC for highest-sensitivity programs).</p>
+
+                <!-- CMMC Stats Callout -->
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; margin: 1.5rem 0;">
+                    <div style="background: #0d1117; border: 1px solid rgba(255, 51, 102, 0.2); border-radius: 8px; padding: 1rem; text-align: center;">
+                        <p style="font-family: 'JetBrains Mono', monospace; font-size: 1.5rem; font-weight: 700; color: #ff3366; margin-bottom: 0.25rem;">80K</p>
+                        <p style="font-size: 11px; color: #6b7280; margin: 0;">contractors need Level 2</p>
+                    </div>
+                    <div style="background: #0d1117; border: 1px solid rgba(255, 184, 0, 0.2); border-radius: 8px; padding: 1rem; text-align: center;">
+                        <p style="font-family: 'JetBrains Mono', monospace; font-size: 1.5rem; font-weight: 700; color: #ffb800; margin-bottom: 0.25rem;">&lt;600</p>
+                        <p style="font-size: 11px; color: #6b7280; margin: 0;">certified CMMC assessors</p>
+                    </div>
+                    <div style="background: #0d1117; border: 1px solid rgba(168, 85, 247, 0.2); border-radius: 8px; padding: 1rem; text-align: center;">
+                        <p style="font-family: 'JetBrains Mono', monospace; font-size: 1.5rem; font-weight: 700; color: #a855f7; margin-bottom: 0.25rem;">33-44K</p>
+                        <p style="font-size: 11px; color: #6b7280; margin: 0;">companies may exit DIB</p>
+                    </div>
+                </div>
+
+                <p>With an estimated 80,000 contractors needing Level 2 certification and fewer than 600 Certified CMMC Assessors available, the bottleneck is real — an estimated 33,000–44,000 companies may exit the defense market between 2025–2027. <strong>Note on NIST 800-171 Revision:</strong> NIST published <a href="https://csrc.nist.gov/pubs/sp/800/171/r3/final" target="_blank">SP 800-171 Rev 3</a> in May 2024, but CMMC 2.0 as codified in 32 CFR remains aligned to <a href="https://csrc.nist.gov/pubs/sp/800/171/r2/upd1/final" target="_blank">Rev 2</a> (110 controls). The DoD issued a class deviation postponing the Rev 3 transition; premature adoption of Rev 3 controls can result in assessment deficiencies. Future rulemaking will formally transition CMMC to Rev 3, likely no earlier than 2027–2028. This framework references Rev 2 throughout to reflect current assessment requirements.</p>
 
                 <h3>1 CMMC Awareness and Level Determination</h3>
 
@@ -646,27 +862,80 @@ document.head.appendChild(o)}initApollo();</script>
 
                 <h2>Key Principles for Dual-Use ATO Strategy</h2>
 
-                <ol style="list-style: decimal; list-style-position: inside; color: #d1d5db; margin: 1.5rem 0;">
-                    <li style="margin-bottom: 1rem;"><strong>Design for Authorization from Day One</strong><br>The most expensive ATO decision is the one you don't make early enough. Selecting a FedRAMP-authorized IaaS provider, implementing FIPS-validated encryption, and designing your system boundary at TRL 3–5 saves 6–12 months and hundreds of thousands of dollars compared to retrofitting at TRL 7–8.</li>
+                <div style="display: grid; grid-template-columns: 1fr; gap: 0.75rem; margin: 1.5rem 0;">
+                    <div style="background: #0d1117; border: 1px solid #21262d; border-left: 3px solid #00ff88; border-radius: 0 8px 8px 0; padding: 1rem 1.25rem;">
+                        <p style="color: #e5e7eb; font-weight: 700; margin-bottom: 0.5rem;"><span style="font-family: 'JetBrains Mono', monospace; color: #00ff88; font-size: 12px; margin-right: 8px;">01</span>Design for Authorization from Day One</p>
+                        <p style="color: #9ca3af; font-size: 0.875rem; margin: 0;">The most expensive ATO decision is the one you don't make early enough. Selecting a FedRAMP-authorized IaaS provider, implementing FIPS-validated encryption, and designing your system boundary at TRL 3-5 saves 6-12 months and hundreds of thousands of dollars compared to retrofitting at TRL 7-8.</p>
+                    </div>
+                    <div style="background: #0d1117; border: 1px solid #21262d; border-left: 3px solid #00d4ff; border-radius: 0 8px 8px 0; padding: 1rem 1.25rem;">
+                        <p style="color: #e5e7eb; font-weight: 700; margin-bottom: 0.5rem;"><span style="font-family: 'JetBrains Mono', monospace; color: #00d4ff; font-size: 12px; margin-right: 8px;">02</span>The AO Is a Customer, Not a Gatekeeper</p>
+                        <p style="color: #9ca3af; font-size: 0.875rem; margin: 0;">The Authorizing Official and their team (ISSM, ISSO, SCA) are mission customer stakeholders. Build relationships early, understand their risk appetite, and treat the process as a partnership.</p>
+                    </div>
+                    <div style="background: #0d1117; border: 1px solid #21262d; border-left: 3px solid #a855f7; border-radius: 0 8px 8px 0; padding: 1rem 1.25rem;">
+                        <p style="color: #e5e7eb; font-weight: 700; margin-bottom: 0.5rem;"><span style="font-family: 'JetBrains Mono', monospace; color: #a855f7; font-size: 12px; margin-right: 8px;">03</span>Fund Authorization Like a Product Feature</p>
+                        <p style="color: #9ca3af; font-size: 0.875rem; margin: 0;">ATO is not overhead -- it is a product feature that unlocks an entire market. Budget for it in SBIR proposals, include it in OTA milestones, and present it to investors as go-to-market infrastructure. A $1.5M FedRAMP investment that unlocks $50M in addressable government revenue is a 33x leverage play.</p>
+                    </div>
+                    <div style="background: #0d1117; border: 1px solid #21262d; border-left: 3px solid #ffb800; border-radius: 0 8px 8px 0; padding: 1rem 1.25rem;">
+                        <p style="color: #e5e7eb; font-weight: 700; margin-bottom: 0.5rem;"><span style="font-family: 'JetBrains Mono', monospace; color: #ffb800; font-size: 12px; margin-right: 8px;">04</span>Leverage Inheritance and Reciprocity</p>
+                        <p style="color: #9ca3af; font-size: 0.875rem; margin: 0;">Build on FedRAMP-authorized IaaS/PaaS to inherit 50-70% of the control baseline. Leverage reciprocity between DoW organizations. Use your FedRAMP authorization as the foundation for DoW RMF and IL authorization.</p>
+                    </div>
+                    <div style="background: #0d1117; border: 1px solid #21262d; border-left: 3px solid #ff3366; border-radius: 0 8px 8px 0; padding: 1rem 1.25rem;">
+                        <p style="color: #e5e7eb; font-weight: 700; margin-bottom: 0.5rem;"><span style="font-family: 'JetBrains Mono', monospace; color: #ff3366; font-size: 12px; margin-right: 8px;">05</span>Build Toward Continuous, Not Just Compliant</p>
+                        <p style="color: #9ca3af; font-size: 0.875rem; margin: 0;"><a href="https://www.fedramp.gov/20x/" target="_blank" style="color: #00d4ff;">FedRAMP 20x</a> replaces narrative SSPs with machine-readable KSIs and persistent validation. DoW cATO replaces 3-year cycles with continuous monitoring. FedRAMP aims to stop accepting new Rev 5 packages by late FY27 -- the transition window is now.</p>
+                    </div>
+                    <div style="background: #0d1117; border: 1px solid #21262d; border-left: 3px solid #00ff88; border-radius: 0 8px 8px 0; padding: 1rem 1.25rem;">
+                        <p style="color: #e5e7eb; font-weight: 700; margin-bottom: 0.5rem;"><span style="font-family: 'JetBrains Mono', monospace; color: #00ff88; font-size: 12px; margin-right: 8px;">06</span>Treat Authorization as a Competitive Moat</p>
+                        <p style="color: #9ca3af; font-size: 0.875rem; margin: 0;">Every additional agency ATO, every IL level, every year of ConMon history widens the moat. Protect and maintain your authorizations -- they are among your most valuable business assets.</p>
+                    </div>
+                    <div style="background: #0d1117; border: 1px solid #21262d; border-left: 3px solid #00d4ff; border-radius: 0 8px 8px 0; padding: 1rem 1.25rem;">
+                        <p style="color: #e5e7eb; font-weight: 700; margin-bottom: 0.5rem;"><span style="font-family: 'JetBrains Mono', monospace; color: #00d4ff; font-size: 12px; margin-right: 8px;">07</span>Understand the Institutional Map</p>
+                        <p style="color: #9ca3af; font-size: 0.875rem; margin: 0;">FedRAMP is managed by the FedRAMP PMO at GSA. IL PAs are managed by DISA under the CC SRG. DoW RMF ATOs are issued by individual AOs through eMASS. CMMC certifications are managed by the CMMC PMO with C3PAOs and DIBCAC. Understanding which institution owns which authorization prevents wasted effort.</p>
+                    </div>
+                </div>
 
-                    <li style="margin-bottom: 1rem;"><strong>The AO Is a Customer, Not a Gatekeeper</strong><br>The Authorizing Official and their team (ISSM, ISSO, SCA) are mission customer stakeholders. Build relationships early, understand their risk appetite, and treat the process as a partnership.</li>
-
-                    <li style="margin-bottom: 1rem;"><strong>Fund Authorization Like a Product Feature</strong><br>ATO is not overhead — it is a product feature that unlocks an entire market. Budget for it in SBIR proposals, include it in OTA milestones, and present it to investors as go-to-market infrastructure. A $1.5M FedRAMP investment that unlocks $50M in addressable government revenue is a 33x leverage play.</li>
-
-                    <li style="margin-bottom: 1rem;"><strong>Leverage Inheritance and Reciprocity</strong><br>Build on FedRAMP-authorized IaaS/PaaS to inherit 50–70% of the control baseline. Leverage reciprocity between DoW organizations. Use your FedRAMP authorization as the foundation for DoW RMF and IL authorization.</li>
-
-                    <li style="margin-bottom: 1rem;"><strong>Build Toward Continuous, Not Just Compliant</strong><br><a href="https://www.fedramp.gov/20x/" target="_blank">FedRAMP 20x</a> replaces narrative SSPs with machine-readable KSIs and persistent validation. DoW cATO replaces 3-year cycles with continuous monitoring. FedRAMP aims to stop accepting new Rev 5 packages by late FY27 — the transition window is now.</li>
-
-                    <li style="margin-bottom: 1rem;"><strong>Treat Authorization as a Competitive Moat</strong><br>Every additional agency ATO, every IL level, every year of ConMon history widens the moat. Protect and maintain your authorizations — they are among your most valuable business assets.</li>
-
-                    <li style="margin-bottom: 1rem;"><strong>Understand the Institutional Map</strong><br>FedRAMP is managed by the FedRAMP PMO at GSA, with strategy set by the FedRAMP Board. IL Provisional Authorizations are managed by DISA under the CC SRG — a separate process. DoW RMF ATOs are issued by individual DoW AOs and tracked through eMASS. CMMC certifications are managed by the CMMC PMO with assessments conducted by C3PAOs and DIBCAC. Understanding which institution owns which authorization prevents wasted effort.</li>
-                </ol>
+                <!-- Institutional Map Visual -->
+                <div style="background: #0d1117; border: 1px solid #21262d; border-radius: 8px; padding: 1.5rem; margin: 2.5rem 0;">
+                    <p style="font-family: 'JetBrains Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: #00ff88; margin-bottom: 1.25rem; text-align: center;">Who Owns Each Authorization</p>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 0.75rem;">
+                        <div style="border: 1px solid rgba(0, 212, 255, 0.3); border-radius: 6px; padding: 0.75rem; text-align: center; background: rgba(0, 212, 255, 0.03);">
+                            <p style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #00d4ff; font-weight: 700; margin-bottom: 4px;">FedRAMP</p>
+                            <p style="font-size: 11px; color: #e5e7eb; margin-bottom: 2px; font-weight: 500;">GSA</p>
+                            <p style="font-size: 10px; color: #6b7280; margin: 0;">FedRAMP PMO + Board</p>
+                        </div>
+                        <div style="border: 1px solid rgba(0, 255, 136, 0.3); border-radius: 6px; padding: 0.75rem; text-align: center; background: rgba(0, 255, 136, 0.03);">
+                            <p style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #00ff88; font-weight: 700; margin-bottom: 4px;">DoW RMF</p>
+                            <p style="font-size: 11px; color: #e5e7eb; margin-bottom: 2px; font-weight: 500;">DoW AOs</p>
+                            <p style="font-size: 10px; color: #6b7280; margin: 0;">eMASS + DoDI 8510.01</p>
+                        </div>
+                        <div style="border: 1px solid rgba(255, 184, 0, 0.3); border-radius: 6px; padding: 0.75rem; text-align: center; background: rgba(255, 184, 0, 0.03);">
+                            <p style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #ffb800; font-weight: 700; margin-bottom: 4px;">IL PA</p>
+                            <p style="font-size: 11px; color: #e5e7eb; margin-bottom: 2px; font-weight: 500;">DISA</p>
+                            <p style="font-size: 10px; color: #6b7280; margin: 0;">CC SRG</p>
+                        </div>
+                        <div style="border: 1px solid rgba(168, 85, 247, 0.3); border-radius: 6px; padding: 0.75rem; text-align: center; background: rgba(168, 85, 247, 0.03);">
+                            <p style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #a855f7; font-weight: 700; margin-bottom: 4px;">cATO</p>
+                            <p style="font-size: 11px; color: #e5e7eb; margin-bottom: 2px; font-weight: 500;">DoW Program AO</p>
+                            <p style="font-size: 10px; color: #6b7280; margin: 0;">DevSecOps Ref Design</p>
+                        </div>
+                        <div style="border: 1px solid rgba(255, 51, 102, 0.3); border-radius: 6px; padding: 0.75rem; text-align: center; background: rgba(255, 51, 102, 0.03);">
+                            <p style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #ff3366; font-weight: 700; margin-bottom: 4px;">CMMC</p>
+                            <p style="font-size: 11px; color: #e5e7eb; margin-bottom: 2px; font-weight: 500;">CMMC PMO</p>
+                            <p style="font-size: 10px; color: #6b7280; margin: 0;">C3PAOs + DIBCAC</p>
+                        </div>
+                    </div>
+                </div>
 
                 <h2>Beyond Authorization: Procurement Blockers Dual-Use Companies Must Navigate</h2>
 
                 <p>Authorization to operate is necessary but not sufficient. Even after achieving ATO, dual-use companies face a gauntlet of procurement, contractual, and institutional barriers that can delay or prevent production revenue. Authorization readiness must be paired with procurement readiness.</p>
 
                 <h3>The Valley of Death: From Pilot to Production Contract</h3>
+
+                <!-- Valley of Death Stat -->
+                <div style="background: linear-gradient(135deg, rgba(255, 51, 102, 0.08) 0%, rgba(255, 51, 102, 0.02) 100%); border: 1px solid rgba(255, 51, 102, 0.2); border-radius: 8px; padding: 1.25rem; margin: 1rem 0 1.5rem 0; text-align: center;">
+                    <p style="font-family: 'JetBrains Mono', monospace; font-size: 2rem; font-weight: 700; color: #ff3366; margin-bottom: 0.25rem;">&gt;50%</p>
+                    <p style="font-size: 0.875rem; color: #9ca3af; margin: 0;">of completed SBIR/OTA prototyping projects die in the transition to production contract</p>
+                </div>
 
                 <p>The most dangerous gap in defense technology commercialization remains the transition from prototype funding (SBIR Phase II, OTA prototyping) to production contract. <a href="https://afwerx.com/divisions/ventures/stratfi-tacfi/" target="_blank">STRATFI</a> (Strategic Funding Increase, $3M–$15M) and TACFI (Tactical Funding Increase, $375K–$2M) were designed to bridge this gap for SBIR/STTR awardees, but data shows more than half of completed projects still die in transition — usually because funding priorities shift, not because the technology failed. Compounding the problem, <a href="https://www.sbir.gov/" target="_blank">SBIR/STTR</a> program authorization expired on October 1, 2025, pausing new activity while Congress debates reauthorization. Companies relying on the SBIR pipeline for DoW entry should have contingency acquisition strategies.</p>
 
@@ -702,13 +971,41 @@ document.head.appendChild(o)}initApollo();</script>
 
                 <p><strong><a href="https://www.fedramp.gov/20x/" target="_blank">FedRAMP 20x</a> Phased Rollout:</strong></p>
 
-                <ul>
-                    <li>Phase 1 (Low pilot, Apr–Sep 2025): 26 CSPs submitted; 12 received pilot authorizations</li>
-                    <li>Phase 2 (Moderate pilot, through Mar 2026): 13 participants across two cohorts</li>
-                    <li>Phase 3 (wide-scale adoption, FY26 Q3–Q4): Formalizes 20x Low and Moderate; opens broadly</li>
-                    <li>Phase 4 (FY27 Q1–Q2): Pilots 20x High authorization</li>
-                    <li>Phase 5 (FY27 Q3–Q4): Target to stop accepting new Rev 5 packages</li>
-                </ul>
+                <!-- 20x Timeline Visual -->
+                <div style="background: #0d1117; border: 1px solid #21262d; border-radius: 8px; padding: 1.25rem; margin: 1.5rem 0; overflow-x: auto;">
+                    <div style="display: flex; align-items: stretch; gap: 0; min-width: 600px;">
+                        <div style="flex: 1; padding: 0.75rem; border-left: 3px solid #00ff88; background: rgba(0, 255, 136, 0.05);">
+                            <p style="font-family: 'JetBrains Mono', monospace; font-size: 10px; color: #00ff88; font-weight: 600; margin-bottom: 2px;">PHASE 1</p>
+                            <p style="font-size: 10px; color: #8b949e; margin-bottom: 2px;">Low pilot</p>
+                            <p style="font-family: 'JetBrains Mono', monospace; font-size: 9px; color: #6b7280; margin: 0;">Apr-Sep 2025</p>
+                            <p style="font-family: 'JetBrains Mono', monospace; font-size: 10px; color: #e5e7eb; margin: 4px 0 0 0;">12 authorized</p>
+                        </div>
+                        <div style="flex: 1; padding: 0.75rem; border-left: 3px solid #00d4ff; background: rgba(0, 212, 255, 0.05);">
+                            <p style="font-family: 'JetBrains Mono', monospace; font-size: 10px; color: #00d4ff; font-weight: 600; margin-bottom: 2px;">PHASE 2</p>
+                            <p style="font-size: 10px; color: #8b949e; margin-bottom: 2px;">Moderate pilot</p>
+                            <p style="font-family: 'JetBrains Mono', monospace; font-size: 9px; color: #6b7280; margin: 0;">Through Mar 2026</p>
+                            <p style="font-family: 'JetBrains Mono', monospace; font-size: 10px; color: #e5e7eb; margin: 4px 0 0 0;">13 participants</p>
+                        </div>
+                        <div style="flex: 1; padding: 0.75rem; border-left: 3px solid #a855f7; background: rgba(168, 85, 247, 0.05);">
+                            <p style="font-family: 'JetBrains Mono', monospace; font-size: 10px; color: #a855f7; font-weight: 600; margin-bottom: 2px;">PHASE 3</p>
+                            <p style="font-size: 10px; color: #8b949e; margin-bottom: 2px;">Wide-scale adoption</p>
+                            <p style="font-family: 'JetBrains Mono', monospace; font-size: 9px; color: #6b7280; margin: 0;">FY26 Q3-Q4</p>
+                            <p style="font-family: 'JetBrains Mono', monospace; font-size: 10px; color: #e5e7eb; margin: 4px 0 0 0;">Low + Moderate</p>
+                        </div>
+                        <div style="flex: 1; padding: 0.75rem; border-left: 3px solid #ffb800; background: rgba(255, 184, 0, 0.05);">
+                            <p style="font-family: 'JetBrains Mono', monospace; font-size: 10px; color: #ffb800; font-weight: 600; margin-bottom: 2px;">PHASE 4</p>
+                            <p style="font-size: 10px; color: #8b949e; margin-bottom: 2px;">High pilot</p>
+                            <p style="font-family: 'JetBrains Mono', monospace; font-size: 9px; color: #6b7280; margin: 0;">FY27 Q1-Q2</p>
+                            <p style="font-family: 'JetBrains Mono', monospace; font-size: 10px; color: #e5e7eb; margin: 4px 0 0 0;">20x High</p>
+                        </div>
+                        <div style="flex: 1; padding: 0.75rem; border-left: 3px solid #ff3366; background: rgba(255, 51, 102, 0.05);">
+                            <p style="font-family: 'JetBrains Mono', monospace; font-size: 10px; color: #ff3366; font-weight: 600; margin-bottom: 2px;">PHASE 5</p>
+                            <p style="font-size: 10px; color: #8b949e; margin-bottom: 2px;">Rev 5 sunset</p>
+                            <p style="font-family: 'JetBrains Mono', monospace; font-size: 9px; color: #6b7280; margin: 0;">FY27 Q3-Q4</p>
+                            <p style="font-family: 'JetBrains Mono', monospace; font-size: 10px; color: #e5e7eb; margin: 4px 0 0 0;">No new Rev 5</p>
+                        </div>
+                    </div>
+                </div>
 
                 <p><strong>New Designations (<a href="https://www.fedramp.gov/rfcs/0020/" target="_blank">RFC-0020</a>, ~March 2026):</strong> FedRAMP Certified (Rev 5) and FedRAMP Validated (20x). Both = FedRAMP Authorized.</p>
 
