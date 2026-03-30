@@ -1,0 +1,1542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigating DoD Impact Level Certification — A Cloud-Native Product's Guide - Optimal Blog</title>
+    <meta name="description" content="622 controls, 20 families, 4 impact levels, 11 steps to Provisional Authorization. The visual guide for cloud-native companies navigating DoD IL certification.">
+    <meta name="keywords" content="DoD, Impact Level, IL2, IL4, IL5, IL6, FedRAMP, DISA, CC SRG, NIST 800-53, CNSSI 1253, cloud authorization, SCCA, PA, Provisional Authorization">
+    <link rel="canonical" href="https://gooptimal.io/blog/dod-il-certification-guide">
+
+    <link rel="icon" type="image/png" href="/public/optimal-logo.png">
+    <link rel="shortcut icon" type="image/png" href="/public/optimal-logo.png">
+    <meta property="og:title" content="Navigating DoD Impact Level Certification — A Cloud-Native Product's Guide">
+    <meta property="og:description" content="622 controls, 20 families, 4 impact levels, 11 steps to Provisional Authorization. The visual guide for cloud-native companies navigating DoD IL certification.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://gooptimal.io/blog/dod-il-certification-guide">
+    <meta property="og:image" content="https://gooptimal.io/public/blog/dod-il-certification.svg">
+    <meta property="og:site_name" content="Optimal">
+    <meta property="article:published_time" content="2026-03-30T00:00:00Z">
+    <meta property="article:author" content="Ryan Gutwein">
+    <meta property="article:section" content="Industry Insights">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Navigating DoD Impact Level Certification — A Cloud-Native Product's Guide">
+    <meta name="twitter:description" content="622 controls, 20 families, 4 impact levels, 11 steps to Provisional Authorization. The visual guide for cloud-native companies navigating DoD IL certification.">
+    <meta name="twitter:image" content="https://gooptimal.io/public/blog/dod-il-certification.svg">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Navigating DoD Impact Level Certification — A Cloud-Native Product's Guide",
+        "description": "622 controls, 20 families, 4 impact levels, 11 steps to Provisional Authorization. The visual guide for cloud-native companies navigating DoD IL certification.",
+        "datePublished": "2026-03-30T00:00:00Z",
+        "dateModified": "2026-03-30T00:00:00Z",
+        "author": { "@type": "Person", "name": "Ryan Gutwein" },
+        "publisher": { "@type": "Organization", "name": "Optimal", "logo": { "@type": "ImageObject", "url": "https://gooptimal.io/public/optimal-logo.png" } },
+        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://gooptimal.io/blog/dod-il-certification-guide" },
+        "url": "https://gooptimal.io/blog/dod-il-certification-guide",
+        "image": "https://gooptimal.io/public/blog/dod-il-certification.svg",
+        "articleSection": "Industry Insights",
+        "wordCount": 6000
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'cyber-black': '#0a0a0f', 'cyber-dark': '#0d1117', 'cyber-gray': '#161b22',
+                        'cyber-border': '#21262d', 'cyber-green': '#00ff88', 'cyber-green-dim': '#00cc6a',
+                        'cyber-blue': '#00d4ff', 'cyber-amber': '#ffb800', 'cyber-red': '#ff3366', 'cyber-purple': '#a855f7',
+                    },
+                    fontFamily: { 'mono': ['JetBrains Mono', 'monospace'], 'sans': ['Inter', 'system-ui', 'sans-serif'], }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background: #0a0a0f; overflow-x: hidden; }
+        .grid-bg { background-image: linear-gradient(rgba(0, 255, 136, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 255, 136, 0.03) 1px, transparent 1px); background-size: 50px 50px; }
+        .nav-fixed { backdrop-filter: blur(12px); background: rgba(10, 10, 15, 0.9); border-bottom: 1px solid rgba(33, 38, 45, 0.5); }
+        .nav-link { color: #8b949e; transition: color 0.3s ease; }
+        .nav-link:hover { color: #00ff88; }
+        .nav-dropdown { position: relative; }
+        .nav-dropdown-trigger { color: #8b949e; transition: color 0.3s ease; cursor: pointer; display: flex; align-items: center; gap: 4px; background: none; border: none; padding: 0; font-family: inherit; }
+        .nav-dropdown-trigger:hover { color: #00ff88; }
+        .nav-dropdown-menu { position: absolute; top: 100%; left: 50%; transform: translateX(-50%); margin-top: 16px; background: rgba(10, 10, 15, 0.95); border: 1px solid rgba(33, 38, 45, 0.8); border-radius: 8px; padding: 8px 0; min-width: 200px; opacity: 0; visibility: hidden; transition: opacity 0.2s ease, visibility 0.2s ease; backdrop-filter: blur(12px); z-index: 50; }
+        .nav-dropdown:hover .nav-dropdown-menu { opacity: 1; visibility: visible; }
+        .nav-dropdown-menu a { display: block; padding: 10px 16px; color: #8b949e; font-family: 'JetBrains Mono', monospace; font-size: 13px; transition: color 0.2s ease, background 0.2s ease; text-decoration: none; }
+        .nav-dropdown-menu a:hover { color: #00ff88; background: rgba(0, 255, 136, 0.05); }
+        .btn-platform { background: linear-gradient(135deg, #00ff88 0%, #00cc6a 100%); color: #0a0a0f; font-weight: 600; transition: all 0.3s ease; }
+        .btn-platform:hover { transform: translateY(-2px); box-shadow: 0 10px 40px rgba(0, 255, 136, 0.3); }
+        .btn-outline { border: 1px solid #00ff88; color: #00ff88; transition: all 0.3s ease; background: transparent; }
+        .btn-outline:hover { background: rgba(0, 255, 136, 0.1); }
+        .section-label { font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: #00ff88; }
+        .section-label::before { content: '// '; opacity: 0.5; }
+        .badge-green { background: rgba(0, 255, 136, 0.1); color: #00ff88; border: 1px solid rgba(0, 255, 136, 0.2); }
+        .badge-blue { background: rgba(0, 212, 255, 0.1); color: #00d4ff; border: 1px solid rgba(0, 212, 255, 0.2); }
+        .badge-purple { background: rgba(168, 85, 247, 0.1); color: #a855f7; border: 1px solid rgba(168, 85, 247, 0.2); }
+        .badge-amber { background: rgba(255, 184, 0, 0.1); color: #ffb800; border: 1px solid rgba(255, 184, 0, 0.2); }
+        .badge-red { background: rgba(255, 51, 102, 0.1); color: #ff3366; border: 1px solid rgba(255, 51, 102, 0.2); }
+        .badge-cyan { background: rgba(0, 212, 255, 0.1); color: #00d4ff; border: 1px solid rgba(0, 212, 255, 0.2); }
+        .blog-card { background: rgba(13, 17, 23, 0.8); border: 1px solid #21262d; border-radius: 8px; transition: all 0.3s ease; overflow: hidden; }
+        .blog-card:hover { border-color: #00ff88; transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0, 255, 136, 0.08); }
+        .blog-card:hover .card-title { color: #00ff88; }
+        .line-clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+        .line-clamp-3 { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+        .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+        .prose-cyber { color: #9ca3af; line-height: 1.8; }
+        .prose-cyber h2 { color: #fff; font-size: 1.5rem; font-weight: 700; margin-top: 2.5rem; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid #21262d; }
+        .prose-cyber h3 { color: #e5e7eb; font-size: 1.25rem; font-weight: 600; margin-top: 2rem; margin-bottom: 0.75rem; }
+        .prose-cyber p { margin-bottom: 1.25rem; }
+        .prose-cyber a { color: #00d4ff; text-decoration: underline; text-decoration-color: rgba(0,212,255,0.3); }
+        .prose-cyber a:hover { text-decoration-color: #00d4ff; }
+        .prose-cyber ul, .prose-cyber ol { margin-bottom: 1.25rem; padding-left: 1.5rem; }
+        .prose-cyber li { margin-bottom: 0.5rem; }
+        .prose-cyber li::marker { color: #00ff88; }
+        .prose-cyber strong { color: #e5e7eb; }
+        .prose-cyber blockquote { border-left: 3px solid #00ff88; padding: 1rem 1.5rem; margin: 1.5rem 0; background: rgba(0, 255, 136, 0.03); border-radius: 0 8px 8px 0; }
+        .prose-cyber blockquote p { margin-bottom: 0; color: #d1d5db; }
+        .prose-cyber code { font-family: 'JetBrains Mono', monospace; background: rgba(22, 27, 34, 0.8); border: 1px solid #21262d; padding: 2px 6px; border-radius: 4px; font-size: 0.875rem; color: #00ff88; }
+        .prose-cyber pre { background: #161b22; border: 1px solid #21262d; border-radius: 8px; padding: 1.25rem; margin: 1.5rem 0; overflow-x: auto; }
+        .prose-cyber pre code { background: none; border: none; padding: 0; color: #e5e7eb; }
+
+        /* ============================================================= */
+        /* IL CERTIFICATION GUIDE — CUSTOM STYLES                         */
+        /* ============================================================= */
+
+        :root {
+          --bg-primary: #060a11;
+          --bg-secondary: #0c1220;
+          --bg-card: #111c2e;
+          --bg-card-hover: #152238;
+          --accent: #38bdf8;
+          --accent-glow: rgba(56,189,248,0.15);
+          --accent-dim: rgba(56,189,248,0.08);
+          --accent-border: rgba(56,189,248,0.2);
+          --warn: #f59e0b;
+          --warn-dim: rgba(245,158,11,0.08);
+          --warn-border: rgba(245,158,11,0.2);
+          --critical: #ef4444;
+          --critical-dim: rgba(239,68,68,0.08);
+          --critical-border: rgba(239,68,68,0.2);
+          --success: #10b981;
+          --success-dim: rgba(16,185,129,0.08);
+          --success-border: rgba(16,185,129,0.2);
+          --purple: #a78bfa;
+          --purple-dim: rgba(167,139,250,0.08);
+          --purple-border: rgba(167,139,250,0.2);
+          --text: #f1f5f9;
+          --text-dim: #c0cbda;
+          --text-muted: #8899ad;
+          --mono: 'JetBrains Mono', 'Space Mono', monospace;
+          --sans: 'Inter', 'DM Sans', -apple-system, sans-serif;
+          --il2: #22c55e;
+          --il4: #f59e0b;
+          --il4h: #d97706;
+          --il5: #a855f7;
+          --il6: #ef4444;
+        }
+
+        .il-container { max-width:1060px; margin:0 auto; padding:0 28px; position:relative; z-index:1; }
+
+        /* GRADIENT LINE */
+        .gradient-line {
+          height:3px;
+          background: linear-gradient(90deg, var(--il2), var(--il4), var(--il5), var(--il6));
+          background-size:200% 100%;
+          animation: gradShift 8s ease infinite;
+        }
+        @keyframes gradShift { 0%,100%{background-position:0% 50%} 50%{background-position:100% 50%} }
+
+        /* FADE IN for IL sections */
+        .fade-section { opacity:0; transform:translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+        .fade-section.visible { opacity:1; transform:translateY(0); }
+
+        /* IL HERO (inline content hero, not page hero) */
+        .il-hero { padding:40px 0 40px; display:grid; grid-template-columns:1fr auto; gap:48px; align-items:center; }
+        .il-hero-left { max-width:640px; }
+        .il-hero-eyebrow {
+          font-family:var(--mono); font-size:11px; letter-spacing:4px;
+          text-transform:uppercase; color:var(--accent); margin-bottom:20px;
+          display:flex; align-items:center; gap:12px;
+        }
+        .il-hero-eyebrow::before { content:''; width:40px; height:1px; background:var(--accent); }
+
+        .il-content .il-hero h1 {
+          font-size: clamp(26px,4vw,40px); font-weight:800; line-height:1.1;
+          margin-bottom:18px; letter-spacing:-0.02em;
+          background: linear-gradient(135deg, #f8fafc 0%, #38bdf8 50%, #a855f7 100%);
+          -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+        }
+        .il-hero-sub { font-size:18px; color:#cbd5e1; line-height:1.7; margin-bottom:20px; }
+        .il-hero-meta {
+          display:flex; gap:20px; flex-wrap:wrap;
+          font-family:var(--mono); font-size:11px; color:#8899ad; letter-spacing:0.5px;
+        }
+        .il-hero-meta span { display:flex; align-items:center; gap:6px; }
+        .il-content .dot { width:5px; height:5px; border-radius:50%; background:var(--accent); display:inline-block; }
+
+        .il-hero-stats { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+        .il-hero-stat {
+          background:var(--bg-card); border:1px solid rgba(255,255,255,0.06);
+          border-radius:14px; padding:22px 18px; text-align:center;
+          transition: all 0.3s ease; position:relative; overflow:hidden;
+        }
+        .il-hero-stat:hover { border-color:var(--accent-border); transform:translateY(-2px); }
+        .il-hero-stat .stat-num {
+          font-family:var(--mono); font-size:34px; font-weight:700;
+          background: linear-gradient(135deg, var(--accent), var(--purple));
+          -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+          display:block; line-height:1.1;
+        }
+        .il-hero-stat .stat-label { font-size:12px; color:#8899ad; margin-top:6px; font-weight:600; letter-spacing:0.5px; text-transform:uppercase; }
+
+        /* IL CONTENT SCOPED STYLES */
+        .il-content section { padding:60px 0; border-bottom:1px solid rgba(255,255,255,0.03); }
+        .il-section-label {
+          font-family:var(--mono); font-size:11px; letter-spacing:4px;
+          text-transform:uppercase; color:var(--accent); margin-bottom:12px; opacity:0.85;
+        }
+        .il-content h2 {
+          font-size: clamp(24px,3.5vw,32px); font-weight:800; margin-bottom:16px;
+          color:#f1f5f9; letter-spacing:-0.02em; line-height:1.15;
+          border-bottom: none; padding-bottom: 0; margin-top: 0;
+        }
+        .il-content h3 { font-size:18px; font-weight:700; margin:28px 0 12px; color:#e2e8f0; }
+        .il-content p { margin-bottom:14px; color:#b8c5d6; font-size:15.5px; line-height:1.75; }
+        .il-content .lead-p { font-size:16.5px; color:#c8d3e0; line-height:1.8; max-width:780px; }
+        .il-content a { color:var(--accent); text-decoration:none; }
+        .il-content a:hover { text-decoration:underline; }
+
+        /* CALLOUT */
+        .callout {
+          border-radius:12px; padding:20px 24px; margin:24px 0;
+          border-left:3px solid var(--accent); background:var(--accent-dim);
+        }
+        .callout.warn { border-color:var(--warn); background:var(--warn-dim); }
+        .callout.critical { border-color:var(--critical); background:var(--critical-dim); }
+        .callout-title { font-family:var(--mono); font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--accent); margin-bottom:8px; font-weight:700; }
+        .callout.warn .callout-title { color:var(--warn); }
+        .callout.critical .callout-title { color:var(--critical); }
+        .callout p { margin:0; font-size:14.5px; color:#dce4ee; line-height:1.7; }
+        .callout .source { display:block; margin-top:8px; font-size:11px; color:#8899ad; font-family:var(--mono); }
+
+        /* === ESCALATION BARS === */
+        .esc-chart { margin:32px 0; display:flex; flex-direction:column; gap:14px; }
+        .esc-row { display:grid; grid-template-columns:90px 1fr 80px; gap:12px; align-items:center; }
+        .esc-label { font-family:var(--mono); font-size:13px; font-weight:700; text-align:right; }
+        .esc-label.c-il2 { color:var(--il2); }
+        .esc-label.c-il4 { color:var(--il4); }
+        .esc-label.c-il4h { color:var(--il4h); }
+        .esc-label.c-il5 { color:var(--il5); }
+        .esc-label.c-il6 { color:var(--il6); }
+        .esc-track { height:38px; background:rgba(255,255,255,0.03); border-radius:8px; overflow:hidden; position:relative; }
+        .esc-fill {
+          height:100%; border-radius:8px; display:flex; align-items:center; padding:0 14px;
+          font-family:var(--mono); font-size:11px; color:rgba(255,255,255,0.85); font-weight:600;
+          transition: width 1.2s cubic-bezier(0.22,1,0.36,1);
+        }
+        .esc-fill.il2 { background: linear-gradient(90deg, rgba(34,197,94,0.7), rgba(34,197,94,0.4)); }
+        .esc-fill.il4 { background: linear-gradient(90deg, rgba(245,158,11,0.7), rgba(245,158,11,0.4)); }
+        .esc-fill.il4h { background: linear-gradient(90deg, rgba(217,119,6,0.8), rgba(217,119,6,0.45)); }
+        .esc-fill.il5 { background: linear-gradient(90deg, rgba(168,85,247,0.75), rgba(168,85,247,0.4)); }
+        .esc-fill.il6 { background: linear-gradient(90deg, rgba(239,68,68,0.75), rgba(239,68,68,0.4)); }
+        .esc-count { font-family:var(--mono); font-size:14px; font-weight:700; color:var(--text); }
+        .esc-delta { font-size:11px; color:var(--accent); margin-left:4px; }
+
+        /* === DECISION TREE SVG === */
+        .decision-tree-wrap { margin:32px 0; overflow-x:auto; }
+        .decision-tree-wrap svg { display:block; margin:0 auto; }
+        .decision-tree-wrap svg text { font-family: 'Inter', sans-serif; }
+
+        /* === COMPARISON STRIP === */
+        .compare-strip {
+          display:grid; grid-template-columns: 140px repeat(4, 1fr); gap:0;
+          margin:28px 0; border-radius:12px; overflow:hidden;
+          border:1px solid rgba(255,255,255,0.06);
+        }
+        .cs-header {
+          background:var(--bg-card); padding:10px 14px;
+          font-family:var(--mono); font-size:11px; font-weight:700;
+          border-bottom:1px solid rgba(255,255,255,0.04);
+          display:flex; align-items:center;
+        }
+        .cs-header.il2 { color:var(--il2); }
+        .cs-header.il4 { color:var(--il4); }
+        .cs-header.il5 { color:var(--il5); }
+        .cs-header.il6 { color:var(--il6); }
+        .cs-cell {
+          padding:9px 14px; font-size:13px; color:#b8c5d6;
+          border-bottom:1px solid rgba(255,255,255,0.03);
+          background: var(--bg-secondary);
+        }
+        .cs-row-label {
+          padding:9px 14px; font-size:12px; color:#8899ad;
+          font-weight:600; background:var(--bg-card);
+          border-bottom:1px solid rgba(255,255,255,0.04);
+        }
+
+        /* === ARCH DIAGRAM === */
+        .arch-svg-wrap { margin:32px 0; }
+        .arch-svg-wrap svg { display:block; margin:0 auto; width:100%; height:auto; }
+        .arch-callouts { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:20px; }
+        .arch-callout {
+          background:var(--bg-card); border:1px solid rgba(255,255,255,0.06);
+          border-radius:10px; padding:16px;
+        }
+        .arch-callout .ac-title { font-family:var(--mono); font-size:11px; color:var(--accent); letter-spacing:2px; text-transform:uppercase; margin-bottom:6px; font-weight:700; }
+        .arch-callout p { margin:0; font-size:14px; color:#b8c5d6; line-height:1.6; }
+
+        /* === JOURNEY PIPELINE === */
+        .journey-wrap { margin:32px 0; }
+        .journey-lane-label {
+          font-family:var(--mono); font-size:10px; letter-spacing:3px; text-transform:uppercase;
+          color:var(--accent); margin-bottom:14px; font-weight:700;
+          padding-bottom:8px; border-bottom:1px solid rgba(56,189,248,0.15);
+        }
+        .journey-lane-label.mission { color:var(--il5); border-color:rgba(168,85,247,0.15); margin-top:28px; }
+        .journey-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(200px,1fr)); gap:12px; }
+        .journey-step {
+          background:var(--bg-card); border:1px solid rgba(255,255,255,0.06);
+          border-radius:12px; padding:18px 16px; position:relative;
+          transition: all 0.3s ease; overflow:hidden;
+        }
+        .journey-step:hover { border-color:var(--accent-border); transform:translateY(-2px); }
+        .journey-step .step-num {
+          font-family:var(--mono); font-size:28px; font-weight:700;
+          position:absolute; top:12px; right:14px; opacity:0.08;
+          line-height:1;
+        }
+        .journey-step .step-title { font-size:14px; font-weight:600; color:var(--text); margin-bottom:6px; line-height:1.35; }
+        .journey-step .step-desc { font-size:12.5px; color:#8899ad; line-height:1.55; margin:0; }
+        .journey-step.phase-early { border-left:3px solid var(--accent); }
+        .journey-step.phase-mid { border-left:3px solid var(--il4); }
+        .journey-step.phase-pa { border-left:3px solid var(--il2); }
+        .journey-step.phase-sustain { border-left:3px solid var(--text-muted); }
+        .journey-step.phase-mission { border-left:3px solid var(--il5); }
+        .journey-step.parallel-tag::after {
+          content:'CONCURRENT'; position:absolute; top:6px; left:50%; transform:translateX(-50%);
+          font-family:var(--mono); font-size:8px; letter-spacing:2px; color:var(--il4);
+          background:var(--warn-dim); padding:2px 8px; border-radius:4px;
+        }
+        .artifacts-card {
+          background:var(--bg-card); border:1px solid var(--accent-border); border-radius:10px;
+          padding:16px 20px; margin-top:18px;
+        }
+        .artifacts-card .ac-label { font-family:var(--mono); font-size:10px; letter-spacing:2px; text-transform:uppercase; color:var(--accent); margin-bottom:6px; font-weight:700; }
+        .artifacts-card p { margin:0; font-size:14px; color:#b8c5d6; }
+
+        /* === HEATMAP TABLE === */
+        .heatmap-wrap { margin:28px 0; overflow-x:auto; }
+        .heatmap {
+          width:100%; border-collapse:collapse; font-size:13px;
+          border-radius:12px; overflow:hidden;
+        }
+        .heatmap th {
+          background:var(--bg-card); padding:12px 10px;
+          font-family:var(--mono); font-size:10px; letter-spacing:1.5px;
+          text-transform:uppercase; color:var(--text-muted); font-weight:700;
+          text-align:center; border-bottom:2px solid rgba(255,255,255,0.06);
+        }
+        .heatmap th:first-child { text-align:left; padding-left:16px; }
+        .heatmap td {
+          padding:9px 10px; text-align:center; border-bottom:1px solid rgba(255,255,255,0.03);
+          font-family:var(--mono); font-size:12px; color:var(--text);
+        }
+        .heatmap td:first-child {
+          text-align:left; font-family:var(--sans); font-size:13px;
+          color:#b8c5d6; font-weight:500; padding-left:16px;
+        }
+        .heatmap tr:hover td { background:rgba(255,255,255,0.02); }
+
+        /* Heat intensity classes */
+        .h0 { background:rgba(56,189,248,0.03); }
+        .h1 { background:rgba(56,189,248,0.07); }
+        .h2 { background:rgba(56,189,248,0.12); }
+        .h3 { background:rgba(56,189,248,0.18); }
+        .h4 { background:rgba(168,85,247,0.2); color:#d8b4fe; }
+        .h5 { background:rgba(168,85,247,0.3); color:#d8b4fe; }
+        .h6 { background:rgba(239,68,68,0.25); color:#fca5a5; }
+
+        /* Jump cards */
+        .jump-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin:24px 0; }
+        .jump-card {
+          background:var(--bg-card); border:1px solid rgba(168,85,247,0.15);
+          border-radius:12px; padding:20px; text-align:center;
+        }
+        .jump-card .jc-family { font-size:14px; color:#b8c5d6; font-weight:600; margin-bottom:8px; }
+        .jump-card .jc-nums { font-family:var(--mono); font-size:20px; color:var(--text); }
+        .jump-card .jc-nums span { color:var(--il5); }
+        .jump-card .jc-pct { font-family:var(--mono); font-size:24px; font-weight:700; color:var(--il5); margin-top:4px; }
+
+        /* === OVERLAY PILLS === */
+        .overlay-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(140px,1fr)); gap:14px; margin:28px 0; }
+        .overlay-pill {
+          background:var(--bg-card); border:1px solid rgba(255,255,255,0.06);
+          border-radius:14px; padding:24px 16px; text-align:center;
+          transition:all 0.3s ease; position:relative; overflow:hidden;
+        }
+        .overlay-pill:hover { border-color:var(--accent-border); transform:translateY(-2px); }
+        .overlay-pill .o-count {
+          font-family:var(--mono); font-size:36px; font-weight:700;
+          background:linear-gradient(135deg, var(--accent), var(--purple));
+          -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+          display:block; line-height:1;
+        }
+        .overlay-pill .o-name { font-size:13px; color:#8899ad; margin-top:8px; font-weight:600; }
+        .overlay-pill .o-bar { margin-top:14px; height:5px; background:rgba(255,255,255,0.04); border-radius:3px; overflow:hidden; }
+        .overlay-pill .o-fill { height:100%; border-radius:3px; background:linear-gradient(90deg, var(--accent), var(--purple)); }
+
+        /* === PERSONNEL TABLE === */
+        .personnel-table-wrap { margin:28px 0; overflow-x:auto; }
+        .personnel-table {
+          width:100%; border-collapse:collapse; border-radius:12px; overflow:hidden;
+        }
+        .personnel-table th {
+          padding:14px 12px; text-align:center; font-family:var(--mono); font-size:11px;
+          letter-spacing:1.5px; text-transform:uppercase; font-weight:700;
+          border-bottom:2px solid rgba(255,255,255,0.06);
+        }
+        .personnel-table th:first-child { text-align:left; padding-left:16px; }
+        .personnel-table th.th-il2 { background:rgba(34,197,94,0.1); color:var(--il2); }
+        .personnel-table th.th-il4 { background:rgba(245,158,11,0.1); color:var(--il4); }
+        .personnel-table th.th-il5 { background:rgba(168,85,247,0.1); color:var(--il5); }
+        .personnel-table th.th-il6 { background:rgba(239,68,68,0.1); color:var(--il6); }
+        .personnel-table th.th-label { background:var(--bg-card); color:var(--text-muted); }
+        .personnel-table td {
+          padding:11px 12px; text-align:center; font-size:13px; color:#b8c5d6;
+          border-bottom:1px solid rgba(255,255,255,0.03);
+        }
+        .personnel-table td:first-child { text-align:left; font-weight:600; color:#8899ad; padding-left:16px; }
+        .personnel-table tr:hover td { background:rgba(255,255,255,0.02); }
+        .pt-high { color:var(--il6) !important; font-weight:600; }
+        .pt-med { color:var(--il5) !important; font-weight:600; }
+        .pt-low { color:var(--il4) !important; }
+
+        /* === GRR GRID === */
+        .grr-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:12px; margin:28px 0; }
+        .grr-card {
+          background:var(--bg-card); border:1px solid rgba(255,255,255,0.06);
+          border-radius:12px; padding:20px 16px; text-align:center;
+          transition:all 0.3s ease;
+        }
+        .grr-card:hover { border-color:var(--accent-border); transform:translateY(-2px); }
+        .grr-num {
+          font-family:var(--mono); font-size:28px; font-weight:700;
+          background:linear-gradient(135deg, var(--accent), var(--purple));
+          -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+          display:block; line-height:1; margin-bottom:10px;
+        }
+        .grr-title { font-size:13px; font-weight:600; color:#dce4ee; line-height:1.4; }
+
+        /* === BOTTOM CARDS === */
+        .bottom-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin:28px 0; }
+        .bottom-card {
+          padding:24px; border-radius:14px; border:1px solid;
+          position:relative; overflow:hidden;
+        }
+        .bottom-card::before {
+          content:''; position:absolute; top:-30px; right:-30px;
+          width:120px; height:120px; border-radius:50%; opacity:0.04; pointer-events:none;
+        }
+        .bottom-card.c-il4 { background:rgba(245,158,11,0.04); border-color:rgba(245,158,11,0.15); }
+        .bottom-card.c-il4::before { background:var(--il4); }
+        .bottom-card.c-il5 { background:rgba(168,85,247,0.04); border-color:rgba(168,85,247,0.15); }
+        .bottom-card.c-il5::before { background:var(--il5); }
+        .bottom-card.c-il6 { background:rgba(239,68,68,0.04); border-color:rgba(239,68,68,0.15); }
+        .bottom-card.c-il6::before { background:var(--il6); }
+        .bottom-card h4 {
+          font-family:var(--mono); font-size:12px; letter-spacing:2px;
+          text-transform:uppercase; margin-bottom:14px; font-weight:700;
+        }
+        .bottom-card.c-il4 h4 { color:var(--il4); }
+        .bottom-card.c-il5 h4 { color:var(--il5); }
+        .bottom-card.c-il6 h4 { color:var(--il6); }
+        .bottom-card ul { list-style:none; padding:0; }
+        .bottom-card li {
+          font-size:14px; color:#c0cbda; line-height:1.65;
+          padding:5px 0 5px 16px; position:relative;
+        }
+        .bottom-card li::before { content:'\2022'; position:absolute; left:0; color:#8899ad; }
+
+        /* IL CTA */
+        .il-cta-section { text-align:center; padding:60px 0; }
+        .il-cta-text { font-size:20px; font-weight:600; color:var(--text); max-width:640px; margin:0 auto 8px; line-height:1.5; }
+        .il-cta-sub { font-size:12px; color:#8899ad; font-family:var(--mono); letter-spacing:0.5px; }
+
+        /* TOC NAV */
+        .toc-nav {
+          position:fixed; right:24px; top:50%; transform:translateY(-50%);
+          z-index:100; display:flex; flex-direction:column; gap:8px;
+        }
+        .toc-dot {
+          width:10px; height:10px; border-radius:50%;
+          background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.15);
+          cursor:pointer; transition:all 0.3s ease; position:relative;
+        }
+        .toc-dot:hover,.toc-dot.active { background:var(--accent); border-color:var(--accent); box-shadow:0 0 12px var(--accent-glow); }
+        .toc-dot .toc-tip {
+          position:absolute; right:20px; top:50%; transform:translateY(-50%);
+          background:var(--bg-card); border:1px solid var(--accent-border);
+          padding:3px 9px; border-radius:5px; font-family:var(--mono); font-size:9px;
+          color:var(--accent); white-space:nowrap; opacity:0; pointer-events:none; transition:opacity 0.2s ease;
+        }
+        .toc-dot:hover .toc-tip { opacity:1; }
+
+        /* SVG ANIMATIONS */
+        @keyframes flowDash { to { stroke-dashoffset: -24; } }
+        @keyframes flowDashSlow { to { stroke-dashoffset: -20; } }
+        .flow-anim { animation: flowDash 1.2s linear infinite; }
+        .flow-anim-slow { animation: flowDashSlow 2s linear infinite; }
+
+        /* RESPONSIVE */
+        @media (max-width:900px) {
+          .toc-nav { display:none; }
+          .il-hero { grid-template-columns:1fr; }
+          .il-hero-stats { grid-template-columns:repeat(4,1fr); }
+        }
+        @media (max-width:700px) {
+          .il-hero-stats { grid-template-columns:repeat(2,1fr); }
+          .esc-row { grid-template-columns:70px 1fr 60px; }
+          .compare-strip { grid-template-columns:100px repeat(4,1fr); font-size:11px; }
+          .arch-callouts { grid-template-columns:1fr; }
+          .journey-grid { grid-template-columns:1fr; }
+          .jump-cards { grid-template-columns:1fr; }
+          .grr-grid { grid-template-columns:repeat(2,1fr); }
+          .bottom-cards { grid-template-columns:1fr; }
+          .overlay-grid { grid-template-columns:repeat(2,1fr); }
+        }
+    </style>
+    <script>function initApollo(){var n=Math.random().toString(36).substring(7),o=document.createElement("script");
+o.src="https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache="+n,o.async=!0,o.defer=!0,
+o.onload=function(){window.trackingFunctions.onLoad({appId:"698c8b7248beb80019d50b7e"})},
+document.head.appendChild(o)}initApollo();</script>
+</head>
+<body class="bg-cyber-black text-gray-100 font-sans antialiased">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 nav-fixed">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="/index.html" class="flex items-center gap-3">
+                    <img src="/public/optimal-logo.png" alt="Optimal Logo" class="w-10 h-10">
+                    <span class="font-bold text-xl text-white">Optimal</span>
+                </a>
+                <div class="hidden md:flex items-center gap-8">
+                    <div class="nav-dropdown">
+                        <button class="nav-dropdown-trigger font-mono text-sm">Platform <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+                        <div class="nav-dropdown-menu"><a href="/platform">Platform Overview</a><a href="/integrations">Integrations</a><a href="/#capabilities">Capabilities</a></div>
+                    </div>
+                    <a href="/#team" class="nav-link font-mono text-sm">Team</a>
+                    <div class="nav-dropdown">
+                        <button class="nav-dropdown-trigger font-mono text-sm">Resources <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+                        <div class="nav-dropdown-menu"><a href="https://docs.gooptimal.io/" target="_blank">Documentation</a><a href="/blog.html">Blog</a></div>
+                    </div>
+                    <a href="https://app.gooptimal.io" target="_blank" class="nav-link font-mono text-sm">Login</a>
+                    <a href="/demo" class="btn-platform text-sm px-6 py-2">Request Demo</a>
+                </div>
+                <button id="mobile-menu-btn" class="md:hidden text-gray-400 hover:text-white"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+            </div>
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t border-cyber-border pt-4">
+                <div class="flex flex-col gap-4">
+                    <div class="flex flex-col gap-2"><span class="font-mono text-xs text-gray-500 uppercase tracking-wider">Platform</span><a href="/platform" class="nav-link font-mono text-sm pl-3">Overview</a><a href="/integrations" class="nav-link font-mono text-sm pl-3">Integrations</a><a href="/#capabilities" class="nav-link font-mono text-sm pl-3">Capabilities</a></div>
+                    <a href="/#team" class="nav-link font-mono text-sm">Team</a>
+                    <div class="flex flex-col gap-2"><span class="font-mono text-xs text-gray-500 uppercase tracking-wider">Resources</span><a href="https://docs.gooptimal.io/" target="_blank" class="nav-link font-mono text-sm pl-3">Documentation</a><a href="/blog.html" class="nav-link font-mono text-sm pl-3">Blog</a></div>
+                    <a href="https://app.gooptimal.io" target="_blank" class="nav-link font-mono text-sm">Login</a>
+                    <a href="/demo" class="btn-platform text-sm px-6 py-3 text-center mt-2">Request Demo</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <section class="pt-24 pb-4">
+        <div class="max-w-4xl mx-auto px-6">
+            <nav class="font-mono text-sm flex items-center gap-2">
+                <a href="/index.html" class="text-gray-500 hover:text-cyber-green transition-colors">Home</a>
+                <span class="text-gray-600">/</span>
+                <a href="/blog.html" class="text-gray-500 hover:text-cyber-green transition-colors">Blog</a>
+                <span class="text-gray-600">/</span>
+                <span class="text-gray-400">DoD IL Certification Guide</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Hero Section -->
+    <section class="relative pt-12 pb-20 grid-bg">
+        <div class="absolute inset-0 bg-gradient-to-b from-cyber-black via-transparent to-cyber-black"></div>
+        <div class="absolute top-1/4 right-1/4 w-96 h-96 bg-cyber-green/5 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-1/4 left-1/4 w-72 h-72 bg-cyber-blue/5 rounded-full blur-3xl"></div>
+        <div class="relative max-w-4xl mx-auto px-6 text-center">
+            <div class="mb-6">
+                <span class="badge-amber font-mono text-xs px-3 py-1 rounded">Deep Dive | March 2026</span>
+            </div>
+            <h1 class="text-4xl md:text-6xl font-bold text-white mb-4 leading-tight">Navigating DoD Impact Level Certification</h1>
+            <p class="text-xl md:text-2xl text-gray-300 mb-3 max-w-3xl mx-auto">A Cloud-Native Product's Guide to IL2, IL4, IL5, and IL6 Authorization</p>
+            <p class="text-sm text-gray-500 font-mono mb-2">Ryan Gutwein</p>
+            <p class="text-sm text-gray-400 mb-6">622 controls. 20 families. 4 impact levels. 11 steps to Provisional Authorization.</p>
+            <!-- Hero visual summary -->
+            <div class="flex items-center justify-center gap-3 mb-10 flex-wrap">
+                <span class="font-mono text-xs px-3 py-1.5 rounded border border-cyber-border bg-cyber-gray/50 text-gray-300">CC SRG v1r6</span>
+                <span class="text-gray-600">+</span>
+                <span class="font-mono text-xs px-3 py-1.5 rounded border border-cyber-border bg-cyber-gray/50 text-gray-300">NIST 800-53</span>
+                <span class="text-gray-600">+</span>
+                <span class="font-mono text-xs px-3 py-1.5 rounded border border-cyber-border bg-cyber-gray/50 text-gray-300">CNSSI 1253</span>
+                <span class="text-gray-600">+</span>
+                <span class="font-mono text-xs px-3 py-1.5 rounded border border-cyber-border bg-cyber-gray/50 text-gray-300">SCCA</span>
+                <span class="text-gray-600">+</span>
+                <span class="font-mono text-xs px-3 py-1.5 rounded border border-cyber-border bg-cyber-gray/50 text-gray-300">Cloud CPG v3</span>
+            </div>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#il-guide-content" class="btn-platform text-base px-8 py-3 rounded font-mono inline-flex items-center gap-2">
+                    Read Below
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- IL Guide Content -->
+    <div id="il-guide-content" class="il-content">
+
+        <div class="gradient-line"></div>
+
+        <!-- TOC NAV -->
+        <nav class="toc-nav">
+          <a class="toc-dot" href="#landscape"><span class="toc-tip">Landscape</span></a>
+          <a class="toc-dot" href="#target"><span class="toc-tip">Know Your Target</span></a>
+          <a class="toc-dot" href="#architecture"><span class="toc-tip">Architecture</span></a>
+          <a class="toc-dot" href="#journey"><span class="toc-tip">11-Step Journey</span></a>
+          <a class="toc-dot" href="#heatmap"><span class="toc-tip">Control Heatmap</span></a>
+          <a class="toc-dot" href="#overlays"><span class="toc-tip">Data Overlays</span></a>
+          <a class="toc-dot" href="#personnel"><span class="toc-tip">Personnel</span></a>
+          <a class="toc-dot" href="#grr"><span class="toc-tip">GRR Gates</span></a>
+          <a class="toc-dot" href="#bottomline"><span class="toc-tip">Bottom Line</span></a>
+        </nav>
+
+        <div class="il-container">
+
+        <!-- ============ HERO (inline data viz) ============ -->
+        <header class="il-hero">
+          <div class="il-hero-left">
+            <div class="il-hero-eyebrow">Deep Dive</div>
+            <h1>Navigating DoD Impact Level Certification as a Cloud-Native Product</h1>
+            <p class="il-hero-sub">622 controls. 20 families. 4 impact levels. From FedRAMP baseline to Provisional Authorization — the visual guide.</p>
+            <div class="il-hero-meta">
+              <span><span class="dot"></span> Ryan Gutwein</span>
+              <span><span class="dot"></span> Optimal Labs / Iron Echelon</span>
+              <span><span class="dot"></span> CC SRG v1r6 (Dec 2025) · Cloud CPG v3 · CNSSI 1253</span>
+            </div>
+          </div>
+          <div class="il-hero-stats">
+            <div class="il-hero-stat"><span class="stat-num">622</span><span class="stat-label">Controls</span></div>
+            <div class="il-hero-stat"><span class="stat-num">20</span><span class="stat-label">Families</span></div>
+            <div class="il-hero-stat"><span class="stat-num">4</span><span class="stat-label">Impact Levels</span></div>
+            <div class="il-hero-stat"><span class="stat-num">11</span><span class="stat-label">Steps to PA</span></div>
+          </div>
+        </header>
+
+        <!-- ============ 01: LANDSCAPE ============ -->
+        <section id="landscape" class="fade-section">
+          <div class="il-section-label">01 — The Landscape</div>
+          <h2>622 Controls. Four Impact Levels. One Framework.</h2>
+          <p class="lead-p">The DoD CC SRG Rev 5 layers DoD-specific requirements on FedRAMP baselines across IL2, IL4, IL5, and IL6.</p>
+
+          <div class="esc-chart">
+            <div class="esc-row">
+              <div class="esc-label c-il2">IL2</div>
+              <div class="esc-track"><div class="esc-fill il2" style="width:55.5%">FedRAMP Moderate</div></div>
+              <div class="esc-count">345</div>
+            </div>
+            <div class="esc-row">
+              <div class="esc-label c-il4">IL4 Mod</div>
+              <div class="esc-track"><div class="esc-fill il4" style="width:55.5%">FedRAMP Moderate</div></div>
+              <div class="esc-count">345</div>
+            </div>
+            <div class="esc-row">
+              <div class="esc-label c-il4h">IL4 High</div>
+              <div class="esc-track"><div class="esc-fill il4h" style="width:69%">FedRAMP High + DoD</div></div>
+              <div class="esc-count">429 <span class="esc-delta">+84</span></div>
+            </div>
+            <div class="esc-row">
+              <div class="esc-label c-il5">IL5 NSS</div>
+              <div class="esc-track"><div class="esc-fill il5" style="width:94.5%">CNSSI 1253 + NSS</div></div>
+              <div class="esc-count">588 <span class="esc-delta">+159</span></div>
+            </div>
+            <div class="esc-row">
+              <div class="esc-label c-il6">IL6 NSS</div>
+              <div class="esc-track"><div class="esc-fill il6" style="width:99.4%">Classified + TEMPEST</div></div>
+              <div class="esc-count">618 <span class="esc-delta">+30</span></div>
+            </div>
+          </div>
+
+          <div class="callout critical">
+            <div class="callout-title">CC SRG v1r6 — December 2025</div>
+            <p>IL5 now mandates NSS controls from CNSSI 1253 per CNSSP-32 — a 37% increase over IL4 High. FedRAMP High is the mandatory floor. There is no longer a path to IL5 using FedRAMP Moderate.</p>
+            <span class="source">Source: CC SRG v1r6, Section 5.1</span>
+          </div>
+        </section>
+
+        <!-- ============ 02: DECISION TREE ============ -->
+        <section id="target" class="fade-section">
+          <div class="il-section-label">02 — Know Your Target</div>
+          <h2>Which Impact Level Do You Need?</h2>
+
+          <div class="decision-tree-wrap">
+            <svg viewBox="0 0 900 370" width="900" height="370" xmlns="http://www.w3.org/2000/svg">
+              <!-- Start node -->
+              <rect x="300" y="20" width="300" height="50" rx="25" fill="#111c2e" stroke="#38bdf8" stroke-width="1.5"/>
+              <text x="450" y="50" text-anchor="middle" fill="#38bdf8" font-size="13" font-weight="600">What data will your product handle?</text>
+
+              <!-- Lines from start to branches -->
+              <line x1="350" y1="70" x2="110" y2="130" stroke="#334155" stroke-width="1.2"/>
+              <line x1="420" y1="70" x2="320" y2="130" stroke="#334155" stroke-width="1.2"/>
+              <line x1="480" y1="70" x2="560" y2="130" stroke="#334155" stroke-width="1.2"/>
+              <line x1="550" y1="70" x2="770" y2="130" stroke="#334155" stroke-width="1.2"/>
+
+              <!-- Branch labels -->
+              <text x="210" y="100" text-anchor="middle" fill="#8899ad" font-size="10">Public / Non-CUI</text>
+              <text x="360" y="108" text-anchor="middle" fill="#8899ad" font-size="10">CUI, Non-NSS</text>
+              <text x="530" y="108" text-anchor="middle" fill="#8899ad" font-size="10">Higher CUI / NSS</text>
+              <text x="680" y="100" text-anchor="middle" fill="#8899ad" font-size="10">Classified SECRET</text>
+
+              <!-- IL2 Node -->
+              <rect x="30" y="130" width="160" height="105" rx="12" fill="rgba(34,197,94,0.08)" stroke="#22c55e" stroke-width="1.5"/>
+              <text x="110" y="158" text-anchor="middle" fill="#22c55e" font-size="22" font-weight="800">IL2</text>
+              <text x="110" y="180" text-anchor="middle" fill="#b0bfcf" font-size="11">345 controls</text>
+              <text x="110" y="197" text-anchor="middle" fill="#8899ad" font-size="10">FedRAMP Moderate</text>
+              <text x="110" y="216" text-anchor="middle" fill="#8899ad" font-size="10">Multi-tenant OK</text>
+
+              <!-- IL4 Node -->
+              <rect x="240" y="130" width="160" height="105" rx="12" fill="rgba(245,158,11,0.08)" stroke="#f59e0b" stroke-width="1.5"/>
+              <text x="320" y="158" text-anchor="middle" fill="#f59e0b" font-size="22" font-weight="800">IL4</text>
+              <text x="320" y="180" text-anchor="middle" fill="#b0bfcf" font-size="11">429 controls</text>
+              <text x="320" y="197" text-anchor="middle" fill="#8899ad" font-size="10">FedRAMP High + DoD</text>
+              <text x="320" y="216" text-anchor="middle" fill="#8899ad" font-size="10">CAP + DoD PKI</text>
+
+              <!-- IL5 Node -->
+              <rect x="480" y="130" width="160" height="105" rx="12" fill="rgba(168,85,247,0.08)" stroke="#a855f7" stroke-width="1.5"/>
+              <text x="560" y="158" text-anchor="middle" fill="#a855f7" font-size="22" font-weight="800">IL5</text>
+              <text x="560" y="180" text-anchor="middle" fill="#b0bfcf" font-size="11">588 controls</text>
+              <text x="560" y="197" text-anchor="middle" fill="#8899ad" font-size="10">CNSSI 1253 NSS</text>
+              <text x="560" y="216" text-anchor="middle" fill="#8899ad" font-size="10">Dedicated infra</text>
+
+              <!-- IL6 Node -->
+              <rect x="700" y="130" width="160" height="105" rx="12" fill="rgba(239,68,68,0.08)" stroke="#ef4444" stroke-width="1.5"/>
+              <text x="780" y="158" text-anchor="middle" fill="#ef4444" font-size="22" font-weight="800">IL6</text>
+              <text x="780" y="180" text-anchor="middle" fill="#b0bfcf" font-size="11">618 controls</text>
+              <text x="780" y="197" text-anchor="middle" fill="#8899ad" font-size="10">CNSSI 1253 + TEMPEST</text>
+              <text x="780" y="216" text-anchor="middle" fill="#8899ad" font-size="10">SIPRNet classified</text>
+
+              <!-- Delta arrows between nodes -->
+              <line x1="190" y1="183" x2="240" y2="183" stroke="#334155" stroke-width="1" stroke-dasharray="4"/>
+              <text x="215" y="176" text-anchor="middle" fill="#38bdf8" font-size="10" font-weight="700">+84</text>
+
+              <line x1="400" y1="183" x2="480" y2="183" stroke="#334155" stroke-width="1" stroke-dasharray="4"/>
+              <text x="440" y="176" text-anchor="middle" fill="#a855f7" font-size="10" font-weight="700">+159</text>
+
+              <line x1="640" y1="183" x2="700" y2="183" stroke="#334155" stroke-width="1" stroke-dasharray="4"/>
+              <text x="670" y="176" text-anchor="middle" fill="#ef4444" font-size="10" font-weight="700">+30</text>
+
+              <!-- Key insight -->
+              <rect x="200" y="280" width="500" height="44" rx="10" fill="#111c2e" stroke="rgba(168,85,247,0.2)" stroke-width="1"/>
+              <text x="450" y="306" text-anchor="middle" fill="#a78bfa" font-size="12" font-weight="600">The IL4 to IL5 jump is not incremental — it's a fundamentally different posture.</text>
+            </svg>
+          </div>
+
+          <!-- Comparison Strip -->
+          <div class="compare-strip">
+            <div class="cs-header" style="background:var(--bg-card); color:var(--text-muted);"></div>
+            <div class="cs-header il2">IL2</div>
+            <div class="cs-header il4">IL4</div>
+            <div class="cs-header il5">IL5</div>
+            <div class="cs-header il6">IL6</div>
+
+            <div class="cs-row-label">Controls</div>
+            <div class="cs-cell">345</div><div class="cs-cell">429</div><div class="cs-cell">588</div><div class="cs-cell">618</div>
+
+            <div class="cs-row-label">Baseline</div>
+            <div class="cs-cell">FedRAMP Mod</div><div class="cs-cell">FedRAMP High</div><div class="cs-cell">CNSSI 1253</div><div class="cs-cell">CNSSI 1253+</div>
+
+            <div class="cs-row-label">Separation</div>
+            <div class="cs-cell">Multi-tenant</div><div class="cs-cell">Logical</div><div class="cs-cell">Physical</div><div class="cs-cell">Physical</div>
+
+            <div class="cs-row-label">Network</div>
+            <div class="cs-cell">Internet</div><div class="cs-cell">NIPRNet via CAP</div><div class="cs-cell">NIPRNet via CAP</div><div class="cs-cell">SIPRNet</div>
+
+            <div class="cs-row-label">Personnel</div>
+            <div class="cs-cell">N/A</div><div class="cs-cell">U.S. Citizens</div><div class="cs-cell">Tier 3 / Secret</div><div class="cs-cell">Tier 5 / TS/SCI</div>
+          </div>
+        </section>
+
+        <!-- ============ 03: ARCHITECTURE ============ -->
+        <section id="architecture" class="fade-section">
+          <div class="il-section-label">03 — The Architecture Stack</div>
+          <h2>SCCA: What Your Product Plugs Into</h2>
+
+          <div class="arch-svg-wrap">
+            <svg viewBox="0 0 960 1060" width="100%" xmlns="http://www.w3.org/2000/svg" style="font-family:'Inter','DM Sans',sans-serif; max-width:960px; display:block; margin:0 auto;">
+              <defs>
+                <marker id="ah" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#475569"/></marker>
+                <marker id="ah-blue" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#38bdf8"/></marker>
+                <marker id="ah-green" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#10b981"/></marker>
+                <marker id="ah-amber" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#f59e0b"/></marker>
+                <marker id="ah-red" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#ef4444"/></marker>
+                <marker id="ah-purple" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#a855f7"/></marker>
+                <marker id="ah-cyan" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#22d3ee"/></marker>
+              </defs>
+
+              <!-- ZONE A: CSP DEVSECOPS ENVIRONMENT -->
+              <rect x="14" y="8" width="932" height="132" rx="14" fill="rgba(22,211,238,0.03)" stroke="rgba(22,211,238,0.20)" stroke-width="1.2"/>
+              <text x="34" y="32" fill="#22d3ee" font-size="13" font-weight="700" letter-spacing="1.5">CSP DEVSECOPS ENVIRONMENT</text>
+              <text x="340" y="32" fill="#94a3b8" font-size="10">Separate IL-authorized cloud account — owned by CSP</text>
+              <text x="34" y="48" fill="#7a8a9e" font-size="9">Continuous Authority to Operate (cATO) · FIPS 140-2/3 · STIG-hardened runners</text>
+
+              <!-- Pipeline boxes row 1 -->
+              <rect x="30" y="60" width="130" height="30" rx="5" fill="rgba(22,211,238,0.06)" stroke="rgba(22,211,238,0.18)" stroke-width="0.8"/>
+              <text x="95" y="80" text-anchor="middle" fill="#22d3ee" font-size="10.5" font-weight="600">Source Repo</text>
+              <path d="M 160 75 L 178 75" stroke="#22d3ee" stroke-width="1.3" stroke-dasharray="4 3" class="flow-anim" marker-end="url(#ah-cyan)"/>
+
+              <rect x="183" y="60" width="130" height="30" rx="5" fill="rgba(22,211,238,0.06)" stroke="rgba(22,211,238,0.18)" stroke-width="0.8"/>
+              <text x="248" y="80" text-anchor="middle" fill="#22d3ee" font-size="10.5" font-weight="600">SAST / DAST</text>
+              <path d="M 313 75 L 331 75" stroke="#22d3ee" stroke-width="1.3" stroke-dasharray="4 3" class="flow-anim" marker-end="url(#ah-cyan)"/>
+
+              <rect x="336" y="60" width="135" height="30" rx="5" fill="rgba(22,211,238,0.06)" stroke="rgba(22,211,238,0.18)" stroke-width="0.8"/>
+              <text x="403" y="80" text-anchor="middle" fill="#22d3ee" font-size="10.5" font-weight="600">Container Scan</text>
+              <path d="M 471 75 L 489 75" stroke="#22d3ee" stroke-width="1.3" stroke-dasharray="4 3" class="flow-anim" marker-end="url(#ah-cyan)"/>
+
+              <rect x="494" y="60" width="130" height="30" rx="5" fill="rgba(22,211,238,0.06)" stroke="rgba(22,211,238,0.18)" stroke-width="0.8"/>
+              <text x="559" y="80" text-anchor="middle" fill="#22d3ee" font-size="10.5" font-weight="600">IaC Validation</text>
+
+              <!-- Pipeline boxes row 2 -->
+              <rect x="30" y="100" width="130" height="30" rx="5" fill="rgba(22,211,238,0.06)" stroke="rgba(22,211,238,0.18)" stroke-width="0.8"/>
+              <text x="95" y="120" text-anchor="middle" fill="#22d3ee" font-size="10.5" font-weight="600">Image Builder</text>
+              <path d="M 160 115 L 178 115" stroke="#22d3ee" stroke-width="1.3" stroke-dasharray="4 3" class="flow-anim" marker-end="url(#ah-cyan)"/>
+
+              <rect x="183" y="100" width="130" height="30" rx="5" fill="rgba(22,211,238,0.06)" stroke="rgba(22,211,238,0.18)" stroke-width="0.8"/>
+              <text x="248" y="120" text-anchor="middle" fill="#22d3ee" font-size="10.5" font-weight="600">Artifact Registry</text>
+
+              <text x="336" y="120" fill="#94a3b8" font-size="9.5">Hardened images · STIG baselines · Signed artifacts</text>
+
+              <!-- Agency label badges -->
+              <text x="700" y="72" fill="#7a8a9e" font-size="9" font-weight="600" letter-spacing="1">DEPLOYS TO:</text>
+              <rect x="700" y="80" width="54" height="20" rx="4" fill="rgba(168,85,247,0.10)" stroke="rgba(168,85,247,0.25)" stroke-width="0.8"/>
+              <text x="727" y="94" text-anchor="middle" fill="#d4bcfa" font-size="8.5" font-weight="600">USAF</text>
+              <rect x="760" y="80" width="55" height="20" rx="4" fill="rgba(168,85,247,0.10)" stroke="rgba(168,85,247,0.25)" stroke-width="0.8"/>
+              <text x="787" y="94" text-anchor="middle" fill="#d4bcfa" font-size="8.5" font-weight="600">Army</text>
+              <rect x="821" y="80" width="52" height="20" rx="4" fill="rgba(168,85,247,0.10)" stroke="rgba(168,85,247,0.25)" stroke-width="0.8"/>
+              <text x="847" y="94" text-anchor="middle" fill="#d4bcfa" font-size="8.5" font-weight="600">DISA</text>
+              <rect x="879" y="80" width="56" height="20" rx="4" fill="rgba(168,85,247,0.10)" stroke="rgba(168,85,247,0.25)" stroke-width="0.8"/>
+              <text x="907" y="94" text-anchor="middle" fill="#d4bcfa" font-size="8.5" font-weight="600">Navy</text>
+              <rect x="700" y="106" width="100" height="20" rx="4" fill="rgba(168,85,247,0.08)" stroke="rgba(168,85,247,0.15)" stroke-width="0.7"/>
+              <text x="750" y="120" text-anchor="middle" fill="#b8a0e0" font-size="8">Any IL2–IL6 env</text>
+
+              <!-- DEPLOY ARROW from DevSecOps to Agency environment -->
+              <path d="M 480 140 L 480 158 L 555 158 L 555 170" fill="none" stroke="#a855f7" stroke-width="2" stroke-dasharray="6 4" class="flow-anim" marker-end="url(#ah-purple)"/>
+              <text x="490" y="155" fill="#d4bcfa" font-size="10" font-weight="600">deploy signed artifacts</text>
+
+              <!-- ZONE B: TCCM GOVERNANCE BOUNDARY -->
+              <rect x="14" y="170" width="932" height="820" rx="16" fill="none" stroke="rgba(255,255,255,0.10)" stroke-width="1.8" stroke-dasharray="10 5"/>
+              <text x="936" y="190" text-anchor="end" fill="#94a3b8" font-size="11" font-weight="600" letter-spacing="1.5">TCCM GOVERNANCE BOUNDARY</text>
+              <text x="936" y="206" text-anchor="end" fill="#7a8a9e" font-size="9.5">Gov-appointed privileged access &amp; root credential management</text>
+
+              <!-- ZONE C: AGENCY-OWNED CLOUD ACCOUNT -->
+              <rect x="175" y="216" width="760" height="720" rx="14" fill="rgba(56,189,248,0.02)" stroke="rgba(56,189,248,0.12)" stroke-width="1.2"/>
+              <text x="195" y="240" fill="#38bdf8" font-size="13" font-weight="700" letter-spacing="1.5">AGENCY-OWNED CLOUD ACCOUNT</text>
+              <text x="195" y="258" fill="#7a8a9e" font-size="10">IL-authorized region · CONUS · DoD IP space · FIPS 140-2/3 validated · Any FedRAMP-authorized CSP</text>
+
+              <!-- VDSS ZONE -->
+              <rect x="195" y="274" width="240" height="260" rx="10" fill="rgba(245,158,11,0.04)" stroke="rgba(245,158,11,0.22)" stroke-width="1.2"/>
+              <text x="215" y="298" fill="#f59e0b" font-size="13" font-weight="700" letter-spacing="1">VDSS</text>
+              <text x="215" y="314" fill="#b8c5d6" font-size="10">Virtual Datacenter Security Stack</text>
+
+              <rect x="210" y="328" width="105" height="48" rx="5" fill="rgba(245,158,11,0.06)" stroke="rgba(245,158,11,0.15)" stroke-width="0.8"/>
+              <text x="262" y="349" text-anchor="middle" fill="#fbbf24" font-size="10.5" font-weight="600">Firewall</text>
+              <text x="262" y="364" text-anchor="middle" fill="#94a3b8" font-size="9">L3–L7</text>
+
+              <rect x="322" y="328" width="100" height="48" rx="5" fill="rgba(245,158,11,0.06)" stroke="rgba(245,158,11,0.15)" stroke-width="0.8"/>
+              <text x="372" y="349" text-anchor="middle" fill="#fbbf24" font-size="10.5" font-weight="600">WAF</text>
+              <text x="372" y="364" text-anchor="middle" fill="#94a3b8" font-size="9">Web App FW</text>
+
+              <rect x="210" y="384" width="105" height="48" rx="5" fill="rgba(245,158,11,0.06)" stroke="rgba(245,158,11,0.15)" stroke-width="0.8"/>
+              <text x="262" y="405" text-anchor="middle" fill="#fbbf24" font-size="10.5" font-weight="600">IDS / IPS</text>
+              <text x="262" y="420" text-anchor="middle" fill="#94a3b8" font-size="9">Detection</text>
+
+              <rect x="322" y="384" width="100" height="48" rx="5" fill="rgba(245,158,11,0.06)" stroke="rgba(245,158,11,0.15)" stroke-width="0.8"/>
+              <text x="372" y="405" text-anchor="middle" fill="#fbbf24" font-size="10.5" font-weight="600">Reverse Proxy</text>
+              <text x="372" y="420" text-anchor="middle" fill="#94a3b8" font-size="9">TLS term.</text>
+
+              <rect x="210" y="440" width="212" height="40" rx="5" fill="rgba(245,158,11,0.06)" stroke="rgba(245,158,11,0.15)" stroke-width="0.8"/>
+              <text x="316" y="458" text-anchor="middle" fill="#fbbf24" font-size="10.5" font-weight="600">VPC Flow Logs</text>
+              <text x="316" y="472" text-anchor="middle" fill="#94a3b8" font-size="9">Packet capture · NetFlow → CSSP</text>
+
+              <rect x="210" y="488" width="212" height="32" rx="5" fill="rgba(245,158,11,0.04)" stroke="rgba(245,158,11,0.10)" stroke-width="0.7"/>
+              <text x="316" y="509" text-anchor="middle" fill="#94a3b8" font-size="9.5">DDoS mitigation · GeoIP · ACLs</text>
+
+              <!-- MISSION OWNER VPC (YOUR PRODUCT) -->
+              <rect x="455" y="274" width="470" height="260" rx="12" fill="rgba(168,85,247,0.04)" stroke="#a855f7" stroke-width="2"/>
+              <rect x="455" y="274" width="470" height="260" rx="12" fill="none" stroke="rgba(168,85,247,0.06)" stroke-width="6"/>
+              <text x="475" y="298" fill="#a855f7" font-size="13" font-weight="800" letter-spacing="1">YOUR PRODUCT — MISSION OWNER VPC</text>
+              <text x="475" y="314" fill="#b8c5d6" font-size="10">Cloud Service Offering (CSO)</text>
+
+              <!-- Top row -->
+              <rect x="470" y="328" width="140" height="48" rx="5" fill="rgba(168,85,247,0.07)" stroke="rgba(168,85,247,0.18)" stroke-width="0.8"/>
+              <text x="540" y="349" text-anchor="middle" fill="#d4bcfa" font-size="10.5" font-weight="600">Compute</text>
+              <text x="540" y="364" text-anchor="middle" fill="#94a3b8" font-size="9">VMs / Containers</text>
+
+              <rect x="618" y="328" width="140" height="48" rx="5" fill="rgba(168,85,247,0.07)" stroke="rgba(168,85,247,0.18)" stroke-width="0.8"/>
+              <text x="688" y="349" text-anchor="middle" fill="#d4bcfa" font-size="10.5" font-weight="600">Database</text>
+              <text x="688" y="364" text-anchor="middle" fill="#94a3b8" font-size="9">Relational / NoSQL</text>
+
+              <rect x="766" y="328" width="140" height="48" rx="5" fill="rgba(168,85,247,0.07)" stroke="rgba(168,85,247,0.18)" stroke-width="0.8"/>
+              <text x="836" y="349" text-anchor="middle" fill="#d4bcfa" font-size="10.5" font-weight="600">Object Storage</text>
+              <text x="836" y="364" text-anchor="middle" fill="#94a3b8" font-size="9">FIPS endpoint</text>
+
+              <!-- Middle row -->
+              <rect x="470" y="384" width="140" height="48" rx="5" fill="rgba(168,85,247,0.07)" stroke="rgba(168,85,247,0.18)" stroke-width="0.8"/>
+              <text x="540" y="405" text-anchor="middle" fill="#d4bcfa" font-size="10.5" font-weight="600">Auth / IdP</text>
+              <text x="540" y="420" text-anchor="middle" fill="#94a3b8" font-size="9">DoD PKI · CAC</text>
+
+              <rect x="618" y="384" width="140" height="48" rx="5" fill="rgba(168,85,247,0.07)" stroke="rgba(168,85,247,0.18)" stroke-width="0.8"/>
+              <text x="688" y="405" text-anchor="middle" fill="#d4bcfa" font-size="10.5" font-weight="600">Message Bus</text>
+              <text x="688" y="420" text-anchor="middle" fill="#94a3b8" font-size="9">Queue / Stream</text>
+
+              <rect x="766" y="384" width="140" height="48" rx="5" fill="rgba(168,85,247,0.07)" stroke="rgba(168,85,247,0.18)" stroke-width="0.8"/>
+              <text x="836" y="405" text-anchor="middle" fill="#d4bcfa" font-size="10.5" font-weight="600">Secrets Mgmt</text>
+              <text x="836" y="420" text-anchor="middle" fill="#94a3b8" font-size="9">KMS · HSM</text>
+
+              <!-- Bottom row -->
+              <rect x="470" y="440" width="206" height="40" rx="5" fill="rgba(168,85,247,0.05)" stroke="rgba(168,85,247,0.12)" stroke-width="0.7"/>
+              <text x="573" y="458" text-anchor="middle" fill="#d4bcfa" font-size="10.5" font-weight="600">Load Balancer</text>
+              <text x="573" y="472" text-anchor="middle" fill="#7a8a9e" font-size="9">Internal · TLS 1.2+ only</text>
+
+              <rect x="684" y="440" width="222" height="40" rx="5" fill="rgba(168,85,247,0.05)" stroke="rgba(168,85,247,0.12)" stroke-width="0.7"/>
+              <text x="795" y="458" text-anchor="middle" fill="#d4bcfa" font-size="10.5" font-weight="600">VPN / Transit Gateway</text>
+              <text x="795" y="472" text-anchor="middle" fill="#7a8a9e" font-size="9">Cross-network peering · IPSec</text>
+
+              <!-- Bottom label -->
+              <rect x="470" y="488" width="436" height="32" rx="5" fill="rgba(168,85,247,0.03)" stroke="rgba(168,85,247,0.08)" stroke-width="0.6"/>
+              <text x="688" y="509" text-anchor="middle" fill="#94a3b8" font-size="10">DoD IP space · CONUS only · FedRAMP High+ baseline · AES-256 at rest · FIPS endpoints</text>
+
+              <!-- VDSS to Product arrows -->
+              <line x1="435" y1="366" x2="465" y2="366" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="6 3" class="flow-anim" marker-end="url(#ah-amber)"/>
+              <text x="437" y="358" fill="#fbbf24" font-size="9">inspected</text>
+              <line x1="435" y1="406" x2="465" y2="406" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="6 3" class="flow-anim" marker-end="url(#ah-amber)"/>
+
+              <!-- VDMS ZONE -->
+              <rect x="195" y="550" width="350" height="180" rx="10" fill="rgba(217,119,6,0.04)" stroke="rgba(217,119,6,0.18)" stroke-width="1.2"/>
+              <text x="215" y="574" fill="#d97706" font-size="13" font-weight="700" letter-spacing="1">VDMS</text>
+              <text x="290" y="574" fill="#b8c5d6" font-size="10">Virtual Datacenter Managed Services</text>
+
+              <rect x="210" y="588" width="108" height="44" rx="5" fill="rgba(217,119,6,0.06)" stroke="rgba(217,119,6,0.12)" stroke-width="0.8"/>
+              <text x="264" y="608" text-anchor="middle" fill="#fbbf24" font-size="10.5" font-weight="600">ACAS</text>
+              <text x="264" y="623" text-anchor="middle" fill="#94a3b8" font-size="9">Vuln scanning</text>
+
+              <rect x="326" y="588" width="108" height="44" rx="5" fill="rgba(217,119,6,0.06)" stroke="rgba(217,119,6,0.12)" stroke-width="0.8"/>
+              <text x="380" y="608" text-anchor="middle" fill="#fbbf24" font-size="10.5" font-weight="600">HBSS</text>
+              <text x="380" y="623" text-anchor="middle" fill="#94a3b8" font-size="9">Host security</text>
+
+              <rect x="210" y="640" width="108" height="44" rx="5" fill="rgba(217,119,6,0.06)" stroke="rgba(217,119,6,0.12)" stroke-width="0.8"/>
+              <text x="264" y="660" text-anchor="middle" fill="#fbbf24" font-size="10.5" font-weight="600">STIG Audit</text>
+              <text x="264" y="675" text-anchor="middle" fill="#94a3b8" font-size="9">Compliance</text>
+
+              <rect x="326" y="640" width="108" height="44" rx="5" fill="rgba(217,119,6,0.06)" stroke="rgba(217,119,6,0.12)" stroke-width="0.8"/>
+              <text x="380" y="660" text-anchor="middle" fill="#fbbf24" font-size="10.5" font-weight="600">Patch Mgmt</text>
+              <text x="380" y="675" text-anchor="middle" fill="#94a3b8" font-size="9">Automated</text>
+
+              <rect x="442" y="588" width="90" height="96" rx="5" fill="rgba(217,119,6,0.06)" stroke="rgba(217,119,6,0.12)" stroke-width="0.8"/>
+              <text x="487" y="626" text-anchor="middle" fill="#fbbf24" font-size="11" font-weight="700">SIEM</text>
+              <text x="487" y="644" text-anchor="middle" fill="#94a3b8" font-size="9">Log agg.</text>
+              <text x="487" y="658" text-anchor="middle" fill="#94a3b8" font-size="9">Correlation</text>
+              <text x="487" y="672" text-anchor="middle" fill="#7a8a9e" font-size="8">Alerting</text>
+
+              <rect x="210" y="692" width="322" height="28" rx="5" fill="rgba(217,119,6,0.04)" stroke="rgba(217,119,6,0.10)" stroke-width="0.7"/>
+              <text x="371" y="711" text-anchor="middle" fill="#94a3b8" font-size="9.5">Config Management · IaC enforcement · Golden image compliance</text>
+
+              <!-- CSSP VPC -->
+              <rect x="565" y="550" width="350" height="180" rx="10" fill="rgba(16,185,129,0.04)" stroke="rgba(16,185,129,0.18)" stroke-width="1.2"/>
+              <text x="585" y="574" fill="#10b981" font-size="13" font-weight="700" letter-spacing="1">CSSP VPC</text>
+              <text x="680" y="574" fill="#b8c5d6" font-size="10">Cybersecurity Service Provider</text>
+
+              <rect x="580" y="588" width="155" height="44" rx="5" fill="rgba(16,185,129,0.06)" stroke="rgba(16,185,129,0.12)" stroke-width="0.8"/>
+              <text x="657" y="608" text-anchor="middle" fill="#6ee7b7" font-size="10.5" font-weight="600">Log Replication</text>
+              <text x="657" y="623" text-anchor="middle" fill="#94a3b8" font-size="9">Cross-account sync</text>
+
+              <rect x="743" y="588" width="155" height="44" rx="5" fill="rgba(16,185,129,0.06)" stroke="rgba(16,185,129,0.12)" stroke-width="0.8"/>
+              <text x="820" y="608" text-anchor="middle" fill="#6ee7b7" font-size="10.5" font-weight="600">Stream Ingest</text>
+              <text x="820" y="623" text-anchor="middle" fill="#94a3b8" font-size="9">Real-time feeds</text>
+
+              <rect x="580" y="640" width="155" height="44" rx="5" fill="rgba(16,185,129,0.06)" stroke="rgba(16,185,129,0.12)" stroke-width="0.8"/>
+              <text x="657" y="660" text-anchor="middle" fill="#6ee7b7" font-size="10.5" font-weight="600">Monitoring</text>
+              <text x="657" y="675" text-anchor="middle" fill="#94a3b8" font-size="9">Metrics &amp; alarms</text>
+
+              <rect x="743" y="640" width="155" height="44" rx="5" fill="rgba(16,185,129,0.06)" stroke="rgba(16,185,129,0.12)" stroke-width="0.8"/>
+              <text x="820" y="660" text-anchor="middle" fill="#6ee7b7" font-size="10.5" font-weight="600">CSSP Agents</text>
+              <text x="820" y="675" text-anchor="middle" fill="#94a3b8" font-size="9">Endpoint telemetry</text>
+
+              <rect x="580" y="692" width="318" height="28" rx="5" fill="rgba(16,185,129,0.04)" stroke="rgba(16,185,129,0.10)" stroke-width="0.7"/>
+              <text x="739" y="711" text-anchor="middle" fill="#94a3b8" font-size="9.5">24/7 SOC · IR coordination · JFHQ-DoDIN situational awareness</text>
+
+              <!-- Cloud Security Services strip -->
+              <rect x="195" y="746" width="720" height="80" rx="10" fill="rgba(56,189,248,0.03)" stroke="rgba(56,189,248,0.12)" stroke-width="1"/>
+              <text x="215" y="768" fill="#38bdf8" font-size="12" font-weight="700" letter-spacing="1">CLOUD-NATIVE SECURITY SERVICES</text>
+              <text x="560" y="768" fill="#7a8a9e" font-size="10">Continuous monitoring &amp; compliance — CSP-agnostic equivalents</text>
+
+              <rect x="210" y="778" width="104" height="36" rx="5" fill="rgba(56,189,248,0.05)" stroke="rgba(56,189,248,0.12)" stroke-width="0.8"/>
+              <text x="262" y="801" text-anchor="middle" fill="#7dd3fc" font-size="10" font-weight="600">CSPM</text>
+
+              <rect x="322" y="778" width="96" height="36" rx="5" fill="rgba(56,189,248,0.05)" stroke="rgba(56,189,248,0.12)" stroke-width="0.8"/>
+              <text x="370" y="801" text-anchor="middle" fill="#7dd3fc" font-size="10" font-weight="600">Threat Intel</text>
+
+              <rect x="426" y="778" width="92" height="36" rx="5" fill="rgba(56,189,248,0.05)" stroke="rgba(56,189,248,0.12)" stroke-width="0.8"/>
+              <text x="472" y="801" text-anchor="middle" fill="#7dd3fc" font-size="10" font-weight="600">Audit Logs</text>
+
+              <rect x="526" y="778" width="82" height="36" rx="5" fill="rgba(56,189,248,0.05)" stroke="rgba(56,189,248,0.12)" stroke-width="0.8"/>
+              <text x="567" y="801" text-anchor="middle" fill="#7dd3fc" font-size="10" font-weight="600">Config</text>
+
+              <rect x="616" y="778" width="88" height="36" rx="5" fill="rgba(56,189,248,0.05)" stroke="rgba(56,189,248,0.12)" stroke-width="0.8"/>
+              <text x="660" y="801" text-anchor="middle" fill="#7dd3fc" font-size="10" font-weight="600">Inspector</text>
+
+              <rect x="712" y="778" width="70" height="36" rx="5" fill="rgba(56,189,248,0.05)" stroke="rgba(56,189,248,0.12)" stroke-width="0.8"/>
+              <text x="747" y="801" text-anchor="middle" fill="#7dd3fc" font-size="10" font-weight="600">IAM</text>
+
+              <rect x="790" y="778" width="86" height="36" rx="5" fill="rgba(56,189,248,0.05)" stroke="rgba(56,189,248,0.12)" stroke-width="0.8"/>
+              <text x="833" y="801" text-anchor="middle" fill="#7dd3fc" font-size="10" font-weight="600">Data Class.</text>
+
+              <!-- ANIMATED CROSS-ZONE TRAFFIC FLOWS -->
+              <!-- Product to CSSP (audit logs) -->
+              <path d="M 688 534 L 688 544 L 740 544 L 740 550" fill="none" stroke="#10b981" stroke-width="1.3" stroke-dasharray="6 4" class="flow-anim" marker-end="url(#ah-green)"/>
+              <text x="700" y="542" fill="#10b981" font-size="9">audit logs</text>
+
+              <!-- VDSS to CSSP (flow logs) -->
+              <path d="M 316 534 L 316 542 L 657 542 L 657 550" fill="none" stroke="#10b981" stroke-width="1.2" stroke-dasharray="6 4" class="flow-anim-slow" marker-end="url(#ah-green)"/>
+              <text x="478" y="540" fill="#10b981" font-size="8.5">VPC flow logs</text>
+
+              <!-- VDMS to CSSP feeds -->
+              <line x1="545" y1="636" x2="575" y2="636" stroke="#10b981" stroke-width="1.2" stroke-dasharray="6 4" class="flow-anim" marker-end="url(#ah-green)"/>
+              <text x="548" y="628" fill="#10b981" font-size="8.5">feeds</text>
+
+              <!-- VDMS to Product (mgmt traffic) -->
+              <path d="M 370 550 L 370 542 L 540 542 L 540 534" fill="none" stroke="#d97706" stroke-width="1" stroke-dasharray="4 4" class="flow-anim-slow"/>
+              <text x="445" y="548" fill="#d97706" font-size="8.5">mgmt</text>
+
+              <!-- Product to Cloud Security (findings) -->
+              <path d="M 688 534 L 688 540 L 555 540 L 555 746" fill="none" stroke="#38bdf8" stroke-width="1" stroke-dasharray="5 3" class="flow-anim-slow" marker-end="url(#ah-blue)"/>
+              <text x="560" y="736" fill="#38bdf8" font-size="8.5">findings</text>
+
+              <!-- Cloud Security to CSSP -->
+              <path d="M 800 778 L 800 738 L 820 738 L 820 730" fill="none" stroke="#10b981" stroke-width="1" stroke-dasharray="5 3" class="flow-anim-slow" marker-end="url(#ah-green)"/>
+
+              <!-- EXTERNAL NETWORKS (LEFT COLUMN) -->
+              <!-- DoD Users -->
+              <rect x="16" y="218" width="145" height="52" rx="8" fill="rgba(168,85,247,0.05)" stroke="rgba(168,85,247,0.15)" stroke-width="1"/>
+              <text x="88" y="242" text-anchor="middle" fill="#d4bcfa" font-size="11" font-weight="700">DoD Users</text>
+              <text x="88" y="258" text-anchor="middle" fill="#94a3b8" font-size="9">CAC / PKI auth</text>
+
+              <!-- NIPRNet -->
+              <rect x="16" y="302" width="145" height="52" rx="8" fill="rgba(56,189,248,0.06)" stroke="rgba(56,189,248,0.2)" stroke-width="1.2"/>
+              <text x="88" y="326" text-anchor="middle" fill="#38bdf8" font-size="12" font-weight="700">NIPRNet</text>
+              <text x="88" y="342" text-anchor="middle" fill="#94a3b8" font-size="9">Unclassified DoD</text>
+
+              <!-- CAP -->
+              <rect x="16" y="390" width="145" height="60" rx="8" fill="rgba(56,189,248,0.08)" stroke="rgba(56,189,248,0.3)" stroke-width="1.5"/>
+              <text x="88" y="416" text-anchor="middle" fill="#38bdf8" font-size="12" font-weight="700">CAP</text>
+              <text x="88" y="432" text-anchor="middle" fill="#b8c5d6" font-size="9.5">Cloud Access Point</text>
+              <text x="88" y="444" text-anchor="middle" fill="#7a8a9e" font-size="8">DISA-operated</text>
+
+              <!-- Internet -->
+              <rect x="16" y="484" width="145" height="44" rx="8" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+              <text x="88" y="506" text-anchor="middle" fill="#94a3b8" font-size="11" font-weight="600">Internet</text>
+              <text x="88" y="520" text-anchor="middle" fill="#7a8a9e" font-size="9">Commercial (IL2)</text>
+
+              <!-- SIPRNet -->
+              <rect x="16" y="560" width="145" height="52" rx="8" fill="rgba(239,68,68,0.06)" stroke="rgba(239,68,68,0.2)" stroke-width="1.2"/>
+              <text x="88" y="584" text-anchor="middle" fill="#ef4444" font-size="12" font-weight="700">SIPRNet</text>
+              <text x="88" y="600" text-anchor="middle" fill="#94a3b8" font-size="9">Classified (IL6)</text>
+
+              <!-- Client VPN -->
+              <rect x="16" y="646" width="145" height="46" rx="8" fill="rgba(168,85,247,0.04)" stroke="rgba(168,85,247,0.12)" stroke-width="1"/>
+              <text x="88" y="668" text-anchor="middle" fill="#d4bcfa" font-size="10" font-weight="600">Client VPN / ZTNA</text>
+              <text x="88" y="684" text-anchor="middle" fill="#94a3b8" font-size="9">IPSec · OIDC · MFA</text>
+
+              <!-- EXTERNAL FLOW ARROWS -->
+              <line x1="88" y1="270" x2="88" y2="297" stroke="#a855f7" stroke-width="1.3" stroke-dasharray="6 4" class="flow-anim-slow" marker-end="url(#ah-purple)"/>
+              <line x1="88" y1="354" x2="88" y2="385" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="6 4" class="flow-anim" marker-end="url(#ah-blue)"/>
+              <line x1="161" y1="420" x2="190" y2="420" stroke="#38bdf8" stroke-width="1.8" stroke-dasharray="6 4" class="flow-anim" marker-end="url(#ah-blue)"/>
+              <text x="167" y="412" fill="#38bdf8" font-size="9" font-weight="600">DoD</text>
+              <line x1="88" y1="484" x2="88" y2="455" stroke="#475569" stroke-width="1" stroke-dasharray="4 3" class="flow-anim-slow" marker-end="url(#ah)"/>
+              <text x="96" y="473" fill="#7a8a9e" font-size="8.5">IL2</text>
+              <path d="M 161 586 L 180 586 L 180 490 L 195 490" fill="none" stroke="#ef4444" stroke-width="1.2" stroke-dasharray="6 4" class="flow-anim-slow" opacity="0.6" marker-end="url(#ah-red)"/>
+              <text x="174" y="540" fill="#ef4444" font-size="8.5" opacity="0.7" transform="rotate(-90,174,540)">IL6 classified</text>
+
+              <!-- TCCM BAR -->
+              <rect x="195" y="838" width="720" height="52" rx="10" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+              <text x="555" y="862" text-anchor="middle" fill="#c0cbda" font-size="12" font-weight="700">TCCM — Trusted Cloud Credential Manager</text>
+              <text x="555" y="878" text-anchor="middle" fill="#94a3b8" font-size="10">Government-appointed · Root credentials · Privileged access · Not your cloud admin</text>
+
+              <!-- LEGEND -->
+              <rect x="16" y="1002" width="928" height="50" rx="8" fill="rgba(255,255,255,0.015)" stroke="rgba(255,255,255,0.06)" stroke-width="0.8"/>
+
+              <line x1="34" y1="1026" x2="58" y2="1026" stroke="#38bdf8" stroke-width="2"/>
+              <text x="64" y="1030" fill="#b8c5d6" font-size="9.5">DoD network</text>
+
+              <line x1="152" y1="1026" x2="176" y2="1026" stroke="#f59e0b" stroke-width="2" stroke-dasharray="6 3"/>
+              <text x="182" y="1030" fill="#b8c5d6" font-size="9.5">Inspected</text>
+
+              <line x1="248" y1="1026" x2="272" y2="1026" stroke="#10b981" stroke-width="1.5" stroke-dasharray="6 4"/>
+              <text x="278" y="1030" fill="#b8c5d6" font-size="9.5">Audit feeds</text>
+
+              <line x1="360" y1="1026" x2="384" y2="1026" stroke="#a855f7" stroke-width="2" stroke-dasharray="6 4"/>
+              <text x="390" y="1030" fill="#b8c5d6" font-size="9.5">Deploy / user</text>
+
+              <line x1="480" y1="1026" x2="504" y2="1026" stroke="#22d3ee" stroke-width="1.5" stroke-dasharray="4 3"/>
+              <text x="510" y="1030" fill="#b8c5d6" font-size="9.5">CI/CD</text>
+
+              <line x1="562" y1="1026" x2="586" y2="1026" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="6 4"/>
+              <text x="592" y="1030" fill="#b8c5d6" font-size="9.5">Classified</text>
+
+              <line x1="664" y1="1026" x2="688" y2="1026" stroke="#475569" stroke-width="1" stroke-dasharray="3 3"/>
+              <text x="694" y="1030" fill="#b8c5d6" font-size="9.5">Internal</text>
+
+              <rect x="760" y="1019" width="14" height="14" rx="3" fill="none" stroke="#a855f7" stroke-width="1.5"/>
+              <text x="780" y="1030" fill="#b8c5d6" font-size="9.5">CSO boundary</text>
+            </svg>
+          </div>
+
+          <div class="arch-callouts">
+            <div class="arch-callout">
+              <div class="ac-title">CSP vs Agency</div>
+              <p>Your DevSecOps pipeline lives in a separate CSP-owned cloud account. Signed artifacts deploy into agency-owned accounts (USAF, Army, DISA, Navy) — same architecture, any IL.</p>
+            </div>
+            <div class="arch-callout">
+              <div class="ac-title">CAP</div>
+              <p>DISA-operated boundary. Plan for East + West redundancy. Circuit provisioning takes months — start early.</p>
+            </div>
+            <div class="arch-callout">
+              <div class="ac-title">CSSP VPC</div>
+              <p>Non-negotiable at IL4+. Log replication, real-time streaming, and SOC coordination with JFHQ-DoDIN. Start MOU 6 months out.</p>
+            </div>
+            <div class="arch-callout">
+              <div class="ac-title">TCCM</div>
+              <p>Government-appointed by the Mission Owner's AO. Manages root credentials and privileged access. Not your cloud admin.</p>
+            </div>
+            <div class="arch-callout">
+              <div class="ac-title">CSP-Agnostic</div>
+              <p>This architecture applies across any FedRAMP-authorized CSP — terminology maps to equivalent services on each platform.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============ 04: 11-STEP JOURNEY ============ -->
+        <section id="journey" class="fade-section">
+          <div class="il-section-label">04 — The Authorization Journey</div>
+          <h2>11 Steps from Contact to Connection</h2>
+          <p class="lead-p">Per DoD Cloud Connection Process Guide v3 (December 2025). PA is granted to the CSO, not the CSP.</p>
+
+          <div class="journey-wrap">
+            <div class="journey-lane-label">CSP / CSO Journey — Steps 1-9</div>
+            <div class="journey-grid">
+              <div class="journey-step phase-early">
+                <div class="step-num">01</div>
+                <div class="step-title">Submit Initial Contact Form</div>
+                <div class="step-desc">Via DCAS portal to initiate DoD cloud registration</div>
+              </div>
+              <div class="journey-step phase-early">
+                <div class="step-num">02</div>
+                <div class="step-title">DoD Cloud Kickoff Meeting</div>
+                <div class="step-desc">Technical Exchange Meeting (TEM) with all stakeholders</div>
+              </div>
+              <div class="journey-step phase-mid">
+                <div class="step-num">03</div>
+                <div class="step-title">JVT Reviews Artifacts &amp; 3PAO Assessment</div>
+                <div class="step-desc">SSP, SAR, architecture diagram review</div>
+              </div>
+              <div class="journey-step phase-mid">
+                <div class="step-num">04</div>
+                <div class="step-title">Initial Risk Review &rarr; IATT &amp; CATC</div>
+                <div class="step-desc">Interim Authorization to Test and Cloud Authority to Connect issued</div>
+              </div>
+              <div class="journey-step phase-mid parallel-tag">
+                <div class="step-num">05</div>
+                <div class="step-title">JVT Artifact Validation</div>
+                <div class="step-desc">Runs concurrent with Step 6</div>
+              </div>
+              <div class="journey-step phase-mid parallel-tag">
+                <div class="step-num">06</div>
+                <div class="step-title">SCCA Connects CSO to CAP</div>
+                <div class="step-desc">Network connectivity established</div>
+              </div>
+              <div class="journey-step phase-pa">
+                <div class="step-num">07</div>
+                <div class="step-title">DSAWG Review &amp; Recommendation</div>
+                <div class="step-desc">Cross-service board reviews authorization package</div>
+              </div>
+              <div class="journey-step phase-pa">
+                <div class="step-num">08</div>
+                <div class="step-title">DISA AO Issues PA</div>
+                <div class="step-desc">Provisional Authorization granted to the CSO</div>
+              </div>
+              <div class="journey-step phase-sustain">
+                <div class="step-num">09</div>
+                <div class="step-title">Sustainment &amp; ConMon</div>
+                <div class="step-desc">Continuous monitoring, USCYBERCOM OPORD compliance begins</div>
+              </div>
+            </div>
+
+            <div class="journey-lane-label mission">Mission Owner — Steps 10-11</div>
+            <div class="journey-grid">
+              <div class="journey-step phase-mission">
+                <div class="step-num">10</div>
+                <div class="step-title">C-ITP Registration</div>
+                <div class="step-desc">Mission Owner registers Cloud IT Project via SNAP</div>
+              </div>
+              <div class="journey-step phase-mission">
+                <div class="step-num">11</div>
+                <div class="step-title">Mission Owner ATO</div>
+                <div class="step-desc">Authority to Operate — mission system goes live</div>
+              </div>
+            </div>
+
+            <div class="artifacts-card">
+              <div class="ac-label">Required Artifacts</div>
+              <p>SSP, SSP Addendum, SAP, Architecture Diagram, Onboarding Questionnaire, SNAP/PPSM Registration</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============ 05: HEATMAP ============ -->
+        <section id="heatmap" class="fade-section">
+          <div class="il-section-label">05 — Control Family Heatmap</div>
+          <h2>Where the Weight Falls</h2>
+          <p class="lead-p">Not all families scale equally. Some nearly double from IL4 High to IL5.</p>
+
+          <div class="heatmap-wrap">
+            <table class="heatmap">
+              <thead>
+                <tr>
+                  <th>Control Family</th>
+                  <th>Total</th>
+                  <th>IL2</th>
+                  <th>IL4M</th>
+                  <th>IL4H</th>
+                  <th>IL5</th>
+                  <th>IL6</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Access Control</td><td class="h3">65</td><td class="h2">43</td><td class="h2">43</td><td class="h3">50</td><td class="h4">61</td><td class="h5">65</td></tr>
+                <tr><td>Sys &amp; Comms Protection</td><td class="h3">67</td><td class="h1">33</td><td class="h1">33</td><td class="h2">38</td><td class="h4">59</td><td class="h5">67</td></tr>
+                <tr><td>Sys &amp; Services Acquisition</td><td class="h3">70</td><td class="h1">26</td><td class="h1">26</td><td class="h1">29</td><td class="h5">69</td><td class="h6">70</td></tr>
+                <tr><td>Sys &amp; Info Integrity</td><td class="h3">54</td><td class="h1">24</td><td class="h1">24</td><td class="h2">35</td><td class="h4">52</td><td class="h5">54</td></tr>
+                <tr><td>Config Management</td><td class="h2">43</td><td class="h1">27</td><td class="h1">27</td><td class="h2">34</td><td class="h3">43</td><td class="h3">43</td></tr>
+                <tr><td>Audit &amp; Accountability</td><td class="h2">37</td><td class="h1">17</td><td class="h1">17</td><td class="h1">27</td><td class="h3">35</td><td class="h3">37</td></tr>
+                <tr><td>Identification &amp; Auth</td><td class="h2">37</td><td class="h1">27</td><td class="h1">27</td><td class="h2">30</td><td class="h3">37</td><td class="h3">37</td></tr>
+                <tr><td>Contingency Planning</td><td class="h2">35</td><td class="h1">23</td><td class="h1">23</td><td class="h2">35</td><td class="h2">35</td><td class="h2">35</td></tr>
+                <tr><td>Incident Response</td><td class="h2">33</td><td class="h1">17</td><td class="h1">17</td><td class="h1">24</td><td class="h3">33</td><td class="h3">33</td></tr>
+                <tr><td>Physical &amp; Environmental</td><td class="h2">33</td><td class="h1">19</td><td class="h1">19</td><td class="h1">26</td><td class="h2">28</td><td class="h3">33</td></tr>
+                <tr><td>Supply Chain Risk Mgmt</td><td class="h1">22</td><td class="h1">12</td><td class="h1">12</td><td class="h1">14</td><td class="h2">22</td><td class="h2">22</td></tr>
+                <tr><td>Maintenance</td><td class="h1">23</td><td class="h0">11</td><td class="h0">11</td><td class="h0">13</td><td class="h1">20</td><td class="h2">23</td></tr>
+                <tr><td>Risk Assessment</td><td class="h1">18</td><td class="h0">11</td><td class="h0">11</td><td class="h0">13</td><td class="h1">17</td><td class="h1">18</td></tr>
+                <tr><td>Security Assessment &amp; Auth</td><td class="h1">20</td><td class="h1">14</td><td class="h1">14</td><td class="h1">16</td><td class="h1">20</td><td class="h1">20</td></tr>
+                <tr><td>Personnel Security</td><td class="h1">16</td><td class="h0">11</td><td class="h0">11</td><td class="h0">12</td><td class="h1">14</td><td class="h1">16</td></tr>
+                <tr><td>Media Protection</td><td class="h1">15</td><td class="h0">7</td><td class="h0">7</td><td class="h0">10</td><td class="h0">10</td><td class="h1">15</td></tr>
+                <tr><td>Awareness &amp; Training</td><td class="h0">12</td><td class="h0">6</td><td class="h0">6</td><td class="h0">6</td><td class="h1">12</td><td class="h1">12</td></tr>
+                <tr><td>Planning</td><td class="h0">11</td><td class="h0">7</td><td class="h0">7</td><td class="h0">7</td><td class="h0">11</td><td class="h0">11</td></tr>
+                <tr><td>DoD General Readiness</td><td class="h0">10</td><td class="h0">10</td><td class="h0">10</td><td class="h0">10</td><td class="h0">10</td><td class="h0">6</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>Biggest Jumps: IL4 High &rarr; IL5</h3>
+          <div class="jump-cards">
+            <div class="jump-card">
+              <div class="jc-family">Sys &amp; Services Acquisition (SA)</div>
+              <div class="jc-nums">29 &rarr; <span>69</span></div>
+              <div class="jc-pct">+138%</div>
+            </div>
+            <div class="jump-card">
+              <div class="jc-family">Sys &amp; Comms Protection (SC)</div>
+              <div class="jc-nums">38 &rarr; <span>59</span></div>
+              <div class="jc-pct">+55%</div>
+            </div>
+            <div class="jump-card">
+              <div class="jc-family">Sys &amp; Info Integrity (SI)</div>
+              <div class="jc-nums">35 &rarr; <span>52</span></div>
+              <div class="jc-pct">+49%</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============ 06: DATA OVERLAYS ============ -->
+        <section id="overlays" class="fade-section">
+          <div class="il-section-label">06 — Data Type Overlays</div>
+          <h2>Controls Stack by Data Type</h2>
+          <p class="lead-p">CNSSI 1253 overlays add controls based on the data your system processes. These are additive to your IL baseline.</p>
+
+          <div class="overlay-grid">
+            <div class="overlay-pill">
+              <span class="o-count">303</span>
+              <span class="o-name">NSS Overlay</span>
+              <div class="o-bar"><div class="o-fill" style="width:100%"></div></div>
+            </div>
+            <div class="overlay-pill">
+              <span class="o-count">249</span>
+              <span class="o-name">CUI Overlay</span>
+              <div class="o-bar"><div class="o-fill" style="width:82.2%"></div></div>
+            </div>
+            <div class="overlay-pill">
+              <span class="o-count">212</span>
+              <span class="o-name">Classified</span>
+              <div class="o-bar"><div class="o-fill" style="width:70%"></div></div>
+            </div>
+            <div class="overlay-pill">
+              <span class="o-count">138</span>
+              <span class="o-name">PHI / HIPAA</span>
+              <div class="o-bar"><div class="o-fill" style="width:45.5%"></div></div>
+            </div>
+            <div class="overlay-pill">
+              <span class="o-count">108</span>
+              <span class="o-name">Export Control</span>
+              <div class="o-bar"><div class="o-fill" style="width:35.6%"></div></div>
+            </div>
+            <div class="overlay-pill">
+              <span class="o-count">58</span>
+              <span class="o-name">PII / Privacy</span>
+              <div class="o-bar"><div class="o-fill" style="width:19.1%"></div></div>
+            </div>
+          </div>
+
+          <div class="callout warn">
+            <div class="callout-title">Cumulative Impact</div>
+            <p>An IL5 system processing CUI + PHI could face 588 baseline controls plus overlay deltas. Your SSP must document which overlays apply.</p>
+          </div>
+        </section>
+
+        <!-- ============ 07: PERSONNEL ============ -->
+        <section id="personnel" class="fade-section">
+          <div class="il-section-label">07 — Personnel &amp; Clearance Tiers</div>
+          <h2>Who Can Touch Your System</h2>
+          <p class="lead-p">Personnel investigation requirements escalate sharply by Impact Level. Source: CC SRG v1r6, Table 5-1.</p>
+
+          <div class="personnel-table-wrap">
+            <table class="personnel-table">
+              <thead>
+                <tr>
+                  <th class="th-label">Requirement</th>
+                  <th class="th-il2">IL2</th>
+                  <th class="th-il4">IL4</th>
+                  <th class="th-il5">IL5</th>
+                  <th class="th-il6">IL6</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Privileged Access</td>
+                  <td>Tier 1 / NACI</td>
+                  <td class="pt-low">Tier 3 / MBI</td>
+                  <td class="pt-med">Tier 3 / Secret</td>
+                  <td class="pt-high">Tier 5 / TS/SCI</td>
+                </tr>
+                <tr>
+                  <td>Non-Privileged</td>
+                  <td>N/A</td>
+                  <td>Tier 1</td>
+                  <td class="pt-med">Tier 3 / Secret</td>
+                  <td class="pt-high">Tier 5 / TS/SCI</td>
+                </tr>
+                <tr>
+                  <td>Citizenship</td>
+                  <td>No requirement</td>
+                  <td class="pt-low">U.S. Citizens</td>
+                  <td class="pt-med">U.S. Citizens</td>
+                  <td class="pt-high">U.S. Citizens</td>
+                </tr>
+                <tr>
+                  <td>Data Location</td>
+                  <td>Any</td>
+                  <td class="pt-low">CONUS</td>
+                  <td class="pt-med">CONUS</td>
+                  <td class="pt-high">CONUS</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- ============ 08: GRR GATES ============ -->
+        <section id="grr" class="fade-section">
+          <div class="il-section-label">08 — General Readiness Gates</div>
+          <h2>10 Pass/Fail Gates Before Assessment</h2>
+          <p class="lead-p">Binary requirements — you pass or you don't. Evaluated before a single control is assessed.</p>
+
+          <div class="grr-grid">
+            <div class="grr-card"><span class="grr-num">01</span><div class="grr-title">DoD PKI / CAC Authentication</div></div>
+            <div class="grr-card"><span class="grr-num">02</span><div class="grr-title">DoD IP Addressing (DISA NIC)</div></div>
+            <div class="grr-card"><span class="grr-num">03</span><div class="grr-title">U.S. Data Residency (CONUS)</div></div>
+            <div class="grr-card"><span class="grr-num">04</span><div class="grr-title">Mgmt Plane Segregation</div></div>
+            <div class="grr-card"><span class="grr-num">05</span><div class="grr-title">Personnel Requirements Met</div></div>
+            <div class="grr-card"><span class="grr-num">06</span><div class="grr-title">CAP Private Connections</div></div>
+            <div class="grr-card"><span class="grr-num">07</span><div class="grr-title">Internet Dependencies Documented</div></div>
+            <div class="grr-card"><span class="grr-num">08</span><div class="grr-title">NIPRNet Portal Access</div></div>
+            <div class="grr-card"><span class="grr-num">09</span><div class="grr-title">Backdoor Prevention</div></div>
+            <div class="grr-card"><span class="grr-num">10</span><div class="grr-title">Defense in Depth</div></div>
+          </div>
+        </section>
+
+        <!-- ============ 09: BOTTOM LINE ============ -->
+        <section id="bottomline" class="fade-section">
+          <div class="il-section-label">09 — Bottom Line</div>
+          <h2>What This Means for Your Product</h2>
+
+          <div class="bottom-cards">
+            <div class="bottom-card c-il4">
+              <h4>Targeting IL4</h4>
+              <ul>
+                <li>Start with FedRAMP High (429 controls)</li>
+                <li>Architect for CAP + DoD PKI from day one</li>
+                <li>Budget for CSSP engagement</li>
+                <li>Circuit provisioning takes months — start early</li>
+              </ul>
+            </div>
+            <div class="bottom-card c-il5">
+              <h4>Targeting IL5</h4>
+              <ul>
+                <li>Everything above + physically separated infrastructure</li>
+                <li>Full CNSSI 1253 NSS overlay (588 controls)</li>
+                <li>24/7 SOC with CSSP coordination</li>
+                <li>Supply chain controls across vendor ecosystem</li>
+              </ul>
+            </div>
+            <div class="bottom-card c-il6">
+              <h4>Targeting IL6</h4>
+              <ul>
+                <li>SIPRNet classified enclave</li>
+                <li>TEMPEST/EMSEC + continuous physical guards</li>
+                <li>618 controls with classified data handling</li>
+                <li>DISA retains pen testing rights</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="il-cta-section">
+            <p class="il-cta-text">DoD cloud authorization is a product architecture decision, not a compliance checkbox.</p>
+            <p class="il-cta-sub">Data sourced from NIST 800-53 Rev 5 · DoD CC SRG v1r6 (Dec 2025) · Cloud CPG v3 (Dec 2025) · CNSSI 1253</p>
+          </div>
+        </section>
+
+        </div><!-- /.il-container -->
+    </div><!-- /.il-content -->
+
+    <!-- Related Posts -->
+    <section class="py-16 bg-cyber-dark border-t border-cyber-border/30">
+        <div class="max-w-7xl mx-auto px-6">
+            <span class="section-label mb-4 block">Related Posts</span>
+            <h2 class="text-2xl md:text-3xl font-bold text-white mb-10">Continue Reading</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <a href="/blog/authorization-readiness-levels" class="blog-card block fade-in">
+                    <div class="h-40 overflow-hidden"><img src="/public/blog/authorization-readiness-levels.png" alt="Authorization Readiness Levels" class="w-full h-full object-cover" loading="lazy"></div>
+                    <div class="p-5">
+                        <div class="flex items-center justify-between mb-3"><span class="font-mono text-xs text-gray-500">Mar 26, 2026</span><span class="badge-amber font-mono text-xs px-2 py-0.5 rounded">Industry Insights</span></div>
+                        <h3 class="card-title text-white font-semibold mb-2 line-clamp-2 transition-colors">Authorization Readiness Levels: The Missing Dimension of Dual-Use Strategy</h3>
+                        <p class="text-gray-500 text-sm line-clamp-3 mb-4">A framework mapping 5 ATO pathways x 9 readiness levels for dual-use companies navigating FedRAMP, DoD RMF, Impact Level, cATO, and CMMC authorization.</p>
+                        <span class="text-cyber-green font-mono text-xs hover:underline">Read blog &gt;&gt;</span>
+                    </div>
+                </a>
+                <a href="/blog/ato-bottleneck-rethinking-authorization" class="blog-card block fade-in">
+                    <div class="h-40 overflow-hidden"><img src="/public/blog/ato-bottleneck.svg?v=4" alt="ATO Bottleneck" class="w-full h-full object-cover" loading="lazy"></div>
+                    <div class="p-5">
+                        <div class="flex items-center justify-between mb-3"><span class="font-mono text-xs text-gray-500">Mar 5, 2026</span><span class="badge-green font-mono text-xs px-2 py-0.5 rounded">Industry Insights</span></div>
+                        <h3 class="card-title text-white font-semibold mb-2 line-clamp-2 transition-colors">The ATO Bottleneck: Why Authorization Takes So Long and What Actually Fixes It</h3>
+                        <p class="text-gray-500 text-sm line-clamp-3 mb-4">The ATO process was designed to manage risk. Instead, it has become the risk — delaying deployments by 12 to 18 months.</p>
+                        <span class="text-cyber-green font-mono text-xs hover:underline">Read blog &gt;&gt;</span>
+                    </div>
+                </a>
+                <a href="/blog/fedramp-cicd-pipeline-compliance" class="blog-card block fade-in">
+                    <div class="h-40 overflow-hidden"><img src="/public/blog/cicd-fedramp.svg?v=3" alt="CI/CD Pipeline Compliance" class="w-full h-full object-cover" loading="lazy"></div>
+                    <div class="p-5">
+                        <div class="flex items-center justify-between mb-3"><span class="font-mono text-xs text-gray-500">Mar 7, 2026</span><span class="badge-purple font-mono text-xs px-2 py-0.5 rounded">Engineering</span></div>
+                        <h3 class="card-title text-white font-semibold mb-2 line-clamp-2 transition-colors">Building a Compliant CI/CD Pipeline for Public Sector: GitHub, GitLab, and the Authorization Boundary</h3>
+                        <p class="text-gray-500 text-sm line-clamp-3 mb-4">A practical guide to architecting a CI/CD pipeline across the authorization boundary for FedRAMP, DoW IL, and agency ATO environments.</p>
+                        <span class="text-cyber-green font-mono text-xs hover:underline">Read blog &gt;&gt;</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-20 bg-cyber-black border-t border-cyber-border/30">
+        <div class="relative max-w-4xl mx-auto px-6 text-center">
+            <span class="section-label mb-4 block">Get Started</span>
+            <h2 class="text-3xl md:text-4xl font-bold mb-6"><span class="text-white">Ready to Secure Your</span><br><span class="text-cyber-green">Software Delivery?</span></h2>
+            <p class="text-lg text-gray-400 mb-10 max-w-2xl mx-auto">See how Optimal can accelerate your path to ATO while strengthening your security posture.</p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="/demo" class="btn-platform text-lg px-8 py-4 rounded">Request Demo</a>
+                <a href="https://app.gooptimal.io" target="_blank" class="btn-outline text-lg px-8 py-4 rounded">Get Started</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-cyber-black border-t border-cyber-border py-12">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                <div class="flex items-center gap-3"><img src="/public/optimal-logo.png" alt="Optimal Logo" class="w-8 h-8"><span class="font-bold text-lg text-white">Optimal</span></div>
+                <p class="text-gray-500 text-sm font-mono">&copy; 2026 Optimal. All rights reserved.</p>
+                <div class="flex items-center gap-4">
+                    <a href="https://github.com/optimal-cyber" target="_blank" class="text-gray-400 hover:text-cyber-green transition-colors"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+                    <a href="https://www.linkedin.com/company/111329653" target="_blank" class="text-gray-400 hover:text-cyber-green transition-colors"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileMenuBtn && mobileMenu) { mobileMenuBtn.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); }); }
+
+        // Fade-in observer for blog elements
+        const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); }); }, { threshold: 0.1 });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Fade-section observer for IL content sections
+        const ilObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+        document.querySelectorAll('.fade-section').forEach(function(el) {
+            ilObserver.observe(el);
+        });
+
+        // TOC active state
+        var sections = document.querySelectorAll('.il-content section[id]');
+        var dots = document.querySelectorAll('.toc-dot');
+        window.addEventListener('scroll', function() {
+            var current = '';
+            sections.forEach(function(section) {
+                var top = section.offsetTop - 200;
+                if (window.scrollY >= top) {
+                    current = section.id;
+                }
+            });
+            dots.forEach(function(dot) {
+                dot.classList.remove('active');
+                if (dot.getAttribute('href') === '#' + current) {
+                    dot.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
