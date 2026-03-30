@@ -57,7 +57,7 @@
   <text x="112" y="84" fill="#38bdf8" font-family="'JetBrains Mono','SF Mono',monospace" font-size="11" letter-spacing="3" text-transform="uppercase" font-weight="700">DEEP DIVE</text>
 
   <!-- Title -->
-  <text x="60" y="130" fill="url(#title-grad)" font-family="Inter,'Helvetica Neue',sans-serif" font-size="36" font-weight="800" letter-spacing="-0.5">Navigating DoD</text>
+  <text x="60" y="130" fill="url(#title-grad)" font-family="Inter,'Helvetica Neue',sans-serif" font-size="36" font-weight="800" letter-spacing="-0.5">Navigating DoW</text>
   <text x="60" y="172" fill="url(#title-grad)" font-family="Inter,'Helvetica Neue',sans-serif" font-size="36" font-weight="800" letter-spacing="-0.5">Impact Level</text>
   <text x="60" y="214" fill="url(#title-grad)" font-family="Inter,'Helvetica Neue',sans-serif" font-size="36" font-weight="800" letter-spacing="-0.5">Certification</text>
 
@@ -111,7 +111,7 @@
   <text x="490" y="182" fill="#f59e0b" font-family="'JetBrains Mono',monospace" font-size="14" font-weight="700">IL4</text>
   <rect x="540" y="168" width="590" height="24" rx="5" fill="rgba(255,255,255,0.02)"/>
   <rect x="540" y="168" width="408" height="24" rx="5" fill="rgba(245,158,11,0.5)" stroke="rgba(245,158,11,0.3)" stroke-width="0.5"/>
-  <text x="555" y="184" fill="rgba(255,255,255,0.8)" font-family="'JetBrains Mono',monospace" font-size="10" font-weight="600">FedRAMP High + DoD</text>
+  <text x="555" y="184" fill="rgba(255,255,255,0.8)" font-family="'JetBrains Mono',monospace" font-size="10" font-weight="600">FedRAMP High + DoW</text>
   <text x="958" y="184" fill="#f1f5f9" font-family="'JetBrains Mono',monospace" font-size="13" font-weight="700">429</text>
   <text x="994" y="184" fill="#38bdf8" font-family="'JetBrains Mono',monospace" font-size="10">+84</text>
 
