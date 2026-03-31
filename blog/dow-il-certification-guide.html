@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Navigating DoW Impact Level Certification — A Cloud-Native Product's Guide - Optimal Blog</title>
-    <meta name="description" content="622 controls, 20 families, 4 impact levels, 11 steps to Provisional Authorization. The visual guide for cloud-native companies navigating DoW IL certification.">
-    <meta name="keywords" content="DoW, Impact Level, IL2, IL4, IL5, IL6, FedRAMP, DISA, CC SRG, NIST 800-53, CNSSI 1253, cloud authorization, SCCA, PA, Provisional Authorization">
+    <meta name="description" content="622+ controls, 20 families, 5 impact levels, 11 steps to Provisional Authorization. The visual guide for cloud-native companies navigating DoW IL certification.">
+    <meta name="keywords" content="DoW, Impact Level, IL2, IL4, IL5, IL6, Top Secret, JWICS, TS/SCI, FedRAMP, DISA, CC SRG, NIST 800-53, CNSSI 1253, cloud authorization, SCCA, PA, Provisional Authorization">
     <link rel="canonical" href="https://gooptimal.io/blog/dow-il-certification-guide">
 
     <link rel="icon" type="image/png" href="/public/optimal-logo.png">
     <link rel="shortcut icon" type="image/png" href="/public/optimal-logo.png">
     <meta property="og:title" content="Navigating DoW Impact Level Certification — A Cloud-Native Product's Guide">
-    <meta property="og:description" content="622 controls, 20 families, 4 impact levels, 11 steps to Provisional Authorization. The visual guide for cloud-native companies navigating DoW IL certification.">
+    <meta property="og:description" content="622+ controls, 20 families, 5 impact levels, 11 steps to Provisional Authorization. The visual guide for cloud-native companies navigating DoW IL certification.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://gooptimal.io/blog/dow-il-certification-guide">
     <meta property="og:image" content="https://gooptimal.io/public/blog/dow-il-certification.svg">
@@ -21,7 +21,7 @@
     <meta property="article:section" content="Industry Insights">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Navigating DoW Impact Level Certification — A Cloud-Native Product's Guide">
-    <meta name="twitter:description" content="622 controls, 20 families, 4 impact levels, 11 steps to Provisional Authorization. The visual guide for cloud-native companies navigating DoW IL certification.">
+    <meta name="twitter:description" content="622+ controls, 20 families, 5 impact levels, 11 steps to Provisional Authorization. The visual guide for cloud-native companies navigating DoW IL certification.">
     <meta name="twitter:image" content="https://gooptimal.io/public/blog/dow-il-certification.svg">
 
     <script type="application/ld+json">
@@ -29,7 +29,7 @@
         "@context": "https://schema.org",
         "@type": "BlogPosting",
         "headline": "Navigating DoW Impact Level Certification — A Cloud-Native Product's Guide",
-        "description": "622 controls, 20 families, 4 impact levels, 11 steps to Provisional Authorization. The visual guide for cloud-native companies navigating DoW IL certification.",
+        "description": "622+ controls, 20 families, 5 impact levels, 11 steps to Provisional Authorization. The visual guide for cloud-native companies navigating DoW IL certification.",
         "datePublished": "2026-03-30T00:00:00Z",
         "dateModified": "2026-03-30T00:00:00Z",
         "author": { "@type": "Person", "name": "Ryan Gutwein" },
@@ -38,7 +38,7 @@
         "url": "https://gooptimal.io/blog/dow-il-certification-guide",
         "image": "https://gooptimal.io/public/blog/dow-il-certification.svg",
         "articleSection": "Industry Insights",
-        "wordCount": 6000
+        "wordCount": 6500
     }
     </script>
 
@@ -144,6 +144,7 @@
           --il4h: #d97706;
           --il5: #a855f7;
           --il6: #ef4444;
+          --ts: #f472b6;
         }
 
         .il-container { max-width:1060px; margin:0 auto; padding:0 28px; position:relative; z-index:1; }
@@ -239,6 +240,8 @@
         .esc-label.c-il4h { color:var(--il4h); }
         .esc-label.c-il5 { color:var(--il5); }
         .esc-label.c-il6 { color:var(--il6); }
+        .esc-label.c-ts { color:var(--ts); }
+        .esc-fill.ts { background: linear-gradient(90deg, rgba(244,114,182,0.75), rgba(244,114,182,0.4)); }
         .esc-track { height:38px; background:rgba(255,255,255,0.03); border-radius:8px; overflow:hidden; position:relative; }
         .esc-fill {
           height:100%; border-radius:8px; display:flex; align-items:center; padding:0 14px;
@@ -619,9 +622,9 @@ document.head.appendChild(o)}initApollo();</script>
                 <span class="badge-amber font-mono text-xs px-3 py-1 rounded">Deep Dive | March 2026</span>
             </div>
             <h1 class="text-4xl md:text-6xl font-bold text-white mb-4 leading-tight">Navigating DoW Impact Level Certification</h1>
-            <p class="text-xl md:text-2xl text-gray-300 mb-3 max-w-3xl mx-auto">A Cloud-Native Product's Guide to IL2, IL4, IL5, and IL6 Authorization</p>
+            <p class="text-xl md:text-2xl text-gray-300 mb-3 max-w-3xl mx-auto">A Cloud-Native Product's Guide to IL2, IL4, IL5, IL6, and Top Secret Authorization</p>
             <p class="text-sm text-gray-500 font-mono mb-2">Ryan Gutwein</p>
-            <p class="text-sm text-gray-400 mb-6">622 controls. 20 families. 4 impact levels. 11 steps to Provisional Authorization.</p>
+            <p class="text-sm text-gray-400 mb-6">622+ controls. 20 families. 5 impact levels. 11 steps to Provisional Authorization.</p>
             <!-- Hero visual summary -->
             <div class="flex items-center justify-center gap-3 mb-10 flex-wrap">
                 <span class="font-mono text-xs px-3 py-1.5 rounded border border-cyber-border bg-cyber-gray/50 text-gray-300">CC SRG v1r6</span>
@@ -667,7 +670,7 @@ document.head.appendChild(o)}initApollo();</script>
           <div class="il-hero-left">
             <div class="il-hero-eyebrow">Deep Dive</div>
             <h1>Navigating DoW Impact Level Certification as a Cloud-Native Product</h1>
-            <p class="il-hero-sub">622 controls. 20 families. 4 impact levels. From FedRAMP baseline to Provisional Authorization — the visual guide.</p>
+            <p class="il-hero-sub">622+ controls. 20 families. 5 impact levels. From FedRAMP baseline to Provisional Authorization — the visual guide.</p>
             <div class="il-hero-meta">
               <span><span class="dot"></span> Ryan Gutwein</span>
               <span><span class="dot"></span> Optimal Labs / Iron Echelon</span>
@@ -675,9 +678,9 @@ document.head.appendChild(o)}initApollo();</script>
             </div>
           </div>
           <div class="il-hero-stats">
-            <div class="il-hero-stat"><span class="stat-num">622</span><span class="stat-label">Controls</span></div>
+            <div class="il-hero-stat"><span class="stat-num">622+</span><span class="stat-label">Controls</span></div>
             <div class="il-hero-stat"><span class="stat-num">20</span><span class="stat-label">Families</span></div>
-            <div class="il-hero-stat"><span class="stat-num">4</span><span class="stat-label">Impact Levels</span></div>
+            <div class="il-hero-stat"><span class="stat-num">5</span><span class="stat-label">Impact Levels</span></div>
             <div class="il-hero-stat"><span class="stat-num">11</span><span class="stat-label">Steps to PA</span></div>
           </div>
         </header>
@@ -685,8 +688,8 @@ document.head.appendChild(o)}initApollo();</script>
         <!-- ============ 01: LANDSCAPE ============ -->
         <section id="landscape" class="fade-section">
           <div class="il-section-label">01 — The Landscape</div>
-          <h2>622 Controls. Four Impact Levels. One Framework.</h2>
-          <p class="lead-p">The DoW CC SRG Rev 5 layers DoW-specific requirements on FedRAMP baselines across IL2, IL4, IL5, and IL6.</p>
+          <h2>622+ Controls. Five Impact Levels. One Framework.</h2>
+          <p class="lead-p">The DoW CC SRG Rev 5 layers DoW-specific requirements on FedRAMP baselines across IL2, IL4, IL5, IL6, and Top Secret (JWICS).</p>
 
           <div class="esc-chart">
             <div class="esc-row">
@@ -714,12 +717,22 @@ document.head.appendChild(o)}initApollo();</script>
               <div class="esc-track"><div class="esc-fill il6" style="width:99.4%">Classified + TEMPEST</div></div>
               <div class="esc-count">618 <span class="esc-delta">+30</span></div>
             </div>
+            <div class="esc-row">
+              <div class="esc-label c-ts">Top Secret</div>
+              <div class="esc-track"><div class="esc-fill ts" style="width:100%">IL6 + Classified Overlay + JWICS</div></div>
+              <div class="esc-count">618+ <span class="esc-delta">+TS overlay</span></div>
+            </div>
           </div>
 
           <div class="callout critical">
             <div class="callout-title">CC SRG v1r6 — December 2025</div>
             <p>IL5 now mandates NSS controls from CNSSI 1253 per CNSSP-32 — a 37% increase over IL4 High. FedRAMP High is the mandatory floor. There is no longer a path to IL5 using FedRAMP Moderate.</p>
             <span class="source">Source: CC SRG v1r6, Section 5.1</span>
+          </div>
+
+          <div class="callout" style="border-color:var(--ts); background:rgba(244,114,182,0.05);">
+            <div class="callout-title" style="color:var(--ts);">Beyond IL6 — Top Secret / JWICS</div>
+            <p>The CC SRG formally defines IL2 through IL6. However, Top Secret / SCI workloads operate on JWICS (Joint Worldwide Intelligence Communications System) under IC-directed authorization, applying IL6 controls plus a classified overlay. JWICS environments require SCIF-grade facilities, TS/SCI-cleared personnel, and physical separation from all unclassified and non-federal infrastructure.</p>
           </div>
         </section>
 
@@ -729,22 +742,24 @@ document.head.appendChild(o)}initApollo();</script>
           <h2>Which Impact Level Do You Need?</h2>
 
           <div class="decision-tree-wrap">
-            <svg viewBox="0 0 900 370" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;max-width:900px;display:block;margin:0 auto;">
+            <svg viewBox="0 0 1100 370" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;max-width:1100px;display:block;margin:0 auto;">
               <!-- Start node -->
-              <rect x="300" y="20" width="300" height="50" rx="25" fill="#111c2e" stroke="#38bdf8" stroke-width="1.5"/>
-              <text x="450" y="50" text-anchor="middle" fill="#38bdf8" font-size="13" font-weight="600">What data will your product handle?</text>
+              <rect x="400" y="20" width="300" height="50" rx="25" fill="#111c2e" stroke="#38bdf8" stroke-width="1.5"/>
+              <text x="550" y="50" text-anchor="middle" fill="#38bdf8" font-size="13" font-weight="600">What data will your product handle?</text>
 
               <!-- Lines from start to branches -->
-              <line x1="350" y1="70" x2="110" y2="130" stroke="#334155" stroke-width="1.2"/>
-              <line x1="420" y1="70" x2="320" y2="130" stroke="#334155" stroke-width="1.2"/>
-              <line x1="480" y1="70" x2="560" y2="130" stroke="#334155" stroke-width="1.2"/>
-              <line x1="550" y1="70" x2="770" y2="130" stroke="#334155" stroke-width="1.2"/>
+              <line x1="420" y1="70" x2="110" y2="130" stroke="#334155" stroke-width="1.2"/>
+              <line x1="470" y1="70" x2="320" y2="130" stroke="#334155" stroke-width="1.2"/>
+              <line x1="530" y1="70" x2="530" y2="130" stroke="#334155" stroke-width="1.2"/>
+              <line x1="600" y1="70" x2="740" y2="130" stroke="#334155" stroke-width="1.2"/>
+              <line x1="680" y1="70" x2="960" y2="130" stroke="#334155" stroke-width="1.2"/>
 
               <!-- Branch labels -->
-              <text x="210" y="100" text-anchor="middle" fill="#8899ad" font-size="10">CUI (Public-facing)</text>
-              <text x="360" y="108" text-anchor="middle" fill="#8899ad" font-size="10">CUI (Mission)</text>
+              <text x="240" y="100" text-anchor="middle" fill="#8899ad" font-size="10">CUI (Public-facing)</text>
+              <text x="380" y="108" text-anchor="middle" fill="#8899ad" font-size="10">CUI (Mission)</text>
               <text x="530" y="108" text-anchor="middle" fill="#8899ad" font-size="10">CUI / NSS</text>
               <text x="680" y="100" text-anchor="middle" fill="#8899ad" font-size="10">Classified SECRET</text>
+              <text x="870" y="100" text-anchor="middle" fill="#8899ad" font-size="10">Classified TS/SCI</text>
 
               <!-- IL2 Node -->
               <rect x="30" y="130" width="160" height="105" rx="12" fill="rgba(34,197,94,0.08)" stroke="#22c55e" stroke-width="1.5"/>
@@ -761,57 +776,71 @@ document.head.appendChild(o)}initApollo();</script>
               <text x="320" y="216" text-anchor="middle" fill="#8899ad" font-size="10">CAP + DoW PKI</text>
 
               <!-- IL5 Node -->
-              <rect x="480" y="130" width="160" height="105" rx="12" fill="rgba(168,85,247,0.08)" stroke="#a855f7" stroke-width="1.5"/>
-              <text x="560" y="158" text-anchor="middle" fill="#a855f7" font-size="22" font-weight="800">IL5</text>
-              <text x="560" y="180" text-anchor="middle" fill="#b0bfcf" font-size="11">588 controls</text>
-              <text x="560" y="197" text-anchor="middle" fill="#8899ad" font-size="10">CNSSI 1253 NSS</text>
-              <text x="560" y="216" text-anchor="middle" fill="#8899ad" font-size="10">Dedicated infra</text>
+              <rect x="450" y="130" width="160" height="105" rx="12" fill="rgba(168,85,247,0.08)" stroke="#a855f7" stroke-width="1.5"/>
+              <text x="530" y="158" text-anchor="middle" fill="#a855f7" font-size="22" font-weight="800">IL5</text>
+              <text x="530" y="180" text-anchor="middle" fill="#b0bfcf" font-size="11">588 controls</text>
+              <text x="530" y="197" text-anchor="middle" fill="#8899ad" font-size="10">CNSSI 1253 NSS</text>
+              <text x="530" y="216" text-anchor="middle" fill="#8899ad" font-size="10">Dedicated infra</text>
 
               <!-- IL6 Node -->
-              <rect x="700" y="130" width="160" height="105" rx="12" fill="rgba(239,68,68,0.08)" stroke="#ef4444" stroke-width="1.5"/>
-              <text x="780" y="158" text-anchor="middle" fill="#ef4444" font-size="22" font-weight="800">IL6</text>
-              <text x="780" y="180" text-anchor="middle" fill="#b0bfcf" font-size="11">618 controls</text>
-              <text x="780" y="197" text-anchor="middle" fill="#8899ad" font-size="10">CNSSI 1253 + TEMPEST</text>
-              <text x="780" y="216" text-anchor="middle" fill="#8899ad" font-size="10">SIPRNet classified</text>
+              <rect x="660" y="130" width="160" height="105" rx="12" fill="rgba(239,68,68,0.08)" stroke="#ef4444" stroke-width="1.5"/>
+              <text x="740" y="158" text-anchor="middle" fill="#ef4444" font-size="22" font-weight="800">IL6</text>
+              <text x="740" y="180" text-anchor="middle" fill="#b0bfcf" font-size="11">618 controls</text>
+              <text x="740" y="197" text-anchor="middle" fill="#8899ad" font-size="10">CNSSI 1253 + TEMPEST</text>
+              <text x="740" y="216" text-anchor="middle" fill="#8899ad" font-size="10">SIPRNet classified</text>
+
+              <!-- Top Secret Node -->
+              <rect x="880" y="130" width="170" height="105" rx="12" fill="rgba(244,114,182,0.08)" stroke="#f472b6" stroke-width="1.5"/>
+              <text x="965" y="155" text-anchor="middle" fill="#f472b6" font-size="18" font-weight="800">Top Secret</text>
+              <text x="965" y="177" text-anchor="middle" fill="#b0bfcf" font-size="11">618+ controls</text>
+              <text x="965" y="194" text-anchor="middle" fill="#8899ad" font-size="10">IL6 + Classified Overlay</text>
+              <text x="965" y="211" text-anchor="middle" fill="#8899ad" font-size="10">JWICS · TS/SCI</text>
 
               <!-- Delta arrows between nodes -->
               <line x1="190" y1="183" x2="240" y2="183" stroke="#334155" stroke-width="1" stroke-dasharray="4"/>
               <text x="215" y="176" text-anchor="middle" fill="#38bdf8" font-size="10" font-weight="700">+84</text>
 
-              <line x1="400" y1="183" x2="480" y2="183" stroke="#334155" stroke-width="1" stroke-dasharray="4"/>
-              <text x="440" y="176" text-anchor="middle" fill="#a855f7" font-size="10" font-weight="700">+159</text>
+              <line x1="400" y1="183" x2="450" y2="183" stroke="#334155" stroke-width="1" stroke-dasharray="4"/>
+              <text x="425" y="176" text-anchor="middle" fill="#a855f7" font-size="10" font-weight="700">+159</text>
 
-              <line x1="640" y1="183" x2="700" y2="183" stroke="#334155" stroke-width="1" stroke-dasharray="4"/>
-              <text x="670" y="176" text-anchor="middle" fill="#ef4444" font-size="10" font-weight="700">+30</text>
+              <line x1="610" y1="183" x2="660" y2="183" stroke="#334155" stroke-width="1" stroke-dasharray="4"/>
+              <text x="635" y="176" text-anchor="middle" fill="#ef4444" font-size="10" font-weight="700">+30</text>
+
+              <line x1="820" y1="183" x2="880" y2="183" stroke="#334155" stroke-width="1" stroke-dasharray="4"/>
+              <text x="850" y="176" text-anchor="middle" fill="#f472b6" font-size="10" font-weight="700">+overlay</text>
 
               <!-- Key insight -->
-              <rect x="200" y="280" width="500" height="44" rx="10" fill="#111c2e" stroke="rgba(168,85,247,0.2)" stroke-width="1"/>
-              <text x="450" y="306" text-anchor="middle" fill="#a78bfa" font-size="12" font-weight="600">The IL4 to IL5 jump is not incremental — it's a fundamentally different posture.</text>
+              <rect x="300" y="280" width="500" height="44" rx="10" fill="#111c2e" stroke="rgba(168,85,247,0.2)" stroke-width="1"/>
+              <text x="550" y="306" text-anchor="middle" fill="#a78bfa" font-size="12" font-weight="600">The IL4 to IL5 jump is not incremental — it's a fundamentally different posture.</text>
             </svg>
           </div>
 
           <!-- Comparison Strip -->
-          <div class="compare-strip">
+          <div class="compare-strip" style="grid-template-columns: 140px repeat(5, 1fr);">
             <div class="cs-header" style="background:var(--bg-card); color:var(--text-muted);"></div>
             <div class="cs-header il2">IL2</div>
             <div class="cs-header il4">IL4</div>
             <div class="cs-header il5">IL5</div>
             <div class="cs-header il6">IL6</div>
+            <div class="cs-header" style="color:var(--ts);">Top Secret</div>
 
             <div class="cs-row-label">Controls</div>
-            <div class="cs-cell">345</div><div class="cs-cell">429</div><div class="cs-cell">588</div><div class="cs-cell">618</div>
+            <div class="cs-cell">345</div><div class="cs-cell">429</div><div class="cs-cell">588</div><div class="cs-cell">618</div><div class="cs-cell">618+</div>
 
             <div class="cs-row-label">Baseline</div>
-            <div class="cs-cell">FedRAMP Mod</div><div class="cs-cell">FedRAMP High</div><div class="cs-cell">CNSSI 1253</div><div class="cs-cell">CNSSI 1253+</div>
+            <div class="cs-cell">FedRAMP Mod</div><div class="cs-cell">FedRAMP High</div><div class="cs-cell">CNSSI 1253</div><div class="cs-cell">CNSSI 1253+</div><div class="cs-cell">Level 6 + Classified Overlay</div>
 
             <div class="cs-row-label">Separation</div>
-            <div class="cs-cell">Multi-tenant</div><div class="cs-cell">Logical</div><div class="cs-cell">Physical</div><div class="cs-cell">Physical</div>
+            <div class="cs-cell">Multi-tenant</div><div class="cs-cell">Logical</div><div class="cs-cell">Physical</div><div class="cs-cell">Physical</div><div class="cs-cell">Physical + Air-gapped</div>
 
             <div class="cs-row-label">Network</div>
-            <div class="cs-cell">Internet</div><div class="cs-cell">NIPRNet via CAP</div><div class="cs-cell">NIPRNet via CAP</div><div class="cs-cell">SIPRNet</div>
+            <div class="cs-cell">Internet</div><div class="cs-cell">NIPRNet via CAP</div><div class="cs-cell">NIPRNet via CAP</div><div class="cs-cell">SIPRNet</div><div class="cs-cell">JWICS</div>
+
+            <div class="cs-row-label">Location</div>
+            <div class="cs-cell">Any</div><div class="cs-cell">CONUS / DoW on-prem</div><div class="cs-cell">CONUS / DoW on-prem</div><div class="cs-cell">CONUS / DoW on-prem</div><div class="cs-cell">Cleared / SCIF</div>
 
             <div class="cs-row-label">Personnel</div>
-            <div class="cs-cell">N/A</div><div class="cs-cell">U.S. Citizens</div><div class="cs-cell">Tier 3 / Secret</div><div class="cs-cell">Tier 5 / TS/SCI</div>
+            <div class="cs-cell">N/A</div><div class="cs-cell">U.S. Citizens</div><div class="cs-cell">Tier 3 / Secret</div><div class="cs-cell">Tier 5 / TS/SCI</div><div class="cs-cell">TS/SCI + NDA</div>
           </div>
         </section>
 
@@ -875,7 +904,7 @@ document.head.appendChild(o)}initApollo();</script>
               <rect x="879" y="80" width="56" height="20" rx="4" fill="rgba(168,85,247,0.10)" stroke="rgba(168,85,247,0.25)" stroke-width="0.8"/>
               <text x="907" y="94" text-anchor="middle" fill="#d4bcfa" font-size="8.5" font-weight="600">Navy</text>
               <rect x="700" y="106" width="100" height="20" rx="4" fill="rgba(168,85,247,0.08)" stroke="rgba(168,85,247,0.15)" stroke-width="0.7"/>
-              <text x="750" y="120" text-anchor="middle" fill="#b8a0e0" font-size="8">Any IL2–IL6 env</text>
+              <text x="750" y="120" text-anchor="middle" fill="#b8a0e0" font-size="8">Any IL2–TS env</text>
 
               <!-- DEPLOY ARROW from DevSecOps to Agency environment -->
               <path d="M 480 140 L 480 158 L 555 158 L 555 170" fill="none" stroke="#a855f7" stroke-width="2" stroke-dasharray="6 4" class="flow-anim" marker-end="url(#ah-purple)"/>
@@ -1100,10 +1129,15 @@ document.head.appendChild(o)}initApollo();</script>
               <text x="88" y="584" text-anchor="middle" fill="#ef4444" font-size="12" font-weight="700">SIPRNet</text>
               <text x="88" y="600" text-anchor="middle" fill="#94a3b8" font-size="9">Classified (IL6)</text>
 
+              <!-- JWICS -->
+              <rect x="16" y="620" width="145" height="52" rx="8" fill="rgba(244,114,182,0.06)" stroke="rgba(244,114,182,0.2)" stroke-width="1.2"/>
+              <text x="88" y="644" text-anchor="middle" fill="#f472b6" font-size="12" font-weight="700">JWICS</text>
+              <text x="88" y="660" text-anchor="middle" fill="#94a3b8" font-size="9">Top Secret / SCI</text>
+
               <!-- Client VPN -->
-              <rect x="16" y="646" width="145" height="46" rx="8" fill="rgba(168,85,247,0.04)" stroke="rgba(168,85,247,0.12)" stroke-width="1"/>
-              <text x="88" y="668" text-anchor="middle" fill="#d4bcfa" font-size="10" font-weight="600">Client VPN / ZTNA</text>
-              <text x="88" y="684" text-anchor="middle" fill="#94a3b8" font-size="9">IPSec · OIDC · MFA</text>
+              <rect x="16" y="706" width="145" height="46" rx="8" fill="rgba(168,85,247,0.04)" stroke="rgba(168,85,247,0.12)" stroke-width="1"/>
+              <text x="88" y="728" text-anchor="middle" fill="#d4bcfa" font-size="10" font-weight="600">Client VPN / ZTNA</text>
+              <text x="88" y="744" text-anchor="middle" fill="#94a3b8" font-size="9">IPSec · OIDC · MFA</text>
 
               <!-- EXTERNAL FLOW ARROWS -->
               <line x1="88" y1="270" x2="88" y2="297" stroke="#a855f7" stroke-width="1.3" stroke-dasharray="6 4" class="flow-anim-slow" marker-end="url(#ah-purple)"/>
@@ -1373,6 +1407,7 @@ document.head.appendChild(o)}initApollo();</script>
                   <th class="th-il4">IL4</th>
                   <th class="th-il5">IL5</th>
                   <th class="th-il6">IL6</th>
+                  <th style="color:var(--ts);">Top Secret</th>
                 </tr>
               </thead>
               <tbody>
@@ -1382,6 +1417,7 @@ document.head.appendChild(o)}initApollo();</script>
                   <td class="pt-low">Tier 3 / MBI</td>
                   <td class="pt-med">Tier 3 / Secret</td>
                   <td class="pt-high">Tier 5 / TS/SCI</td>
+                  <td class="pt-high">Tier 5 / TS/SCI + NDA</td>
                 </tr>
                 <tr>
                   <td>Non-Privileged</td>
@@ -1389,12 +1425,14 @@ document.head.appendChild(o)}initApollo();</script>
                   <td>Tier 1</td>
                   <td class="pt-med">Tier 3 / Secret</td>
                   <td class="pt-high">Tier 5 / TS/SCI</td>
+                  <td class="pt-high">Tier 5 / TS/SCI + NDA</td>
                 </tr>
                 <tr>
                   <td>Citizenship</td>
                   <td>No requirement</td>
                   <td class="pt-low">U.S. Citizens</td>
                   <td class="pt-med">U.S. Citizens</td>
+                  <td class="pt-high">U.S. Citizens</td>
                   <td class="pt-high">U.S. Citizens</td>
                 </tr>
                 <tr>
@@ -1403,6 +1441,7 @@ document.head.appendChild(o)}initApollo();</script>
                   <td class="pt-low">CONUS</td>
                   <td class="pt-med">CONUS</td>
                   <td class="pt-high">CONUS</td>
+                  <td class="pt-high">SCIF / Cleared facility</td>
                 </tr>
               </tbody>
             </table>
@@ -1460,6 +1499,16 @@ document.head.appendChild(o)}initApollo();</script>
                 <li>TEMPEST/EMSEC + continuous physical guards</li>
                 <li>618 controls with classified data handling</li>
                 <li>DISA retains pen testing rights</li>
+              </ul>
+            </div>
+            <div class="bottom-card" style="border-color:var(--ts);">
+              <h4 style="color:var(--ts);">Targeting Top Secret</h4>
+              <ul>
+                <li>Everything IL6 + JWICS network (not SIPRNet)</li>
+                <li>Level 6 + Classified overlay controls</li>
+                <li>SCIF-grade facilities — physically separate from unclassified</li>
+                <li>All personnel require favorably adjudicated TS/SCI + NDA</li>
+                <li>IC-directed authorization — separate from standard PA pathway</li>
               </ul>
             </div>
           </div>
