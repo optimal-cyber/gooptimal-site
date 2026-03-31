@@ -59,7 +59,7 @@
   <!-- Title -->
   <text x="60" y="130" fill="url(#title-grad)" font-family="Inter,'Helvetica Neue',sans-serif" font-size="36" font-weight="800" letter-spacing="-0.5">Navigating DoW</text>
   <text x="60" y="172" fill="url(#title-grad)" font-family="Inter,'Helvetica Neue',sans-serif" font-size="36" font-weight="800" letter-spacing="-0.5">Impact Level</text>
-  <text x="60" y="214" fill="url(#title-grad)" font-family="Inter,'Helvetica Neue',sans-serif" font-size="36" font-weight="800" letter-spacing="-0.5">Certification</text>
+  <text x="60" y="214" fill="url(#title-grad)" font-family="Inter,'Helvetica Neue',sans-serif" font-size="36" font-weight="800" letter-spacing="-0.5">Authorization</text>
 
   <!-- Subtitle -->
   <text x="60" y="252" fill="#cbd5e1" font-family="Inter,sans-serif" font-size="15" font-weight="400">The visual guide for cloud-native products</text>
