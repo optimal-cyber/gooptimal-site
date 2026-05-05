@@ -277,8 +277,8 @@ document.head.appendChild(o)}initApollo();</script>
                             <a href="/support">Support</a>
                         </div>
                     </div>
-                    <a href="https://app.gooptimal.io" target="_blank" class="nav-link font-mono text-sm">Login</a>
-                    <a href="https://app.gooptimal.io" target="_blank" class="btn-platform text-sm px-6 py-2">
+                    <a href="/support" class="nav-link font-mono text-sm">Get Access</a>
+                    <a href="/demo" class="btn-platform text-sm px-6 py-2">
                         Get Started
                     </a>
                 </div>
@@ -307,8 +307,8 @@ document.head.appendChild(o)}initApollo();</script>
                         <a href="/blog" class="nav-link font-mono text-sm pl-3">Blog</a>
                         <a href="/support" class="nav-link font-mono text-sm pl-3">Support</a>
                     </div>
-                    <a href="https://app.gooptimal.io" target="_blank" class="nav-link font-mono text-sm">Login</a>
-                    <a href="https://app.gooptimal.io" target="_blank" class="btn-platform text-sm px-6 py-3 text-center mt-2">
+                    <a href="/support" class="nav-link font-mono text-sm">Get Access</a>
+                    <a href="/demo" class="btn-platform text-sm px-6 py-3 text-center mt-2">
                         Get Started
                     </a>
                 </div>
@@ -331,9 +331,30 @@ document.head.appendChild(o)}initApollo();</script>
                         <span class="text-white">Need Help?</span><br>
                         <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyber-green to-cyber-blue">We're Here.</span>
                     </h1>
-                    <p class="text-lg text-gray-400 mb-8 leading-relaxed">
-                        Clients and partners can submit support requests here. Our team responds within one business day — faster for urgent issues affecting production systems.
+                    <p class="text-lg text-gray-400 mb-6 leading-relaxed">
+                        Clients, partners, and prospective users can reach us here. Our team responds within one business day — faster for urgent issues affecting production systems.
                     </p>
+
+                    <!-- Platform Access Notice -->
+                    <div class="mb-10 rounded-lg border border-cyber-amber/30 bg-cyber-amber/5 p-5">
+                        <div class="flex items-start gap-3">
+                            <div class="w-8 h-8 bg-cyber-amber/20 rounded flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <svg class="w-4 h-4 text-cyber-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <h3 class="text-white font-semibold mb-2">Looking for platform access?</h3>
+                                <p class="text-sm text-gray-400 leading-relaxed mb-4">
+                                    The hosted platform at <span class="font-mono text-gray-300">app.gooptimal.io</span> is paused while we adjust infrastructure. To request hosted access or self-host, choose an option below.
+                                </p>
+                                <div class="flex flex-col sm:flex-row gap-4 text-xs font-mono">
+                                    <a href="#support-form" class="text-cyber-green hover:underline uppercase tracking-wider">→ Request Access</a>
+                                    <a href="https://gitlab.com/optimal-labs/platform" target="_blank" class="text-cyber-blue hover:underline uppercase tracking-wider">→ Self-Host on GitLab</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                     <!-- What we help with -->
                     <div class="space-y-4 mb-10">
@@ -450,6 +471,7 @@ document.head.appendChild(o)}initApollo();</script>
                                 <label class="form-label" for="issueType">Issue Type *</label>
                                 <select id="issueType" name="issueType" required class="form-input">
                                     <option value="" disabled selected>Select type</option>
+                                    <option value="Platform Access">Platform Access Request</option>
                                     <option value="Bug / Defect">Bug / Defect</option>
                                     <option value="Account Access">Account Access</option>
                                     <option value="Billing">Billing</option>
