@@ -544,73 +544,138 @@
             </div>
 
             <!-- Value Stream Diagram -->
-            <div class="panel" style="padding: 48px 32px;">
-                <div class="grid grid-cols-2 md:grid-cols-5 gap-6 md:gap-4 relative">
-                    <!-- Stage 01 -->
-                    <div class="vs-stage">
-                        <div class="vs-num">01</div>
-                        <div class="vs-icon" style="background: rgba(255, 138, 61, 0.12); color: var(--sunset);">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9"/>
-                            </svg>
+            <div class="panel vs-panel" style="padding: 56px 32px 48px;">
+                <!-- Faint horizon mark backdrop -->
+                <img src="/public/optimal-horizon.svg" alt="" class="vs-watermark" aria-hidden="true">
+
+                <div class="vs-track">
+                    <!-- Animated signal trace under the stages -->
+                    <svg class="vs-trace" viewBox="0 0 1000 80" preserveAspectRatio="none" aria-hidden="true">
+                        <defs>
+                            <linearGradient id="vs-trace-grad" x1="0" y1="0" x2="1" y2="0">
+                                <stop offset="0%" stop-color="#FF8A3D" stop-opacity="0.0"/>
+                                <stop offset="10%" stop-color="#FF8A3D" stop-opacity="0.7"/>
+                                <stop offset="40%" stop-color="#FF5252" stop-opacity="0.7"/>
+                                <stop offset="80%" stop-color="#9B5DE5" stop-opacity="0.7"/>
+                                <stop offset="100%" stop-color="#9B5DE5" stop-opacity="0.0"/>
+                            </linearGradient>
+                        </defs>
+                        <path class="vs-trace-line" d="M 20 40 Q 200 10 400 40 T 980 40" fill="none" stroke="url(#vs-trace-grad)" stroke-width="1.25" stroke-linecap="round"/>
+                        <path class="vs-trace-pulse" d="M 20 40 Q 200 10 400 40 T 980 40" fill="none" stroke="#FF8A3D" stroke-width="2" stroke-linecap="round" stroke-dasharray="6 12"/>
+                    </svg>
+
+                    <div class="grid grid-cols-2 md:grid-cols-5 gap-6 md:gap-2 relative">
+                        <!-- Stage 01 — Resources: stacked manifest -->
+                        <div class="vs-stage" data-color="sunset" style="--accent: #FFB347;">
+                            <div class="vs-num">01</div>
+                            <div class="vs-illo">
+                                <svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linejoin="round" stroke-linecap="round">
+                                    <path d="M40 14 L66 26 L40 38 L14 26 Z" opacity="0.95"/>
+                                    <path d="M40 14 L40 38" opacity="0.55"/>
+                                    <path d="M40 38 L40 50 L66 38 L66 26" opacity="0.4"/>
+                                    <path d="M40 38 L14 26 L14 38 L40 50" opacity="0.4"/>
+                                    <path d="M22 50 L58 50 L58 56 L22 56 Z" opacity="0.7"/>
+                                    <path d="M28 56 L52 56 L52 62 L28 62 Z" opacity="0.45"/>
+                                    <circle cx="40" cy="14" r="1.6" fill="currentColor" opacity="0.9"/>
+                                    <path d="M14 18 L8 18" opacity="0.35"/>
+                                    <path d="M66 18 L72 18" opacity="0.35"/>
+                                </svg>
+                            </div>
+                            <div class="vs-label">Resources</div>
+                            <div class="vs-sublabel">People, time, budget</div>
                         </div>
-                        <div class="vs-label">Resources</div>
-                        <div class="vs-sublabel">People, time, budget</div>
-                    </div>
-                    <!-- Stage 02 -->
-                    <div class="vs-stage">
-                        <div class="vs-num">02</div>
-                        <div class="vs-icon" style="background: rgba(255, 138, 61, 0.12); color: var(--sunset);">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75"/>
-                            </svg>
+
+                        <!-- Stage 02 — Activities: connected nodes / workflow -->
+                        <div class="vs-stage" data-color="sunset" style="--accent: #FF8A3D;">
+                            <div class="vs-num">02</div>
+                            <div class="vs-illo">
+                                <svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M14 22 Q40 6 66 22" opacity="0.55"/>
+                                    <path d="M14 22 Q22 46 40 56" opacity="0.55"/>
+                                    <path d="M66 22 Q58 46 40 56" opacity="0.55"/>
+                                    <path d="M14 22 L66 22" stroke-dasharray="2 4" opacity="0.3"/>
+                                    <circle cx="14" cy="22" r="3.5" fill="#0B0F14"/>
+                                    <circle cx="14" cy="22" r="3.5"/>
+                                    <circle cx="66" cy="22" r="3.5" fill="#0B0F14"/>
+                                    <circle cx="66" cy="22" r="3.5"/>
+                                    <circle cx="40" cy="56" r="3.5" fill="#0B0F14"/>
+                                    <circle cx="40" cy="56" r="3.5"/>
+                                    <circle cx="40" cy="56" r="1" fill="currentColor"/>
+                                </svg>
+                            </div>
+                            <div class="vs-label">Activities</div>
+                            <div class="vs-sublabel">The work teams do</div>
                         </div>
-                        <div class="vs-label">Activities</div>
-                        <div class="vs-sublabel">The work teams do</div>
-                    </div>
-                    <!-- Stage 03 -->
-                    <div class="vs-stage vs-focus-output">
-                        <div class="vs-num">03</div>
-                        <div class="vs-icon" style="background: rgba(255, 138, 61, 0.18); color: var(--sunset);">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M3.375 19.5h17.25m-17.25 0a1.125 1.125 0 01-1.125-1.125M3.375 19.5h7.5c.621 0 1.125-.504 1.125-1.125m-9.75 0V5.625m0 12.75v-1.5c0-.621.504-1.125 1.125-1.125m18.375 2.625V5.625m0 12.75c0 .621-.504 1.125-1.125 1.125m1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125m0 3.75h-7.5A1.125 1.125 0 0112 18.375m9.75-12.75c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125m19.5 0v1.5c0 .621-.504 1.125-1.125 1.125M2.25 5.625v1.5c0 .621.504 1.125 1.125 1.125m0 0h17.25m-17.25 0h7.5c.621 0 1.125.504 1.125 1.125M3.375 8.25c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125m17.25-3.75h-7.5c-.621 0-1.125.504-1.125 1.125m8.625-1.125c.621 0 1.125.504 1.125 1.125v1.5c0 .621-.504 1.125-1.125 1.125m-17.25 0h7.5m-7.5 0c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125M12 10.875v-1.5m0 1.5c0 .621-.504 1.125-1.125 1.125M12 10.875c0 .621.504 1.125 1.125 1.125m-2.25 0c.621 0 1.125.504 1.125 1.125M13.125 12h7.5m-7.5 0c-.621 0-1.125.504-1.125 1.125M20.625 12c.621 0 1.125.504 1.125 1.125v1.5c0 .621-.504 1.125-1.125 1.125m-17.25 0h7.5M12 14.625v-1.5m0 1.5c0 .621-.504 1.125-1.125 1.125M12 14.625c0 .621.504 1.125 1.125 1.125m-2.25 0c.621 0 1.125.504 1.125 1.125m0 1.5v-1.5m0 0c0-.621.504-1.125 1.125-1.125"/>
-                            </svg>
+
+                        <!-- Stage 03 — Outputs: build artifact / sealed package -->
+                        <div class="vs-stage" data-color="sunset" style="--accent: #F25E3A;">
+                            <div class="vs-num">03</div>
+                            <div class="vs-illo">
+                                <svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M16 22 L40 12 L64 22 L40 32 Z"/>
+                                    <path d="M16 22 L16 54 L40 64" opacity="0.7"/>
+                                    <path d="M64 22 L64 54 L40 64" opacity="0.55"/>
+                                    <path d="M40 32 L40 64" opacity="0.4"/>
+                                    <path d="M22 38 L34 32" opacity="0.45"/>
+                                    <path d="M58 38 L46 32" opacity="0.45"/>
+                                    <circle cx="40" cy="48" r="1.5" fill="currentColor"/>
+                                </svg>
+                            </div>
+                            <div class="vs-label">Outputs</div>
+                            <div class="vs-sublabel">A new feature, a release</div>
                         </div>
-                        <div class="vs-label">Outputs</div>
-                        <div class="vs-sublabel">A new feature, a release</div>
-                    </div>
-                    <!-- Stage 04 -->
-                    <div class="vs-stage vs-focus-outcome">
-                        <div class="vs-num">04</div>
-                        <div class="vs-icon" style="background: rgba(255, 82, 82, 0.18); color: var(--coral);">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z"/>
-                            </svg>
+
+                        <!-- Stage 04 — Outcomes: tracked path / radar pulse -->
+                        <div class="vs-stage vs-focus" data-color="coral" style="--accent: #FF5252;">
+                            <div class="vs-num">04</div>
+                            <div class="vs-illo">
+                                <svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round">
+                                    <circle cx="40" cy="40" r="22" opacity="0.18"/>
+                                    <circle cx="40" cy="40" r="15" opacity="0.32"/>
+                                    <circle cx="40" cy="40" r="8" opacity="0.6"/>
+                                    <circle cx="40" cy="40" r="2.4" fill="currentColor"/>
+                                    <path d="M40 40 L62 18" stroke-dasharray="2 3" opacity="0.7"/>
+                                    <path d="M58 18 L62 18 L62 22" opacity="0.85"/>
+                                    <circle cx="62" cy="18" r="2.5" fill="currentColor" opacity="0.85"/>
+                                    <path d="M18 40 L14 40 M40 18 L40 14 M62 40 L66 40 M40 62 L40 66" opacity="0.4"/>
+                                </svg>
+                            </div>
+                            <div class="vs-label">Outcomes</div>
+                            <div class="vs-sublabel">What people do with it</div>
                         </div>
-                        <div class="vs-label">Outcomes</div>
-                        <div class="vs-sublabel">What people do with it</div>
-                    </div>
-                    <!-- Stage 05 -->
-                    <div class="vs-stage vs-focus-impact">
-                        <div class="vs-num">05</div>
-                        <div class="vs-icon" style="background: rgba(155, 93, 229, 0.2); color: var(--dusk);">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/>
-                            </svg>
+
+                        <!-- Stage 05 — Impact: horizon sun rising -->
+                        <div class="vs-stage vs-focus" data-color="dusk" style="--accent: #9B5DE5;">
+                            <div class="vs-num">05</div>
+                            <div class="vs-illo">
+                                <svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round">
+                                    <path d="M16 56 L64 56" opacity="0.7"/>
+                                    <path d="M22 60 L58 60" opacity="0.4" stroke-dasharray="2 3"/>
+                                    <path d="M22 56 A18 18 0 0 1 58 56" opacity="0.95"/>
+                                    <path d="M28 56 A12 12 0 0 1 52 56" opacity="0.7"/>
+                                    <path d="M34 56 A6 6 0 0 1 46 56" opacity="0.45"/>
+                                    <path d="M40 32 L40 22"/>
+                                    <path d="M22 38 L16 32"/>
+                                    <path d="M58 38 L64 32"/>
+                                    <path d="M14 50 L8 50"/>
+                                    <path d="M66 50 L72 50"/>
+                                    <circle cx="40" cy="56" r="1.6" fill="currentColor"/>
+                                </svg>
+                            </div>
+                            <div class="vs-label">Impact</div>
+                            <div class="vs-sublabel">What it enables next</div>
                         </div>
-                        <div class="vs-label">Impact</div>
-                        <div class="vs-sublabel">What it enables next</div>
                     </div>
                 </div>
 
                 <!-- Focus annotations -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12 pt-8 border-t border-white/5">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-14 pt-8 border-t border-white/5 vs-annotations">
                     <div>
-                        <div class="font-mono text-[10px] text-gray-500 tracking-[0.22em] uppercase mb-2">Where execution teams tend to focus</div>
+                        <div class="font-mono text-[10px] text-gray-500 tracking-[0.22em] uppercase mb-2">// Where execution teams tend to focus</div>
                         <div class="font-display text-base text-gray-400">Resources → Activities → Outputs</div>
                     </div>
                     <div>
-                        <div class="font-mono text-[10px] text-sunset tracking-[0.22em] uppercase mb-2">Where Optimal focuses</div>
+                        <div class="font-mono text-[10px] text-sunset tracking-[0.22em] uppercase mb-2">// Where Optimal focuses</div>
                         <div class="font-display text-base text-sand">Outcomes → Impact</div>
                     </div>
                 </div>
@@ -619,16 +684,138 @@
     </section>
 
     <style>
-        .vs-stage { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 12px; padding: 16px 8px; border-radius: 8px; transition: background 0.3s ease; }
-        .vs-stage:hover { background: rgba(255, 255, 255, 0.02); }
-        .vs-num { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.22em; color: rgba(255, 255, 255, 0.4); }
-        .vs-icon { width: 56px; height: 56px; border-radius: 8px; display: flex; align-items: center; justify-content: center; padding: 14px; }
-        .vs-icon svg { width: 100%; height: 100%; }
-        .vs-label { font-family: 'Space Grotesk', 'Inter', sans-serif; font-size: 16px; color: var(--sand); letter-spacing: -0.01em; }
-        .vs-sublabel { font-size: 12px; color: #94A3B8; }
-        .vs-focus-outcome .vs-label, .vs-focus-impact .vs-label { color: var(--sand); }
-        .vs-focus-outcome .vs-sublabel, .vs-focus-impact .vs-sublabel { color: var(--sand); opacity: 0.85; }
+        .vs-panel { position: relative; overflow: hidden; }
+        .vs-watermark {
+            position: absolute;
+            width: 480px;
+            height: 480px;
+            right: -160px;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0.04;
+            pointer-events: none;
+            user-select: none;
+        }
+        .vs-track { position: relative; padding-top: 12px; }
+        .vs-trace {
+            position: absolute;
+            top: 92px;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 80px;
+            pointer-events: none;
+            display: none;
+        }
+        @media (min-width: 768px) { .vs-trace { display: block; } }
+        .vs-trace-line { stroke-dasharray: 1500; stroke-dashoffset: 1500; }
+        .vs-trace-pulse { opacity: 0; }
+        .vs-panel.is-visible .vs-trace-line { animation: vs-draw 1.6s 0.2s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
+        .vs-panel.is-visible .vs-trace-pulse { animation: vs-pulse 4s 1.6s linear infinite; }
+        @keyframes vs-draw { to { stroke-dashoffset: 0; } }
+        @keyframes vs-pulse {
+            0%   { opacity: 0; stroke-dashoffset: 0; }
+            10%  { opacity: 0.55; }
+            90%  { opacity: 0.55; }
+            100% { opacity: 0; stroke-dashoffset: -200; }
+        }
+
+        .vs-stage {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 14px;
+            padding: 18px 12px;
+            border-radius: 10px;
+            position: relative;
+            opacity: 0;
+            transform: translateY(16px);
+            transition: opacity 0.6s ease, transform 0.6s ease, background 0.3s ease;
+        }
+        .vs-panel.is-visible .vs-stage {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .vs-panel.is-visible .vs-stage:nth-child(1) { transition-delay: 0.05s; }
+        .vs-panel.is-visible .vs-stage:nth-child(2) { transition-delay: 0.20s; }
+        .vs-panel.is-visible .vs-stage:nth-child(3) { transition-delay: 0.35s; }
+        .vs-panel.is-visible .vs-stage:nth-child(4) { transition-delay: 0.55s; }
+        .vs-panel.is-visible .vs-stage:nth-child(5) { transition-delay: 0.75s; }
+        .vs-stage:hover { background: rgba(255, 255, 255, 0.025); }
+        .vs-stage:hover .vs-illo { transform: translateY(-3px); }
+        .vs-stage:hover .vs-illo::before { opacity: 1; }
+
+        .vs-num { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.24em; color: rgba(255, 255, 255, 0.35); }
+
+        .vs-illo {
+            position: relative;
+            width: 96px;
+            height: 96px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent, var(--sunset));
+            background:
+                radial-gradient(ellipse at 50% 110%, color-mix(in srgb, var(--accent, var(--sunset)) 18%, transparent) 0%, transparent 70%),
+                linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, rgba(11, 15, 20, 0.5) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .vs-illo::before {
+            content: '';
+            position: absolute;
+            inset: -1px;
+            border-radius: 12px;
+            border: 1px solid color-mix(in srgb, var(--accent, var(--sunset)) 50%, transparent);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            pointer-events: none;
+        }
+        .vs-illo svg { width: 60%; height: 60%; }
+
+        .vs-label {
+            font-family: 'Space Grotesk', 'Inter', sans-serif;
+            font-size: 16px;
+            color: var(--sand);
+            letter-spacing: -0.01em;
+        }
+        .vs-sublabel { font-size: 12px; color: #94A3B8; max-width: 160px; line-height: 1.4; }
+
+        .vs-focus .vs-label,
+        .vs-focus .vs-sublabel { color: var(--sand); }
+        .vs-focus .vs-illo { box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent, var(--sunset)) 40%, transparent), 0 12px 32px color-mix(in srgb, var(--accent, var(--sunset)) 18%, transparent); }
+        .vs-focus .vs-num { color: var(--accent); }
+
+        .vs-annotations {
+            opacity: 0;
+            transform: translateY(8px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+            transition-delay: 1.0s;
+        }
+        .vs-panel.is-visible .vs-annotations { opacity: 1; transform: translateY(0); }
+
+        @media (max-width: 767px) {
+            .vs-illo { width: 80px; height: 80px; }
+        }
     </style>
+
+    <script>
+        (function() {
+            const vsPanel = document.querySelector('.vs-panel');
+            if (!vsPanel) return;
+            const reveal = new IntersectionObserver((entries) => {
+                entries.forEach(e => {
+                    if (e.isIntersecting) {
+                        vsPanel.classList.add('is-visible');
+                        reveal.disconnect();
+                    }
+                });
+            }, { threshold: 0.25 });
+            reveal.observe(vsPanel);
+        })();
+    </script>
 
     <!-- ===== 7. CTA ===== -->
     <section class="relative overflow-hidden" id="cta" style="background: radial-gradient(ellipse 1200px 600px at 50% 100%, rgba(255, 138, 61, 0.14) 0%, transparent 70%), var(--midnight);">
