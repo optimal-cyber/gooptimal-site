@@ -11,10 +11,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --cyber-black: #0a0a0f;
+            --cyber-black: #0B0F14;
             --cyber-dark: #12121a;
-            --cyber-green: #00ff88;
-            --cyber-blue: #00d4ff;
+            --cyber-green: #FF8A3D;
+            --cyber-blue: #22D3EE;
         }
 
         body {
@@ -28,7 +28,7 @@
         .nav-fixed {
             backdrop-filter: blur(12px);
             background: rgba(10, 10, 15, 0.9);
-            border-bottom: 1px solid rgba(0, 255, 136, 0.1);
+            border-bottom: 1px solid rgba(255, 138, 61, 0.1);
         }
 
         .nav-link { color: #a1a1aa; transition: color 0.2s; }
@@ -50,7 +50,7 @@
             font-family: inherit;
         }
         .nav-dropdown-trigger:hover {
-            color: #00ff88;
+            color: #FF8A3D;
         }
         .nav-dropdown-menu {
             position: absolute;
@@ -83,32 +83,32 @@
             text-decoration: none;
         }
         .nav-dropdown-menu a:hover {
-            color: #00ff88;
-            background: rgba(0, 255, 136, 0.05);
+            color: #FF8A3D;
+            background: rgba(255, 138, 61, 0.05);
         }
 
         .btn-platform {
-            background: linear-gradient(135deg, #00ff88 0%, #00cc6a 100%);
-            color: #0a0a0f;
+            background: linear-gradient(135deg, #FF8A3D 0%, #FF5252 100%);
+            color: #0B0F14;
             font-weight: 600;
             border-radius: 6px;
             transition: all 0.3s;
         }
 
         .btn-platform:hover {
-            box-shadow: 0 0 30px rgba(0, 255, 136, 0.4);
+            box-shadow: 0 0 30px rgba(255, 138, 61, 0.4);
             transform: translateY(-2px);
         }
 
         .btn-outline {
-            border: 1px solid rgba(0, 255, 136, 0.5);
+            border: 1px solid rgba(255, 138, 61, 0.5);
             color: var(--cyber-green);
             border-radius: 6px;
             transition: all 0.3s;
         }
 
         .btn-outline:hover {
-            background: rgba(0, 255, 136, 0.1);
+            background: rgba(255, 138, 61, 0.1);
             border-color: var(--cyber-green);
         }
 
@@ -121,7 +121,7 @@
         }
 
         .gradient-text {
-            background: linear-gradient(135deg, #00ff88 0%, #00d4ff 100%);
+            background: linear-gradient(135deg, #FF8A3D 0%, #22D3EE 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -129,14 +129,14 @@
 
         .card-dark {
             background: rgba(18, 18, 26, 0.8);
-            border: 1px solid rgba(0, 255, 136, 0.1);
+            border: 1px solid rgba(255, 138, 61, 0.1);
             border-radius: 12px;
             transition: all 0.3s;
         }
 
         .card-dark:hover {
-            border-color: rgba(0, 255, 136, 0.3);
-            box-shadow: 0 0 40px rgba(0, 255, 136, 0.1);
+            border-color: rgba(255, 138, 61, 0.3);
+            box-shadow: 0 0 40px rgba(255, 138, 61, 0.1);
         }
 
         .integration-card {
@@ -148,7 +148,7 @@
         }
 
         .integration-card:hover {
-            border-color: rgba(0, 255, 136, 0.3);
+            border-color: rgba(255, 138, 61, 0.3);
             background: rgba(18, 18, 26, 0.9);
             transform: translateY(-2px);
         }
@@ -177,10 +177,10 @@
             letter-spacing: 0.05em;
         }
 
-        .badge-scanner { background: rgba(0, 255, 136, 0.15); color: #00ff88; }
-        .badge-cloud { background: rgba(0, 212, 255, 0.15); color: #00d4ff; }
-        .badge-cicd { background: rgba(168, 85, 247, 0.15); color: #a855f7; }
-        .badge-ticketing { background: rgba(255, 184, 0, 0.15); color: #ffb800; }
+        .badge-scanner { background: rgba(255, 138, 61, 0.15); color: #FF8A3D; }
+        .badge-cloud { background: rgba(34, 211, 238, 0.15); color: #22D3EE; }
+        .badge-cicd { background: rgba(155, 93, 229, 0.15); color: #9B5DE5; }
+        .badge-ticketing { background: rgba(255, 184, 0, 0.15); color: #FFB347; }
         .badge-registry { background: rgba(59, 130, 246, 0.15); color: #3b82f6; }
         .badge-siem { background: rgba(239, 68, 68, 0.15); color: #ef4444; }
         .badge-iam { background: rgba(34, 197, 94, 0.15); color: #22c55e; }
@@ -203,11 +203,11 @@
             border: 1px solid transparent;
         }
 
-        .filter-btn:hover { background: rgba(0, 255, 136, 0.1); }
+        .filter-btn:hover { background: rgba(255, 138, 61, 0.1); }
 
         .filter-btn.active {
-            background: rgba(0, 255, 136, 0.15);
-            border-color: rgba(0, 255, 136, 0.3);
+            background: rgba(255, 138, 61, 0.15);
+            border-color: rgba(255, 138, 61, 0.3);
             color: var(--cyber-green);
         }
 
@@ -222,8 +222,8 @@
 
         .search-input:focus {
             outline: none;
-            border-color: rgba(0, 255, 136, 0.5);
-            box-shadow: 0 0 20px rgba(0, 255, 136, 0.1);
+            border-color: rgba(255, 138, 61, 0.5);
+            box-shadow: 0 0 20px rgba(255, 138, 61, 0.1);
         }
 
         .search-input::placeholder { color: #71717a; }
@@ -256,7 +256,7 @@ document.head.appendChild(o)}initApollo();</script>
                             <a href="/#capabilities">Capabilities</a>
                         </div>
                     </div>
-                    <a href="/#team" class="nav-link font-mono text-sm">Team</a>
+                    <a href="/#story" class="nav-link font-mono text-sm">Mission</a>
                     <div class="nav-dropdown">
                         <button class="nav-dropdown-trigger font-mono text-sm">
                             Resources
@@ -284,7 +284,7 @@ document.head.appendChild(o)}initApollo();</script>
                         <a href="/integrations" class="nav-link font-mono text-sm pl-3">Integrations</a>
                         <a href="/#capabilities" class="nav-link font-mono text-sm pl-3">Capabilities</a>
                     </div>
-                    <a href="/#team" class="nav-link font-mono text-sm">Team</a>
+                    <a href="/#story" class="nav-link font-mono text-sm">Mission</a>
                     <div class="flex flex-col gap-2">
                         <span class="font-mono text-xs text-gray-500 uppercase tracking-wider">Resources</span>
                         <a href="https://docs.gooptimal.io/" target="_blank" class="nav-link font-mono text-sm pl-3">Documentation</a>
@@ -798,7 +798,7 @@ document.head.appendChild(o)}initApollo();</script>
                 <div>
                     <h4 class="font-semibold text-white mb-4">Company</h4>
                     <ul class="space-y-2 text-sm text-zinc-400">
-                        <li><a href="/#team" class="hover:text-cyber-green transition-colors">Team</a></li>
+                        <li><a href="/#story" class="hover:text-cyber-green transition-colors">Mission</a></li>
                         <li><a href="mailto:contact@gooptimal.io" class="hover:text-cyber-green transition-colors">Contact</a></li>
                     </ul>
                 </div>

@@ -14,7 +14,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -22,30 +22,31 @@
             theme: {
                 extend: {
                     colors: {
-                        'cyber-black': '#0a0a0f',
-                        'cyber-dark': '#0d1117',
-                        'cyber-gray': '#161b22',
-                        'cyber-border': '#21262d',
-                        'cyber-green': '#00ff88',
-                        'cyber-green-dim': '#00cc6a',
-                        'cyber-blue': '#00d4ff',
-                        'cyber-amber': '#ffb800',
-                        'cyber-red': '#ff3366',
+                        'cyber-black': '#0B0F14',
+                        'cyber-dark': '#0F1B2E',
+                        'cyber-gray': '#11192A',
+                        'cyber-border': '#1E2A3D',
+                        'cyber-green': '#FF8A3D',
+                        'cyber-green-dim': '#FF5252',
+                        'cyber-blue': '#22D3EE',
+                        'cyber-amber': '#FFB347',
+                        'cyber-red': '#FF5252',
                     },
                     fontFamily: {
                         'mono': ['JetBrains Mono', 'monospace'],
                         'sans': ['Inter', 'system-ui', 'sans-serif'],
+                        'display': ['Space Grotesk', 'Inter', 'sans-serif'],
                     }
                 }
             }
         }
     </script>
     <style>
-        body { background: #0a0a0f; overflow-x: hidden; }
-        .grid-bg { background-image: linear-gradient(rgba(0, 255, 136, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 255, 136, 0.03) 1px, transparent 1px); background-size: 50px 50px; }
+        body { background: #0B0F14; overflow-x: hidden; }
+        .grid-bg { background-image: linear-gradient(rgba(255, 138, 61, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 138, 61, 0.03) 1px, transparent 1px); background-size: 50px 50px; }
         .nav-fixed { backdrop-filter: blur(12px); background: rgba(10, 10, 15, 0.9); border-bottom: 1px solid rgba(33, 38, 45, 0.5); }
         .nav-link { color: #8b949e; transition: color 0.3s ease; }
-        .nav-link:hover { color: #00ff88; }
+        .nav-link:hover { color: #FF8A3D; }
         .nav-dropdown {
             position: relative;
         }
@@ -62,7 +63,7 @@
             font-family: inherit;
         }
         .nav-dropdown-trigger:hover {
-            color: #00ff88;
+            color: #FF8A3D;
         }
         .nav-dropdown-menu {
             position: absolute;
@@ -95,18 +96,18 @@
             text-decoration: none;
         }
         .nav-dropdown-menu a:hover {
-            color: #00ff88;
-            background: rgba(0, 255, 136, 0.05);
+            color: #FF8A3D;
+            background: rgba(255, 138, 61, 0.05);
         }
-        .btn-platform { background: linear-gradient(135deg, #00ff88 0%, #00cc6a 100%); color: #0a0a0f; font-weight: 600; transition: all 0.3s ease; }
-        .btn-platform:hover { transform: translateY(-2px); box-shadow: 0 10px 40px rgba(0, 255, 136, 0.3); }
-        .btn-outline { border: 1px solid #00ff88; color: #00ff88; transition: all 0.3s ease; background: transparent; }
-        .btn-outline:hover { background: rgba(0, 255, 136, 0.1); }
-        .section-label { font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: #00ff88; }
+        .btn-platform { background: linear-gradient(135deg, #FF8A3D 0%, #FF5252 100%); color: #0B0F14; font-weight: 600; transition: all 0.3s ease; }
+        .btn-platform:hover { transform: translateY(-2px); box-shadow: 0 10px 40px rgba(255, 138, 61, 0.3); }
+        .btn-outline { border: 1px solid #FF8A3D; color: #FF8A3D; transition: all 0.3s ease; background: transparent; }
+        .btn-outline:hover { background: rgba(255, 138, 61, 0.1); }
+        .section-label { font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: #FF8A3D; }
         .section-label::before { content: '// '; opacity: 0.5; }
-        .feature-card { background: rgba(13, 17, 23, 0.8); border: 1px solid #21262d; border-radius: 8px; padding: 24px; transition: all 0.3s ease; }
-        .feature-card:hover { border-color: #00ff88; transform: translateY(-4px); }
-        .metric-card { background: linear-gradient(135deg, rgba(0, 255, 136, 0.05) 0%, rgba(0, 212, 255, 0.02) 100%); border: 1px solid rgba(0, 255, 136, 0.2); }
+        .feature-card { background: rgba(13, 17, 23, 0.8); border: 1px solid #1E2A3D; border-radius: 8px; padding: 24px; transition: all 0.3s ease; }
+        .feature-card:hover { border-color: #FF8A3D; transform: translateY(-4px); }
+        .metric-card { background: linear-gradient(135deg, rgba(255, 138, 61, 0.05) 0%, rgba(34, 211, 238, 0.02) 100%); border: 1px solid rgba(255, 138, 61, 0.2); }
         .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
         .fade-in.visible { opacity: 1; transform: translateY(0); }
     </style>
@@ -121,7 +122,7 @@ document.head.appendChild(o)}initApollo();</script>
         <div class="max-w-7xl mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
                 <a href="index.html" class="flex items-center gap-3">
-                    <img src="/public/optimal-logo.png" alt="Optimal Logo" class="h-8 w-auto">
+                    <img src="/public/optimal-horizon.svg" alt="Optimal" class="h-7 w-auto"><span class="font-display text-base font-medium tracking-[0.18em] text-sand">OPTIMAL</span>
                 </a>
                 <div class="hidden md:flex items-center gap-8">
                     <div class="nav-dropdown">
@@ -131,11 +132,10 @@ document.head.appendChild(o)}initApollo();</script>
                         </button>
                         <div class="nav-dropdown-menu">
                             <a href="/platform">Platform Overview</a>
-                            <a href="/integrations">Integrations</a>
                             <a href="/#capabilities">Capabilities</a>
                         </div>
                     </div>
-                    <a href="/#team" class="nav-link font-mono text-sm">Team</a>
+                    <a href="/#story" class="nav-link font-mono text-sm">Mission</a>
                     <div class="nav-dropdown">
                         <button class="nav-dropdown-trigger font-mono text-sm">
                             Resources
@@ -161,10 +161,9 @@ document.head.appendChild(o)}initApollo();</script>
                     <div class="flex flex-col gap-2">
                         <span class="font-mono text-xs text-gray-500 uppercase tracking-wider">Platform</span>
                         <a href="/platform" class="nav-link font-mono text-sm pl-3">Overview</a>
-                        <a href="/integrations" class="nav-link font-mono text-sm pl-3">Integrations</a>
                         <a href="/#capabilities" class="nav-link font-mono text-sm pl-3">Capabilities</a>
                     </div>
-                    <a href="/#team" class="nav-link font-mono text-sm">Team</a>
+                    <a href="/#story" class="nav-link font-mono text-sm">Mission</a>
                     <div class="flex flex-col gap-2">
                         <span class="font-mono text-xs text-gray-500 uppercase tracking-wider">Resources</span>
                         <a href="https://docs.gooptimal.io/" target="_blank" class="nav-link font-mono text-sm pl-3">Documentation</a>
@@ -336,7 +335,7 @@ document.head.appendChild(o)}initApollo();</script>
         <div class="max-w-7xl mx-auto px-6">
             <div class="flex flex-col md:flex-row items-center justify-between gap-4">
                 <div class="flex items-center gap-3">
-                    <img src="/public/optimal-logo.png" alt="Optimal Logo" class="h-6 w-auto">
+                    <img src="/public/optimal-horizon.svg" alt="Optimal" class="h-6 w-auto"><span class="font-display text-sm font-medium tracking-[0.18em] text-sand">OPTIMAL</span>
                 </div>
                 <p class="text-gray-500 text-sm font-mono">&copy; 2026 Optimal. All rights reserved.</p>
                 <div class="flex items-center gap-4">

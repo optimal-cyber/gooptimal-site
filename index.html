@@ -3,18 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Optimal | AI-Powered Application Security Platform - Accelerate Time to ATO</title>
-    <meta name="description" content="Protect your client data and accelerate time to market. AI-powered AppSec platform with vulnerability management, SBOM tracking, STIG automation, and FedRAMP/CMMC compliance support.">
-    <meta name="keywords" content="application security, DevSecOps, vulnerability management, SBOM, software bill of materials, container security, STIG compliance, FedRAMP, CMMC, ATO, cybersecurity, AI security, LLM security, runtime security">
+    <title>Optimal | AI Infrastructure for Mission Systems</title>
+    <meta name="description" content="Optimal helps regulated operators secure software supply chains, automate trust, and accelerate deployment — so teams can move with confidence when the signal aligns.">
+    <meta name="keywords" content="AI infrastructure, mission systems, software supply chain security, defense software, FedRAMP, ATO, compliance automation, SBOM, vulnerability management, DevSecOps, mission software">
     <meta name="author" content="Optimal">
     <meta name="robots" content="index, follow">
 
-    <!-- Canonical URL -->
     <link rel="canonical" href="https://gooptimal.io/">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Optimal | Accelerate Secure Software Delivery">
-    <meta property="og:description" content="What would you pay to prevent a data breach? Protect your client data with AI-powered security testing, vulnerability management, and compliance automation.">
+    <meta property="og:title" content="Optimal | AI Infrastructure for Mission Systems">
+    <meta property="og:description" content="Deploy faster. Authorize earlier. Operate securely. Optimal builds AI infrastructure for the regulated operators behind mission systems.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://gooptimal.io">
     <meta property="og:image" content="https://gooptimal.io/public/optimal-social-preview.png">
@@ -22,57 +21,48 @@
     <meta property="og:image:height" content="630">
     <meta property="og:site_name" content="Optimal">
 
-    <!-- Twitter Card -->
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Optimal | AI-Powered AppSec Platform">
-    <meta name="twitter:description" content="Protect your client data. Accelerate time to ATO. AI-powered vulnerability management and compliance automation.">
+    <meta name="twitter:title" content="Optimal | AI Infrastructure for Mission Systems">
+    <meta name="twitter:description" content="Deploy faster. Authorize earlier. Operate securely.">
     <meta name="twitter:image" content="https://gooptimal.io/public/optimal-social-preview.png">
 
-    <!-- Structured Data - Organization -->
+    <!-- Structured Data -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "Organization",
         "name": "Optimal",
         "url": "https://gooptimal.io",
-        "logo": "https://gooptimal.io/public/optimal-logo.png",
-        "description": "AI-powered application security platform helping organizations protect client data, accelerate time to market, and achieve compliance with FedRAMP, CMMC, and NIST frameworks.",
+        "logo": "https://gooptimal.io/public/optimal-horizon.svg",
+        "description": "AI infrastructure for mission systems. Optimal helps regulated operators secure software supply chains, automate trust, and accelerate deployment.",
         "foundingDate": "2023",
-        "slogan": "Accelerating Secure Software Delivery",
+        "slogan": "Stay on channel.",
         "contactPoint": {
             "@type": "ContactPoint",
             "contactType": "sales",
             "url": "https://gooptimal.io/demo"
         },
-        "hasOfferCatalog": {
-            "@type": "OfferCatalog",
-            "name": "Security Services",
-            "itemListElement": [
-                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Vulnerability Management"}},
-                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "SBOM & Software Supply Chain Security"}},
-                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "STIG Compliance Automation"}},
-                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "AI/LLM Security Testing"}},
-                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Container Security"}},
-                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "GRC & Compliance Support"}}
-            ]
-        },
         "areaServed": "Worldwide",
         "sameAs": [
-            "https://github.com/optimal-cyber"
+            "https://github.com/optimal-cyber",
+            "https://www.linkedin.com/company/111329653",
+            "https://gitlab.com/optimal-labs/platform"
         ]
     }
     </script>
 
     <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/public/optimal-horizon.svg">
     <link rel="icon" type="image/png" href="/public/optimal-logo.png">
-    <link rel="shortcut icon" type="image/png" href="/public/optimal-logo.png">
+    <link rel="shortcut icon" href="/public/optimal-horizon.svg">
     <link rel="apple-touch-icon" href="/public/optimal-logo.png">
-    
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -80,471 +70,86 @@
             theme: {
                 extend: {
                     colors: {
-                        'cyber-black': '#0a0a0f',
-                        'cyber-dark': '#0d1117',
-                        'cyber-gray': '#161b22',
-                        'cyber-border': '#21262d',
-                        'cyber-green': '#00ff88',
-                        'cyber-green-dim': '#00cc6a',
-                        'cyber-blue': '#00d4ff',
-                        'cyber-amber': '#ffb800',
-                        'cyber-red': '#ff3366',
-                        'terminal-green': '#39ff14',
+                        midnight: '#0B0F14',
+                        navy: '#0F1B2E',
+                        ocean: '#1E3A4D',
+                        sunset: '#FF8A3D',
+                        coral: '#FF5252',
+                        ember: '#D63A3A',
+                        berry: '#A83255',
+                        dusk: '#9B5DE5',
+                        seafoam: '#22D3EE',
+                        sand: '#F2ECE4',
+                        'cyber-black': '#0B0F14',
+                        'cyber-dark': '#0F1B2E',
+                        'cyber-gray': '#11192A',
+                        'cyber-border': '#1E2A3D',
+                        'cyber-green': '#FF8A3D',
+                        'cyber-green-dim': '#FF5252',
+                        'cyber-blue': '#22D3EE',
+                        'cyber-amber': '#FFB347',
+                        'cyber-red': '#FF5252',
+                        'cyber-purple': '#9B5DE5',
+                        'terminal-green': '#FF8A3D',
                     },
                     fontFamily: {
-                        'mono': ['JetBrains Mono', 'monospace'],
                         'sans': ['Inter', 'system-ui', 'sans-serif'],
-                    },
-                    animation: {
-                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                        'scan': 'scan 2s linear infinite',
-                        'glow': 'glow 2s ease-in-out infinite alternate',
-                        'typing': 'typing 3s steps(40) infinite',
-                        'blink': 'blink 1s step-end infinite',
-                        'float': 'float 6s ease-in-out infinite',
-                        'grid-flow': 'gridFlow 20s linear infinite',
-                    },
-                    keyframes: {
-                        scan: {
-                            '0%': { transform: 'translateY(-100%)' },
-                            '100%': { transform: 'translateY(100%)' }
-                        },
-                        glow: {
-                            '0%': { boxShadow: '0 0 5px #00ff88, 0 0 10px #00ff88, 0 0 15px #00ff88' },
-                            '100%': { boxShadow: '0 0 10px #00ff88, 0 0 20px #00ff88, 0 0 30px #00ff88' }
-                        },
-                        typing: {
-                            '0%, 100%': { width: '0' },
-                            '50%': { width: '100%' }
-                        },
-                        blink: {
-                            '0%, 100%': { opacity: '1' },
-                            '50%': { opacity: '0' }
-                        },
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-10px)' }
-                        },
-                        gridFlow: {
-                            '0%': { backgroundPosition: '0 0' },
-                            '100%': { backgroundPosition: '50px 50px' }
-                        }
+                        'display': ['Space Grotesk', 'Inter', 'sans-serif'],
+                        'mono': ['JetBrains Mono', 'monospace'],
                     }
                 }
             }
         }
     </script>
-    
+
     <style>
-        /* Base Styles */
-        * {
-            scrollbar-width: thin;
-            scrollbar-color: #00ff88 #0d1117;
+        :root {
+            --midnight: #0B0F14;
+            --navy: #0F1B2E;
+            --ocean: #1E3A4D;
+            --sunset: #FF8A3D;
+            --coral: #FF5252;
+            --ember: #D63A3A;
+            --berry: #A83255;
+            --dusk: #9B5DE5;
+            --seafoam: #22D3EE;
+            --sand: #F2ECE4;
+
+            /* Swap-in hero photo: set --hero-image to url(...) on .hero-bg to overlay imagery */
+            --hero-image: none;
         }
-        
-        *::-webkit-scrollbar {
-            width: 6px;
-        }
-        
-        *::-webkit-scrollbar-track {
-            background: #0d1117;
-        }
-        
-        *::-webkit-scrollbar-thumb {
-            background: #00ff88;
-            border-radius: 3px;
-        }
-        
+
         body {
-            background: #0a0a0f;
+            background: var(--midnight);
+            color: #E2E8F0;
+            font-family: 'Inter', system-ui, sans-serif;
+            -webkit-font-smoothing: antialiased;
             overflow-x: hidden;
         }
 
-        /* Ticker */
-        .ticker-wrapper {
-            overflow: hidden;
+        ::selection { background: rgba(255, 138, 61, 0.35); color: var(--sand); }
+
+        .font-display {
+            font-family: 'Space Grotesk', 'Inter', sans-serif;
+            letter-spacing: -0.02em;
         }
 
-        .ticker-fade-left,
-        .ticker-fade-right {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            width: 100px;
-            z-index: 2;
-            pointer-events: none;
-        }
+        section { padding: 96px 0; }
+        @media (min-width: 1024px) { section { padding: 128px 0; } }
 
-        .ticker-fade-left {
-            left: 0;
-            background: linear-gradient(to right, #0a0a0f, transparent);
-        }
-
-        .ticker-fade-right {
-            right: 0;
-            background: linear-gradient(to left, #0a0a0f, transparent);
-        }
-
-        .ticker-track {
-            display: flex;
-            width: max-content;
-            animation: ticker-scroll 30s linear infinite;
-        }
-
-        .ticker-content {
-            display: flex;
-            align-items: center;
-            flex-shrink: 0;
-        }
-
-        .ticker-item {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-            padding: 0 32px;
-        }
-
-        .ticker-logo {
-            height: 32px;
-            width: auto;
-            max-width: 140px;
-            object-fit: contain;
-            filter: grayscale(100%) brightness(0.6);
-            opacity: 0.5;
-            transition: all 0.4s ease;
-        }
-
-        .ticker-logo-tall {
-            height: 48px;
-        }
-
-        .ticker-track:hover {
-            animation-play-state: paused;
-        }
-
-        .ticker-track:hover .ticker-logo {
-            filter: grayscale(0%) brightness(1);
-            opacity: 0.9;
-        }
-
-        @keyframes ticker-scroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-        
-        /* Grid Background Pattern */
-        .grid-bg {
-            background-image: 
-                linear-gradient(rgba(0, 255, 136, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 255, 136, 0.03) 1px, transparent 1px);
-            background-size: 50px 50px;
-            animation: gridFlow 20s linear infinite;
-        }
-        
-        /* Scanline Effect */
-        .scanlines::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: repeating-linear-gradient(
-                0deg,
-                transparent,
-                transparent 2px,
-                rgba(0, 255, 136, 0.01) 2px,
-                rgba(0, 255, 136, 0.01) 4px
-            );
-            pointer-events: none;
-            z-index: 1;
-        }
-        
-        /* Terminal Window */
-        .terminal-window {
-            background: linear-gradient(180deg, #1a1f2e 0%, #0d1117 100%);
-            border: 1px solid #21262d;
-            border-radius: 8px;
-            overflow: hidden;
-        }
-        
-        .terminal-header {
-            background: #161b22;
-            padding: 12px 16px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            border-bottom: 1px solid #21262d;
-        }
-        
-        .terminal-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-        }
-        
-        .terminal-content {
-            padding: 20px;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 14px;
-            line-height: 1.6;
-        }
-        
-        /* HUD Elements */
-        .hud-corner {
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            border-color: #00ff88;
-        }
-        
-        .hud-corner-tl {
-            top: 0;
-            left: 0;
-            border-top: 2px solid;
-            border-left: 2px solid;
-        }
-        
-        .hud-corner-tr {
-            top: 0;
-            right: 0;
-            border-top: 2px solid;
-            border-right: 2px solid;
-        }
-        
-        .hud-corner-bl {
-            bottom: 0;
-            left: 0;
-            border-bottom: 2px solid;
-            border-left: 2px solid;
-        }
-        
-        .hud-corner-br {
-            bottom: 0;
-            right: 0;
-            border-bottom: 2px solid;
-            border-right: 2px solid;
-        }
-        
-        /* Glowing Border */
-        .glow-border {
-            position: relative;
-        }
-        
-        .glow-border::before {
-            content: '';
-            position: absolute;
-            inset: -1px;
-            background: linear-gradient(45deg, #00ff88, #00d4ff, #00ff88);
-            border-radius: inherit;
-            z-index: -1;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        
-        .glow-border:hover::before {
-            opacity: 0.5;
-        }
-        
-        /* Metric Card */
-        .metric-card {
-            background: linear-gradient(135deg, rgba(0, 255, 136, 0.05) 0%, rgba(0, 212, 255, 0.02) 100%);
-            border: 1px solid rgba(0, 255, 136, 0.2);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .metric-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(0, 255, 136, 0.1), transparent);
-            transition: left 0.5s ease;
-        }
-        
-        .metric-card:hover::before {
-            left: 100%;
-        }
-        
-        /* Status Indicator */
-        .status-active {
-            position: relative;
-        }
-        
-        .status-active::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 8px;
-            height: 8px;
-            background: #00ff88;
-            border-radius: 50%;
-            box-shadow: 0 0 10px #00ff88;
-            animation: pulse 2s infinite;
-        }
-        
-        /* Platform Button */
-        .btn-platform {
-            background: linear-gradient(135deg, #00ff88 0%, #00cc6a 100%);
-            color: #0a0a0f;
-            font-weight: 600;
-            padding: 16px 32px;
-            border-radius: 4px;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.3s ease;
-        }
-        
-        .btn-platform::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: left 0.5s ease;
-        }
-        
-        .btn-platform:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 40px rgba(0, 255, 136, 0.3);
-        }
-        
-        .btn-platform:hover::before {
-            left: 100%;
-        }
-        
-        .btn-outline {
-            border: 1px solid #00ff88;
-            color: #00ff88;
-            padding: 16px 32px;
-            border-radius: 4px;
-            transition: all 0.3s ease;
-            background: transparent;
-        }
-        
-        .btn-outline:hover {
-            background: rgba(0, 255, 136, 0.1);
-            box-shadow: 0 0 20px rgba(0, 255, 136, 0.2);
-        }
-        
-        /* Feature Card */
-        .feature-card {
-            background: rgba(13, 17, 23, 0.8);
-            border: 1px solid #21262d;
-            border-radius: 8px;
-            padding: 24px;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-        
-        .feature-card:hover {
-            border-color: #00ff88;
-            transform: translateY(-4px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-        }
-        
-        .feature-card::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, #00ff88, transparent);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        
-        .feature-card:hover::after {
-            opacity: 1;
-        }
-        
-        /* Code Block */
-        .code-block {
-            background: #0d1117;
-            border: 1px solid #21262d;
-            border-radius: 6px;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 13px;
-            overflow-x: auto;
-        }
-        
-        .code-line-number {
-            color: #484f58;
-            user-select: none;
-            padding-right: 16px;
-            text-align: right;
-            min-width: 40px;
-        }
-        
-        /* Typing Animation */
-        .typing-effect {
-            overflow: hidden;
-            white-space: nowrap;
-            border-right: 2px solid #00ff88;
-            animation: typing 3s steps(40) infinite, blink 0.75s step-end infinite;
-        }
-        
-        /* Data Visualization */
-        .data-bar {
-            height: 4px;
-            background: #21262d;
-            border-radius: 2px;
-            overflow: hidden;
-        }
-        
-        .data-bar-fill {
-            height: 100%;
-            background: linear-gradient(90deg, #00ff88, #00d4ff);
-            border-radius: 2px;
-            transition: width 1s ease;
-        }
-        
-        /* Navigation */
+        /* ===== NAV ===== */
+        #navbar { transition: background 0.3s ease, border-color 0.3s ease, backdrop-filter 0.3s ease; }
         .nav-fixed {
-            backdrop-filter: blur(12px);
-            background: rgba(10, 10, 15, 0.9);
-            border-bottom: 1px solid rgba(33, 38, 45, 0.5);
+            backdrop-filter: blur(16px);
+            background: rgba(11, 15, 20, 0.85);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
         }
-        
-        .nav-link {
-            position: relative;
-            color: #8b949e;
-            transition: color 0.3s ease;
-        }
-        
-        .nav-link:hover {
-            color: #00ff88;
-        }
-        
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 0;
-            height: 1px;
-            background: #00ff88;
-            transition: width 0.3s ease;
-        }
-        
-        .nav-link:hover::after {
-            width: 100%;
-        }
+        .nav-link { color: #94A3B8; transition: color 0.3s ease; letter-spacing: 0.08em; }
+        .nav-link:hover { color: var(--sand); }
 
-        .nav-dropdown {
-            position: relative;
-        }
+        .nav-dropdown { position: relative; }
         .nav-dropdown-trigger {
-            color: #8b949e;
+            color: #94A3B8;
             transition: color 0.3s ease;
             cursor: pointer;
             display: flex;
@@ -554,138 +159,204 @@
             border: none;
             padding: 0;
             font-family: inherit;
+            letter-spacing: 0.08em;
         }
-        .nav-dropdown-trigger:hover {
-            color: #00ff88;
-        }
+        .nav-dropdown-trigger:hover { color: var(--sand); }
         .nav-dropdown-menu {
             position: absolute;
             top: 100%;
             left: 50%;
             transform: translateX(-50%);
-            margin-top: 16px;
-            background: rgba(10, 10, 15, 0.95);
-            border: 1px solid rgba(33, 38, 45, 0.8);
+            margin-top: 14px;
+            background: rgba(15, 27, 46, 0.95);
+            border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 8px;
             padding: 8px 0;
-            min-width: 200px;
+            min-width: 220px;
             opacity: 0;
             visibility: hidden;
             transition: opacity 0.2s ease, visibility 0.2s ease;
             backdrop-filter: blur(12px);
             z-index: 50;
         }
-        .nav-dropdown:hover .nav-dropdown-menu {
-            opacity: 1;
-            visibility: visible;
-        }
+        .nav-dropdown:hover .nav-dropdown-menu { opacity: 1; visibility: visible; }
         .nav-dropdown-menu a {
             display: block;
-            padding: 10px 16px;
-            color: #8b949e;
+            padding: 10px 18px;
+            color: #94A3B8;
             font-family: 'JetBrains Mono', monospace;
-            font-size: 13px;
+            font-size: 12px;
+            letter-spacing: 0.06em;
             transition: color 0.2s ease, background 0.2s ease;
             text-decoration: none;
         }
-        .nav-dropdown-menu a:hover {
-            color: #00ff88;
-            background: rgba(0, 255, 136, 0.05);
-        }
+        .nav-dropdown-menu a:hover { color: var(--sunset); background: rgba(255, 138, 61, 0.06); }
 
-        /* Section Headers */
-        .section-label {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 12px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: #00ff88;
-            display: flex;
+        /* ===== BUTTONS ===== */
+        .btn-sunset {
+            background: linear-gradient(135deg, #FF8A3D 0%, #FF5252 100%);
+            color: #0B0F14;
+            font-weight: 600;
+            padding: 14px 26px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            display: inline-flex;
             align-items: center;
             gap: 8px;
         }
-        
-        .section-label::before {
-            content: '//';
-            opacity: 0.5;
+        .btn-sunset:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(255, 138, 61, 0.32);
         }
-        
-        /* Architecture Diagram */
-        .arch-node {
-            background: rgba(0, 255, 136, 0.05);
-            border: 1px solid rgba(0, 255, 136, 0.3);
-            border-radius: 8px;
-            padding: 16px;
-            text-align: center;
+        .btn-ghost {
+            background: transparent;
+            color: var(--sand);
+            font-weight: 500;
+            padding: 14px 26px;
+            border-radius: 4px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
             transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
         }
-        
-        .arch-node:hover {
-            background: rgba(0, 255, 136, 0.1);
-            border-color: #00ff88;
+        .btn-ghost:hover { border-color: var(--sunset); color: var(--sunset); }
+
+        /* ===== EYEBROW & DISPLAY ===== */
+        .eyebrow {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            letter-spacing: 0.24em;
+            text-transform: uppercase;
+            color: var(--sunset);
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
         }
-        
-        .arch-connector {
-            position: relative;
-        }
-        
-        .arch-connector::after {
+        .eyebrow::before {
             content: '';
+            width: 28px;
+            height: 1px;
+            background: var(--sunset);
+            opacity: 0.6;
+        }
+        .heading-display {
+            font-family: 'Space Grotesk', 'Inter', sans-serif;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            line-height: 1.05;
+        }
+
+        /* ===== HORIZON STRIPES ===== */
+        .horizon-stripes { display: flex; flex-direction: column; gap: 4px; width: 100%; }
+        .horizon-stripes > span { display: block; height: 6px; border-radius: 1px; }
+        .horizon-stripes > span:nth-child(1) { background: linear-gradient(90deg, transparent, #FFB347 25%, #FFB347 75%, transparent); }
+        .horizon-stripes > span:nth-child(2) { background: linear-gradient(90deg, transparent, #FF8A3D 25%, #FF8A3D 75%, transparent); }
+        .horizon-stripes > span:nth-child(3) { background: linear-gradient(90deg, transparent, #F25E3A 25%, #F25E3A 75%, transparent); }
+        .horizon-stripes > span:nth-child(4) { background: linear-gradient(90deg, transparent, #D63A3A 25%, #D63A3A 75%, transparent); }
+        .horizon-stripes > span:nth-child(5) { background: linear-gradient(90deg, transparent, #A83255 25%, #A83255 75%, transparent); }
+        .horizon-stripes > span:nth-child(6) { background: linear-gradient(90deg, transparent, #6B3A82 25%, #6B3A82 75%, transparent); }
+        .horizon-stripes > span:nth-child(7) { background: linear-gradient(90deg, transparent, #3D4A8E 25%, #3D4A8E 75%, transparent); }
+        .horizon-stripes > span:nth-child(8) { background: linear-gradient(90deg, transparent, #2A3A6E 25%, #2A3A6E 75%, transparent); }
+
+        /* ===== HERO ===== */
+        .hero-bg {
+            background-color: var(--midnight);
+            background-image:
+                radial-gradient(ellipse 1100px 560px at 70% 90%, rgba(255, 138, 61, 0.12) 0%, transparent 60%),
+                radial-gradient(ellipse 900px 500px at 30% 30%, rgba(155, 93, 229, 0.08) 0%, transparent 70%),
+                linear-gradient(180deg, var(--midnight) 0%, #0E1622 100%);
+        }
+        .hero-photo {
             position: absolute;
-            background: rgba(0, 255, 136, 0.3);
+            inset: 0;
+            background-image: var(--hero-image, none);
+            background-size: cover;
+            background-position: center;
+            opacity: 0.30;
+            mix-blend-mode: screen;
+            pointer-events: none;
         }
-        
-        /* Responsive Adjustments */
-        @media (max-width: 768px) {
-            .terminal-content {
-                font-size: 12px;
-            }
+        .grid-bg {
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+            background-size: 64px 64px;
         }
-        
-        /* Fade In Animation */
+        .horizon-watermark {
+            position: absolute;
+            opacity: 0.07;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        /* ===== PANEL CARD ===== */
+        .panel {
+            background: linear-gradient(180deg, rgba(30, 58, 77, 0.18) 0%, rgba(15, 27, 46, 0.55) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 8px;
+            padding: 28px;
+            transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .panel:hover {
+            border-color: rgba(255, 138, 61, 0.32);
+            transform: translateY(-2px);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        /* ===== CAPABILITY ROWS ===== */
+        .cap-row {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            padding: 18px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .cap-row:first-child { padding-top: 4px; }
+        .cap-row:last-child { border-bottom: none; padding-bottom: 4px; }
+        .cap-tag {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            letter-spacing: 0.16em;
+            color: var(--sunset);
+            opacity: 0.65;
+            min-width: 32px;
+        }
+
+        /* ===== FADE-IN ===== */
         .fade-in {
             opacity: 0;
             transform: translateY(20px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
+            transition: opacity 0.8s ease, transform 0.8s ease;
         }
-        
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
     </style>
-    <script>function initApollo(){var n=Math.random().toString(36).substring(7),o=document.createElement("script");
-o.src="https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache="+n,o.async=!0,o.defer=!0,
-o.onload=function(){window.trackingFunctions.onLoad({appId:"698c8b7248beb80019d50b7e"})},
-document.head.appendChild(o)}initApollo();</script>
 </head>
 
-<body class="bg-cyber-black text-gray-100 font-sans antialiased">
-    <!-- Navigation -->
-    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-cyber-black/95 backdrop-blur-md">
+<body class="bg-midnight text-gray-200 font-sans antialiased">
+    <!-- ===== NAV ===== -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 nav-fixed">
         <div class="max-w-7xl mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
-                <!-- Logo -->
-                <a href="#" class="flex items-center gap-3">
-                    <img src="/public/optimal-logo.png" alt="Optimal Logo" class="h-8 w-auto">
+                <a href="/" class="flex items-center gap-3">
+                    <img src="/public/optimal-horizon.svg" alt="Optimal" class="h-7 w-auto">
+                    <span class="font-display text-base font-medium tracking-[0.18em] text-sand">OPTIMAL</span>
                 </a>
-                
-                <!-- Desktop Navigation -->
-                <div class="hidden md:flex items-center gap-8">
+
+                <div class="hidden md:flex items-center gap-10">
                     <div class="nav-dropdown">
-                        <button class="nav-dropdown-trigger font-mono text-sm">
+                        <button class="nav-dropdown-trigger font-mono text-xs uppercase">
                             Platform
                             <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
                         </button>
                         <div class="nav-dropdown-menu">
                             <a href="/platform">Platform Overview</a>
-                            <a href="/integrations">Integrations</a>
                             <a href="#capabilities">Capabilities</a>
                         </div>
                     </div>
-                    <a href="#team" class="nav-link font-mono text-sm">Team</a>
+                    <a href="#story" class="nav-link font-mono text-xs uppercase">Mission</a>
                     <div class="nav-dropdown">
-                        <button class="nav-dropdown-trigger font-mono text-sm">
+                        <button class="nav-dropdown-trigger font-mono text-xs uppercase">
                             Resources
                             <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
                         </button>
@@ -695,38 +366,35 @@ document.head.appendChild(o)}initApollo();</script>
                             <a href="/support">Support</a>
                         </div>
                     </div>
-                    <a href="/support" class="nav-link font-mono text-sm">Get Access</a>
-                    <a href="demo.html" class="btn-platform text-sm px-6 py-2">
+                    <a href="/support" class="nav-link font-mono text-xs uppercase">Get Access</a>
+                    <a href="/demo" class="btn-sunset font-mono text-xs uppercase tracking-[0.12em] px-5 py-2.5">
                         Request Demo
                     </a>
                 </div>
-                
-                <!-- Mobile Menu Button -->
-                <button id="mobile-menu-btn" class="md:hidden text-gray-400 hover:text-white">
+
+                <button id="mobile-menu-btn" class="md:hidden text-gray-400 hover:text-sand">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
                     </svg>
                 </button>
             </div>
-            
-            <!-- Mobile Menu -->
-            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t border-cyber-border pt-4 bg-cyber-black">
+
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t border-white/5 pt-4">
                 <div class="flex flex-col gap-4">
                     <div class="flex flex-col gap-2">
-                        <span class="font-mono text-xs text-gray-500 uppercase tracking-wider">Platform</span>
-                        <a href="/platform" class="nav-link font-mono text-sm pl-3">Overview</a>
-                        <a href="/integrations" class="nav-link font-mono text-sm pl-3">Integrations</a>
-                        <a href="#capabilities" class="nav-link font-mono text-sm pl-3">Capabilities</a>
+                        <span class="font-mono text-[10px] text-gray-500 uppercase tracking-[0.18em]">Platform</span>
+                        <a href="/platform" class="nav-link font-mono text-xs pl-3 uppercase">Overview</a>
+                        <a href="#capabilities" class="nav-link font-mono text-xs pl-3 uppercase">Capabilities</a>
                     </div>
-                    <a href="#team" class="nav-link font-mono text-sm">Team</a>
+                    <a href="#story" class="nav-link font-mono text-xs uppercase">Mission</a>
                     <div class="flex flex-col gap-2">
-                        <span class="font-mono text-xs text-gray-500 uppercase tracking-wider">Resources</span>
-                        <a href="https://docs.gooptimal.io/" target="_blank" class="nav-link font-mono text-sm pl-3">Documentation</a>
-                        <a href="/blog" class="nav-link font-mono text-sm pl-3">Blog</a>
-                        <a href="/support" class="nav-link font-mono text-sm pl-3">Support</a>
+                        <span class="font-mono text-[10px] text-gray-500 uppercase tracking-[0.18em]">Resources</span>
+                        <a href="https://docs.gooptimal.io/" target="_blank" class="nav-link font-mono text-xs pl-3 uppercase">Documentation</a>
+                        <a href="/blog" class="nav-link font-mono text-xs pl-3 uppercase">Blog</a>
+                        <a href="/support" class="nav-link font-mono text-xs pl-3 uppercase">Support</a>
                     </div>
-                    <a href="/support" class="nav-link font-mono text-sm">Get Access</a>
-                    <a href="demo.html" class="btn-platform text-sm px-6 py-3 text-center mt-2">
+                    <a href="/support" class="nav-link font-mono text-xs uppercase">Get Access</a>
+                    <a href="/demo" class="btn-sunset font-mono text-xs uppercase tracking-[0.12em] text-center mt-2">
                         Request Demo
                     </a>
                 </div>
@@ -734,1194 +402,360 @@ document.head.appendChild(o)}initApollo();</script>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="relative min-h-screen flex items-center justify-center grid-bg scanlines overflow-hidden">
-        <!-- Background Elements -->
-        <div class="absolute inset-0 bg-gradient-to-b from-cyber-black via-transparent to-cyber-black"></div>
-        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-cyber-green/5 rounded-full blur-3xl"></div>
-        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-cyber-blue/5 rounded-full blur-3xl"></div>
-        
-        <div class="relative z-10 max-w-7xl mx-auto px-6 py-32 text-center">
-            <!-- Status Badge -->
-            <div class="inline-flex items-center gap-2 bg-cyber-gray/50 border border-cyber-border rounded-full px-4 py-2 mb-8">
-                <span class="w-2 h-2 bg-cyber-green rounded-full animate-pulse"></span>
-                <span class="font-mono text-sm text-gray-400">SYSTEM STATUS: OPERATIONAL</span>
-            </div>
-            
-            <!-- Main Headline -->
-            <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-                <span class="text-white">Accelerating</span><br>
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyber-green to-cyber-blue">Secure Software Delivery</span>
-            </h1>
-            
-            <!-- Subheadline -->
-            <p class="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto mb-8 leading-relaxed">
-                Next-generation AppSec platform unifying DevSecOps through 
-                <span class="text-cyber-green">AI-powered security testing</span>, 
-                real-time threat monitoring, and seamless CI/CD integration.
-            </p>
-            
-            <!-- Terminal Preview -->
-            <div class="terminal-window max-w-2xl mx-auto mb-10 text-left">
-                <div class="terminal-header">
-                    <span class="terminal-dot bg-cyber-red"></span>
-                    <span class="terminal-dot bg-cyber-amber"></span>
-                    <span class="terminal-dot bg-cyber-green"></span>
-                    <span class="ml-4 font-mono text-xs text-gray-500">optimal-platform — bash</span>
-                </div>
-                <div class="terminal-content text-gray-300">
-                    <div class="flex items-start gap-2 mb-2">
-                        <span class="text-cyber-green">$</span>
-                        <span>optimal scan --target ./application --mode comprehensive</span>
-                    </div>
-                    <div class="text-gray-500 text-sm mb-2">
-                        <span class="text-cyber-blue">[INFO]</span> Initializing AI-powered security analysis...
-                    </div>
-                    <div class="text-gray-500 text-sm mb-2">
-                        <span class="text-cyber-green">[SAST]</span> Static analysis complete: 0 critical, 2 medium
-                    </div>
-                    <div class="text-gray-500 text-sm mb-2">
-                        <span class="text-cyber-green">[DAST]</span> Dynamic testing complete: 0 vulnerabilities
-                    </div>
-                    <div class="text-gray-500 text-sm mb-2">
-                        <span class="text-cyber-green">[SBOM]</span> Software bill of materials generated
-                    </div>
-                    <div class="flex items-start gap-2">
-                        <span class="text-cyber-green">$</span>
-                        <span class="text-cyber-green animate-blink">_</span>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- CTA Buttons -->
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="demo.html" class="btn-platform text-lg">
-                    <span class="flex items-center gap-2">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
-                        </svg>
-                        Request Demo
-                    </span>
-                </a>
-                <a href="/demo" class="btn-outline text-lg">
-                    <span class="flex items-center gap-2">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-                        </svg>
-                        Get Started
-                    </span>
-                </a>
-            </div>
-
-            <!-- Trust Indicators -->
-            <div class="mt-16 pt-8 border-t border-cyber-border/30">
-                <p class="font-mono text-xs text-gray-500 mb-6">BUILT FOR COMPLIANCE</p>
-                <div class="flex flex-wrap items-center justify-center gap-8 opacity-70">
-                    <span class="font-mono text-sm text-gray-400 flex items-center gap-2">
-                        <svg class="w-4 h-4 text-cyber-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
-                        </svg>
-                        FedRAMP Controls
-                    </span>
-                    <span class="text-gray-600">|</span>
-                    <span class="font-mono text-sm text-gray-400 flex items-center gap-2">
-                        <svg class="w-4 h-4 text-cyber-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
-                        </svg>
-                        CMMC Alignment
-                    </span>
-                    <span class="text-gray-600">|</span>
-                    <span class="font-mono text-sm text-gray-400 flex items-center gap-2">
-                        <svg class="w-4 h-4 text-cyber-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
-                        </svg>
-                        NIST 800-53
-                    </span>
-                    <span class="text-gray-600">|</span>
-                    <span class="font-mono text-sm text-gray-400 flex items-center gap-2">
-                        <svg class="w-4 h-4 text-cyber-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
-                        </svg>
-                        STIG Automation
-                    </span>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Scroll Indicator -->
-        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-            <div class="w-6 h-10 border-2 border-cyber-green/30 rounded-full flex justify-center">
-                <div class="w-1.5 h-3 bg-cyber-green rounded-full mt-2 animate-bounce"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Quantified Results Section -->
-    <section class="relative py-20 bg-cyber-black border-b border-cyber-border/30">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-12 fade-in">
-                <span class="section-label mb-4 block justify-center">Proven Results</span>
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">
-                    <span class="text-white">Measurable</span>
-                    <span class="text-cyber-green">Security Impact</span>
-                </h2>
-            </div>
-
-            <!-- Results Grid -->
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16 fade-in">
-                <div class="bg-cyber-gray/50 border border-cyber-border rounded-xl p-6 text-center hover:border-cyber-green/50 transition-all">
-                    <div class="text-4xl md:text-5xl font-bold text-cyber-green mb-2">95%</div>
-                    <div class="text-gray-300 text-sm font-medium mb-1">Vulnerability Reduction</div>
-                    <div class="text-xs text-gray-500">Within first 90 days</div>
-                </div>
-
-                <div class="bg-cyber-gray/50 border border-cyber-border rounded-xl p-6 text-center hover:border-cyber-blue/50 transition-all">
-                    <div class="text-4xl md:text-5xl font-bold text-cyber-blue mb-2">24hr</div>
-                    <div class="text-gray-300 text-sm font-medium mb-1">CVE Response SLA</div>
-                    <div class="text-xs text-gray-500">Critical vulnerability handling</div>
-                </div>
-
-                <div class="bg-cyber-gray/50 border border-cyber-border rounded-xl p-6 text-center hover:border-cyber-amber/50 transition-all">
-                    <div class="text-4xl md:text-5xl font-bold text-cyber-amber mb-2">10x</div>
-                    <div class="text-gray-300 text-sm font-medium mb-1">Faster Time to ATO</div>
-                    <div class="text-xs text-gray-500">Accelerate compliance authorization</div>
-                </div>
-
-                <div class="bg-cyber-gray/50 border border-cyber-border rounded-xl p-6 text-center hover:border-purple-400/50 transition-all">
-                    <div class="text-4xl md:text-5xl font-bold text-purple-400 mb-2">200+</div>
-                    <div class="text-gray-300 text-sm font-medium mb-1">Dev Hours Saved</div>
-                    <div class="text-xs text-gray-500">Per release cycle</div>
-                </div>
-            </div>
-
-            <!-- Role-Based Value Props -->
-            <div class="grid md:grid-cols-3 gap-6 fade-in">
-                <div class="bg-cyber-dark border border-cyber-border rounded-xl p-6 hover:border-cyber-green/30 transition-all group">
-                    <div class="w-12 h-12 bg-cyber-green/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-cyber-green/20 transition-all">
-                        <svg class="w-6 h-6 text-cyber-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-lg font-semibold text-white mb-2">For Security Teams</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Stop chasing vulnerabilities across fragmented tools. Get a unified view with AI-powered prioritization that focuses your team on what matters most.</p>
-                </div>
-
-                <div class="bg-cyber-dark border border-cyber-border rounded-xl p-6 hover:border-cyber-blue/30 transition-all group">
-                    <div class="w-12 h-12 bg-cyber-blue/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-cyber-blue/20 transition-all">
-                        <svg class="w-6 h-6 text-cyber-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-lg font-semibold text-white mb-2">For Platform Engineers</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Eliminate security bottlenecks in your CI/CD pipeline. Automated scanning integrates seamlessly without slowing down deployments.</p>
-                </div>
-
-                <div class="bg-cyber-dark border border-cyber-border rounded-xl p-6 hover:border-cyber-amber/30 transition-all group">
-                    <div class="w-12 h-12 bg-cyber-amber/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-cyber-amber/20 transition-all">
-                        <svg class="w-6 h-6 text-cyber-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-lg font-semibold text-white mb-2">For CISOs & Leadership</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Accelerate compliance with automated evidence collection. Real-time dashboards provide executive visibility into security posture and audit readiness.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Platform Overview Section -->
-    <section id="platform" class="relative py-32 bg-cyber-dark">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid lg:grid-cols-2 gap-16 items-center">
-                <!-- Left Content -->
-                <div class="fade-in">
-                    <span class="section-label mb-4 block">Platform Overview</span>
-                    <h2 class="text-4xl md:text-5xl font-bold mb-6">
-                        <span class="text-white">Unified Security</span><br>
-                        <span class="text-cyber-green">Command Center</span>
-                    </h2>
-                    <p class="text-lg text-gray-400 mb-8 leading-relaxed">
-                        The Optimal Platform consolidates your entire security posture into a single, 
-                        AI-driven interface. From code commit to production deployment, maintain 
-                        complete visibility and control over your application security.
-                    </p>
-                    
-                    <!-- Feature List -->
-                    <div class="space-y-4">
-                        <div class="flex items-start gap-4">
-                            <div class="w-8 h-8 bg-cyber-green/10 rounded flex items-center justify-center flex-shrink-0 mt-1">
-                                <svg class="w-4 h-4 text-cyber-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                                </svg>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-white mb-1">Single Pane of Glass</h4>
-                                <p class="text-gray-400 text-sm">Aggregate findings from SAST, DAST, SCA, and container scanning in one dashboard</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-4">
-                            <div class="w-8 h-8 bg-cyber-green/10 rounded flex items-center justify-center flex-shrink-0 mt-1">
-                                <svg class="w-4 h-4 text-cyber-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                                </svg>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-white mb-1">AI-Powered Prioritization</h4>
-                                <p class="text-gray-400 text-sm">Machine learning models rank vulnerabilities by exploitability and business impact</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-4">
-                            <div class="w-8 h-8 bg-cyber-green/10 rounded flex items-center justify-center flex-shrink-0 mt-1">
-                                <svg class="w-4 h-4 text-cyber-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                                </svg>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-white mb-1">Automated Remediation</h4>
-                                <p class="text-gray-400 text-sm">Generate fix suggestions and auto-create Jira tickets with full context</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="mt-10">
-                        <a href="/demo" class="btn-platform">
-                            Get Started Free →
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Right Content - Dashboard Preview -->
-                <div class="fade-in relative">
-                    <div class="absolute inset-0 bg-gradient-to-r from-cyber-green/10 to-cyber-blue/10 rounded-xl blur-xl"></div>
-                    <div class="relative bg-cyber-gray border border-cyber-border rounded-xl overflow-hidden">
-                        <!-- Dashboard Header -->
-                        <div class="bg-cyber-dark border-b border-cyber-border px-6 py-4 flex items-center justify-between">
-                            <div class="flex items-center gap-3">
-                                <div class="w-3 h-3 bg-cyber-green rounded-full"></div>
-                                <span class="font-mono text-sm text-gray-400">Security Dashboard</span>
-                            </div>
-                            <span class="font-mono text-xs text-gray-500">Last updated: 2 min ago</span>
-                        </div>
-                        
-                        <!-- Dashboard Content -->
-                        <div class="p-6 space-y-6">
-                            <!-- Stats Row -->
-                            <div class="grid grid-cols-3 gap-4">
-                                <div class="text-center">
-                                    <div class="text-3xl font-bold text-cyber-green">0</div>
-                                    <div class="text-xs text-gray-500 font-mono">CRITICAL</div>
-                                </div>
-                                <div class="text-center">
-                                    <div class="text-3xl font-bold text-cyber-amber">3</div>
-                                    <div class="text-xs text-gray-500 font-mono">HIGH</div>
-                                </div>
-                                <div class="text-center">
-                                    <div class="text-3xl font-bold text-cyber-blue">12</div>
-                                    <div class="text-xs text-gray-500 font-mono">MEDIUM</div>
-                                </div>
-                            </div>
-                            
-                            <!-- Progress Bars -->
-                            <div class="space-y-3">
-                                <div>
-                                    <div class="flex justify-between text-xs mb-1">
-                                        <span class="text-gray-400">SAST Coverage</span>
-                                        <span class="text-cyber-green">98%</span>
-                                    </div>
-                                    <div class="data-bar">
-                                        <div class="data-bar-fill" style="width: 98%"></div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="flex justify-between text-xs mb-1">
-                                        <span class="text-gray-400">Container Security</span>
-                                        <span class="text-cyber-green">94%</span>
-                                    </div>
-                                    <div class="data-bar">
-                                        <div class="data-bar-fill" style="width: 94%"></div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="flex justify-between text-xs mb-1">
-                                        <span class="text-gray-400">Compliance Score</span>
-                                        <span class="text-cyber-green">100%</span>
-                                    </div>
-                                    <div class="data-bar">
-                                        <div class="data-bar-fill" style="width: 100%"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Recent Activity -->
-                            <div class="border-t border-cyber-border pt-4">
-                                <div class="text-xs text-gray-500 mb-3 font-mono">RECENT ACTIVITY</div>
-                                <div class="space-y-2 text-sm">
-                                    <div class="flex items-center gap-2 text-gray-400">
-                                        <span class="w-1.5 h-1.5 bg-cyber-green rounded-full"></span>
-                                        <span>Pipeline #1247 passed security gates</span>
-                                    </div>
-                                    <div class="flex items-center gap-2 text-gray-400">
-                                        <span class="w-1.5 h-1.5 bg-cyber-blue rounded-full"></span>
-                                        <span>SBOM generated for api-service:v2.1.0</span>
-                                    </div>
-                                    <div class="flex items-center gap-2 text-gray-400">
-                                        <span class="w-1.5 h-1.5 bg-cyber-amber rounded-full"></span>
-                                        <span>CVE-2024-1234 auto-remediated</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Capabilities Section -->
-    <section id="capabilities" class="relative py-32 bg-cyber-black">
+    <!-- ===== 1. HERO ===== -->
+    <section class="relative min-h-screen flex items-center hero-bg overflow-hidden pt-24" style="padding-top: 96px; padding-bottom: 96px;">
         <div class="absolute inset-0 grid-bg opacity-50"></div>
-        
-        <div class="relative max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16 fade-in">
-                <span class="section-label mb-4 block justify-center">Core Capabilities</span>
-                <h2 class="text-4xl md:text-5xl font-bold mb-6">
-                    <span class="text-white">Full-Spectrum</span>
-                    <span class="text-cyber-green">Security Coverage</span>
-                </h2>
-                <p class="text-lg text-gray-400 max-w-2xl mx-auto">
-                    Enterprise-grade security tools integrated into a unified platform, 
-                    powered by AI and built for modern DevSecOps workflows.
+        <div class="hero-photo"></div>
+        <img src="/public/optimal-horizon.svg" alt="" class="horizon-watermark" style="width: 720px; height: 720px; right: -180px; top: 50%; transform: translateY(-55%);">
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6 w-full">
+            <div class="max-w-4xl">
+                <span class="eyebrow mb-8">Mission Systems Infrastructure</span>
+                <h1 class="heading-display text-5xl md:text-7xl text-sand mt-6 mb-8">
+                    AI Infrastructure<br>
+                    <span class="text-transparent bg-clip-text" style="background-image: linear-gradient(90deg, #FF8A3D 0%, #FF5252 50%, #9B5DE5 100%);">for Mission Systems</span>
+                </h1>
+                <p class="text-lg md:text-xl text-gray-400 mb-10 max-w-2xl leading-relaxed">
+                    Optimal helps regulated operators secure software supply chains, automate trust, and accelerate deployment — so teams can move with confidence when the signal aligns.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 mb-10">
+                    <a href="/platform" class="btn-sunset font-mono text-xs uppercase tracking-[0.14em]">
+                        Explore Platform
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                    </a>
+                    <a href="/demo" class="btn-ghost font-mono text-xs uppercase tracking-[0.14em]">
+                        Talk to an Expert
+                    </a>
+                </div>
+                <p class="font-mono text-xs text-gray-500 tracking-[0.22em] uppercase">
+                    Deploy faster · Authorize earlier · Operate securely
                 </p>
             </div>
-            
-            <!-- Capabilities Grid -->
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- SAST -->
-                <div class="feature-card fade-in">
-                    <div class="w-12 h-12 bg-cyber-green/10 rounded-lg flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6 text-cyber-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
-                        </svg>
+        </div>
+
+        <!-- Bottom horizon stripes + telemetry strip -->
+        <div class="absolute bottom-0 left-0 right-0">
+            <div class="max-w-7xl mx-auto px-6 pb-6">
+                <div class="flex items-end justify-between gap-8">
+                    <div class="flex-1 horizon-stripes opacity-70" style="max-width: 60%;">
+                        <span></span><span></span><span></span><span></span>
+                        <span></span><span></span><span></span><span></span>
                     </div>
-                    <h3 class="text-xl font-semibold text-white mb-2">Static Analysis (SAST)</h3>
-                    <p class="text-gray-400 text-sm mb-4">
-                        AI-enhanced code scanning supporting 30+ languages. Detect vulnerabilities, 
-                        security anti-patterns, and compliance violations at commit time.
-                    </p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-2 py-1 bg-cyber-gray rounded text-xs text-gray-400">Python</span>
-                        <span class="px-2 py-1 bg-cyber-gray rounded text-xs text-gray-400">Java</span>
-                        <span class="px-2 py-1 bg-cyber-gray rounded text-xs text-gray-400">Go</span>
-                        <span class="px-2 py-1 bg-cyber-gray rounded text-xs text-gray-400">TypeScript</span>
-                    </div>
-                </div>
-                
-                <!-- DAST -->
-                <div class="feature-card fade-in">
-                    <div class="w-12 h-12 bg-cyber-blue/10 rounded-lg flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6 text-cyber-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold text-white mb-2">Dynamic Testing (DAST)</h3>
-                    <p class="text-gray-400 text-sm mb-4">
-                        Automated penetration testing against running applications. Discover runtime 
-                        vulnerabilities, authentication flaws, and injection attacks.
-                    </p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-2 py-1 bg-cyber-gray rounded text-xs text-gray-400">OWASP Top 10</span>
-                        <span class="px-2 py-1 bg-cyber-gray rounded text-xs text-gray-400">API Security</span>
-                    </div>
-                </div>
-                
-                <!-- Container Security -->
-                <div class="feature-card fade-in">
-                    <div class="w-12 h-12 bg-cyber-amber/10 rounded-lg flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6 text-cyber-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold text-white mb-2">Container Scanning</h3>
-                    <p class="text-gray-400 text-sm mb-4">
-                        Deep inspection of container images, Kubernetes manifests, and 
-                        infrastructure-as-code. Powered by Trivy and Falco integration.
-                    </p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-2 py-1 bg-cyber-gray rounded text-xs text-gray-400">Docker</span>
-                        <span class="px-2 py-1 bg-cyber-gray rounded text-xs text-gray-400">K8s</span>
-                        <span class="px-2 py-1 bg-cyber-gray rounded text-xs text-gray-400">Terraform</span>
-                    </div>
-                </div>
-                
-                <!-- SBOM -->
-                <div class="feature-card fade-in">
-                    <div class="w-12 h-12 bg-purple-500/10 rounded-lg flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold text-white mb-2">SBOM Generation</h3>
-                    <p class="text-gray-400 text-sm mb-4">
-                        Automatic Software Bill of Materials in CycloneDX and SPDX formats. 
-                        Meet federal compliance requirements with continuous attestation.
-                    </p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-2 py-1 bg-cyber-gray rounded text-xs text-gray-400">EO 14028</span>
-                        <span class="px-2 py-1 bg-cyber-gray rounded text-xs text-gray-400">NTIA</span>
-                    </div>
-                </div>
-                
-                <!-- AI Red Teaming -->
-                <div class="feature-card fade-in">
-                    <div class="w-12 h-12 bg-cyber-red/10 rounded-lg flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6 text-cyber-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold text-white mb-2">AI Red Teaming</h3>
-                    <p class="text-gray-400 text-sm mb-4">
-                        Adversarial testing for LLM applications. Detect prompt injection, 
-                        data leakage, and model manipulation vulnerabilities.
-                    </p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-2 py-1 bg-cyber-gray rounded text-xs text-gray-400">LLM Security</span>
-                        <span class="px-2 py-1 bg-cyber-gray rounded text-xs text-gray-400">OWASP LLM</span>
-                    </div>
-                </div>
-                
-                <!-- Compliance -->
-                <div class="feature-card fade-in">
-                    <div class="w-12 h-12 bg-cyber-green/10 rounded-lg flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6 text-cyber-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold text-white mb-2">Compliance Automation</h3>
-                    <p class="text-gray-400 text-sm mb-4">
-                        Continuous compliance monitoring with automated evidence collection. 
-                        Pre-built policies for FedRAMP, NIST, SOC 2, and HIPAA.
-                    </p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-2 py-1 bg-cyber-gray rounded text-xs text-gray-400">OSCAL</span>
-                        <span class="px-2 py-1 bg-cyber-gray rounded text-xs text-gray-400">GRC</span>
+                    <div class="font-mono text-[10px] text-gray-600 tracking-[0.22em] hidden md:block">
+                        33.7393° N · 118.3995° W · CH 03 · OPEN
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Platform Dashboards Section -->
-    <section class="relative py-32 bg-cyber-dark">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16 fade-in">
-                <span class="section-label mb-4 block justify-center">Platform in Action</span>
-                <h2 class="text-4xl md:text-5xl font-bold mb-6">
-                    <span class="text-white">See the</span>
-                    <span class="text-cyber-green">Platform</span>
-                </h2>
-                <p class="text-lg text-gray-400 max-w-2xl mx-auto">
-                    Real dashboards from the Optimal Platform showing Launch Pad, Vulnerability Management, STIG Library, and Container SBOM tracking.
-                </p>
-            </div>
-            
-            <!-- Screenshot Grid -->
-            <div class="grid md:grid-cols-2 gap-8">
-                <!-- Launch Pad -->
-                <div class="fade-in group">
-                    <div class="relative rounded-xl overflow-hidden border border-cyber-border hover:border-cyber-green transition-all duration-300">
-                        <div class="bg-cyber-gray px-4 py-3 border-b border-cyber-border flex items-center justify-between">
-                            <div class="flex items-center gap-2">
-                                <span class="w-3 h-3 rounded-full bg-cyber-red"></span>
-                                <span class="w-3 h-3 rounded-full bg-cyber-amber"></span>
-                                <span class="w-3 h-3 rounded-full bg-cyber-green"></span>
-                            </div>
-                            <span class="font-mono text-xs text-gray-500">Launch Pad</span>
-                        </div>
-                        <img src="/public/launchpad-services.png" alt="Launch Pad Dashboard" class="w-full h-auto group-hover:scale-[1.02] transition-transform duration-300">
-                    </div>
-                    <div class="mt-4">
-                        <h3 class="text-lg font-semibold text-white mb-2">Launch Pad</h3>
-                        <p class="text-gray-400 text-sm">Access all platform services and tools from a single unified interface. Integrated security dashboard, compliance center, and DevSecOps toolchain.</p>
-                    </div>
-                </div>
-                
-                <!-- Vulnerability Management -->
-                <div class="fade-in group">
-                    <div class="relative rounded-xl overflow-hidden border border-cyber-border hover:border-cyber-green transition-all duration-300">
-                        <div class="bg-cyber-gray px-4 py-3 border-b border-cyber-border flex items-center justify-between">
-                            <div class="flex items-center gap-2">
-                                <span class="w-3 h-3 rounded-full bg-cyber-red"></span>
-                                <span class="w-3 h-3 rounded-full bg-cyber-amber"></span>
-                                <span class="w-3 h-3 rounded-full bg-cyber-green"></span>
-                            </div>
-                            <span class="font-mono text-xs text-gray-500">Vulnerability Management</span>
-                        </div>
-                        <img src="/public/vulnerabilities.png" alt="Vulnerability Management Dashboard" class="w-full h-auto group-hover:scale-[1.02] transition-transform duration-300">
-                    </div>
-                    <div class="mt-4">
-                        <h3 class="text-lg font-semibold text-white mb-2">Vulnerability Management</h3>
-                        <p class="text-gray-400 text-sm">AI-powered risk scoring with reachability analysis, EPSS probability, and CISA KEV integration. Know which vulnerabilities actually matter to your production environment.</p>
-                    </div>
-                </div>
-                
-                <!-- Kubernetes STIG -->
-                <div class="fade-in group">
-                    <div class="relative rounded-xl overflow-hidden border border-cyber-border hover:border-cyber-green transition-all duration-300">
-                        <div class="bg-cyber-gray px-4 py-3 border-b border-cyber-border flex items-center justify-between">
-                            <div class="flex items-center gap-2">
-                                <span class="w-3 h-3 rounded-full bg-cyber-red"></span>
-                                <span class="w-3 h-3 rounded-full bg-cyber-amber"></span>
-                                <span class="w-3 h-3 rounded-full bg-cyber-green"></span>
-                            </div>
-                            <span class="font-mono text-xs text-gray-500">Kubernetes STIG</span>
-                        </div>
-                        <img src="/public/k8-stig.png" alt="Kubernetes STIG Library" class="w-full h-auto group-hover:scale-[1.02] transition-transform duration-300">
-                    </div>
-                    <div class="mt-4">
-                        <h3 class="text-lg font-semibold text-white mb-2">Kubernetes STIG</h3>
-                        <p class="text-gray-400 text-sm">Container platform security compliance with DISA Kubernetes STIG checks, CAT severity mapping, and automated remediation guidance.</p>
-                    </div>
-                </div>
-                
-                <!-- Container Image Catalog -->
-                <div class="fade-in group">
-                    <div class="relative rounded-xl overflow-hidden border border-cyber-border hover:border-cyber-green transition-all duration-300">
-                        <div class="bg-cyber-gray px-4 py-3 border-b border-cyber-border flex items-center justify-between">
-                            <div class="flex items-center gap-2">
-                                <span class="w-3 h-3 rounded-full bg-cyber-red"></span>
-                                <span class="w-3 h-3 rounded-full bg-cyber-amber"></span>
-                                <span class="w-3 h-3 rounded-full bg-cyber-green"></span>
-                            </div>
-                            <span class="font-mono text-xs text-gray-500">Container SBOM Catalog</span>
-                        </div>
-                        <img src="/public/sbom-image-ctalogue.png" alt="Container SBOM Catalog" class="w-full h-auto group-hover:scale-[1.02] transition-transform duration-300">
-                    </div>
-                    <div class="mt-4">
-                        <h3 class="text-lg font-semibold text-white mb-2">Container Image Catalog</h3>
-                        <p class="text-gray-400 text-sm">Complete container registry visibility with image layer analysis, ABC compliance status, and ORA scoring. Track findings from Iron Bank parent images through your application layers.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Architecture Section -->
-    <section id="architecture" class="relative py-32 bg-cyber-black overflow-hidden">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16 fade-in">
-                <span class="section-label mb-4 block justify-center">Technical Architecture</span>
-                <h2 class="text-4xl md:text-5xl font-bold mb-6">
-                    <span class="text-white">Enterprise-Ready</span>
-                    <span class="text-cyber-green">Infrastructure</span>
-                </h2>
-                <p class="text-lg text-gray-400 max-w-2xl mx-auto">
-                    Built on proven, cloud-native technologies with zero-trust security architecture.
-                </p>
-            </div>
-            
-            <!-- Architecture Diagram -->
-            <div class="grid lg:grid-cols-2 gap-12 items-start">
-                <!-- Tech Stack -->
-                <div class="fade-in">
-                    <div class="terminal-window">
-                        <div class="terminal-header">
-                            <span class="terminal-dot bg-cyber-red"></span>
-                            <span class="terminal-dot bg-cyber-amber"></span>
-                            <span class="terminal-dot bg-cyber-green"></span>
-                            <span class="ml-4 font-mono text-xs text-gray-500">tech-stack.yaml</span>
-                        </div>
-                        <div class="terminal-content">
-                            <pre class="text-sm"><code><span class="text-cyber-blue">frontend:</span>
-  <span class="text-gray-400">framework:</span> <span class="text-cyber-green">Next.js 14</span>
-  <span class="text-gray-400">ui:</span> <span class="text-cyber-green">React + TypeScript</span>
-  <span class="text-gray-400">styling:</span> <span class="text-cyber-green">Tailwind CSS</span>
-
-<span class="text-cyber-blue">backend:</span>
-  <span class="text-gray-400">api:</span> <span class="text-cyber-green">FastAPI (Python)</span>
-  <span class="text-gray-400">database:</span> <span class="text-cyber-green">PostgreSQL</span>
-  <span class="text-gray-400">cache:</span> <span class="text-cyber-green">Redis</span>
-  <span class="text-gray-400">queue:</span> <span class="text-cyber-green">Celery</span>
-
-<span class="text-cyber-blue">infrastructure:</span>
-  <span class="text-gray-400">orchestration:</span> <span class="text-cyber-green">Kubernetes</span>
-  <span class="text-gray-400">monitoring:</span> <span class="text-cyber-green">Prometheus + Grafana</span>
-  <span class="text-gray-400">auth:</span> <span class="text-cyber-green">Keycloak SSO</span>
-  <span class="text-gray-400">gateway:</span> <span class="text-cyber-green">Kong API Gateway</span>
-
-<span class="text-cyber-blue">security_tools:</span>
-  <span class="text-gray-400">container_scan:</span> <span class="text-cyber-green">Trivy</span>
-  <span class="text-gray-400">sbom:</span> <span class="text-cyber-green">Syft</span>
-  <span class="text-gray-400">runtime:</span> <span class="text-cyber-green">Falco</span>
-  <span class="text-gray-400">policy:</span> <span class="text-cyber-green">OPA Gatekeeper</span></code></pre>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Architecture Features -->
-                <div class="space-y-6 fade-in">
-                    <div class="feature-card">
-                        <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 bg-cyber-green/10 rounded flex items-center justify-center flex-shrink-0">
-                                <svg class="w-5 h-5 text-cyber-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
-                                </svg>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-white mb-1">Zero-Trust Architecture</h4>
-                                <p class="text-gray-400 text-sm">Every request authenticated and authorized. mTLS between all services with automatic certificate rotation.</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="feature-card">
-                        <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 bg-cyber-blue/10 rounded flex items-center justify-center flex-shrink-0">
-                                <svg class="w-5 h-5 text-cyber-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"/>
-                                </svg>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-white mb-1">Multi-Tenant Isolation</h4>
-                                <p class="text-gray-400 text-sm">Complete data isolation with namespace-level separation. Dedicated encryption keys per tenant.</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="feature-card">
-                        <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 bg-cyber-amber/10 rounded flex items-center justify-center flex-shrink-0">
-                                <svg class="w-5 h-5 text-cyber-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-                                </svg>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-white mb-1">High Availability</h4>
-                                <p class="text-gray-400 text-sm">99.9% uptime SLA with automatic failover, horizontal scaling, and multi-region deployment support.</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="feature-card">
-                        <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 bg-purple-500/10 rounded flex items-center justify-center flex-shrink-0">
-                                <svg class="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-                                </svg>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-white mb-1">API-First Design</h4>
-                                <p class="text-gray-400 text-sm">Full REST and GraphQL APIs with OpenAPI documentation. Integrate with any CI/CD pipeline or tool.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Metrics Section -->
-    <section id="metrics" class="relative py-32 bg-cyber-black">
-        <div class="absolute inset-0 grid-bg opacity-30"></div>
-        
-        <div class="relative max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16 fade-in">
-                <span class="section-label mb-4 block justify-center">Platform Metrics</span>
-                <h2 class="text-4xl md:text-5xl font-bold mb-6">
-                    <span class="text-white">Proven</span>
-                    <span class="text-cyber-green">Performance</span>
-                </h2>
-                <p class="text-lg text-gray-400 max-w-2xl mx-auto">
-                    Enterprise-validated metrics demonstrating platform reliability and security efficacy.
-                </p>
-            </div>
-            
-            <!-- Metrics Grid -->
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-                <div class="metric-card rounded-xl p-6 text-center fade-in">
-                    <div class="text-5xl font-bold text-cyber-green mb-2">99.9%</div>
-                    <div class="text-gray-400 text-sm mb-1">Platform Uptime</div>
-                    <div class="text-xs text-gray-500">SLA Guaranteed</div>
-                </div>
-                
-                <div class="metric-card rounded-xl p-6 text-center fade-in">
-                    <div class="text-5xl font-bold text-cyber-blue mb-2">&lt;30s</div>
-                    <div class="text-gray-400 text-sm mb-1">Average Scan Time</div>
-                    <div class="text-xs text-gray-500">Per 100K LOC</div>
-                </div>
-                
-                <div class="metric-card rounded-xl p-6 text-center fade-in">
-                    <div class="text-5xl font-bold text-cyber-amber mb-2">95%</div>
-                    <div class="text-gray-400 text-sm mb-1">False Positive Reduction</div>
-                    <div class="text-xs text-gray-500">AI-Powered Triage</div>
-                </div>
-                
-                <div class="metric-card rounded-xl p-6 text-center fade-in">
-                    <div class="text-5xl font-bold text-purple-400 mb-2">50+</div>
-                    <div class="text-gray-400 text-sm mb-1">Tool Integrations</div>
-                    <div class="text-xs text-gray-500">Out of the Box</div>
-                </div>
-            </div>
-            
-            <!-- Investment Highlights -->
-            <div class="bg-cyber-gray border border-cyber-border rounded-xl p-8 fade-in">
-                <div class="grid md:grid-cols-3 gap-8">
-                    <div class="text-center md:text-left">
-                        <div class="font-mono text-xs text-cyber-green mb-2">// MARKET OPPORTUNITY</div>
-                        <h3 class="text-2xl font-bold text-white mb-2">$15.7B</h3>
-                        <p class="text-gray-400 text-sm">Application Security market by 2027, growing at 18.5% CAGR</p>
-                    </div>
-                    
-                    <div class="text-center md:text-left">
-                        <div class="font-mono text-xs text-cyber-green mb-2">// COMPLIANCE DEMAND</div>
-                        <h3 class="text-2xl font-bold text-white mb-2">100%</h3>
-                        <p class="text-gray-400 text-sm">Federal contractors require SBOM and continuous security monitoring</p>
-                    </div>
-                    
-                    <div class="text-center md:text-left">
-                        <div class="font-mono text-xs text-cyber-green mb-2">// DATA BREACH COST</div>
-                        <h3 class="text-2xl font-bold text-white mb-2">$4.88M</h3>
-                        <p class="text-gray-400 text-sm">Average cost of a data breach in 2024 - what's your client data worth?</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="relative py-32 bg-cyber-dark border-t border-cyber-border/30">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16 fade-in">
-                <span class="section-label mb-4 block justify-center">What Leaders Say</span>
-                <h2 class="text-4xl md:text-5xl font-bold mb-6">
-                    <span class="text-white">Trusted by</span>
-                    <span class="text-cyber-green">Security Professionals</span>
-                </h2>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 fade-in">
-                <!-- Testimonial 1 -->
-                <div class="bg-cyber-gray/50 border border-cyber-border rounded-xl p-8 hover:border-cyber-green/30 transition-all relative">
-                    <div class="absolute top-6 right-6 text-cyber-green/20">
-                        <svg class="w-12 h-12" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
-                        </svg>
-                    </div>
-                    <p class="text-gray-300 mb-6 leading-relaxed">"Optimal transformed how we approach application security. The AI-powered prioritization cut our vulnerability triage time by 80%, letting our team focus on actual remediation."</p>
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 bg-cyber-green/10 rounded-full flex items-center justify-center">
-                            <span class="text-cyber-green font-bold text-lg">JM</span>
-                        </div>
-                        <div>
-                            <div class="font-semibold text-white">James Mitchell</div>
-                            <div class="text-sm text-gray-500">Director of Security, Enterprise Tech</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Testimonial 2 -->
-                <div class="bg-cyber-gray/50 border border-cyber-border rounded-xl p-8 hover:border-cyber-blue/30 transition-all relative">
-                    <div class="absolute top-6 right-6 text-cyber-blue/20">
-                        <svg class="w-12 h-12" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
-                        </svg>
-                    </div>
-                    <p class="text-gray-300 mb-6 leading-relaxed">"The unified dashboard gives us complete visibility across our entire software supply chain. We went from managing 7 different security tools to one platform."</p>
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 bg-cyber-blue/10 rounded-full flex items-center justify-center">
-                            <span class="text-cyber-blue font-bold text-lg">SK</span>
-                        </div>
-                        <div>
-                            <div class="font-semibold text-white">Sarah Kim</div>
-                            <div class="text-sm text-gray-500">Platform Engineering Lead</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Testimonial 3 -->
-                <div class="bg-cyber-gray/50 border border-cyber-border rounded-xl p-8 hover:border-cyber-amber/30 transition-all relative">
-                    <div class="absolute top-6 right-6 text-cyber-amber/20">
-                        <svg class="w-12 h-12" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
-                        </svg>
-                    </div>
-                    <p class="text-gray-300 mb-6 leading-relaxed">"Our compliance journey used to take months of manual work. Optimal's automated evidence collection and continuous monitoring made our audit preparation seamless. Game changer for federal contracts."</p>
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 bg-cyber-amber/10 rounded-full flex items-center justify-center">
-                            <span class="text-cyber-amber font-bold text-lg">MC</span>
-                        </div>
-                        <div>
-                            <div class="font-semibold text-white">Michael Chen</div>
-                            <div class="text-sm text-gray-500">CISO, Federal Contractor</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Team Section -->
-    <section id="team" class="relative py-32 bg-cyber-dark">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16 fade-in">
-                <span class="section-label mb-4 block justify-center">Leadership</span>
-                <h2 class="text-4xl md:text-5xl font-bold mb-6">
-                    <span class="text-white">Built by Experts,</span>
-                    <span class="text-cyber-green">Trusted by Enterprises</span>
-                </h2>
-                <p class="text-lg text-gray-400 max-w-2xl mx-auto">
-                    Veteran-led team with deep expertise in enterprise security and defense operations.
-                </p>
-            </div>
-            
-            <!-- CEO Profile -->
-            <div class="max-w-4xl mx-auto fade-in">
-                <div class="bg-cyber-gray border border-cyber-border rounded-xl p-8 lg:p-12">
-                    <div class="flex flex-col lg:flex-row gap-10 items-center lg:items-start">
-                        <div class="relative flex-shrink-0">
-                            <img src="ryang.jpeg" alt="Ryan Gutwein" class="w-48 h-48 rounded-full object-cover border-2 border-cyber-green/30">
-                            <div class="absolute -bottom-3 left-1/2 transform -translate-x-1/2 bg-cyber-green text-cyber-black px-4 py-1 rounded-full text-sm font-bold whitespace-nowrap">
-                                CEO — Veteran
-                            </div>
-                        </div>
-                        <div class="flex-1 text-center lg:text-left">
-                            <h3 class="text-3xl font-bold text-white mb-2">Ryan Gutwein</h3>
-                            <p class="text-gray-400 mb-6 leading-relaxed">
-                                Former combat veteran with extensive experience in cybersecurity and secure software delivery operations. 15+ years leading enterprise security initiatives and digital transformation projects.
-                            </p>
-                            <p class="text-gray-400 mb-6 leading-relaxed">
-                                CISSP and CCSP certified, Ryan brings defense, cloud architecture, and security expertise, having led teams delivering mission-critical capabilities to enterprise organizations worldwide.
-                            </p>
-                            <a href="https://www.linkedin.com/in/rgutwein/" target="_blank" class="inline-flex items-center text-cyber-green font-semibold hover:text-cyber-green-dim transition-colors">
-                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                                </svg>
-                                Connect on LinkedIn
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Trust Badges -->
-            <div class="mt-16 grid md:grid-cols-3 gap-8 fade-in">
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-cyber-green/10 rounded-xl mx-auto mb-4 flex items-center justify-center">
-                        <svg class="w-8 h-8 text-cyber-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-2">Field Tested</h3>
-                    <p class="text-gray-400 text-sm">
-                        Currently deployed by enterprise organizations and government agencies worldwide
-                    </p>
-                </div>
-                
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-cyber-green/10 rounded-xl mx-auto mb-4 flex items-center justify-center">
-                        <svg class="w-8 h-8 text-cyber-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-2">Security-First</h3>
-                    <p class="text-gray-400 text-sm">
-                        Built with enterprise-grade security components ensuring top-tier standards
-                    </p>
-                </div>
-                
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-cyber-green/10 rounded-xl mx-auto mb-4 flex items-center justify-center">
-                        <svg class="w-8 h-8 text-cyber-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-2">Compliance Ready</h3>
-                    <p class="text-gray-400 text-sm">
-                        Pre-built for FedRAMP, CMMC, and enterprise compliance requirements
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="relative py-32 bg-cyber-black overflow-hidden">
-        <!-- Background Effects -->
-        <div class="absolute inset-0">
-            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-cyber-green/5 rounded-full blur-3xl"></div>
-        </div>
-        
-        <div class="relative max-w-4xl mx-auto px-6 text-center fade-in">
-            <span class="section-label mb-4 block justify-center">Get Started</span>
-            <h2 class="text-4xl md:text-5xl font-bold mb-6">
-                <span class="text-white">Ready to Secure</span><br>
-                <span class="text-cyber-green">Your Software Supply Chain?</span>
+    <!-- ===== 2. STORY ===== -->
+    <section class="relative" id="story">
+        <div class="max-w-5xl mx-auto px-6 text-center">
+            <img src="/public/optimal-horizon.svg" alt="" class="w-20 h-20 mx-auto mb-12 opacity-95">
+            <h2 class="heading-display text-3xl md:text-5xl text-sand mb-8">
+                When the signal aligns,<br>
+                <span class="text-sunset">you go optimal.</span>
             </h2>
-            <p class="text-xl text-gray-400 mb-10 max-w-2xl mx-auto">
-                Deploy the Optimal Platform in minutes. Open-source, self-hosted, 
-                with enterprise support available.
+            <p class="text-lg md:text-xl text-gray-400 leading-relaxed max-w-3xl mx-auto">
+                The Optimal mark represents the operational horizon — the moment where telemetry, evidence, risk, and mission context resolve into a clear path forward. We build infrastructure that helps teams align systems, reduce uncertainty, and execute with confidence.
             </p>
-            
-            <!-- Quick Start Terminal -->
-            <div class="terminal-window max-w-xl mx-auto mb-10 text-left">
-                <div class="terminal-header">
-                    <span class="terminal-dot bg-cyber-red"></span>
-                    <span class="terminal-dot bg-cyber-amber"></span>
-                    <span class="terminal-dot bg-cyber-green"></span>
-                    <span class="ml-4 font-mono text-xs text-gray-500">quick-start.sh</span>
-                </div>
-                <div class="terminal-content">
-                    <div class="text-gray-500 text-sm mb-2"># Install and deploy with Optimal CLI</div>
-                    <div class="flex items-start gap-2 mb-2">
-                        <span class="text-cyber-green">$</span>
-                        <span class="text-gray-300">optimal deploy --target ./application</span>
-                    </div>
-                    <div class="flex items-start gap-2 mb-2">
-                        <span class="text-cyber-green">$</span>
-                        <span class="text-gray-300">optimal scan --mode comprehensive</span>
-                    </div>
-                    <div class="text-gray-500 text-sm mt-4"># Source: https://gitlab.com/optimal-labs/platform</div>
-                </div>
-            </div>
-            
-            <!-- CTA Buttons -->
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="demo.html" class="btn-platform text-lg px-8">
-                    <span class="flex items-center gap-2">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
-                        </svg>
-                        Request Demo
-                    </span>
-                </a>
-                <a href="/demo" class="btn-outline text-lg px-8">
-                    <span class="flex items-center gap-2">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-                        </svg>
-                        Get Started
-                    </span>
-                </a>
-            </div>
         </div>
     </section>
 
-    <!-- Trusted By Ticker -->
-    <section class="bg-cyber-black border-t border-cyber-border py-10 overflow-hidden">
-        <div class="max-w-7xl mx-auto px-6 mb-8">
-            <p class="text-center text-gray-500 text-xs font-mono uppercase tracking-widest">// Trusted By Industry Leaders</p>
-        </div>
-        <div class="ticker-wrapper relative">
-            <div class="ticker-fade-left"></div>
-            <div class="ticker-fade-right"></div>
-            <div class="ticker-track">
-                <div class="ticker-content">
-                    <div class="ticker-item">
-                        <img src="/public/logos/motorola.svg" alt="Motorola" class="ticker-logo">
-                    </div>
-                    <div class="ticker-item">
-                        <img src="/public/logos/usaf.svg" alt="United States Air Force" class="ticker-logo ticker-logo-tall">
-                    </div>
-                    <div class="ticker-item">
-                        <img src="/public/logos/dha.svg" alt="Defense Health Agency" class="ticker-logo ticker-logo-tall">
-                    </div>
-                    <div class="ticker-item">
-                        <img src="/public/logos/centcom.svg" alt="United States Central Command" class="ticker-logo ticker-logo-tall">
-                    </div>
-                    <div class="ticker-item">
-                        <img src="/public/logos/jsoc.svg" alt="Joint Special Operations Command" class="ticker-logo ticker-logo-tall">
-                    </div>
-                    <div class="ticker-item">
-                        <img src="/public/logos/transunion.svg" alt="TransUnion" class="ticker-logo">
-                    </div>
-                    <div class="ticker-item">
-                        <img src="/public/logos/tanium.png" alt="Tanium" class="ticker-logo">
-                    </div>
-                    <div class="ticker-item">
-                        <img src="/public/logos/epirus.svg" alt="Epirus" class="ticker-logo">
-                    </div>
-                    <div class="ticker-item">
-                        <img src="/public/logos/valid-eval.svg" alt="Valid Eval" class="ticker-logo">
-                    </div>
-                    <div class="ticker-item">
-                        <img src="/public/logos/northrop-grumman.svg" alt="Northrop Grumman" class="ticker-logo">
-                    </div>
-                </div>
-                <div class="ticker-content" aria-hidden="true">
-                    <div class="ticker-item">
-                        <img src="/public/logos/motorola.svg" alt="Motorola" class="ticker-logo">
-                    </div>
-                    <div class="ticker-item">
-                        <img src="/public/logos/usaf.svg" alt="United States Air Force" class="ticker-logo ticker-logo-tall">
-                    </div>
-                    <div class="ticker-item">
-                        <img src="/public/logos/dha.svg" alt="Defense Health Agency" class="ticker-logo ticker-logo-tall">
-                    </div>
-                    <div class="ticker-item">
-                        <img src="/public/logos/centcom.svg" alt="United States Central Command" class="ticker-logo ticker-logo-tall">
-                    </div>
-                    <div class="ticker-item">
-                        <img src="/public/logos/jsoc.svg" alt="Joint Special Operations Command" class="ticker-logo ticker-logo-tall">
-                    </div>
-                    <div class="ticker-item">
-                        <img src="/public/logos/transunion.svg" alt="TransUnion" class="ticker-logo">
-                    </div>
-                    <div class="ticker-item">
-                        <img src="/public/logos/tanium.png" alt="Tanium" class="ticker-logo">
-                    </div>
-                    <div class="ticker-item">
-                        <img src="/public/logos/epirus.svg" alt="Epirus" class="ticker-logo">
-                    </div>
-                    <div class="ticker-item">
-                        <img src="/public/logos/valid-eval.svg" alt="Valid Eval" class="ticker-logo">
-                    </div>
-                    <div class="ticker-item">
-                        <img src="/public/logos/northrop-grumman.svg" alt="Northrop Grumman" class="ticker-logo">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-cyber-black border-t border-cyber-border py-16">
+    <!-- ===== 3. VALUE CARDS ===== -->
+    <section class="relative" id="values">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="grid md:grid-cols-4 gap-12 mb-12">
-                <!-- Logo & Description -->
-                <div class="md:col-span-2">
-                    <div class="flex items-center gap-3 mb-4">
-                        <img src="/public/optimal-logo.png" alt="Optimal Logo" class="h-8 w-auto">
+            <div class="mb-16 max-w-3xl flex items-end justify-between gap-8">
+                <div>
+                    <span class="eyebrow">What we build for</span>
+                    <h2 class="heading-display text-3xl md:text-5xl text-sand mt-6">
+                        Four forces that move teams forward.
+                    </h2>
+                </div>
+                <div class="font-mono text-[10px] text-gray-600 tracking-[0.22em] hidden md:block whitespace-nowrap">
+                    01 / 04 → 04 / 04
+                </div>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <article class="panel">
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="w-10 h-10 text-sunset">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9"/>
+                            </svg>
+                        </div>
+                        <span class="font-mono text-[10px] text-gray-600 tracking-[0.22em]">01 / 04</span>
                     </div>
-                    <p class="text-gray-400 text-sm max-w-md mb-6">
-                        Accelerating secure software delivery. Unifying DevSecOps through 
-                        AI-powered testing, real-time monitoring, and compliance automation.
+                    <h3 class="font-display text-xl text-sand mb-3">Software supply chains, end to end</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        Bring the components, build paths, and provenance under one operational picture you can act on.
+                    </p>
+                </article>
+                <article class="panel">
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="w-10 h-10 text-coral">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z"/>
+                            </svg>
+                        </div>
+                        <span class="font-mono text-[10px] text-gray-600 tracking-[0.22em]">02 / 04</span>
+                    </div>
+                    <h3 class="font-display text-xl text-sand mb-3">Compliance as a byproduct</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        Make evidence a side effect of how teams work — not a binder assembled after the fact.
+                    </p>
+                </article>
+                <article class="panel">
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="w-10 h-10 text-dusk">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                            </svg>
+                        </div>
+                        <span class="font-mono text-[10px] text-gray-600 tracking-[0.22em]">03 / 04</span>
+                    </div>
+                    <h3 class="font-display text-xl text-sand mb-3">Operate AI like the rest of the stack</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        Bring the same operational rigor to models, prompts, and inference that you bring to code.
+                    </p>
+                </article>
+                <article class="panel">
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="w-10 h-10 text-seafoam">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/>
+                            </svg>
+                        </div>
+                        <span class="font-mono text-[10px] text-gray-600 tracking-[0.22em]">04 / 04</span>
+                    </div>
+                    <h3 class="font-display text-xl text-sand mb-3">One operating model, every environment</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        Move from prototype to production to high-side enclaves without rebuilding the way teams work.
+                    </p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 4. PLATFORM ===== -->
+    <section class="relative" id="capabilities" style="background: linear-gradient(180deg, var(--midnight) 0%, #0E1622 50%, var(--midnight) 100%);">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-16 items-start">
+                <div>
+                    <span class="eyebrow">Platform</span>
+                    <h2 class="heading-display text-3xl md:text-5xl text-sand mt-6 mb-6">
+                        Built for operators.<br>
+                        <span class="text-gray-500">Designed for mission systems.</span>
+                    </h2>
+                    <p class="text-lg text-gray-400 leading-relaxed mb-10 max-w-lg">
+                        One platform, end-to-end. Optimal connects what your team already runs — IDE to runtime, code to compliance — into a single operational picture you can act on.
+                    </p>
+                    <a href="/platform" class="font-mono text-xs uppercase tracking-[0.18em] text-sunset hover:text-coral inline-flex items-center gap-2 transition-colors">
+                        Read the platform brief
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                    </a>
+                </div>
+                <div class="panel">
+                    <div class="cap-row">
+                        <span class="cap-tag">01</span>
+                        <span class="text-sand font-display text-base">SBOM &amp; software supply chain visibility</span>
+                    </div>
+                    <div class="cap-row">
+                        <span class="cap-tag">02</span>
+                        <span class="text-sand font-display text-base">Vulnerability intelligence</span>
+                    </div>
+                    <div class="cap-row">
+                        <span class="cap-tag">03</span>
+                        <span class="text-sand font-display text-base">Compliance automation</span>
+                    </div>
+                    <div class="cap-row">
+                        <span class="cap-tag">04</span>
+                        <span class="text-sand font-display text-base">Policy-as-code</span>
+                    </div>
+                    <div class="cap-row">
+                        <span class="cap-tag">05</span>
+                        <span class="text-sand font-display text-base">Evidence collection</span>
+                    </div>
+                    <div class="cap-row">
+                        <span class="cap-tag">06</span>
+                        <span class="text-sand font-display text-base">Secure deployment workflows</span>
+                    </div>
+                    <div class="cap-row">
+                        <span class="cap-tag">07</span>
+                        <span class="text-sand font-display text-base">AI security controls</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 5. AUDIENCE ===== -->
+    <section class="relative" id="audience">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="mb-16 max-w-3xl">
+                <span class="eyebrow">Operators</span>
+                <h2 class="heading-display text-3xl md:text-5xl text-sand mt-6">
+                    For teams that cannot afford uncertainty.
+                </h2>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <article class="panel">
+                    <span class="font-mono text-[10px] text-gray-500 tracking-[0.18em] uppercase">// 01</span>
+                    <h3 class="font-display text-lg text-sand mt-4 mb-3">Defense Industrial Base</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        Primes, subs, and program offices shipping software into classified and IL-rated environments.
+                    </p>
+                </article>
+                <article class="panel">
+                    <span class="font-mono text-[10px] text-gray-500 tracking-[0.18em] uppercase">// 02</span>
+                    <h3 class="font-display text-lg text-sand mt-4 mb-3">Federal Software Teams</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        Civilian agencies and contractors building toward FedRAMP, FISMA High, and StateRAMP authorizations.
+                    </p>
+                </article>
+                <article class="panel">
+                    <span class="font-mono text-[10px] text-gray-500 tracking-[0.18em] uppercase">// 03</span>
+                    <h3 class="font-display text-lg text-sand mt-4 mb-3">Regulated SaaS Providers</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        Healthcare, fintech, and critical infrastructure SaaS held to HIPAA, PCI, SOC 2, and ISO 27001.
+                    </p>
+                </article>
+                <article class="panel">
+                    <span class="font-mono text-[10px] text-gray-500 tracking-[0.18em] uppercase">// 04</span>
+                    <h3 class="font-display text-lg text-sand mt-4 mb-3">Security &amp; Platform Engineering</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        Application security, platform, and SRE teams who own delivery and need leverage, not more dashboards.
+                    </p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 6. BRAND CTA ===== -->
+    <section class="relative overflow-hidden" id="cta" style="background: radial-gradient(ellipse 1200px 600px at 50% 100%, rgba(255, 138, 61, 0.14) 0%, transparent 70%), var(--midnight);">
+        <div class="max-w-5xl mx-auto px-6 text-center relative z-10">
+            <span class="eyebrow mx-auto inline-flex">Brand Channel</span>
+            <h2 class="heading-display text-5xl md:text-7xl text-sand mt-6 mb-8">
+                Stay on channel.
+            </h2>
+            <p class="text-lg md:text-xl text-gray-400 leading-relaxed max-w-2xl mx-auto mb-12">
+                Align signal. Reduce uncertainty. Execute with confidence.
+            </p>
+            <a href="/demo" class="btn-sunset font-mono text-xs uppercase tracking-[0.18em] px-8 py-4">
+                Go Optimal
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </a>
+        </div>
+        <div class="absolute bottom-0 left-0 right-0 px-6 pb-6">
+            <div class="max-w-7xl mx-auto horizon-stripes opacity-80">
+                <span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="bg-midnight border-t border-white/5 pt-16 pb-10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-12 mb-16">
+                <div class="md:col-span-2">
+                    <a href="/" class="inline-flex items-center gap-3 mb-6">
+                        <img src="/public/optimal-horizon.svg" alt="Optimal" class="h-8 w-auto">
+                        <span class="font-display text-lg font-medium tracking-[0.18em] text-sand">OPTIMAL</span>
+                    </a>
+                    <p class="text-gray-400 text-sm max-w-md mb-6 leading-relaxed">
+                        AI infrastructure for mission systems. Built for the operators who keep critical software moving.
+                    </p>
+                    <p class="font-mono text-[10px] text-gray-600 tracking-[0.22em] uppercase mb-6">
+                        Stay on channel.
                     </p>
                     <div class="flex items-center gap-4">
-                        <a href="https://github.com/optimal-cyber" target="_blank" class="text-gray-400 hover:text-cyber-green transition-colors">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <a href="https://github.com/optimal-cyber" target="_blank" aria-label="GitHub" class="text-gray-500 hover:text-sunset transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                             </svg>
                         </a>
-                        <a href="https://www.linkedin.com/company/111329653" target="_blank" class="text-gray-400 hover:text-cyber-green transition-colors">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <a href="https://www.linkedin.com/company/111329653" target="_blank" aria-label="LinkedIn" class="text-gray-500 hover:text-sunset transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                            </svg>
+                        </a>
+                        <a href="https://gitlab.com/optimal-labs/platform" target="_blank" aria-label="GitLab" class="text-gray-500 hover:text-sunset transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M22.749 9.769L22.726 9.71l-2.16-5.638a.561.561 0 00-1.058.046l-1.46 4.475H6.066L4.605 4.118a.561.561 0 00-1.058-.046l-2.16 5.638-.022.06a3.997 3.997 0 001.327 4.62l.008.005.022.014 3.279 2.456 1.624 1.229 2.45 1.852a.66.66 0 00.798 0l2.45-1.852 1.624-1.229 3.299-2.47.008-.006a3.997 3.997 0 001.325-4.62z"/>
                             </svg>
                         </a>
                     </div>
                 </div>
-                
-                <!-- Platform Links -->
+
                 <div>
-                    <h4 class="font-mono text-sm text-cyber-green mb-4">// PLATFORM</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#capabilities" class="text-gray-400 hover:text-white text-sm transition-colors">Capabilities</a></li>
-                        <li><a href="#architecture" class="text-gray-400 hover:text-white text-sm transition-colors">Architecture</a></li>
-                        <li><a href="https://docs.gooptimal.io/" target="_blank" class="text-gray-400 hover:text-white text-sm transition-colors">Documentation</a></li>
-                        <li><a href="https://docs.gooptimal.io/" target="_blank" class="text-gray-400 hover:text-white text-sm transition-colors">Changelog</a></li>
+                    <h4 class="font-mono text-[10px] text-sunset tracking-[0.24em] uppercase mb-5">Platform</h4>
+                    <ul class="space-y-3">
+                        <li><a href="/platform" class="text-gray-400 hover:text-sand text-sm transition-colors">Overview</a></li>
+                        <li><a href="https://docs.gooptimal.io/" target="_blank" class="text-gray-400 hover:text-sand text-sm transition-colors">Documentation</a></li>
+                        <li><a href="https://gitlab.com/optimal-labs/platform" target="_blank" class="text-gray-400 hover:text-sand text-sm transition-colors">Source</a></li>
                     </ul>
                 </div>
-                
-                <!-- Company Links -->
+
                 <div>
-                    <h4 class="font-mono text-sm text-cyber-green mb-4">// COMPANY</h4>
-                    <ul class="space-y-2">
-                        <li><a href="/blog" class="text-gray-400 hover:text-white text-sm transition-colors">Blog</a></li>
-                        <li><a href="/support" class="text-gray-400 hover:text-white text-sm transition-colors">Support</a></li>
-                        <li><a href="mailto:info@gooptimal.io" class="text-gray-400 hover:text-white text-sm transition-colors">Contact</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Careers</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Privacy Policy</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Terms of Service</a></li>
+                    <h4 class="font-mono text-[10px] text-sunset tracking-[0.24em] uppercase mb-5">Company</h4>
+                    <ul class="space-y-3">
+                        <li><a href="/blog" class="text-gray-400 hover:text-sand text-sm transition-colors">Blog</a></li>
+                        <li><a href="/support" class="text-gray-400 hover:text-sand text-sm transition-colors">Support</a></li>
+                        <li><a href="/demo" class="text-gray-400 hover:text-sand text-sm transition-colors">Request Demo</a></li>
+                        <li><a href="mailto:info@gooptimal.io" class="text-gray-400 hover:text-sand text-sm transition-colors">Contact</a></li>
                     </ul>
                 </div>
             </div>
-            
-            <!-- Bottom Bar -->
-            <div class="border-t border-cyber-border pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-                <p class="text-gray-500 text-sm font-mono">
-                    &copy; 2026 Optimal. All rights reserved.
+
+            <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+                <p class="text-gray-500 text-[11px] font-mono tracking-[0.18em] uppercase">
+                    &copy; 2026 Optimal · All rights reserved
                 </p>
                 <div class="flex items-center gap-6">
-                    <span class="text-gray-500 text-xs font-mono flex items-center gap-2">
-                        <span class="w-2 h-2 bg-cyber-green rounded-full animate-pulse"></span>
-                        All systems operational
+                    <span class="text-gray-500 text-[10px] font-mono tracking-[0.22em] uppercase flex items-center gap-2">
+                        <span class="w-1.5 h-1.5 bg-sunset rounded-full animate-pulse"></span>
+                        Channel Open
                     </span>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript -->
     <script>
-        // Navigation scroll effect
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                navbar.classList.add('nav-fixed');
-            } else {
-                navbar.classList.remove('nav-fixed');
-            }
+            navbar.classList.toggle('nav-fixed', window.scrollY > 50);
         });
 
-        // Mobile menu toggle
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
+        mobileMenuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
 
-        // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
-                e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                    // Close mobile menu if open
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     mobileMenu.classList.add('hidden');
                 }
             });
         });
 
-        // Intersection Observer for fade-in animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
+                if (entry.isIntersecting) entry.target.classList.add('visible');
             });
-        }, observerOptions);
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
-        document.querySelectorAll('.fade-in').forEach(el => {
-            observer.observe(el);
-        });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-        // Animate data bars on scroll
-        const dataBars = document.querySelectorAll('.data-bar-fill');
-        const dataBarObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const width = entry.target.style.width;
-                    entry.target.style.width = '0';
-                    setTimeout(() => {
-                        entry.target.style.width = width;
-                    }, 100);
-                }
-            });
-        }, { threshold: 0.5 });
-
-        dataBars.forEach(bar => dataBarObserver.observe(bar));
-
-        // Console easter egg
-        console.log('%c⚡ OPTIMAL', 'color: #00ff88; font-size: 24px; font-weight: bold;');
-        console.log('%cAccelerating secure software delivery', 'color: #8b949e; font-size: 12px;');
-        console.log('%chttps://gooptimal.io', 'color: #00d4ff; font-size: 12px;');
+        console.log('%c◐ OPTIMAL', 'color: #FF8A3D; font-size: 22px; font-weight: 600; letter-spacing: 0.2em;');
+        console.log('%cAI Infrastructure for Mission Systems', 'color: #94A3B8; font-size: 12px;');
+        console.log('%cStay on channel.', 'color: #FF5252; font-size: 12px; letter-spacing: 0.2em;');
     </script>
 </body>
 </html>

@@ -44,7 +44,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -52,96 +52,97 @@
             theme: {
                 extend: {
                     colors: {
-                        'cyber-black': '#0a0a0f', 'cyber-dark': '#0d1117', 'cyber-gray': '#161b22',
-                        'cyber-border': '#21262d', 'cyber-green': '#00ff88', 'cyber-green-dim': '#00cc6a',
-                        'cyber-blue': '#00d4ff', 'cyber-amber': '#ffb800', 'cyber-red': '#ff3366', 'cyber-purple': '#a855f7',
+                        'cyber-black': '#0B0F14', 'cyber-dark': '#0F1B2E', 'cyber-gray': '#11192A',
+                        'cyber-border': '#1E2A3D', 'cyber-green': '#FF8A3D', 'cyber-green-dim': '#FF5252',
+                        'cyber-blue': '#22D3EE', 'cyber-amber': '#FFB347', 'cyber-red': '#FF5252', 'cyber-purple': '#9B5DE5',
                     },
-                    fontFamily: { 'mono': ['JetBrains Mono', 'monospace'], 'sans': ['Inter', 'system-ui', 'sans-serif'], }
+                    fontFamily: { 'mono': ['JetBrains Mono', 'monospace'], 'sans': ['Inter', 'system-ui', 'sans-serif'],
+                        'display': ['Space Grotesk', 'Inter', 'sans-serif'], }
                 }
             }
         }
     </script>
     <style>
-        body { background: #0a0a0f; overflow-x: hidden; }
-        .grid-bg { background-image: linear-gradient(rgba(0, 255, 136, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 255, 136, 0.03) 1px, transparent 1px); background-size: 50px 50px; }
+        body { background: #0B0F14; overflow-x: hidden; }
+        .grid-bg { background-image: linear-gradient(rgba(255, 138, 61, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 138, 61, 0.03) 1px, transparent 1px); background-size: 50px 50px; }
         .nav-fixed { backdrop-filter: blur(12px); background: rgba(10, 10, 15, 0.9); border-bottom: 1px solid rgba(33, 38, 45, 0.5); }
         .nav-link { color: #8b949e; transition: color 0.3s ease; }
-        .nav-link:hover { color: #00ff88; }
+        .nav-link:hover { color: #FF8A3D; }
         .nav-dropdown { position: relative; }
         .nav-dropdown-trigger { color: #8b949e; transition: color 0.3s ease; cursor: pointer; display: flex; align-items: center; gap: 4px; background: none; border: none; padding: 0; font-family: inherit; }
-        .nav-dropdown-trigger:hover { color: #00ff88; }
+        .nav-dropdown-trigger:hover { color: #FF8A3D; }
         .nav-dropdown-menu { position: absolute; top: 100%; left: 50%; transform: translateX(-50%); margin-top: 16px; background: rgba(10, 10, 15, 0.95); border: 1px solid rgba(33, 38, 45, 0.8); border-radius: 8px; padding: 8px 0; min-width: 200px; opacity: 0; visibility: hidden; transition: opacity 0.2s ease, visibility 0.2s ease; backdrop-filter: blur(12px); z-index: 50; }
         .nav-dropdown:hover .nav-dropdown-menu { opacity: 1; visibility: visible; }
         .nav-dropdown-menu a { display: block; padding: 10px 16px; color: #8b949e; font-family: 'JetBrains Mono', monospace; font-size: 13px; transition: color 0.2s ease, background 0.2s ease; text-decoration: none; }
-        .nav-dropdown-menu a:hover { color: #00ff88; background: rgba(0, 255, 136, 0.05); }
-        .btn-platform { background: linear-gradient(135deg, #00ff88 0%, #00cc6a 100%); color: #0a0a0f; font-weight: 600; transition: all 0.3s ease; }
-        .btn-platform:hover { transform: translateY(-2px); box-shadow: 0 10px 40px rgba(0, 255, 136, 0.3); }
-        .btn-outline { border: 1px solid #00ff88; color: #00ff88; transition: all 0.3s ease; background: transparent; }
-        .btn-outline:hover { background: rgba(0, 255, 136, 0.1); }
-        .section-label { font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: #00ff88; }
+        .nav-dropdown-menu a:hover { color: #FF8A3D; background: rgba(255, 138, 61, 0.05); }
+        .btn-platform { background: linear-gradient(135deg, #FF8A3D 0%, #FF5252 100%); color: #0B0F14; font-weight: 600; transition: all 0.3s ease; }
+        .btn-platform:hover { transform: translateY(-2px); box-shadow: 0 10px 40px rgba(255, 138, 61, 0.3); }
+        .btn-outline { border: 1px solid #FF8A3D; color: #FF8A3D; transition: all 0.3s ease; background: transparent; }
+        .btn-outline:hover { background: rgba(255, 138, 61, 0.1); }
+        .section-label { font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: #FF8A3D; }
         .section-label::before { content: '// '; opacity: 0.5; }
-        .badge-green { background: rgba(0, 255, 136, 0.1); color: #00ff88; border: 1px solid rgba(0, 255, 136, 0.2); }
-        .badge-blue { background: rgba(0, 212, 255, 0.1); color: #00d4ff; border: 1px solid rgba(0, 212, 255, 0.2); }
-        .badge-purple { background: rgba(168, 85, 247, 0.1); color: #a855f7; border: 1px solid rgba(168, 85, 247, 0.2); }
-        .badge-amber { background: rgba(255, 184, 0, 0.1); color: #ffb800; border: 1px solid rgba(255, 184, 0, 0.2); }
-        .badge-red { background: rgba(255, 51, 102, 0.1); color: #ff3366; border: 1px solid rgba(255, 51, 102, 0.2); }
-        .badge-cyan { background: rgba(0, 212, 255, 0.1); color: #00d4ff; border: 1px solid rgba(0, 212, 255, 0.2); }
-        .blog-card { background: rgba(13, 17, 23, 0.8); border: 1px solid #21262d; border-radius: 8px; transition: all 0.3s ease; overflow: hidden; }
-        .blog-card:hover { border-color: #00ff88; transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0, 255, 136, 0.08); }
-        .blog-card:hover .card-title { color: #00ff88; }
+        .badge-green { background: rgba(255, 138, 61, 0.1); color: #FF8A3D; border: 1px solid rgba(255, 138, 61, 0.2); }
+        .badge-blue { background: rgba(34, 211, 238, 0.1); color: #22D3EE; border: 1px solid rgba(34, 211, 238, 0.2); }
+        .badge-purple { background: rgba(155, 93, 229, 0.1); color: #9B5DE5; border: 1px solid rgba(155, 93, 229, 0.2); }
+        .badge-amber { background: rgba(255, 184, 0, 0.1); color: #FFB347; border: 1px solid rgba(255, 184, 0, 0.2); }
+        .badge-red { background: rgba(255, 51, 102, 0.1); color: #FF5252; border: 1px solid rgba(255, 51, 102, 0.2); }
+        .badge-cyan { background: rgba(34, 211, 238, 0.1); color: #22D3EE; border: 1px solid rgba(34, 211, 238, 0.2); }
+        .blog-card { background: rgba(13, 17, 23, 0.8); border: 1px solid #1E2A3D; border-radius: 8px; transition: all 0.3s ease; overflow: hidden; }
+        .blog-card:hover { border-color: #FF8A3D; transform: translateY(-4px); box-shadow: 0 12px 40px rgba(255, 138, 61, 0.08); }
+        .blog-card:hover .card-title { color: #FF8A3D; }
         .line-clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
         .line-clamp-3 { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
         .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
         .fade-in.visible { opacity: 1; transform: translateY(0); }
         .prose-cyber { color: #9ca3af; line-height: 1.8; }
-        .prose-cyber h2 { color: #fff; font-size: 1.5rem; font-weight: 700; margin-top: 2.5rem; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid #21262d; }
+        .prose-cyber h2 { color: #fff; font-size: 1.5rem; font-weight: 700; margin-top: 2.5rem; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid #1E2A3D; }
         .prose-cyber h3 { color: #e5e7eb; font-size: 1.25rem; font-weight: 600; margin-top: 2rem; margin-bottom: 0.75rem; }
         .prose-cyber p { margin-bottom: 1.25rem; }
-        .prose-cyber a { color: #00d4ff; text-decoration: underline; text-decoration-color: rgba(0,212,255,0.3); }
-        .prose-cyber a:hover { text-decoration-color: #00d4ff; }
+        .prose-cyber a { color: #22D3EE; text-decoration: underline; text-decoration-color: rgba(0,212,255,0.3); }
+        .prose-cyber a:hover { text-decoration-color: #22D3EE; }
         .prose-cyber ul, .prose-cyber ol { margin-bottom: 1.25rem; padding-left: 1.5rem; }
         .prose-cyber li { margin-bottom: 0.5rem; }
-        .prose-cyber li::marker { color: #00ff88; }
+        .prose-cyber li::marker { color: #FF8A3D; }
         .prose-cyber strong { color: #e5e7eb; }
-        .prose-cyber blockquote { border-left: 3px solid #00ff88; padding: 1rem 1.5rem; margin: 1.5rem 0; background: rgba(0, 255, 136, 0.03); border-radius: 0 8px 8px 0; }
+        .prose-cyber blockquote { border-left: 3px solid #FF8A3D; padding: 1rem 1.5rem; margin: 1.5rem 0; background: rgba(255, 138, 61, 0.03); border-radius: 0 8px 8px 0; }
         .prose-cyber blockquote p { margin-bottom: 0; color: #d1d5db; }
-        .prose-cyber code { font-family: 'JetBrains Mono', monospace; background: rgba(22, 27, 34, 0.8); border: 1px solid #21262d; padding: 2px 6px; border-radius: 4px; font-size: 0.875rem; color: #00ff88; }
-        .prose-cyber pre { background: #161b22; border: 1px solid #21262d; border-radius: 8px; padding: 1.25rem; margin: 1.5rem 0; overflow-x: auto; }
+        .prose-cyber code { font-family: 'JetBrains Mono', monospace; background: rgba(22, 27, 34, 0.8); border: 1px solid #1E2A3D; padding: 2px 6px; border-radius: 4px; font-size: 0.875rem; color: #FF8A3D; }
+        .prose-cyber pre { background: #11192A; border: 1px solid #1E2A3D; border-radius: 8px; padding: 1.25rem; margin: 1.5rem 0; overflow-x: auto; }
         .prose-cyber pre code { background: none; border: none; padding: 0; color: #e5e7eb; }
         .control-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.875rem; }
-        .control-table th { background: #161b22; color: #e5e7eb; font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; padding: 10px 14px; text-align: left; border-bottom: 2px solid #21262d; }
-        .control-table td { padding: 10px 14px; border-bottom: 1px solid #161b22; color: #9ca3af; }
-        .control-table tr:hover td { background: rgba(0, 255, 136, 0.02); }
-        .control-id { font-family: 'JetBrains Mono', monospace; color: #00ff88; font-weight: 600; white-space: nowrap; }
-        .diagram-box { background: #0d1117; border: 1px solid #21262d; border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0; overflow-x: auto; }
+        .control-table th { background: #11192A; color: #e5e7eb; font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; padding: 10px 14px; text-align: left; border-bottom: 2px solid #1E2A3D; }
+        .control-table td { padding: 10px 14px; border-bottom: 1px solid #11192A; color: #9ca3af; }
+        .control-table tr:hover td { background: rgba(255, 138, 61, 0.02); }
+        .control-id { font-family: 'JetBrains Mono', monospace; color: #FF8A3D; font-weight: 600; white-space: nowrap; }
+        .diagram-box { background: #0F1B2E; border: 1px solid #1E2A3D; border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0; overflow-x: auto; }
         .schedule-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.8rem; }
-        .schedule-table th { background: #161b22; color: #e5e7eb; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; padding: 8px 12px; text-align: left; border-bottom: 2px solid #21262d; }
-        .schedule-table td { padding: 8px 12px; border-bottom: 1px solid #161b22; color: #9ca3af; font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; }
-        .schedule-table tr:hover td { background: rgba(0, 255, 136, 0.02); }
-        .freq-continuous { color: #00ff88; }
-        .freq-monthly { color: #00d4ff; }
-        .freq-quarterly { color: #ffb800; }
-        .freq-annual { color: #a855f7; }
+        .schedule-table th { background: #11192A; color: #e5e7eb; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; padding: 8px 12px; text-align: left; border-bottom: 2px solid #1E2A3D; }
+        .schedule-table td { padding: 8px 12px; border-bottom: 1px solid #11192A; color: #9ca3af; font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; }
+        .schedule-table tr:hover td { background: rgba(255, 138, 61, 0.02); }
+        .freq-continuous { color: #FF8A3D; }
+        .freq-monthly { color: #22D3EE; }
+        .freq-quarterly { color: #FFB347; }
+        .freq-annual { color: #9B5DE5; }
 
         /* Landing page specific styles */
-        .pathway-card { background: rgba(13, 17, 23, 0.8); border: 1px solid #21262d; border-radius: 12px; padding: 1.5rem; transition: all 0.3s ease; }
-        .pathway-card:hover { border-color: rgba(0, 255, 136, 0.3); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3); }
+        .pathway-card { background: rgba(13, 17, 23, 0.8); border: 1px solid #1E2A3D; border-radius: 12px; padding: 1.5rem; transition: all 0.3s ease; }
+        .pathway-card:hover { border-color: rgba(255, 138, 61, 0.3); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3); }
         .level-bar { display: flex; gap: 2px; margin-top: 0.75rem; }
         .level-pip { flex: 1; height: 6px; border-radius: 3px; background: rgba(33, 38, 45, 0.8); transition: background 0.3s ease; }
-        .level-pip.active-cyan { background: #00d4ff; }
-        .level-pip.active-green { background: #00ff88; }
-        .level-pip.active-amber { background: #ffb800; }
-        .level-pip.active-purple { background: #a855f7; }
-        .level-pip.active-red { background: #ff3366; }
+        .level-pip.active-cyan { background: #22D3EE; }
+        .level-pip.active-green { background: #FF8A3D; }
+        .level-pip.active-amber { background: #FFB347; }
+        .level-pip.active-purple { background: #9B5DE5; }
+        .level-pip.active-red { background: #FF5252; }
         .journey-phase { border-radius: 8px; padding: 1rem 1.25rem; text-align: center; position: relative; }
         .journey-connector { display: flex; align-items: center; justify-content: center; color: #6b7280; font-size: 1.25rem; }
-        .stat-box { background: rgba(13, 17, 23, 0.8); border: 1px solid #21262d; border-radius: 12px; padding: 1.5rem; text-align: center; transition: all 0.3s ease; }
-        .stat-box:hover { border-color: rgba(0, 255, 136, 0.3); }
+        .stat-box { background: rgba(13, 17, 23, 0.8); border: 1px solid #1E2A3D; border-radius: 12px; padding: 1.5rem; text-align: center; transition: all 0.3s ease; }
+        .stat-box:hover { border-color: rgba(255, 138, 61, 0.3); }
         .pathway-level-row { display: grid; grid-template-columns: 40px 1fr; gap: 0.75rem; padding: 0.5rem 0.75rem; border-bottom: 1px solid rgba(33, 38, 45, 0.3); align-items: start; }
         .pathway-level-row:last-child { border-bottom: none; }
         .pathway-level-num { font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 0.875rem; }
         .pathway-level-text { font-size: 0.8rem; color: #9ca3af; }
-        .pathway-deep-card { background: rgba(13, 17, 23, 0.6); border: 1px solid #21262d; border-radius: 12px; overflow: hidden; margin-bottom: 1.5rem; }
+        .pathway-deep-card { background: rgba(13, 17, 23, 0.6); border: 1px solid #1E2A3D; border-radius: 12px; overflow: hidden; margin-bottom: 1.5rem; }
     </style>
     <script>function initApollo(){var n=Math.random().toString(36).substring(7),o=document.createElement("script");
 o.src="https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache="+n,o.async=!0,o.defer=!0,
@@ -154,14 +155,14 @@ document.head.appendChild(o)}initApollo();</script>
         <div class="max-w-7xl mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
                 <a href="/index.html" class="flex items-center gap-3">
-                    <img src="/public/optimal-logo.png" alt="Optimal Logo" class="h-8 w-auto">
+                    <img src="/public/optimal-horizon.svg" alt="Optimal" class="h-7 w-auto"><span class="font-display text-base font-medium tracking-[0.18em] text-sand">OPTIMAL</span>
                 </a>
                 <div class="hidden md:flex items-center gap-8">
                     <div class="nav-dropdown">
                         <button class="nav-dropdown-trigger font-mono text-sm">Platform <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
-                        <div class="nav-dropdown-menu"><a href="/platform">Platform Overview</a><a href="/integrations">Integrations</a><a href="/#capabilities">Capabilities</a></div>
+                        <div class="nav-dropdown-menu"><a href="/platform">Platform Overview</a><a href="/#capabilities">Capabilities</a></div>
                     </div>
-                    <a href="/#team" class="nav-link font-mono text-sm">Team</a>
+                    <a href="/#story" class="nav-link font-mono text-sm">Mission</a>
                     <div class="nav-dropdown">
                         <button class="nav-dropdown-trigger font-mono text-sm">Resources <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
                         <div class="nav-dropdown-menu"><a href="https://docs.gooptimal.io/" target="_blank">Documentation</a><a href="/blog">Blog</a><a href="/support">Support</a></div>
@@ -173,8 +174,8 @@ document.head.appendChild(o)}initApollo();</script>
             </div>
             <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t border-cyber-border pt-4">
                 <div class="flex flex-col gap-4">
-                    <div class="flex flex-col gap-2"><span class="font-mono text-xs text-gray-500 uppercase tracking-wider">Platform</span><a href="/platform" class="nav-link font-mono text-sm pl-3">Overview</a><a href="/integrations" class="nav-link font-mono text-sm pl-3">Integrations</a><a href="/#capabilities" class="nav-link font-mono text-sm pl-3">Capabilities</a></div>
-                    <a href="/#team" class="nav-link font-mono text-sm">Team</a>
+                    <div class="flex flex-col gap-2"><span class="font-mono text-xs text-gray-500 uppercase tracking-wider">Platform</span><a href="/platform" class="nav-link font-mono text-sm pl-3">Overview</a><a href="/#capabilities" class="nav-link font-mono text-sm pl-3">Capabilities</a></div>
+                    <a href="/#story" class="nav-link font-mono text-sm">Mission</a>
                     <div class="flex flex-col gap-2"><span class="font-mono text-xs text-gray-500 uppercase tracking-wider">Resources</span><a href="https://docs.gooptimal.io/" target="_blank" class="nav-link font-mono text-sm pl-3">Documentation</a><a href="/blog" class="nav-link font-mono text-sm pl-3">Blog</a><a href="/support" class="nav-link font-mono text-sm pl-3">Support</a></div>
                     <a href="/support" class="nav-link font-mono text-sm">Get Access</a>
                     <a href="/demo" class="btn-platform text-sm px-6 py-3 text-center mt-2">Request Demo</a>
@@ -245,16 +246,16 @@ document.head.appendChild(o)}initApollo();</script>
 
             <!-- Who is this for -->
             <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 2.5rem;">
-                <div class="diagram-box fade-in" style="margin: 0; padding: 1.25rem; border-left: 2px solid #00ff88;">
-                    <p style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #00ff88; font-weight: 600; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 1px;">For Founders</p>
+                <div class="diagram-box fade-in" style="margin: 0; padding: 1.25rem; border-left: 2px solid #FF8A3D;">
+                    <p style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #FF8A3D; font-weight: 600; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 1px;">For Founders</p>
                     <p style="font-size: 13px; color: #9ca3af; margin: 0; line-height: 1.5;">Assess where you are, plan where to go, and communicate your ATO strategy to investors and government stakeholders</p>
                 </div>
-                <div class="diagram-box fade-in" style="margin: 0; padding: 1.25rem; border-left: 2px solid #00d4ff;">
-                    <p style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #00d4ff; font-weight: 600; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 1px;">For Investors</p>
+                <div class="diagram-box fade-in" style="margin: 0; padding: 1.25rem; border-left: 2px solid #22D3EE;">
+                    <p style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #22D3EE; font-weight: 600; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 1px;">For Investors</p>
                     <p style="font-size: 13px; color: #9ca3af; margin: 0; line-height: 1.5;">Evaluate authorization maturity and understand the timeline and investment required to unlock government revenue</p>
                 </div>
-                <div class="diagram-box fade-in" style="margin: 0; padding: 1.25rem; border-left: 2px solid #a855f7;">
-                    <p style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #a855f7; font-weight: 600; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 1px;">For Gov Stakeholders</p>
+                <div class="diagram-box fade-in" style="margin: 0; padding: 1.25rem; border-left: 2px solid #9B5DE5;">
+                    <p style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #9B5DE5; font-weight: 600; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 1px;">For Gov Stakeholders</p>
                     <p style="font-size: 13px; color: #9ca3af; margin: 0; line-height: 1.5;">Understand where your vendor partners are in their authorization journey and what they need to advance</p>
                 </div>
             </div>
@@ -352,25 +353,25 @@ document.head.appendChild(o)}initApollo();</script>
 
             <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 1rem;">
                 <div class="diagram-box fade-in" style="margin: 0; padding: 1.25rem; text-align: center;">
-                    <p style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #00ff88; font-weight: 700; margin-bottom: 0.5rem;">Technology (TRL)</p>
+                    <p style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #FF8A3D; font-weight: 700; margin-bottom: 0.5rem;">Technology (TRL)</p>
                     <p style="font-size: 13px; color: #9ca3af; margin: 0; line-height: 1.5;">Architecture decisions at TRL 3-5 determine whether your system is authorizable at all</p>
                 </div>
                 <div class="diagram-box fade-in" style="margin: 0; padding: 1.25rem; text-align: center;">
-                    <p style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #00d4ff; font-weight: 700; margin-bottom: 0.5rem;">Mission Funding (MFRL)</p>
+                    <p style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #22D3EE; font-weight: 700; margin-bottom: 0.5rem;">Mission Funding (MFRL)</p>
                     <p style="font-size: 13px; color: #9ca3af; margin: 0; line-height: 1.5;">SBIR and OTA awards increasingly expect authorization pathway plans as deliverables</p>
                 </div>
                 <div class="diagram-box fade-in" style="margin: 0; padding: 1.25rem; text-align: center;">
-                    <p style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #a855f7; font-weight: 700; margin-bottom: 0.5rem;">Mission Customer (MCRL)</p>
+                    <p style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #9B5DE5; font-weight: 700; margin-bottom: 0.5rem;">Mission Customer (MCRL)</p>
                     <p style="font-size: 13px; color: #9ca3af; margin: 0; line-height: 1.5;">The Authorizing Official who signs your ATO is a mission customer stakeholder</p>
                 </div>
             </div>
             <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem;">
                 <div class="diagram-box fade-in" style="margin: 0; padding: 1.25rem; text-align: center;">
-                    <p style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #ffb800; font-weight: 700; margin-bottom: 0.5rem;">Commercial Customer (CCRL)</p>
+                    <p style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #FFB347; font-weight: 700; margin-bottom: 0.5rem;">Commercial Customer (CCRL)</p>
                     <p style="font-size: 13px; color: #9ca3af; margin: 0; line-height: 1.5;">FedRAMP authorization is increasingly valued as a trust signal in healthcare, finance, and critical infrastructure</p>
                 </div>
                 <div class="diagram-box fade-in" style="margin: 0; padding: 1.25rem; text-align: center;">
-                    <p style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #ff3366; font-weight: 700; margin-bottom: 0.5rem;">Commercial Funding (CFRL)</p>
+                    <p style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #FF5252; font-weight: 700; margin-bottom: 0.5rem;">Commercial Funding (CFRL)</p>
                     <p style="font-size: 13px; color: #9ca3af; margin: 0; line-height: 1.5;">Investors evaluate ATO readiness as a proxy for government revenue predictability</p>
                 </div>
             </div>
@@ -388,39 +389,39 @@ document.head.appendChild(o)}initApollo();</script>
             <div class="diagram-box" style="padding: 2rem;">
                 <!-- 9 Level Steps -->
                 <div style="display: grid; grid-template-columns: repeat(9, 1fr); gap: 4px; margin-bottom: 1.5rem;">
-                    <div style="background: rgba(33, 38, 45, 0.6); border: 1px solid #21262d; border-radius: 6px; padding: 0.75rem 0.5rem; text-align: center;">
+                    <div style="background: rgba(33, 38, 45, 0.6); border: 1px solid #1E2A3D; border-radius: 6px; padding: 0.75rem 0.5rem; text-align: center;">
                         <p class="font-mono text-xs font-bold text-gray-400 mb-1">1</p>
                         <p class="font-mono text-[9px] font-semibold text-white leading-tight">AWARE</p>
                     </div>
-                    <div style="background: rgba(33, 38, 45, 0.6); border: 1px solid #21262d; border-radius: 6px; padding: 0.75rem 0.5rem; text-align: center;">
+                    <div style="background: rgba(33, 38, 45, 0.6); border: 1px solid #1E2A3D; border-radius: 6px; padding: 0.75rem 0.5rem; text-align: center;">
                         <p class="font-mono text-xs font-bold text-gray-400 mb-1">2</p>
                         <p class="font-mono text-[9px] font-semibold text-white leading-tight">SCOPE</p>
                     </div>
-                    <div style="background: rgba(33, 38, 45, 0.6); border: 1px solid #21262d; border-radius: 6px; padding: 0.75rem 0.5rem; text-align: center;">
+                    <div style="background: rgba(33, 38, 45, 0.6); border: 1px solid #1E2A3D; border-radius: 6px; padding: 0.75rem 0.5rem; text-align: center;">
                         <p class="font-mono text-xs font-bold text-gray-400 mb-1">3</p>
                         <p class="font-mono text-[9px] font-semibold text-white leading-tight">GAP</p>
                     </div>
-                    <div style="background: rgba(33, 38, 45, 0.6); border: 1px solid #21262d; border-radius: 6px; padding: 0.75rem 0.5rem; text-align: center;">
+                    <div style="background: rgba(33, 38, 45, 0.6); border: 1px solid #1E2A3D; border-radius: 6px; padding: 0.75rem 0.5rem; text-align: center;">
                         <p class="font-mono text-xs font-bold text-gray-400 mb-1">4</p>
                         <p class="font-mono text-[9px] font-semibold text-white leading-tight">REMEDIATE</p>
                     </div>
-                    <div style="background: rgba(33, 38, 45, 0.6); border: 1px solid #21262d; border-radius: 6px; padding: 0.75rem 0.5rem; text-align: center;">
+                    <div style="background: rgba(33, 38, 45, 0.6); border: 1px solid #1E2A3D; border-radius: 6px; padding: 0.75rem 0.5rem; text-align: center;">
                         <p class="font-mono text-xs font-bold text-gray-400 mb-1">5</p>
                         <p class="font-mono text-[9px] font-semibold text-white leading-tight">SUBMIT</p>
                     </div>
-                    <div style="background: rgba(33, 38, 45, 0.6); border: 1px solid #21262d; border-radius: 6px; padding: 0.75rem 0.5rem; text-align: center;">
+                    <div style="background: rgba(33, 38, 45, 0.6); border: 1px solid #1E2A3D; border-radius: 6px; padding: 0.75rem 0.5rem; text-align: center;">
                         <p class="font-mono text-xs font-bold text-gray-400 mb-1">6</p>
                         <p class="font-mono text-[9px] font-semibold text-white leading-tight">ASSESS</p>
                     </div>
-                    <div style="background: rgba(0, 255, 136, 0.08); border: 1px solid rgba(0, 255, 136, 0.3); border-radius: 6px; padding: 0.75rem 0.5rem; text-align: center;">
+                    <div style="background: rgba(255, 138, 61, 0.08); border: 1px solid rgba(255, 138, 61, 0.3); border-radius: 6px; padding: 0.75rem 0.5rem; text-align: center;">
                         <p class="font-mono text-xs font-bold text-cyber-green mb-1">7</p>
                         <p class="font-mono text-[9px] font-semibold text-white leading-tight">AUTHORIZE</p>
                     </div>
-                    <div style="background: rgba(33, 38, 45, 0.6); border: 1px solid #21262d; border-radius: 6px; padding: 0.75rem 0.5rem; text-align: center;">
+                    <div style="background: rgba(33, 38, 45, 0.6); border: 1px solid #1E2A3D; border-radius: 6px; padding: 0.75rem 0.5rem; text-align: center;">
                         <p class="font-mono text-xs font-bold text-gray-400 mb-1">8</p>
                         <p class="font-mono text-[9px] font-semibold text-white leading-tight">OPERATE</p>
                     </div>
-                    <div style="background: rgba(33, 38, 45, 0.6); border: 1px solid #21262d; border-radius: 6px; padding: 0.75rem 0.5rem; text-align: center;">
+                    <div style="background: rgba(33, 38, 45, 0.6); border: 1px solid #1E2A3D; border-radius: 6px; padding: 0.75rem 0.5rem; text-align: center;">
                         <p class="font-mono text-xs font-bold text-gray-400 mb-1">9</p>
                         <p class="font-mono text-[9px] font-semibold text-white leading-tight">SCALE</p>
                     </div>
@@ -428,27 +429,27 @@ document.head.appendChild(o)}initApollo();</script>
 
                 <!-- Phase descriptions -->
                 <div style="display: grid; grid-template-columns: 2fr 1fr 2fr 1fr 2fr; gap: 0; margin-bottom: 0.75rem;">
-                    <div style="text-align: center; border-bottom: 2px solid #21262d; padding-bottom: 0.5rem;">
+                    <div style="text-align: center; border-bottom: 2px solid #1E2A3D; padding-bottom: 0.5rem;">
                         <p class="font-mono text-[10px] text-gray-500">Levels 1-3</p>
                         <p class="font-mono text-xs text-gray-300 font-medium">Discovery & Planning</p>
                     </div>
                     <div></div>
-                    <div style="text-align: center; border-bottom: 2px solid rgba(0, 255, 136, 0.2); padding-bottom: 0.5rem;">
+                    <div style="text-align: center; border-bottom: 2px solid rgba(255, 138, 61, 0.2); padding-bottom: 0.5rem;">
                         <p class="font-mono text-[10px] text-gray-500">Levels 4-6</p>
                         <p class="font-mono text-xs text-gray-300 font-medium">Build & Assessment</p>
                     </div>
                     <div></div>
-                    <div style="text-align: center; border-bottom: 2px solid rgba(0, 255, 136, 0.4); padding-bottom: 0.5rem;">
+                    <div style="text-align: center; border-bottom: 2px solid rgba(255, 138, 61, 0.4); padding-bottom: 0.5rem;">
                         <p class="font-mono text-[10px] text-gray-500">Levels 7-9</p>
                         <p class="font-mono text-xs text-gray-300 font-medium">Authorized & Scaling</p>
                     </div>
                 </div>
 
                 <!-- Subtle progress bar -->
-                <div class="flex h-1.5 rounded-full overflow-hidden mt-4" style="background: #161b22;">
-                    <div class="flex-[3]" style="background: #21262d; border-radius: 6px 0 0 6px;"></div>
-                    <div class="flex-[3]" style="background: rgba(0, 255, 136, 0.15);"></div>
-                    <div class="flex-[3]" style="background: rgba(0, 255, 136, 0.35); border-radius: 0 6px 6px 0;"></div>
+                <div class="flex h-1.5 rounded-full overflow-hidden mt-4" style="background: #11192A;">
+                    <div class="flex-[3]" style="background: #1E2A3D; border-radius: 6px 0 0 6px;"></div>
+                    <div class="flex-[3]" style="background: rgba(255, 138, 61, 0.15);"></div>
+                    <div class="flex-[3]" style="background: rgba(255, 138, 61, 0.35); border-radius: 0 6px 6px 0;"></div>
                 </div>
             </div>
         </div>
@@ -462,7 +463,7 @@ document.head.appendChild(o)}initApollo();</script>
 
             <!-- FARL -->
             <div class="pathway-deep-card fade-in">
-                <div style="background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(0, 212, 255, 0.05) 100%); padding: 1rem 1.5rem; border-bottom: 1px solid rgba(0, 212, 255, 0.2);">
+                <div style="background: linear-gradient(135deg, rgba(34, 211, 238, 0.15) 0%, rgba(34, 211, 238, 0.05) 100%); padding: 1rem 1.5rem; border-bottom: 1px solid rgba(34, 211, 238, 0.2);">
                     <div class="flex items-center gap-3 mb-2">
                         <span class="badge-cyan font-mono text-xs px-2 py-0.5 rounded font-bold">FARL</span>
                         <span class="text-white font-semibold">FedRAMP Authorization Readiness Level</span>
@@ -476,15 +477,15 @@ document.head.appendChild(o)}initApollo();</script>
                 <div class="p-5">
                     <p class="text-gray-400 text-sm mb-4">The federal civilian baseline. FedRAMP operates under a unified authorization model since the JAB was dissolved in August 2024, with Rev 5 alignment and the emerging FedRAMP 20x continuous validation pathway replacing the traditional assessment cycle.</p>
                     <div style="background: rgba(22, 27, 34, 0.5); border-radius: 8px; overflow: hidden;">
-                        <div class="pathway-level-row" style="background: rgba(0, 212, 255, 0.03);"><span class="pathway-level-num" style="color: #00d4ff;">1</span><span class="pathway-level-text"><strong class="text-gray-300">Awareness</strong></span></div>
-                        <div class="pathway-level-row"><span class="pathway-level-num" style="color: #00d4ff;">2</span><span class="pathway-level-text"><strong class="text-gray-300">Boundary Scoping</strong></span></div>
-                        <div class="pathway-level-row" style="background: rgba(0, 212, 255, 0.03);"><span class="pathway-level-num" style="color: #00d4ff;">3</span><span class="pathway-level-text"><strong class="text-gray-300">Gap Analysis</strong> -- 3PAO/RAR</span></div>
-                        <div class="pathway-level-row"><span class="pathway-level-num" style="color: #00d4ff;">4</span><span class="pathway-level-text"><strong class="text-gray-300">Remediation & SSP</strong></span></div>
-                        <div class="pathway-level-row" style="background: rgba(0, 212, 255, 0.03);"><span class="pathway-level-num" style="color: #00d4ff;">5</span><span class="pathway-level-text"><strong class="text-gray-300">Sponsor Secured</strong></span></div>
-                        <div class="pathway-level-row"><span class="pathway-level-num" style="color: #00d4ff;">6</span><span class="pathway-level-text"><strong class="text-gray-300">Assessment Complete</strong></span></div>
-                        <div class="pathway-level-row" style="background: rgba(0, 212, 255, 0.03);"><span class="pathway-level-num" style="color: #00d4ff;">7</span><span class="pathway-level-text"><strong class="text-gray-300">ATO Granted</strong></span></div>
-                        <div class="pathway-level-row"><span class="pathway-level-num" style="color: #00d4ff;">8</span><span class="pathway-level-text"><strong class="text-gray-300">Marketplace & Reuse</strong></span></div>
-                        <div class="pathway-level-row" style="background: rgba(0, 212, 255, 0.03);"><span class="pathway-level-num" style="color: #00d4ff;">9</span><span class="pathway-level-text"><strong class="text-gray-300">Sustained & Evolution</strong></span></div>
+                        <div class="pathway-level-row" style="background: rgba(34, 211, 238, 0.03);"><span class="pathway-level-num" style="color: #22D3EE;">1</span><span class="pathway-level-text"><strong class="text-gray-300">Awareness</strong></span></div>
+                        <div class="pathway-level-row"><span class="pathway-level-num" style="color: #22D3EE;">2</span><span class="pathway-level-text"><strong class="text-gray-300">Boundary Scoping</strong></span></div>
+                        <div class="pathway-level-row" style="background: rgba(34, 211, 238, 0.03);"><span class="pathway-level-num" style="color: #22D3EE;">3</span><span class="pathway-level-text"><strong class="text-gray-300">Gap Analysis</strong> -- 3PAO/RAR</span></div>
+                        <div class="pathway-level-row"><span class="pathway-level-num" style="color: #22D3EE;">4</span><span class="pathway-level-text"><strong class="text-gray-300">Remediation & SSP</strong></span></div>
+                        <div class="pathway-level-row" style="background: rgba(34, 211, 238, 0.03);"><span class="pathway-level-num" style="color: #22D3EE;">5</span><span class="pathway-level-text"><strong class="text-gray-300">Sponsor Secured</strong></span></div>
+                        <div class="pathway-level-row"><span class="pathway-level-num" style="color: #22D3EE;">6</span><span class="pathway-level-text"><strong class="text-gray-300">Assessment Complete</strong></span></div>
+                        <div class="pathway-level-row" style="background: rgba(34, 211, 238, 0.03);"><span class="pathway-level-num" style="color: #22D3EE;">7</span><span class="pathway-level-text"><strong class="text-gray-300">ATO Granted</strong></span></div>
+                        <div class="pathway-level-row"><span class="pathway-level-num" style="color: #22D3EE;">8</span><span class="pathway-level-text"><strong class="text-gray-300">Marketplace & Reuse</strong></span></div>
+                        <div class="pathway-level-row" style="background: rgba(34, 211, 238, 0.03);"><span class="pathway-level-num" style="color: #22D3EE;">9</span><span class="pathway-level-text"><strong class="text-gray-300">Sustained & Evolution</strong></span></div>
                     </div>
                     <a href="/blog/authorization-readiness-levels/Authorization-Readiness-Levels.pdf" class="inline-block mt-4 text-cyber-blue font-mono text-xs hover:underline">Read full pathway details in the whitepaper &rarr;</a>
                 </div>
@@ -492,7 +493,7 @@ document.head.appendChild(o)}initApollo();</script>
 
             <!-- RARL -->
             <div class="pathway-deep-card fade-in">
-                <div style="background: linear-gradient(135deg, rgba(0, 255, 136, 0.15) 0%, rgba(0, 255, 136, 0.05) 100%); padding: 1rem 1.5rem; border-bottom: 1px solid rgba(0, 255, 136, 0.2);">
+                <div style="background: linear-gradient(135deg, rgba(255, 138, 61, 0.15) 0%, rgba(255, 138, 61, 0.05) 100%); padding: 1rem 1.5rem; border-bottom: 1px solid rgba(255, 138, 61, 0.2);">
                     <div class="flex items-center gap-3 mb-2">
                         <span class="badge-green font-mono text-xs px-2 py-0.5 rounded font-bold">RARL</span>
                         <span class="text-white font-semibold">DoW RMF Authorization Readiness Level</span>
@@ -506,15 +507,15 @@ document.head.appendChild(o)}initApollo();</script>
                 <div class="p-5">
                     <p class="text-gray-400 text-sm mb-4">The DoW-specific Risk Management Framework pathway, operationalized through eMASS and governed by NIST 800-53 and DISA STIGs. This is the pathway for systems deployed directly on DoW networks and enclaves.</p>
                     <div style="background: rgba(22, 27, 34, 0.5); border-radius: 8px; overflow: hidden;">
-                        <div class="pathway-level-row" style="background: rgba(0, 255, 136, 0.03);"><span class="pathway-level-num" style="color: #00ff88;">1</span><span class="pathway-level-text"><strong class="text-gray-300">Mission Need & RMF Awareness</strong></span></div>
-                        <div class="pathway-level-row"><span class="pathway-level-num" style="color: #00ff88;">2</span><span class="pathway-level-text"><strong class="text-gray-300">System Categorization & eMASS</strong></span></div>
-                        <div class="pathway-level-row" style="background: rgba(0, 255, 136, 0.03);"><span class="pathway-level-num" style="color: #00ff88;">3</span><span class="pathway-level-text"><strong class="text-gray-300">STIG Assessment & Planning</strong></span></div>
-                        <div class="pathway-level-row"><span class="pathway-level-num" style="color: #00ff88;">4</span><span class="pathway-level-text"><strong class="text-gray-300">Documentation in eMASS</strong></span></div>
-                        <div class="pathway-level-row" style="background: rgba(0, 255, 136, 0.03);"><span class="pathway-level-num" style="color: #00ff88;">5</span><span class="pathway-level-text"><strong class="text-gray-300">SCA Engagement</strong></span></div>
-                        <div class="pathway-level-row"><span class="pathway-level-num" style="color: #00ff88;">6</span><span class="pathway-level-text"><strong class="text-gray-300">Assessment Complete</strong></span></div>
-                        <div class="pathway-level-row" style="background: rgba(0, 255, 136, 0.03);"><span class="pathway-level-num" style="color: #00ff88;">7</span><span class="pathway-level-text"><strong class="text-gray-300">ATO Granted</strong></span></div>
-                        <div class="pathway-level-row"><span class="pathway-level-num" style="color: #00ff88;">8</span><span class="pathway-level-text"><strong class="text-gray-300">Operational ConMon</strong></span></div>
-                        <div class="pathway-level-row" style="background: rgba(0, 255, 136, 0.03);"><span class="pathway-level-num" style="color: #00ff88;">9</span><span class="pathway-level-text"><strong class="text-gray-300">Multi-Enclave Maturity</strong></span></div>
+                        <div class="pathway-level-row" style="background: rgba(255, 138, 61, 0.03);"><span class="pathway-level-num" style="color: #FF8A3D;">1</span><span class="pathway-level-text"><strong class="text-gray-300">Mission Need & RMF Awareness</strong></span></div>
+                        <div class="pathway-level-row"><span class="pathway-level-num" style="color: #FF8A3D;">2</span><span class="pathway-level-text"><strong class="text-gray-300">System Categorization & eMASS</strong></span></div>
+                        <div class="pathway-level-row" style="background: rgba(255, 138, 61, 0.03);"><span class="pathway-level-num" style="color: #FF8A3D;">3</span><span class="pathway-level-text"><strong class="text-gray-300">STIG Assessment & Planning</strong></span></div>
+                        <div class="pathway-level-row"><span class="pathway-level-num" style="color: #FF8A3D;">4</span><span class="pathway-level-text"><strong class="text-gray-300">Documentation in eMASS</strong></span></div>
+                        <div class="pathway-level-row" style="background: rgba(255, 138, 61, 0.03);"><span class="pathway-level-num" style="color: #FF8A3D;">5</span><span class="pathway-level-text"><strong class="text-gray-300">SCA Engagement</strong></span></div>
+                        <div class="pathway-level-row"><span class="pathway-level-num" style="color: #FF8A3D;">6</span><span class="pathway-level-text"><strong class="text-gray-300">Assessment Complete</strong></span></div>
+                        <div class="pathway-level-row" style="background: rgba(255, 138, 61, 0.03);"><span class="pathway-level-num" style="color: #FF8A3D;">7</span><span class="pathway-level-text"><strong class="text-gray-300">ATO Granted</strong></span></div>
+                        <div class="pathway-level-row"><span class="pathway-level-num" style="color: #FF8A3D;">8</span><span class="pathway-level-text"><strong class="text-gray-300">Operational ConMon</strong></span></div>
+                        <div class="pathway-level-row" style="background: rgba(255, 138, 61, 0.03);"><span class="pathway-level-num" style="color: #FF8A3D;">9</span><span class="pathway-level-text"><strong class="text-gray-300">Multi-Enclave Maturity</strong></span></div>
                     </div>
                     <a href="/blog/authorization-readiness-levels/Authorization-Readiness-Levels.pdf" class="inline-block mt-4 text-cyber-blue font-mono text-xs hover:underline">Read full pathway details in the whitepaper &rarr;</a>
                 </div>
@@ -536,22 +537,22 @@ document.head.appendChild(o)}initApollo();</script>
                 <div class="p-5">
                     <p class="text-gray-400 text-sm mb-4">The DoW Cloud Computing Security Requirements Guide (CC SRG) pathway to IL4, IL5, and IL6 Provisional Authorizations, managed by DISA. Required for cloud services handling CUI and national security data.</p>
                     <div style="background: rgba(22, 27, 34, 0.5); border-radius: 8px; overflow: hidden;">
-                        <div class="pathway-level-row" style="background: rgba(255, 184, 0, 0.03);"><span class="pathway-level-num" style="color: #ffb800;">1</span><span class="pathway-level-text"><strong class="text-gray-300">IL Strategy Determination</strong></span></div>
-                        <div class="pathway-level-row"><span class="pathway-level-num" style="color: #ffb800;">2</span><span class="pathway-level-text"><strong class="text-gray-300">Isolation Architecture Design</strong></span></div>
-                        <div class="pathway-level-row" style="background: rgba(255, 184, 0, 0.03);"><span class="pathway-level-num" style="color: #ffb800;">3</span><span class="pathway-level-text"><strong class="text-gray-300">CC SRG Gap Assessment</strong></span></div>
-                        <div class="pathway-level-row"><span class="pathway-level-num" style="color: #ffb800;">4</span><span class="pathway-level-text"><strong class="text-gray-300">DISA Engagement & Application</strong></span></div>
-                        <div class="pathway-level-row" style="background: rgba(255, 184, 0, 0.03);"><span class="pathway-level-num" style="color: #ffb800;">5</span><span class="pathway-level-text"><strong class="text-gray-300">DISA Assessment In Progress</strong></span></div>
-                        <div class="pathway-level-row"><span class="pathway-level-num" style="color: #ffb800;">6</span><span class="pathway-level-text"><strong class="text-gray-300">Findings Remediated</strong></span></div>
-                        <div class="pathway-level-row" style="background: rgba(255, 184, 0, 0.03);"><span class="pathway-level-num" style="color: #ffb800;">7</span><span class="pathway-level-text"><strong class="text-gray-300">PA Granted</strong></span></div>
-                        <div class="pathway-level-row"><span class="pathway-level-num" style="color: #ffb800;">8</span><span class="pathway-level-text"><strong class="text-gray-300">Production at IL with ConMon</strong></span></div>
-                        <div class="pathway-level-row" style="background: rgba(255, 184, 0, 0.03);"><span class="pathway-level-num" style="color: #ffb800;">9</span><span class="pathway-level-text"><strong class="text-gray-300">Multi-IL Strategic Positioning</strong></span></div>
+                        <div class="pathway-level-row" style="background: rgba(255, 184, 0, 0.03);"><span class="pathway-level-num" style="color: #FFB347;">1</span><span class="pathway-level-text"><strong class="text-gray-300">IL Strategy Determination</strong></span></div>
+                        <div class="pathway-level-row"><span class="pathway-level-num" style="color: #FFB347;">2</span><span class="pathway-level-text"><strong class="text-gray-300">Isolation Architecture Design</strong></span></div>
+                        <div class="pathway-level-row" style="background: rgba(255, 184, 0, 0.03);"><span class="pathway-level-num" style="color: #FFB347;">3</span><span class="pathway-level-text"><strong class="text-gray-300">CC SRG Gap Assessment</strong></span></div>
+                        <div class="pathway-level-row"><span class="pathway-level-num" style="color: #FFB347;">4</span><span class="pathway-level-text"><strong class="text-gray-300">DISA Engagement & Application</strong></span></div>
+                        <div class="pathway-level-row" style="background: rgba(255, 184, 0, 0.03);"><span class="pathway-level-num" style="color: #FFB347;">5</span><span class="pathway-level-text"><strong class="text-gray-300">DISA Assessment In Progress</strong></span></div>
+                        <div class="pathway-level-row"><span class="pathway-level-num" style="color: #FFB347;">6</span><span class="pathway-level-text"><strong class="text-gray-300">Findings Remediated</strong></span></div>
+                        <div class="pathway-level-row" style="background: rgba(255, 184, 0, 0.03);"><span class="pathway-level-num" style="color: #FFB347;">7</span><span class="pathway-level-text"><strong class="text-gray-300">PA Granted</strong></span></div>
+                        <div class="pathway-level-row"><span class="pathway-level-num" style="color: #FFB347;">8</span><span class="pathway-level-text"><strong class="text-gray-300">Production at IL with ConMon</strong></span></div>
+                        <div class="pathway-level-row" style="background: rgba(255, 184, 0, 0.03);"><span class="pathway-level-num" style="color: #FFB347;">9</span><span class="pathway-level-text"><strong class="text-gray-300">Multi-IL Strategic Positioning</strong></span></div>
                     </div>
                     <a href="/blog/authorization-readiness-levels/Authorization-Readiness-Levels.pdf" class="inline-block mt-4 text-cyber-blue font-mono text-xs hover:underline">Read full pathway details in the whitepaper &rarr;</a>
                 </div>
             </div>
 
             <!-- Mid-section PDF reminder -->
-            <div style="background: rgba(0, 255, 136, 0.03); border: 1px solid rgba(0, 255, 136, 0.15); border-radius: 8px; padding: 1.25rem 1.5rem; margin: 1.5rem 0; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap;">
+            <div style="background: rgba(255, 138, 61, 0.03); border: 1px solid rgba(255, 138, 61, 0.15); border-radius: 8px; padding: 1.25rem 1.5rem; margin: 1.5rem 0; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap;">
                 <div>
                     <p style="color: #e5e7eb; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.25rem;">Each level includes detailed descriptions, examples, and actionable guidance</p>
                     <p style="color: #6b7280; font-size: 0.8rem; font-family: 'JetBrains Mono', monospace; margin: 0;">29-page whitepaper with all 5 pathways</p>
@@ -563,7 +564,7 @@ document.head.appendChild(o)}initApollo();</script>
 
             <!-- CARL -->
             <div class="pathway-deep-card fade-in">
-                <div style="background: linear-gradient(135deg, rgba(168, 85, 247, 0.15) 0%, rgba(168, 85, 247, 0.05) 100%); padding: 1rem 1.5rem; border-bottom: 1px solid rgba(168, 85, 247, 0.2);">
+                <div style="background: linear-gradient(135deg, rgba(155, 93, 229, 0.15) 0%, rgba(155, 93, 229, 0.05) 100%); padding: 1rem 1.5rem; border-bottom: 1px solid rgba(155, 93, 229, 0.2);">
                     <div class="flex items-center gap-3 mb-2">
                         <span class="badge-purple font-mono text-xs px-2 py-0.5 rounded font-bold">CARL</span>
                         <span class="text-white font-semibold">Continuous ATO Readiness Level</span>
@@ -577,15 +578,15 @@ document.head.appendChild(o)}initApollo();</script>
                 <div class="p-5">
                     <p class="text-gray-400 text-sm mb-4">The DevSecOps-native pathway to continuous authorization, aligned with the DoW Enterprise DevSecOps Reference Design and the Software Fast Track (SWFT) initiative. cATO replaces 3-year assessment cycles with ongoing, automated validation.</p>
                     <div style="background: rgba(22, 27, 34, 0.5); border-radius: 8px; overflow: hidden;">
-                        <div class="pathway-level-row" style="background: rgba(168, 85, 247, 0.03);"><span class="pathway-level-num" style="color: #a855f7;">1</span><span class="pathway-level-text"><strong class="text-gray-300">DevSecOps Foundation</strong></span></div>
-                        <div class="pathway-level-row"><span class="pathway-level-num" style="color: #a855f7;">2</span><span class="pathway-level-text"><strong class="text-gray-300">Security Tooling in CI/CD</strong></span></div>
-                        <div class="pathway-level-row" style="background: rgba(168, 85, 247, 0.03);"><span class="pathway-level-num" style="color: #a855f7;">3</span><span class="pathway-level-text"><strong class="text-gray-300">Continuous Monitoring Architecture</strong></span></div>
-                        <div class="pathway-level-row"><span class="pathway-level-num" style="color: #a855f7;">4</span><span class="pathway-level-text"><strong class="text-gray-300">Hardened Containers & Provenance</strong></span></div>
-                        <div class="pathway-level-row" style="background: rgba(168, 85, 247, 0.03);"><span class="pathway-level-num" style="color: #a855f7;">5</span><span class="pathway-level-text"><strong class="text-gray-300">Program Sponsor for cATO</strong></span></div>
-                        <div class="pathway-level-row"><span class="pathway-level-num" style="color: #a855f7;">6</span><span class="pathway-level-text"><strong class="text-gray-300">Initial cATO Issued</strong></span></div>
-                        <div class="pathway-level-row" style="background: rgba(168, 85, 247, 0.03);"><span class="pathway-level-num" style="color: #a855f7;">7</span><span class="pathway-level-text"><strong class="text-gray-300">Operational cATO</strong></span></div>
-                        <div class="pathway-level-row"><span class="pathway-level-num" style="color: #a855f7;">8</span><span class="pathway-level-text"><strong class="text-gray-300">Multi-Program Expansion</strong></span></div>
-                        <div class="pathway-level-row" style="background: rgba(168, 85, 247, 0.03);"><span class="pathway-level-num" style="color: #a855f7;">9</span><span class="pathway-level-text"><strong class="text-gray-300">Enterprise Reference Implementation</strong></span></div>
+                        <div class="pathway-level-row" style="background: rgba(155, 93, 229, 0.03);"><span class="pathway-level-num" style="color: #9B5DE5;">1</span><span class="pathway-level-text"><strong class="text-gray-300">DevSecOps Foundation</strong></span></div>
+                        <div class="pathway-level-row"><span class="pathway-level-num" style="color: #9B5DE5;">2</span><span class="pathway-level-text"><strong class="text-gray-300">Security Tooling in CI/CD</strong></span></div>
+                        <div class="pathway-level-row" style="background: rgba(155, 93, 229, 0.03);"><span class="pathway-level-num" style="color: #9B5DE5;">3</span><span class="pathway-level-text"><strong class="text-gray-300">Continuous Monitoring Architecture</strong></span></div>
+                        <div class="pathway-level-row"><span class="pathway-level-num" style="color: #9B5DE5;">4</span><span class="pathway-level-text"><strong class="text-gray-300">Hardened Containers & Provenance</strong></span></div>
+                        <div class="pathway-level-row" style="background: rgba(155, 93, 229, 0.03);"><span class="pathway-level-num" style="color: #9B5DE5;">5</span><span class="pathway-level-text"><strong class="text-gray-300">Program Sponsor for cATO</strong></span></div>
+                        <div class="pathway-level-row"><span class="pathway-level-num" style="color: #9B5DE5;">6</span><span class="pathway-level-text"><strong class="text-gray-300">Initial cATO Issued</strong></span></div>
+                        <div class="pathway-level-row" style="background: rgba(155, 93, 229, 0.03);"><span class="pathway-level-num" style="color: #9B5DE5;">7</span><span class="pathway-level-text"><strong class="text-gray-300">Operational cATO</strong></span></div>
+                        <div class="pathway-level-row"><span class="pathway-level-num" style="color: #9B5DE5;">8</span><span class="pathway-level-text"><strong class="text-gray-300">Multi-Program Expansion</strong></span></div>
+                        <div class="pathway-level-row" style="background: rgba(155, 93, 229, 0.03);"><span class="pathway-level-num" style="color: #9B5DE5;">9</span><span class="pathway-level-text"><strong class="text-gray-300">Enterprise Reference Implementation</strong></span></div>
                     </div>
                     <a href="/blog/authorization-readiness-levels/Authorization-Readiness-Levels.pdf" class="inline-block mt-4 text-cyber-blue font-mono text-xs hover:underline">Read full pathway details in the whitepaper &rarr;</a>
                 </div>
@@ -607,15 +608,15 @@ document.head.appendChild(o)}initApollo();</script>
                 <div class="p-5">
                     <p class="text-gray-400 text-sm mb-4">The Cybersecurity Maturity Model Certification pathway for protecting CUI across the defense industrial base, governed by 32 CFR Part 170 and DFARS 252.204-7021. Affects an estimated 80,000+ contractors in the DIB.</p>
                     <div style="background: rgba(22, 27, 34, 0.5); border-radius: 8px; overflow: hidden;">
-                        <div class="pathway-level-row" style="background: rgba(255, 51, 102, 0.03);"><span class="pathway-level-num" style="color: #ff3366;">1</span><span class="pathway-level-text"><strong class="text-gray-300">Awareness & Level Determination</strong></span></div>
-                        <div class="pathway-level-row"><span class="pathway-level-num" style="color: #ff3366;">2</span><span class="pathway-level-text"><strong class="text-gray-300">CUI Scoping & Asset ID</strong></span></div>
-                        <div class="pathway-level-row" style="background: rgba(255, 51, 102, 0.03);"><span class="pathway-level-num" style="color: #ff3366;">3</span><span class="pathway-level-text"><strong class="text-gray-300">NIST 800-171 Gap & SPRS</strong></span></div>
-                        <div class="pathway-level-row"><span class="pathway-level-num" style="color: #ff3366;">4</span><span class="pathway-level-text"><strong class="text-gray-300">SSP Development & Implementation</strong></span></div>
-                        <div class="pathway-level-row" style="background: rgba(255, 51, 102, 0.03);"><span class="pathway-level-num" style="color: #ff3366;">5</span><span class="pathway-level-text"><strong class="text-gray-300">POA&M Closeout & Readiness</strong></span></div>
-                        <div class="pathway-level-row"><span class="pathway-level-num" style="color: #ff3366;">6</span><span class="pathway-level-text"><strong class="text-gray-300">C3PAO Assessment Complete</strong></span></div>
-                        <div class="pathway-level-row" style="background: rgba(255, 51, 102, 0.03);"><span class="pathway-level-num" style="color: #ff3366;">7</span><span class="pathway-level-text"><strong class="text-gray-300">Certification Achieved</strong></span></div>
-                        <div class="pathway-level-row"><span class="pathway-level-num" style="color: #ff3366;">8</span><span class="pathway-level-text"><strong class="text-gray-300">Operational Compliance & Affirmation</strong></span></div>
-                        <div class="pathway-level-row" style="background: rgba(255, 51, 102, 0.03);"><span class="pathway-level-num" style="color: #ff3366;">9</span><span class="pathway-level-text"><strong class="text-gray-300">Multi-Level & DIB Leadership</strong></span></div>
+                        <div class="pathway-level-row" style="background: rgba(255, 51, 102, 0.03);"><span class="pathway-level-num" style="color: #FF5252;">1</span><span class="pathway-level-text"><strong class="text-gray-300">Awareness & Level Determination</strong></span></div>
+                        <div class="pathway-level-row"><span class="pathway-level-num" style="color: #FF5252;">2</span><span class="pathway-level-text"><strong class="text-gray-300">CUI Scoping & Asset ID</strong></span></div>
+                        <div class="pathway-level-row" style="background: rgba(255, 51, 102, 0.03);"><span class="pathway-level-num" style="color: #FF5252;">3</span><span class="pathway-level-text"><strong class="text-gray-300">NIST 800-171 Gap & SPRS</strong></span></div>
+                        <div class="pathway-level-row"><span class="pathway-level-num" style="color: #FF5252;">4</span><span class="pathway-level-text"><strong class="text-gray-300">SSP Development & Implementation</strong></span></div>
+                        <div class="pathway-level-row" style="background: rgba(255, 51, 102, 0.03);"><span class="pathway-level-num" style="color: #FF5252;">5</span><span class="pathway-level-text"><strong class="text-gray-300">POA&M Closeout & Readiness</strong></span></div>
+                        <div class="pathway-level-row"><span class="pathway-level-num" style="color: #FF5252;">6</span><span class="pathway-level-text"><strong class="text-gray-300">C3PAO Assessment Complete</strong></span></div>
+                        <div class="pathway-level-row" style="background: rgba(255, 51, 102, 0.03);"><span class="pathway-level-num" style="color: #FF5252;">7</span><span class="pathway-level-text"><strong class="text-gray-300">Certification Achieved</strong></span></div>
+                        <div class="pathway-level-row"><span class="pathway-level-num" style="color: #FF5252;">8</span><span class="pathway-level-text"><strong class="text-gray-300">Operational Compliance & Affirmation</strong></span></div>
+                        <div class="pathway-level-row" style="background: rgba(255, 51, 102, 0.03);"><span class="pathway-level-num" style="color: #FF5252;">9</span><span class="pathway-level-text"><strong class="text-gray-300">Multi-Level & DIB Leadership</strong></span></div>
                     </div>
                     <a href="/blog/authorization-readiness-levels/Authorization-Readiness-Levels.pdf" class="inline-block mt-4 text-cyber-blue font-mono text-xs hover:underline">Read full pathway details in the whitepaper &rarr;</a>
                 </div>
@@ -705,32 +706,32 @@ document.head.appendChild(o)}initApollo();</script>
             <h2 class="text-2xl md:text-3xl font-bold text-white mb-8">Key Principles for Dual-Use ATO Strategy</h2>
 
             <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem;">
-                <div style="background: #0d1117; border: 1px solid #21262d; border-left: 3px solid #00ff88; border-radius: 0 8px 8px 0; padding: 1rem 1.25rem;" class="fade-in">
-                    <p style="color: #e5e7eb; font-weight: 700; margin-bottom: 0.5rem;"><span style="font-family: 'JetBrains Mono', monospace; color: #00ff88; font-size: 12px; margin-right: 8px;">01</span>Design for Authorization from Day One</p>
+                <div style="background: #0F1B2E; border: 1px solid #1E2A3D; border-left: 3px solid #FF8A3D; border-radius: 0 8px 8px 0; padding: 1rem 1.25rem;" class="fade-in">
+                    <p style="color: #e5e7eb; font-weight: 700; margin-bottom: 0.5rem;"><span style="font-family: 'JetBrains Mono', monospace; color: #FF8A3D; font-size: 12px; margin-right: 8px;">01</span>Design for Authorization from Day One</p>
                     <p style="color: #9ca3af; font-size: 0.875rem; margin: 0;">The most expensive ATO decision is the one you don't make early enough. Selecting a FedRAMP-authorized IaaS provider, implementing FIPS-validated encryption, and designing your system boundary at TRL 3-5 saves 6-12 months and hundreds of thousands of dollars compared to retrofitting at TRL 7-8.</p>
                 </div>
-                <div style="background: #0d1117; border: 1px solid #21262d; border-left: 3px solid #00d4ff; border-radius: 0 8px 8px 0; padding: 1rem 1.25rem;" class="fade-in">
-                    <p style="color: #e5e7eb; font-weight: 700; margin-bottom: 0.5rem;"><span style="font-family: 'JetBrains Mono', monospace; color: #00d4ff; font-size: 12px; margin-right: 8px;">02</span>The AO Is a Customer, Not a Gatekeeper</p>
+                <div style="background: #0F1B2E; border: 1px solid #1E2A3D; border-left: 3px solid #22D3EE; border-radius: 0 8px 8px 0; padding: 1rem 1.25rem;" class="fade-in">
+                    <p style="color: #e5e7eb; font-weight: 700; margin-bottom: 0.5rem;"><span style="font-family: 'JetBrains Mono', monospace; color: #22D3EE; font-size: 12px; margin-right: 8px;">02</span>The AO Is a Customer, Not a Gatekeeper</p>
                     <p style="color: #9ca3af; font-size: 0.875rem; margin: 0;">The Authorizing Official and their team (ISSM, ISSO, SCA) are mission customer stakeholders. Build relationships early, understand their risk appetite, and treat the process as a partnership.</p>
                 </div>
-                <div style="background: #0d1117; border: 1px solid #21262d; border-left: 3px solid #a855f7; border-radius: 0 8px 8px 0; padding: 1rem 1.25rem;" class="fade-in">
-                    <p style="color: #e5e7eb; font-weight: 700; margin-bottom: 0.5rem;"><span style="font-family: 'JetBrains Mono', monospace; color: #a855f7; font-size: 12px; margin-right: 8px;">03</span>Fund Authorization Like a Product Feature</p>
+                <div style="background: #0F1B2E; border: 1px solid #1E2A3D; border-left: 3px solid #9B5DE5; border-radius: 0 8px 8px 0; padding: 1rem 1.25rem;" class="fade-in">
+                    <p style="color: #e5e7eb; font-weight: 700; margin-bottom: 0.5rem;"><span style="font-family: 'JetBrains Mono', monospace; color: #9B5DE5; font-size: 12px; margin-right: 8px;">03</span>Fund Authorization Like a Product Feature</p>
                     <p style="color: #9ca3af; font-size: 0.875rem; margin: 0;">ATO is not overhead -- it is a product feature that unlocks an entire market. Budget for it in SBIR proposals, include it in OTA milestones, and present it to investors as go-to-market infrastructure. A $1.5M FedRAMP investment that unlocks $50M in addressable government revenue is a 33x leverage play.</p>
                 </div>
-                <div style="background: #0d1117; border: 1px solid #21262d; border-left: 3px solid #ffb800; border-radius: 0 8px 8px 0; padding: 1rem 1.25rem;" class="fade-in">
-                    <p style="color: #e5e7eb; font-weight: 700; margin-bottom: 0.5rem;"><span style="font-family: 'JetBrains Mono', monospace; color: #ffb800; font-size: 12px; margin-right: 8px;">04</span>Leverage Inheritance and Reciprocity</p>
+                <div style="background: #0F1B2E; border: 1px solid #1E2A3D; border-left: 3px solid #FFB347; border-radius: 0 8px 8px 0; padding: 1rem 1.25rem;" class="fade-in">
+                    <p style="color: #e5e7eb; font-weight: 700; margin-bottom: 0.5rem;"><span style="font-family: 'JetBrains Mono', monospace; color: #FFB347; font-size: 12px; margin-right: 8px;">04</span>Leverage Inheritance and Reciprocity</p>
                     <p style="color: #9ca3af; font-size: 0.875rem; margin: 0;">Build on FedRAMP-authorized IaaS/PaaS to inherit 50-70% of the control baseline. Leverage reciprocity between DoW organizations. Use your FedRAMP authorization as the foundation for DoW RMF and IL authorization.</p>
                 </div>
-                <div style="background: #0d1117; border: 1px solid #21262d; border-left: 3px solid #ff3366; border-radius: 0 8px 8px 0; padding: 1rem 1.25rem;" class="fade-in">
-                    <p style="color: #e5e7eb; font-weight: 700; margin-bottom: 0.5rem;"><span style="font-family: 'JetBrains Mono', monospace; color: #ff3366; font-size: 12px; margin-right: 8px;">05</span>Build Toward Continuous, Not Just Compliant</p>
-                    <p style="color: #9ca3af; font-size: 0.875rem; margin: 0;"><a href="https://www.fedramp.gov/20x/" target="_blank" style="color: #00d4ff;">FedRAMP 20x</a> replaces narrative SSPs with machine-readable KSIs and persistent validation. DoW cATO replaces 3-year cycles with continuous monitoring. FedRAMP aims to stop accepting new Rev 5 packages by late FY27 -- the transition window is now.</p>
+                <div style="background: #0F1B2E; border: 1px solid #1E2A3D; border-left: 3px solid #FF5252; border-radius: 0 8px 8px 0; padding: 1rem 1.25rem;" class="fade-in">
+                    <p style="color: #e5e7eb; font-weight: 700; margin-bottom: 0.5rem;"><span style="font-family: 'JetBrains Mono', monospace; color: #FF5252; font-size: 12px; margin-right: 8px;">05</span>Build Toward Continuous, Not Just Compliant</p>
+                    <p style="color: #9ca3af; font-size: 0.875rem; margin: 0;"><a href="https://www.fedramp.gov/20x/" target="_blank" style="color: #22D3EE;">FedRAMP 20x</a> replaces narrative SSPs with machine-readable KSIs and persistent validation. DoW cATO replaces 3-year cycles with continuous monitoring. FedRAMP aims to stop accepting new Rev 5 packages by late FY27 -- the transition window is now.</p>
                 </div>
-                <div style="background: #0d1117; border: 1px solid #21262d; border-left: 3px solid #00ff88; border-radius: 0 8px 8px 0; padding: 1rem 1.25rem;" class="fade-in">
-                    <p style="color: #e5e7eb; font-weight: 700; margin-bottom: 0.5rem;"><span style="font-family: 'JetBrains Mono', monospace; color: #00ff88; font-size: 12px; margin-right: 8px;">06</span>Treat Authorization as a Competitive Moat</p>
+                <div style="background: #0F1B2E; border: 1px solid #1E2A3D; border-left: 3px solid #FF8A3D; border-radius: 0 8px 8px 0; padding: 1rem 1.25rem;" class="fade-in">
+                    <p style="color: #e5e7eb; font-weight: 700; margin-bottom: 0.5rem;"><span style="font-family: 'JetBrains Mono', monospace; color: #FF8A3D; font-size: 12px; margin-right: 8px;">06</span>Treat Authorization as a Competitive Moat</p>
                     <p style="color: #9ca3af; font-size: 0.875rem; margin: 0;">Every additional agency ATO, every IL level, every year of ConMon history widens the moat. Protect and maintain your authorizations -- they are among your most valuable business assets.</p>
                 </div>
-                <div style="background: #0d1117; border: 1px solid #21262d; border-left: 3px solid #00d4ff; border-radius: 0 8px 8px 0; padding: 1rem 1.25rem;" class="fade-in">
-                    <p style="color: #e5e7eb; font-weight: 700; margin-bottom: 0.5rem;"><span style="font-family: 'JetBrains Mono', monospace; color: #00d4ff; font-size: 12px; margin-right: 8px;">07</span>Understand the Institutional Map</p>
+                <div style="background: #0F1B2E; border: 1px solid #1E2A3D; border-left: 3px solid #22D3EE; border-radius: 0 8px 8px 0; padding: 1rem 1.25rem;" class="fade-in">
+                    <p style="color: #e5e7eb; font-weight: 700; margin-bottom: 0.5rem;"><span style="font-family: 'JetBrains Mono', monospace; color: #22D3EE; font-size: 12px; margin-right: 8px;">07</span>Understand the Institutional Map</p>
                     <p style="color: #9ca3af; font-size: 0.875rem; margin: 0;">FedRAMP is managed by the FedRAMP PMO at GSA. IL PAs are managed by DISA under the CC SRG. DoW RMF ATOs are issued by individual AOs through eMASS. CMMC certifications are managed by the CMMC PMO with C3PAOs and DIBCAC. Understanding which institution owns which authorization prevents wasted effort.</p>
                 </div>
             </div>
@@ -745,27 +746,27 @@ document.head.appendChild(o)}initApollo();</script>
 
             <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem;">
                 <div class="diagram-box fade-in" style="text-align: center; padding: 1.5rem 1rem; margin: 0;">
-                    <p style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #00d4ff; font-weight: 700; margin-bottom: 0.75rem;">FedRAMP</p>
+                    <p style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #22D3EE; font-weight: 700; margin-bottom: 0.75rem;">FedRAMP</p>
                     <p style="font-size: 14px; color: #e5e7eb; margin-bottom: 0.25rem; font-weight: 600;">GSA</p>
                     <p style="font-size: 12px; color: #6b7280; margin: 0; font-style: italic;">FedRAMP PMO + Board</p>
                 </div>
                 <div class="diagram-box fade-in" style="text-align: center; padding: 1.5rem 1rem; margin: 0;">
-                    <p style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #00ff88; font-weight: 700; margin-bottom: 0.75rem;">DoW RMF</p>
+                    <p style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #FF8A3D; font-weight: 700; margin-bottom: 0.75rem;">DoW RMF</p>
                     <p style="font-size: 14px; color: #e5e7eb; margin-bottom: 0.25rem; font-weight: 600;">DoW AOs</p>
                     <p style="font-size: 12px; color: #6b7280; margin: 0; font-style: italic;">eMASS + DoDI 8510.01</p>
                 </div>
                 <div class="diagram-box fade-in" style="text-align: center; padding: 1.5rem 1rem; margin: 0;">
-                    <p style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #ffb800; font-weight: 700; margin-bottom: 0.75rem;">IL PA</p>
+                    <p style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #FFB347; font-weight: 700; margin-bottom: 0.75rem;">IL PA</p>
                     <p style="font-size: 14px; color: #e5e7eb; margin-bottom: 0.25rem; font-weight: 600;">DISA</p>
                     <p style="font-size: 12px; color: #6b7280; margin: 0; font-style: italic;">CC SRG</p>
                 </div>
                 <div class="diagram-box fade-in" style="text-align: center; padding: 1.5rem 1rem; margin: 0;">
-                    <p style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #a855f7; font-weight: 700; margin-bottom: 0.75rem;">cATO</p>
+                    <p style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #9B5DE5; font-weight: 700; margin-bottom: 0.75rem;">cATO</p>
                     <p style="font-size: 14px; color: #e5e7eb; margin-bottom: 0.25rem; font-weight: 600;">DoW Program AO</p>
                     <p style="font-size: 12px; color: #6b7280; margin: 0; font-style: italic;">DevSecOps Ref Design</p>
                 </div>
                 <div class="diagram-box fade-in" style="text-align: center; padding: 1.5rem 1rem; margin: 0;">
-                    <p style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #ff3366; font-weight: 700; margin-bottom: 0.75rem;">CMMC</p>
+                    <p style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #FF5252; font-weight: 700; margin-bottom: 0.75rem;">CMMC</p>
                     <p style="font-size: 14px; color: #e5e7eb; margin-bottom: 0.25rem; font-weight: 600;">CMMC PMO</p>
                     <p style="font-size: 12px; color: #6b7280; margin: 0; font-style: italic;">C3PAOs + DIBCAC</p>
                 </div>
