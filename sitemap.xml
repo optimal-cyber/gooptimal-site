@@ -1,123 +1,164 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <!-- Primary pages -->
     <url>
         <loc>https://gooptimal.io/</loc>
-        <lastmod>2026-02-02</lastmod>
+        <lastmod>2026-05-09</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://gooptimal.io/platform.html</loc>
-        <lastmod>2026-02-02</lastmod>
+        <loc>https://gooptimal.io/platform</loc>
+        <lastmod>2026-05-09</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.95</priority>
+    </url>
+    <url>
+        <loc>https://gooptimal.io/about</loc>
+        <lastmod>2026-05-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.85</priority>
+    </url>
+    <url>
+        <loc>https://gooptimal.io/demo</loc>
+        <lastmod>2026-05-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
-    </url>
-    <url>
-        <loc>https://gooptimal.io/integrations.html</loc>
-        <lastmod>2026-02-02</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://gooptimal.io/demo.html</loc>
-        <lastmod>2026-02-02</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    <url>
-        <loc>https://gooptimal.io/ai-security.html</loc>
-        <lastmod>2026-02-02</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    <url>
-        <loc>https://gooptimal.io/vulnerability-management.html</loc>
-        <lastmod>2026-02-02</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://gooptimal.io/software-supply-chain.html</loc>
-        <lastmod>2026-02-02</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://gooptimal.io/grc.html</loc>
-        <lastmod>2026-02-02</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://gooptimal.io/cloud-security.html</loc>
-        <lastmod>2026-02-02</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://gooptimal.io/runtime-security.html</loc>
-        <lastmod>2026-02-02</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://gooptimal.io/devsecops.html</loc>
-        <lastmod>2026-02-02</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://gooptimal.io/platform-services.html</loc>
-        <lastmod>2026-02-02</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://gooptimal.io/govlaunch.html</loc>
-        <lastmod>2026-02-02</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://gooptimal.io/authorization.html</loc>
-        <lastmod>2026-02-02</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
     </url>
     <url>
         <loc>https://gooptimal.io/support</loc>
-        <lastmod>2026-04-23</lastmod>
+        <lastmod>2026-05-05</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Capability / topic pages -->
+    <url>
+        <loc>https://gooptimal.io/ai-security</loc>
+        <lastmod>2026-05-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://gooptimal.io/blog.html</loc>
-        <lastmod>2026-02-14</lastmod>
-        <changefreq>weekly</changefreq>
+        <loc>https://gooptimal.io/devsecops</loc>
+        <lastmod>2026-05-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.85</priority>
+    </url>
+    <url>
+        <loc>https://gooptimal.io/runtime-security</loc>
+        <lastmod>2026-05-07</lastmod>
+        <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://gooptimal.io/blog/accelerating-ato-process</loc>
-        <lastmod>2026-02-10</lastmod>
+        <loc>https://gooptimal.io/cloud-security</loc>
+        <lastmod>2026-05-07</lastmod>
         <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://gooptimal.io/software-supply-chain</loc>
+        <lastmod>2026-05-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://gooptimal.io/vulnerability-management</loc>
+        <lastmod>2026-05-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://gooptimal.io/grc</loc>
+        <lastmod>2026-05-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://gooptimal.io/authorization</loc>
+        <lastmod>2026-05-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.75</priority>
+    </url>
+    <url>
+        <loc>https://gooptimal.io/platform-services</loc>
+        <lastmod>2026-05-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://gooptimal.io/govlaunch</loc>
+        <lastmod>2026-05-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.65</priority>
+    </url>
+    <url>
+        <loc>https://gooptimal.io/warfighter-solutions</loc>
+        <lastmod>2026-05-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.65</priority>
+    </url>
+
+    <!-- Blog -->
+    <url>
+        <loc>https://gooptimal.io/blog/</loc>
+        <lastmod>2026-05-07</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
+    <url>
+        <loc>https://gooptimal.io/blog/optimal-platform-update-q1-2026</loc>
+        <lastmod>2026-01-05</lastmod>
+        <changefreq>yearly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://gooptimal.io/blog/sbom-best-practices-2026</loc>
         <lastmod>2026-01-28</lastmod>
-        <changefreq>monthly</changefreq>
+        <changefreq>yearly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://gooptimal.io/blog/ai-security-defense-sector</loc>
         <lastmod>2026-01-15</lastmod>
-        <changefreq>monthly</changefreq>
+        <changefreq>yearly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://gooptimal.io/blog/optimal-platform-update-q1-2026</loc>
-        <lastmod>2026-01-05</lastmod>
-        <changefreq>monthly</changefreq>
+        <loc>https://gooptimal.io/blog/accelerating-ato-process</loc>
+        <lastmod>2026-02-10</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://gooptimal.io/blog/authorization-readiness-levels</loc>
+        <lastmod>2026-03-15</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://gooptimal.io/blog/ato-bottleneck-rethinking-authorization</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://gooptimal.io/blog/dow-il-authorization-guide</loc>
+        <lastmod>2026-04-01</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://gooptimal.io/blog/fedramp-cicd-pipeline-compliance</loc>
+        <lastmod>2026-04-12</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://gooptimal.io/blog/fedramp-20x-reality-check</loc>
+        <lastmod>2026-04-25</lastmod>
+        <changefreq>yearly</changefreq>
         <priority>0.7</priority>
     </url>
 </urlset>

@@ -1,15 +1,15 @@
 User-agent: *
 Allow: /
 
-# Sitemap location
+# Sitemap
 Sitemap: https://gooptimal.io/sitemap.xml
 
-# Crawl delay (optional - be respectful to servers)
+# Don't index legacy backups, test pages, or generator utilities
+Disallow: /index-legacy
+Disallow: /platform-legacy
+Disallow: /integrations-legacy
+Disallow: /brand-test
+Disallow: /create-social-preview
+
+# Be respectful
 Crawl-delay: 1
-
-# Allow all content to be indexed
-Allow: /css/
-Allow: /js/
-Allow: /public/
-
-# No specific disallows needed for this public website
