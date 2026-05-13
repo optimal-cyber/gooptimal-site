@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Platform | Optimal — Two SKUs. One operating model.</title>
-    <meta name="description" content="Optimal Federal: FedRAMP-shaped AI inference for defense and federal systems — Sweep, Channel, Prove. Optimal Cloud: cloud-native protection that ships findings, not noise — Survey, Hold, Close. One codebase, one operating model.">
+    <title>Platform | Optimal. Two SKUs. One operating model.</title>
+    <meta name="description" content="Optimal Federal: FedRAMP-shaped AI inference for defense and federal systems. Sweep · Channel · Prove. Optimal Cloud: cloud-native protection that ships findings, not noise. Survey · Hold · Close. One codebase, one operating model.">
     <meta name="keywords" content="FedRAMP AI inference, Bedrock GovCloud, Vertex Assured Workloads, Azure OpenAI Gov, IL5, FIPS 140-2, FedRAMP 20x, KSI, OSCAL, DIBCAC, 3PAO, CNAPP, CSPM, CWPP, CIEM, AI-SPM, eBPF, SPIFFE, security graph">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://gooptimal.io/platform">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Platform | Optimal — Two SKUs. One operating model.">
+    <meta property="og:title" content="Platform | Optimal. Two SKUs. One operating model.">
     <meta property="og:description" content="Federal: FedRAMP-shaped AI inference inside the boundary. Cloud: CNAPP that ships findings, not noise.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://gooptimal.io/platform">
@@ -28,7 +28,7 @@
         "@type": "WebPage",
         "name": "Platform | Optimal",
         "url": "https://gooptimal.io/platform",
-        "description": "Optimal Federal and Optimal Cloud — two SKUs, one operating model. Inference inside the authorization boundary; CNAPP that ships findings, not noise.",
+        "description": "Optimal Federal and Optimal Cloud. Two SKUs, one operating model. Inference inside the authorization boundary; CNAPP that ships findings, not noise.",
         "isPartOf": {
             "@type": "WebSite",
             "name": "Optimal",
@@ -326,7 +326,7 @@
                     <span class="text-transparent bg-clip-text" style="background-image: linear-gradient(90deg, #FF8A3D 0%, #FF5252 50%, #9B5DE5 100%);">One operating model.</span>
                 </h1>
                 <p class="text-lg md:text-xl text-gray-400 mb-10 max-w-2xl leading-relaxed">
-                    Same codebase. Same security graph. Same audit trail. The SKU difference is packaging, deployment target, and which capabilities a tenant sees — not separate products.
+                    Same codebase. Same security graph. Same audit trail. The SKU difference is packaging, deployment target, and which capabilities a tenant sees. Not separate products.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 mb-10">
                     <a href="#federal" class="btn-sunset font-mono text-xs uppercase tracking-[0.14em]">
@@ -387,7 +387,7 @@
                     </div>
                     <h3 class="phase-name">Recon before the assessor does.</h3>
                     <p class="phase-body">
-                        Scan customer codebases and runtime workloads for unauthorized LLM calls — OpenAI, Anthropic, Cohere, Gemini keys, SDK imports, prompt strings hitting non-authorized endpoints. Output: a <strong>boundary-violation report</strong> and a <strong>migration plan</strong> — before the DIBCAC or 3PAO assessor finds it first.
+                        Scan customer codebases and runtime workloads for unauthorized LLM calls. OpenAI, Anthropic, Cohere, Gemini keys. SDK imports. Prompt strings hitting non-authorized endpoints. Output: a <strong>boundary-violation report</strong> and a <strong>migration plan</strong>, before the DIBCAC or 3PAO assessor finds it first.
                     </p>
                 </article>
 
@@ -398,7 +398,7 @@
                     </div>
                     <h3 class="phase-name">Route through the authorized boundary.</h3>
                     <p class="phase-body">
-                        OpenAI SDK-compatible API. Single endpoint. A <strong>compliance-floor router</strong> sends each request to the right authorized model on Bedrock GovCloud, Vertex Assured Workloads, or Azure OpenAI Gov. <strong>Zero-persistence by design</strong> — prompts and responses live in Lambda RAM and nowhere else. Metadata only is stored.
+                        OpenAI SDK-compatible API. Single endpoint. A <strong>compliance-floor router</strong> sends each request to the right authorized model on Bedrock GovCloud, Vertex Assured Workloads, or Azure OpenAI Gov. <strong>Zero-persistence by design.</strong> Prompts and responses live in Lambda RAM and nowhere else. Only metadata is stored.
                     </p>
                 </article>
 
@@ -409,7 +409,7 @@
                     </div>
                     <h3 class="phase-name">Evidence emits as a side effect.</h3>
                     <p class="phase-body">
-                        Machine-readable <strong>FedRAMP 20x KSI evidence</strong> emits continuously from gateway traffic. Your SSP, your DIBCAC package, your 3PAO console — all read from a live feed instead of a quarterly screenshot binder.
+                        Machine-readable <strong>FedRAMP 20x KSI evidence</strong> emits continuously from gateway traffic. Your SSP, your DIBCAC package, your 3PAO console all read from a live feed instead of a quarterly screenshot binder.
                     </p>
                 </article>
             </div>
@@ -426,7 +426,7 @@
 
                 <div class="diagram-wrap">
                     <svg viewBox="0 0 1000 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="federal-arch-title federal-arch-desc">
-                        <title id="federal-arch-title">Optimal Federal — Architecture Boundary Diagram</title>
+                        <title id="federal-arch-title">Optimal Federal: Architecture Boundary Diagram</title>
                         <desc id="federal-arch-desc">Customer application calls Optimal Gateway. Gateway runs input governance (CUI/ITAR/PII detection, prompt-injection screening) in Lambda RAM. Compliance-Floor Router selects authorized model in Bedrock GovCloud, Vertex Assured Workloads, or Azure OpenAI Gov based on request data class. Output Scanner runs verdicts in headers. Metadata-only DynamoDB stores api_key_id, timestamp, model, tokens, latency, cost. KSI Evidence Emitter feeds the SSP and 3PAO Console.</desc>
 
                         <defs>
@@ -555,7 +555,7 @@
                     </div>
                     <div class="spec-row">
                         <span class="label">Inline governance</span>
-                        <span class="value">CUI / ITAR / PII detection · prompt-injection screening · tool-call governance · output scanning — verdicts in response headers.</span>
+                        <span class="value">CUI / ITAR / PII detection · prompt-injection screening · tool-call governance · output scanning. Verdicts in response headers.</span>
                     </div>
                 </div>
 
@@ -573,7 +573,7 @@
                     </div>
                     <div class="spec-row">
                         <span class="label">Crypto</span>
-                        <span class="value">FIPS 140-2 validated end-to-end. Workload Identity Federation — no static cross-cloud keys.</span>
+                        <span class="value">FIPS 140-2 validated end-to-end. Workload Identity Federation. No static cross-cloud keys.</span>
                     </div>
                     <div class="spec-row">
                         <span class="label">STIG engine</span>
@@ -581,7 +581,7 @@
                     </div>
                     <div class="spec-row">
                         <span class="label">Open POAMs</span>
-                        <span class="value">PIV / IA-2(12), tool-call governance — tracked transparently.</span>
+                        <span class="value">PIV / IA-2(12), tool-call governance. Tracked transparently.</span>
                     </div>
                 </div>
             </div>
@@ -615,7 +615,7 @@
                         <span class="text-dusk">Findings, not noise.</span>
                     </h2>
                     <p class="text-base text-gray-400 leading-relaxed max-w-xl">
-                        Full CNAPP — CSPM, CWPP, CIEM, AI-SPM, security graph, eBPF runtime, 1-click fix PRs — at 50–70% below Wiz list. Marketplace-billed through AWS and GCP. No annual minimum.
+                        Full CNAPP: CSPM, CWPP, CIEM, AI-SPM, security graph, eBPF runtime, 1-click fix PRs. All at 50–70% below Wiz list. Marketplace-billed through AWS and GCP. No annual minimum.
                     </p>
                 </div>
                 <div class="font-mono text-[10px] text-gray-600 tracking-[0.22em] hidden md:block whitespace-nowrap">
@@ -632,7 +632,7 @@
                     </div>
                     <h3 class="phase-name">Continuous inventory and assessment.</h3>
                     <p class="phase-body">
-                        Continuous <strong>CSPM, CWPP, CIEM, AI-SPM</strong>. A Wiz-style <strong>security graph</strong> surfaces toxic combinations — critical CVE × internet-exposed × admin IAM — in the hour, not the quarter.
+                        Continuous <strong>CSPM, CWPP, CIEM, AI-SPM</strong>. A Wiz-style <strong>security graph</strong> surfaces toxic combinations (critical CVE × internet-exposed × admin IAM) in the hour, not the quarter.
                     </p>
                 </article>
 
@@ -654,7 +654,7 @@
                     </div>
                     <h3 class="phase-name">Close the gap. Close the POA&amp;M.</h3>
                     <p class="phase-body">
-                        Automated remediation. <strong>1-click fix PRs</strong> into GitHub and GitLab with approval gates. POA&amp;M lifecycle tracked through resolution — not just opened.
+                        Automated remediation. <strong>1-click fix PRs</strong> into GitHub and GitLab with approval gates. POA&amp;M lifecycle tracked through resolution, not just opened.
                     </p>
                 </article>
             </div>
@@ -769,7 +769,7 @@
                         <span class="text-gray-500">"We need to..."</span>
                     </h2>
                     <p class="text-base text-gray-400 leading-relaxed max-w-xl">
-                        If one of these sounds familiar, you're in the right place. Missions 01–03 fall under Optimal Federal. Missions 04–06 are where Optimal Cloud earns its keep — with Federal's Channel stepping in for commercial-to-federal motion.
+                        If one of these sounds familiar, you're in the right place. Missions 01–03 fall under Optimal Federal. Missions 04–06 are where Optimal Cloud earns its keep, with Federal's Channel stepping in for commercial-to-federal motion.
                     </p>
                 </div>
                 <div class="font-mono text-[10px] text-gray-600 tracking-[0.22em] hidden md:block whitespace-nowrap">
@@ -796,7 +796,7 @@
                     </div>
                     <h3 class="font-display text-xl text-sand mb-3">Accelerate Authorization</h3>
                     <p class="text-sm text-gray-400 leading-relaxed">
-                        Cut the path between code and ATO. Federal's Prove layer treats evidence as a build artifact — KSI emits continuously, not quarterly. Ship without waiting on the binder.
+                        Cut the path between code and ATO. Federal's Prove layer treats evidence as a build artifact. KSI emits continuously, not quarterly. Ship without waiting on the binder.
                     </p>
                 </article>
 
@@ -807,7 +807,7 @@
                     </div>
                     <h3 class="font-display text-xl text-sand mb-3">Stay Audit-Ready</h3>
                     <p class="text-sm text-gray-400 leading-relaxed">
-                        Continuous control state across delivery and runtime. The audit isn't an event — it's a query against the same SSP / OSCAL / POA&amp;M feed your team already operates.
+                        Continuous control state across delivery and runtime. The audit isn't an event. It's a query against the same SSP / OSCAL / POA&amp;M feed your team already operates.
                     </p>
                 </article>
 
@@ -829,7 +829,7 @@
                     </div>
                     <h3 class="font-display text-xl text-sand mb-3">Govern Models in Production</h3>
                     <p class="text-sm text-gray-400 leading-relaxed">
-                        AI runtime detection on eBPF for inference workloads. Lineage, prompt and policy control for the systems your customers actually use — without slowing the team that ships them.
+                        AI runtime detection on eBPF for inference workloads. Lineage, prompt and policy control for the systems your customers actually use, without slowing the team that ships them.
                     </p>
                 </article>
 
@@ -840,7 +840,7 @@
                     </div>
                     <h3 class="font-display text-xl text-sand mb-3">Scale Without Trade-offs</h3>
                     <p class="text-sm text-gray-400 leading-relaxed">
-                        Take what worked for one team and make it the default for the whole org — same codebase, same evidence trail, every environment. Federal and Cloud share one operating model.
+                        Take what worked for one team and make it the default for the whole org. Same codebase, same evidence trail, every environment. Federal and Cloud share one operating model.
                     </p>
                 </article>
             </div>
