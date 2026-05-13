@@ -3,4 +3,7 @@ https://optimal-cyber.github.io/gooptimal-site/* https://gooptimal.io/:splat 301
 https://optimal-cyber.github.io/* https://gooptimal.io/:splat 301!
 
 # Redirect www to non-www (optional)
-https://www.gooptimal.io/* https://gooptimal.io/:splat 301! 
+https://www.gooptimal.io/* https://gooptimal.io/:splat 301!
+
+# Folded routes from IA tightening (Get Access + Request Demo + Support → Contact)
+/contact /demo 301
