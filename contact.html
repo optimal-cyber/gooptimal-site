@@ -104,10 +104,18 @@
                             <a href="/industries/sled">State &amp; Local Government</a>
                         </div>
                     </div>
-                    <a href="/the-optimal-way" class="nav-link font-mono text-xs uppercase">The Optimal Way</a>
                     <a href="/about" class="nav-link font-mono text-xs uppercase">About</a>
-                    <a href="https://docs.gooptimal.io/" target="_blank" class="nav-link font-mono text-xs uppercase">Docs</a>
-                    <a href="/blog" class="nav-link font-mono text-xs uppercase">Blog</a>
+                    <div class="nav-dropdown">
+                        <button class="nav-dropdown-trigger font-mono text-xs uppercase">
+                            Resources
+                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </button>
+                        <div class="nav-dropdown-menu">
+                            <a href="https://docs.gooptimal.io/" target="_blank">Docs</a>
+                            <a href="/blog">Blog</a>
+                            <a href="/the-optimal-way">The Optimal Way</a>
+                        </div>
+                    </div>
                     <a href="/contact" class="btn-sunset font-mono text-xs uppercase tracking-[0.12em] px-5 py-2.5">Contact</a>
                 </div>
                 <button id="mobile-menu-btn" class="md:hidden text-gray-400 hover:text-sand">
@@ -123,10 +131,13 @@
                         <a href="/industries/healthcare" class="nav-link font-mono text-xs pl-3 uppercase">Healthcare</a>
                         <a href="/industries/sled" class="nav-link font-mono text-xs pl-3 uppercase">State &amp; Local Government</a>
                     </div>
-                    <a href="/the-optimal-way" class="nav-link font-mono text-xs uppercase">The Optimal Way</a>
                     <a href="/about" class="nav-link font-mono text-xs uppercase">About</a>
-                    <a href="https://docs.gooptimal.io/" target="_blank" class="nav-link font-mono text-xs uppercase">Docs</a>
-                    <a href="/blog" class="nav-link font-mono text-xs uppercase">Blog</a>
+                    <div class="flex flex-col gap-2">
+                        <span class="font-mono text-[10px] text-gray-500 uppercase tracking-[0.18em]">Resources</span>
+                        <a href="https://docs.gooptimal.io/" target="_blank" class="nav-link font-mono text-xs pl-3 uppercase">Docs</a>
+                        <a href="/blog" class="nav-link font-mono text-xs pl-3 uppercase">Blog</a>
+                        <a href="/the-optimal-way" class="nav-link font-mono text-xs pl-3 uppercase">The Optimal Way</a>
+                    </div>
                     <a href="/contact" class="btn-sunset font-mono text-xs uppercase tracking-[0.12em] text-center mt-2">Contact</a>
                 </div>
             </div>
@@ -253,6 +264,92 @@
             </div>
         </div>
     </section>
+
+    <!-- ===== WHAT HAPPENS NEXT ===== -->
+    <section class="relative" id="next" style="background: linear-gradient(180deg, var(--midnight) 0%, #0E1622 50%, var(--midnight) 100%); padding: 96px 0;">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="mb-16 max-w-3xl flex items-end justify-between gap-8">
+                <div>
+                    <span class="eyebrow">What happens next</span>
+                    <h2 class="heading-display text-3xl md:text-5xl text-sand mt-6 mb-6">
+                        No drip campaigns.<br>
+                        <span class="text-gray-500">Just a clean process.</span>
+                    </h2>
+                </div>
+                <div class="font-mono text-[10px] text-gray-600 tracking-[0.22em] hidden md:block whitespace-nowrap">
+                    01 / 04 → 04 / 04
+                </div>
+            </div>
+
+            <div class="next-table">
+                <div class="next-row">
+                    <span class="next-num">01</span>
+                    <div>
+                        <div class="next-name">You submit.</div>
+                        <div class="next-detail">One paragraph is enough. No qualifying form-fields to slow you down.</div>
+                    </div>
+                </div>
+                <div class="next-row">
+                    <span class="next-num">02</span>
+                    <div>
+                        <div class="next-name">Founder reads it.</div>
+                        <div class="next-detail">Same day, usually within an hour. Ryan replies personally.</div>
+                    </div>
+                </div>
+                <div class="next-row">
+                    <span class="next-num">03</span>
+                    <div>
+                        <div class="next-name">30-min working session.</div>
+                        <div class="next-detail">Inside one business day. Bring your hardest delivery problem. We bring perspective and what's possible right now.</div>
+                    </div>
+                </div>
+                <div class="next-row">
+                    <span class="next-num">04</span>
+                    <div>
+                        <div class="next-name">Self-hosted pilot.</div>
+                        <div class="next-detail">If the conversation lands, you install the Helm chart in your own cluster. We watch the channel together.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .next-table { border-top: 1px solid rgba(255,255,255,0.06); }
+        .next-row {
+            display: grid;
+            grid-template-columns: 80px 1fr;
+            gap: 24px;
+            align-items: baseline;
+            padding: 28px 8px;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+        .next-num {
+            font-family: 'Space Grotesk', 'Inter', sans-serif;
+            font-size: 36px;
+            font-weight: 300;
+            color: var(--sunset);
+            line-height: 1;
+            letter-spacing: -0.04em;
+        }
+        .next-name {
+            font-family: 'Space Grotesk', 'Inter', sans-serif;
+            font-size: 20px;
+            color: var(--sand);
+            letter-spacing: -0.01em;
+            margin-bottom: 6px;
+        }
+        .next-detail {
+            font-size: 14px;
+            color: #94A3B8;
+            line-height: 1.65;
+            max-width: 640px;
+        }
+        @media (max-width: 767px) {
+            .next-row { grid-template-columns: 60px 1fr; gap: 18px; padding: 22px 8px; }
+            .next-num { font-size: 28px; }
+        }
+    </style>
 
     <!-- ===== FOOTER ===== -->
     <footer class="bg-midnight border-t border-white/5 pt-16 pb-10">
