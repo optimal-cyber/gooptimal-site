@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Platform | Optimal. Two SKUs. One operating model.</title>
-    <meta name="description" content="Optimal Federal: FedRAMP-shaped AI inference for defense and federal systems. Sweep · Channel · Prove. Optimal Cloud: cloud-native protection that ships findings, not noise. Survey · Hold · Close. One codebase, one operating model.">
-    <meta name="keywords" content="FedRAMP AI inference, Bedrock GovCloud, Vertex Assured Workloads, Azure OpenAI Gov, IL5, FIPS 140-2, FedRAMP 20x, KSI, OSCAL, DIBCAC, 3PAO, CNAPP, CSPM, CWPP, CIEM, AI-SPM, eBPF, SPIFFE, security graph">
+    <title>Platform | Optimal. Harden. Verify. Prove.</title>
+    <meta name="description" content="Optimal Platform is a self-hosted CNAPP. Hardens containers to DISA STIG and CIS baselines, scans continuously across containers, cloud, runtime, secrets, and SBOM, and emits compliance evidence live for SOC 2, PCI DSS v4.0.1, HIPAA, and ISO 27001:2022.">
+    <meta name="keywords" content="CNAPP, container hardening, DISA STIG, CIS, fix PRs, SBOM, attack-path graph, eBPF, SPIFFE, SOC 2, PCI DSS v4.0.1, HIPAA, ISO 27001, Kubernetes security, self-hosted">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://gooptimal.io/platform">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Platform | Optimal. Two SKUs. One operating model.">
-    <meta property="og:description" content="Federal: FedRAMP-shaped AI inference inside the boundary. Cloud: CNAPP that ships findings, not noise.">
+    <meta property="og:title" content="Platform | Optimal. Harden. Verify. Prove.">
+    <meta property="og:description" content="Self-hosted CNAPP. Pre-runtime hardening, continuous scanning, live compliance evidence.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://gooptimal.io/platform">
     <meta property="og:image" content="https://gooptimal.io/public/optimal-social-preview.png">
@@ -19,7 +19,7 @@
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Platform | Optimal">
-    <meta name="twitter:description" content="Two SKUs. One operating model.">
+    <meta name="twitter:description" content="Harden. Verify. Prove. Self-hosted.">
 
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -28,26 +28,11 @@
         "@type": "WebPage",
         "name": "Platform | Optimal",
         "url": "https://gooptimal.io/platform",
-        "description": "Optimal Federal and Optimal Cloud. Two SKUs, one operating model. Inference inside the authorization boundary; CNAPP that ships findings, not noise.",
+        "description": "Self-hosted CNAPP. Harden containers pre-runtime, verify continuously, prove with live compliance evidence.",
         "isPartOf": {
             "@type": "WebSite",
             "name": "Optimal",
             "url": "https://gooptimal.io"
-        },
-        "about": [
-            { "@type": "Thing", "name": "FedRAMP" },
-            { "@type": "Thing", "name": "AI Inference" },
-            { "@type": "Thing", "name": "GovCloud" },
-            { "@type": "Thing", "name": "CNAPP" },
-            { "@type": "Thing", "name": "Cloud Security" },
-            { "@type": "Thing", "name": "AI Security" },
-            { "@type": "Thing", "name": "Authority to Operate (ATO)" }
-        ],
-        "publisher": {
-            "@type": "Organization",
-            "name": "Optimal",
-            "url": "https://gooptimal.io",
-            "logo": "https://gooptimal.io/public/optimal-horizon.svg"
         }
     }
     </script>
@@ -67,73 +52,44 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        midnight: '#0B0F14', navy: '#0F1B2E', ocean: '#1E3A4D',
-                        sunset: '#FF8A3D', coral: '#FF5252', ember: '#D63A3A',
-                        berry: '#A83255', dusk: '#9B5DE5', seafoam: '#22D3EE', sand: '#F2ECE4',
-                        'cyber-black': '#0B0F14', 'cyber-dark': '#0F1B2E', 'cyber-gray': '#11192A',
-                        'cyber-border': '#1E2A3D', 'cyber-green': '#FF8A3D', 'cyber-green-dim': '#FF5252',
-                        'cyber-blue': '#22D3EE', 'cyber-amber': '#FFB347', 'cyber-red': '#FF5252',
-                        'cyber-purple': '#9B5DE5', 'terminal-green': '#FF8A3D',
-                    },
-                    fontFamily: {
-                        'sans': ['Inter', 'system-ui', 'sans-serif'],
-                        'display': ['Space Grotesk', 'Inter', 'sans-serif'],
-                        'mono': ['JetBrains Mono', 'monospace'],
-                    }
-                }
-            }
-        }
+        tailwind.config = { theme: { extend: { colors: { midnight: '#0B0F14', navy: '#0F1B2E', ocean: '#1E3A4D', sunset: '#FF8A3D', coral: '#FF5252', dusk: '#9B5DE5', seafoam: '#22D3EE', sand: '#F2ECE4' }, fontFamily: { 'sans': ['Inter', 'system-ui', 'sans-serif'], 'display': ['Space Grotesk', 'Inter', 'sans-serif'], 'mono': ['JetBrains Mono', 'monospace'] } } } }
     </script>
 
     <style>
-        :root {
-            --midnight: #0B0F14; --navy: #0F1B2E; --ocean: #1E3A4D;
-            --sunset: #FF8A3D; --coral: #FF5252; --dusk: #9B5DE5; --seafoam: #22D3EE; --sand: #F2ECE4;
-        }
-
+        :root { --midnight: #0B0F14; --navy: #0F1B2E; --ocean: #1E3A4D; --sunset: #FF8A3D; --coral: #FF5252; --dusk: #9B5DE5; --seafoam: #22D3EE; --sand: #F2ECE4; }
         body { background: var(--midnight); color: #E2E8F0; font-family: 'Inter', system-ui, sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
         ::selection { background: rgba(255, 138, 61, 0.35); color: var(--sand); }
         .font-display { font-family: 'Space Grotesk', 'Inter', sans-serif; letter-spacing: -0.02em; }
-
         section { padding: 96px 0; }
         @media (min-width: 1024px) { section { padding: 128px 0; } }
         section.compact { padding: 64px 0; }
-
-        /* Anchor offset for fixed nav */
         section[id] { scroll-margin-top: 80px; }
 
-        /* ===== NAV ===== */
         #navbar { transition: background 0.3s ease, border-color 0.3s ease, backdrop-filter 0.3s ease; }
         .nav-fixed { backdrop-filter: blur(16px); background: rgba(11, 15, 20, 0.85); border-bottom: 1px solid rgba(255, 255, 255, 0.06); }
         .nav-link { color: #94A3B8; transition: color 0.3s ease; letter-spacing: 0.08em; }
         .nav-link:hover { color: var(--sand); }
-
         .nav-dropdown { position: relative; }
         .nav-dropdown-trigger { color: #94A3B8; transition: color 0.3s ease; cursor: pointer; display: flex; align-items: center; gap: 4px; background: none; border: none; padding: 0; font-family: inherit; letter-spacing: 0.08em; }
         .nav-dropdown-trigger:hover { color: var(--sand); }
-        .nav-dropdown-menu { position: absolute; top: 100%; left: 50%; transform: translateX(-50%); margin-top: 14px; background: rgba(15, 27, 46, 0.95); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px; padding: 8px 0; min-width: 220px; opacity: 0; visibility: hidden; transition: opacity 0.2s ease, visibility 0.2s ease; backdrop-filter: blur(12px); z-index: 50; }
+        .nav-dropdown-menu { position: absolute; top: 100%; left: 50%; transform: translateX(-50%); margin-top: 14px; background: rgba(15, 27, 46, 0.95); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px; padding: 8px 0; min-width: 240px; opacity: 0; visibility: hidden; transition: opacity 0.2s ease, visibility 0.2s ease; backdrop-filter: blur(12px); z-index: 50; }
         .nav-dropdown:hover .nav-dropdown-menu { opacity: 1; visibility: visible; }
         .nav-dropdown-menu a { display: block; padding: 10px 18px; color: #94A3B8; font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.06em; transition: color 0.2s ease, background 0.2s ease; text-decoration: none; }
         .nav-dropdown-menu a:hover { color: var(--sunset); background: rgba(255, 138, 61, 0.06); }
 
-        /* ===== BUTTONS ===== */
         .btn-sunset { background: linear-gradient(135deg, #FF8A3D 0%, #FF5252 100%); color: #0B0F14; font-weight: 600; padding: 14px 26px; border-radius: 4px; transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 8px; }
         .btn-sunset:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(255, 138, 61, 0.32); }
         .btn-ghost { background: transparent; color: var(--sand); font-weight: 500; padding: 14px 26px; border-radius: 4px; border: 1px solid rgba(255, 255, 255, 0.18); transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 8px; }
         .btn-ghost:hover { border-color: var(--sunset); color: var(--sunset); }
 
-        /* ===== EYEBROW & DISPLAY ===== */
         .eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--sunset); display: inline-flex; align-items: center; gap: 12px; }
         .eyebrow::before { content: ''; width: 28px; height: 1px; background: var(--sunset); opacity: 0.6; }
+        .eyebrow-coral { color: var(--coral); }
+        .eyebrow-coral::before { background: var(--coral); }
         .eyebrow-dusk { color: var(--dusk); }
         .eyebrow-dusk::before { background: var(--dusk); }
         .heading-display { font-family: 'Space Grotesk', 'Inter', sans-serif; font-weight: 500; letter-spacing: -0.02em; line-height: 1.05; }
 
-        /* ===== HORIZON STRIPES ===== */
         .horizon-stripes { display: flex; flex-direction: column; gap: 4px; width: 100%; }
         .horizon-stripes > span { display: block; height: 6px; border-radius: 1px; }
         .horizon-stripes > span:nth-child(1) { background: linear-gradient(90deg, transparent, #FFB347 25%, #FFB347 75%, transparent); }
@@ -145,105 +101,25 @@
         .horizon-stripes > span:nth-child(7) { background: linear-gradient(90deg, transparent, #3D4A8E 25%, #3D4A8E 75%, transparent); }
         .horizon-stripes > span:nth-child(8) { background: linear-gradient(90deg, transparent, #2A3A6E 25%, #2A3A6E 75%, transparent); }
 
-        /* ===== HERO ===== */
-        .hero-bg {
-            background-color: var(--midnight);
-            background-image:
-                radial-gradient(ellipse 1100px 560px at 70% 90%, rgba(255, 138, 61, 0.12) 0%, transparent 60%),
-                radial-gradient(ellipse 900px 500px at 30% 30%, rgba(155, 93, 229, 0.08) 0%, transparent 70%),
-                linear-gradient(180deg, var(--midnight) 0%, #0E1622 100%);
-        }
-        .grid-bg {
-            background-image:
-                linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
-            background-size: 64px 64px;
-        }
+        .hero-bg { background-color: var(--midnight); background-image: radial-gradient(ellipse 1100px 560px at 70% 90%, rgba(255, 138, 61, 0.12) 0%, transparent 60%), radial-gradient(ellipse 900px 500px at 30% 30%, rgba(155, 93, 229, 0.08) 0%, transparent 70%), linear-gradient(180deg, var(--midnight) 0%, #0E1622 100%); }
+        .grid-bg { background-image: linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px); background-size: 64px 64px; }
         .horizon-watermark { position: absolute; opacity: 0.07; pointer-events: none; user-select: none; }
 
-        /* ===== PANEL ===== */
-        .panel {
-            background: linear-gradient(180deg, rgba(30, 58, 77, 0.18) 0%, rgba(15, 27, 46, 0.55) 100%);
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            border-radius: 8px;
-            padding: 32px;
-            transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-        }
+        .panel { background: linear-gradient(180deg, rgba(30, 58, 77, 0.18) 0%, rgba(15, 27, 46, 0.55) 100%); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 8px; padding: 32px; transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; }
         .panel:hover { border-color: rgba(255, 138, 61, 0.32); transform: translateY(-2px); box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4); }
         .panel-static { transition: none; }
         .panel-static:hover { transform: none; border-color: rgba(255, 255, 255, 0.06); box-shadow: none; }
 
-        /* ===== INDEX MARKER ===== */
-        .index-marker { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.22em; color: rgba(255, 255, 255, 0.35); }
-
-        /* ===== PHASE TRIPLET ===== */
-        .phase-card { position: relative; padding: 32px; border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 8px; background: linear-gradient(180deg, rgba(30, 58, 77, 0.14) 0%, rgba(15, 27, 46, 0.45) 100%); }
-        .phase-card .phase-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent, var(--sunset)); }
-        .phase-card .phase-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.22em; color: rgba(255, 255, 255, 0.35); }
-        .phase-card .phase-name { font-family: 'Space Grotesk', 'Inter', sans-serif; font-size: 28px; color: var(--sand); margin-top: 14px; margin-bottom: 16px; letter-spacing: -0.01em; }
-        .phase-card .phase-body { font-size: 14px; color: #94A3B8; line-height: 1.7; }
-        .phase-card .phase-body strong { color: var(--sand); font-weight: 500; }
-
-        /* ===== SPEC ROWS ===== */
-        .spec-row { display: grid; grid-template-columns: 180px 1fr; gap: 24px; padding: 16px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.05); align-items: baseline; }
-        .spec-row:last-child { border-bottom: none; }
-        .spec-row .label { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255, 255, 255, 0.45); }
-        .spec-row .value { font-size: 14px; color: var(--sand); line-height: 1.6; }
-        .spec-row .value .accent { color: var(--accent, var(--sunset)); }
-        @media (max-width: 767px) {
-            .spec-row { grid-template-columns: 1fr; gap: 6px; padding: 14px 0; }
-        }
-
-        /* ===== STATUS BADGE ===== */
-        .status-row { display: flex; flex-wrap: wrap; gap: 10px; }
-        .status-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 8px 14px;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 4px;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 10px;
-            letter-spacing: 0.18em;
-            text-transform: uppercase;
-            color: var(--sand);
-            background: rgba(255, 255, 255, 0.02);
-        }
-        .status-badge .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--sunset); }
-        .status-badge.warn .dot { background: var(--coral); }
-        .status-badge.target .dot { background: var(--dusk); }
-
-        /* ===== COMPONENT PILLS ===== */
-        .pill-grid { display: flex; flex-wrap: wrap; gap: 8px; }
-        .pill {
-            display: inline-flex;
-            align-items: center;
-            padding: 8px 14px;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 999px;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 11px;
-            letter-spacing: 0.06em;
-            color: #94A3B8;
-            background: rgba(255, 255, 255, 0.02);
-            transition: border-color 0.2s ease, color 0.2s ease;
-        }
-        .pill:hover { color: var(--sand); border-color: rgba(255, 138, 61, 0.35); }
-
-        /* ===== STEP MARKER ===== */
-        .step-num { font-family: 'Space Grotesk', 'Inter', sans-serif; font-size: 56px; font-weight: 300; color: var(--sunset); line-height: 1; letter-spacing: -0.04em; }
-        @media (min-width: 1024px) { .step-num { font-size: 88px; } }
+        /* ===== CAPABILITY ROWS ===== */
+        .cap-row { display: grid; grid-template-columns: 36px 1fr; gap: 18px; padding: 14px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.05); align-items: baseline; }
+        .cap-row:last-child { border-bottom: none; }
+        .cap-row .marker { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.22em; color: var(--accent, var(--sunset)); opacity: 0.8; }
+        .cap-row .body { font-size: 14px; color: var(--sand); line-height: 1.6; }
+        .cap-row .body strong { color: var(--sand); font-weight: 500; }
+        .cap-row .body .meta { color: #94A3B8; font-size: 13px; }
 
         /* ===== DIAGRAM ===== */
-        .diagram-wrap {
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            border-radius: 8px;
-            background: linear-gradient(180deg, rgba(11, 15, 20, 0.6) 0%, rgba(15, 27, 46, 0.4) 100%);
-            padding: 32px;
-            position: relative;
-            overflow-x: auto;
-        }
+        .diagram-wrap { border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 8px; background: linear-gradient(180deg, rgba(11, 15, 20, 0.6) 0%, rgba(15, 27, 46, 0.4) 100%); padding: 32px; position: relative; overflow-x: auto; }
         .diagram-wrap svg { display: block; width: 100%; height: auto; min-width: 640px; }
         .diagram-caption { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(255, 255, 255, 0.35); margin-top: 14px; }
     </style>
@@ -258,55 +134,43 @@
                     <img src="/public/optimal-horizon.svg" alt="Optimal" class="h-7 w-auto">
                     <span class="font-display text-base font-medium tracking-[0.18em] text-sand">OPTIMAL</span>
                 </a>
-
                 <div class="hidden md:flex items-center gap-10">
+                    <a href="/platform" class="nav-link font-mono text-xs uppercase">Platform</a>
                     <div class="nav-dropdown">
                         <button class="nav-dropdown-trigger font-mono text-xs uppercase">
-                            Platform
+                            Industries
                             <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
                         </button>
                         <div class="nav-dropdown-menu">
-                            <a href="/platform">Platform Overview</a>
-                            <a href="/platform#federal">LLM Inference</a>
-                            <a href="/platform#cloud">CNAPP</a>
+                            <a href="/industries/financial-services">Financial Services</a>
+                            <a href="/industries/healthcare">Healthcare</a>
+                            <a href="/industries/sled">State &amp; Local Government</a>
                         </div>
                     </div>
-                    <a href="/platform#approach" class="nav-link font-mono text-xs uppercase">The Optimal Way</a>
+                    <a href="/the-optimal-way" class="nav-link font-mono text-xs uppercase">The Optimal Way</a>
                     <a href="/about" class="nav-link font-mono text-xs uppercase">About</a>
-                    <div class="nav-dropdown">
-                        <button class="nav-dropdown-trigger font-mono text-xs uppercase">
-                            Resources
-                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                        </button>
-                        <div class="nav-dropdown-menu">
-                            <a href="https://docs.gooptimal.io/" target="_blank">Docs</a>
-                            <a href="/blog">Blog</a>
-                        </div>
-                    </div>
-                    <a href="/demo" class="btn-sunset font-mono text-xs uppercase tracking-[0.12em] px-5 py-2.5">Contact</a>
+                    <a href="https://docs.gooptimal.io/" target="_blank" class="nav-link font-mono text-xs uppercase">Docs</a>
+                    <a href="/blog" class="nav-link font-mono text-xs uppercase">Blog</a>
+                    <a href="/contact" class="btn-sunset font-mono text-xs uppercase tracking-[0.12em] px-5 py-2.5">Contact</a>
                 </div>
-
                 <button id="mobile-menu-btn" class="md:hidden text-gray-400 hover:text-sand">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
                 </button>
             </div>
-
             <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t border-white/5 pt-4">
                 <div class="flex flex-col gap-4">
+                    <a href="/platform" class="nav-link font-mono text-xs uppercase">Platform</a>
                     <div class="flex flex-col gap-2">
-                        <span class="font-mono text-[10px] text-gray-500 uppercase tracking-[0.18em]">Platform</span>
-                        <a href="/platform" class="nav-link font-mono text-xs pl-3 uppercase">Overview</a>
-                        <a href="/platform#federal" class="nav-link font-mono text-xs pl-3 uppercase">LLM Inference</a>
-                        <a href="/platform#cloud" class="nav-link font-mono text-xs pl-3 uppercase">CNAPP</a>
+                        <span class="font-mono text-[10px] text-gray-500 uppercase tracking-[0.18em]">Industries</span>
+                        <a href="/industries/financial-services" class="nav-link font-mono text-xs pl-3 uppercase">Financial Services</a>
+                        <a href="/industries/healthcare" class="nav-link font-mono text-xs pl-3 uppercase">Healthcare</a>
+                        <a href="/industries/sled" class="nav-link font-mono text-xs pl-3 uppercase">State &amp; Local Government</a>
                     </div>
-                    <a href="/platform#approach" class="nav-link font-mono text-xs uppercase">The Optimal Way</a>
+                    <a href="/the-optimal-way" class="nav-link font-mono text-xs uppercase">The Optimal Way</a>
                     <a href="/about" class="nav-link font-mono text-xs uppercase">About</a>
-                    <div class="flex flex-col gap-2">
-                        <span class="font-mono text-[10px] text-gray-500 uppercase tracking-[0.18em]">Resources</span>
-                        <a href="https://docs.gooptimal.io/" target="_blank" class="nav-link font-mono text-xs pl-3 uppercase">Docs</a>
-                        <a href="/blog" class="nav-link font-mono text-xs pl-3 uppercase">Blog</a>
-                    </div>
-                    <a href="/demo" class="btn-sunset font-mono text-xs uppercase tracking-[0.12em] text-center mt-2">Contact</a>
+                    <a href="https://docs.gooptimal.io/" target="_blank" class="nav-link font-mono text-xs uppercase">Docs</a>
+                    <a href="/blog" class="nav-link font-mono text-xs uppercase">Blog</a>
+                    <a href="/contact" class="btn-sunset font-mono text-xs uppercase tracking-[0.12em] text-center mt-2">Contact</a>
                 </div>
             </div>
         </div>
@@ -321,21 +185,20 @@
             <div class="max-w-4xl">
                 <span class="eyebrow mb-8">The Optimal Platform</span>
                 <h1 class="heading-display text-4xl md:text-6xl text-sand mt-6 mb-8">
-                    Two SKUs.<br>
-                    One codebase.<br>
-                    <span class="text-transparent bg-clip-text" style="background-image: linear-gradient(90deg, #FF8A3D 0%, #FF5252 50%, #9B5DE5 100%);">One operating model.</span>
+                    Harden.<br>
+                    Verify.<br>
+                    <span class="text-transparent bg-clip-text" style="background-image: linear-gradient(90deg, #FF8A3D 0%, #FF5252 50%, #9B5DE5 100%);">Prove.</span>
                 </h1>
                 <p class="text-lg md:text-xl text-gray-400 mb-10 max-w-2xl leading-relaxed">
-                    Same codebase. Same security graph. Same audit trail. The SKU difference is packaging, deployment target, and which capabilities a tenant sees. Not separate products.
+                    Optimal Platform is a self-hosted CNAPP. It applies DISA STIG and CIS baselines to your container images before they ship. It scans containers, cloud configuration, runtime workloads, secrets, and SBOM continuously. It emits compliance evidence as a product feature. One SKU. No tiering, no asterisks.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 mb-10">
-                    <a href="#federal" class="btn-sunset font-mono text-xs uppercase tracking-[0.14em]">
-                        Optimal Federal
-                        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 5v14m-7-7h14"/></svg>
+                    <a href="/contact" class="btn-sunset font-mono text-xs uppercase tracking-[0.14em]">
+                        Talk to an operator
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
                     </a>
-                    <a href="#cloud" class="btn-ghost font-mono text-xs uppercase tracking-[0.14em]">
-                        Optimal Cloud
-                        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 5v14m-7-7h14"/></svg>
+                    <a href="https://docs.gooptimal.io/" target="_blank" class="btn-ghost font-mono text-xs uppercase tracking-[0.14em]">
+                        View docs
                     </a>
                 </div>
                 <p class="font-mono text-xs text-gray-500 tracking-[0.22em] uppercase">
@@ -359,710 +222,270 @@
         </div>
     </section>
 
-    <!-- ===== 2. OPTIMAL FEDERAL ===== -->
-    <section class="relative" id="federal" style="background: linear-gradient(180deg, var(--midnight) 0%, #0E1622 50%, var(--midnight) 100%);">
+    <!-- ===== 2. HARDEN ===== -->
+    <section class="relative" id="harden" style="background: linear-gradient(180deg, var(--midnight) 0%, #0E1622 50%, var(--midnight) 100%);">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="mb-16 max-w-3xl flex items-end justify-between gap-8">
-                <div>
-                    <span class="eyebrow">SKU 01 · Federal</span>
+            <div class="grid lg:grid-cols-12 gap-12 items-start">
+                <div class="lg:col-span-5">
+                    <span class="eyebrow">Phase 01 / Harden</span>
                     <h2 class="heading-display text-3xl md:text-5xl text-sand mt-6 mb-6">
-                        Optimal Federal.<br>
-                        <span class="text-sunset">FedRAMP-shaped AI inference.</span>
+                        Baselines applied before runtime.
                     </h2>
-                    <p class="text-base text-gray-400 leading-relaxed max-w-xl">
-                        A drop-in, OpenAI-compatible inference plane that lives inside the authorization boundary. Your defense product calls our endpoint; we route to a FedRAMP-authorized model in gov-cloud; we prove it to your assessor.
+                    <p class="text-base text-gray-400 leading-relaxed max-w-md mb-6">
+                        Hardening that doesn't lock you into someone else's distro. Optimal applies DISA STIG and CIS profiles to your existing container images. When findings appear, Optimal opens fix PRs against your Git with concrete patches.
+                    </p>
+                    <p class="text-sm text-sand max-w-md">
+                        Harden your own images. No distro lock-in.
                     </p>
                 </div>
-                <div class="font-mono text-[10px] text-gray-600 tracking-[0.22em] hidden md:block whitespace-nowrap">
-                    SWEEP · CHANNEL · PROVE
-                </div>
-            </div>
-
-            <!-- Three phases -->
-            <div class="grid lg:grid-cols-3 gap-6 mb-16">
-                <article class="phase-card" style="--accent: #FFB347;">
-                    <div class="flex items-center justify-between mb-2">
-                        <span class="phase-label">// Sweep</span>
-                        <span class="phase-num">01 / 03</span>
+                <div class="lg:col-span-7 panel panel-static" style="--accent: #FF8A3D;">
+                    <p class="font-mono text-[10px] text-sunset tracking-[0.24em] uppercase mb-5">// Harden capabilities</p>
+                    <div class="cap-row">
+                        <span class="marker">01</span>
+                        <div class="body"><strong>DISA STIG benchmark coverage.</strong><br><span class="meta">Profiles applied to base images and customer images.</span></div>
                     </div>
-                    <h3 class="phase-name">Recon before the assessor does.</h3>
-                    <p class="phase-body">
-                        Scan customer codebases and runtime workloads for unauthorized LLM calls. OpenAI, Anthropic, Cohere, Gemini keys. SDK imports. Prompt strings hitting non-authorized endpoints. Output: a <strong>boundary-violation report</strong> and a <strong>migration plan</strong>, before the DIBCAC or 3PAO assessor finds it first.
-                    </p>
-                </article>
-
-                <article class="phase-card" style="--accent: #FF8A3D;">
-                    <div class="flex items-center justify-between mb-2">
-                        <span class="phase-label">// Channel</span>
-                        <span class="phase-num">02 / 03</span>
+                    <div class="cap-row">
+                        <span class="marker">02</span>
+                        <div class="body"><strong>CIS profile coverage.</strong><br><span class="meta">Container, Kubernetes, and cloud-config profiles.</span></div>
                     </div>
-                    <h3 class="phase-name">Route through the authorized boundary.</h3>
-                    <p class="phase-body">
-                        OpenAI SDK-compatible API. Single endpoint. A <strong>compliance-floor router</strong> sends each request to the right authorized model on Bedrock GovCloud, Vertex Assured Workloads, or Azure OpenAI Gov. <strong>Zero-persistence by design.</strong> Prompts and responses live in Lambda RAM and nowhere else. Only metadata is stored.
-                    </p>
-                </article>
-
-                <article class="phase-card" style="--accent: #FF5252;">
-                    <div class="flex items-center justify-between mb-2">
-                        <span class="phase-label">// Prove</span>
-                        <span class="phase-num">03 / 03</span>
+                    <div class="cap-row">
+                        <span class="marker">03</span>
+                        <div class="body"><strong>Fix-PR generation.</strong><br><span class="meta">GitHub and GitLab. Approval gates respect existing CODEOWNERS.</span></div>
                     </div>
-                    <h3 class="phase-name">Evidence emits as a side effect.</h3>
-                    <p class="phase-body">
-                        Machine-readable <strong>FedRAMP 20x KSI evidence</strong> emits continuously from gateway traffic. Your SSP, your DIBCAC package, your 3PAO console all read from a live feed instead of a quarterly screenshot binder.
-                    </p>
-                </article>
-            </div>
-
-            <!-- Architecture diagram -->
-            <div class="mb-12">
-                <div class="flex items-end justify-between gap-6 mb-6 flex-wrap">
-                    <div>
-                        <p class="font-mono text-[10px] text-sunset tracking-[0.24em] uppercase mb-2">// Architecture</p>
-                        <h3 class="heading-display text-2xl md:text-3xl text-sand">Inside the authorization boundary.</h3>
+                    <div class="cap-row">
+                        <span class="marker">04</span>
+                        <div class="body"><strong>Dockerfile patch synthesis.</strong><br><span class="meta">Concrete patches, not "consider hardening." Reviewer reads a diff.</span></div>
                     </div>
-                    <p class="font-mono text-[10px] text-gray-600 tracking-[0.22em] uppercase">ABD · DFD</p>
-                </div>
-
-                <div class="diagram-wrap">
-                    <svg viewBox="0 0 1000 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="federal-arch-title federal-arch-desc">
-                        <title id="federal-arch-title">Optimal Federal: Architecture Boundary Diagram</title>
-                        <desc id="federal-arch-desc">Customer application calls Optimal Gateway. Gateway runs input governance (CUI/ITAR/PII detection, prompt-injection screening) in Lambda RAM. Compliance-Floor Router selects authorized model in Bedrock GovCloud, Vertex Assured Workloads, or Azure OpenAI Gov based on request data class. Output Scanner runs verdicts in headers. Metadata-only DynamoDB stores api_key_id, timestamp, model, tokens, latency, cost. KSI Evidence Emitter feeds the SSP and 3PAO Console.</desc>
-
-                        <defs>
-                            <linearGradient id="flow-grad" x1="0" y1="0" x2="1" y2="0">
-                                <stop offset="0%" stop-color="#FF8A3D" stop-opacity="0.0"/>
-                                <stop offset="20%" stop-color="#FF8A3D" stop-opacity="0.8"/>
-                                <stop offset="80%" stop-color="#FF5252" stop-opacity="0.6"/>
-                                <stop offset="100%" stop-color="#FF5252" stop-opacity="0.0"/>
-                            </linearGradient>
-                            <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-                                <path d="M 0 0 L 10 5 L 0 10 z" fill="#FF8A3D"/>
-                            </marker>
-                            <marker id="arrow-dusk" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-                                <path d="M 0 0 L 10 5 L 0 10 z" fill="#9B5DE5"/>
-                            </marker>
-                        </defs>
-
-                        <!-- Boundary container -->
-                        <rect x="180" y="40" width="640" height="280" rx="8" fill="none" stroke="rgba(255,138,61,0.25)" stroke-width="1" stroke-dasharray="6 4"/>
-                        <text x="200" y="62" font-family="JetBrains Mono, monospace" font-size="11" fill="#FF8A3D" letter-spacing="3">// AUTHORIZATION BOUNDARY</text>
-
-                        <!-- Customer App (outside boundary) -->
-                        <g>
-                            <rect x="20" y="180" width="140" height="60" rx="6" fill="rgba(15,27,46,0.7)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
-                            <text x="90" y="208" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="13" fill="#F2ECE4" font-weight="500">Customer App</text>
-                            <text x="90" y="226" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" fill="#94A3B8" letter-spacing="1.5">DIB · FED SaaS</text>
-                        </g>
-
-                        <!-- Optimal Gateway -->
-                        <g>
-                            <rect x="200" y="120" width="220" height="180" rx="6" fill="rgba(255,138,61,0.06)" stroke="rgba(255,138,61,0.45)" stroke-width="1"/>
-                            <text x="310" y="148" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="14" fill="#F2ECE4" font-weight="500">Optimal Gateway</text>
-                            <text x="310" y="166" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" fill="#FF8A3D" letter-spacing="1.5">OPENAI-COMPATIBLE</text>
-                            <line x1="220" y1="180" x2="400" y2="180" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
-                            <text x="310" y="200" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10" fill="#94A3B8">· auth + tool-call gov</text>
-                            <text x="310" y="218" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10" fill="#94A3B8">· CUI / ITAR / PII screen</text>
-                            <text x="310" y="236" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10" fill="#94A3B8">· prompt-injection guard</text>
-                            <text x="310" y="254" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10" fill="#94A3B8">· output scanner</text>
-                            <text x="310" y="276" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" fill="#FF5252" letter-spacing="1.5">ZERO-PERSISTENCE · LAMBDA RAM</text>
-                        </g>
-
-                        <!-- Compliance Router -->
-                        <g>
-                            <rect x="460" y="180" width="140" height="60" rx="6" fill="rgba(11,15,20,0.7)" stroke="rgba(255,138,61,0.45)" stroke-width="1"/>
-                            <text x="530" y="206" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="12" fill="#F2ECE4" font-weight="500">Compliance Router</text>
-                            <text x="530" y="224" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" fill="#94A3B8" letter-spacing="1.5">IL2 · IL4 · IL5 · FEDRAMP</text>
-                        </g>
-
-                        <!-- Three authorized models -->
-                        <g>
-                            <rect x="640" y="80" width="160" height="50" rx="6" fill="rgba(15,27,46,0.7)" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
-                            <text x="720" y="102" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="12" fill="#F2ECE4" font-weight="500">Bedrock GovCloud</text>
-                            <text x="720" y="118" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" fill="#94A3B8" letter-spacing="1.5">CLAUDE · IL5</text>
-                        </g>
-                        <g>
-                            <rect x="640" y="195" width="160" height="50" rx="6" fill="rgba(15,27,46,0.7)" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
-                            <text x="720" y="217" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="12" fill="#F2ECE4" font-weight="500">Vertex Assured</text>
-                            <text x="720" y="233" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" fill="#94A3B8" letter-spacing="1.5">GEMINI · CLAUDE</text>
-                        </g>
-                        <g>
-                            <rect x="640" y="310" width="160" height="50" rx="6" fill="rgba(15,27,46,0.7)" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
-                            <text x="720" y="332" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="12" fill="#F2ECE4" font-weight="500">Azure OpenAI Gov</text>
-                            <text x="720" y="348" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" fill="#94A3B8" letter-spacing="1.5">GPT · FIPS 140-2 L3</text>
-                        </g>
-
-                        <!-- Flow arrows -->
-                        <line x1="160" y1="210" x2="195" y2="210" stroke="#FF8A3D" stroke-width="1.5" marker-end="url(#arrow)"/>
-                        <line x1="425" y1="210" x2="455" y2="210" stroke="#FF8A3D" stroke-width="1.5" marker-end="url(#arrow)"/>
-                        <path d="M 600 210 Q 620 210 625 180 Q 630 130 635 110" fill="none" stroke="#FF8A3D" stroke-width="1.5" marker-end="url(#arrow)"/>
-                        <line x1="600" y1="210" x2="635" y2="220" stroke="#FF8A3D" stroke-width="1.5" marker-end="url(#arrow)"/>
-                        <path d="M 600 210 Q 620 210 625 240 Q 630 290 635 330" fill="none" stroke="#FF8A3D" stroke-width="1.5" marker-end="url(#arrow)"/>
-
-                        <!-- Evidence side-channel -->
-                        <g>
-                            <rect x="200" y="360" width="220" height="50" rx="6" fill="rgba(155,93,229,0.06)" stroke="rgba(155,93,229,0.45)" stroke-width="1"/>
-                            <text x="310" y="382" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="12" fill="#F2ECE4" font-weight="500">Metadata-only DDB</text>
-                            <text x="310" y="398" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" fill="#94A3B8" letter-spacing="1.5">api_key · ts · model · tokens · latency</text>
-                        </g>
-                        <g>
-                            <rect x="460" y="360" width="160" height="50" rx="6" fill="rgba(155,93,229,0.06)" stroke="rgba(155,93,229,0.45)" stroke-width="1"/>
-                            <text x="540" y="382" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="12" fill="#F2ECE4" font-weight="500">KSI Evidence</text>
-                            <text x="540" y="398" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" fill="#9B5DE5" letter-spacing="1.5">FEDRAMP 20x</text>
-                        </g>
-                        <g>
-                            <rect x="660" y="360" width="160" height="50" rx="6" fill="rgba(155,93,229,0.06)" stroke="rgba(155,93,229,0.45)" stroke-width="1"/>
-                            <text x="740" y="382" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="12" fill="#F2ECE4" font-weight="500">SSP / 3PAO Console</text>
-                            <text x="740" y="398" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" fill="#94A3B8" letter-spacing="1.5">LIVE FEED</text>
-                        </g>
-
-                        <!-- Evidence flow -->
-                        <line x1="310" y1="300" x2="310" y2="358" stroke="#9B5DE5" stroke-width="1.25" stroke-dasharray="3 4" marker-end="url(#arrow-dusk)"/>
-                        <line x1="420" y1="385" x2="458" y2="385" stroke="#9B5DE5" stroke-width="1.25" marker-end="url(#arrow-dusk)"/>
-                        <line x1="620" y1="385" x2="658" y2="385" stroke="#9B5DE5" stroke-width="1.25" marker-end="url(#arrow-dusk)"/>
-
-                        <!-- Legend -->
-                        <g transform="translate(20, 430)">
-                            <line x1="0" y1="0" x2="22" y2="0" stroke="#FF8A3D" stroke-width="1.5"/>
-                            <text x="30" y="4" font-family="JetBrains Mono, monospace" font-size="10" fill="#94A3B8" letter-spacing="1.5">REQUEST / RESPONSE</text>
-                            <line x1="220" y1="0" x2="242" y2="0" stroke="#9B5DE5" stroke-width="1.25" stroke-dasharray="3 4"/>
-                            <text x="250" y="4" font-family="JetBrains Mono, monospace" font-size="10" fill="#94A3B8" letter-spacing="1.5">EVIDENCE / METADATA</text>
-                        </g>
-                    </svg>
-                    <p class="diagram-caption">// Prompts and responses live in Lambda RAM. Only metadata is stored. KSI evidence emits continuously.</p>
-                </div>
-            </div>
-
-            <!-- Specs + Status -->
-            <div class="grid lg:grid-cols-2 gap-6 mb-12">
-                <div class="panel panel-static" style="--accent: #FF8A3D;">
-                    <p class="font-mono text-[10px] text-sunset tracking-[0.24em] uppercase mb-5">// Authorized destinations</p>
-                    <div class="spec-row">
-                        <span class="label">AWS Bedrock</span>
-                        <span class="value">GovCloud · Claude 3.7 / 4.5 Sonnet · <span class="accent">FedRAMP High / IL5</span></span>
+                    <div class="cap-row">
+                        <span class="marker">05</span>
+                        <div class="body"><strong>Helm chart hardening recommendations.</strong><br><span class="meta">securityContext, capabilities, resource limits, network policy.</span></div>
                     </div>
-                    <div class="spec-row">
-                        <span class="label">GCP Vertex AI</span>
-                        <span class="value">Assured Workloads · Gemini 2.5 Pro/Flash <span class="accent">IL5</span> · Claude <span class="accent">IL2</span></span>
+                    <div class="cap-row">
+                        <span class="marker">06</span>
+                        <div class="body"><strong>Hardened-image inventory.</strong><br><span class="meta">What's hardened, when, against which baseline, by whom.</span></div>
                     </div>
-                    <div class="spec-row">
-                        <span class="label">Azure OpenAI</span>
-                        <span class="value">US Gov Arizona · GPT-4.1 / 5.1 · BYOK CMK in Key Vault HSM <span class="accent">FIPS 140-2 L3</span></span>
-                    </div>
-                    <div class="spec-row">
-                        <span class="label">Persistence</span>
-                        <span class="value">Lambda RAM only. Metadata DDB: <code class="text-sand text-xs">api_key_id · timestamp · model · tokens · latency · cost</code></span>
-                    </div>
-                    <div class="spec-row">
-                        <span class="label">Inline governance</span>
-                        <span class="value">CUI / ITAR / PII detection · prompt-injection screening · tool-call governance · output scanning. Verdicts in response headers.</span>
-                    </div>
-                </div>
-
-                <div class="panel panel-static" style="--accent: #FF8A3D;">
-                    <p class="font-mono text-[10px] text-sunset tracking-[0.24em] uppercase mb-5">// Authorization status</p>
-                    <div class="status-row mb-6">
-                        <span class="status-badge"><span class="dot"></span>FedRAMP Moderate · Interim</span>
-                        <span class="status-badge target"><span class="dot"></span>FedRAMP High · Target</span>
-                        <span class="status-badge"><span class="dot"></span>IL5 Capable</span>
-                        <span class="status-badge warn"><span class="dot"></span>POAMs tracked openly</span>
-                    </div>
-                    <div class="spec-row">
-                        <span class="label">Evidence stream</span>
-                        <span class="value">FedRAMP 20x KSI emitter · OSCAL SSP / SAP / SAR / POA&amp;M lifecycle.</span>
-                    </div>
-                    <div class="spec-row">
-                        <span class="label">Crypto</span>
-                        <span class="value">FIPS 140-2 validated end-to-end. Workload Identity Federation. No static cross-cloud keys.</span>
-                    </div>
-                    <div class="spec-row">
-                        <span class="label">STIG engine</span>
-                        <span class="value">186 DISA benchmarks. 3PAO read-only console.</span>
-                    </div>
-                    <div class="spec-row">
-                        <span class="label">Open POAMs</span>
-                        <span class="value">PIV / IA-2(12), tool-call governance. Tracked transparently.</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Buyer + CTA -->
-            <div class="panel" style="background: linear-gradient(135deg, rgba(255, 138, 61, 0.08) 0%, rgba(255, 82, 82, 0.06) 100%); border-color: rgba(255, 138, 61, 0.22);">
-                <div class="flex flex-col md:flex-row items-start md:items-center gap-6 justify-between">
-                    <div>
-                        <p class="font-mono text-[10px] text-sunset tracking-[0.24em] uppercase mb-2">// Built for</p>
-                        <p class="font-display text-lg text-sand max-w-2xl">
-                            DIB primes &amp; subs, SBIR Phase II/III shops, federal SaaS vendors in the FedRAMP queue, federal agency AI and innovation offices.
-                        </p>
-                    </div>
-                    <a href="/demo" class="btn-sunset font-mono text-xs uppercase tracking-[0.14em] shrink-0">
-                        Talk to an operator
-                        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ===== 3. OPTIMAL CLOUD ===== -->
-    <section class="relative" id="cloud">
+    <!-- ===== 3. VERIFY ===== -->
+    <section class="relative" id="verify">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="mb-16 max-w-3xl flex items-end justify-between gap-8">
-                <div>
-                    <span class="eyebrow eyebrow-dusk">SKU 02 · Cloud</span>
+            <div class="grid lg:grid-cols-12 gap-12 items-start">
+                <div class="lg:col-span-5">
+                    <span class="eyebrow eyebrow-coral">Phase 02 / Verify</span>
                     <h2 class="heading-display text-3xl md:text-5xl text-sand mt-6 mb-6">
-                        Optimal Cloud.<br>
-                        <span class="text-dusk">Findings, not noise.</span>
+                        Continuous scanning, continuous truth.
                     </h2>
-                    <p class="text-base text-gray-400 leading-relaxed max-w-xl">
-                        Full CNAPP: CSPM, CWPP, CIEM, AI-SPM, security graph, eBPF runtime, 1-click fix PRs. All at 50–70% below Wiz list. Marketplace-billed through AWS and GCP. No annual minimum.
+                    <p class="text-base text-gray-400 leading-relaxed max-w-md mb-6">
+                        The full CNAPP loop. Containers, cloud configuration, Kubernetes posture, secrets, malware, SBOM. An attack-path graph surfaces toxic combinations in the hour. Drift gets detected at runtime.
+                    </p>
+                    <p class="text-sm text-sand max-w-md">
+                        Drift surfaces as a finding, not a surprise.
                     </p>
                 </div>
-                <div class="font-mono text-[10px] text-gray-600 tracking-[0.22em] hidden md:block whitespace-nowrap">
-                    SURVEY · HOLD · CLOSE
-                </div>
-            </div>
-
-            <!-- Three phases -->
-            <div class="grid lg:grid-cols-3 gap-6 mb-16">
-                <article class="phase-card" style="--accent: #22D3EE;">
-                    <div class="flex items-center justify-between mb-2">
-                        <span class="phase-label">// Survey</span>
-                        <span class="phase-num">01 / 03</span>
+                <div class="lg:col-span-7 panel panel-static" style="--accent: #FF5252;">
+                    <p class="font-mono text-[10px] text-coral tracking-[0.24em] uppercase mb-5">// Verify capabilities</p>
+                    <div class="cap-row">
+                        <span class="marker">01</span>
+                        <div class="body"><strong>Container vulnerability scanning.</strong><br><span class="meta">Image layers, OS packages, language deps, base-image inheritance.</span></div>
                     </div>
-                    <h3 class="phase-name">Continuous inventory and assessment.</h3>
-                    <p class="phase-body">
-                        Continuous <strong>CSPM, CWPP, CIEM, AI-SPM</strong>. A Wiz-style <strong>security graph</strong> surfaces toxic combinations (critical CVE × internet-exposed × admin IAM) in the hour, not the quarter.
-                    </p>
-                </article>
-
-                <article class="phase-card" style="--accent: #9B5DE5;">
-                    <div class="flex items-center justify-between mb-2">
-                        <span class="phase-label">// Hold</span>
-                        <span class="phase-num">02 / 03</span>
+                    <div class="cap-row">
+                        <span class="marker">02</span>
+                        <div class="body"><strong>Cloud configuration scanning.</strong><br><span class="meta">AWS, GCP, Azure. CSPM with policy as code.</span></div>
                     </div>
-                    <h3 class="phase-name">Hold the line at runtime.</h3>
-                    <p class="phase-body">
-                        <strong>eBPF runtime detection</strong> at the kernel. <strong>Workload identity</strong> via SPIFFE/SPIRE. <strong>Canary tokens</strong> and a honeypot registry for early breach signal. <strong>Microsegmentation</strong> policy compiled from the graph.
-                    </p>
-                </article>
-
-                <article class="phase-card" style="--accent: #FF5252;">
-                    <div class="flex items-center justify-between mb-2">
-                        <span class="phase-label">// Close</span>
-                        <span class="phase-num">03 / 03</span>
+                    <div class="cap-row">
+                        <span class="marker">03</span>
+                        <div class="body"><strong>Kubernetes posture.</strong><br><span class="meta">RBAC, admission control, network policy, workload identity.</span></div>
                     </div>
-                    <h3 class="phase-name">Close the gap. Close the POA&amp;M.</h3>
-                    <p class="phase-body">
-                        Automated remediation. <strong>1-click fix PRs</strong> into GitHub and GitLab with approval gates. POA&amp;M lifecycle tracked through resolution, not just opened.
-                    </p>
-                </article>
-            </div>
-
-            <!-- Components grid -->
-            <div class="grid lg:grid-cols-2 gap-6 mb-12">
-                <div class="panel panel-static">
-                    <p class="font-mono text-[10px] text-dusk tracking-[0.24em] uppercase mb-5">// Components</p>
-                    <div class="space-y-5">
-                        <div>
-                            <p class="font-mono text-[10px] text-gray-500 tracking-[0.18em] uppercase mb-2">Cloud posture</p>
-                            <div class="pill-grid">
-                                <span class="pill">CSPM (multi-cloud)</span>
-                                <span class="pill">CWPP</span>
-                                <span class="pill">CIEM</span>
-                                <span class="pill">AI-SPM</span>
-                                <span class="pill">Prowler engine</span>
-                            </div>
-                        </div>
-                        <div>
-                            <p class="font-mono text-[10px] text-gray-500 tracking-[0.18em] uppercase mb-2">Graph + analysis</p>
-                            <div class="pill-grid">
-                                <span class="pill">Security graph</span>
-                                <span class="pill">Toxic-combo queries</span>
-                                <span class="pill">Privilege-escalation paths</span>
-                                <span class="pill">Shadow AI discovery</span>
-                                <span class="pill">Garak LLM scanner</span>
-                            </div>
-                        </div>
-                        <div>
-                            <p class="font-mono text-[10px] text-gray-500 tracking-[0.18em] uppercase mb-2">Runtime</p>
-                            <div class="pill-grid">
-                                <span class="pill">eBPF (process · net · file)</span>
-                                <span class="pill">SPIFFE / SPIRE</span>
-                                <span class="pill">Canary tokens</span>
-                                <span class="pill">Honeypot registry</span>
-                                <span class="pill">Microsegmentation</span>
-                            </div>
-                        </div>
-                        <div>
-                            <p class="font-mono text-[10px] text-gray-500 tracking-[0.18em] uppercase mb-2">Remediation</p>
-                            <div class="pill-grid">
-                                <span class="pill">1-click PRs · GitHub</span>
-                                <span class="pill">1-click PRs · GitLab</span>
-                                <span class="pill">Approval gates</span>
-                                <span class="pill">POA&amp;M lifecycle</span>
-                            </div>
-                        </div>
+                    <div class="cap-row">
+                        <span class="marker">04</span>
+                        <div class="body"><strong>Secrets detection.</strong><br><span class="meta">Code, images, configmaps, env vars. False-positive triage built in.</span></div>
                     </div>
-                </div>
-
-                <div class="panel panel-static" style="--accent: #9B5DE5;">
-                    <p class="font-mono text-[10px] text-dusk tracking-[0.24em] uppercase mb-5">// Packaging</p>
-                    <div class="spec-row">
-                        <span class="label">Pricing</span>
-                        <span class="value">50–70% below Wiz list. Marketplace-billed through AWS and GCP. <span style="color: var(--dusk);">No annual minimum.</span></span>
+                    <div class="cap-row">
+                        <span class="marker">05</span>
+                        <div class="body"><strong>Malware scanning.</strong><br><span class="meta">Static and behavioural detection in images and running workloads.</span></div>
                     </div>
-                    <div class="spec-row">
-                        <span class="label">Coverage</span>
-                        <span class="value">AWS · GCP · Azure. Containers, Kubernetes, serverless, AI workloads.</span>
+                    <div class="cap-row">
+                        <span class="marker">06</span>
+                        <div class="body"><strong>SBOM generation.</strong><br><span class="meta">SPDX and CycloneDX. Per-build, per-image, queryable.</span></div>
                     </div>
-                    <div class="spec-row">
-                        <span class="label">Identity</span>
-                        <span class="value">SPIFFE/SPIRE workload identity. Over-privileged and stale principal detection.</span>
+                    <div class="cap-row">
+                        <span class="marker">07</span>
+                        <div class="body"><strong>Attack-path graph.</strong><br><span class="meta">Toxic combinations: critical CVE × internet-exposed × admin IAM.</span></div>
                     </div>
-                    <div class="spec-row">
-                        <span class="label">Code integration</span>
-                        <span class="value">1-click fix PRs land in GitHub and GitLab. Approval gates respect existing CODEOWNERS.</span>
+                    <div class="cap-row">
+                        <span class="marker">08</span>
+                        <div class="body"><strong>Drift detection.</strong><br><span class="meta">Production diverges from hardened baseline; Optimal raises a finding.</span></div>
                     </div>
-                    <div class="spec-row">
-                        <span class="label">Shared core</span>
-                        <span class="value">Same codebase as Optimal Federal. Same security graph. Same audit trail.</span>
+                    <div class="cap-row">
+                        <span class="marker">09</span>
+                        <div class="body"><strong>eBPF runtime monitoring.</strong><br><span class="meta">Process, network, file. Kernel-level visibility into workload behaviour.</span></div>
                     </div>
-
-                    <div class="mt-8 pt-6 border-t border-white/5">
-                        <p class="font-mono text-[10px] text-dusk tracking-[0.24em] uppercase mb-3">// Status</p>
-                        <div class="status-row">
-                            <span class="status-badge target"><span class="dot"></span>GA · Commercial Cloud</span>
-                            <span class="status-badge"><span class="dot"></span>AWS Marketplace</span>
-                            <span class="status-badge"><span class="dot"></span>GCP Marketplace</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Buyer + CTA -->
-            <div class="panel" style="background: linear-gradient(135deg, rgba(155, 93, 229, 0.08) 0%, rgba(34, 211, 238, 0.06) 100%); border-color: rgba(155, 93, 229, 0.22);">
-                <div class="flex flex-col md:flex-row items-start md:items-center gap-6 justify-between">
-                    <div>
-                        <p class="font-mono text-[10px] text-dusk tracking-[0.24em] uppercase mb-2">// Built for</p>
-                        <p class="font-display text-lg text-sand max-w-2xl">
-                            Mid-market and enterprise commercial CISOs, security and platform engineering leads, AWS and GCP Marketplace buyers.
-                        </p>
-                    </div>
-                    <a href="/demo" class="btn-sunset font-mono text-xs uppercase tracking-[0.14em] shrink-0">
-                        Talk to an operator
-                        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ===== 4. ENGAGEMENT OBJECTIVES ===== -->
-    <section class="relative" id="objectives" style="background: linear-gradient(180deg, var(--midnight) 0%, #0E1622 50%, var(--midnight) 100%);">
+    <!-- ===== 4. PROVE ===== -->
+    <section class="relative" id="prove" style="background: linear-gradient(180deg, var(--midnight) 0%, #0E1622 50%, var(--midnight) 100%);">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="mb-16 max-w-3xl flex items-end justify-between gap-8">
-                <div>
-                    <span class="eyebrow">Engagement objectives</span>
+            <div class="grid lg:grid-cols-12 gap-12 items-start">
+                <div class="lg:col-span-5">
+                    <span class="eyebrow eyebrow-dusk">Phase 03 / Prove</span>
                     <h2 class="heading-display text-3xl md:text-5xl text-sand mt-6 mb-6">
-                        Most conversations start the same way:<br>
-                        <span class="text-gray-500">"We need to..."</span>
+                        Evidence emits as a product feature.
                     </h2>
-                    <p class="text-base text-gray-400 leading-relaxed max-w-xl">
-                        If one of these sounds familiar, you're in the right place. Missions 01–03 fall under Optimal Federal. Missions 04–06 are where Optimal Cloud earns its keep, with Federal's Channel stepping in for commercial-to-federal motion.
+                    <p class="text-base text-gray-400 leading-relaxed max-w-md mb-6">
+                        Compliance evidence comes out of operational state, not screenshots. Auditor reads a live feed. POA&amp;M lifecycle tracked through resolution. Shared responsibility matrix drawn explicitly so the customer's compliance team knows where the boundary sits.
+                    </p>
+                    <p class="text-sm text-sand max-w-md">
+                        Audit time stops being a fire drill.
                     </p>
                 </div>
-                <div class="font-mono text-[10px] text-gray-600 tracking-[0.22em] hidden md:block whitespace-nowrap">
-                    01 / 06 → 06 / 06
+                <div class="lg:col-span-7 panel panel-static" style="--accent: #9B5DE5;">
+                    <p class="font-mono text-[10px] text-dusk tracking-[0.24em] uppercase mb-5">// Prove capabilities</p>
+                    <div class="cap-row">
+                        <span class="marker">01</span>
+                        <div class="body"><strong>SOC 2 evidence emitter.</strong><br><span class="meta">CC and additional criteria, mapped to operational state.</span></div>
+                    </div>
+                    <div class="cap-row">
+                        <span class="marker">02</span>
+                        <div class="body"><strong>PCI DSS v4.0.1 evidence emitter.</strong><br><span class="meta">Requirements 1, 2, 6, 10, 11 covered against your container footprint.</span></div>
+                    </div>
+                    <div class="cap-row">
+                        <span class="marker">03</span>
+                        <div class="body"><strong>HIPAA Security Rule evidence emitter.</strong><br><span class="meta">Administrative, Physical, Technical Safeguards, with PHI scoping.</span></div>
+                    </div>
+                    <div class="cap-row">
+                        <span class="marker">04</span>
+                        <div class="body"><strong>ISO 27001:2022 evidence emitter.</strong><br><span class="meta">Annex A controls aligned to Optimal's scanning and hardening output.</span></div>
+                    </div>
+                    <div class="cap-row">
+                        <span class="marker">05</span>
+                        <div class="body"><strong>Shared responsibility matrix.</strong><br><span class="meta">Explicit boundary: what Optimal does, what the customer does.</span></div>
+                    </div>
+                    <div class="cap-row">
+                        <span class="marker">06</span>
+                        <div class="body"><strong>Incident notification procedure.</strong><br><span class="meta">Pre-canned, customer-editable, integrated with the finding pipeline.</span></div>
+                    </div>
+                    <div class="cap-row">
+                        <span class="marker">07</span>
+                        <div class="body"><strong>Auditor read-only console.</strong><br><span class="meta">Scoped account, live feed, no screenshots to package.</span></div>
+                    </div>
+                    <div class="cap-row">
+                        <span class="marker">08</span>
+                        <div class="body"><strong>POA&amp;M lifecycle.</strong><br><span class="meta">Finding through fix PR through resolution. Tracked, not just opened.</span></div>
+                    </div>
                 </div>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <article class="panel">
-                    <div class="flex items-center justify-between mb-6">
-                        <span class="font-mono text-[10px] tracking-[0.22em] text-sunset">FEDERAL · 01</span>
-                        <span class="font-mono text-[10px] text-gray-600 tracking-[0.22em]">MISSION 01 / 06</span>
-                    </div>
-                    <h3 class="font-display text-xl text-sand mb-3">Modernize</h3>
-                    <p class="text-sm text-gray-400 leading-relaxed">
-                        Lift mission software off legacy delivery models without rewriting the things that matter. Optimal Federal brings the operating practices forward, then the systems.
-                    </p>
-                </article>
-
-                <article class="panel">
-                    <div class="flex items-center justify-between mb-6">
-                        <span class="font-mono text-[10px] tracking-[0.22em] text-sunset">FEDERAL · 02</span>
-                        <span class="font-mono text-[10px] text-gray-600 tracking-[0.22em]">MISSION 02 / 06</span>
-                    </div>
-                    <h3 class="font-display text-xl text-sand mb-3">Accelerate Authorization</h3>
-                    <p class="text-sm text-gray-400 leading-relaxed">
-                        Cut the path between code and ATO. Federal's Prove layer treats evidence as a build artifact. KSI emits continuously, not quarterly. Ship without waiting on the binder.
-                    </p>
-                </article>
-
-                <article class="panel">
-                    <div class="flex items-center justify-between mb-6">
-                        <span class="font-mono text-[10px] tracking-[0.22em] text-sunset">FEDERAL · 03</span>
-                        <span class="font-mono text-[10px] text-gray-600 tracking-[0.22em]">MISSION 03 / 06</span>
-                    </div>
-                    <h3 class="font-display text-xl text-sand mb-3">Stay Audit-Ready</h3>
-                    <p class="text-sm text-gray-400 leading-relaxed">
-                        Continuous control state across delivery and runtime. The audit isn't an event. It's a query against the same SSP / OSCAL / POA&amp;M feed your team already operates.
-                    </p>
-                </article>
-
-                <article class="panel">
-                    <div class="flex items-center justify-between mb-6">
-                        <span class="font-mono text-[10px] tracking-[0.22em] text-dusk">CLOUD · 04</span>
-                        <span class="font-mono text-[10px] text-gray-600 tracking-[0.22em]">MISSION 04 / 06</span>
-                    </div>
-                    <h3 class="font-display text-xl text-sand mb-3">Adopt AI Safely</h3>
-                    <p class="text-sm text-gray-400 leading-relaxed">
-                        Optimal Cloud's <strong class="text-sand">AI-SPM</strong> finds shadow AI, scans LLM workloads with Garak, and watches model behavior at runtime. When the use case crosses into regulated data, Federal's Channel takes over.
-                    </p>
-                </article>
-
-                <article class="panel">
-                    <div class="flex items-center justify-between mb-6">
-                        <span class="font-mono text-[10px] tracking-[0.22em] text-dusk">CLOUD · 05</span>
-                        <span class="font-mono text-[10px] text-gray-600 tracking-[0.22em]">MISSION 05 / 06</span>
-                    </div>
-                    <h3 class="font-display text-xl text-sand mb-3">Govern Models in Production</h3>
-                    <p class="text-sm text-gray-400 leading-relaxed">
-                        AI runtime detection on eBPF for inference workloads. Lineage, prompt and policy control for the systems your customers actually use, without slowing the team that ships them.
-                    </p>
-                </article>
-
-                <article class="panel">
-                    <div class="flex items-center justify-between mb-6">
-                        <span class="font-mono text-[10px] tracking-[0.22em] text-dusk">CLOUD · 06</span>
-                        <span class="font-mono text-[10px] text-gray-600 tracking-[0.22em]">MISSION 06 / 06</span>
-                    </div>
-                    <h3 class="font-display text-xl text-sand mb-3">Scale Without Trade-offs</h3>
-                    <p class="text-sm text-gray-400 leading-relaxed">
-                        Take what worked for one team and make it the default for the whole org. Same codebase, same evidence trail, every environment. Federal and Cloud share one operating model.
-                    </p>
-                </article>
             </div>
         </div>
     </section>
 
-    <!-- ===== 5. VALUE STREAM (IMPACT MODEL) ===== -->
-    <section class="relative" id="different">
+    <!-- ===== 5. ARCHITECTURE ===== -->
+    <section class="relative" id="architecture">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="mb-16 max-w-3xl">
-                <span class="eyebrow">What makes us different</span>
+            <div class="mb-12 max-w-3xl">
+                <span class="eyebrow">Architecture</span>
                 <h2 class="heading-display text-3xl md:text-5xl text-sand mt-6 mb-6">
-                    Most teams measure outputs.<br>
-                    <span class="text-sunset">We focus on outcomes.</span>
+                    Self-hosted. Your cluster.<br>
+                    <span class="text-gray-500">One command.</span>
                 </h2>
-                <p class="text-base text-gray-400 leading-relaxed">
-                    The work doesn't end at "shipped." Outputs become outcomes when they change behavior in the real environment, and outcomes become impact when they change what the mission can do. We build for the part most stacks ignore.
+                <p class="text-base text-gray-400 leading-relaxed max-w-2xl mb-3">
+                    Optimal is built on best-in-class open-source security engines, with our opinionated hardening, remediation, and evidence emission as the value-add layer. The whole platform runs inside your own Kubernetes cluster. One Helm chart, one command. Optimal never holds your credentials. Optimal never holds your data.
                 </p>
             </div>
 
-            <!-- Value Stream Diagram -->
-            <div class="panel vs-panel" style="padding: 56px 32px 48px;">
-                <img src="/public/optimal-horizon.svg" alt="" class="vs-watermark" aria-hidden="true">
+            <div class="diagram-wrap">
+                <svg viewBox="0 0 1000 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="arch-title arch-desc">
+                    <title id="arch-title">Optimal Platform: Self-hosted Architecture</title>
+                    <desc id="arch-desc">Customer Kubernetes cluster contains the Optimal platform, installed via a single Helm chart. Inside the cluster, three engines run: Harden (STIG and CIS baselines), Verify (continuous scanning, attack-path graph, eBPF runtime), and Prove (compliance evidence emission). Outputs leave the cluster as fix PRs to GitHub or GitLab, and as a live evidence feed to the customer's auditor read-only console. Optimal never holds customer credentials or data.</desc>
 
-                <div class="vs-track">
-                    <svg class="vs-trace" viewBox="0 0 1000 80" preserveAspectRatio="none" aria-hidden="true">
-                        <defs>
-                            <linearGradient id="vs-trace-grad" x1="0" y1="0" x2="1" y2="0">
-                                <stop offset="0%" stop-color="#FF8A3D" stop-opacity="0.0"/>
-                                <stop offset="10%" stop-color="#FF8A3D" stop-opacity="0.7"/>
-                                <stop offset="40%" stop-color="#FF5252" stop-opacity="0.7"/>
-                                <stop offset="80%" stop-color="#9B5DE5" stop-opacity="0.7"/>
-                                <stop offset="100%" stop-color="#9B5DE5" stop-opacity="0.0"/>
-                            </linearGradient>
-                        </defs>
-                        <path class="vs-trace-line" d="M 20 40 Q 200 10 400 40 T 980 40" fill="none" stroke="url(#vs-trace-grad)" stroke-width="1.25" stroke-linecap="round"/>
-                        <path class="vs-trace-pulse" d="M 20 40 Q 200 10 400 40 T 980 40" fill="none" stroke="#FF8A3D" stroke-width="2" stroke-linecap="round" stroke-dasharray="6 12"/>
-                    </svg>
+                    <defs>
+                        <marker id="arrow-sunset" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                            <path d="M 0 0 L 10 5 L 0 10 z" fill="#FF8A3D"/>
+                        </marker>
+                        <marker id="arrow-dusk" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                            <path d="M 0 0 L 10 5 L 0 10 z" fill="#9B5DE5"/>
+                        </marker>
+                    </defs>
 
-                    <div class="grid grid-cols-2 md:grid-cols-5 gap-6 md:gap-2 relative">
-                        <div class="vs-stage" data-color="sunset" style="--accent: #FFB347;">
-                            <div class="vs-num">01</div>
-                            <div class="vs-illo">
-                                <svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linejoin="round" stroke-linecap="round">
-                                    <path d="M40 14 L66 26 L40 38 L14 26 Z" opacity="0.95"/>
-                                    <path d="M40 14 L40 38" opacity="0.55"/>
-                                    <path d="M40 38 L40 50 L66 38 L66 26" opacity="0.4"/>
-                                    <path d="M40 38 L14 26 L14 38 L40 50" opacity="0.4"/>
-                                    <path d="M22 50 L58 50 L58 56 L22 56 Z" opacity="0.7"/>
-                                    <path d="M28 56 L52 56 L52 62 L28 62 Z" opacity="0.45"/>
-                                    <circle cx="40" cy="14" r="1.6" fill="currentColor" opacity="0.9"/>
-                                    <path d="M14 18 L8 18" opacity="0.35"/>
-                                    <path d="M66 18 L72 18" opacity="0.35"/>
-                                </svg>
-                            </div>
-                            <div class="vs-label">Resources</div>
-                            <div class="vs-sublabel">People, time, budget</div>
-                        </div>
+                    <!-- Helm install entry, top center -->
+                    <g>
+                        <rect x="370" y="20" width="260" height="50" rx="6" fill="rgba(15,27,46,0.7)" stroke="rgba(255,138,61,0.45)" stroke-width="1"/>
+                        <text x="500" y="42" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="12" fill="#FF8A3D" letter-spacing="1.5">$ helm install optimal/platform</text>
+                        <text x="500" y="58" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" fill="#94A3B8" letter-spacing="1.5">ONE COMMAND</text>
+                    </g>
+                    <line x1="500" y1="70" x2="500" y2="110" stroke="#FF8A3D" stroke-width="1.5" marker-end="url(#arrow-sunset)"/>
 
-                        <div class="vs-stage" data-color="sunset" style="--accent: #FF8A3D;">
-                            <div class="vs-num">02</div>
-                            <div class="vs-illo">
-                                <svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M14 22 Q40 6 66 22" opacity="0.55"/>
-                                    <path d="M14 22 Q22 46 40 56" opacity="0.55"/>
-                                    <path d="M66 22 Q58 46 40 56" opacity="0.55"/>
-                                    <path d="M14 22 L66 22" stroke-dasharray="2 4" opacity="0.3"/>
-                                    <circle cx="14" cy="22" r="3.5" fill="#0B0F14"/>
-                                    <circle cx="14" cy="22" r="3.5"/>
-                                    <circle cx="66" cy="22" r="3.5" fill="#0B0F14"/>
-                                    <circle cx="66" cy="22" r="3.5"/>
-                                    <circle cx="40" cy="56" r="3.5" fill="#0B0F14"/>
-                                    <circle cx="40" cy="56" r="3.5"/>
-                                    <circle cx="40" cy="56" r="1" fill="currentColor"/>
-                                </svg>
-                            </div>
-                            <div class="vs-label">Activities</div>
-                            <div class="vs-sublabel">The work teams do</div>
-                        </div>
+                    <!-- Customer K8s cluster boundary -->
+                    <rect x="60" y="110" width="880" height="200" rx="10" fill="none" stroke="rgba(255,138,61,0.32)" stroke-width="1.5" stroke-dasharray="8 5"/>
+                    <text x="80" y="132" font-family="JetBrains Mono, monospace" font-size="11" fill="#FF8A3D" letter-spacing="3">// CUSTOMER KUBERNETES CLUSTER</text>
+                    <text x="920" y="132" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="10" fill="#94A3B8" letter-spacing="2">SELF-HOSTED</text>
 
-                        <div class="vs-stage" data-color="sunset" style="--accent: #F25E3A;">
-                            <div class="vs-num">03</div>
-                            <div class="vs-illo">
-                                <svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M16 22 L40 12 L64 22 L40 32 Z"/>
-                                    <path d="M16 22 L16 54 L40 64" opacity="0.7"/>
-                                    <path d="M64 22 L64 54 L40 64" opacity="0.55"/>
-                                    <path d="M40 32 L40 64" opacity="0.4"/>
-                                    <path d="M22 38 L34 32" opacity="0.45"/>
-                                    <path d="M58 38 L46 32" opacity="0.45"/>
-                                    <circle cx="40" cy="48" r="1.5" fill="currentColor"/>
-                                </svg>
-                            </div>
-                            <div class="vs-label">Outputs</div>
-                            <div class="vs-sublabel">A new feature, a release</div>
-                        </div>
+                    <!-- Three engines inside cluster -->
+                    <g>
+                        <rect x="100" y="170" width="240" height="110" rx="6" fill="rgba(255,138,61,0.06)" stroke="rgba(255,138,61,0.45)" stroke-width="1"/>
+                        <text x="220" y="196" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="16" fill="#F2ECE4" font-weight="500">Harden</text>
+                        <text x="220" y="214" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" fill="#FF8A3D" letter-spacing="1.5">STIG · CIS</text>
+                        <line x1="120" y1="226" x2="320" y2="226" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+                        <text x="220" y="244" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10" fill="#94A3B8">· baseline application</text>
+                        <text x="220" y="260" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10" fill="#94A3B8">· Dockerfile + Helm patches</text>
+                    </g>
+                    <g>
+                        <rect x="380" y="170" width="240" height="110" rx="6" fill="rgba(255,82,82,0.06)" stroke="rgba(255,82,82,0.45)" stroke-width="1"/>
+                        <text x="500" y="196" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="16" fill="#F2ECE4" font-weight="500">Verify</text>
+                        <text x="500" y="214" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" fill="#FF5252" letter-spacing="1.5">CONTAINER · CLOUD · RUNTIME</text>
+                        <line x1="400" y1="226" x2="600" y2="226" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+                        <text x="500" y="244" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10" fill="#94A3B8">· attack-path graph</text>
+                        <text x="500" y="260" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10" fill="#94A3B8">· eBPF · SBOM · drift</text>
+                    </g>
+                    <g>
+                        <rect x="660" y="170" width="240" height="110" rx="6" fill="rgba(155,93,229,0.06)" stroke="rgba(155,93,229,0.45)" stroke-width="1"/>
+                        <text x="780" y="196" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="16" fill="#F2ECE4" font-weight="500">Prove</text>
+                        <text x="780" y="214" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" fill="#9B5DE5" letter-spacing="1.5">SOC 2 · PCI · HIPAA · ISO</text>
+                        <line x1="680" y1="226" x2="880" y2="226" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+                        <text x="780" y="244" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10" fill="#94A3B8">· live evidence emission</text>
+                        <text x="780" y="260" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10" fill="#94A3B8">· POA&amp;M lifecycle</text>
+                    </g>
 
-                        <div class="vs-stage vs-focus" data-color="coral" style="--accent: #FF5252;">
-                            <div class="vs-num">04</div>
-                            <div class="vs-illo">
-                                <svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round">
-                                    <circle cx="40" cy="40" r="22" opacity="0.18"/>
-                                    <circle cx="40" cy="40" r="15" opacity="0.32"/>
-                                    <circle cx="40" cy="40" r="8" opacity="0.6"/>
-                                    <circle cx="40" cy="40" r="2.4" fill="currentColor"/>
-                                    <path d="M40 40 L62 18" stroke-dasharray="2 3" opacity="0.7"/>
-                                    <path d="M58 18 L62 18 L62 22" opacity="0.85"/>
-                                    <circle cx="62" cy="18" r="2.5" fill="currentColor" opacity="0.85"/>
-                                    <path d="M18 40 L14 40 M40 18 L40 14 M62 40 L66 40 M40 62 L40 66" opacity="0.4"/>
-                                </svg>
-                            </div>
-                            <div class="vs-label">Outcomes</div>
-                            <div class="vs-sublabel">What people do with it</div>
-                        </div>
+                    <!-- Outputs from cluster -->
+                    <!-- Fix PRs out -->
+                    <line x1="220" y1="280" x2="220" y2="340" stroke="#FF8A3D" stroke-width="1.5" marker-end="url(#arrow-sunset)"/>
+                    <g>
+                        <rect x="100" y="340" width="240" height="50" rx="6" fill="rgba(11,15,20,0.7)" stroke="rgba(255,138,61,0.45)" stroke-width="1"/>
+                        <text x="220" y="362" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="13" fill="#F2ECE4" font-weight="500">Fix PRs</text>
+                        <text x="220" y="378" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" fill="#94A3B8" letter-spacing="1.5">→ GITHUB · GITLAB</text>
+                    </g>
 
-                        <div class="vs-stage vs-focus" data-color="dusk" style="--accent: #9B5DE5;">
-                            <div class="vs-num">05</div>
-                            <div class="vs-illo">
-                                <svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round">
-                                    <path d="M16 56 L64 56" opacity="0.7"/>
-                                    <path d="M22 60 L58 60" opacity="0.4" stroke-dasharray="2 3"/>
-                                    <path d="M22 56 A18 18 0 0 1 58 56" opacity="0.95"/>
-                                    <path d="M28 56 A12 12 0 0 1 52 56" opacity="0.7"/>
-                                    <path d="M34 56 A6 6 0 0 1 46 56" opacity="0.45"/>
-                                    <path d="M40 32 L40 22"/>
-                                    <path d="M22 38 L16 32"/>
-                                    <path d="M58 38 L64 32"/>
-                                    <path d="M14 50 L8 50"/>
-                                    <path d="M66 50 L72 50"/>
-                                    <circle cx="40" cy="56" r="1.6" fill="currentColor"/>
-                                </svg>
-                            </div>
-                            <div class="vs-label">Impact</div>
-                            <div class="vs-sublabel">What it enables next</div>
-                        </div>
-                    </div>
-                </div>
+                    <!-- Findings graph (stays inside cluster, but show as console) -->
+                    <line x1="500" y1="280" x2="500" y2="340" stroke="#FF5252" stroke-width="1.5" marker-end="url(#arrow-sunset)" stroke-dasharray="0"/>
+                    <g>
+                        <rect x="380" y="340" width="240" height="50" rx="6" fill="rgba(11,15,20,0.7)" stroke="rgba(255,82,82,0.45)" stroke-width="1"/>
+                        <text x="500" y="362" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="13" fill="#F2ECE4" font-weight="500">Operator console</text>
+                        <text x="500" y="378" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" fill="#94A3B8" letter-spacing="1.5">→ FINDINGS · GRAPH</text>
+                    </g>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-14 pt-8 border-t border-white/5 vs-annotations">
-                    <div>
-                        <div class="font-mono text-[10px] text-gray-500 tracking-[0.22em] uppercase mb-2">// Where execution teams tend to focus</div>
-                        <div class="font-display text-base text-gray-400">Resources → Activities → Outputs</div>
-                    </div>
-                    <div>
-                        <div class="font-mono text-[10px] text-sunset tracking-[0.22em] uppercase mb-2">// Where Optimal focuses</div>
-                        <div class="font-display text-base text-sand">Outcomes → Impact</div>
-                    </div>
-                </div>
+                    <!-- Evidence to auditor -->
+                    <line x1="780" y1="280" x2="780" y2="340" stroke="#9B5DE5" stroke-width="1.5" marker-end="url(#arrow-dusk)"/>
+                    <g>
+                        <rect x="660" y="340" width="240" height="50" rx="6" fill="rgba(11,15,20,0.7)" stroke="rgba(155,93,229,0.45)" stroke-width="1"/>
+                        <text x="780" y="362" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="13" fill="#F2ECE4" font-weight="500">Auditor read-only</text>
+                        <text x="780" y="378" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" fill="#9B5DE5" letter-spacing="1.5">→ LIVE EVIDENCE FEED</text>
+                    </g>
+
+                    <!-- Legend -->
+                    <g transform="translate(60, 405)">
+                        <text x="0" y="0" font-family="JetBrains Mono, monospace" font-size="10" fill="#94A3B8" letter-spacing="1.5">// Optimal never holds customer credentials. Optimal never holds customer data.</text>
+                    </g>
+                </svg>
+                <p class="diagram-caption">// Helm install. One command. Your cluster. Findings stay; fixes and evidence leave on your terms.</p>
             </div>
         </div>
     </section>
 
-    <style>
-        .vs-panel { position: relative; overflow: hidden; }
-        .vs-watermark { position: absolute; width: 480px; height: 480px; right: -160px; top: 50%; transform: translateY(-50%); opacity: 0.04; pointer-events: none; user-select: none; }
-        .vs-track { position: relative; padding-top: 12px; }
-        .vs-trace { position: absolute; top: 92px; left: 0; right: 0; width: 100%; height: 80px; pointer-events: none; display: none; }
-        @media (min-width: 768px) { .vs-trace { display: block; } }
-        .vs-trace-line { stroke-dasharray: 1500; stroke-dashoffset: 1500; }
-        .vs-trace-pulse { opacity: 0; }
-        .vs-panel.is-visible .vs-trace-line { animation: vs-draw 1.6s 0.2s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
-        .vs-panel.is-visible .vs-trace-pulse { animation: vs-pulse 4s 1.6s linear infinite; }
-        @keyframes vs-draw { to { stroke-dashoffset: 0; } }
-        @keyframes vs-pulse { 0% { opacity: 0; stroke-dashoffset: 0; } 10% { opacity: 0.55; } 90% { opacity: 0.55; } 100% { opacity: 0; stroke-dashoffset: -200; } }
-        .vs-stage { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 14px; padding: 18px 12px; border-radius: 10px; position: relative; opacity: 0; transform: translateY(16px); transition: opacity 0.6s ease, transform 0.6s ease, background 0.3s ease; }
-        .vs-panel.is-visible .vs-stage { opacity: 1; transform: translateY(0); }
-        .vs-panel.is-visible .vs-stage:nth-child(1) { transition-delay: 0.05s; }
-        .vs-panel.is-visible .vs-stage:nth-child(2) { transition-delay: 0.20s; }
-        .vs-panel.is-visible .vs-stage:nth-child(3) { transition-delay: 0.35s; }
-        .vs-panel.is-visible .vs-stage:nth-child(4) { transition-delay: 0.55s; }
-        .vs-panel.is-visible .vs-stage:nth-child(5) { transition-delay: 0.75s; }
-        .vs-stage:hover { background: rgba(255, 255, 255, 0.025); }
-        .vs-stage:hover .vs-illo { transform: translateY(-3px); }
-        .vs-stage:hover .vs-illo::before { opacity: 1; }
-        .vs-num { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.24em; color: rgba(255, 255, 255, 0.35); }
-        .vs-illo { position: relative; width: 96px; height: 96px; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--accent, var(--sunset)); background: radial-gradient(ellipse at 50% 110%, color-mix(in srgb, var(--accent, var(--sunset)) 18%, transparent) 0%, transparent 70%), linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, rgba(11, 15, 20, 0.5) 100%); border: 1px solid rgba(255, 255, 255, 0.08); transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
-        .vs-illo::before { content: ''; position: absolute; inset: -1px; border-radius: 12px; border: 1px solid color-mix(in srgb, var(--accent, var(--sunset)) 50%, transparent); opacity: 0; transition: opacity 0.4s ease; pointer-events: none; }
-        .vs-illo svg { width: 60%; height: 60%; }
-        .vs-label { font-family: 'Space Grotesk', 'Inter', sans-serif; font-size: 16px; color: var(--sand); letter-spacing: -0.01em; }
-        .vs-sublabel { font-size: 12px; color: #94A3B8; max-width: 160px; line-height: 1.4; }
-        .vs-focus .vs-label, .vs-focus .vs-sublabel { color: var(--sand); }
-        .vs-focus .vs-illo { box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent, var(--sunset)) 40%, transparent), 0 12px 32px color-mix(in srgb, var(--accent, var(--sunset)) 18%, transparent); }
-        .vs-focus .vs-num { color: var(--accent); }
-        .vs-annotations { opacity: 0; transform: translateY(8px); transition: opacity 0.6s ease, transform 0.6s ease; transition-delay: 1.0s; }
-        .vs-panel.is-visible .vs-annotations { opacity: 1; transform: translateY(0); }
-        @media (max-width: 767px) { .vs-illo { width: 80px; height: 80px; } }
-    </style>
-
-    <script>
-        (function() {
-            const vsPanel = document.querySelector('.vs-panel');
-            if (!vsPanel) return;
-            const reveal = new IntersectionObserver((entries) => {
-                entries.forEach(e => {
-                    if (e.isIntersecting) {
-                        vsPanel.classList.add('is-visible');
-                        reveal.disconnect();
-                    }
-                });
-            }, { threshold: 0.25 });
-            reveal.observe(vsPanel);
-        })();
-    </script>
-
-    <!-- ===== 6. APPROACH ANCHOR (kept for cross-page anchors) ===== -->
-    <section class="relative compact" id="approach">
-        <div class="max-w-5xl mx-auto px-6 text-center">
-            <span class="eyebrow mx-auto inline-flex">The Optimal Way</span>
-            <h2 class="heading-display text-3xl md:text-4xl text-sand mt-6 mb-6">
-                Connect. Observe. Authorize.
-            </h2>
-            <p class="text-base text-gray-400 leading-relaxed max-w-2xl mx-auto mb-8">
-                One operating model across both SKUs. Plug into what teams already run, run continuous signal end to end, and let evidence-backed decisions move with the system instead of against it.
-            </p>
-            <a href="/#approach" class="font-mono text-xs uppercase tracking-[0.18em] text-sunset hover:text-coral inline-flex items-center gap-2 transition-colors">
-                Read the full approach
-                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-            </a>
-        </div>
-    </section>
-
-    <!-- ===== 7. CTA ===== -->
+    <!-- ===== 6. CTA ===== -->
     <section class="relative overflow-hidden" id="cta" style="background: radial-gradient(ellipse 1200px 600px at 50% 100%, rgba(255, 138, 61, 0.14) 0%, transparent 70%), var(--midnight);">
         <div class="max-w-5xl mx-auto px-6 text-center relative z-10">
             <span class="eyebrow mx-auto inline-flex">Get on channel</span>
@@ -1073,12 +496,12 @@
                 Bring your hardest delivery problem. We'll bring our perspective and what's possible right now.
             </p>
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="/demo" class="btn-sunset font-mono text-xs uppercase tracking-[0.18em] px-8 py-4">
+                <a href="/contact" class="btn-sunset font-mono text-xs uppercase tracking-[0.18em] px-8 py-4">
                     Contact
                     <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
                 </a>
-                <a href="https://gitlab.com/optimal-labs/platform" target="_blank" class="btn-ghost font-mono text-xs uppercase tracking-[0.18em] px-8 py-4">
-                    View Source on GitLab
+                <a href="https://docs.gooptimal.io/" target="_blank" class="btn-ghost font-mono text-xs uppercase tracking-[0.18em] px-8 py-4">
+                    View docs
                 </a>
             </div>
         </div>
@@ -1100,7 +523,7 @@
                         <span class="font-display text-lg font-medium tracking-[0.18em] text-sand">OPTIMAL</span>
                     </a>
                     <p class="text-gray-400 text-sm max-w-md mb-6 leading-relaxed">
-                        Operator-grade infrastructure for regulated software. Built for the people who keep critical software moving.
+                        Operator-grade CNAPP, self-hosted. Built for the people who keep critical software moving.
                     </p>
                     <p class="font-mono text-[10px] text-gray-600 tracking-[0.22em] uppercase mb-6">
                         Stay on channel.
@@ -1112,19 +535,18 @@
                         <a href="https://www.linkedin.com/company/111329653" target="_blank" aria-label="LinkedIn" class="text-gray-500 hover:text-sunset transition-colors">
                             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
                         </a>
-                        <a href="https://gitlab.com/optimal-labs/platform" target="_blank" aria-label="GitLab" class="text-gray-500 hover:text-sunset transition-colors">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M22.749 9.769L22.726 9.71l-2.16-5.638a.561.561 0 00-1.058.046l-1.46 4.475H6.066L4.605 4.118a.561.561 0 00-1.058-.046l-2.16 5.638-.022.06a3.997 3.997 0 001.327 4.62l.008.005.022.014 3.279 2.456 1.624 1.229 2.45 1.852a.66.66 0 00.798 0l2.45-1.852 1.624-1.229 3.299-2.47.008-.006a3.997 3.997 0 001.325-4.62z"/></svg>
-                        </a>
                     </div>
                 </div>
 
                 <div>
                     <h4 class="font-mono text-[10px] text-sunset tracking-[0.24em] uppercase mb-5">Platform</h4>
                     <ul class="space-y-3">
-                        <li><a href="/platform#federal" class="text-gray-400 hover:text-sand text-sm transition-colors">Federal</a></li>
-                        <li><a href="/platform#cloud" class="text-gray-400 hover:text-sand text-sm transition-colors">Cloud</a></li>
-                        <li><a href="https://docs.gooptimal.io/" target="_blank" class="text-gray-400 hover:text-sand text-sm transition-colors">Documentation</a></li>
-                        <li><a href="https://gitlab.com/optimal-labs/platform" target="_blank" class="text-gray-400 hover:text-sand text-sm transition-colors">Source</a></li>
+                        <li><a href="/platform" class="text-gray-400 hover:text-sand text-sm transition-colors">Platform</a></li>
+                        <li><a href="/industries/financial-services" class="text-gray-400 hover:text-sand text-sm transition-colors">Financial Services</a></li>
+                        <li><a href="/industries/healthcare" class="text-gray-400 hover:text-sand text-sm transition-colors">Healthcare</a></li>
+                        <li><a href="/industries/sled" class="text-gray-400 hover:text-sand text-sm transition-colors">State &amp; Local Government</a></li>
+                        <li><a href="https://docs.gooptimal.io/" target="_blank" class="text-gray-400 hover:text-sand text-sm transition-colors">Docs</a></li>
+                        <li><a href="/the-optimal-way" class="text-gray-400 hover:text-sand text-sm transition-colors">The Optimal Way</a></li>
                     </ul>
                 </div>
 
@@ -1133,8 +555,8 @@
                     <ul class="space-y-3">
                         <li><a href="/about" class="text-gray-400 hover:text-sand text-sm transition-colors">About</a></li>
                         <li><a href="/blog" class="text-gray-400 hover:text-sand text-sm transition-colors">Blog</a></li>
-                        <li><a href="/demo" class="text-gray-400 hover:text-sand text-sm transition-colors">Contact</a></li>
-                        <li><a href="mailto:info@gooptimal.io" class="text-gray-400 hover:text-sand text-sm transition-colors">info@gooptimal.io</a></li>
+                        <li><a href="/contact" class="text-gray-400 hover:text-sand text-sm transition-colors">Contact</a></li>
+                        <li><a href="mailto:ryan@gooptimal.io" class="text-gray-400 hover:text-sand text-sm transition-colors">ryan@gooptimal.io</a></li>
                     </ul>
                 </div>
             </div>
@@ -1156,11 +578,9 @@
     <script>
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => navbar.classList.toggle('nav-fixed', window.scrollY > 50));
-
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         mobileMenuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
-
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 const target = document.querySelector(this.getAttribute('href'));

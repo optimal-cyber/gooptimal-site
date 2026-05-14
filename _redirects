@@ -2,8 +2,30 @@
 https://optimal-cyber.github.io/gooptimal-site/* https://gooptimal.io/:splat 301!
 https://optimal-cyber.github.io/* https://gooptimal.io/:splat 301!
 
-# Redirect www to non-www (optional)
+# Redirect www to non-www
 https://www.gooptimal.io/* https://gooptimal.io/:splat 301!
 
-# Folded routes from IA tightening (Get Access + Request Demo + Support → Contact)
-/contact /demo 301
+# Consolidated contact route (replaces Get Access + Request Demo + Support)
+/demo /contact 301
+/support /contact 301
+
+# Capabilities folded into the Platform page
+/capabilities /platform 301
+/cloud-security /platform 301
+/devsecops /platform 301
+/grc /platform 301
+/platform-services /platform 301
+/runtime-security /platform 301
+/software-supply-chain /platform 301
+/vulnerability-management /platform 301
+
+# Old federal / DoD / AI-gateway pages — gone, no replacement
+/ai-security - 410
+/authorization - 410
+/govlaunch - 410
+/warfighter-solutions - 410
+
+# Legacy iteration artifacts
+/index-legacy - 410
+/platform-legacy - 410
+/integrations-legacy - 410
