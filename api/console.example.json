@@ -1,0 +1,36 @@
+{
+  "_comment": "Contract for https://api.gooptimal.io/v1/console — feeds the live console strips on https://gooptimal.io. Marketing site polls every 30s. Keys are flattened by dot path in the JS poller. Missing keys leave the hardcoded fallback in place. Add new keys here when adding new strips to the marketing surface.",
+
+  "fleet": {
+    "containers": 847,
+    "host_os": 124
+  },
+  "stig": {
+    "passing": 1184,
+    "na": 31,
+    "failing": 2
+  },
+  "sbom": {
+    "signed": 847
+  },
+  "mlbom": {
+    "signed": 23
+  },
+  "agents": {
+    "tracked": 47,
+    "authorities_asserted": 12,
+    "handoffs_24h": 1204,
+    "blocked": 3
+  },
+  "models": {
+    "inventoried": 23
+  },
+  "evidence": {
+    "last_emit_seconds": 12
+  },
+  "channel": {
+    "open": true,
+    "name": "CH 03"
+  },
+  "ts": "2026-05-22T18:00:00Z"
+}
