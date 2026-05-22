@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Optimal | CNAPP that ships hardening evidence, not just findings.</title>
-    <meta name="description" content="Optimal is the self-hosted, opinionated CNAPP for fintech, healthcare, and state & local government. Hardens your containers to DISA STIG and CIS baselines. Ships compliance evidence as a product feature. Runs in your own Kubernetes cluster.">
-    <meta name="keywords" content="CNAPP, cloud-native application protection, container hardening, DISA STIG, CIS benchmarks, PCI DSS 4.0.1, HIPAA, SOC 2, ISO 27001, StateRAMP, CJIS, self-hosted security, Kubernetes security, fix PRs, SBOM, attack-path graph">
+    <title>Optimal | The control plane for regulated software and the AI agents that run on it.</title>
+    <meta name="description" content="Self-hosted CNAPP for regulated software. Hardens containers, host OS, and OT firmware against DISA STIG, CIS, and IEC 62443. Signs SBOM and MLBOM on every build. Watches every autonomous AI agent's identity, tools, data scope, and authority. Emits compliance evidence live, on every request.">
+    <meta name="keywords" content="CNAPP, AI control plane, AI agent governance, DISA STIG, CIS, IEC 62443, SBOM, MLBOM, CycloneDX, agent runtime security, agentic identity, prompt injection guardrails, NIST AI RMF, ISO 42001, OWASP LLM Top 10, self-hosted Kubernetes security">
     <meta name="author" content="Optimal">
     <meta name="robots" content="index, follow">
 
     <link rel="canonical" href="https://gooptimal.io/">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Optimal | CNAPP that ships hardening evidence, not just findings.">
-    <meta property="og:description" content="Self-hosted CNAPP for fintech, healthcare, and state & local government. Hardens, scans, and emits compliance evidence live.">
+    <meta property="og:title" content="Optimal | The control plane for regulated software and the AI agents that run on it.">
+    <meta property="og:description" content="Self-hosted CNAPP. DISA STIG hardening. Signed SBOM and MLBOM. AI agent control plane. Live compliance evidence. Runs in your cluster, never ours.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://gooptimal.io">
     <meta property="og:image" content="https://gooptimal.io/public/optimal-social-preview.png">
@@ -23,8 +23,8 @@
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Optimal | CNAPP that ships hardening evidence, not just findings.">
-    <meta name="twitter:description" content="Self-hosted CNAPP. Harden, verify, prove. Stay on channel.">
+    <meta name="twitter:title" content="Optimal | The control plane for regulated software and AI agents.">
+    <meta name="twitter:description" content="Self-hosted CNAPP + AI control plane. STIG, SBOM, MLBOM, live evidence. Stay on channel.">
     <meta name="twitter:image" content="https://gooptimal.io/public/optimal-social-preview.png">
 
     <!-- Structured Data -->
@@ -35,15 +35,14 @@
         "name": "Optimal",
         "url": "https://gooptimal.io",
         "logo": "https://gooptimal.io/public/optimal-horizon.svg",
-        "description": "Operator-grade CNAPP. Self-hosted. Hardens containers to DISA STIG and CIS baselines, scans continuously, and emits compliance evidence as a product feature.",
+        "description": "Self-hosted CNAPP and AI control plane. Hardens containers, host OS, and OT firmware against DISA STIG, CIS, and IEC 62443. Signs SBOM and MLBOM on every build. Watches every autonomous AI agent's identity and authority. Emits compliance evidence live.",
         "foundingDate": "2023",
-        "slogan": "Stay on channel.",
         "contactPoint": {
             "@type": "ContactPoint",
             "contactType": "sales",
+            "email": "ryan@gooptimal.io",
             "url": "https://gooptimal.io/contact"
         },
-        "areaServed": "United States",
         "sameAs": [
             "https://github.com/optimal-cyber",
             "https://www.linkedin.com/company/111329653"
@@ -51,46 +50,25 @@
     }
     </script>
 
-    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/public/optimal-horizon.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="/public/optimal-horizon-32.png">
     <link rel="icon" type="image/png" sizes="180x180" href="/public/optimal-horizon-180.png">
     <link rel="shortcut icon" href="/public/favicon.ico">
     <link rel="apple-touch-icon" href="/public/optimal-horizon-180.png">
 
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        midnight: '#0B0F14',
-                        navy: '#0F1B2E',
-                        ocean: '#1E3A4D',
-                        sunset: '#FF8A3D',
-                        coral: '#FF5252',
-                        ember: '#D63A3A',
-                        berry: '#A83255',
-                        dusk: '#9B5DE5',
-                        seafoam: '#22D3EE',
-                        sand: '#F2ECE4',
-                        'cyber-black': '#0B0F14',
-                        'cyber-dark': '#0F1B2E',
-                        'cyber-gray': '#11192A',
-                        'cyber-border': '#1E2A3D',
-                        'cyber-green': '#FF8A3D',
-                        'cyber-green-dim': '#FF5252',
-                        'cyber-blue': '#22D3EE',
-                        'cyber-amber': '#FFB347',
-                        'cyber-red': '#FF5252',
-                        'cyber-purple': '#9B5DE5',
-                        'terminal-green': '#FF8A3D',
+                        midnight: '#0B0F14', navy: '#0F1B2E', ocean: '#1E3A4D',
+                        sunset: '#FF8A3D', coral: '#FF5252', ember: '#D63A3A',
+                        berry: '#A83255', dusk: '#9B5DE5', seafoam: '#22D3EE', sand: '#F2ECE4',
                     },
                     fontFamily: {
                         'sans': ['Inter', 'system-ui', 'sans-serif'],
@@ -104,32 +82,22 @@
 
     <style>
         :root {
-            --midnight: #0B0F14;
-            --navy: #0F1B2E;
-            --ocean: #1E3A4D;
-            --sunset: #FF8A3D;
-            --coral: #FF5252;
-            --ember: #D63A3A;
-            --berry: #A83255;
-            --dusk: #9B5DE5;
-            --seafoam: #22D3EE;
-            --sand: #F2ECE4;
-            --hero-image: none;
+            --midnight: #0B0F14; --navy: #0F1B2E; --ocean: #1E3A4D;
+            --sunset: #FF8A3D; --coral: #FF5252; --ember: #D63A3A;
+            --berry: #A83255; --dusk: #9B5DE5; --seafoam: #22D3EE; --sand: #F2ECE4;
         }
-
         body { background: var(--midnight); color: #E2E8F0; font-family: 'Inter', system-ui, sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
         ::selection { background: rgba(255, 138, 61, 0.35); color: var(--sand); }
         .font-display { font-family: 'Space Grotesk', 'Inter', sans-serif; letter-spacing: -0.02em; }
-
         section { padding: 96px 0; }
         @media (min-width: 1024px) { section { padding: 128px 0; } }
+        section.tight { padding: 64px 0; }
 
-        /* ===== NAV ===== */
+        /* NAV */
         #navbar { transition: background 0.3s ease, border-color 0.3s ease, backdrop-filter 0.3s ease; }
         .nav-fixed { backdrop-filter: blur(16px); background: rgba(11, 15, 20, 0.85); border-bottom: 1px solid rgba(255, 255, 255, 0.06); }
         .nav-link { color: #94A3B8; transition: color 0.3s ease; letter-spacing: 0.08em; }
         .nav-link:hover { color: var(--sand); }
-
         .nav-dropdown { position: relative; }
         .nav-dropdown-trigger { color: #94A3B8; transition: color 0.3s ease; cursor: pointer; display: flex; align-items: center; gap: 4px; background: none; border: none; padding: 0; font-family: inherit; letter-spacing: 0.08em; }
         .nav-dropdown-trigger:hover { color: var(--sand); }
@@ -138,18 +106,24 @@
         .nav-dropdown-menu a { display: block; padding: 10px 18px; color: #94A3B8; font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.06em; transition: color 0.2s ease, background 0.2s ease; text-decoration: none; }
         .nav-dropdown-menu a:hover { color: var(--sunset); background: rgba(255, 138, 61, 0.06); }
 
-        /* ===== BUTTONS ===== */
+        /* BUTTONS */
         .btn-sunset { background: linear-gradient(135deg, #FF8A3D 0%, #FF5252 100%); color: #0B0F14; font-weight: 600; padding: 14px 26px; border-radius: 4px; transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 8px; }
         .btn-sunset:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(255, 138, 61, 0.32); }
         .btn-ghost { background: transparent; color: var(--sand); font-weight: 500; padding: 14px 26px; border-radius: 4px; border: 1px solid rgba(255, 255, 255, 0.18); transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 8px; }
         .btn-ghost:hover { border-color: var(--sunset); color: var(--sunset); }
 
-        /* ===== EYEBROW & DISPLAY ===== */
+        /* EYEBROW + DISPLAY */
         .eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--sunset); display: inline-flex; align-items: center; gap: 12px; }
         .eyebrow::before { content: ''; width: 28px; height: 1px; background: var(--sunset); opacity: 0.6; }
+        .eyebrow-coral { color: var(--coral); }
+        .eyebrow-coral::before { background: var(--coral); }
+        .eyebrow-dusk { color: var(--dusk); }
+        .eyebrow-dusk::before { background: var(--dusk); }
+        .eyebrow-seafoam { color: var(--seafoam); }
+        .eyebrow-seafoam::before { background: var(--seafoam); }
         .heading-display { font-family: 'Space Grotesk', 'Inter', sans-serif; font-weight: 500; letter-spacing: -0.02em; line-height: 1.05; }
 
-        /* ===== HORIZON STRIPES ===== */
+        /* HORIZON STRIPES */
         .horizon-stripes { display: flex; flex-direction: column; gap: 4px; width: 100%; }
         .horizon-stripes > span { display: block; height: 6px; border-radius: 1px; }
         .horizon-stripes > span:nth-child(1) { background: linear-gradient(90deg, transparent, #FFB347 25%, #FFB347 75%, transparent); }
@@ -161,7 +135,7 @@
         .horizon-stripes > span:nth-child(7) { background: linear-gradient(90deg, transparent, #3D4A8E 25%, #3D4A8E 75%, transparent); }
         .horizon-stripes > span:nth-child(8) { background: linear-gradient(90deg, transparent, #2A3A6E 25%, #2A3A6E 75%, transparent); }
 
-        /* ===== HERO ===== */
+        /* HERO */
         .hero-bg {
             background-color: var(--midnight);
             background-image:
@@ -169,44 +143,171 @@
                 radial-gradient(ellipse 900px 500px at 30% 30%, rgba(155, 93, 229, 0.08) 0%, transparent 70%),
                 linear-gradient(180deg, var(--midnight) 0%, #0E1622 100%);
         }
-        .hero-photo { position: absolute; inset: 0; background-image: var(--hero-image, none); background-size: cover; background-position: center; opacity: 0.30; mix-blend-mode: screen; pointer-events: none; }
         .grid-bg { background-image: linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px); background-size: 64px 64px; }
         .horizon-watermark { position: absolute; opacity: 0.07; pointer-events: none; user-select: none; }
 
-        /* ===== PANEL ===== */
+        /* PANEL */
         .panel { background: linear-gradient(180deg, rgba(30, 58, 77, 0.18) 0%, rgba(15, 27, 46, 0.55) 100%); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 8px; padding: 28px; transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; }
         .panel:hover { border-color: rgba(255, 138, 61, 0.32); transform: translateY(-2px); box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4); }
+        .panel-static { transition: none; }
+        .panel-static:hover { transform: none; border-color: rgba(255, 255, 255, 0.06); box-shadow: none; }
 
-        /* ===== PROBLEM CARDS ===== */
-        .problem-card { position: relative; overflow: hidden; }
-        .problem-card::before { content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: linear-gradient(180deg, var(--sunset), transparent); opacity: 0.5; transition: opacity 0.3s ease; }
-        .problem-card:hover::before { opacity: 1; }
-        .problem-card .problem-quote { position: relative; padding-left: 1.4rem; }
-        .problem-card .problem-quote::before { content: ''; position: absolute; left: 0; top: 0.5rem; bottom: 0.5rem; width: 2px; background: rgba(255, 255, 255, 0.12); }
+        /* CONSOLE STRIP (live-data strip placeholder) */
+        .strip {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 14px;
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 4px;
+            background: rgba(11,15,20,0.6);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            letter-spacing: 0.12em;
+            color: #94A3B8;
+        }
+        .strip .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--sunset); }
+        .strip .accent { color: var(--sand); }
+        .strip .crit { color: var(--ember); }
+        .strip .warn { color: var(--sunset); }
+        .strip .ok { color: var(--seafoam); }
+        .strip .info { color: var(--dusk); }
+        .strip-row { display: flex; flex-wrap: wrap; gap: 10px; }
 
-        /* ===== PHASE CARD (Harden/Verify/Prove) ===== */
-        .phase-card { position: relative; padding: 36px 32px; border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 8px; background: linear-gradient(180deg, rgba(30, 58, 77, 0.18) 0%, rgba(15, 27, 46, 0.55) 100%); overflow: hidden; transition: border-color 0.3s ease, transform 0.3s ease; height: 100%; }
-        .phase-card:hover { border-color: rgba(255, 138, 61, 0.35); transform: translateY(-2px); }
-        .phase-card::after { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 400px 200px at 100% 0%, var(--phase-glow, rgba(255, 138, 61, 0.12)) 0%, transparent 70%); pointer-events: none; }
-        .phase-card > * { position: relative; z-index: 1; }
-        .phase-num-big { font-family: 'Space Grotesk', 'Inter', sans-serif; font-size: 56px; font-weight: 300; color: var(--phase-accent, var(--sunset)); line-height: 1; letter-spacing: -0.04em; }
-        @media (min-width: 1024px) { .phase-num-big { font-size: 72px; } }
+        /* PRODUCT-ACTION CARD (How operators use it) */
+        .action-card {
+            position: relative;
+            padding: 32px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 8px;
+            background: linear-gradient(180deg, rgba(30, 58, 77, 0.18) 0%, rgba(15, 27, 46, 0.55) 100%);
+            transition: border-color 0.3s ease, transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .action-card:hover {
+            border-color: var(--accent, rgba(255,138,61,0.4));
+            transform: translateY(-2px);
+        }
+        .action-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 16px;
+            background: rgba(11,15,20,0.7);
+            border: 1px solid var(--accent, rgba(255,138,61,0.4));
+            border-radius: 6px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            letter-spacing: 0.10em;
+            color: var(--sand);
+            width: fit-content;
+        }
+        .action-pill .icon {
+            width: 14px; height: 14px;
+            background: var(--accent, var(--sunset));
+            border-radius: 2px;
+            display: inline-block;
+        }
+        .action-body { font-size: 14px; color: #94A3B8; line-height: 1.65; flex: 1; }
+        .action-body strong { color: var(--sand); font-weight: 500; }
+        .action-meta {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 10px;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.4);
+            padding-top: 16px;
+            border-top: 1px solid rgba(255,255,255,0.06);
+        }
 
-        /* ===== INDEX MARKER ===== */
-        .index-marker { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.22em; color: rgba(255, 255, 255, 0.35); }
+        /* DIFFERENTIATOR ROW */
+        .diff-row {
+            display: grid;
+            grid-template-columns: 60px 1fr;
+            gap: 24px;
+            padding: 32px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            align-items: start;
+        }
+        .diff-row:last-child { border-bottom: none; }
+        .diff-num { font-family: 'Space Grotesk', sans-serif; font-size: 32px; font-weight: 300; color: var(--accent, var(--sunset)); line-height: 1; }
+        .diff-name { font-family: 'Space Grotesk', sans-serif; font-size: 24px; color: var(--sand); margin-bottom: 12px; letter-spacing: -0.01em; }
+        .diff-body { font-size: 15px; color: #94A3B8; line-height: 1.7; max-width: 720px; }
+        .diff-body strong { color: var(--sand); font-weight: 500; }
 
-        /* ===== STEP MARKER ===== */
-        .step-num { font-family: 'Space Grotesk', 'Inter', sans-serif; font-size: 56px; font-weight: 300; color: var(--sunset); line-height: 1; letter-spacing: -0.04em; }
-        @media (min-width: 1024px) { .step-num { font-size: 88px; } }
+        /* AGENT CHECKLIST */
+        .checklist {
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 8px;
+            background: linear-gradient(180deg, rgba(30, 58, 77, 0.18) 0%, rgba(15, 27, 46, 0.55) 100%);
+        }
+        .checklist-row {
+            display: grid;
+            grid-template-columns: 36px 280px 1fr;
+            gap: 20px;
+            padding: 18px 24px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            align-items: baseline;
+        }
+        .checklist-row:last-child { border-bottom: none; }
+        .checklist-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.22em; color: var(--dusk); }
+        .checklist-q { font-family: 'Space Grotesk', sans-serif; font-size: 15px; color: var(--sand); letter-spacing: -0.01em; }
+        .checklist-a { font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.06em; color: #94A3B8; line-height: 1.6; }
+        .checklist-a .accent { color: var(--dusk); }
+        @media (max-width: 767px) {
+            .checklist-row { grid-template-columns: 1fr; gap: 6px; padding: 16px 20px; }
+        }
 
-        /* ===== FADE-IN ===== */
-        .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease, transform 0.8s ease; }
-        .fade-in.visible { opacity: 1; transform: translateY(0); }
+        /* INDUSTRY CARD (tightened) */
+        .industry-card {
+            position: relative;
+            padding: 28px;
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 8px;
+            background: linear-gradient(180deg, rgba(30, 58, 77, 0.14) 0%, rgba(15, 27, 46, 0.5) 100%);
+            transition: border-color 0.3s ease, transform 0.3s ease;
+            display: block;
+            text-decoration: none;
+            color: inherit;
+        }
+        .industry-card:hover {
+            border-color: var(--accent, rgba(255,138,61,0.4));
+            transform: translateY(-2px);
+        }
+        .industry-card .ind-tag {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--accent, var(--sunset));
+            font-weight: 600;
+        }
+        .industry-card h3 { font-family: 'Space Grotesk', sans-serif; font-size: 22px; color: var(--sand); margin: 14px 0 14px; letter-spacing: -0.01em; }
+        .industry-card .ind-body { font-size: 14px; color: #94A3B8; line-height: 1.65; margin-bottom: 18px; }
+        .industry-card .ind-body strong { color: var(--sand); font-weight: 500; }
+        .industry-card .ind-frames { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.18em; color: var(--accent, var(--sunset)); text-transform: uppercase; }
+
+        /* SHIPS TABLE (kept from prior pass) */
+        .ships-table { border-top: 1px solid rgba(255,255,255,0.06); }
+        .ships-row { display: grid; grid-template-columns: 60px 280px 1fr; gap: 24px; align-items: baseline; padding: 24px 8px; border-bottom: 1px solid rgba(255,255,255,0.06); }
+        .ships-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.22em; color: var(--sunset); opacity: 0.7; }
+        .ships-name { font-family: 'Space Grotesk', sans-serif; font-size: 18px; color: var(--sand); letter-spacing: -0.01em; }
+        .ships-code { font-family: 'JetBrains Mono', monospace; font-size: 14px; color: var(--sunset); background: rgba(255, 138, 61, 0.06); padding: 6px 14px; border-radius: 4px; border: 1px solid rgba(255, 138, 61, 0.18); display: inline-block; width: fit-content; }
+        .ships-detail { font-size: 14px; color: #94A3B8; line-height: 1.6; }
+        .ships-detail-link { font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--sunset); transition: color 0.2s ease; }
+        .ships-detail-link:hover { color: var(--coral); }
+        @media (max-width: 767px) {
+            .ships-row { grid-template-columns: 50px 1fr; gap: 12px 18px; padding: 20px 8px; }
+            .ships-name, .ships-code, .ships-detail, .ships-detail-link { grid-column: 2; }
+        }
     </style>
 </head>
 
 <body class="bg-midnight text-gray-200 font-sans antialiased">
-    <!-- ===== NAV ===== -->
+
+    <!-- NAV -->
     <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 nav-fixed">
         <div class="max-w-7xl mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
@@ -214,8 +315,10 @@
                     <img src="/public/optimal-horizon.svg" alt="Optimal" class="h-7 w-auto">
                     <span class="font-display text-base font-medium tracking-[0.18em] text-sand">OPTIMAL</span>
                 </a>
-                <div class="hidden md:flex items-center gap-10">
+                <div class="hidden md:flex items-center gap-8">
                     <a href="/platform" class="nav-link font-mono text-xs uppercase">Platform</a>
+                    <a href="/platform#ai-security" class="nav-link font-mono text-xs uppercase">AI Security</a>
+                    <a href="/platform#harden" class="nav-link font-mono text-xs uppercase">Hardening</a>
                     <div class="nav-dropdown">
                         <button class="nav-dropdown-trigger font-mono text-xs uppercase">
                             Industries
@@ -228,18 +331,9 @@
                         </div>
                     </div>
                     <a href="/about" class="nav-link font-mono text-xs uppercase">About</a>
-                    <div class="nav-dropdown">
-                        <button class="nav-dropdown-trigger font-mono text-xs uppercase">
-                            Resources
-                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                        </button>
-                        <div class="nav-dropdown-menu">
-                            <a href="https://docs.gooptimal.io/" target="_blank">Docs</a>
-                            <a href="/blog">Blog</a>
-                            <a href="/the-optimal-way">The Optimal Way</a>
-                        </div>
-                    </div>
-                    <a href="/contact" class="btn-sunset font-mono text-xs uppercase tracking-[0.12em] px-5 py-2.5">Contact</a>
+                    <a href="https://docs.gooptimal.io/" target="_blank" class="nav-link font-mono text-xs uppercase">Docs</a>
+                    <a href="/blog" class="nav-link font-mono text-xs uppercase">Blog</a>
+                    <a href="mailto:ryan@gooptimal.io" class="btn-sunset font-mono text-xs uppercase tracking-[0.12em] px-5 py-2.5">Contact</a>
                 </div>
                 <button id="mobile-menu-btn" class="md:hidden text-gray-400 hover:text-sand">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
@@ -248,6 +342,8 @@
             <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t border-white/5 pt-4">
                 <div class="flex flex-col gap-4">
                     <a href="/platform" class="nav-link font-mono text-xs uppercase">Platform</a>
+                    <a href="/platform#ai-security" class="nav-link font-mono text-xs uppercase">AI Security</a>
+                    <a href="/platform#harden" class="nav-link font-mono text-xs uppercase">Hardening</a>
                     <div class="flex flex-col gap-2">
                         <span class="font-mono text-[10px] text-gray-500 uppercase tracking-[0.18em]">Industries</span>
                         <a href="/industries/financial-services" class="nav-link font-mono text-xs pl-3 uppercase">Financial Services</a>
@@ -255,47 +351,50 @@
                         <a href="/industries/sled" class="nav-link font-mono text-xs pl-3 uppercase">State &amp; Local Government</a>
                     </div>
                     <a href="/about" class="nav-link font-mono text-xs uppercase">About</a>
-                    <div class="flex flex-col gap-2">
-                        <span class="font-mono text-[10px] text-gray-500 uppercase tracking-[0.18em]">Resources</span>
-                        <a href="https://docs.gooptimal.io/" target="_blank" class="nav-link font-mono text-xs pl-3 uppercase">Docs</a>
-                        <a href="/blog" class="nav-link font-mono text-xs pl-3 uppercase">Blog</a>
-                        <a href="/the-optimal-way" class="nav-link font-mono text-xs pl-3 uppercase">The Optimal Way</a>
-                    </div>
-                    <a href="/contact" class="btn-sunset font-mono text-xs uppercase tracking-[0.12em] text-center mt-2">Contact</a>
+                    <a href="https://docs.gooptimal.io/" target="_blank" class="nav-link font-mono text-xs uppercase">Docs</a>
+                    <a href="/blog" class="nav-link font-mono text-xs uppercase">Blog</a>
+                    <a href="mailto:ryan@gooptimal.io" class="btn-sunset font-mono text-xs uppercase tracking-[0.12em] text-center mt-2">Contact</a>
                 </div>
             </div>
         </div>
     </nav>
 
-    <!-- ===== 1. HERO ===== -->
-    <section class="relative min-h-screen flex items-center hero-bg overflow-hidden pt-24" style="padding-top: 96px; padding-bottom: 96px;">
+    <!-- HERO -->
+    <section class="relative min-h-screen flex items-center hero-bg overflow-hidden pt-24" style="padding-top: 96px; padding-bottom: 160px;">
         <div class="absolute inset-0 grid-bg opacity-50"></div>
-        <div class="hero-photo"></div>
         <img src="/public/optimal-horizon.svg" alt="" class="horizon-watermark" style="width: 720px; height: 720px; right: -180px; top: 50%; transform: translateY(-55%);">
 
         <div class="relative z-10 max-w-7xl mx-auto px-6 w-full">
             <div class="max-w-4xl">
-                <span class="eyebrow mb-8">Operator-grade CNAPP</span>
+                <span class="eyebrow mb-8">Operator-grade · CNAPP + AI Control Plane</span>
                 <h1 class="heading-display text-4xl md:text-6xl text-sand mt-6 mb-8">
-                    CNAPP that ships<br>
-                    <span class="text-transparent bg-clip-text" style="background-image: linear-gradient(90deg, #FF8A3D 0%, #FF5252 50%, #9B5DE5 100%);">hardening evidence,</span><br>
-                    not just findings.
+                    The control plane for regulated software<br>
+                    <span class="text-transparent bg-clip-text" style="background-image: linear-gradient(90deg, #FF8A3D 0%, #FF5252 50%, #9B5DE5 100%);">and the AI agents that run on it.</span>
                 </h1>
                 <p class="text-lg md:text-xl text-gray-400 mb-10 max-w-2xl leading-relaxed">
-                    Optimal is the self-hosted, opinionated CNAPP for fintech, healthcare, and state &amp; local government. Hardens your containers to DISA STIG and CIS baselines. Ships compliance evidence as a product feature. Runs in your own Kubernetes cluster, never ours.
+                    Optimal hardens containers, host OS, and OT firmware against DISA STIG, CIS, and IEC 62443. Signs SBOM and MLBOM on every build. Watches every autonomous AI agent's identity, tools, data scope, and authority. Emits compliance evidence live, on every request. Runs in your Kubernetes cluster, never ours.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 mb-10">
-                    <a href="/contact" class="btn-sunset font-mono text-xs uppercase tracking-[0.14em]">
+                    <a href="mailto:ryan@gooptimal.io" class="btn-sunset font-mono text-xs uppercase tracking-[0.14em]">
                         Talk to an operator
                         <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
                     </a>
-                    <a href="https://docs.gooptimal.io/" target="_blank" class="btn-ghost font-mono text-xs uppercase tracking-[0.14em]">
-                        View docs
+                    <a href="https://demo.gooptimal.io" class="btn-ghost font-mono text-xs uppercase tracking-[0.14em]">
+                        See the live demo
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
                     </a>
                 </div>
-                <p class="font-mono text-xs text-gray-300 tracking-[0.22em] uppercase">
-                    Move at mission speed · Operate with evidence · Stay on channel
+                <p class="font-mono text-xs text-gray-300 tracking-[0.22em] uppercase mb-8">
+                    DISA STIG · SBOM · AI agents · Continuous evidence
                 </p>
+
+                <!-- LIVE STATUS STRIP -->
+                <div class="strip-row">
+                    <span class="strip"><span class="dot"></span>FLEET <span class="accent">847 containers</span></span>
+                    <span class="strip">STIG <span class="ok">1,184 passing</span> · <span class="warn">31 N-A</span> · <span class="crit">2 failing</span></span>
+                    <span class="strip">SBOM <span class="accent">847 signed · CycloneDX 1.6</span></span>
+                    <span class="strip">AGENTS <span class="info">47 tracked</span> · <span class="ok">12 authorities asserted</span></span>
+                </div>
             </div>
         </div>
 
@@ -314,287 +413,65 @@
         </div>
     </section>
 
-    <!-- ===== 2. STORY ===== -->
-    <section class="relative" id="story">
-        <div class="max-w-5xl mx-auto px-6 text-center">
-            <img src="/public/optimal-horizon.svg" alt="" class="w-20 h-20 mx-auto mb-12 opacity-95">
-            <h2 class="heading-display text-3xl md:text-5xl text-sand mb-8">
-                When the signal aligns,<br>
-                <span class="text-sunset">you go optimal.</span>
-            </h2>
-            <p class="text-lg md:text-xl text-gray-400 leading-relaxed max-w-3xl mx-auto">
-                The Optimal mark is the operational horizon. The moment where telemetry, evidence, risk, and operational context resolve into a clear path forward. We build infrastructure that helps teams align systems, reduce uncertainty, and execute.
-            </p>
-        </div>
-    </section>
-
-    <!-- ===== 3. PROBLEMS ===== -->
-    <section class="relative" id="problems" style="background: linear-gradient(180deg, var(--midnight) 0%, #0E1622 50%, var(--midnight) 100%);">
+    <!-- HOW OPERATORS USE IT -->
+    <section class="relative" id="how">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="mb-16 max-w-3xl flex items-end justify-between gap-8">
-                <div>
-                    <span class="eyebrow">If this sounds familiar</span>
-                    <h2 class="heading-display text-3xl md:text-5xl text-sand mt-6 mb-6">
-                        You're in the right place.
-                    </h2>
-                    <p class="text-base text-gray-400 leading-relaxed max-w-xl">
-                        Most calls with us start the same way. A team that hit a wall they didn't expect, in software they can't afford to slow down.
-                    </p>
-                </div>
-                <div class="font-mono text-[10px] text-gray-600 tracking-[0.22em] hidden md:block whitespace-nowrap">
-                    01 / 04 → 04 / 04
-                </div>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-6">
-                <!-- Problem 01: Container hardening -->
-                <article class="panel problem-card">
-                    <div class="flex items-start justify-between mb-6">
-                        <span class="font-mono text-[10px] tracking-[0.22em] text-sunset">01 / CONTAINER</span>
-                        <span class="font-mono text-[10px] text-gray-600 tracking-[0.22em]">HARDENING</span>
-                    </div>
-                    <h3 class="problem-quote font-display text-2xl text-sand mb-5">
-                        "Our containers don't stay hardened."
-                    </h3>
-                    <div class="space-y-4 text-sm text-gray-400 leading-relaxed">
-                        <p>
-                            Image scanning catches build-time issues. Production drifts. STIG and CIS gaps cause findings the team can never quite close. Hardening reads like a one-time project, not a state.
-                        </p>
-                        <p class="text-sand">
-                            <span class="text-sunset font-mono text-[10px] tracking-[0.18em] uppercase">→ How we engage:</span>
-                            Optimal applies STIG and CIS baselines pre-runtime, generates fix PRs with concrete Dockerfile and Helm patches, and detects drift continuously.
-                        </p>
-                    </div>
-                </article>
-
-                <!-- Problem 02: Compliance evidence -->
-                <article class="panel problem-card">
-                    <div class="flex items-start justify-between mb-6">
-                        <span class="font-mono text-[10px] tracking-[0.22em] text-coral">02 / COMPLIANCE</span>
-                        <span class="font-mono text-[10px] text-gray-600 tracking-[0.22em]">EVIDENCE</span>
-                    </div>
-                    <h3 class="problem-quote font-display text-2xl text-sand mb-5">
-                        "Audit time is a quarterly fire drill."
-                    </h3>
-                    <div class="space-y-4 text-sm text-gray-400 leading-relaxed">
-                        <p>
-                            SOC 2, PCI, HIPAA evidence is screenshots and spreadsheets, collected the week before the auditor arrives. Engineering writes compliance content instead of shipping.
-                        </p>
-                        <p class="text-sand">
-                            <span class="text-coral font-mono text-[10px] tracking-[0.18em] uppercase">→ How we engage:</span>
-                            Evidence emits as a product feature. SOC 2, PCI DSS v4.0.1, HIPAA, ISO 27001:2022, pulled live from operational state. Auditor reads a live feed, not a binder.
-                        </p>
-                    </div>
-                </article>
-
-                <!-- Problem 03: Findings vs fixes -->
-                <article class="panel problem-card">
-                    <div class="flex items-start justify-between mb-6">
-                        <span class="font-mono text-[10px] tracking-[0.22em] text-dusk">03 / FINDINGS</span>
-                        <span class="font-mono text-[10px] text-gray-600 tracking-[0.22em]">VS FIXES</span>
-                    </div>
-                    <h3 class="problem-quote font-display text-2xl text-sand mb-5">
-                        "Our scanner ships findings, not fixes."
-                    </h3>
-                    <div class="space-y-4 text-sm text-gray-400 leading-relaxed">
-                        <p>
-                            Vulnerability scanners are good at "you have a problem." They're bad at "here's the patch." Tickets stack up because triage isn't fix.
-                        </p>
-                        <p class="text-sand">
-                            <span class="text-dusk font-mono text-[10px] tracking-[0.18em] uppercase">→ How we engage:</span>
-                            Optimal opens fix PRs in your Git for the findings it surfaces. Engineers review and merge. They don't research.
-                        </p>
-                    </div>
-                </article>
-
-                <!-- Problem 04: SaaS vs self-host -->
-                <article class="panel problem-card">
-                    <div class="flex items-start justify-between mb-6">
-                        <span class="font-mono text-[10px] tracking-[0.22em] text-seafoam">04 / SaaS</span>
-                        <span class="font-mono text-[10px] text-gray-600 tracking-[0.22em]">VS SELF-HOST</span>
-                    </div>
-                    <h3 class="problem-quote font-display text-2xl text-sand mb-5">
-                        "We can't put cloud security in someone else's cloud."
-                    </h3>
-                    <div class="space-y-4 text-sm text-gray-400 leading-relaxed">
-                        <p>
-                            The leading CNAPPs are SaaS-only. Customer data plane sits inside the vendor's cloud account. Procurement balks. Sovereignty teams balk. So does the auditor.
-                        </p>
-                        <p class="text-sand">
-                            <span class="text-seafoam font-mono text-[10px] tracking-[0.18em] uppercase">→ How we engage:</span>
-                            Optimal is self-hosted. Helm chart, one command, your cluster. Optimal never holds your credentials. Optimal never holds your data.
-                        </p>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== 3.5 BUILT FOR ===== -->
-    <section class="relative" id="built-for" style="padding: 64px 0 80px;">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="mb-10 max-w-3xl">
-                <span class="eyebrow">Built for</span>
-                <h2 class="heading-display text-2xl md:text-3xl text-sand mt-6">
-                    Specific buyers. Specific regulators.
-                </h2>
-            </div>
-            <div class="built-for-table">
-                <a href="/industries/financial-services" class="built-for-row group">
-                    <span class="bf-tag" style="color: var(--sunset);">FINSERV</span>
-                    <span class="bf-role">Banking app sec, payments platform leads.</span>
-                    <span class="bf-frame">PCI v4.0.1 &middot; SOC 2 &middot; NYDFS</span>
-                    <svg class="bf-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-                </a>
-                <a href="/industries/healthcare" class="built-for-row group">
-                    <span class="bf-tag" style="color: var(--coral);">HEALTHCARE</span>
-                    <span class="bf-role">Health-tech CISOs, payer security teams.</span>
-                    <span class="bf-frame">HIPAA &middot; HITRUST &middot; SOC 2</span>
-                    <svg class="bf-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-                </a>
-                <a href="/industries/sled" class="built-for-row group">
-                    <span class="bf-tag" style="color: var(--dusk);">SLED</span>
-                    <span class="bf-role">State CIOs, K-12 IT directors, court CIOs.</span>
-                    <span class="bf-frame">StateRAMP &middot; CJIS &middot; FERPA</span>
-                    <svg class="bf-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <style>
-        .built-for-table { border-top: 1px solid rgba(255,255,255,0.06); }
-        .built-for-row {
-            display: grid;
-            grid-template-columns: 140px 1fr 240px 24px;
-            gap: 24px;
-            align-items: center;
-            padding: 22px 8px;
-            border-bottom: 1px solid rgba(255,255,255,0.06);
-            transition: background 0.2s ease, padding-left 0.2s ease;
-            color: #94A3B8;
-            text-decoration: none;
-        }
-        .built-for-row:hover {
-            background: rgba(255,255,255,0.02);
-            padding-left: 16px;
-        }
-        .built-for-row:hover .bf-arrow { color: var(--sunset); transform: translateX(4px); }
-        .bf-tag {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 11px;
-            letter-spacing: 0.22em;
-            text-transform: uppercase;
-            font-weight: 600;
-        }
-        .bf-role {
-            font-family: 'Space Grotesk', 'Inter', sans-serif;
-            font-size: 16px;
-            color: var(--sand);
-            letter-spacing: -0.01em;
-        }
-        .bf-frame {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 11px;
-            letter-spacing: 0.14em;
-            color: #94A3B8;
-            text-align: right;
-        }
-        .bf-arrow {
-            width: 18px;
-            height: 18px;
-            color: rgba(255,255,255,0.25);
-            transition: color 0.2s ease, transform 0.2s ease;
-        }
-        @media (max-width: 767px) {
-            .built-for-row {
-                grid-template-columns: 1fr;
-                gap: 6px;
-                padding: 18px 8px;
-            }
-            .bf-frame { text-align: left; }
-            .bf-arrow { display: none; }
-        }
-    </style>
-
-    <!-- ===== 4. HARDEN · VERIFY · PROVE ===== -->
-    <section class="relative" id="phases">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="mb-16 max-w-3xl">
-                <span class="eyebrow">The product</span>
+            <div class="mb-12 max-w-3xl">
+                <span class="eyebrow">How operators use it</span>
                 <h2 class="heading-display text-3xl md:text-5xl text-sand mt-6 mb-6">
-                    Harden. Verify. Prove.<br>
-                    <span class="text-gray-500">Three phases, one product.</span>
+                    Every finding has an action.<br>
+                    <span class="text-gray-500">Not just a row.</span>
                 </h2>
                 <p class="text-base text-gray-400 leading-relaxed max-w-xl">
-                    Same codebase. Same security graph. Same audit trail. One SKU. No tiering, no asterisks.
+                    The buttons below are the ones in the product today. The Recall Agent drafts, the Hardening Agent proposes, the artifacts ship signed. Operator approves. Audit trail records.
                 </p>
             </div>
 
             <div class="grid md:grid-cols-3 gap-6">
-                <article class="phase-card" style="--phase-accent: #FF8A3D; --phase-glow: rgba(255, 138, 61, 0.12);">
-                    <div class="flex items-center justify-between mb-6">
-                        <span class="font-mono text-[10px] tracking-[0.24em] text-sunset uppercase">// Harden</span>
-                        <span class="font-mono text-[10px] text-gray-600 tracking-[0.22em]">01 / 03</span>
-                    </div>
-                    <div class="phase-num-big mb-6">01</div>
-                    <h3 class="heading-display text-2xl text-sand mb-4">Baselines applied pre-runtime.</h3>
-                    <p class="text-sm text-gray-400 leading-relaxed mb-6">
-                        DISA STIG and CIS profiles applied to your container images before they ship. Findings come back as fix PRs against your Git, with concrete Dockerfile and Helm patches.
+                <article class="action-card" style="--accent: #FF8A3D;">
+                    <span class="action-pill">
+                        <span class="icon"></span>
+                        Propose remediation plan
+                    </span>
+                    <p class="action-body">
+                        <strong>Every finding has an action.</strong> Recall Agent (Claude Opus 4.7) drafts a plan against KEV-listed criticals and SLA breaches. Operator approves. Orchestration Engine executes against Hub, Spoke, and Edge Collectors.
                     </p>
-                    <p class="text-sm text-sand leading-relaxed">
-                        Harden your own images. No distro lock-in.
-                    </p>
+                    <div class="action-meta">// 24h critical · 7d high · 60d medium · 180d low</div>
                 </article>
 
-                <article class="phase-card" style="--phase-accent: #FF5252; --phase-glow: rgba(255, 82, 82, 0.12);">
-                    <div class="flex items-center justify-between mb-6">
-                        <span class="font-mono text-[10px] tracking-[0.24em] text-coral uppercase">// Verify</span>
-                        <span class="font-mono text-[10px] text-gray-600 tracking-[0.22em]">02 / 03</span>
-                    </div>
-                    <div class="phase-num-big mb-6">02</div>
-                    <h3 class="heading-display text-2xl text-sand mb-4">Continuous scanning, continuous truth.</h3>
-                    <p class="text-sm text-gray-400 leading-relaxed mb-6">
-                        Containers, cloud config, runtime workloads, secrets, SBOM. An attack-path graph surfaces toxic combinations (critical CVE × internet-exposed × admin IAM) in the hour, not the quarter. Drift detected in production.
+                <article class="action-card" style="--accent: #FF5252;">
+                    <span class="action-pill">
+                        <span class="icon"></span>
+                        Generate STIG fix
+                    </span>
+                    <p class="action-body">
+                        Failing DISA rule, Hardening Agent drafts a fix plan against the smallest possible change set. Dockerfile patch, Helm values delta, or host config diff. <strong>Fix text verbatim from DISA</strong>, plus operator actions inline.
                     </p>
-                    <p class="text-sm text-sand leading-relaxed">
-                        Drift surfaces as a finding, not a surprise.
-                    </p>
+                    <div class="action-meta">// April 2026 library · XCCDF per-rule · pass / fail / N-A</div>
                 </article>
 
-                <article class="phase-card" style="--phase-accent: #9B5DE5; --phase-glow: rgba(155, 93, 229, 0.12);">
-                    <div class="flex items-center justify-between mb-6">
-                        <span class="font-mono text-[10px] tracking-[0.24em] text-dusk uppercase">// Prove</span>
-                        <span class="font-mono text-[10px] text-gray-600 tracking-[0.22em]">03 / 03</span>
-                    </div>
-                    <div class="phase-num-big mb-6">03</div>
-                    <h3 class="heading-display text-2xl text-sand mb-4">Evidence as a product feature.</h3>
-                    <p class="text-sm text-gray-400 leading-relaxed mb-6">
-                        Compliance evidence emits live. SOC 2, PCI DSS v4.0.1, HIPAA, ISO 27001:2022, plus shared responsibility matrix and incident notification procedure. Auditor reads a live feed, not a binder.
+                <article class="action-card" style="--accent: #9B5DE5;">
+                    <span class="action-pill">
+                        <span class="icon"></span>
+                        Live SBOM / MLBOM
+                    </span>
+                    <p class="action-body">
+                        <strong>Signed CycloneDX 1.6</strong> for every container, and an MLBOM for every on-prem AI model. First-class artifacts, not a side report. Click the artifact, see the manifest, ship to the auditor.
                     </p>
-                    <p class="text-sm text-sand leading-relaxed">
-                        Audit time stops being a fire drill.
-                    </p>
+                    <div class="action-meta">// per-build · per-image · per-model · queryable</div>
                 </article>
-            </div>
-
-            <div class="mt-10 text-center">
-                <a href="/platform" class="font-mono text-xs uppercase tracking-[0.18em] text-sunset hover:text-coral inline-flex items-center gap-2 transition-colors">
-                    See the full platform
-                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-                </a>
             </div>
         </div>
     </section>
 
-    <!-- ===== 5. WHY MISSION TEAMS CHOOSE OPTIMAL ===== -->
-    <section class="relative" id="why" style="background: linear-gradient(180deg, var(--midnight) 0%, #0E1622 50%, var(--midnight) 100%);">
+    <!-- WHAT MAKES US DIFFERENT -->
+    <section class="relative" id="different" style="background: linear-gradient(180deg, var(--midnight) 0%, #0E1622 50%, var(--midnight) 100%);">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="mb-16 max-w-3xl flex items-end justify-between gap-8">
+            <div class="mb-12 max-w-3xl flex items-end justify-between gap-8">
                 <div>
-                    <span class="eyebrow">Why mission teams choose Optimal</span>
-                    <h2 class="heading-display text-3xl md:text-5xl text-sand mt-6">
-                        Three reasons it's worth a conversation.
+                    <span class="eyebrow">What makes us different</span>
+                    <h2 class="heading-display text-3xl md:text-5xl text-sand mt-6 mb-6">
+                        Three things competitors don't ship together.
                     </h2>
                 </div>
                 <div class="font-mono text-[10px] text-gray-600 tracking-[0.22em] hidden md:block whitespace-nowrap">
@@ -602,335 +479,166 @@
                 </div>
             </div>
 
-            <div class="grid lg:grid-cols-3 gap-6">
-                <article class="panel">
-                    <div class="flex items-center justify-between mb-8">
-                        <div class="w-10 h-10 text-sunset">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-                            </svg>
+            <div>
+                <div class="diff-row" style="--accent: #FF8A3D;">
+                    <div class="diff-num">01</div>
+                    <div>
+                        <h3 class="diff-name">DISA STIG hardening, not just CIS.</h3>
+                        <p class="diff-body">
+                            Bundled XCCDF library, per-rule pass / fail / N-A from the Spoke scanner, <strong>fix text verbatim from DISA</strong>, plus operator actions inline. April 2026 release: Amazon Linux 2023, Kubernetes, Apache HTTPD 2.4 Unix, Microsoft Windows Server 2022. CIS and IEC 62443 ride the same channel.
+                        </p>
+                        <div class="strip-row mt-5">
+                            <span class="strip">STIG <span class="ok">1,184 passing</span></span>
+                            <span class="strip"><span class="warn">31 N-A</span></span>
+                            <span class="strip"><span class="crit">2 failing</span></span>
+                            <span class="strip">CIS <span class="accent">v8 IG-2</span></span>
+                            <span class="strip">IEC 62443 <span class="accent">3-3 SL2</span></span>
                         </div>
-                        <span class="font-mono text-[10px] text-gray-600 tracking-[0.22em]">01 / 03</span>
                     </div>
-                    <h3 class="font-display text-2xl text-sand mb-4">Move at mission speed.</h3>
-                    <p class="text-sm text-gray-400 leading-relaxed">
-                        Cycle time matters. Optimal is built so hardening, scanning, and audit-readiness move together, not in series. Teams ship without waiting on the binder.
-                    </p>
-                </article>
+                </div>
 
-                <article class="panel">
-                    <div class="flex items-center justify-between mb-8">
-                        <div class="w-10 h-10 text-coral">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z"/>
-                            </svg>
+                <div class="diff-row" style="--accent: #9B5DE5;">
+                    <div class="diff-num" style="color: var(--dusk);">02</div>
+                    <div>
+                        <h3 class="diff-name">AI agent control plane.</h3>
+                        <p class="diff-body">
+                            Every autonomous agent's <strong>identity, tools, data scopes, memory scope, authority, and handoff edges</strong>. Full audit trail. Forensics on every action. Optimal already runs the model side (inventory, guardrails, MLBOM); Agents adds the orchestration layer above it. The category is forming around this; we ship it today.
+                        </p>
+                        <div class="strip-row mt-5">
+                            <span class="strip">AGENTS <span class="info">47 tracked</span></span>
+                            <span class="strip">AUTHORITIES <span class="ok">12 asserted</span></span>
+                            <span class="strip">HANDOFFS <span class="accent">1,204 / 24h</span></span>
+                            <span class="strip"><span class="crit">3 blocked</span> · <span class="info">prompt injection</span></span>
                         </div>
-                        <span class="font-mono text-[10px] text-gray-600 tracking-[0.22em]">02 / 03</span>
                     </div>
-                    <h3 class="font-display text-2xl text-sand mb-4">Operate with evidence.</h3>
-                    <p class="text-sm text-gray-400 leading-relaxed">
-                        Signals, sign-offs, and artifacts live where teams already work. The audit trail comes out as a side effect of how you ship. Not a special project.
-                    </p>
-                </article>
+                </div>
 
-                <article class="panel">
-                    <div class="flex items-center justify-between mb-8">
-                        <div class="w-10 h-10 text-dusk">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/>
-                            </svg>
+                <div class="diff-row" style="--accent: #22D3EE;">
+                    <div class="diff-num" style="color: var(--seafoam);">03</div>
+                    <div>
+                        <h3 class="diff-name">Evidence as a product feature.</h3>
+                        <p class="diff-body">
+                            Live HTML and JSON artifacts at <code class="text-sand text-sm">compliance.gooptimal.io</code>, <strong>re-emitted on every request from observed fleet state</strong>. Branded for the customer's audit. SOC 2, PCI DSS v4.0.1, HIPAA, ISO 27001, FedRAMP 20x KSI, IEC 62443. Not a quarterly export from a third-party SaaS.
+                        </p>
+                        <div class="strip-row mt-5">
+                            <span class="strip"><span class="dot" style="background: var(--seafoam);"></span>LAST EMIT <span class="ok">12s ago</span></span>
+                            <span class="strip">SOC 2 · PCI v4 · HIPAA · ISO · KSI · 62443</span>
+                            <span class="strip"><span class="accent">live feed</span> · no screenshots</span>
                         </div>
-                        <span class="font-mono text-[10px] text-gray-600 tracking-[0.22em]">03 / 03</span>
                     </div>
-                    <h3 class="font-display text-2xl text-sand mb-4">Stay on channel.</h3>
-                    <p class="text-sm text-gray-400 leading-relaxed">
-                        Security, platform, and program teams share one operational picture. Optimal keeps everyone on the same channel. Code to runtime. IDE to cluster.
-                    </p>
-                </article>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- ===== 6. THE OPTIMAL WAY ===== -->
-    <section class="relative" id="approach">
+    <!-- FOR AI-FORWARD TEAMS -->
+    <section class="relative" id="ai-forward">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="mb-16 max-w-3xl flex items-end justify-between gap-8">
-                <div>
-                    <span class="eyebrow">The Optimal Way</span>
-                    <h2 class="heading-display text-3xl md:text-5xl text-sand mt-6">
-                        Connect. Observe. Authorize.
-                    </h2>
-                </div>
-                <div class="font-mono text-[10px] text-gray-600 tracking-[0.22em] hidden md:block whitespace-nowrap">
-                    01 / 03 → 03 / 03
-                </div>
-            </div>
-
-            <div class="grid lg:grid-cols-3 gap-6">
-                <article class="panel">
-                    <div class="flex items-baseline gap-6 mb-6">
-                        <div class="step-num">01</div>
-                        <span class="index-marker uppercase">Connect</span>
-                    </div>
-                    <h3 class="font-display text-2xl text-sand mb-4">Plug into what teams already run.</h3>
-                    <p class="text-sm text-gray-400 leading-relaxed">
-                        Source control, CI/CD, registries, runtime. Optimal meets teams where they are. No platform-shaped reorgs. No rip-and-replace.
-                    </p>
-                </article>
-
-                <article class="panel">
-                    <div class="flex items-baseline gap-6 mb-6">
-                        <div class="step-num" style="color: var(--coral);">02</div>
-                        <span class="index-marker uppercase">Observe</span>
-                    </div>
-                    <h3 class="font-display text-2xl text-sand mb-4">Continuous signal, end to end.</h3>
-                    <p class="text-sm text-gray-400 leading-relaxed">
-                        Telemetry from delivery, runtime, and compliance flowing into a single operational picture. Teams stop assembling reports and start making decisions.
-                    </p>
-                </article>
-
-                <article class="panel">
-                    <div class="flex items-baseline gap-6 mb-6">
-                        <div class="step-num" style="color: var(--dusk);">03</div>
-                        <span class="index-marker uppercase">Authorize</span>
-                    </div>
-                    <h3 class="font-display text-2xl text-sand mb-4">Evidence-backed decisions in real time.</h3>
-                    <p class="text-sm text-gray-400 leading-relaxed">
-                        Audit-readiness stops being a yearly event. Decisions move with the system, not against it. The binder writes itself.
-                    </p>
-                </article>
-            </div>
-
-            <div class="mt-10 text-center">
-                <a href="/the-optimal-way" class="font-mono text-xs uppercase tracking-[0.18em] text-sunset hover:text-coral inline-flex items-center gap-2 transition-colors">
-                    Read the engagement model
-                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== 7. IMPACT MODEL ===== -->
-    <section class="relative" id="impact" style="background: linear-gradient(180deg, var(--midnight) 0%, #0E1622 50%, var(--midnight) 100%);">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="mb-16 max-w-3xl">
-                <span class="eyebrow">What makes us different</span>
+            <div class="mb-12 max-w-3xl">
+                <span class="eyebrow eyebrow-dusk">For AI-forward teams</span>
                 <h2 class="heading-display text-3xl md:text-5xl text-sand mt-6 mb-6">
-                    Most teams measure outputs.<br>
-                    <span class="text-sunset">We focus on outcomes.</span>
+                    The agent control plane.<br>
+                    <span class="text-gray-500">Identity. Authority. Audit.</span>
                 </h2>
-                <p class="text-base text-gray-400 leading-relaxed">
-                    The work doesn't end at "shipped." Outputs become outcomes when they change behavior in the real environment, and outcomes become impact when they change what the mission can do. We build for the part most stacks ignore.
+                <p class="text-base text-gray-400 leading-relaxed max-w-2xl">
+                    The market is converging on a category sometimes called identity-aware agent harness, agent runtime security, AI control plane, agentic identity, or AI workflow governance. The label varies. The checklist doesn't.
+                </p>
+                <p class="text-base text-sand leading-relaxed max-w-2xl mt-4">
+                    Optimal already runs the model side: inventory, guardrails, MLBOM, prompt-injection and exfiltration screening. Agents adds the orchestration layer above it. The checklist below is what Optimal answers, per agent, today.
                 </p>
             </div>
 
-            <div class="panel vs-panel" style="padding: 56px 32px 48px;">
-                <img src="/public/optimal-horizon.svg" alt="" class="vs-watermark" aria-hidden="true">
-
-                <div class="vs-track">
-                    <svg class="vs-trace" viewBox="0 0 1000 80" preserveAspectRatio="none" aria-hidden="true">
-                        <defs>
-                            <linearGradient id="vs-trace-grad" x1="0" y1="0" x2="1" y2="0">
-                                <stop offset="0%" stop-color="#FF8A3D" stop-opacity="0.0"/>
-                                <stop offset="10%" stop-color="#FF8A3D" stop-opacity="0.7"/>
-                                <stop offset="40%" stop-color="#FF5252" stop-opacity="0.7"/>
-                                <stop offset="80%" stop-color="#9B5DE5" stop-opacity="0.7"/>
-                                <stop offset="100%" stop-color="#9B5DE5" stop-opacity="0.0"/>
-                            </linearGradient>
-                        </defs>
-                        <path class="vs-trace-line" d="M 20 40 Q 200 10 400 40 T 980 40" fill="none" stroke="url(#vs-trace-grad)" stroke-width="1.25" stroke-linecap="round"/>
-                        <path class="vs-trace-pulse" d="M 20 40 Q 200 10 400 40 T 980 40" fill="none" stroke="#FF8A3D" stroke-width="2" stroke-linecap="round" stroke-dasharray="6 12"/>
-                    </svg>
-
-                    <div class="grid grid-cols-2 md:grid-cols-5 gap-6 md:gap-2 relative">
-                        <div class="vs-stage" style="--accent: #FFB347;">
-                            <div class="vs-num">01</div>
-                            <div class="vs-illo">
-                                <svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linejoin="round" stroke-linecap="round">
-                                    <path d="M40 14 L66 26 L40 38 L14 26 Z" opacity="0.95"/>
-                                    <path d="M40 14 L40 38" opacity="0.55"/>
-                                    <path d="M40 38 L40 50 L66 38 L66 26" opacity="0.4"/>
-                                    <path d="M40 38 L14 26 L14 38 L40 50" opacity="0.4"/>
-                                    <path d="M22 50 L58 50 L58 56 L22 56 Z" opacity="0.7"/>
-                                    <path d="M28 56 L52 56 L52 62 L28 62 Z" opacity="0.45"/>
-                                    <circle cx="40" cy="14" r="1.6" fill="currentColor" opacity="0.9"/>
-                                </svg>
-                            </div>
-                            <div class="vs-label">Resources</div>
-                            <div class="vs-sublabel">People, time, budget</div>
-                        </div>
-
-                        <div class="vs-stage" style="--accent: #FF8A3D;">
-                            <div class="vs-num">02</div>
-                            <div class="vs-illo">
-                                <svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M14 22 Q40 6 66 22" opacity="0.55"/>
-                                    <path d="M14 22 Q22 46 40 56" opacity="0.55"/>
-                                    <path d="M66 22 Q58 46 40 56" opacity="0.55"/>
-                                    <circle cx="14" cy="22" r="3.5" fill="#0B0F14"/>
-                                    <circle cx="14" cy="22" r="3.5"/>
-                                    <circle cx="66" cy="22" r="3.5" fill="#0B0F14"/>
-                                    <circle cx="66" cy="22" r="3.5"/>
-                                    <circle cx="40" cy="56" r="3.5" fill="#0B0F14"/>
-                                    <circle cx="40" cy="56" r="3.5"/>
-                                </svg>
-                            </div>
-                            <div class="vs-label">Activities</div>
-                            <div class="vs-sublabel">The work teams do</div>
-                        </div>
-
-                        <div class="vs-stage" style="--accent: #F25E3A;">
-                            <div class="vs-num">03</div>
-                            <div class="vs-illo">
-                                <svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M16 22 L40 12 L64 22 L40 32 Z"/>
-                                    <path d="M16 22 L16 54 L40 64" opacity="0.7"/>
-                                    <path d="M64 22 L64 54 L40 64" opacity="0.55"/>
-                                    <path d="M40 32 L40 64" opacity="0.4"/>
-                                </svg>
-                            </div>
-                            <div class="vs-label">Outputs</div>
-                            <div class="vs-sublabel">A release, a fix PR</div>
-                        </div>
-
-                        <div class="vs-stage vs-focus" style="--accent: #FF5252;">
-                            <div class="vs-num">04</div>
-                            <div class="vs-illo">
-                                <svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round">
-                                    <circle cx="40" cy="40" r="22" opacity="0.18"/>
-                                    <circle cx="40" cy="40" r="15" opacity="0.32"/>
-                                    <circle cx="40" cy="40" r="8" opacity="0.6"/>
-                                    <circle cx="40" cy="40" r="2.4" fill="currentColor"/>
-                                    <path d="M40 40 L62 18" stroke-dasharray="2 3" opacity="0.7"/>
-                                </svg>
-                            </div>
-                            <div class="vs-label">Outcomes</div>
-                            <div class="vs-sublabel">What people do with it</div>
-                        </div>
-
-                        <div class="vs-stage vs-focus" style="--accent: #9B5DE5;">
-                            <div class="vs-num">05</div>
-                            <div class="vs-illo">
-                                <svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round">
-                                    <path d="M16 56 L64 56" opacity="0.7"/>
-                                    <path d="M22 56 A18 18 0 0 1 58 56" opacity="0.95"/>
-                                    <path d="M28 56 A12 12 0 0 1 52 56" opacity="0.7"/>
-                                    <path d="M34 56 A6 6 0 0 1 46 56" opacity="0.45"/>
-                                    <path d="M40 32 L40 22"/>
-                                </svg>
-                            </div>
-                            <div class="vs-label">Impact</div>
-                            <div class="vs-sublabel">What it enables next</div>
-                        </div>
-                    </div>
+            <div class="checklist">
+                <div class="checklist-row">
+                    <span class="checklist-num">01</span>
+                    <span class="checklist-q">Who owns it?</span>
+                    <span class="checklist-a"><span class="accent">Owner identity asserted at registration.</span> Tied to a human or service principal. Recorded on every action.</span>
                 </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-14 pt-8 border-t border-white/5 vs-annotations">
-                    <div>
-                        <div class="font-mono text-[10px] text-gray-500 tracking-[0.22em] uppercase mb-2">// Where execution teams tend to focus</div>
-                        <div class="font-display text-base text-gray-400">Resources → Activities → Outputs</div>
-                    </div>
-                    <div>
-                        <div class="font-mono text-[10px] text-sunset tracking-[0.22em] uppercase mb-2">// Where Optimal focuses</div>
-                        <div class="font-display text-base text-sand">Outcomes → Impact</div>
-                    </div>
+                <div class="checklist-row">
+                    <span class="checklist-num">02</span>
+                    <span class="checklist-q">What can it access?</span>
+                    <span class="checklist-a"><span class="accent">Data scope declared up front.</span> Optimal denies any read or write outside the declared scope. Logged.</span>
                 </div>
+                <div class="checklist-row">
+                    <span class="checklist-num">03</span>
+                    <span class="checklist-q">What tools can it use?</span>
+                    <span class="checklist-a"><span class="accent">Explicit tool allowlist.</span> MCP servers, HTTP endpoints, shell commands. Anything off-list is refused at the gateway.</span>
+                </div>
+                <div class="checklist-row">
+                    <span class="checklist-num">04</span>
+                    <span class="checklist-q">Which version is running?</span>
+                    <span class="checklist-a"><span class="accent">Model + prompt + tool revision pinned.</span> Drift triggers a finding. Rollback is one operator action.</span>
+                </div>
+                <div class="checklist-row">
+                    <span class="checklist-num">05</span>
+                    <span class="checklist-q">Whose authority does it act under?</span>
+                    <span class="checklist-a"><span class="accent">Delegated-authority graph.</span> Every action chains back to a human approver, named, with timestamp.</span>
+                </div>
+                <div class="checklist-row">
+                    <span class="checklist-num">06</span>
+                    <span class="checklist-q">What memory can it read or write?</span>
+                    <span class="checklist-a"><span class="accent">Memory scope per agent.</span> Read-only, append-only, or scoped key-value. Optimal denies cross-agent memory access unless declared.</span>
+                </div>
+                <div class="checklist-row">
+                    <span class="checklist-num">07</span>
+                    <span class="checklist-q">Which other agents can it hand work to?</span>
+                    <span class="checklist-a"><span class="accent">Handoff-edge graph.</span> Optimal blocks any handoff outside the declared edge set. Forensics trace every handoff in the fleet.</span>
+                </div>
+            </div>
+
+            <div class="mt-10 flex flex-wrap items-center gap-6">
+                <span class="strip"><span class="dot" style="background: var(--dusk);"></span>NIST AI RMF</span>
+                <span class="strip"><span class="dot" style="background: var(--dusk);"></span>ISO/IEC 42001</span>
+                <span class="strip"><span class="dot" style="background: var(--dusk);"></span>OWASP LLM Top 10</span>
             </div>
         </div>
     </section>
 
-    <style>
-        .vs-panel { position: relative; overflow: hidden; }
-        .vs-watermark { position: absolute; width: 480px; height: 480px; right: -160px; top: 50%; transform: translateY(-50%); opacity: 0.04; pointer-events: none; user-select: none; }
-        .vs-track { position: relative; padding-top: 12px; }
-        .vs-trace { position: absolute; top: 92px; left: 0; right: 0; width: 100%; height: 80px; pointer-events: none; display: none; }
-        @media (min-width: 768px) { .vs-trace { display: block; } }
-        .vs-trace-line { stroke-dasharray: 1500; stroke-dashoffset: 1500; }
-        .vs-trace-pulse { opacity: 0; }
-        .vs-panel.is-visible .vs-trace-line { animation: vs-draw 1.6s 0.2s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
-        .vs-panel.is-visible .vs-trace-pulse { animation: vs-pulse 4s 1.6s linear infinite; }
-        @keyframes vs-draw { to { stroke-dashoffset: 0; } }
-        @keyframes vs-pulse { 0% { opacity: 0; stroke-dashoffset: 0; } 10% { opacity: 0.55; } 90% { opacity: 0.55; } 100% { opacity: 0; stroke-dashoffset: -200; } }
-        .vs-stage { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 14px; padding: 18px 12px; border-radius: 10px; position: relative; opacity: 0; transform: translateY(16px); transition: opacity 0.6s ease, transform 0.6s ease, background 0.3s ease; }
-        .vs-panel.is-visible .vs-stage { opacity: 1; transform: translateY(0); }
-        .vs-panel.is-visible .vs-stage:nth-child(1) { transition-delay: 0.05s; }
-        .vs-panel.is-visible .vs-stage:nth-child(2) { transition-delay: 0.20s; }
-        .vs-panel.is-visible .vs-stage:nth-child(3) { transition-delay: 0.35s; }
-        .vs-panel.is-visible .vs-stage:nth-child(4) { transition-delay: 0.55s; }
-        .vs-panel.is-visible .vs-stage:nth-child(5) { transition-delay: 0.75s; }
-        .vs-stage:hover { background: rgba(255, 255, 255, 0.025); }
-        .vs-stage:hover .vs-illo { transform: translateY(-3px); }
-        .vs-num { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.24em; color: rgba(255, 255, 255, 0.35); }
-        .vs-illo { position: relative; width: 96px; height: 96px; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--accent, var(--sunset)); background: radial-gradient(ellipse at 50% 110%, color-mix(in srgb, var(--accent, var(--sunset)) 18%, transparent) 0%, transparent 70%), linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, rgba(11, 15, 20, 0.5) 100%); border: 1px solid rgba(255, 255, 255, 0.08); transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
-        .vs-illo svg { width: 60%; height: 60%; }
-        .vs-label { font-family: 'Space Grotesk', 'Inter', sans-serif; font-size: 16px; color: var(--sand); letter-spacing: -0.01em; }
-        .vs-sublabel { font-size: 12px; color: #94A3B8; max-width: 160px; line-height: 1.4; }
-        .vs-focus .vs-label, .vs-focus .vs-sublabel { color: var(--sand); }
-        .vs-focus .vs-illo { box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent, var(--sunset)) 40%, transparent), 0 12px 32px color-mix(in srgb, var(--accent, var(--sunset)) 18%, transparent); }
-        .vs-focus .vs-num { color: var(--accent); }
-        .vs-annotations { opacity: 0; transform: translateY(8px); transition: opacity 0.6s ease, transform 0.6s ease; transition-delay: 1.0s; }
-        .vs-panel.is-visible .vs-annotations { opacity: 1; transform: translateY(0); }
-        @media (max-width: 767px) { .vs-illo { width: 80px; height: 80px; } }
-    </style>
-
-    <script>
-        (function() {
-            const vsPanel = document.querySelector('.vs-panel');
-            if (!vsPanel) return;
-            const reveal = new IntersectionObserver((entries) => {
-                entries.forEach(e => {
-                    if (e.isIntersecting) {
-                        vsPanel.classList.add('is-visible');
-                        reveal.disconnect();
-                    }
-                });
-            }, { threshold: 0.25 });
-            reveal.observe(vsPanel);
-        })();
-    </script>
-
-    <!-- ===== 8. INDUSTRIES PREVIEW ===== -->
-    <section class="relative" id="industries">
+    <!-- INDUSTRIES -->
+    <section class="relative" id="industries" style="background: linear-gradient(180deg, var(--midnight) 0%, #0E1622 50%, var(--midnight) 100%);">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="mb-16 max-w-3xl">
+            <div class="mb-12 max-w-3xl">
                 <span class="eyebrow">Industries</span>
-                <h2 class="heading-display text-3xl md:text-5xl text-sand mt-6">
+                <h2 class="heading-display text-3xl md:text-5xl text-sand mt-6 mb-6">
                     For teams that cannot afford uncertainty.
                 </h2>
             </div>
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <a href="/industries/financial-services" class="panel block group">
-                    <span class="font-mono text-[10px] text-gray-500 tracking-[0.18em] uppercase">// 01</span>
-                    <h3 class="font-display text-xl text-sand mt-4 mb-3 group-hover:text-sunset transition-colors">Financial Services</h3>
-                    <p class="text-sm text-gray-400 leading-relaxed mb-4">
-                        Banks, payment processors, fintech SaaS. PCI DSS v4.0.1, SOC 2, NYDFS Part 500. Continuous hardening of the containers your card data flows through.
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <a href="/industries/financial-services" class="industry-card" style="--accent: #FF8A3D;">
+                    <span class="ind-tag">// 01 · FINSERV</span>
+                    <h3>Financial Services</h3>
+                    <p class="ind-body">
+                        Your QSA arrives next quarter and asks for continuous evidence of CDE hardening. Your container scan reports are stale and live in three separate tools. <strong>Optimal ships the evidence as a product feature</strong>, refreshed on every request, branded for your audit. PCI DSS v4.0.1 ready out of the box.
                     </p>
-                    <span class="font-mono text-[10px] uppercase tracking-[0.18em] text-sunset">PCI · SOC 2 · NYDFS</span>
+                    <div class="ind-frames">PCI v4.0.1 · SOC 2 · NYDFS</div>
                 </a>
-                <a href="/industries/healthcare" class="panel block group">
-                    <span class="font-mono text-[10px] text-gray-500 tracking-[0.18em] uppercase">// 02</span>
-                    <h3 class="font-display text-xl text-sand mt-4 mb-3 group-hover:text-sunset transition-colors">Healthcare</h3>
-                    <p class="text-sm text-gray-400 leading-relaxed mb-4">
-                        Providers, payers, health-tech SaaS. HIPAA Security Rule, SOC 2, HITRUST. Audit logs your auditor can actually read, emitted as a product feature.
+
+                <a href="/industries/healthcare" class="industry-card" style="--accent: #FF5252;">
+                    <span class="ind-tag">// 02 · HEALTHCARE</span>
+                    <h3>Healthcare</h3>
+                    <p class="ind-body">
+                        OCR investigates a breach and your audit logs are scattered across CloudWatch, Splunk, and a screenshot folder. <strong>Optimal emits HIPAA Technical Safeguards evidence as a live feed</strong> your auditor reads directly, refreshed on every request. HITRUST and SOC 2 ride the same channel.
                     </p>
-                    <span class="font-mono text-[10px] uppercase tracking-[0.18em] text-coral">HIPAA · SOC 2 · HITRUST</span>
+                    <div class="ind-frames">HIPAA · HITRUST · SOC 2</div>
                 </a>
-                <a href="/industries/sled" class="panel block group">
-                    <span class="font-mono text-[10px] text-gray-500 tracking-[0.18em] uppercase">// 03</span>
-                    <h3 class="font-display text-xl text-sand mt-4 mb-3 group-hover:text-sunset transition-colors">State &amp; Local Government</h3>
-                    <p class="text-sm text-gray-400 leading-relaxed mb-4">
-                        State agencies, K-12, higher ed, court systems. StateRAMP, CJIS, FERPA. Continuous proof that vendor software meets state policy.
+
+                <a href="/industries/sled" class="industry-card" style="--accent: #9B5DE5;">
+                    <span class="ind-tag">// 03 · SLED</span>
+                    <h3>State &amp; Local Government</h3>
+                    <p class="ind-body">
+                        Your CJIS auditor reviews every system touching criminal-justice data and asks for continuous proof your vendors meet state policy. <strong>Optimal scans containers and cloud config against StateRAMP, CJIS v6.0, and FERPA-aligned access patterns.</strong> Evidence emits live, branded for your agency.
                     </p>
-                    <span class="font-mono text-[10px] uppercase tracking-[0.18em] text-dusk">StateRAMP · CJIS · FERPA</span>
+                    <div class="ind-frames">StateRAMP · CJIS v6.0 · FERPA</div>
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- ===== 8.5 HOW IT SHIPS ===== -->
-    <section class="relative" id="ships" style="background: linear-gradient(180deg, var(--midnight) 0%, #0E1622 50%, var(--midnight) 100%);">
+    <!-- HOW IT SHIPS -->
+    <section class="relative" id="ships">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="mb-16 max-w-3xl flex items-end justify-between gap-8">
+            <div class="mb-12 max-w-3xl flex items-end justify-between gap-8">
                 <div>
                     <span class="eyebrow">How it ships</span>
                     <h2 class="heading-display text-3xl md:text-5xl text-sand mt-6 mb-6">
@@ -953,96 +661,42 @@
                 </div>
                 <div class="ships-row">
                     <span class="ships-num">02</span>
-                    <span class="ships-name">Marketplace-billed.</span>
-                    <span class="ships-detail">AWS &middot; GCP. No annual minimum.</span>
+                    <span class="ships-name">Hub + Spoke + Edge.</span>
+                    <span class="ships-detail">Hub orchestrates. Spokes scan containers and host OS. Edge Collectors reach OT and IoT firmware.</span>
                 </div>
                 <div class="ships-row">
                     <span class="ships-num">03</span>
                     <span class="ships-name">One SKU. No tiering.</span>
-                    <span class="ships-detail">Same codebase, every customer.</span>
+                    <span class="ships-detail">Same codebase, every customer. AWS and GCP Marketplace. No annual minimum.</span>
                 </div>
                 <div class="ships-row">
                     <span class="ships-num">04</span>
                     <span class="ships-name">Founder-led engagement.</span>
-                    <a href="/contact" class="ships-detail-link">Talk to an operator &rarr;</a>
+                    <a href="mailto:ryan@gooptimal.io" class="ships-detail-link">Talk to an operator &rarr;</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <style>
-        .ships-table { border-top: 1px solid rgba(255,255,255,0.06); }
-        .ships-row {
-            display: grid;
-            grid-template-columns: 60px 280px 1fr;
-            gap: 24px;
-            align-items: baseline;
-            padding: 24px 8px;
-            border-bottom: 1px solid rgba(255,255,255,0.06);
-        }
-        .ships-num {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 11px;
-            letter-spacing: 0.22em;
-            color: var(--sunset);
-            opacity: 0.7;
-        }
-        .ships-name {
-            font-family: 'Space Grotesk', 'Inter', sans-serif;
-            font-size: 18px;
-            color: var(--sand);
-            letter-spacing: -0.01em;
-        }
-        .ships-code {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 14px;
-            color: var(--sunset);
-            background: rgba(255, 138, 61, 0.06);
-            padding: 6px 14px;
-            border-radius: 4px;
-            border: 1px solid rgba(255, 138, 61, 0.18);
-            display: inline-block;
-            width: fit-content;
-        }
-        .ships-detail {
-            font-size: 14px;
-            color: #94A3B8;
-            line-height: 1.6;
-        }
-        .ships-detail-link {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 12px;
-            letter-spacing: 0.14em;
-            text-transform: uppercase;
-            color: var(--sunset);
-            transition: color 0.2s ease;
-        }
-        .ships-detail-link:hover { color: var(--coral); }
-        @media (max-width: 767px) {
-            .ships-row {
-                grid-template-columns: 50px 1fr;
-                gap: 12px 18px;
-                padding: 20px 8px;
-            }
-            .ships-name { grid-column: 2; }
-            .ships-code, .ships-detail, .ships-detail-link { grid-column: 2; }
-        }
-    </style>
-
-    <!-- ===== 9. BRAND CTA ===== -->
+    <!-- BRAND CTA -->
     <section class="relative overflow-hidden" id="cta" style="background: radial-gradient(ellipse 1200px 600px at 50% 100%, rgba(255, 138, 61, 0.14) 0%, transparent 70%), var(--midnight);">
         <div class="max-w-5xl mx-auto px-6 text-center relative z-10">
-            <span class="eyebrow mx-auto inline-flex">Brand Channel</span>
-            <h2 class="heading-display text-5xl md:text-7xl text-sand mt-6 mb-8">
-                Stay on channel.
+            <span class="eyebrow mx-auto inline-flex">Channel · Open</span>
+            <h2 class="heading-display text-4xl md:text-6xl text-sand mt-6 mb-8">
+                Run the agents.
             </h2>
             <p class="text-lg md:text-xl text-gray-400 leading-relaxed max-w-2xl mx-auto mb-12">
-                Align signal. Reduce uncertainty. Execute with confidence.
+                Move at mission speed. Operate with evidence. Run the agents.
             </p>
-            <a href="/contact" class="btn-sunset font-mono text-xs uppercase tracking-[0.18em] px-8 py-4">
-                Talk to an operator
-                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-            </a>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="mailto:ryan@gooptimal.io" class="btn-sunset font-mono text-xs uppercase tracking-[0.18em] px-8 py-4">
+                    Talk to an operator
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                </a>
+                <a href="https://demo.gooptimal.io" class="btn-ghost font-mono text-xs uppercase tracking-[0.18em] px-8 py-4">
+                    See the live demo
+                </a>
+            </div>
         </div>
         <div class="absolute bottom-0 left-0 right-0 px-6 pb-6">
             <div class="max-w-7xl mx-auto horizon-stripes opacity-80">
@@ -1052,7 +706,7 @@
         </div>
     </section>
 
-    <!-- ===== FOOTER ===== -->
+    <!-- FOOTER -->
     <footer class="bg-midnight border-t border-white/5 pt-16 pb-10">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid md:grid-cols-4 gap-12 mb-16">
@@ -1062,10 +716,10 @@
                         <span class="font-display text-lg font-medium tracking-[0.18em] text-sand">OPTIMAL</span>
                     </a>
                     <p class="text-gray-400 text-sm max-w-md mb-6 leading-relaxed">
-                        Operator-grade CNAPP, self-hosted. Built for the people who keep critical software moving.
+                        Self-hosted CNAPP and AI control plane for regulated software. Built for the people who keep critical software moving.
                     </p>
-                    <p class="font-mono text-[10px] text-gray-600 tracking-[0.22em] uppercase mb-6">
-                        Stay on channel.
+                    <p class="font-mono text-[10px] text-gray-300 tracking-[0.22em] uppercase mb-6">
+                        Move at mission speed. Operate with evidence. Run the agents.
                     </p>
                     <div class="flex items-center gap-4">
                         <a href="https://github.com/optimal-cyber" target="_blank" aria-label="GitHub" class="text-gray-500 hover:text-sunset transition-colors">
@@ -1076,33 +730,33 @@
                         </a>
                     </div>
                 </div>
-
                 <div>
                     <h4 class="font-mono text-[10px] text-sunset tracking-[0.24em] uppercase mb-5">Platform</h4>
                     <ul class="space-y-3">
                         <li><a href="/platform" class="text-gray-400 hover:text-sand text-sm transition-colors">Platform</a></li>
+                        <li><a href="/platform#ai-security" class="text-gray-400 hover:text-sand text-sm transition-colors">AI Security</a></li>
+                        <li><a href="/platform#harden" class="text-gray-400 hover:text-sand text-sm transition-colors">Hardening</a></li>
                         <li><a href="/industries/financial-services" class="text-gray-400 hover:text-sand text-sm transition-colors">Financial Services</a></li>
                         <li><a href="/industries/healthcare" class="text-gray-400 hover:text-sand text-sm transition-colors">Healthcare</a></li>
                         <li><a href="/industries/sled" class="text-gray-400 hover:text-sand text-sm transition-colors">State &amp; Local Government</a></li>
-                        <li><a href="https://docs.gooptimal.io/" target="_blank" class="text-gray-400 hover:text-sand text-sm transition-colors">Docs</a></li>
                         <li><a href="/the-optimal-way" class="text-gray-400 hover:text-sand text-sm transition-colors">The Optimal Way</a></li>
+                        <li><a href="https://demo.gooptimal.io" class="text-gray-400 hover:text-sand text-sm transition-colors">Live demo</a></li>
+                        <li><a href="https://docs.gooptimal.io/" target="_blank" class="text-gray-400 hover:text-sand text-sm transition-colors">Docs</a></li>
                     </ul>
                 </div>
-
                 <div>
                     <h4 class="font-mono text-[10px] text-sunset tracking-[0.24em] uppercase mb-5">Company</h4>
                     <ul class="space-y-3">
                         <li><a href="/about" class="text-gray-400 hover:text-sand text-sm transition-colors">About</a></li>
                         <li><a href="/blog" class="text-gray-400 hover:text-sand text-sm transition-colors">Blog</a></li>
-                        <li><a href="/contact" class="text-gray-400 hover:text-sand text-sm transition-colors">Contact</a></li>
+                        <li><a href="mailto:ryan@gooptimal.io" class="text-gray-400 hover:text-sand text-sm transition-colors">Contact</a></li>
                         <li><a href="mailto:ryan@gooptimal.io" class="text-gray-400 hover:text-sand text-sm transition-colors">ryan@gooptimal.io</a></li>
                     </ul>
                 </div>
             </div>
-
             <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
                 <p class="text-gray-500 text-[11px] font-mono tracking-[0.18em] uppercase">
-                    &copy; 2026 Optimal · All rights reserved
+                    &copy; 2026 Optimal &middot; All rights reserved
                 </p>
                 <div class="flex items-center gap-6">
                     <span class="text-gray-500 text-[10px] font-mono tracking-[0.22em] uppercase flex items-center gap-2">
@@ -1116,12 +770,10 @@
 
     <script>
         const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => { navbar.classList.toggle('nav-fixed', window.scrollY > 50); });
-
+        window.addEventListener('scroll', () => navbar.classList.toggle('nav-fixed', window.scrollY > 50));
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         mobileMenuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
-
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 const target = document.querySelector(this.getAttribute('href'));
@@ -1132,15 +784,9 @@
                 }
             });
         });
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
-        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
         console.log('%c◐ OPTIMAL', 'color: #FF8A3D; font-size: 22px; font-weight: 600; letter-spacing: 0.2em;');
-        console.log('%cCNAPP that ships hardening evidence.', 'color: #94A3B8; font-size: 12px;');
-        console.log('%cStay on channel.', 'color: #FF5252; font-size: 12px; letter-spacing: 0.2em;');
+        console.log('%cControl plane for regulated software and AI agents.', 'color: #94A3B8; font-size: 12px;');
+        console.log('%cRun the agents.', 'color: #FF5252; font-size: 12px; letter-spacing: 0.2em;');
     </script>
 </body>
 </html>
