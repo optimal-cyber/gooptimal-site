@@ -1,10 +1,12 @@
 name: Deploy to GitHub Pages
 
 on:
+  # Deploy only on push to main. The github-pages environment is protected to
+  # main, so a pull_request-triggered deploy can only ever fail — it surfaced
+  # as a confusing red X on every PR. Static site: PRs have nothing to build.
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
+  workflow_dispatch:
 
 permissions:
   contents: read
