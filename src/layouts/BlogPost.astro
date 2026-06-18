@@ -1,0 +1,65 @@
+---
+import Layout from "./Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+interface Props {
+  title: string;
+  description: string;
+  date: Date;
+  category?: string;
+  tags?: string[];
+}
+const { title, description, date, category = "Industry Insights", tags = [] } = Astro.props;
+const dateStr = new Date(date).toLocaleDateString("en-US", {
+  year: "numeric", month: "long", day: "numeric",
+});
+---
+
+<Layout title={`${title} — Optimal`} description={description}>
+  <Header />
+
+  <article class="section">
+    <div class="container narrow">
+      <a href="/blog" class="back">← All posts</a>
+      <span class="tag cat">{category}</span>
+      <h1 class="title">{title}</h1>
+      <p class="lead deck">{description}</p>
+      <div class="meta">
+        <time datetime={new Date(date).toISOString()}>{dateStr}</time>
+        <span class="dot">•</span><span>Optimal Team</span>
+      </div>
+
+      <div class="prose">
+        <slot />
+      </div>
+
+      {tags.length > 0 && (
+        <div class="tags">
+          {tags.map((t) => <span class="tag">{t}</span>)}
+        </div>
+      )}
+
+      <div class="cta-foot">
+        <h3>Bring your organization through the Gateway.</h3>
+        <a href="/contact" class="btn btn-primary">Request access →</a>
+      </div>
+    </div>
+  </article>
+
+  <Footer />
+</Layout>
+
+<style>
+  .narrow { max-width: 760px; }
+  .back { display: inline-block; font-size: 13px; color: var(--text-dim); margin-bottom: 26px; }
+  .back:hover { color: var(--sunset); }
+  .cat { color: var(--sunset); border-color: color-mix(in srgb, var(--sunset) 35%, transparent); }
+  .title { font-size: clamp(2rem, 5vw, 3.2rem); letter-spacing: -0.03em; margin: 18px 0 16px; }
+  .deck { font-size: clamp(17px, 2.2vw, 20px); max-width: 70ch; }
+  .meta { display: flex; align-items: center; gap: 10px; margin: 18px 0 36px; font-size: 14px; color: var(--text-faint); }
+  .meta .dot { opacity: 0.4; }
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 44px; padding-top: 28px; border-top: 1px solid var(--rule); }
+  .cta-foot { margin-top: 40px; padding: 32px; border: 1px solid var(--rule); border-radius: var(--radius); background: var(--surface); text-align: center; }
+  .cta-foot h3 { font-size: 1.4rem; margin-bottom: 18px; }
+</style>

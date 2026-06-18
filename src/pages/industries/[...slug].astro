@@ -1,0 +1,49 @@
+---
+import { getCollection, render } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+
+export async function getStaticPaths() {
+  const entries = await getCollection("industries");
+  return entries.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const { title, description, eyebrow, subhead } = entry.data;
+---
+
+<Layout title={`${title} — Optimal`} description={description}>
+  <Header />
+
+  <section class="hero relative">
+    <div class="glow"></div>
+    <div class="container z">
+      <span class="eyebrow">{eyebrow}</span>
+      <h1 class="display htitle">{title}</h1>
+      {subhead && <p class="lead">{subhead}</p>}
+      <div class="cta-row">
+        <a href="/contact" class="btn btn-primary">Request access →</a>
+        <a href="/#capabilities" class="btn btn-ghost">See the platform</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section--tight">
+    <div class="container">
+      <div class="prose">
+        <Content />
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<style>
+  .hero { padding: clamp(72px, 11vw, 140px) 0 clamp(36px, 5vw, 64px); }
+  .hero .eyebrow { margin-bottom: 20px; }
+  .htitle { font-size: clamp(2.2rem, 5.5vw, 4rem); margin-bottom: 22px; }
+  .cta-row { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 30px; }
+</style>

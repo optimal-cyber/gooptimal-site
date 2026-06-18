@@ -47,16 +47,22 @@ const work = [
     tag: "Federal contractors",
     title: "Use commercial LLMs inside the accreditation boundary",
     body: "Route agents to GovCloud-hosted models with zero-persistence audit. Every request authorized, every token logged — the evidence an AO actually ingests.",
+    href: "/industries/sled",
+    cta: "State & local gov →",
   },
   {
     tag: "Healthcare",
     title: "PHI-safe inference",
     body: "DLP at the boundary blocks PHI egress before it leaves. HIPAA residency, no-train guarantees, and a full decision trace for OCR.",
+    href: "/industries/healthcare",
+    cta: "Optimal for Healthcare →",
   },
   {
     tag: "Financial services",
     title: "Governed model access for regulated workloads",
     body: "PCI-scoped routing, per-service identity, and continuous control evidence — so the QSA reads one live artifact instead of three stale tools.",
+    href: "/industries/financial-services",
+    cta: "Optimal for Financial →",
   },
 ];
 ---
@@ -145,7 +151,7 @@ const work = [
             <span class="tag">{w.tag}</span>
             <h3>{w.title}</h3>
             <p class="muted">{w.body}</p>
-            <a href="/contact" class="usecase-link">Talk to us →</a>
+            <a href={w.href} class="usecase-link">{w.cta}</a>
           </div>
         ))}
       </div>
