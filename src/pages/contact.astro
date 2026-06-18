@@ -1,0 +1,75 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout
+  title="Request access — Optimal"
+  description="Tell us your accreditation boundary and the models you need. We'll stand up authorized, audited AI access across your clouds."
+>
+  <Header />
+
+  <section class="section relative">
+    <div class="glow"></div>
+    <div class="container z wrap">
+      <div class="intro">
+        <span class="eyebrow">Request access</span>
+        <h1 class="h2">Bring your organization through the Gateway.</h1>
+        <p class="lead" style="margin-top:16px;">
+          Tell us your accreditation boundary and the models you need. We&rsquo;ll
+          stand up authorized, audited access across your clouds — GovCloud,
+          on-prem, or air-gapped.
+        </p>
+        <p class="muted email">
+          Prefer email? <a href="mailto:ryan@gooptimal.io">ryan@gooptimal.io</a>
+        </p>
+      </div>
+
+      <!-- Wire `action` to a form handler (Formspree / Netlify Forms / your API). -->
+      <form class="card form" method="POST" action="https://formspree.io/f/your-form-id">
+        <div class="row">
+          <label>Name<input type="text" name="name" required /></label>
+          <label>Work email<input type="email" name="email" required /></label>
+        </div>
+        <div class="row">
+          <label>Organization<input type="text" name="organization" /></label>
+          <label>Accreditation boundary
+            <select name="boundary">
+              <option>Commercial</option>
+              <option>FedRAMP</option>
+              <option>IL4 / IL5</option>
+              <option>IL6</option>
+              <option>On-prem / air-gapped</option>
+            </select>
+          </label>
+        </div>
+        <label>What do you need?<textarea name="message" rows="4" placeholder="Models, clouds, timeline…"></textarea></label>
+        <button type="submit" class="btn btn-primary">Send request →</button>
+      </form>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<style>
+  .wrap { display: grid; gap: 40px; align-items: start; }
+  .intro { padding-top: 6px; }
+  .email { margin-top: 22px; font-size: 14px; }
+  .email a { color: var(--sunset); }
+  .form { display: grid; gap: 16px; }
+  .row { display: grid; gap: 16px; }
+  label { display: grid; gap: 7px; font-size: 13px; color: var(--text-dim); }
+  input, select, textarea {
+    width: 100%; font: inherit; color: var(--text);
+    background: var(--bg); border: 1px solid var(--rule); border-radius: var(--radius-sm);
+    padding: 11px 13px; outline: none; transition: border-color .2s ease;
+  }
+  input:focus, select:focus, textarea:focus { border-color: var(--sunset); }
+  .form .btn { justify-self: start; margin-top: 6px; }
+  @media (min-width: 900px) {
+    .wrap { grid-template-columns: 1fr 1fr; gap: 64px; }
+    .row { grid-template-columns: 1fr 1fr; }
+  }
+</style>
