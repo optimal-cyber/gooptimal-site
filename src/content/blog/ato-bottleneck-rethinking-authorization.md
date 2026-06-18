@@ -1,5 +1,7 @@
 ---
 title: "The ATO Bottleneck: Why Authorization Takes So Long and What Actually Fixes It"
+image: "/blog/ato-bottleneck.svg"
+imageAlt: "The ATO bottleneck and what actually fixes it"
 description: "The ATO process was designed to manage risk. Instead, it has become the risk. Delaying mission-critical deployments by 12 to 18 months while actual security posture degrades. Here is what is broken and what the path forward looks like across DoW, civilian, and IC environments."
 date: 2026-03-05
 category: "Industry Insights"

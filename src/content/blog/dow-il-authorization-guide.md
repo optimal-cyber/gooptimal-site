@@ -1,5 +1,7 @@
 ---
 title: "Navigating DoW Impact Level Authorization"
+image: "/blog/dow-il-authorization.png"
+imageAlt: "Navigating DoW Impact Level authorization"
 description: "622+ controls, 20 families, 5 impact levels, 11 steps to Provisional Authorization. The visual guide for cloud-native companies navigating DoW IL authorization."
 date: 2026-03-30
 category: "Industry Insights"

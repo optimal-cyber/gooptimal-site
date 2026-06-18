@@ -1,5 +1,7 @@
 ---
 title: "Platform Update: What's New in Optimal Q1 2026"
+image: "/blog/platform-update.jpg"
+imageAlt: "Optimal platform update, Q1 2026"
 description: "Runtime threat detection, enhanced SBOM dependency graphs, STIG automation improvements, AI security enhancements, and more. Everything shipping in Optimal Q1 2026."
 date: 2026-01-05
 category: "Products"

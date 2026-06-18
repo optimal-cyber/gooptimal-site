@@ -1,5 +1,7 @@
 ---
 title: "FedRAMP 20x: A Step Forward on Paper, A Marathon in Practice"
+image: "/blog/fedramp-20x.svg"
+imageAlt: "FedRAMP 20x: a step forward on paper, a marathon in practice"
 description: "FedRAMP 20x promises to streamline cloud authorizations with automation over documentation. But across DoW, civilian agencies, and the IC, the real challenge is not the framework. It is the institutional inertia that governs how authorizations actually work."
 date: 2026-03-05
 category: "Industry Insights"

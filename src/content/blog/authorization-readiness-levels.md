@@ -1,5 +1,7 @@
 ---
 title: "Authorization Readiness Levels"
+image: "/blog/authorization-readiness-levels.png"
+imageAlt: "Authorization Readiness Levels framework: 5 ATO pathways by 9 readiness levels"
 description: "A framework mapping 5 ATO pathways × 9 readiness levels for dual-use companies navigating FedRAMP, DoD RMF, Impact Level, cATO, and CMMC authorization."
 date: 2026-03-26
 category: "Industry Insights"
@@ -93,6 +95,8 @@ Readiness Dimensions
 
 ## How Authorization Intersects with Every Readiness Dimension
 
+![Authorization Readiness Levels mapped across MIT's five dual-use readiness dimensions](/blog/ARL-Spider-Diagram.png)
+
 Technology (TRL)
 
 Architecture decisions at TRL 3-5 determine whether your system is authorizable at all
@@ -118,6 +122,8 @@ Universal Pattern
 ## The 9-Level Journey
 
 Every authorization pathway follows a universal arc from awareness through scaled operations. The specifics differ, but the shape is the same.
+
+![The 9-level Authorization Readiness Level progression, from initial awareness through scaled multi-agency operations](/blog/ARL-Progression-Chart.png)
 
 1
 

@@ -1,5 +1,7 @@
 ---
 title: "Securing AI Models in the Defense Sector: Threats and Mitigations"
+image: "/blog/ai-security.jpg"
+imageAlt: "Securing AI models in the defense sector"
 description: "As DoD adoption of AI accelerates, so do adversarial threats. Learn about the top attack vectors targeting military AI systems and how to defend against them using MITRE ATLAS and NIST AI RMF."
 date: 2026-01-15
 category: "Industry Insights"

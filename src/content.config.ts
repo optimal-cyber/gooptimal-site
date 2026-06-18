@@ -9,6 +9,8 @@ const blog = defineCollection({
     date: z.coerce.date(),
     category: z.string().default("Industry Insights"),
     tags: z.array(z.string()).default([]),
+    image: z.string().optional(),
+    imageAlt: z.string().optional(),
   }),
 });
 

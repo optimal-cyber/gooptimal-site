@@ -29,6 +29,11 @@ const fmt = (d: Date) =>
       <div class="grid grid-3 posts">
         {posts.map((p) => (
           <a class="card post" href={`/blog/${p.id}`}>
+            {p.data.image && (
+              <div class="thumb">
+                <img src={p.data.image} alt={p.data.imageAlt ?? p.data.title} loading="lazy" />
+              </div>
+            )}
             <span class="tag cat">{p.data.category}</span>
             <h3>{p.data.title}</h3>
             <p class="muted excerpt">{p.data.description}</p>
@@ -44,7 +49,16 @@ const fmt = (d: Date) =>
 
 <style>
   .posts { margin-top: 42px; }
-  .post { display: flex; flex-direction: column; gap: 12px; text-decoration: none; }
+  .post { display: flex; flex-direction: column; gap: 12px; text-decoration: none; overflow: hidden; }
+  .post .thumb {
+    margin: -28px -28px 4px;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: var(--surface-2);
+    border-bottom: 1px solid var(--rule);
+  }
+  .post .thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform .3s ease; }
+  .post:hover .thumb img { transform: scale(1.04); }
   .post .cat { align-self: flex-start; color: var(--sunset); border-color: color-mix(in srgb, var(--sunset) 35%, transparent); }
   .post h3 { font-size: 1.2rem; line-height: 1.25; }
   .post .excerpt { font-size: 14px; line-height: 1.6; flex: 1; }

@@ -1,5 +1,7 @@
 ---
 title: "SBOM Best Practices: From Executive Order to Operational Reality"
+image: "/blog/sbom-practices.jpg"
+imageAlt: "SBOM best practices: from executive order to operational reality"
 description: "Executive orders mandate SBOMs, but generating them is only half the battle. Learn how to operationalize your software bill of materials for real security outcomes with practical CI/CD integration, vulnerability correlation, and license compliance strategies."
 date: 2026-01-28
 category: "Engineering"

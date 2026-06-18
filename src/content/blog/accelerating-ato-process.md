@@ -1,5 +1,7 @@
 ---
 title: "How to Accelerate the ATO Process Without Cutting Corners"
+image: "/blog/ato-process.jpg"
+imageAlt: "Accelerating the ATO process without cutting corners"
 description: "The ATO process doesn't have to take 18 months. Learn five practical strategies to compress your Authority to Operate timeline while maintaining compliance rigor across FedRAMP and CMMC frameworks."
 date: 2026-02-10
 category: "Industry Insights"

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <rect width="1200" height="630" fill="#0a0a0f"/>
+  <!-- Waypoint mark -->
+  <path d="M554,235 C557.3,261.5 564.5,268.7 591,272 C564.5,275.3 557.3,282.5 554,309 C550.7,282.5 543.5,275.3 517,272 C543.5,268.7 550.7,261.5 554,235 Z" fill="#ffffff"/>
+  <!-- Wordmark -->
+  <text x="607" y="287" font-family="'Plus Jakarta Sans','Inter',-apple-system,sans-serif" font-size="42" font-weight="700" letter-spacing="0.02em" fill="#ffffff">Optimal</text>
+</svg>

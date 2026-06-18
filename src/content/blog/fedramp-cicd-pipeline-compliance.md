@@ -1,5 +1,7 @@
 ---
 title: "Building a Compliant CI/CD Pipeline for Public Sector: GitHub, GitLab, and the Authorization Boundary"
+image: "/blog/cicd-fedramp.svg"
+imageAlt: "A compliant CI/CD pipeline crossing the authorization boundary"
 description: "A practical guide to architecting a CI/CD pipeline that crosses the authorization boundary. Using GitHub or GitLab CI outside, pulling code into a secure dev environment, and promoting to production through a manual gate. For FedRAMP, DoW Impact Level, and agency ATO environments."
 date: 2026-03-07
 category: "Engineering"
