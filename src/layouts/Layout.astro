@@ -1,0 +1,41 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+const {
+  title = "Optimal — secure AI for government-ready missions",
+  description = "The secure access layer for government-ready AI. Authorize every model call, log every token, prove every control — across GovCloud, on-prem, and air-gapped.",
+} = Astro.props;
+
+const favicon =
+  'data:image/svg+xml,' +
+  encodeURIComponent(
+    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="%23FFC15E"/><stop offset="1" stop-color="%23FF6A3D"/></linearGradient></defs><rect width="32" height="32" rx="7" fill="%2308090d"/><circle cx="16" cy="19" r="7" fill="url(%23g)"/><rect x="5" y="18.2" width="22" height="1.6" rx="0.8" fill="%2308090d"/><rect x="6" y="21" width="20" height="1.4" rx="0.7" fill="url(%23g)" opacity="0.85"/></svg>'
+  );
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href={favicon} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

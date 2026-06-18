@@ -1,0 +1,228 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+const standards = [
+  "FedRAMP 20x", "NIST AI RMF", "ISO 42001", "SOC 2", "OWASP LLM Top 10",
+  "IL4 – IL6", "HIPAA", "PCI DSS v4", "DISA STIG",
+];
+
+const capabilities = [
+  {
+    k: "01",
+    title: "Secure AI Gateway",
+    body: "Every model call flows through one governed boundary — authorized against an accredited allowlist, scanned for injection, jailbreak and data exfiltration, then forwarded to a FedRAMP-authorized model.",
+    accent: "var(--sunset)",
+  },
+  {
+    k: "02",
+    title: "Agent Governance",
+    body: "Per-agent identity, tool and data-scope allowlists, autonomy dials, rate limits, and a kill switch. Bound to mTLS / SPIFFE identity from your mesh — not a self-asserted header.",
+    accent: "var(--steel)",
+  },
+  {
+    k: "03",
+    title: "Red-team & Assurance",
+    body: "Attacker-style probes mapped to the OWASP LLM Top 10 gate promotion before a model ships. Hardened to CIS / DISA STIG, red-teamed, and proven — automatically, in the pull request.",
+    accent: "var(--coral)",
+  },
+  {
+    k: "04",
+    title: "Compliance Evidence",
+    body: "Hash-chained, append-only audit of every request and every token. Coverage against the frameworks you answer to, regenerated live — ingestible by an authorizing official.",
+    accent: "var(--seafoam)",
+  },
+];
+
+const flow = [
+  { n: "Authorize", d: "Authenticate the caller (mTLS / OIDC) and check the accredited model + resource allowlist." },
+  { n: "Guard", d: "Inline detection on prompt and response — injection, jailbreak, PII / DLP, exfiltration." },
+  { n: "Forward", d: "Proxy to a FedRAMP-authorized model in GovCloud / Assured Workloads, via workload identity." },
+  { n: "Prove", d: "Write a tamper-evident audit row; re-emit live compliance evidence per framework." },
+];
+
+const work = [
+  {
+    tag: "Federal contractors",
+    title: "Use commercial LLMs inside the accreditation boundary",
+    body: "Route agents to GovCloud-hosted models with zero-persistence audit. Every request authorized, every token logged — the evidence an AO actually ingests.",
+  },
+  {
+    tag: "Healthcare",
+    title: "PHI-safe inference",
+    body: "DLP at the boundary blocks PHI egress before it leaves. HIPAA residency, no-train guarantees, and a full decision trace for OCR.",
+  },
+  {
+    tag: "Financial services",
+    title: "Governed model access for regulated workloads",
+    body: "PCI-scoped routing, per-service identity, and continuous control evidence — so the QSA reads one live artifact instead of three stale tools.",
+  },
+];
+---
+
+<Layout>
+  <Header />
+
+  <!-- HERO -->
+  <section class="hero relative">
+    <div class="glow"></div>
+    <div class="container z">
+      <span class="eyebrow">The secure access layer for government-ready AI</span>
+      <h1 class="display">Ship AI into the mission,<br /><span class="grad">not around the rules.</span></h1>
+      <p class="lead">
+        Optimal is the secure access layer between your agents and the models they use.
+        Authorize every call, block what shouldn&rsquo;t cross the boundary, and prove every
+        control — across GovCloud, on-prem, and air-gapped.
+      </p>
+      <div class="cta-row">
+        <a href="/contact" class="btn btn-primary">Request access →</a>
+        <a href="#how" class="btn btn-ghost">See how it works</a>
+      </div>
+      <div class="hero-meta muted">
+        <span>Hub-and-Spoke · self-hosted</span><span class="dot">•</span>
+        <span>Sovereign by default</span><span class="dot">•</span>
+        <span>Zero-persistence option</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- STANDARDS WALL (logo wall analogue) -->
+  <section id="standards" class="section--tight standards">
+    <div class="container">
+      <p class="wall-label muted">Built to the standards that gate production</p>
+      <div class="wall">
+        {standards.map((s) => <span class="chip">{s}</span>)}
+      </div>
+    </div>
+  </section>
+
+  <!-- CAPABILITIES -->
+  <section id="capabilities" class="section">
+    <div class="container">
+      <span class="eyebrow">The platform</span>
+      <h2 class="h2">One control plane over every model call.</h2>
+      <p class="lead" style="margin-top:14px;">Four surfaces, one governed boundary — the body, badge, keys, and audit trail for AI in regulated environments.</p>
+      <div class="grid grid-2" style="margin-top:42px;">
+        {capabilities.map((c) => (
+          <div class="card cap">
+            <div class="cap-k" style={`color:${c.accent}`}>{c.k}</div>
+            <h3>{c.title}</h3>
+            <p class="muted">{c.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how" class="section how relative">
+    <div class="glow"></div>
+    <div class="container z">
+      <span class="eyebrow">How it works</span>
+      <h2 class="h2">Agents in. Accredited resources out.<br />Everything in between, governed.</h2>
+      <div class="flow">
+        {flow.map((f, i) => (
+          <div class="step">
+            <div class="step-n">{String(i + 1).padStart(2, "0")}</div>
+            <h4>{f.n}</h4>
+            <p class="muted">{f.d}</p>
+          </div>
+        ))}
+      </div>
+      <p class="muted note">No wrapper, no SDK rewrite — point your existing OpenAI / Anthropic client at the gateway and every call is governed and logged.</p>
+    </div>
+  </section>
+
+  <!-- USE CASES -->
+  <section id="work" class="section">
+    <div class="container">
+      <span class="eyebrow">Use cases</span>
+      <h2 class="h2">Built for the missions that can&rsquo;t get it wrong.</h2>
+      <div class="grid grid-3" style="margin-top:42px;">
+        {work.map((w) => (
+          <div class="card usecase">
+            <span class="tag">{w.tag}</span>
+            <h3>{w.title}</h3>
+            <p class="muted">{w.body}</p>
+            <a href="/contact" class="usecase-link">Talk to us →</a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- QUOTE -->
+  <section class="section--tight">
+    <div class="container">
+      <blockquote class="quote">
+        <p>&ldquo;The audit is the product. Every authorization decision and model call lands in an append-only ledger — and the compliance coverage is computed from those same signals.&rdquo;</p>
+        <footer class="muted">Optimal — the access layer, not another dashboard.</footer>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section cta relative">
+    <div class="glow"></div>
+    <div class="container z cta-inner">
+      <h2 class="display" style="font-size:clamp(2rem,5vw,3.4rem);">Bring your organization<br />through the Gateway.</h2>
+      <p class="lead" style="margin:18px auto 0;">Tell us your accreditation boundary and the models you need. We&rsquo;ll stand up authorized, audited access across your clouds.</p>
+      <a href="/contact" class="btn btn-primary" style="margin-top:28px;">Request access →</a>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<style>
+  /* HERO */
+  .hero { padding: clamp(72px, 12vw, 150px) 0 clamp(48px, 7vw, 90px); }
+  .hero .eyebrow { margin-bottom: 22px; }
+  .hero h1 { margin-bottom: 24px; }
+  .hero .lead { font-size: clamp(17px, 2.2vw, 21px); }
+  .cta-row { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 34px; }
+  .hero-meta { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-top: 30px; font-size: 13px; }
+  .hero-meta .dot { opacity: 0.4; }
+
+  /* STANDARDS WALL */
+  .standards { border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); background: var(--surface); }
+  .wall-label { font-size: 12px; text-transform: uppercase; letter-spacing: 0.16em; text-align: center; margin-bottom: 22px; }
+  .wall { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+  .chip {
+    font-family: var(--font-display); font-weight: 500; font-size: 14px;
+    color: var(--text-dim); border: 1px solid var(--rule); border-radius: 999px;
+    padding: 8px 16px; transition: color .2s, border-color .2s;
+  }
+  .chip:hover { color: var(--text); border-color: var(--rule-strong); }
+
+  /* CAPABILITIES */
+  .cap-k { font-family: var(--font-display); font-size: 13px; font-weight: 700; letter-spacing: 0.1em; margin-bottom: 14px; }
+  .cap h3 { font-size: 1.35rem; margin-bottom: 10px; }
+  .cap p { font-size: 15px; line-height: 1.7; }
+
+  /* HOW */
+  .how { background: var(--surface); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+  .flow { display: grid; gap: 20px; margin-top: 42px; }
+  .step { padding: 24px; border: 1px solid var(--rule); border-radius: var(--radius); background: var(--surface-2); }
+  .step-n { font-family: var(--font-display); font-weight: 700; color: var(--sunset); font-size: 14px; letter-spacing: 0.1em; margin-bottom: 12px; }
+  .step h4 { font-size: 1.15rem; margin-bottom: 8px; }
+  .step p { font-size: 14px; line-height: 1.65; }
+  .note { margin-top: 28px; font-size: 14px; max-width: 70ch; }
+  @media (min-width: 860px) { .flow { grid-template-columns: repeat(4, 1fr); } }
+
+  /* USE CASES */
+  .usecase h3 { font-size: 1.2rem; margin: 14px 0 10px; }
+  .usecase p { font-size: 14px; line-height: 1.7; }
+  .usecase-link { display: inline-block; margin-top: 16px; color: var(--sunset); font-size: 14px; font-weight: 600; }
+  .usecase-link:hover { color: var(--ember); }
+
+  /* QUOTE */
+  .quote { margin: 0; border-left: 3px solid var(--sunset); padding: 6px 0 6px 28px; max-width: 60ch; }
+  .quote p { font-family: var(--font-display); font-size: clamp(1.2rem, 2.6vw, 1.8rem); line-height: 1.35; letter-spacing: -0.02em; }
+  .quote footer { margin-top: 16px; font-size: 14px; }
+
+  /* CTA */
+  .cta { background: var(--surface); border-top: 1px solid var(--rule); }
+  .cta-inner { text-align: center; max-width: 720px; margin: 0 auto; }
+</style>

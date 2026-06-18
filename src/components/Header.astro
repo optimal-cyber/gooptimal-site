@@ -1,0 +1,55 @@
+---
+const links = [
+  { href: "#capabilities", label: "Platform" },
+  { href: "#how", label: "How it works" },
+  { href: "#work", label: "Use cases" },
+  { href: "#standards", label: "Compliance" },
+];
+---
+
+<header class="site-header">
+  <div class="container bar">
+    <a href="/" class="brand" aria-label="Optimal home">
+      <svg width="28" height="28" viewBox="0 0 32 32" aria-hidden="true">
+        <defs>
+          <linearGradient id="hg" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#FFC15E" /><stop offset="1" stop-color="#FF6A3D" />
+          </linearGradient>
+        </defs>
+        <rect width="32" height="32" rx="8" fill="#0e1018" stroke="rgba(255,255,255,.1)" />
+        <circle cx="16" cy="19" r="7" fill="url(#hg)" />
+        <rect x="5" y="18.2" width="22" height="1.8" rx="0.9" fill="#0e1018" />
+        <rect x="6.5" y="21.2" width="19" height="1.4" rx="0.7" fill="url(#hg)" opacity="0.8" />
+      </svg>
+      <span class="wordmark">OPTIMAL</span>
+    </a>
+
+    <nav class="nav" aria-label="Primary">
+      {links.map((l) => <a href={l.href}>{l.label}</a>)}
+    </nav>
+
+    <div class="actions">
+      <a href="/contact" class="btn btn-primary">Request access</a>
+    </div>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    position: sticky; top: 0; z-index: 50;
+    backdrop-filter: blur(12px);
+    background: rgba(8, 9, 13, 0.72);
+    border-bottom: 1px solid var(--rule);
+  }
+  .bar { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+  .brand { display: inline-flex; align-items: center; gap: 10px; }
+  .wordmark {
+    font-family: var(--font-display); font-weight: 600; letter-spacing: 0.22em;
+    font-size: 15px; color: var(--text);
+  }
+  .nav { display: none; gap: 30px; }
+  .nav a { font-size: 14px; color: var(--text-dim); transition: color .2s ease; }
+  .nav a:hover { color: var(--text); }
+  .actions { display: flex; align-items: center; }
+  @media (min-width: 900px) { .nav { display: flex; } }
+</style>

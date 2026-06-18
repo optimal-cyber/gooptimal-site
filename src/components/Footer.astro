@@ -1,0 +1,73 @@
+---
+const year = 2026;
+const cols = [
+  {
+    title: "Platform",
+    links: [
+      { href: "#capabilities", label: "Secure AI Gateway" },
+      { href: "#capabilities", label: "Red-team & Assurance" },
+      { href: "#capabilities", label: "Compliance Evidence" },
+      { href: "#capabilities", label: "Agent Governance" },
+    ],
+  },
+  {
+    title: "Use cases",
+    links: [
+      { href: "#work", label: "Federal contractors" },
+      { href: "#work", label: "Healthcare" },
+      { href: "#work", label: "Financial services" },
+    ],
+  },
+  {
+    title: "Company",
+    links: [
+      { href: "/contact", label: "Contact" },
+      { href: "/contact", label: "Request access" },
+    ],
+  },
+];
+---
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="top">
+      <div class="brandcol">
+        <div class="brand">
+          <svg width="26" height="26" viewBox="0 0 32 32" aria-hidden="true">
+            <defs><linearGradient id="fg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFC15E"/><stop offset="1" stop-color="#FF6A3D"/></linearGradient></defs>
+            <rect width="32" height="32" rx="8" fill="#0e1018" stroke="rgba(255,255,255,.1)"/>
+            <circle cx="16" cy="19" r="7" fill="url(#fg)"/>
+            <rect x="5" y="18.2" width="22" height="1.8" rx="0.9" fill="#0e1018"/>
+          </svg>
+          <span class="wordmark">OPTIMAL</span>
+        </div>
+        <p class="muted blurb">The secure access layer for government-ready AI. Built for the organizations that keep critical missions moving.</p>
+      </div>
+      {cols.map((c) => (
+        <div class="col">
+          <h4>{c.title}</h4>
+          <ul>{c.links.map((l) => <li><a href={l.href}>{l.label}</a></li>)}</ul>
+        </div>
+      ))}
+    </div>
+    <div class="bottom">
+      <span class="muted">© {year} Optimal. Sovereign by default.</span>
+      <span class="muted">FedRAMP · NIST AI RMF · ISO 42001 · SOC 2</span>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer { border-top: 1px solid var(--rule); padding: 64px 0 36px; background: var(--surface); }
+  .top { display: grid; gap: 40px; grid-template-columns: 1fr; }
+  .brandcol { max-width: 360px; }
+  .brand { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+  .wordmark { font-family: var(--font-display); font-weight: 600; letter-spacing: 0.22em; font-size: 15px; }
+  .blurb { font-size: 14px; line-height: 1.7; }
+  .col h4 { font-family: var(--font-body); font-size: 12px; text-transform: uppercase; letter-spacing: 0.14em; color: var(--text-faint); margin-bottom: 14px; }
+  .col ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+  .col a { font-size: 14px; color: var(--text-dim); transition: color .2s ease; }
+  .col a:hover { color: var(--sunset); }
+  .bottom { display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--rule); font-size: 13px; }
+  @media (min-width: 820px) { .top { grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 48px; } }
+</style>
