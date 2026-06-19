@@ -27,119 +27,19 @@ This post walks through a specific, real-world architecture: **GitHub Commercial
 
 The pipeline follows a strict directional flow. Code moves in one direction -- from external to internal, from untrusted to validated, from dev to production -- with security gates at each transition. Here is the architecture at a high level:
 
-source
-→
-lint
-→
-build
-→
-test
-→
-scan
-→
-image
-→
-deploy dev
-→
-GATE
-→
-deploy prod
-→
-release
+The pipeline flow runs strictly in one direction:
 
-SA-3 System Development Lifecycle  |  SA-11 Developer Testing & Evaluation
+`source → lint → build → test → scan → image → deploy dev → [GATE] → deploy prod → release`
 
-OUTSIDE BOUNDARY
+The full lifecycle is governed by **SA-3** (System Development Lifecycle) and **SA-11** (Developer Testing & Evaluation).
 
-GitHub / GitLab CI
-
-Source + CI Runner
-
-SA-9
-External Services
-
-SA-10
-Config Mgmt
-
-CM-5
-Access Control
-
-No federal data permitted
-
-PULL
-
-➔
-TLS 443 / FIPS
-
-INSIDE BOUNDARY
-
-Dev/Test Environment
-
-Security Validation Gate
-
-SAST
-
-fortify
-
-SI-7
-
-DAST
-
-dynamic
-
-RA-5
-
-SCA
-
-deps
-
-SI-3
-
-SBOM
-
-anchore
-
-SI-7
-
-SECRETS
-
-trufflehog
-
-SI-4
-
-IMAGE
-
-twistlock
-
-SC-8
-
-PASS / FAIL
-
-SC-8
-SC-7
-SI-7
-RA-5
-AU-2
-
-GATE
-
-➔
-Human Approval
-
-PRODUCTION
-
-Production
-
-Operational Environment
-
-release major / minor / patch
-
-AC-6
-AC-2
-CM-3
-SI-2
-
-Separation of duties enforced
+| Zone | What lives here | Key controls |
+| --- | --- | --- |
+| **Outside boundary** | GitHub / GitLab CI — source + CI runner. No federal data permitted. | SA-9 · SA-10 · CM-5 |
+| **Boundary crossing** | Pull only (never push), over TLS 443 with FIPS-validated encryption | SC-8 · SC-7 |
+| **Inside boundary — Dev/Test** | Security validation gate: SAST, DAST, SCA, SBOM, secrets, and image scans must all pass before code advances | SC-8 · SC-7 · SI-7 · RA-5 · AU-2 |
+| **Inside boundary — Manual gate** | Human approval before anything reaches production | AC-6 · CM-3 |
+| **Inside boundary — Production** | Operational environment; releases tagged major / minor / patch, with separation of duties enforced | AC-6 · AC-2 · CM-3 · SI-2 |
 
 Three architectural constraints are non-negotiable:
 
@@ -181,65 +81,18 @@ The connection from dev to your external SCM (GitHub or GitLab) is the most secu
 
 The dev environment is your primary defense against supply chain compromise. Every build should run through a comprehensive scan pipeline:
 
-Build Scan Pipeline -- per commit execution
+**Build scan pipeline — runs on every commit:**
 
-SAST
+| Scan | Purpose | Tools | Controls |
+| --- | --- | --- | --- |
+| SAST | Static analysis | fortify / semgrep | SI-3 · SI-7 · SA-11 |
+| DAST | Dynamic testing | ZAP / Burp | RA-5 · SA-11 |
+| SCA | Dependency scan | snyk / trivy | SI-3 · SA-12 |
+| SBOM | Bill of materials | anchore / syft | SI-7 · SA-12 |
+| Secrets | Credential scan | trufflehog / gitleaks | SI-4 |
+| Image scan | Container verify | twistlock / openSCAP | SI-7 · SC-8 |
 
-Static Analysis
-
-fortify / semgrep
-
-SI-3
-SI-7
-SA-11
-
-DAST
-
-Dynamic Testing
-
-ZAP / Burp
-
-RA-5
-SA-11
-
-SCA
-
-Dependency Scan
-
-snyk / trivy
-
-SI-3
-SA-12
-
-SBOM
-
-Bill of Materials
-
-anchore / syft
-
-SI-7
-SA-12
-
-SECRETS
-
-Credential Scan
-
-trufflehog / gitleaks
-
-SI-4
-
-IMAGE SCAN
-
-Container Verify
-
-twistlock / openSCAP
-
-SI-7
-SC-8
-
-ALL PASS → ADVANCE
-|
-ANY FAIL → BLOCK
+**All pass → advance. Any fail → block.**
 
 Under `RA-5`, monthly OS, web application, and database scans are the minimum. But your pipeline should scan on **every build** -- the monthly cadence is the compliance floor, not the engineering target. Under `CM-3`, every code change flowing through the pipeline is a configuration change that requires a Security Impact Analysis. If the analysis concludes the change adversely affects the system's authorization, it becomes a significant change requiring AO coordination and 3PAO involvement.
 
@@ -258,66 +111,6 @@ The manual gate between dev and production is not a weakness -- it is a **compli
 | AC-2 | Account Management | Formal management of GitHub/GitLab accounts, cloud IAM roles for your CI/CD service, and all pipeline service accounts. Disable after 90 days inactive. Annual recertification. |
 | SI-2 | Flaw Remediation | Security-relevant updates remediated within 30 days. Document an SLA for security patch promotion through the pipeline. |
 
-Separation of Duties Model -- enforced via IAM policy
-
-Developer
-
-✓
-Commits code to GitHub/GitLab
-
-✓
-Opens pull/merge requests
-
-✓
-Fixes scan findings
-
-✗
-Cannot approve own PR/MR
-
-✗
-Cannot promote to prod
-
-✗
-No prod environment access
-
-≠
-
-Dev Approver
-
-✓
-Reviews scan results
-
-✓
-Approves pull into dev env
-
-✓
-Validates scan pipeline pass
-
-✗
-Cannot promote to prod
-
-AC-6
-CM-3
-
-≠
-
-Prod Approver
-
-✓
-Verifies SIA completed
-
-✓
-Approves production deploy
-
-✓
-Signs off on release
-
-✗
-Cannot commit code
-
-AC-6
-AC-2
-CM-3
 
 ## Cross-Cutting Requirements
 
