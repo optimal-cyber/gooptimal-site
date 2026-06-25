@@ -47,5 +47,7 @@ const ogImage = new URL(image, Astro.site);
   </head>
   <body>
     <slot />
+    <!-- Secure Gateway Constellation — inits only on pages with a [data-gateway-3d] canvas -->
+    <script is:inline defer src="/js/gateway-3d.js"></script>
   </body>
 </html>

@@ -1,0 +1,40 @@
+---
+/**
+ * Secure Gateway Constellation — WebGL hero/section visual.
+ * Drop inside a `position: relative` section, after any `.glow`, before the
+ * `.z` content. The engine (public/js/gateway-3d.js) lazy-loads three.js only
+ * when a [data-gateway-3d] canvas is present, honors prefers-reduced-motion,
+ * and silently no-ops where WebGL is unavailable.
+ */
+interface Props {
+  /** "hero" (focal, right-weighted) or "ambient" (dim section backdrop). */
+  variant?: "hero" | "ambient";
+  /** "center" keeps the constellation centered instead of right-weighted. */
+  align?: "center";
+  /** Particle/node density multiplier (default 1). */
+  density?: number;
+}
+const { variant = "hero", align, density } = Astro.props;
+---
+
+<canvas
+  data-gateway-3d
+  data-variant={variant}
+  data-align={align}
+  data-density={density != null ? String(density) : undefined}
+  aria-hidden="true"
+  class="gateway-canvas"
+></canvas>
+
+<style>
+  .gateway-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* above .glow, below .z content */
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 1.2s ease;
+  }
+</style>

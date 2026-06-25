@@ -136,4 +136,4 @@ The ATO process is not going away. Nor should it. The concept -- a named individ
 
 The bottleneck was never the controls. It was never the framework. It was the gap between how we build systems and how we prove they are secure. Close that gap, and the ATO becomes what it was always meant to be: a risk decision, not a paperwork exercise.
 
-**Ready to eliminate the ATO bottleneck?** [Request a demo](/demo) to see how Optimal automates evidence collection, STIG compliance, and continuous monitoring -- compressing authorization timelines from months to weeks across DoW and civilian frameworks.
+**Ready to eliminate the ATO bottleneck?** [Request access](/contact) to see how Optimal automates evidence collection, STIG compliance, and continuous monitoring -- compressing authorization timelines from months to weeks across DoW and civilian frameworks.

@@ -124,4 +124,4 @@ Each "no" represents an opportunity to compress your timeline. And the good news
 
 The ATO process exists for a reason: to ensure that federal systems meet a genuine standard of security. Accelerating it does not mean lowering that standard. It means building the engineering discipline to meet it from the start.
 
-**Want to see how Optimal helps teams compress their ATO timelines?** [Request a demo](/demo) and we will walk you through how our platform automates STIG compliance, evidence collection, and continuous monitoring for DoD and federal teams.
+**Want to see how Optimal helps teams compress their ATO timelines?** [Request access](/contact) and we will walk you through how our platform automates STIG compliance, evidence collection, and continuous monitoring for DoD and federal teams.

@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import GatewayCanvas from "../components/GatewayCanvas.astro";
 ---
 
 <Layout
@@ -12,6 +13,7 @@ import Footer from "../components/Footer.astro";
 
   <section class="section relative">
     <div class="glow"></div>
+    <GatewayCanvas variant="ambient" align="center" density={0.55} />
     <div class="container z wrap">
       <div class="intro">
         <span class="eyebrow">Request access</span>

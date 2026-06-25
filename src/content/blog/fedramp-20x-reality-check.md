@@ -103,4 +103,4 @@ FedRAMP 20x is not a silver bullet. It is a meaningful improvement to a process 
 
 The organizations that navigate this transition successfully will be the ones that prepare for the world 20x promises while remaining grounded in the world that still exists today.
 
-**Navigating the shifting landscape of federal cloud authorization?** [Request a demo](/demo) to see how Optimal helps teams automate compliance evidence, manage dual-track authorization packages, and maintain continuous monitoring across DoW and civilian frameworks.
+**Navigating the shifting landscape of federal cloud authorization?** [Request access](/contact) to see how Optimal helps teams automate compliance evidence, manage dual-track authorization packages, and maintain continuous monitoring across DoW and civilian frameworks.

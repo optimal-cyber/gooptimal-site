@@ -94,4 +94,4 @@ We will share more details on the Q2 roadmap in the coming weeks. If there is a 
 
 > "Our mission is to make security an accelerator rather than a bottleneck. Every feature we ship is measured against a simple question: does this help teams deliver secure software faster? The Q1 2026 release represents a major step forward on that promise, and we are just getting started."
 
-We are grateful to every customer, design partner, and community member who provided feedback that shaped this release. If you are not yet using Optimal and want to see these capabilities in action, [request a demo](/demo) and our team will walk you through the platform.
+We are grateful to every customer, design partner, and community member who provided feedback that shaped this release. If you are not yet using Optimal and want to see these capabilities in action, [request access](/contact) and our team will walk you through the platform.

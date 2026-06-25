@@ -3,6 +3,7 @@ import { getCollection, render } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
+import GatewayCanvas from "../../components/GatewayCanvas.astro";
 
 export async function getStaticPaths() {
   const entries = await getCollection("industries");
@@ -19,6 +20,7 @@ const { title, description, eyebrow, subhead } = entry.data;
 
   <section class="hero relative">
     <div class="glow"></div>
+    <GatewayCanvas variant="hero" density={0.85} />
     <div class="container z">
       <span class="eyebrow">{eyebrow}</span>
       <h1 class="display htitle">{title}</h1>

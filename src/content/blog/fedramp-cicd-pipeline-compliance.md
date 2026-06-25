@@ -174,4 +174,4 @@ The controls and requirements above can feel overwhelming when read as a list. I
 
 > The best CI/CD pipeline for FedRAMP is not the one that avoids compliance -- it is the one that generates compliance evidence as a natural byproduct of building and deploying software. When the pipeline is the proof, the ATO package assembles itself.
 
-**Building a compliant CI/CD pipeline for public sector?** [Request a demo](/demo) to see how Optimal automates SAST/DAST/SCA scanning, SBOM generation, evidence collection, and continuous monitoring across FedRAMP, DoW Impact Level, and agency ATO environments -- turning your pipeline into your compliance engine.
+**Building a compliant CI/CD pipeline for public sector?** [Request access](/contact) to see how Optimal automates SAST/DAST/SCA scanning, SBOM generation, evidence collection, and continuous monitoring across FedRAMP, DoW Impact Level, and agency ATO environments -- turning your pipeline into your compliance engine.

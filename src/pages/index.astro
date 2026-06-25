@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import GatewayCanvas from "../components/GatewayCanvas.astro";
 
 const standards = [
   "FedRAMP 20x", "NIST AI RMF", "ISO 42001", "SOC 2", "OWASP LLM Top 10",
@@ -73,6 +74,7 @@ const work = [
   <!-- HERO -->
   <section class="hero relative">
     <div class="glow"></div>
+    <GatewayCanvas variant="hero" />
     <div class="container z">
       <span class="eyebrow">The secure access layer for government-ready AI</span>
       <h1 class="display">Ship AI into the mission,<br /><span class="grad">not around the rules.</span></h1>
@@ -171,6 +173,7 @@ const work = [
   <!-- CTA -->
   <section class="section cta relative">
     <div class="glow"></div>
+    <GatewayCanvas variant="ambient" align="center" density={0.7} />
     <div class="container z cta-inner">
       <h2 class="display" style="font-size:clamp(2rem,5vw,3.4rem);">Bring your organization<br />through the Gateway.</h2>
       <p class="lead" style="margin:18px auto 0;">Tell us your accreditation boundary and the models you need. We&rsquo;ll stand up authorized, audited access across your clouds.</p>
