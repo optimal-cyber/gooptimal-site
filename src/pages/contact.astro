@@ -28,8 +28,10 @@ import GatewayCanvas from "../components/GatewayCanvas.astro";
         </p>
       </div>
 
-      <!-- Wire `action` to a form handler (Formspree / Netlify Forms / your API). -->
-      <form class="card form" method="POST" action="https://formspree.io/f/your-form-id">
+      <form class="card form" method="POST" action="https://formspree.io/f/xovqzpkj">
+        <!-- Formspree config: email subject + honeypot spam trap -->
+        <input type="hidden" name="_subject" value="Optimal · Request access" />
+        <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
         <div class="row">
           <label>Name<input type="text" name="name" required /></label>
           <label>Work email<input type="email" name="email" required /></label>
@@ -61,6 +63,7 @@ import GatewayCanvas from "../components/GatewayCanvas.astro";
   .email { margin-top: 22px; font-size: 14px; }
   .email a { color: var(--sunset); }
   .form { display: grid; gap: 16px; }
+  .hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
   .row { display: grid; gap: 16px; }
   label { display: grid; gap: 7px; font-size: 13px; color: var(--text-dim); }
   input, select, textarea {
