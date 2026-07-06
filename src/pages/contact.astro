@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import GatewayCanvas from "../components/GatewayCanvas.astro";
+import VetBadge from "../components/VetBadge.astro";
 ---
 
 <Layout
@@ -26,6 +27,13 @@ import GatewayCanvas from "../components/GatewayCanvas.astro";
         <p class="muted email">
           Prefer email? <a href="mailto:ryan@gooptimal.io">ryan@gooptimal.io</a>
         </p>
+        <div class="vet-wrap">
+          <VetBadge variant="full" />
+          <p class="muted vet-note">
+            Optimal, LLC is an SBA-certified Service-Disabled Veteran-Owned Small
+            Business (SDVOSB), eligible for SDVOSB and VOSB set-aside contracts.
+          </p>
+        </div>
       </div>
 
       <form class="card form" method="POST" action="https://formspree.io/f/xovqzpkj">
@@ -62,6 +70,8 @@ import GatewayCanvas from "../components/GatewayCanvas.astro";
   .intro { padding-top: 6px; }
   .email { margin-top: 22px; font-size: 14px; }
   .email a { color: var(--sunset); }
+  .vet-wrap { margin-top: 28px; padding-top: 24px; border-top: 1px solid var(--rule); display: grid; gap: 14px; }
+  .vet-wrap .vet-note { font-size: 13px; max-width: 46ch; }
   .form { display: grid; gap: 16px; }
   .hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
   .row { display: grid; gap: 16px; }
