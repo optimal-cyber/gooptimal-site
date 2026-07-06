@@ -5,15 +5,55 @@ interface Props {
   title?: string;
   description?: string;
   image?: string;
+  keywords?: string;
 }
 const {
   title = "Optimal — secure AI for government-ready missions",
-  description = "The secure access layer for government-ready AI. Authorize every model call, log every token, prove every control — across GovCloud, on-prem, and air-gapped.",
+  description = "The secure access layer for government-ready AI. Authorize every model call, log every token, prove every control — across GovCloud, on-prem, and air-gapped. An SBA-certified Service-Disabled Veteran-Owned Small Business (SDVOSB).",
   image = "/optimal-social-preview.png",
+  keywords = "SDVOSB, Service-Disabled Veteran-Owned Small Business, VOSB, Veteran-Owned Small Business, SBA VetCert, veteran-owned AI security, secure AI gateway, government AI, FedRAMP, AI governance, GovCloud",
 } = Astro.props;
 
 const canonical = new URL(Astro.url.pathname, Astro.site);
 const ogImage = new URL(image, Astro.site);
+
+// Site-wide Organization structured data — advertises the SDVOSB credential to
+// Google, AI Overviews, and LLM crawlers as machine-readable fact, not just prose.
+const orgSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Optimal",
+  legalName: "Optimal, LLC",
+  url: "https://gooptimal.io",
+  logo: "https://gooptimal.io/optimal-horizon-512.png",
+  image: "https://gooptimal.io/optimal-social-preview.png",
+  email: "ryan@gooptimal.io",
+  slogan: "Sovereign by default.",
+  description:
+    "Optimal is the secure access layer for government-ready AI, and an SBA-certified Service-Disabled Veteran-Owned Small Business (SDVOSB).",
+  knowsAbout: [
+    "Secure AI Gateway",
+    "AI governance",
+    "FedRAMP",
+    "NIST AI RMF",
+    "Service-Disabled Veteran-Owned Small Business",
+  ],
+  hasCredential: [
+    {
+      "@type": "EducationalOccupationalCredential",
+      credentialCategory: "certification",
+      name: "Service-Disabled Veteran-Owned Small Business (SDVOSB)",
+      description:
+        "SBA-certified Service-Disabled Veteran-Owned Small Business and Veteran-Owned Small Business via the SBA Veteran Small Business Certification (VetCert) program. Eligible for SDVOSB and VOSB set-aside contracts.",
+      url: "https://search.certifications.sba.gov/",
+      recognizedBy: {
+        "@type": "GovernmentOrganization",
+        name: "U.S. Small Business Administration",
+        url: "https://www.sba.gov",
+      },
+    },
+  ],
+};
 ---
 
 <!doctype html>
@@ -23,6 +63,7 @@ const ogImage = new URL(image, Astro.site);
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
     <link rel="canonical" href={canonical} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
@@ -44,6 +85,7 @@ const ogImage = new URL(image, Astro.site);
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
+    <script type="application/ld+json" set:html={JSON.stringify(orgSchema)} is:inline />
   </head>
   <body>
     <slot />

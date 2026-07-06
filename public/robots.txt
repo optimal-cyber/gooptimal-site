@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://gooptimal.io/sitemap-index.xml
