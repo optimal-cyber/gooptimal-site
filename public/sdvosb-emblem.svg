@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="Service-Disabled Veteran-Owned Small Business — SBA VetCert certified">
+  <defs>
+    <path id="topArc" d="M 32 120 A 88 88 0 0 1 208 120"/>
+    <path id="botArc" d="M 48 120 A 72 72 0 0 0 192 120"/>
+  </defs>
+  <style>
+    .ink { fill: var(--seal-ink, #d7deea); }
+    .stem { stroke: var(--seal-ink, #d7deea); stroke-width: 1.6; opacity: .8; }
+    .accent { fill: var(--seal-accent, #ff8a3d); }
+    .ring { fill: var(--seal-ink, #d7deea); font-family: "Space Grotesk", ui-sans-serif, system-ui, sans-serif; font-weight: 600; letter-spacing: .06em; }
+    .mono { fill: var(--seal-accent, #ff8a3d); font-family: "Space Grotesk", ui-sans-serif, system-ui, sans-serif; font-weight: 700; }
+    .tiny { fill: var(--seal-ink, #d7deea); font-family: "Space Grotesk", ui-sans-serif, system-ui, sans-serif; font-weight: 600; letter-spacing: .18em; }
+  </style>
+
+  <circle cx="120" cy="120" r="112" fill="none" stroke="var(--seal-ink,#d7deea)" stroke-width="1.4" opacity=".35"/>
+
+  <g class="ink"><path class="stem" d="M 88.0 195.5 A 82 82 0 0 1 90.6 43.4" fill="none"/><path d="M0,0 C 6,-6 6,-15 0,-21 C -6,-15 -6,-6 0,0 Z" transform="translate(87.96,195.48) rotate(185.0) scale(0.926)"/><path d="M0,0 C 6,-6 6,-15 0,-21 C -6,-15 -6,-6 0,0 Z" transform="translate(67.29,182.82) rotate(202.0) scale(1.016)"/><path d="M0,0 C 6,-6 6,-15 0,-21 C -6,-15 -6,-6 0,0 Z" transform="translate(51.23,164.66) rotate(219.0) scale(1.106)"/><path d="M0,0 C 6,-6 6,-15 0,-21 C -6,-15 -6,-6 0,0 Z" transform="translate(41.18,142.60) rotate(236.0) scale(1.1960000000000002)"/><path d="M0,0 C 6,-6 6,-15 0,-21 C -6,-15 -6,-6 0,0 Z" transform="translate(38.01,118.57) rotate(253.0) scale(1.214)"/><path d="M0,0 C 6,-6 6,-15 0,-21 C -6,-15 -6,-6 0,0 Z" transform="translate(42.01,94.66) rotate(270.0) scale(1.124)"/><path d="M0,0 C 6,-6 6,-15 0,-21 C -6,-15 -6,-6 0,0 Z" transform="translate(52.83,72.97) rotate(287.0) scale(1.034)"/><path d="M0,0 C 6,-6 6,-15 0,-21 C -6,-15 -6,-6 0,0 Z" transform="translate(69.52,55.38) rotate(304.0) scale(0.9440000000000001)"/><path d="M0,0 C 6,-6 6,-15 0,-21 C -6,-15 -6,-6 0,0 Z" transform="translate(90.61,43.45) rotate(321.0) scale(0.854)"/><path class="stem" d="M 152.0 195.5 A 82 82 0 0 0 149.4 43.4" fill="none"/><path d="M0,0 C 6,-6 6,-15 0,-21 C -6,-15 -6,-6 0,0 Z" transform="translate(152.04,195.48) rotate(-5.0) scale(0.926)"/><path d="M0,0 C 6,-6 6,-15 0,-21 C -6,-15 -6,-6 0,0 Z" transform="translate(172.71,182.82) rotate(-22.0) scale(1.016)"/><path d="M0,0 C 6,-6 6,-15 0,-21 C -6,-15 -6,-6 0,0 Z" transform="translate(188.77,164.66) rotate(-39.0) scale(1.106)"/><path d="M0,0 C 6,-6 6,-15 0,-21 C -6,-15 -6,-6 0,0 Z" transform="translate(198.82,142.60) rotate(-56.0) scale(1.1960000000000002)"/><path d="M0,0 C 6,-6 6,-15 0,-21 C -6,-15 -6,-6 0,0 Z" transform="translate(201.99,118.57) rotate(-73.0) scale(1.214)"/><path d="M0,0 C 6,-6 6,-15 0,-21 C -6,-15 -6,-6 0,0 Z" transform="translate(197.99,94.66) rotate(-90.0) scale(1.124)"/><path d="M0,0 C 6,-6 6,-15 0,-21 C -6,-15 -6,-6 0,0 Z" transform="translate(187.17,72.97) rotate(-107.0) scale(1.034)"/><path d="M0,0 C 6,-6 6,-15 0,-21 C -6,-15 -6,-6 0,0 Z" transform="translate(170.48,55.38) rotate(-124.0) scale(0.9440000000000001)"/><path d="M0,0 C 6,-6 6,-15 0,-21 C -6,-15 -6,-6 0,0 Z" transform="translate(149.39,43.45) rotate(-141.0) scale(0.854)"/></g>
+
+  <text class="ring" font-size="14" text-anchor="middle">
+    <textPath href="#topArc" startOffset="50%" textLength="150" lengthAdjust="spacingAndGlyphs">SERVICE-DISABLED VETERAN-OWNED</textPath>
+  </text>
+  <text class="tiny" font-size="12" text-anchor="middle">
+    <textPath href="#botArc" startOffset="50%" textLength="120" lengthAdjust="spacingAndGlyphs">SMALL BUSINESS</textPath>
+  </text>
+
+  <text class="mono" x="120" y="116" font-size="34" text-anchor="middle">SDVOSB</text>
+  <line x1="92" y1="127" x2="148" y2="127" stroke="var(--seal-ink,#d7deea)" stroke-width="1" opacity=".4"/>
+  <text class="tiny" x="120" y="141" font-size="8.5" text-anchor="middle">SBA VETCERT</text>
+
+  <g class="accent">
+    <polygon points="108.00,153.50 109.11,156.47 112.28,156.61 109.80,158.58 110.65,161.64 108.00,159.89 105.35,161.64 106.20,158.58 103.72,156.61 106.89,156.47"/>
+    <polygon points="132.00,153.50 133.11,156.47 136.28,156.61 133.80,158.58 134.65,161.64 132.00,159.89 129.35,161.64 130.20,158.58 127.72,156.61 130.89,156.47"/>
+  </g>
+</svg>
