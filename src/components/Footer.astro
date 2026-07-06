@@ -1,4 +1,6 @@
 ---
+import VetBadge from "./VetBadge.astro";
+
 const year = 2026;
 const cols = [
   {
@@ -38,6 +40,7 @@ const cols = [
           <span class="wordmark">OPTIMAL</span>
         </div>
         <p class="muted blurb">The secure access layer for government-ready AI. Built for the organizations that keep critical missions moving.</p>
+        <VetBadge variant="full" class="footer-vet" />
       </div>
       {cols.map((c) => (
         <div class="col">
@@ -47,8 +50,8 @@ const cols = [
       ))}
     </div>
     <div class="bottom">
-      <span class="muted">© {year} Optimal. Sovereign by default.</span>
-      <span class="muted">FedRAMP · NIST AI RMF · ISO 42001 · SOC 2</span>
+      <span class="muted">© {year} Optimal, LLC. Sovereign by default.</span>
+      <span class="muted">SDVOSB · SBA-certified Veteran-Owned · FedRAMP · NIST AI RMF · SOC 2</span>
     </div>
   </div>
 </footer>
@@ -61,6 +64,7 @@ const cols = [
   .brand .mark { width: 26px; height: 26px; border-radius: 50%; display: block; }
   .wordmark { font-family: var(--font-display); font-weight: 600; letter-spacing: 0.22em; font-size: 15px; }
   .blurb { font-size: 14px; line-height: 1.7; }
+  .footer-vet { margin-top: 20px; }
   .col h4 { font-family: var(--font-body); font-size: 12px; text-transform: uppercase; letter-spacing: 0.14em; color: var(--text-faint); margin-bottom: 14px; }
   .col ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
   .col a { font-size: 14px; color: var(--text-dim); transition: color .2s ease; }

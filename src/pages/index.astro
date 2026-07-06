@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import GatewayCanvas from "../components/GatewayCanvas.astro";
+import VetBadge from "../components/VetBadge.astro";
 
 const standards = [
   "FedRAMP 20x", "NIST AI RMF", "ISO 42001", "SOC 2", "OWASP LLM Top 10",
@@ -101,6 +102,13 @@ const work = [
       <p class="wall-label muted">Built to the standards that gate production</p>
       <div class="wall">
         {standards.map((s) => <span class="chip">{s}</span>)}
+      </div>
+      <div class="vet-strip">
+        <VetBadge variant="inline" />
+        <p class="vet-note muted">
+          Optimal, LLC is a <strong>Service-Disabled Veteran-Owned Small Business</strong> —
+          SBA-certified and eligible for veteran set-aside contracts.
+        </p>
       </div>
     </div>
   </section>
@@ -204,6 +212,13 @@ const work = [
     padding: 8px 16px; transition: color .2s, border-color .2s;
   }
   .chip:hover { color: var(--text); border-color: var(--rule-strong); }
+  .vet-strip {
+    display: flex; flex-wrap: wrap; align-items: center; justify-content: center;
+    gap: 14px 18px; margin-top: 26px; padding-top: 24px;
+    border-top: 1px solid var(--rule);
+  }
+  .vet-note { font-size: 13px; max-width: 52ch; text-align: center; }
+  .vet-note strong { color: var(--text); font-weight: 600; }
 
   /* CAPABILITIES */
   .cap-k { font-family: var(--font-display); font-size: 13px; font-weight: 700; letter-spacing: 0.1em; margin-bottom: 14px; }
