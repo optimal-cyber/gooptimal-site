@@ -9,9 +9,9 @@ interface Props {
 }
 const {
   title = "Optimal — governed AI for regulated & federal missions",
-  description = "Optimal is an AI security advisory firm. We assess and red-team AI systems, engineer the governed access layer that keeps them accountable, and advise teams on adopting AI safely — across GovCloud, on-prem, and air-gapped. An SBA-certified Service-Disabled Veteran-Owned Small Business (SDVOSB).",
+  description = "Optimal is an AI security advisory firm. We assess and red-team AI systems, engineer governed access to frontier models in the cloud you already license (Azure OpenAI, Amazon Bedrock, Google Vertex AI, or GovCloud), and advise teams on adopting AI safely — for federal, SLED, and enterprise missions. An SBA-certified Service-Disabled Veteran-Owned Small Business (SDVOSB).",
   image = "/optimal-social-preview.png",
-  keywords = "SDVOSB, Service-Disabled Veteran-Owned Small Business, VOSB, Veteran-Owned Small Business, SBA VetCert, veteran-owned AI security, governed AI, secure AI gateway, AI guardrails, Zero Trust AI, GovCloud AI, air-gapped AI, AI red-teaming, NIST AI RMF, OWASP LLM Top 10",
+  keywords = "SDVOSB, Service-Disabled Veteran-Owned Small Business, VOSB, Veteran-Owned Small Business, SBA VetCert, veteran-owned AI security, governed AI, secure AI gateway, AI guardrails, Zero Trust AI, GovCloud AI, air-gapped AI, AI red-teaming, NIST AI RMF, OWASP LLM Top 10, SLED AI security, enterprise AI security, Azure OpenAI, Amazon Bedrock, Google Vertex AI, frontier model access",
 } = Astro.props;
 
 const canonical = new URL(Astro.url.pathname, Astro.site);
@@ -30,7 +30,13 @@ const orgSchema = {
   email: "ryan@gooptimal.io",
   slogan: "Sovereign by default.",
   description:
-    "Optimal is an AI security advisory firm for regulated and federal missions — AI security assessments, adversarial (red-team) AI testing, governed AI engineering, and secure-adoption advisory. An SBA-certified Service-Disabled Veteran-Owned Small Business (SDVOSB).",
+    "Optimal is an AI security advisory firm for federal, SLED (state, local, education), and enterprise missions — AI security assessments, adversarial (red-team) AI testing, governed AI engineering, and secure-adoption advisory. We build governed access to frontier models in the cloud a client already licenses (Azure OpenAI, Amazon Bedrock, Google Vertex AI, or GovCloud). An SBA-certified Service-Disabled Veteran-Owned Small Business (SDVOSB).",
+  areaServed: [
+    "United States federal government",
+    "State and local government",
+    "Higher education",
+    "Enterprise",
+  ],
   makesOffer: [
     {
       "@type": "Offer",
@@ -76,6 +82,11 @@ const orgSchema = {
     "Zero Trust architecture",
     "AI red-teaming",
     "NIST AI RMF",
+    "Frontier model access",
+    "Azure OpenAI Service",
+    "Amazon Bedrock",
+    "Google Vertex AI",
+    "SLED (state, local, education)",
     "Service-Disabled Veteran-Owned Small Business",
   ],
   hasCredential: [
