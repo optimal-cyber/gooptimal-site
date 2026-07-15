@@ -1,9 +1,10 @@
 # Optimal, LLC
 
-> Optimal is an AI security advisory firm for regulated and federal missions.
-> We assess and red-team AI systems, engineer the governed access layer that
-> keeps them accountable, and advise teams on adopting AI safely — across
-> GovCloud, on-prem, and air-gapped environments.
+> Optimal is an AI security advisory firm for federal, SLED (state, local, and
+> education), and enterprise missions. We assess and red-team AI systems,
+> engineer governed access to frontier models in the cloud a client already
+> licenses, and advise teams on adopting AI safely — across GovCloud,
+> commercial cloud, on-prem, and air-gapped environments.
 
 ## About
 
@@ -26,6 +27,11 @@
 - Adversarial AI Testing (red team) — prompt injection, model and context manipulation, data and secret extraction, and abuse-case simulation.
 - Governed AI Engineering — design and stand-up of a Zero Trust access layer for AI in the client's environment: authenticated gateway, prompt guardrails, default-deny egress, and a defensible audit trail.
 - Secure AI Adoption Advisory — practical usage patterns, threat models, and secure-adoption roadmaps scoped to an organization's risk profile.
+
+## Bring your own cloud
+
+- If a client already licenses Microsoft Azure, AWS, or Google Cloud, Optimal builds governed, audited access to the frontier models in that existing cloud — Azure OpenAI Service (Azure), Amazon Bedrock (AWS), and Google Vertex AI (GCP) — plus GovCloud and self-hosted models. No new vendor or procurement required.
+- Available to enterprises and to all of SLED (state, local, and education), as well as federal agencies.
 
 ## Reference pattern (Governed AI Engineering)
 

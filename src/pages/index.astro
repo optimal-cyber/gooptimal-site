@@ -50,10 +50,10 @@ const services = [
     idx: "03",
     title: "Governed AI Engineering",
     accent: "var(--coral)",
-    lede: "Our signature engagement. We design and stand up the access layer for AI in regulated environments — built on our open-source Zero Trust reference architecture, in the cloud you already operate.",
+    lede: "Our signature engagement. We design and stand up the access layer for AI in the cloud you already license — Azure, AWS, GCP, or GovCloud — built on our open-source Zero Trust reference architecture.",
     scopeLabel: "We build",
     scope: [
-      "One authenticated gateway to every approved model",
+      "One authenticated gateway to every approved model — Azure OpenAI, Bedrock, Vertex, or self-hosted",
       "Per-key virtual credentials and rate limits",
       "Fail-closed prompt and response guardrails",
       "Default-deny egress, pinned to an allowlist",
@@ -196,8 +196,12 @@ const faqs = [
     a: "We build practical, engineering-grounded usage patterns, threat models, and secure-adoption roadmaps tied to real-world risk. We review how AI is actually being used, identify where data and access are exposed, and give your teams guardrails they can follow — so adoption moves fast without moving blind.",
   },
   {
-    q: "Can Optimal work on federal or set-aside contracts?",
-    a: "Yes. Optimal is an SBA-certified Service-Disabled Veteran-Owned Small Business (SDVOSB), eligible for SDVOSB and VOSB set-aside contracts. We work across GovCloud, IL environments, on-prem, and fully air-gapped networks.",
+    q: "We already have Azure, AWS, or GCP — can you work in our cloud?",
+    a: "Yes, and it's often the fastest path. We build governed, audited access to the frontier models already available in the cloud you license — Azure OpenAI Service, Amazon Bedrock, and Google Vertex AI — so your teams reach them safely without a new vendor or procurement. It's available to enterprises and to all of SLED (state, local, and education), as well as federal teams.",
+  },
+  {
+    q: "Can Optimal work with federal, SLED, and enterprise teams?",
+    a: "Yes. Optimal is an SBA-certified Service-Disabled Veteran-Owned Small Business (SDVOSB), eligible for SDVOSB and VOSB set-aside contracts, and works with federal agencies, SLED (state, local, and education) entities, and enterprises. We deliver across GovCloud, commercial cloud (Azure, AWS, GCP), on-prem, and fully air-gapped networks.",
   },
 ];
 
@@ -213,8 +217,8 @@ const faqSchema = {
 ---
 
 <Layout
-  title="Optimal — AI security advisory for regulated & federal missions"
-  description="Optimal is an AI security advisory firm. We assess and red-team AI systems, engineer the governed access layer that keeps them accountable, and advise teams on adopting AI safely — across GovCloud, on-prem, and air-gapped. An SBA-certified Service-Disabled Veteran-Owned Small Business (SDVOSB)."
+  title="Optimal — AI security advisory for federal, SLED & enterprise missions"
+  description="Optimal is an AI security advisory firm. We assess and red-team AI systems, engineer governed access to frontier models in the cloud you already license (Azure OpenAI, Amazon Bedrock, Google Vertex AI, or GovCloud), and advise teams on adopting AI safely — for federal, SLED, and enterprise missions. An SBA-certified Service-Disabled Veteran-Owned Small Business (SDVOSB)."
 >
   <Header />
 
@@ -226,10 +230,10 @@ const faqSchema = {
       <span class="eyebrow">AI security advisory · Expertise-led, adversary-informed</span>
       <h1 class="display">Secure the AI<br /><span class="grad">your mission is betting on.</span></h1>
       <p class="lead">
-        Optimal is an AI security advisory firm for regulated and federal missions. We assess your
-        AI systems the way an adversary would, engineer the controls that keep them accountable, and
-        help your teams adopt AI without losing the audit trail — across GovCloud, on-prem, and
-        air-gapped.
+        Optimal is an AI security advisory firm for federal, state &amp; local, and enterprise
+        missions. We assess your AI systems the way an adversary would, engineer the controls that
+        keep them accountable, and help your teams adopt AI without losing the audit trail — across
+        GovCloud, commercial cloud, on-prem, and air-gapped.
       </p>
       <p class="hero-caps">
         Assessment <span>/</span> Red team <span>/</span> Governed engineering <span>/</span> Advisory
@@ -378,6 +382,33 @@ const faqSchema = {
         ))}
       </div>
       <p class="muted note">No wrapper, no SDK rewrite — point your existing OpenAI- or Anthropic-compatible client at the gateway and every call is governed and logged.</p>
+    </div>
+  </section>
+
+  <!-- BRING YOUR OWN CLOUD -->
+  <section id="cloud" class="section byoc relative">
+    <div class="glow"></div>
+    <div class="container z">
+      <div class="sec-head wide">
+        <span class="ix">Bring your own cloud</span>
+        <h2 class="h2">Already licensed with Azure, AWS, or GCP?<br />We build the governed access on top.</h2>
+        <p class="lead" style="margin-top:14px;">You don&rsquo;t need a new vendor to reach frontier models safely. If you already run Microsoft Azure, Amazon Web Services, or Google Cloud, Optimal stands up governed, audited access to the frontier models in the cloud you already license — the same authenticated gateway, guardrails, and defensible audit trail. Built for enterprises and for all of SLED: state, local, and education.</p>
+      </div>
+      <ul class="clouds">
+        <li class="cloud-item">
+          <span class="cloud-name">Microsoft Azure</span>
+          <span class="cloud-svc">Azure OpenAI Service</span>
+        </li>
+        <li class="cloud-item">
+          <span class="cloud-name">Amazon Web Services</span>
+          <span class="cloud-svc">Amazon Bedrock</span>
+        </li>
+        <li class="cloud-item">
+          <span class="cloud-name">Google Cloud</span>
+          <span class="cloud-svc">Vertex AI</span>
+        </li>
+      </ul>
+      <p class="muted byoc-note">Reach for the models in the cloud you already pay for — or self-host them. Either way, every call runs through one governed boundary with a defensible audit trail.</p>
     </div>
   </section>
 
@@ -574,6 +605,24 @@ const faqSchema = {
   .step p.muted { font-size: 13.5px; line-height: 1.65; }
   .note { margin-top: 26px; font-size: 14px; max-width: 70ch; }
   @media (min-width: 860px) { .flow { grid-template-columns: repeat(4, 1fr); } }
+
+  /* BRING YOUR OWN CLOUD */
+  .byoc { background: var(--bg); }
+  .clouds { list-style: none; margin: 36px 0 0; padding: 0; display: grid; gap: 16px; }
+  @media (min-width: 720px) { .clouds { grid-template-columns: repeat(3, 1fr); } }
+  .cloud-item {
+    display: flex; flex-direction: column; gap: 8px; padding: 22px 24px;
+    border: 1px solid var(--rule); border-radius: var(--radius);
+    background: linear-gradient(180deg, var(--surface-2), var(--surface));
+    transition: border-color .2s ease, transform .2s ease;
+  }
+  .cloud-item:hover { border-color: var(--rule-strong); transform: translateY(-2px); }
+  .cloud-name {
+    font-family: var(--font-mono); font-size: 11.5px; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--text-dim);
+  }
+  .cloud-svc { font-family: var(--font-display); font-size: 1.15rem; color: var(--text); }
+  .byoc-note { margin-top: 22px; font-size: 14px; max-width: 68ch; }
 
   /* USE CASES */
   .usecase h3 { font-size: 1.2rem; margin: 14px 0 10px; }
