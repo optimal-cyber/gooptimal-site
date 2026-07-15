@@ -1,9 +1,9 @@
 # Optimal, LLC
 
-> Optimal engineers governed, audited AI access for regulated and federal
-> missions — one authenticated gateway to every frontier model, guardrails on
-> every prompt, and a defensible audit trail, across GovCloud, on-prem, and
-> air-gapped environments.
+> Optimal is an AI security advisory firm for regulated and federal missions.
+> We assess and red-team AI systems, engineer the governed access layer that
+> keeps them accountable, and advise teams on adopting AI safely — across
+> GovCloud, on-prem, and air-gapped environments.
 
 ## About
 
@@ -20,9 +20,16 @@
   certification registry at https://search.certifications.sba.gov/.
 - Eligible to compete for **SDVOSB and VOSB set-aside contracts**.
 
-## What we build
+## Services
 
-- Authenticated gateway — one governed endpoint to every frontier model, per-key virtual credentials, no SDK rewrite.
+- AI Security Assessment — structured evaluation of AI systems, pipelines, and integrations against real adversary attack paths, mapped to the OWASP LLM Top 10, MITRE ATLAS, and NIST AI RMF.
+- Adversarial AI Testing (red team) — prompt injection, model and context manipulation, data and secret extraction, and abuse-case simulation.
+- Governed AI Engineering — design and stand-up of a Zero Trust access layer for AI in the client's environment: authenticated gateway, prompt guardrails, default-deny egress, and a defensible audit trail.
+- Secure AI Adoption Advisory — practical usage patterns, threat models, and secure-adoption roadmaps scoped to an organization's risk profile.
+
+## Reference pattern (Governed AI Engineering)
+
+- Authenticated gateway — one governed endpoint to every approved model, per-key virtual credentials (LiteLLM), no SDK rewrite. Caller auth via Cloudflare Access and Okta OIDC.
 - Prompt guardrails — NeMo Guardrails, fail-closed and pre-call; unit-tested secret and PII detectors.
 - Default-deny egress — Squid allowlist proxy plus security-group enforcement; no configuration opt-out.
 - Audit trail — structured JSON joined to Postgres by request ID; defensible without vendor-UI screenshots.
