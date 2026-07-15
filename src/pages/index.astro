@@ -10,29 +10,31 @@ const standards = [
   "CIS Benchmarks", "DISA STIG", "ISO 42001", "SOC 2",
 ];
 
-const capabilities = [
+// Advisory-led services — the four engagements Optimal runs. Ordered as a
+// narrative arc: find it → prove it → build the controls → keep it governed.
+const services = [
   {
     k: "01",
-    title: "One authenticated gateway",
-    body: "Point your existing OpenAI- or Anthropic-compatible client at a single governed endpoint. Cloudflare Access and Okta OIDC authenticate the caller; LiteLLM fans out to every frontier model behind per-key virtual credentials — no SDK rewrite.",
+    title: "AI Security Assessment",
+    body: "A structured evaluation of your AI systems, pipelines, and integrations — models, prompts, retrieval, tool calls, and the plumbing around them. We map the attack paths an adversary would actually take, measured against the OWASP LLM Top 10, MITRE ATLAS, and NIST AI RMF, and hand back findings you can act on — not a checklist.",
     accent: "var(--sunset)",
   },
   {
     k: "02",
-    title: "Guardrails on every prompt",
-    body: "NeMo Guardrails runs fail-closed and pre-call: unit-tested secret and PII detectors block a request before the provider is ever reached, and injection and jailbreak patterns are caught inline on the way in and out.",
+    title: "Adversarial AI Testing",
+    body: "Offensive testing of AI-enabled systems: prompt injection, jailbreaks, model and context manipulation, data and secret extraction, and abuse-case simulation. We find the failure before an adversary does — and show you exactly how it happened, and what closes it.",
     accent: "var(--steel)",
   },
   {
     k: "03",
-    title: "Default-deny by design",
-    body: "Egress is pinned to an allowlist by a Squid proxy and security-group rules — there is no configuration opt-out. IMDSv2, no inbound SSH, and least-privilege identity throughout.",
+    title: "Governed AI Engineering",
+    body: "Our signature engagement. We design and stand up the access layer for AI in regulated environments — one authenticated gateway to every approved model, guardrails on every prompt, default-deny egress, and an audit trail joined by request ID. Built on our open-source Zero Trust reference architecture, in the cloud you already operate.",
     accent: "var(--coral)",
   },
   {
     k: "04",
-    title: "An audit trail that holds up",
-    body: "Every request and every token lands in structured JSON paired with Postgres rows, joined by a request ID — a defensible evidence trail your reviewers read directly, not a wall of vendor-UI screenshots.",
+    title: "Secure AI Adoption Advisory",
+    body: "Help your teams adopt AI without flying blind. We build practical, engineering-grounded usage patterns, threat models, and secure-adoption roadmaps scoped to your risk profile — grounded in real attack paths, not paperwork. Your people learn the guardrails; you get the evidence they held.",
     accent: "var(--seafoam)",
   },
 ];
@@ -67,9 +69,49 @@ const work = [
     cta: "Agentic workloads →",
   },
 ];
+
+const faqs = [
+  {
+    q: "What does Optimal do?",
+    a: "Optimal is an AI security advisory firm for regulated, federal, and defense missions. We assess and red-team AI systems, engineer the governed access layer that keeps them accountable, and advise teams on adopting AI safely. We're an SBA-certified Service-Disabled Veteran-Owned Small Business (SDVOSB).",
+  },
+  {
+    q: "Is Optimal a product company or a services firm?",
+    a: "Advisory-led. We deliver engagements, not a SaaS subscription. The control pattern we implement is published as an open-source Zero Trust reference architecture — so you can read exactly what we build before we build it, and keep operating it yourself afterward.",
+  },
+  {
+    q: "How do you test AI systems for vulnerabilities?",
+    a: "We test real attack paths — prompt injection, model and context manipulation, data and secret extraction, and abuse-case simulation — scoped to your specific environment and risk profile rather than a generic checklist. Findings are measured against the OWASP LLM Top 10 and MITRE ATLAS and come with the evidence and the fix.",
+  },
+  {
+    q: "What is prompt injection, and why does it matter?",
+    a: "Prompt injection manipulates an AI system through crafted input, causing it to ignore its instructions, expose data, or take actions it shouldn't. It's one of the most active threats facing any organization deploying large language models and agents — and one of the first things we test.",
+  },
+  {
+    q: "How do you help teams adopt AI safely?",
+    a: "We build practical, engineering-grounded usage patterns, threat models, and secure-adoption roadmaps tied to real-world risk. We review how AI is actually being used, identify where data and access are exposed, and give your teams guardrails they can follow — so adoption moves fast without moving blind.",
+  },
+  {
+    q: "Can Optimal work on federal or set-aside contracts?",
+    a: "Yes. Optimal is an SBA-certified Service-Disabled Veteran-Owned Small Business (SDVOSB), eligible for SDVOSB and VOSB set-aside contracts. We work across GovCloud, IL environments, on-prem, and fully air-gapped networks.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
 ---
 
-<Layout>
+<Layout
+  title="Optimal — AI security advisory for regulated & federal missions"
+  description="Optimal is an AI security advisory firm. We assess and red-team AI systems, engineer the governed access layer that keeps them accountable, and advise teams on adopting AI safely — across GovCloud, on-prem, and air-gapped. An SBA-certified Service-Disabled Veteran-Owned Small Business (SDVOSB)."
+>
   <Header />
 
   <!-- HERO -->
@@ -77,21 +119,22 @@ const work = [
     <div class="glow"></div>
     <GatewayCanvas variant="hero" />
     <div class="container z">
-      <span class="eyebrow">Secure AI engineering for regulated &amp; federal missions</span>
-      <h1 class="display">Ship AI into the mission,<br /><span class="grad">not around the rules.</span></h1>
+      <span class="eyebrow">AI security advisory · Expertise-led, adversary-informed</span>
+      <h1 class="display">Secure the AI<br /><span class="grad">your mission is betting on.</span></h1>
       <p class="lead">
-        Optimal stands up governed, audited AI inside your environment — one authenticated
-        gateway to every frontier model, guardrails on every prompt, and an audit trail you
-        can defend. Across GovCloud, on-prem, and air-gapped.
+        Optimal is an AI security advisory firm for regulated and federal missions. We assess your
+        AI systems the way an adversary would, engineer the controls that keep them accountable, and
+        help your teams adopt AI without losing the audit trail — across GovCloud, on-prem, and
+        air-gapped.
       </p>
       <div class="cta-row">
         <a href="/contact" class="btn btn-primary">Book a scoping call →</a>
-        <a href="#how" class="btn btn-ghost">See how we work</a>
+        <a href="#services" class="btn btn-ghost">See our services</a>
       </div>
       <div class="hero-meta muted">
-        <span>Self-hosted in your cloud</span><span class="dot">•</span>
+        <span>Expertise-led, adversary-informed</span><span class="dot">•</span>
         <span>Sovereign by default</span><span class="dot">•</span>
-        <span>Open-source reference architecture</span>
+        <span>SDVOSB-certified</span>
       </div>
     </div>
   </section>
@@ -99,7 +142,7 @@ const work = [
   <!-- STANDARDS WALL (logo wall analogue) -->
   <section id="standards" class="section--tight standards">
     <div class="container">
-      <p class="wall-label muted">Engineered to the standards that gate production AI</p>
+      <p class="wall-label muted">We engineer to the standards that gate production AI</p>
       <div class="wall">
         {standards.map((s) => <span class="chip">{s}</span>)}
       </div>
@@ -113,14 +156,37 @@ const work = [
     </div>
   </section>
 
-  <!-- CAPABILITIES -->
-  <section id="capabilities" class="section">
+  <!-- APPROACH / PHILOSOPHY -->
+  <section id="approach" class="section approach relative">
+    <div class="glow"></div>
+    <div class="container z">
+      <span class="eyebrow">Our approach</span>
+      <h2 class="h2">Adversary-informed,<br />not compliance-driven.</h2>
+      <div class="approach-body">
+        <p>
+          Most teams meet AI security through a checklist. We start from the adversary — how a prompt
+          gets injected, how a model leaks its own context, how an agent is talked into acting outside
+          its lane. Compliance frameworks are where we finish, engineering targets we build toward,
+          never where we begin.
+        </p>
+        <p>
+          Expertise leads every engagement. We use AI and our own open-source tooling to move
+          faster, but the judgment — what to test, what a finding means, what to build — stays human.
+          We don't hand you a product and walk away. We scope to your stack, your risk, and your
+          environment, and leave you able to run what we build.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="section">
     <div class="container">
-      <span class="eyebrow">What we build</span>
-      <h2 class="h2">One governed boundary over every model call.</h2>
-      <p class="lead" style="margin-top:14px;">We stand up the pattern in your environment — the front door, the guardrails, the locked perimeter, and the audit trail for AI in regulated settings.</p>
+      <span class="eyebrow">What we do</span>
+      <h2 class="h2">Four ways we secure AI for the mission.</h2>
+      <p class="lead" style="margin-top:14px;">Assess it the way an adversary would. Prove the failure. Engineer the controls that stop it. Keep the whole program governed.</p>
       <div class="grid grid-2" style="margin-top:42px;">
-        {capabilities.map((c) => (
+        {services.map((c) => (
           <div class="card cap">
             <div class="cap-k" style={`color:${c.accent}`}>{c.k}</div>
             <h3>{c.title}</h3>
@@ -135,8 +201,9 @@ const work = [
   <section id="how" class="section how relative">
     <div class="glow"></div>
     <div class="container z">
-      <span class="eyebrow">How we work</span>
+      <span class="eyebrow">How the controls work</span>
       <h2 class="h2">Agents in. Approved resources out.<br />Everything in between, governed.</h2>
+      <p class="lead" style="margin-top:14px;">The reference pattern behind our Governed AI Engineering work — the same open-source Zero Trust design we stand up in your environment.</p>
       <div class="flow">
         {flow.map((f, i) => (
           <div class="step">
@@ -153,7 +220,7 @@ const work = [
   <!-- USE CASES -->
   <section id="work" class="section">
     <div class="container">
-      <span class="eyebrow">Use cases</span>
+      <span class="eyebrow">Where we work</span>
       <h2 class="h2">Built for the missions that can&rsquo;t get it wrong.</h2>
       <div class="grid grid-3" style="margin-top:42px;">
         {work.map((w) => (
@@ -168,12 +235,32 @@ const work = [
     </div>
   </section>
 
+  <!-- FAQ -->
+  <section id="faq" class="section faq relative">
+    <div class="glow"></div>
+    <div class="container z">
+      <span class="eyebrow">FAQ</span>
+      <h2 class="h2">Questions we get first.</h2>
+      <div class="faq-list">
+        {faqs.map((f) => (
+          <details class="faq-item">
+            <summary>
+              <span class="faq-q">{f.q}</span>
+              <span class="faq-mark" aria-hidden="true"></span>
+            </summary>
+            <p class="muted faq-a">{f.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
   <!-- QUOTE -->
   <section class="section--tight">
     <div class="container">
       <blockquote class="quote">
-        <p>&ldquo;The audit is the point. Every authorization decision and model call lands in a structured, append-only log — joined by request ID, and defensible on its own.&rdquo;</p>
-        <footer class="muted">Optimal — the access layer, not another dashboard.</footer>
+        <p>&ldquo;We don&rsquo;t hand you a scan and walk away. We show you how an adversary gets in, engineer the controls that stop them, and leave you the evidence that they held.&rdquo;</p>
+        <footer class="muted">Optimal — expertise-led AI security.</footer>
       </blockquote>
     </div>
   </section>
@@ -183,13 +270,15 @@ const work = [
     <div class="glow"></div>
     <GatewayCanvas variant="ambient" align="center" density={0.7} />
     <div class="container z cta-inner">
-      <h2 class="display" style="font-size:clamp(2rem,5vw,3.4rem);">Bring your organization<br />through the Gateway.</h2>
-      <p class="lead" style="margin:18px auto 0;">Tell us your environment and the models you need. We&rsquo;ll stand up authorized, audited access across your clouds — GovCloud, on-prem, or air-gapped.</p>
+      <h2 class="display" style="font-size:clamp(2rem,5vw,3.4rem);">Let&rsquo;s secure<br />your AI.</h2>
+      <p class="lead" style="margin:18px auto 0;">Tell us your environment, the models you&rsquo;re adopting, and where you&rsquo;re worried. We&rsquo;ll scope an engagement — assessment, red team, governed engineering, or advisory — across GovCloud, on-prem, or air-gapped.</p>
       <a href="/contact" class="btn btn-primary" style="margin-top:28px;">Book a scoping call →</a>
     </div>
   </section>
 
   <Footer />
+
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} is:inline />
 </Layout>
 
 <style>
@@ -220,7 +309,11 @@ const work = [
   .vet-note { font-size: 13px; max-width: 52ch; text-align: center; }
   .vet-note strong { color: var(--text); font-weight: 600; }
 
-  /* CAPABILITIES */
+  /* APPROACH */
+  .approach-body { max-width: 68ch; margin-top: 26px; display: grid; gap: 18px; }
+  .approach-body p { color: var(--text-dim); font-size: clamp(15px, 1.8vw, 17px); line-height: 1.75; }
+
+  /* SERVICES (cap cards) */
   .cap-k { font-family: var(--font-display); font-size: 13px; font-weight: 700; letter-spacing: 0.1em; margin-bottom: 14px; }
   .cap h3 { font-size: 1.35rem; margin-bottom: 10px; }
   .cap p { font-size: 15px; line-height: 1.7; }
@@ -240,6 +333,25 @@ const work = [
   .usecase p { font-size: 14px; line-height: 1.7; }
   .usecase-link { display: inline-block; margin-top: 16px; color: var(--sunset); font-size: 14px; font-weight: 600; }
   .usecase-link:hover { color: var(--ember); }
+
+  /* FAQ */
+  .faq { background: var(--surface); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+  .faq-list { margin-top: 38px; max-width: 78ch; border-top: 1px solid var(--rule); }
+  .faq-item { border-bottom: 1px solid var(--rule); }
+  .faq-item summary {
+    display: flex; align-items: center; justify-content: space-between; gap: 18px;
+    padding: 20px 4px; cursor: pointer; list-style: none;
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-q { font-family: var(--font-display); font-weight: 600; font-size: clamp(1rem, 2vw, 1.15rem); color: var(--text); letter-spacing: -0.01em; }
+  .faq-mark { position: relative; flex: 0 0 auto; width: 14px; height: 14px; }
+  .faq-mark::before, .faq-mark::after {
+    content: ""; position: absolute; background: var(--sunset); transition: transform .2s ease, opacity .2s ease;
+  }
+  .faq-mark::before { top: 6px; left: 0; width: 14px; height: 2px; }
+  .faq-mark::after { top: 0; left: 6px; width: 2px; height: 14px; }
+  .faq-item[open] .faq-mark::after { transform: scaleY(0); opacity: 0; }
+  .faq-a { padding: 0 4px 22px; font-size: 15px; line-height: 1.75; max-width: 70ch; }
 
   /* QUOTE */
   .quote { margin: 0; border-left: 3px solid var(--sunset); padding: 6px 0 6px 28px; max-width: 60ch; }

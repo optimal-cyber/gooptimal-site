@@ -9,7 +9,7 @@ interface Props {
 }
 const {
   title = "Optimal — governed AI for regulated & federal missions",
-  description = "Optimal stands up governed, audited AI inside your environment — one authenticated gateway to every frontier model, guardrails on every prompt, and an audit trail you can defend. Across GovCloud, on-prem, and air-gapped. An SBA-certified Service-Disabled Veteran-Owned Small Business (SDVOSB).",
+  description = "Optimal is an AI security advisory firm. We assess and red-team AI systems, engineer the governed access layer that keeps them accountable, and advise teams on adopting AI safely — across GovCloud, on-prem, and air-gapped. An SBA-certified Service-Disabled Veteran-Owned Small Business (SDVOSB).",
   image = "/optimal-social-preview.png",
   keywords = "SDVOSB, Service-Disabled Veteran-Owned Small Business, VOSB, Veteran-Owned Small Business, SBA VetCert, veteran-owned AI security, governed AI, secure AI gateway, AI guardrails, Zero Trust AI, GovCloud AI, air-gapped AI, AI red-teaming, NIST AI RMF, OWASP LLM Top 10",
 } = Astro.props;
@@ -30,7 +30,45 @@ const orgSchema = {
   email: "ryan@gooptimal.io",
   slogan: "Sovereign by default.",
   description:
-    "Optimal engineers governed, audited AI access for regulated and federal missions, and is an SBA-certified Service-Disabled Veteran-Owned Small Business (SDVOSB).",
+    "Optimal is an AI security advisory firm for regulated and federal missions — AI security assessments, adversarial (red-team) AI testing, governed AI engineering, and secure-adoption advisory. An SBA-certified Service-Disabled Veteran-Owned Small Business (SDVOSB).",
+  makesOffer: [
+    {
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Service",
+        name: "AI Security Assessment",
+        description:
+          "Structured evaluation of AI systems, pipelines, and integrations against real adversary attack paths, measured to the OWASP LLM Top 10, MITRE ATLAS, and NIST AI RMF.",
+      },
+    },
+    {
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Service",
+        name: "Adversarial AI Testing",
+        description:
+          "Offensive red-team testing of AI-enabled systems — prompt injection, model manipulation, data extraction, and abuse-case simulation.",
+      },
+    },
+    {
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Service",
+        name: "Governed AI Engineering",
+        description:
+          "Design and stand-up of a Zero Trust access layer for AI — authenticated gateway, prompt guardrails, default-deny egress, and an auditable trail — in the client's environment.",
+      },
+    },
+    {
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Service",
+        name: "Secure AI Adoption Advisory",
+        description:
+          "Practical, engineering-grounded usage patterns, threat models, and secure-adoption roadmaps scoped to an organization's risk profile.",
+      },
+    },
+  ],
   knowsAbout: [
     "Governed AI",
     "Secure AI gateway",
