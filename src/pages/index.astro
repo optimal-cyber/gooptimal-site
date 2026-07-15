@@ -6,65 +6,65 @@ import GatewayCanvas from "../components/GatewayCanvas.astro";
 import VetBadge from "../components/VetBadge.astro";
 
 const standards = [
-  "FedRAMP 20x", "NIST AI RMF", "ISO 42001", "SOC 2", "OWASP LLM Top 10",
-  "IL4 – IL6", "HIPAA", "PCI DSS v4", "DISA STIG",
+  "NIST AI RMF", "OWASP LLM Top 10", "MITRE ATLAS", "NIST 800-207 Zero Trust",
+  "CIS Benchmarks", "DISA STIG", "ISO 42001", "SOC 2",
 ];
 
 const capabilities = [
   {
     k: "01",
-    title: "Secure AI Gateway",
-    body: "Every model call flows through one governed boundary — authorized against an accredited allowlist, scanned for injection, jailbreak and data exfiltration, then forwarded to a FedRAMP-authorized model.",
+    title: "One authenticated gateway",
+    body: "Point your existing OpenAI- or Anthropic-compatible client at a single governed endpoint. Cloudflare Access and Okta OIDC authenticate the caller; LiteLLM fans out to every frontier model behind per-key virtual credentials — no SDK rewrite.",
     accent: "var(--sunset)",
   },
   {
     k: "02",
-    title: "Agent Governance",
-    body: "Per-agent identity, tool and data-scope allowlists, autonomy dials, rate limits, and a kill switch. Bound to mTLS / SPIFFE identity from your mesh — not a self-asserted header.",
+    title: "Guardrails on every prompt",
+    body: "NeMo Guardrails runs fail-closed and pre-call: unit-tested secret and PII detectors block a request before the provider is ever reached, and injection and jailbreak patterns are caught inline on the way in and out.",
     accent: "var(--steel)",
   },
   {
     k: "03",
-    title: "Red-team & Assurance",
-    body: "Attacker-style probes mapped to the OWASP LLM Top 10 gate promotion before a model ships. Hardened to CIS / DISA STIG, red-teamed, and proven — automatically, in the pull request.",
+    title: "Default-deny by design",
+    body: "Egress is pinned to an allowlist by a Squid proxy and security-group rules — there is no configuration opt-out. IMDSv2, no inbound SSH, and least-privilege identity throughout.",
     accent: "var(--coral)",
   },
   {
     k: "04",
-    title: "Compliance Evidence",
-    body: "Hash-chained, append-only audit of every request and every token. Coverage against the frameworks you answer to, regenerated live — ingestible by an authorizing official.",
+    title: "An audit trail that holds up",
+    body: "Every request and every token lands in structured JSON paired with Postgres rows, joined by a request ID — a defensible evidence trail your reviewers read directly, not a wall of vendor-UI screenshots.",
     accent: "var(--seafoam)",
   },
 ];
 
 const flow = [
-  { n: "Authorize", d: "Authenticate the caller (mTLS / OIDC) and check the accredited model + resource allowlist." },
-  { n: "Guard", d: "Inline detection on prompt and response — injection, jailbreak, PII / DLP, exfiltration." },
-  { n: "Forward", d: "Proxy to a FedRAMP-authorized model in GovCloud / Assured Workloads, via workload identity." },
-  { n: "Prove", d: "Write a tamper-evident audit row; re-emit live compliance evidence per framework." },
+  { n: "Authorize", d: "Authenticate the caller through Cloudflare Access and Okta OIDC, then check the model and resource allowlist." },
+  { n: "Guard", d: "Inline detection on prompt and response — injection, jailbreak, PII / DLP, secret exfiltration. Fail-closed." },
+  { n: "Forward", d: "Proxy to the approved model — commercial, GovCloud, or self-hosted — through per-key LiteLLM virtual credentials." },
+  { n: "Prove", d: "Write a structured audit row — JSON plus Postgres, joined by request ID — that you can hand to a reviewer." },
 ];
 
 const work = [
   {
-    tag: "Federal contractors",
-    title: "Use commercial LLMs inside the accreditation boundary",
-    body: "Route agents to GovCloud-hosted models with zero-persistence audit. Every request authorized, every token logged — the evidence an AO actually ingests.",
-    href: "/industries/sled",
-    cta: "State & local gov →",
+    tag: "Regulated cloud",
+    title: "Governed AI inside the cloud you already operate",
+    body: "Route agents and users to approved models with a full audit trail. Every request authorized, every token logged — without standing up a new accreditation boundary.",
+    href: "/use-cases/regulated-cloud",
+    cta: "Regulated cloud →",
   },
   {
-    tag: "Healthcare",
-    title: "PHI-safe inference",
-    body: "DLP at the boundary blocks PHI egress before it leaves. HIPAA residency, no-train guarantees, and a full decision trace for OCR.",
-    href: "/industries/healthcare",
-    cta: "Optimal for Healthcare →",
+    tag: "On-prem & air-gapped",
+    title: "Frontier-class AI with zero egress",
+    body: "Self-host the gateway and models where nothing leaves the wire. Default-deny egress is structural, not a checkbox — the same control bands, fully disconnected.",
+    href: "/use-cases/air-gapped",
+    cta: "On-prem & air-gapped →",
   },
   {
-    tag: "Financial services",
-    title: "Governed model access for regulated workloads",
-    body: "PCI-scoped routing, per-service identity, and continuous control evidence — so the QSA reads one live artifact instead of three stale tools.",
-    href: "/industries/financial-services",
-    cta: "Optimal for Financial →",
+    tag: "Agentic workloads",
+    title: "Keep autonomous agents accountable",
+    body: "Per-key identity and rate limits, model and tool allowlists, and an audit of every call an agent makes — so autonomy never means unaccountable.",
+    href: "/use-cases/agentic",
+    cta: "Agentic workloads →",
   },
 ];
 ---
@@ -77,21 +77,21 @@ const work = [
     <div class="glow"></div>
     <GatewayCanvas variant="hero" />
     <div class="container z">
-      <span class="eyebrow">The secure access layer for government-ready AI</span>
+      <span class="eyebrow">Secure AI engineering for regulated &amp; federal missions</span>
       <h1 class="display">Ship AI into the mission,<br /><span class="grad">not around the rules.</span></h1>
       <p class="lead">
-        Optimal is the secure access layer between your agents and the models they use.
-        Authorize every call, block what shouldn&rsquo;t cross the boundary, and prove every
-        control — across GovCloud, on-prem, and air-gapped.
+        Optimal stands up governed, audited AI inside your environment — one authenticated
+        gateway to every frontier model, guardrails on every prompt, and an audit trail you
+        can defend. Across GovCloud, on-prem, and air-gapped.
       </p>
       <div class="cta-row">
-        <a href="/contact" class="btn btn-primary">Request access →</a>
-        <a href="#how" class="btn btn-ghost">See how it works</a>
+        <a href="/contact" class="btn btn-primary">Book a scoping call →</a>
+        <a href="#how" class="btn btn-ghost">See how we work</a>
       </div>
       <div class="hero-meta muted">
-        <span>Hub-and-Spoke · self-hosted</span><span class="dot">•</span>
+        <span>Self-hosted in your cloud</span><span class="dot">•</span>
         <span>Sovereign by default</span><span class="dot">•</span>
-        <span>Zero-persistence option</span>
+        <span>Open-source reference architecture</span>
       </div>
     </div>
   </section>
@@ -99,7 +99,7 @@ const work = [
   <!-- STANDARDS WALL (logo wall analogue) -->
   <section id="standards" class="section--tight standards">
     <div class="container">
-      <p class="wall-label muted">Built to the standards that gate production</p>
+      <p class="wall-label muted">Engineered to the standards that gate production AI</p>
       <div class="wall">
         {standards.map((s) => <span class="chip">{s}</span>)}
       </div>
@@ -116,9 +116,9 @@ const work = [
   <!-- CAPABILITIES -->
   <section id="capabilities" class="section">
     <div class="container">
-      <span class="eyebrow">The platform</span>
-      <h2 class="h2">One control plane over every model call.</h2>
-      <p class="lead" style="margin-top:14px;">Four surfaces, one governed boundary — the body, badge, keys, and audit trail for AI in regulated environments.</p>
+      <span class="eyebrow">What we build</span>
+      <h2 class="h2">One governed boundary over every model call.</h2>
+      <p class="lead" style="margin-top:14px;">We stand up the pattern in your environment — the front door, the guardrails, the locked perimeter, and the audit trail for AI in regulated settings.</p>
       <div class="grid grid-2" style="margin-top:42px;">
         {capabilities.map((c) => (
           <div class="card cap">
@@ -135,8 +135,8 @@ const work = [
   <section id="how" class="section how relative">
     <div class="glow"></div>
     <div class="container z">
-      <span class="eyebrow">How it works</span>
-      <h2 class="h2">Agents in. Accredited resources out.<br />Everything in between, governed.</h2>
+      <span class="eyebrow">How we work</span>
+      <h2 class="h2">Agents in. Approved resources out.<br />Everything in between, governed.</h2>
       <div class="flow">
         {flow.map((f, i) => (
           <div class="step">
@@ -146,7 +146,7 @@ const work = [
           </div>
         ))}
       </div>
-      <p class="muted note">No wrapper, no SDK rewrite — point your existing OpenAI / Anthropic client at the gateway and every call is governed and logged.</p>
+      <p class="muted note">No wrapper, no SDK rewrite — point your existing OpenAI- or Anthropic-compatible client at the gateway and every call is governed and logged.</p>
     </div>
   </section>
 
@@ -172,7 +172,7 @@ const work = [
   <section class="section--tight">
     <div class="container">
       <blockquote class="quote">
-        <p>&ldquo;The audit is the product. Every authorization decision and model call lands in an append-only ledger — and the compliance coverage is computed from those same signals.&rdquo;</p>
+        <p>&ldquo;The audit is the point. Every authorization decision and model call lands in a structured, append-only log — joined by request ID, and defensible on its own.&rdquo;</p>
         <footer class="muted">Optimal — the access layer, not another dashboard.</footer>
       </blockquote>
     </div>
@@ -184,8 +184,8 @@ const work = [
     <GatewayCanvas variant="ambient" align="center" density={0.7} />
     <div class="container z cta-inner">
       <h2 class="display" style="font-size:clamp(2rem,5vw,3.4rem);">Bring your organization<br />through the Gateway.</h2>
-      <p class="lead" style="margin:18px auto 0;">Tell us your accreditation boundary and the models you need. We&rsquo;ll stand up authorized, audited access across your clouds.</p>
-      <a href="/contact" class="btn btn-primary" style="margin-top:28px;">Request access →</a>
+      <p class="lead" style="margin:18px auto 0;">Tell us your environment and the models you need. We&rsquo;ll stand up authorized, audited access across your clouds — GovCloud, on-prem, or air-gapped.</p>
+      <a href="/contact" class="btn btn-primary" style="margin-top:28px;">Book a scoping call →</a>
     </div>
   </section>
 

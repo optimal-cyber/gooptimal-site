@@ -8,10 +8,10 @@ interface Props {
   keywords?: string;
 }
 const {
-  title = "Optimal — secure AI for government-ready missions",
-  description = "The secure access layer for government-ready AI. Authorize every model call, log every token, prove every control — across GovCloud, on-prem, and air-gapped. An SBA-certified Service-Disabled Veteran-Owned Small Business (SDVOSB).",
+  title = "Optimal — governed AI for regulated & federal missions",
+  description = "Optimal stands up governed, audited AI inside your environment — one authenticated gateway to every frontier model, guardrails on every prompt, and an audit trail you can defend. Across GovCloud, on-prem, and air-gapped. An SBA-certified Service-Disabled Veteran-Owned Small Business (SDVOSB).",
   image = "/optimal-social-preview.png",
-  keywords = "SDVOSB, Service-Disabled Veteran-Owned Small Business, VOSB, Veteran-Owned Small Business, SBA VetCert, veteran-owned AI security, secure AI gateway, government AI, FedRAMP, AI governance, GovCloud",
+  keywords = "SDVOSB, Service-Disabled Veteran-Owned Small Business, VOSB, Veteran-Owned Small Business, SBA VetCert, veteran-owned AI security, governed AI, secure AI gateway, AI guardrails, Zero Trust AI, GovCloud AI, air-gapped AI, AI red-teaming, NIST AI RMF, OWASP LLM Top 10",
 } = Astro.props;
 
 const canonical = new URL(Astro.url.pathname, Astro.site);
@@ -30,11 +30,13 @@ const orgSchema = {
   email: "ryan@gooptimal.io",
   slogan: "Sovereign by default.",
   description:
-    "Optimal is the secure access layer for government-ready AI, and an SBA-certified Service-Disabled Veteran-Owned Small Business (SDVOSB).",
+    "Optimal engineers governed, audited AI access for regulated and federal missions, and is an SBA-certified Service-Disabled Veteran-Owned Small Business (SDVOSB).",
   knowsAbout: [
-    "Secure AI Gateway",
-    "AI governance",
-    "FedRAMP",
+    "Governed AI",
+    "Secure AI gateway",
+    "AI guardrails",
+    "Zero Trust architecture",
+    "AI red-teaming",
     "NIST AI RMF",
     "Service-Disabled Veteran-Owned Small Business",
   ],

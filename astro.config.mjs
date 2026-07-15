@@ -7,9 +7,13 @@ import sitemap from "@astrojs/sitemap";
 export default defineConfig({
   site: "https://gooptimal.io",
   integrations: [sitemap()],
-  // The standalone demo flow was consolidated into /contact ("Request access").
-  // Static build emits a meta-refresh redirect page so old /demo links don't 404.
+  // Static build emits meta-refresh redirect pages so retired URLs don't 404.
+  // /demo → the old "request access" flow, now the scoping-call form at /contact.
+  // /industries/* → retired vertical pages, replaced by deployment-scenario use cases.
   redirects: {
     "/demo": "/contact",
+    "/industries/healthcare": "/use-cases/regulated-cloud",
+    "/industries/financial-services": "/use-cases/regulated-cloud",
+    "/industries/sled": "/use-cases/regulated-cloud",
   },
 });

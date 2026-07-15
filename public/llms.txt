@@ -1,8 +1,9 @@
 # Optimal, LLC
 
-> Optimal is the secure access layer for government-ready AI — authorizing every
-> model call, blocking what shouldn't cross the accreditation boundary, and
-> proving every control across GovCloud, on-prem, and air-gapped environments.
+> Optimal engineers governed, audited AI access for regulated and federal
+> missions — one authenticated gateway to every frontier model, guardrails on
+> every prompt, and a defensible audit trail, across GovCloud, on-prem, and
+> air-gapped environments.
 
 ## About
 
@@ -19,23 +20,26 @@
   certification registry at https://search.certifications.sba.gov/.
 - Eligible to compete for **SDVOSB and VOSB set-aside contracts**.
 
-## Platform
+## What we build
 
-- Secure AI Gateway — one governed boundary for every model call.
-- Agent Governance — per-agent identity, tool/data-scope allowlists, kill switch.
-- Red-team & Assurance — OWASP LLM Top 10 probes gating model promotion.
-- Compliance Evidence — hash-chained, append-only audit of every request and token.
+- Authenticated gateway — one governed endpoint to every frontier model, per-key virtual credentials, no SDK rewrite.
+- Prompt guardrails — NeMo Guardrails, fail-closed and pre-call; unit-tested secret and PII detectors.
+- Default-deny egress — Squid allowlist proxy plus security-group enforcement; no configuration opt-out.
+- Audit trail — structured JSON joined to Postgres by request ID; defensible without vendor-UI screenshots.
 
-## Standards
+## Reference architecture
 
-FedRAMP 20x, NIST AI RMF, ISO 42001, SOC 2, OWASP LLM Top 10, IL4–IL6, HIPAA,
-PCI DSS v4, DISA STIG.
+- Open-source Zero Trust AI gateway reference design: https://github.com/optimal-cyber/AI-Gateway
+
+## Standards (engineering targets)
+
+NIST AI RMF, OWASP LLM Top 10, MITRE ATLAS, NIST 800-207 Zero Trust, CIS
+Benchmarks, DISA STIG, ISO 42001, SOC 2.
 
 ## Key pages
 
 - Home: https://gooptimal.io/
-- Contact / request access: https://gooptimal.io/contact
-- Blog: https://gooptimal.io/blog
-- Industries — Healthcare: https://gooptimal.io/industries/healthcare
-- Industries — Financial services: https://gooptimal.io/industries/financial-services
-- Industries — State & local government: https://gooptimal.io/industries/sled
+- Contact / book a scoping call: https://gooptimal.io/contact
+- Use case — Regulated cloud: https://gooptimal.io/use-cases/regulated-cloud
+- Use case — On-prem & air-gapped: https://gooptimal.io/use-cases/air-gapped
+- Use case — Agentic workloads: https://gooptimal.io/use-cases/agentic

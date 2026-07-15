@@ -4,28 +4,27 @@ import VetBadge from "./VetBadge.astro";
 const year = 2026;
 const cols = [
   {
-    title: "Platform",
+    title: "What we build",
     links: [
-      { href: "/#capabilities", label: "Secure AI Gateway" },
-      { href: "/#capabilities", label: "Agent Governance" },
-      { href: "/#capabilities", label: "Red-team & Assurance" },
-      { href: "/#capabilities", label: "Compliance Evidence" },
+      { href: "/#capabilities", label: "Authenticated gateway" },
+      { href: "/#capabilities", label: "Prompt guardrails" },
+      { href: "/#capabilities", label: "Default-deny egress" },
+      { href: "/#capabilities", label: "Audit trail" },
     ],
   },
   {
-    title: "Industries",
+    title: "Use cases",
     links: [
-      { href: "/industries/healthcare", label: "Healthcare" },
-      { href: "/industries/financial-services", label: "Financial services" },
-      { href: "/industries/sled", label: "State & local gov" },
+      { href: "/use-cases/regulated-cloud", label: "Regulated cloud" },
+      { href: "/use-cases/air-gapped", label: "On-prem & air-gapped" },
+      { href: "/use-cases/agentic", label: "Agentic workloads" },
     ],
   },
   {
     title: "Company",
     links: [
-      { href: "/blog", label: "Blog" },
       { href: "/contact", label: "Contact" },
-      { href: "/contact", label: "Request access" },
+      { href: "https://github.com/optimal-cyber/AI-Gateway", label: "Reference architecture ↗" },
     ],
   },
 ];
@@ -39,7 +38,7 @@ const cols = [
           <img src="/optimal-horizon.svg" alt="" width="26" height="26" class="mark" aria-hidden="true" />
           <span class="wordmark">OPTIMAL</span>
         </div>
-        <p class="muted blurb">The secure access layer for government-ready AI. Built for the organizations that keep critical missions moving.</p>
+        <p class="muted blurb">Governed, audited AI for the organizations that keep critical missions moving. Self-hosted in your environment, sovereign by default.</p>
         <VetBadge size={76} class="footer-vet" />
       </div>
       {cols.map((c) => (
@@ -51,7 +50,7 @@ const cols = [
     </div>
     <div class="bottom">
       <span class="muted">© {year} Optimal, LLC. Sovereign by default.</span>
-      <span class="muted">SDVOSB · SBA-certified Veteran-Owned · FedRAMP · NIST AI RMF · SOC 2</span>
+      <span class="muted">SDVOSB · SBA-certified Veteran-Owned · Zero Trust · NIST AI RMF · OWASP LLM Top 10</span>
     </div>
   </div>
 </footer>

@@ -14,15 +14,15 @@ const blog = defineCollection({
   }),
 });
 
-const industries = defineCollection({
-  loader: glob({ pattern: "**/*.md", base: "./src/content/industries" }),
+const useCases = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/content/use-cases" }),
   schema: z.object({
     title: z.string(),
     description: z.string(),
-    eyebrow: z.string().default("Industry"),
+    eyebrow: z.string().default("Use case"),
     subhead: z.string().default(""),
     order: z.number().default(0),
   }),
 });
 
-export const collections = { blog, industries };
+export const collections = { blog, "use-cases": useCases };

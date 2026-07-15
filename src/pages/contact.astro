@@ -7,8 +7,8 @@ import VetBadge from "../components/VetBadge.astro";
 ---
 
 <Layout
-  title="Request access — Optimal"
-  description="Tell us your accreditation boundary and the models you need. We'll stand up authorized, audited AI access across your clouds."
+  title="Book a scoping call — Optimal"
+  description="Tell us your environment and the models you need. We'll stand up authorized, audited AI access across your clouds — GovCloud, on-prem, or air-gapped."
 >
   <Header />
 
@@ -17,10 +17,10 @@ import VetBadge from "../components/VetBadge.astro";
     <GatewayCanvas variant="ambient" align="center" density={0.55} />
     <div class="container z wrap">
       <div class="intro">
-        <span class="eyebrow">Request access</span>
+        <span class="eyebrow">Book a scoping call</span>
         <h1 class="h2">Bring your organization through the Gateway.</h1>
         <p class="lead" style="margin-top:16px;">
-          Tell us your accreditation boundary and the models you need. We&rsquo;ll
+          Tell us your environment and the models you need. We&rsquo;ll
           stand up authorized, audited access across your clouds — GovCloud,
           on-prem, or air-gapped.
         </p>
@@ -38,7 +38,7 @@ import VetBadge from "../components/VetBadge.astro";
 
       <form class="card form" method="POST" action="https://formspree.io/f/xovqzpkj">
         <!-- Formspree config: email subject + honeypot spam trap -->
-        <input type="hidden" name="_subject" value="Optimal · Request access" />
+        <input type="hidden" name="_subject" value="Optimal · Scoping call request" />
         <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
         <div class="row">
           <label>Name<input type="text" name="name" required /></label>
@@ -46,7 +46,7 @@ import VetBadge from "../components/VetBadge.astro";
         </div>
         <div class="row">
           <label>Organization<input type="text" name="organization" /></label>
-          <label>Accreditation boundary
+          <label>Environment
             <select name="boundary">
               <option>Commercial</option>
               <option>FedRAMP</option>

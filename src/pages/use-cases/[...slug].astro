@@ -6,7 +6,7 @@ import Footer from "../../components/Footer.astro";
 import GatewayCanvas from "../../components/GatewayCanvas.astro";
 
 export async function getStaticPaths() {
-  const entries = await getCollection("industries");
+  const entries = await getCollection("use-cases");
   return entries.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
 }
 
@@ -26,8 +26,8 @@ const { title, description, eyebrow, subhead } = entry.data;
       <h1 class="display htitle">{title}</h1>
       {subhead && <p class="lead">{subhead}</p>}
       <div class="cta-row">
-        <a href="/contact" class="btn btn-primary">Request access →</a>
-        <a href="/#capabilities" class="btn btn-ghost">See the platform</a>
+        <a href="/contact" class="btn btn-primary">Book a scoping call →</a>
+        <a href="/#how" class="btn btn-ghost">See how we work</a>
       </div>
     </div>
   </section>
