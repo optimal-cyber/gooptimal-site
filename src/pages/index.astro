@@ -432,6 +432,32 @@ const faqSchema = {
     </div>
   </section>
 
+  <!-- NINELINE REFERENCE IMPLEMENTATION -->
+  <section id="nineline" class="section--tight nl-teaser relative">
+    <div class="glow"></div>
+    <div class="container z nl-inner">
+      <div class="nl-copy">
+        <span class="ix">Reference implementation</span>
+        <h2 class="h2">NINELINE — our 9-line for software and AI.</h2>
+        <p class="lead" style="margin-top:14px;">
+          A working demonstrator of AI-native supply-chain security: real SBOM and vulnerability
+          scanning, EPSS and CISA KEV enrichment, and frontier-model reachability that cuts
+          <strong>874 raw findings down to the 18 that actually matter</strong> — then drafts the
+          reachability-gated fix. What we build, running.
+        </p>
+        <div class="cta-row" style="margin-top:26px;">
+          <a href="/nineline" class="btn btn-primary">See NINELINE →</a>
+          <a href="https://frontend-five-roan-63.vercel.app" class="btn btn-ghost" target="_blank" rel="noopener">Open the live demo ↗</a>
+        </div>
+      </div>
+      <ul class="nl-stats">
+        <li><span class="nl-num">874 → 18</span><span class="nl-lab">raw findings → require action</span></li>
+        <li><span class="nl-num grad">−97.9%</span><span class="nl-lab">noise eliminated</span></li>
+        <li><span class="nl-num">2 of 8</span><span class="nl-lab">KEV findings actually reachable</span></li>
+      </ul>
+    </div>
+  </section>
+
   <!-- FAQ -->
   <section id="faq" class="section faq relative">
     <div class="glow"></div>
@@ -653,6 +679,20 @@ const faqSchema = {
   .quote { margin: 0; border-left: 3px solid var(--sunset); padding: 6px 0 6px 28px; max-width: 62ch; }
   .quote p { font-family: var(--font-display); font-size: clamp(1.2rem, 2.6vw, 1.8rem); line-height: 1.35; letter-spacing: -0.02em; }
   .quote footer { margin-top: 16px; font-size: 14px; }
+
+  /* NINELINE TEASER */
+  .nl-teaser { background: var(--surface); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+  .nl-inner { display: grid; gap: 34px; align-items: center; }
+  .nl-copy { max-width: 60ch; }
+  .nl-stats { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+  .nl-stats li {
+    display: flex; flex-direction: column; gap: 6px; padding: 18px 22px;
+    border: 1px solid var(--rule); border-radius: var(--radius);
+    background: linear-gradient(180deg, var(--surface-2), var(--surface));
+  }
+  .nl-num { font-family: var(--font-display); font-weight: 700; font-size: 1.5rem; letter-spacing: -0.01em; color: var(--text); }
+  .nl-lab { font-family: var(--font-mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-dim); }
+  @media (min-width: 900px) { .nl-inner { grid-template-columns: 1.5fr 1fr; gap: 56px; } }
 
   /* CTA */
   .cta { background: var(--surface); border-top: 1px solid var(--rule); }

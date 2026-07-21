@@ -1,0 +1,354 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import GatewayCanvas from "../components/GatewayCanvas.astro";
+
+// The deployed NINELINE demonstrator. Swap for a custom domain (e.g.
+// nineline.gooptimal.io) once DNS is pointed.
+const DEMO_URL = "https://frontend-five-roan-63.vercel.app";
+
+// The five frontier-model mechanisms behind the demonstrator.
+const mechanisms = [
+  {
+    idx: "01",
+    title: "Agentic reachability analysis",
+    accent: "var(--sunset)",
+    body: "The flagship capability. For each high-signal finding, a frontier model reads the actual codebase — grepping, opening files, tracing call chains — to decide whether the vulnerable path is truly reachable from an entry point. It reads the code the way an analyst would, and shows its work.",
+  },
+  {
+    idx: "02",
+    title: "Mission-context triage",
+    accent: "var(--steel)",
+    body: "EPSS exploitation probability, CISA KEV status, dependency position, and the reachability verdict fuse into a single mission priority — written for a program manager, not a pentester.",
+  },
+  {
+    idx: "03",
+    title: "Reachability-gated remediation",
+    accent: "var(--coral)",
+    body: "For the findings that survive triage, the model drafts the exact fix — an appliable pull request with the version bump or transitive override, breaking-change risk, and test focus. Automation fires only for what's proven reachable, not the whole backlog.",
+  },
+  {
+    idx: "04",
+    title: "Drift narration & AI-BOM risk",
+    accent: "var(--seafoam)",
+    body: "Every change to the software bill of materials is narrated in mission terms, and every discovered ML model gets an AI-written risk assessment — license suitability for government use, provenance confidence, training-data lineage.",
+  },
+  {
+    idx: "05",
+    title: "Grounded natural-language query",
+    accent: "var(--sunset)",
+    body: "Ask in plain English — “which critical findings are actually reachable,” “do any of our AI models have license problems.” Answers are grounded in the real scan data through query tools and cited to actual records. Never a hallucination.",
+  },
+];
+
+// The signal-over-noise numbers from the reference scan.
+const funnel = {
+  raw: "874",
+  queue: "18",
+  reduction: "97.9%",
+  reachable: "18",
+  kev: "2 of 8",
+};
+
+// Where the risk actually comes from — the story the inventory tells.
+const sources = [
+  {
+    k: "Inherited open source",
+    v: "667 of the reachable-analyzed findings live in transitive dependencies — code you didn’t write, pulled in three and four levels deep. Log4Shell isn’t in your source; it rides in under a Spring starter.",
+  },
+  {
+    k: "Container base images",
+    v: "A single base layer contributed hundreds of OS-package CVEs — baked in before the first line of application code.",
+  },
+  {
+    k: "Drift over time",
+    v: "New dependencies appear between releases, each widening the attack surface. Continuous SBOM differencing catches them minutes after they land.",
+  },
+  {
+    k: "The AI supply chain",
+    v: "Models pulled from public hubs arrive with license and provenance problems — non-commercial and RAIL-restricted weights that are real blockers for government production.",
+  },
+];
+
+// Why this matters specifically to the defense industrial base.
+const dib = [
+  {
+    n: "CMMC & secure-development attestation",
+    d: "Asset inventory and vulnerability management are gating controls for keeping DoD business. NINELINE is the evidence engine — an authoritative SBOM plus the risk analysis on top of it.",
+  },
+  {
+    n: "SBOM mandates",
+    d: "Federal software-supply-chain direction (EO 14028, OMB memoranda, NIST SSDF) expects a bill of materials and secure-development attestation. This produces the SBOM and the reachability-ranked findings against it.",
+  },
+  {
+    n: "Continuous ATO",
+    d: "DoD is moving from point-in-time authorization to continuous monitoring. The drift → reachability → gated-remediation loop is exactly that posture, running on your own infrastructure.",
+  },
+  {
+    n: "AI bill of materials",
+    d: "Model provenance, license, and lineage tooling barely exists while the DIB adopts AI fast. The AI-BOM view surfaces the license conflicts that stop a model from reaching production.",
+  },
+];
+---
+
+<Layout
+  title="NINELINE — a reference implementation from Optimal"
+  description="NINELINE is Optimal's reference implementation of AI-native application and supply-chain security: real SBOM and vulnerability scanning, EPSS and CISA KEV enrichment, and frontier-model reachability analysis that compresses thousands of findings down to the handful that actually matter. Built to run in your environment — sovereign by default."
+  keywords="AI supply chain security, SBOM, reachability analysis, CISA KEV, EPSS, AI-BOM, CMMC, continuous ATO, defense industrial base"
+>
+  <Header />
+
+  <!-- HERO -->
+  <section class="hero relative">
+    <div class="glow"></div>
+    <GatewayCanvas variant="hero" />
+    <div class="container z">
+      <span class="eyebrow">Reference implementation · What we build, running</span>
+      <h1 class="display">NINELINE.<br /><span class="grad">Your 9-line for software and AI.</span></h1>
+      <p class="lead">
+        NINELINE is Optimal&rsquo;s working reference implementation of AI-native application and
+        supply-chain security. Real scanners, real repositories, and frontier-model reasoning
+        compress thousands of raw findings down to the handful that are actually reachable and
+        actively exploited &mdash; the targets that matter. Named for the close air support brief:
+        strip everything down to the target.
+      </p>
+      <p class="hero-caps">
+        SBOM <span>/</span> Reachability <span>/</span> EPSS + CISA KEV <span>/</span> AI-BOM <span>/</span> Auto-remediation
+      </p>
+      <div class="cta-row">
+        <a href={DEMO_URL} class="btn btn-primary" target="_blank" rel="noopener">Explore the live demo &rarr;</a>
+        <a href="/contact" class="btn btn-ghost">Book a walkthrough</a>
+      </div>
+      <div class="hero-meta muted">
+        <span>syft + grype</span><span class="dot">&bull;</span>
+        <span>Frontier-model reachability</span><span class="dot">&bull;</span>
+        <span>Runs in your environment</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FUNNEL / MONEY SHOT -->
+  <section id="funnel" class="section--tight funnelwrap">
+    <div class="container">
+      <p class="wall-label muted">From raw scanner output to the targets that matter</p>
+      <div class="funnel">
+        <div class="f-stage">
+          <span class="f-num">{funnel.raw}</span>
+          <span class="f-label">Raw findings</span>
+        </div>
+        <span class="f-arrow" aria-hidden="true">&rarr;</span>
+        <div class="f-stage">
+          <span class="f-num muted-num">deprioritized</span>
+          <span class="f-label">unreachable / transitive / no known exploit</span>
+        </div>
+        <span class="f-arrow" aria-hidden="true">&rarr;</span>
+        <div class="f-stage lit">
+          <span class="f-num grad">{funnel.queue}</span>
+          <span class="f-label">Require action</span>
+        </div>
+        <div class="f-reduction">
+          <span class="f-pct">&minus;{funnel.reduction}</span>
+          <span class="f-label">noise eliminated</span>
+        </div>
+      </div>
+      <p class="muted funnel-note">
+        Of {funnel.raw} raw findings, {funnel.queue} survive to the action queue. Of 8 findings on the
+        CISA Known Exploited Vulnerabilities list, only {funnel.kev} are reachable in this deployment
+        &mdash; so the model deprioritizes the rest. Reachable-and-exploited is the real target;
+        everything else is noise you can&rsquo;t afford to chase.
+      </p>
+    </div>
+  </section>
+
+  <!-- MECHANISMS -->
+  <section id="mechanisms" class="section">
+    <div class="container">
+      <div class="sec-head wide">
+        <span class="ix">The mechanism</span>
+        <h2 class="h2">Five frontier-model capabilities, not a bolt-on.</h2>
+        <p class="lead" style="margin-top:14px;">
+          Everything on screen comes from real analysis of real repositories &mdash; nothing is
+          hardcoded. The model does the reading, the tracing, and the judgment an analyst would.
+        </p>
+      </div>
+      <div class="mech-grid">
+        {mechanisms.map((m) => (
+          <article class="card mech">
+            <header class="mech-top">
+              <span class="mech-ix" style={`color:${m.accent}`}>{m.idx}</span>
+              <h3>{m.title}</h3>
+            </header>
+            <p class="muted mech-body">{m.body}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- WHERE THE RISK COMES FROM -->
+  <section id="sources" class="section--tight sources relative">
+    <div class="container z">
+      <div class="sec-head wide">
+        <span class="ix">Where the risk lives</span>
+        <h3 class="cov-title">Most of your risk is in software you didn&rsquo;t write<br class="dtop" /> &mdash; and don&rsquo;t know you&rsquo;re running.</h3>
+      </div>
+      <ul class="srclist">
+        {sources.map((s) => (
+          <li class="src-item">
+            <span class="src-k">{s.k}</span>
+            <span class="src-v muted">{s.v}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- DIB -->
+  <section id="dib" class="section dib relative">
+    <div class="glow"></div>
+    <div class="container z">
+      <div class="sec-head wide">
+        <span class="ix">Defense industrial base</span>
+        <h2 class="h2">Built for the mandates the DIB is already under.</h2>
+        <p class="lead" style="margin-top:14px;">
+          Reachability and mission context match how the department actually triages &mdash; mission
+          assurance, not raw CVSS. And it runs air-gapped: reachability reads source, so nothing has
+          to leave the enclave.
+        </p>
+      </div>
+      <div class="dib-grid">
+        {dib.map((x) => (
+          <div class="step">
+            <h4>{x.n}</h4>
+            <p class="muted">{x.d}</p>
+          </div>
+        ))}
+      </div>
+      <p class="muted note">
+        Regulatory timelines move quickly &mdash; we&rsquo;ll scope current enforcement to your
+        specific contracts and environment.
+      </p>
+    </div>
+  </section>
+
+  <!-- DEMONSTRATOR FRAMING -->
+  <section class="section--tight">
+    <div class="container">
+      <blockquote class="quote">
+        <p>&ldquo;NINELINE is how we show what governed, AI-native security looks like when we build it &mdash; a working reference implementation you can run in your own environment, not a SaaS subscription.&rdquo;</p>
+        <footer class="muted">Optimal &mdash; expertise-led AI security. Sovereign by default.</footer>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section cta relative">
+    <div class="glow"></div>
+    <GatewayCanvas variant="ambient" align="center" density={0.7} />
+    <div class="container z cta-inner">
+      <h2 class="display" style="font-size:clamp(2rem,5vw,3.4rem);">See the targets<br />that matter.</h2>
+      <p class="lead" style="margin:18px auto 0;">
+        Click into the live demonstrator, or book a walkthrough and we&rsquo;ll show it against your
+        stack &mdash; then scope standing it up in your environment.
+      </p>
+      <div class="cta-row" style="justify-content:center;">
+        <a href={DEMO_URL} class="btn btn-primary" target="_blank" rel="noopener" style="margin-top:28px;">Explore the live demo &rarr;</a>
+        <a href="/contact" class="btn btn-ghost" style="margin-top:28px;">Book a walkthrough</a>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<style>
+  /* Shared editorial kicker (matches homepage) */
+  .ix {
+    display: inline-block; font-family: var(--font-mono); font-size: 12px;
+    letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-faint);
+    margin-bottom: 16px;
+  }
+  .sec-head.wide { max-width: 62ch; }
+
+  /* HERO */
+  .hero { padding: clamp(72px, 12vw, 150px) 0 clamp(48px, 7vw, 90px); }
+  .hero .eyebrow { margin-bottom: 22px; }
+  .hero h1 { margin-bottom: 24px; }
+  .hero .lead { font-size: clamp(17px, 2.2vw, 21px); }
+  .hero-caps {
+    margin-top: 22px; font-family: var(--font-mono); font-size: 12.5px;
+    letter-spacing: 0.06em; color: var(--text-dim); text-transform: uppercase;
+  }
+  .hero-caps span { color: var(--text-faint); margin: 0 4px; }
+  .cta-row { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 30px; }
+  .hero-meta { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-top: 30px; font-size: 13px; }
+  .hero-meta .dot { opacity: 0.4; }
+
+  /* FUNNEL */
+  .funnelwrap { border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); background: var(--surface); }
+  .wall-label { font-size: 12px; text-transform: uppercase; letter-spacing: 0.16em; text-align: center; margin-bottom: 28px; }
+  .funnel {
+    display: flex; flex-wrap: wrap; align-items: stretch; justify-content: center;
+    gap: 14px 10px;
+  }
+  .f-stage {
+    flex: 1 1 180px; min-width: 160px; display: flex; flex-direction: column; gap: 8px;
+    padding: 22px 24px; border: 1px solid var(--rule); border-radius: var(--radius);
+    background: var(--surface-2);
+  }
+  .f-stage.lit { border-color: rgba(255, 138, 61, 0.4); background: linear-gradient(160deg, rgba(255, 138, 61, 0.12), var(--surface-2)); }
+  .f-num { font-family: var(--font-display); font-weight: 700; font-size: clamp(2rem, 5vw, 3rem); line-height: 1; letter-spacing: -0.02em; }
+  .f-num.muted-num { font-family: var(--font-mono); font-size: 15px; font-weight: 500; color: var(--text-faint); text-transform: uppercase; letter-spacing: 0.08em; }
+  .f-label { font-family: var(--font-mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-dim); }
+  .f-arrow { align-self: center; color: var(--sunset); font-size: 22px; flex: 0 0 auto; }
+  .f-reduction {
+    flex: 1 1 160px; min-width: 150px; display: flex; flex-direction: column; gap: 8px;
+    padding: 22px 24px; text-align: right; justify-content: center;
+  }
+  .f-pct { font-family: var(--font-display); font-weight: 700; font-size: clamp(1.6rem, 4vw, 2.4rem); color: var(--seafoam); line-height: 1; }
+  .f-reduction .f-label { text-align: right; }
+  .funnel-note { margin: 30px auto 0; max-width: 74ch; font-size: 14.5px; line-height: 1.75; text-align: center; }
+
+  /* MECHANISMS */
+  .mech-grid { display: grid; gap: 20px; margin-top: 42px; }
+  @media (min-width: 800px) { .mech-grid { grid-template-columns: repeat(2, 1fr); } }
+  .mech { display: flex; flex-direction: column; }
+  .mech-top { display: flex; align-items: baseline; gap: 12px; margin-bottom: 12px; }
+  .mech-ix { font-family: var(--font-mono); font-size: 13px; font-weight: 600; letter-spacing: 0.05em; }
+  .mech h3 { font-size: 1.25rem; }
+  .mech-body { font-size: 14.5px; line-height: 1.7; }
+
+  /* WHERE THE RISK LIVES */
+  .sources { background: var(--surface); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+  .cov-title { font-size: clamp(1.3rem, 2.6vw, 1.9rem); line-height: 1.25; }
+  .srclist {
+    list-style: none; margin: 32px 0 0; padding: 0;
+    display: grid; gap: 1px; background: var(--rule);
+    border: 1px solid var(--rule); border-radius: var(--radius-sm); overflow: hidden;
+  }
+  @media (min-width: 760px) { .srclist { grid-template-columns: repeat(2, 1fr); } }
+  .src-item { display: flex; flex-direction: column; gap: 8px; padding: 20px 22px; background: var(--bg); }
+  .src-k { font-family: var(--font-display); font-size: 1.05rem; color: var(--text); }
+  .src-v { font-size: 13.5px; line-height: 1.65; }
+
+  /* DIB */
+  .dib { background: var(--bg); }
+  .dib-grid { display: grid; gap: 18px; margin-top: 42px; }
+  @media (min-width: 860px) { .dib-grid { grid-template-columns: repeat(2, 1fr); } }
+  .step { padding: 24px; border: 1px solid var(--rule); border-radius: var(--radius); background: var(--surface-2); }
+  .step h4 { font-size: 1.1rem; margin-bottom: 8px; }
+  .step p.muted { font-size: 13.5px; line-height: 1.65; }
+  .note { margin-top: 26px; font-size: 14px; max-width: 70ch; }
+
+  /* QUOTE */
+  .quote { margin: 0; border-left: 3px solid var(--sunset); padding: 6px 0 6px 28px; max-width: 64ch; }
+  .quote p { font-family: var(--font-display); font-size: clamp(1.2rem, 2.6vw, 1.8rem); line-height: 1.35; letter-spacing: -0.02em; }
+  .quote footer { margin-top: 16px; font-size: 14px; }
+
+  /* CTA */
+  .cta { background: var(--surface); border-top: 1px solid var(--rule); }
+  .cta-inner { text-align: center; max-width: 720px; margin: 0 auto; }
+
+  @media (max-width: 520px) { .dtop { display: none; } }
+</style>
