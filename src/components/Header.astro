@@ -1,7 +1,7 @@
 ---
 const links = [
+  { href: "/gcc-high", label: "GCC High" },
   { href: "/#services", label: "Services" },
-  { href: "/#process", label: "Process" },
   { href: "/#how", label: "Architecture" },
   { href: "/#work", label: "Use cases" },
   { href: "/nineline", label: "NINELINE" },
@@ -9,7 +9,7 @@ const links = [
 ];
 ---
 
-<header class="site-header">
+<header class="site-header" data-header>
   <div class="container bar">
     <a href="/" class="brand" aria-label="Optimal home">
       <img src="/optimal-horizon.svg" alt="" width="28" height="28" class="mark" aria-hidden="true" />
@@ -23,7 +23,28 @@ const links = [
     <div class="actions">
       <a href="/contact" class="btn btn-primary">Book a scoping call</a>
     </div>
+
+    <button
+      type="button"
+      class="menu-toggle"
+      aria-label="Open menu"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+      data-menu-toggle
+    >
+      <span class="bars" aria-hidden="true"><span></span><span></span><span></span></span>
+    </button>
   </div>
+
+  <!-- Mobile menu — hidden ≥900px, toggled by the hamburger below it -->
+  <nav id="mobile-menu" class="mobile-menu" aria-label="Primary (mobile)" data-mobile-menu hidden>
+    <ul>
+      {links.map((l) => (
+        <li><a href={l.href} data-menu-link>{l.label}</a></li>
+      ))}
+    </ul>
+    <a href="/contact" class="btn btn-primary mobile-cta" data-menu-link>Book a scoping call →</a>
+  </nav>
 </header>
 
 <style>
@@ -43,6 +64,83 @@ const links = [
   .nav { display: none; gap: 30px; }
   .nav a { font-size: 14px; color: var(--text-dim); transition: color .2s ease; }
   .nav a:hover { color: var(--text); }
-  .actions { display: flex; align-items: center; }
-  @media (min-width: 900px) { .nav { display: flex; } }
+  .actions { display: none; align-items: center; }
+
+  /* Hamburger — mobile only */
+  .menu-toggle {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 44px; height: 44px; margin-right: -10px;
+    background: transparent; border: 0; cursor: pointer; color: var(--text);
+    -webkit-tap-highlight-color: transparent;
+  }
+  .bars { position: relative; width: 22px; height: 16px; display: block; }
+  .bars span {
+    position: absolute; left: 0; width: 100%; height: 2px; border-radius: 2px;
+    background: currentColor; transition: transform .25s ease, opacity .2s ease, top .25s ease;
+  }
+  .bars span:nth-child(1) { top: 0; }
+  .bars span:nth-child(2) { top: 7px; }
+  .bars span:nth-child(3) { top: 14px; }
+  .site-header[data-open] .bars span:nth-child(1) { top: 7px; transform: rotate(45deg); }
+  .site-header[data-open] .bars span:nth-child(2) { opacity: 0; }
+  .site-header[data-open] .bars span:nth-child(3) { top: 7px; transform: rotate(-45deg); }
+
+  /* Mobile menu panel */
+  .mobile-menu {
+    position: absolute; top: 100%; left: 0; right: 0;
+    background: rgba(8, 9, 13, 0.97);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--rule);
+    padding: 12px 24px 24px;
+    box-shadow: var(--shadow);
+  }
+  .mobile-menu[hidden] { display: none; }
+  .mobile-menu ul { list-style: none; margin: 0 0 8px; padding: 0; display: grid; }
+  .mobile-menu li { border-bottom: 1px solid var(--rule); }
+  .mobile-menu li a {
+    display: block; padding: 15px 4px; font-family: var(--font-display); font-weight: 500;
+    font-size: 1.05rem; color: var(--text); transition: color .2s ease;
+  }
+  .mobile-menu li a:hover { color: var(--sunset); }
+  .mobile-cta { width: 100%; justify-content: center; margin-top: 18px; padding: 14px 22px; }
+
+  @media (min-width: 900px) {
+    .nav { display: flex; }
+    .actions { display: flex; }
+    .menu-toggle { display: none; }
+    .mobile-menu { display: none !important; }
+  }
 </style>
+
+<script is:inline>
+  (() => {
+    const header = document.querySelector("[data-header]");
+    if (!header) return;
+    const toggle = header.querySelector("[data-menu-toggle]");
+    const menu = header.querySelector("[data-mobile-menu]");
+    if (!toggle || !menu) return;
+
+    const setOpen = (open) => {
+      header.toggleAttribute("data-open", open);
+      toggle.setAttribute("aria-expanded", String(open));
+      toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+      menu.hidden = !open;
+    };
+
+    toggle.addEventListener("click", () => {
+      setOpen(toggle.getAttribute("aria-expanded") !== "true");
+    });
+
+    // Close after a link tap (anchors scroll within the same page)
+    menu.querySelectorAll("[data-menu-link]").forEach((a) =>
+      a.addEventListener("click", () => setOpen(false))
+    );
+
+    // Close on Escape, and when the viewport grows past the desktop breakpoint
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") setOpen(false);
+    });
+    const mq = window.matchMedia("(min-width: 900px)");
+    mq.addEventListener("change", (e) => { if (e.matches) setOpen(false); });
+  })();
+</script>

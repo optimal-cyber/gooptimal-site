@@ -8,10 +8,10 @@ interface Props {
   keywords?: string;
 }
 const {
-  title = "Optimal — governed AI for regulated & federal missions",
-  description = "Optimal is an AI security advisory firm. We assess and red-team AI systems, engineer governed access to frontier models in the cloud you already license (Azure OpenAI, Amazon Bedrock, Google Vertex AI, or GovCloud), and advise teams on adopting AI safely — for federal, SLED, and enterprise missions. An SBA-certified Service-Disabled Veteran-Owned Small Business (SDVOSB).",
+  title = "Optimal — Managed GCC High enclaves & governed AI for the defense industrial base",
+  description = "Optimal builds, migrates, and manages CMMC-ready Microsoft 365 GCC High enclaves for the defense industrial base — and stands up the governed AI that runs safely inside them. Aligned to DFARS 252.204-7012, NIST SP 800-171, and CMMC Level 2, with support for CUI and ITAR-controlled data. An SBA-certified Service-Disabled Veteran-Owned Small Business (SDVOSB).",
   image = "/optimal-social-preview.png",
-  keywords = "SDVOSB, Service-Disabled Veteran-Owned Small Business, VOSB, Veteran-Owned Small Business, SBA VetCert, veteran-owned AI security, governed AI, secure AI gateway, AI guardrails, Zero Trust AI, GovCloud AI, air-gapped AI, AI red-teaming, NIST AI RMF, OWASP LLM Top 10, SLED AI security, enterprise AI security, Azure OpenAI, Amazon Bedrock, Google Vertex AI, frontier model access",
+  keywords = "GCC High, Microsoft 365 GCC High, managed GCC High, GCC High migration, GCC High MSP, CMMC, CMMC 2.0, CMMC Level 2, CMMC compliance, NIST SP 800-171, DFARS 252.204-7012, CUI, Controlled Unclassified Information, ITAR compliant cloud, defense industrial base, DIB, DoD contractor compliance, CUI enclave, SDVOSB, Service-Disabled Veteran-Owned Small Business, SBA VetCert, governed AI, secure AI gateway, AI guardrails, Zero Trust AI, GovCloud AI, air-gapped AI, AI red-teaming, NIST AI RMF, OWASP LLM Top 10, Azure OpenAI, Azure Government, Amazon Bedrock, Google Vertex AI",
 } = Astro.props;
 
 const canonical = new URL(Astro.url.pathname, Astro.site);
@@ -30,14 +30,33 @@ const orgSchema = {
   email: "ryan@gooptimal.io",
   slogan: "Sovereign by default.",
   description:
-    "Optimal is an AI security advisory firm for federal, SLED (state, local, education), and enterprise missions — AI security assessments, adversarial (red-team) AI testing, governed AI engineering, and secure-adoption advisory. We build governed access to frontier models in the cloud a client already licenses (Azure OpenAI, Amazon Bedrock, Google Vertex AI, or GovCloud). An SBA-certified Service-Disabled Veteran-Owned Small Business (SDVOSB).",
+    "Optimal builds, migrates, and manages CMMC-ready Microsoft 365 GCC High enclaves for the defense industrial base — aligned to DFARS 252.204-7012, NIST SP 800-171, and CMMC Level 2, with support for CUI and ITAR-controlled data — and stands up the governed access layer for frontier AI inside them (Azure OpenAI in Azure Government, Amazon Bedrock, Google Vertex AI, or self-hosted). We also assess and red-team AI systems and advise teams on adopting AI safely. An SBA-certified Service-Disabled Veteran-Owned Small Business (SDVOSB).",
   areaServed: [
+    "United States defense industrial base",
     "United States federal government",
     "State and local government",
     "Higher education",
     "Enterprise",
   ],
   makesOffer: [
+    {
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Service",
+        name: "Managed Microsoft 365 GCC High Enclave",
+        description:
+          "Design, build, migration, and ongoing management of a CMMC-ready Microsoft 365 GCC High environment for defense contractors handling CUI and ITAR-controlled data — aligned to DFARS 252.204-7012, NIST SP 800-171, and CMMC Level 2, including GCC High G5 licensing and provisioning.",
+      },
+    },
+    {
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Service",
+        name: "CMMC Readiness & NIST 800-171 Engineering",
+        description:
+          "Implementation of the NIST SP 800-171 control set inside a GCC High enclave, with System Security Plan (SSP) and POA&M support, evidence collection, and readiness for a third-party (C3PAO) CMMC Level 2 assessment. Optimal prepares the environment; the certified assessment is performed independently.",
+      },
+    },
     {
       "@type": "Offer",
       itemOffered: {
@@ -76,6 +95,16 @@ const orgSchema = {
     },
   ],
   knowsAbout: [
+    "Microsoft 365 GCC High",
+    "GCC High migration",
+    "CMMC",
+    "CMMC Level 2",
+    "NIST SP 800-171",
+    "DFARS 252.204-7012",
+    "Controlled Unclassified Information (CUI)",
+    "ITAR compliance",
+    "Defense industrial base",
+    "Azure Government",
     "Governed AI",
     "Secure AI gateway",
     "AI guardrails",
@@ -86,7 +115,6 @@ const orgSchema = {
     "Azure OpenAI Service",
     "Amazon Bedrock",
     "Google Vertex AI",
-    "SLED (state, local, education)",
     "Service-Disabled Veteran-Owned Small Business",
   ],
   hasCredential: [

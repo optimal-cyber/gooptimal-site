@@ -10,6 +10,34 @@ const standards = [
   "CIS Benchmarks", "DISA STIG", "ISO 42001", "SOC 2",
 ];
 
+// The two pillars — the compliant environment, and the governed AI inside it.
+const pillars = [
+  {
+    tag: "Managed environment",
+    title: "CMMC-ready GCC High enclaves",
+    body: "We stand up your Microsoft 365 GCC High tenant, migrate your people and data into it, engineer the NIST 800-171 controls, and run it for you — so you stay eligible to win and keep DoD work that touches CUI or ITAR-controlled data.",
+    points: ["Design, build & migration", "NIST 800-171 / CMMC L2 alignment", "Fully managed operations", "GCC High G5 licensing"],
+    href: "/gcc-high",
+    cta: "Managed GCC High →",
+  },
+  {
+    tag: "Governed intelligence",
+    title: "AI you can actually use on the mission",
+    body: "Most GCC High shops stop at email and files. We stand up governed access to the frontier models authorized for your sovereign cloud — one gateway, fail-closed guardrails, a defensible audit trail — plus assessment and red-teaming of the AI you deploy.",
+    points: ["Governed AI gateway", "Adversarial AI red-teaming", "AI security assessments", "Secure-adoption advisory"],
+    href: "#services",
+    cta: "AI security services →",
+  },
+];
+
+// Managed GCC High — the four bands of the managed service.
+const gccBands = [
+  { idx: "01", n: "Build the enclave", d: "A compliant Microsoft 365 GCC High tenant — Entra ID, Conditional Access, Defender, and Purview configured to a CUI-ready baseline from day one." },
+  { idx: "02", n: "Migrate cleanly", d: "Mailboxes, files, Teams, and identities moved from Commercial or GCC into GCC High with spillage controls — no CUI left in the wrong boundary." },
+  { idx: "03", n: "Engineer the controls", d: "The NIST SP 800-171 control set implemented and documented — SSP and POA&M, evidence collected, ready for your C3PAO's CMMC Level 2 assessment." },
+  { idx: "04", n: "Run it for you", d: "Ongoing administration, patching, monitoring, user lifecycle, and help desk — the managed operations that keep the enclave compliant after go-live." },
+];
+
 // Advisory-led services — the four engagements Optimal runs, arced
 // find it → prove it → build the controls → keep the program governed.
 // Each carries concrete scope and a named deliverable, not benefit copy.
@@ -177,7 +205,15 @@ const work = [
 const faqs = [
   {
     q: "What does Optimal do?",
-    a: "Optimal is an AI security advisory firm for regulated, federal, and defense missions. We assess and red-team AI systems, engineer the governed access layer that keeps them accountable, and advise teams on adopting AI safely. We're an SBA-certified Service-Disabled Veteran-Owned Small Business (SDVOSB).",
+    a: "Optimal does two things that work together. First, we build, migrate, and manage CMMC-ready Microsoft 365 GCC High enclaves for the defense industrial base — the sovereign environment you need to handle CUI and ITAR-controlled data on DoD contracts. Second, we stand up the governed AI that runs safely inside those environments, and assess and red-team the AI systems teams deploy. We're an SBA-certified Service-Disabled Veteran-Owned Small Business (SDVOSB).",
+  },
+  {
+    q: "What is Microsoft 365 GCC High, and do I need it?",
+    a: "GCC High is a US-sovereign version of Microsoft 365, physically and logically isolated, with US data residency and screened US-person support. If you're a defense contractor handling Controlled Unclassified Information (CUI) or ITAR/export-controlled data, GCC High is the environment built to support the DFARS 252.204-7012 and CMMC Level 2 obligations in your contracts. Optimal stands the enclave up and runs it for you.",
+  },
+  {
+    q: "Does moving to GCC High make me CMMC compliant?",
+    a: "No environment makes you compliant on its own — CMMC Level 2 is a third-party assessment against the 110 NIST SP 800-171 controls. What GCC High gives you is a foundation built for those controls. Optimal implements and documents the control set inside your enclave (SSP and POA&M), collects the evidence, and gets you assessment-ready. The certified assessment itself is performed independently by an accredited C3PAO — we prepare the environment, we don't grade it.",
   },
   {
     q: "Is Optimal a product company or a services firm?",
@@ -217,8 +253,8 @@ const faqSchema = {
 ---
 
 <Layout
-  title="Optimal — AI security advisory for federal, SLED & enterprise missions"
-  description="Optimal is an AI security advisory firm. We assess and red-team AI systems, engineer governed access to frontier models in the cloud you already license (Azure OpenAI, Amazon Bedrock, Google Vertex AI, or GovCloud), and advise teams on adopting AI safely — for federal, SLED, and enterprise missions. An SBA-certified Service-Disabled Veteran-Owned Small Business (SDVOSB)."
+  title="Optimal — Managed GCC High enclaves & governed AI for the defense industrial base"
+  description="Optimal builds, migrates, and manages CMMC-ready Microsoft 365 GCC High enclaves for the defense industrial base — and stands up the governed AI that runs safely inside them. Aligned to DFARS 252.204-7012, NIST SP 800-171, and CMMC Level 2, with support for CUI and ITAR-controlled data. An SBA-certified Service-Disabled Veteran-Owned Small Business (SDVOSB)."
 >
   <Header />
 
@@ -227,24 +263,23 @@ const faqSchema = {
     <div class="glow"></div>
     <GatewayCanvas variant="hero" />
     <div class="container z">
-      <span class="eyebrow">AI security advisory · Expertise-led, adversary-informed</span>
-      <h1 class="display">Secure the AI<br /><span class="grad">your mission is betting on.</span></h1>
+      <span class="eyebrow">Managed GCC High · Governed AI · SDVOSB</span>
+      <h1 class="display">The sovereign environment<br /><span class="grad">your mission runs on.</span></h1>
       <p class="lead">
-        Optimal is an AI security advisory firm for federal, state &amp; local, and enterprise
-        missions. We assess your AI systems the way an adversary would, engineer the controls that
-        keep them accountable, and help your teams adopt AI without losing the audit trail — across
-        GovCloud, commercial cloud, on-prem, and air-gapped.
+        Optimal builds, migrates, and manages CMMC-ready Microsoft&nbsp;365 GCC&nbsp;High enclaves for
+        the defense industrial base — and stands up the governed AI that runs safely inside them.
+        One veteran-owned partner for the compliant cloud and the intelligence on top of it.
       </p>
       <p class="hero-caps">
-        Assessment <span>/</span> Red team <span>/</span> Governed engineering <span>/</span> Advisory
+        GCC&nbsp;High enclave <span>/</span> CMMC readiness <span>/</span> Governed AI <span>/</span> Red team
       </p>
       <div class="cta-row">
         <a href="/contact" class="btn btn-primary">Book a scoping call →</a>
-        <a href="#services" class="btn btn-ghost">See our services</a>
+        <a href="/gcc-high" class="btn btn-ghost">Explore managed GCC High</a>
       </div>
       <div class="hero-meta muted">
-        <span>Expertise-led, adversary-informed</span><span class="dot">•</span>
         <span>Sovereign by default</span><span class="dot">•</span>
+        <span>CUI &amp; ITAR-ready</span><span class="dot">•</span>
         <span>SDVOSB-certified</span>
       </div>
     </div>
@@ -264,6 +299,55 @@ const faqSchema = {
           SBA-certified and eligible for veteran set-aside contracts.
         </p>
       </div>
+    </div>
+  </section>
+
+  <!-- PILLARS — what Optimal does, at a glance -->
+  <section id="pillars" class="section pillars relative">
+    <div class="glow"></div>
+    <div class="container z">
+      <div class="sec-head wide">
+        <span class="ix">What we do</span>
+        <h2 class="h2">Two things, built to work together.</h2>
+        <p class="lead" style="margin-top:14px;">Optimal gives the defense industrial base a compliant place to operate — and the governed AI to operate faster inside it. The sovereign cloud and the intelligence on top of it, from one veteran-owned partner.</p>
+      </div>
+      <div class="pillar-grid">
+        {pillars.map((p) => (
+          <article class="card pillar">
+            <span class="tag">{p.tag}</span>
+            <h3>{p.title}</h3>
+            <p class="muted pillar-body">{p.body}</p>
+            <ul class="pillar-points">
+              {p.points.map((pt) => <li>{pt}</li>)}
+            </ul>
+            <a href={p.href} class="usecase-link">{p.cta}</a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- MANAGED GCC HIGH -->
+  <section id="gcc-high" class="section gcc relative">
+    <div class="glow"></div>
+    <div class="container z">
+      <div class="sec-head wide">
+        <span class="ix">Managed GCC High · For the DIB</span>
+        <h2 class="h2">A CMMC-ready enclave, built and run for you.</h2>
+        <p class="lead" style="margin-top:14px;">If you handle CUI or ITAR-controlled data on a DoD contract, you need a sovereign environment that meets DFARS 252.204-7012 and CMMC Level 2. Optimal stands up your Microsoft&nbsp;365 GCC&nbsp;High enclave, migrates you into it, engineers the controls, and manages it — so compliance stops being the thing that costs you the contract. <a class="inline-link" href="/gcc-high">See the full managed service →</a></p>
+      </div>
+      <ol class="gcc-flow">
+        {gccBands.map((b) => (
+          <li class="gcc-step">
+            <span class="gcc-ix">{b.idx}</span>
+            <div>
+              <h4>{b.n}</h4>
+              <p class="muted">{b.d}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+      <p class="muted note">GCC High G5 licensing and provisioning included. Optimal prepares and manages the environment; the certified CMMC assessment is performed independently by your C3PAO.</p>
     </div>
   </section>
 
@@ -516,6 +600,40 @@ const faqSchema = {
   .sec-head.wide { max-width: 62ch; }
   .inline-link { color: var(--sunset); font-weight: 600; }
   .inline-link:hover { color: var(--ember); }
+
+  /* PILLARS */
+  .pillars { background: var(--bg); }
+  .pillar-grid { display: grid; gap: 20px; margin-top: 42px; }
+  @media (min-width: 820px) { .pillar-grid { grid-template-columns: repeat(2, 1fr); } }
+  .pillar { display: flex; flex-direction: column; }
+  .pillar h3 { font-size: 1.4rem; margin: 14px 0 12px; }
+  .pillar-body { font-size: 14.5px; line-height: 1.7; }
+  .pillar-points {
+    list-style: none; margin: 20px 0 0; padding: 18px 0 0;
+    border-top: 1px solid var(--rule);
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 9px 18px;
+  }
+  .pillar-points li {
+    position: relative; padding-left: 18px; font-size: 13px; color: var(--text-dim); line-height: 1.45;
+  }
+  .pillar-points li::before {
+    content: ""; position: absolute; left: 2px; top: 7px; width: 5px; height: 5px;
+    border-radius: 1px; background: var(--sunset); transform: rotate(45deg); opacity: 0.85;
+  }
+  .pillar .usecase-link { margin-top: 22px; }
+
+  /* MANAGED GCC HIGH */
+  .gcc { background: var(--surface); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+  .gcc-flow { list-style: none; margin: 44px 0 0; padding: 0; display: grid; gap: 22px; }
+  @media (min-width: 720px) { .gcc-flow { grid-template-columns: repeat(2, 1fr); gap: 30px 44px; } }
+  .gcc-step { display: grid; grid-template-columns: 40px 1fr; gap: 16px; align-items: start; }
+  .gcc-ix {
+    font-family: var(--font-mono); font-size: 13px; font-weight: 600; color: var(--sunset);
+    border: 1px solid var(--rule-strong); border-radius: 8px; width: 40px; height: 40px;
+    display: grid; place-items: center;
+  }
+  .gcc-step h4 { font-size: 1.1rem; margin-bottom: 6px; }
+  .gcc-step p { font-size: 14px; line-height: 1.65; max-width: 52ch; }
 
   /* HERO */
   .hero { padding: clamp(72px, 12vw, 150px) 0 clamp(48px, 7vw, 90px); }
