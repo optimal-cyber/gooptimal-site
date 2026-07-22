@@ -1,0 +1,451 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import GatewayCanvas from "../components/GatewayCanvas.astro";
+import VetBadge from "../components/VetBadge.astro";
+
+// Why a DIB company needs GCC High — the compliance drivers.
+const drivers = [
+  {
+    tag: "CUI",
+    title: "Controlled Unclassified Information",
+    body: "CUI carries handling requirements your prime and the DoD will hold you to. GCC High is built to store and process it inside a US-sovereign boundary — not bolted onto commercial email.",
+  },
+  {
+    tag: "ITAR / EAR",
+    title: "Export-controlled technical data",
+    body: "Export-controlled data must stay with US persons on US soil. GCC High provides screened US-person support and US data residency — the access control ITAR and EAR expect.",
+  },
+  {
+    tag: "DFARS 7012",
+    title: "The clause already in your contracts",
+    body: "DFARS 252.204-7012 requires NIST SP 800-171 safeguarding and rapid incident reporting. GCC High is the environment engineered to meet the clause you already signed.",
+  },
+  {
+    tag: "CMMC L2",
+    title: "The assessment that's coming",
+    body: "CMMC is phasing into DoD solicitations now. Level 2 means a third-party assessment against 800-171 — and an enclave built for those controls is how you pass it the first time.",
+  },
+];
+
+// The managed service — the four bands, with what each includes.
+const deliver = [
+  {
+    idx: "01",
+    accent: "var(--sunset)",
+    title: "Design & build the enclave",
+    lede: "A compliant Microsoft 365 GCC High tenant, hardened to a CUI-ready baseline from day one.",
+    points: [
+      "GCC High tenant provisioning and hardening",
+      "Entra ID, Conditional Access, MFA, device compliance",
+      "Microsoft Defender and Purview (DLP, sensitivity labels, audit)",
+      "Baseline mapped to NIST SP 800-171 from the start",
+    ],
+  },
+  {
+    idx: "02",
+    accent: "var(--steel)",
+    title: "Migrate without spillage",
+    lede: "Your people and data moved into the boundary cleanly — no CUI left where it shouldn't be.",
+    points: [
+      "Email, OneDrive, SharePoint, Teams, and identities",
+      "From Commercial Microsoft 365 or GCC into GCC High",
+      "Data classification and spillage controls in flight",
+      "Coexistence during cutover, minimal downtime",
+    ],
+  },
+  {
+    idx: "03",
+    accent: "var(--coral)",
+    title: "Engineer & document the controls",
+    lede: "The 800-171 control set implemented, documented, and ready to be assessed.",
+    points: [
+      "All 110 NIST SP 800-171 controls implemented",
+      "System Security Plan (SSP) authored and maintained",
+      "POA&M for any residual gaps, tracked to closure",
+      "Evidence organized for a C3PAO Level 2 assessment",
+    ],
+  },
+  {
+    idx: "04",
+    accent: "var(--seafoam)",
+    title: "Manage & sustain",
+    lede: "The ongoing operations that keep the enclave compliant long after go-live.",
+    points: [
+      "Day-to-day administration and user lifecycle",
+      "Patching, monitoring, and configuration-drift control",
+      "Security operations and incident-response support",
+      "Help desk for your cleared users",
+    ],
+  },
+];
+
+// The 14 NIST SP 800-171 control families CMMC Level 2 assesses.
+const families = [
+  "Access Control", "Awareness & Training", "Audit & Accountability",
+  "Configuration Management", "Identification & Authentication", "Incident Response",
+  "Maintenance", "Media Protection", "Personnel Security", "Physical Protection",
+  "Risk Assessment", "Security Assessment", "System & Communications Protection",
+  "System & Information Integrity",
+];
+
+const faqs = [
+  {
+    q: "What is Microsoft 365 GCC High?",
+    a: "Microsoft 365 GCC High is a dedicated, US-sovereign deployment of Microsoft 365 that runs in Microsoft's Azure Government cloud. It is physically and logically separated from the commercial and standard-government (GCC) environments, keeps data in the continental US, and is supported only by screened US persons. It exists so defense contractors can handle CUI, ITAR, and export-controlled data under DFARS and CMMC.",
+  },
+  {
+    q: "What's the difference between GCC and GCC High?",
+    a: "GCC (Government Community Cloud) runs on commercial infrastructure with some government features and is fine for many state, local, and federal-civilian needs. GCC High runs in Azure Government with stricter personnel screening, US-person support, and data-residency controls, and is the environment recommended — and often required — for CUI and ITAR-regulated defense data. If ITAR or DFARS/CMMC is in your contract, GCC High is usually the answer.",
+  },
+  {
+    q: "Do I actually need GCC High?",
+    a: "If your DoD contracts flow down DFARS 252.204-7012, involve CUI, or touch ITAR/export-controlled technical data, you almost certainly need GCC High. If you're unsure, we'll review your contract clauses and data types and tell you honestly — sometimes GCC or Commercial with the right controls is enough, and we'll say so rather than sell you a bigger environment than you need.",
+  },
+  {
+    q: "Does moving to GCC High make me CMMC compliant?",
+    a: "No environment makes you compliant on its own. CMMC Level 2 is a third-party assessment against the 110 NIST SP 800-171 controls. What GCC High gives you is a foundation built for those controls. Optimal implements and documents the control set inside your enclave (SSP and POA&M), collects the evidence, and gets you assessment-ready — but the certified assessment is performed independently by an accredited C3PAO. We prepare the environment; we don't grade our own work.",
+  },
+  {
+    q: "How long does a GCC High migration take?",
+    a: "Most migrations run four to eight weeks, depending on user count, the volume and sensitivity of the data, and your source environment. We scope it precisely up front and run the cutover with coexistence so your team keeps working through the transition.",
+  },
+  {
+    q: "Can I use Copilot or AI inside GCC High?",
+    a: "Yes, increasingly. Azure OpenAI is available in Azure Government today, and Microsoft 365 Copilot is rolling out to GCC High. Optimal stands up governed access to whatever AI is authorized for your environment — behind an authenticated gateway with fail-closed guardrails and an audit trail — so your cleared users get AI on mission work without data leaving the boundary. That governed-AI layer is what sets us apart from a migration-only shop.",
+  },
+  {
+    q: "Do you provide the GCC High licenses?",
+    a: "Yes. We source and provision your Microsoft 365 GCC High G5 licensing and stand up the tenant, so you don't have to manage a separate licensing relationship on top of everything else.",
+  },
+  {
+    q: "Do you manage the environment after migration?",
+    a: "Yes — that's the point. After go-live we run day-to-day administration, patching, monitoring, user lifecycle, security operations, and help desk, and we keep your SSP and evidence current so you stay assessment-ready between contracts and re-assessments.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Managed Microsoft 365 GCC High Enclave",
+  serviceType: "Managed GCC High enclave for CMMC compliance",
+  provider: { "@type": "Organization", name: "Optimal", url: "https://gooptimal.io" },
+  areaServed: "United States defense industrial base",
+  audience: {
+    "@type": "Audience",
+    audienceType: "Defense contractors handling CUI and ITAR-controlled data",
+  },
+  description:
+    "Optimal designs, builds, migrates, and manages CMMC-ready Microsoft 365 GCC High enclaves for the defense industrial base — aligned to DFARS 252.204-7012, NIST SP 800-171, and CMMC Level 2, with support for CUI and ITAR-controlled data, GCC High G5 licensing, and governed AI inside the boundary.",
+};
+---
+
+<Layout
+  title="Managed Microsoft 365 GCC High enclaves for CMMC compliance | Optimal"
+  description="Optimal builds, migrates, and manages CMMC-ready Microsoft 365 GCC High enclaves for the defense industrial base. Aligned to DFARS 252.204-7012, NIST SP 800-171, and CMMC Level 2, with CUI and ITAR support, GCC High G5 licensing, and governed AI inside the boundary. An SDVOSB."
+  keywords="GCC High, Microsoft 365 GCC High, managed GCC High, GCC High migration, GCC High MSP, CMMC, CMMC Level 2, CMMC compliance, NIST SP 800-171, DFARS 252.204-7012, CUI, Controlled Unclassified Information, ITAR compliant cloud, defense industrial base, DIB, DoD contractor, CUI enclave, GCC High G5, Azure Government, SDVOSB"
+>
+  <Header />
+
+  <!-- HERO -->
+  <section class="hero relative">
+    <div class="glow"></div>
+    <GatewayCanvas variant="hero" />
+    <div class="container z">
+      <span class="eyebrow">Managed Microsoft 365 GCC High · For the defense industrial base</span>
+      <h1 class="display">Your CMMC-ready enclave —<br /><span class="grad">built, migrated, and managed.</span></h1>
+      <p class="lead">
+        Handling CUI or ITAR-controlled data on a DoD contract means meeting DFARS 252.204-7012 and,
+        increasingly, CMMC Level 2. Optimal stands up your Microsoft&nbsp;365 GCC&nbsp;High environment,
+        migrates your people and data into it, engineers the NIST SP 800-171 controls, and runs it for
+        you — so compliance becomes a capability you operate, not a fire drill before every award.
+      </p>
+      <p class="hero-caps">
+        Build <span>/</span> Migrate <span>/</span> Engineer controls <span>/</span> Manage
+      </p>
+      <div class="cta-row">
+        <a href="/contact" class="btn btn-primary">Book a scoping call →</a>
+        <a href="#deliver" class="btn btn-ghost">See what's included</a>
+      </div>
+      <div class="hero-meta muted">
+        <span>SDVOSB-certified</span><span class="dot">•</span>
+        <span>CUI &amp; ITAR-ready</span><span class="dot">•</span>
+        <span>GCC High G5 licensing included</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY GCC HIGH -->
+  <section id="why" class="section--tight why relative">
+    <div class="container z">
+      <div class="sec-head wide">
+        <span class="ix">Why GCC High</span>
+        <h2 class="h2">Commercial Microsoft 365 wasn't built for defense data. GCC High was.</h2>
+        <p class="lead" style="margin-top:14px;">Four things drive a defense contractor into GCC High. If any of them are in your contracts, the environment isn't optional.</p>
+      </div>
+      <div class="driver-grid">
+        {drivers.map((d) => (
+          <article class="card driver">
+            <span class="tag">{d.tag}</span>
+            <h3>{d.title}</h3>
+            <p class="muted">{d.body}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT WE DELIVER -->
+  <section id="deliver" class="section deliver relative">
+    <div class="glow"></div>
+    <div class="container z">
+      <div class="sec-head wide">
+        <span class="ix">The managed service</span>
+        <h2 class="h2">One partner, from first tenant to steady state.</h2>
+        <p class="lead" style="margin-top:14px;">Other shops migrate your email and hand you the keys. Optimal builds the enclave, moves you in, engineers the controls, and keeps running it — the whole lifecycle, on one contract.</p>
+      </div>
+      <div class="deliver-grid">
+        {deliver.map((b) => (
+          <article class="card dband">
+            <header class="dband-top">
+              <span class="dband-ix" style={`color:${b.accent}`}>{b.idx}</span>
+              <h3>{b.title}</h3>
+            </header>
+            <p class="muted dband-lede">{b.lede}</p>
+            <ul class="dband-points">
+              {b.points.map((pt) => <li>{pt}</li>)}
+            </ul>
+          </article>
+        ))}
+      </div>
+      <p class="muted note">GCC High G5 licensing and provisioning included — we source and stand up your licenses and tenant, so there's no separate reseller to chase.</p>
+    </div>
+  </section>
+
+  <!-- CMMC / 800-171 ALIGNMENT -->
+  <section id="cmmc" class="section--tight cmmc relative">
+    <div class="container z">
+      <div class="sec-head wide">
+        <span class="ix">CMMC Level 2 · NIST SP 800-171</span>
+        <h2 class="h2">Built for the 110 controls — and the assessment that checks them.</h2>
+        <p class="lead" style="margin-top:14px;">CMMC Level 2 assesses your program against the 14 families and 110 controls of NIST SP 800-171. We implement them in the enclave, document them in your SSP, track residual gaps in a POA&amp;M, and hand your assessor an environment that's ready to be graded.</p>
+      </div>
+      <div class="families">
+        {families.map((f) => <span class="chip">{f}</span>)}
+      </div>
+      <p class="muted boundary">
+        <strong>Where we draw the line:</strong> Optimal builds and prepares the environment and gets you
+        assessment-ready. The certified CMMC assessment is performed independently by an accredited C3PAO —
+        we don't assess our own work, and we won't tell you you're compliant. We'll tell you you're ready.
+      </p>
+    </div>
+  </section>
+
+  <!-- THE AI EDGE -->
+  <section id="ai-edge" class="section ai-edge relative">
+    <div class="glow"></div>
+    <div class="container z sec-split">
+      <div class="sec-head">
+        <span class="ix">The difference</span>
+        <h2 class="h2">The GCC High partner that also gives you AI.</h2>
+      </div>
+      <div class="edge-body">
+        <p>
+          Most GCC High shops migrate your mailboxes and disappear. Optimal's other half is AI security —
+          so once the enclave is standing, we stand up governed access to the frontier models authorized
+          for your sovereign cloud: Azure OpenAI in Azure Government, and Microsoft 365 Copilot as it
+          reaches GCC High.
+        </p>
+        <p>
+          One authenticated gateway, fail-closed guardrails, default-deny egress, and an audit trail — the
+          same open-source Zero Trust pattern we publish. Your cleared teams get real AI on mission work,
+          governed and logged, inside the boundary.
+          <a class="inline-link" href="/#how">See the architecture →</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO IT'S FOR -->
+  <section id="who" class="section--tight who relative">
+    <div class="container z who-inner">
+      <div class="who-copy">
+        <span class="ix">Who it's for</span>
+        <h2 class="h2">Built for the defense industrial base.</h2>
+        <p class="lead" style="margin-top:14px;">
+          Primes and subcontractors, manufacturers, aerospace and defense, and R&amp;D shops — anyone with
+          CUI or ITAR obligations flowing down from a prime. Especially the small and mid-size contractors
+          who can't staff a full compliance and IT security team, and can't afford to lose an award over it.
+        </p>
+      </div>
+      <div class="vet-card">
+        <VetBadge size={72} />
+        <p class="muted">
+          Optimal, LLC is an SBA-certified <strong>Service-Disabled Veteran-Owned Small Business</strong> —
+          teaming- and set-aside-friendly for your subcontracting goals.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="section faq relative">
+    <div class="glow"></div>
+    <div class="container z">
+      <div class="sec-head wide">
+        <span class="ix">FAQ</span>
+        <h2 class="h2">GCC High &amp; CMMC, answered.</h2>
+      </div>
+      <div class="faq-list">
+        {faqs.map((f) => (
+          <details class="faq-item">
+            <summary>
+              <span class="faq-q">{f.q}</span>
+              <span class="faq-mark" aria-hidden="true"></span>
+            </summary>
+            <p class="muted faq-a">{f.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section cta relative">
+    <div class="glow"></div>
+    <GatewayCanvas variant="ambient" align="center" density={0.7} />
+    <div class="container z cta-inner">
+      <h2 class="display" style="font-size:clamp(2rem,5vw,3.4rem);">Let's stand up<br />your enclave.</h2>
+      <p class="lead" style="margin:18px auto 0;">Tell us the contracts you're chasing, the data you handle, and where you are today — Commercial, GCC, or nothing yet. We'll scope the migration, the controls, and the managed service, and give you a straight answer on GCC High.</p>
+      <a href="/contact" class="btn btn-primary" style="margin-top:28px;">Book a scoping call →</a>
+    </div>
+  </section>
+
+  <Footer />
+
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} is:inline />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} is:inline />
+</Layout>
+
+<style>
+  .ix {
+    display: inline-block; font-family: var(--font-mono); font-size: 12px;
+    letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-faint);
+    margin-bottom: 16px;
+  }
+  .sec-head.wide { max-width: 64ch; }
+  .inline-link { color: var(--sunset); font-weight: 600; }
+  .inline-link:hover { color: var(--ember); }
+  .note { margin-top: 26px; font-size: 14px; max-width: 72ch; }
+
+  /* HERO */
+  .hero { padding: clamp(72px, 12vw, 140px) 0 clamp(48px, 7vw, 84px); }
+  .hero .eyebrow { margin-bottom: 22px; }
+  .hero h1 { margin-bottom: 24px; }
+  .hero .lead { font-size: clamp(17px, 2.2vw, 21px); }
+  .hero-caps {
+    margin-top: 22px; font-family: var(--font-mono); font-size: 12.5px;
+    letter-spacing: 0.06em; color: var(--text-dim); text-transform: uppercase;
+  }
+  .hero-caps span { color: var(--text-faint); margin: 0 4px; }
+  .cta-row { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 30px; }
+  .hero-meta { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-top: 30px; font-size: 13px; }
+  .hero-meta .dot { opacity: 0.4; }
+
+  /* WHY */
+  .why { background: var(--surface); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+  .driver-grid { display: grid; gap: 18px; margin-top: 40px; }
+  @media (min-width: 680px) { .driver-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1000px) { .driver-grid { grid-template-columns: repeat(4, 1fr); } }
+  .driver h3 { font-size: 1.15rem; margin: 12px 0 10px; }
+  .driver p { font-size: 13.5px; line-height: 1.65; }
+
+  /* DELIVER */
+  .deliver { background: var(--bg); }
+  .deliver-grid { display: grid; gap: 20px; margin-top: 42px; }
+  @media (min-width: 800px) { .deliver-grid { grid-template-columns: repeat(2, 1fr); } }
+  .dband { display: flex; flex-direction: column; }
+  .dband-top { display: flex; align-items: baseline; gap: 12px; margin-bottom: 12px; }
+  .dband-ix { font-family: var(--font-mono); font-size: 13px; font-weight: 600; letter-spacing: 0.05em; }
+  .dband h3 { font-size: 1.25rem; }
+  .dband-lede { font-size: 14.5px; line-height: 1.6; }
+  .dband-points {
+    list-style: none; margin: 16px 0 0; padding: 16px 0 0;
+    border-top: 1px solid var(--rule); display: grid; gap: 8px;
+  }
+  .dband-points li {
+    position: relative; padding-left: 18px; font-size: 13.5px; color: var(--text-dim); line-height: 1.5;
+  }
+  .dband-points li::before {
+    content: ""; position: absolute; left: 2px; top: 8px; width: 5px; height: 5px;
+    border-radius: 1px; background: var(--rule-strong); transform: rotate(45deg);
+  }
+
+  /* CMMC */
+  .cmmc { background: var(--surface); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+  .families { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 34px; }
+  .chip {
+    font-family: var(--font-mono); font-weight: 500; font-size: 12.5px; letter-spacing: 0.02em;
+    color: var(--text-dim); border: 1px solid var(--rule); border-radius: 7px;
+    padding: 7px 13px; transition: color .2s, border-color .2s;
+  }
+  .chip:hover { color: var(--text); border-color: var(--rule-strong); }
+  .boundary { margin-top: 28px; font-size: 14.5px; line-height: 1.7; max-width: 74ch; }
+  .boundary strong { color: var(--text); }
+
+  /* AI EDGE */
+  .ai-edge { background: var(--bg); }
+  .sec-split { display: grid; gap: 26px; }
+  .edge-body { display: grid; gap: 18px; max-width: 64ch; }
+  .edge-body p { color: var(--text-dim); font-size: clamp(15px, 1.8vw, 17px); line-height: 1.75; }
+  @media (min-width: 900px) {
+    .sec-split { grid-template-columns: 0.85fr 1.15fr; gap: 56px; align-items: start; }
+  }
+
+  /* WHO */
+  .who { background: var(--surface); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+  .who-inner { display: grid; gap: 30px; align-items: center; }
+  .who-copy { max-width: 62ch; }
+  .vet-card {
+    display: flex; flex-direction: column; gap: 14px; align-items: flex-start;
+    padding: 26px; border: 1px solid var(--rule); border-radius: var(--radius);
+    background: linear-gradient(180deg, var(--surface-2), var(--surface));
+  }
+  .vet-card p { font-size: 13.5px; line-height: 1.6; }
+  .vet-card strong { color: var(--text); }
+  @media (min-width: 900px) { .who-inner { grid-template-columns: 1.4fr 1fr; gap: 48px; } }
+
+  /* FAQ */
+  .faq { background: var(--bg); }
+  .faq-list { margin-top: 34px; max-width: 82ch; border-top: 1px solid var(--rule); }
+  .faq-item { border-bottom: 1px solid var(--rule); }
+  .faq-item summary {
+    display: flex; align-items: center; justify-content: space-between; gap: 18px;
+    padding: 20px 4px; cursor: pointer; list-style: none;
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-q { font-family: var(--font-display); font-weight: 600; font-size: clamp(1rem, 2vw, 1.15rem); color: var(--text); letter-spacing: -0.01em; }
+  .faq-mark { position: relative; flex: 0 0 auto; width: 14px; height: 14px; }
+  .faq-mark::before, .faq-mark::after {
+    content: ""; position: absolute; background: var(--sunset); transition: transform .2s ease, opacity .2s ease;
+  }
+  .faq-mark::before { top: 6px; left: 0; width: 14px; height: 2px; }
+  .faq-mark::after { top: 0; left: 6px; width: 2px; height: 14px; }
+  .faq-item[open] .faq-mark::after { transform: scaleY(0); opacity: 0; }
+  .faq-a { padding: 0 4px 22px; font-size: 15px; line-height: 1.75; max-width: 74ch; }
+
+  /* CTA */
+  .cta { background: var(--surface); border-top: 1px solid var(--rule); }
+  .cta-inner { text-align: center; max-width: 720px; margin: 0 auto; }
+</style>
