@@ -5,6 +5,7 @@ const links = [
   { href: "/#how", label: "Architecture" },
   { href: "/#work", label: "Use cases" },
   { href: "/nineline", label: "NINELINE" },
+  { href: "/team", label: "Team" },
   { href: "/#faq", label: "FAQ" },
 ];
 ---
@@ -36,7 +37,7 @@ const links = [
     </button>
   </div>
 
-  <!-- Mobile menu — hidden ≥900px, toggled by the hamburger below it -->
+  <!-- Mobile menu — hidden ≥1000px, toggled by the hamburger below it -->
   <nav id="mobile-menu" class="mobile-menu" aria-label="Primary (mobile)" data-mobile-menu hidden>
     <ul>
       {links.map((l) => (
@@ -61,7 +62,7 @@ const links = [
     font-family: var(--font-display); font-weight: 600; letter-spacing: 0.22em;
     font-size: 15px; color: var(--text);
   }
-  .nav { display: none; gap: 30px; }
+  .nav { display: none; gap: 26px; }
   .nav a { font-size: 14px; color: var(--text-dim); transition: color .2s ease; }
   .nav a:hover { color: var(--text); }
   .actions { display: none; align-items: center; }
@@ -104,7 +105,7 @@ const links = [
   .mobile-menu li a:hover { color: var(--sunset); }
   .mobile-cta { width: 100%; justify-content: center; margin-top: 18px; padding: 14px 22px; }
 
-  @media (min-width: 900px) {
+  @media (min-width: 1000px) {
     .nav { display: flex; }
     .actions { display: flex; }
     .menu-toggle { display: none; }
@@ -140,7 +141,7 @@ const links = [
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape") setOpen(false);
     });
-    const mq = window.matchMedia("(min-width: 900px)");
+    const mq = window.matchMedia("(min-width: 1000px)");
     mq.addEventListener("change", (e) => { if (e.matches) setOpen(false); });
   })();
 </script>
