@@ -1,10 +1,32 @@
 ---
+// Primary navigation. "Solutions" collapses the three offer destinations —
+// managed GCC High, the AI security services, and the NINELINE reference
+// implementation — into one top-level item. Keeping "Services" as a sibling of
+// "Solutions" would have read as two labels for the same thing, so it moves
+// inside too.
 const links = [
-  { href: "/gcc-high", label: "GCC High" },
-  { href: "/#services", label: "Services" },
+  {
+    label: "Solutions",
+    children: [
+      {
+        href: "/gcc-high",
+        label: "Managed GCC High",
+        desc: "CMMC-ready Microsoft 365 enclaves for the defense industrial base",
+      },
+      {
+        href: "/#services",
+        label: "AI security services",
+        desc: "Assess, red-team, engineer, and advise",
+      },
+      {
+        href: "/nineline",
+        label: "NINELINE",
+        desc: "Our working reference implementation",
+      },
+    ],
+  },
   { href: "/#how", label: "Architecture" },
   { href: "/#work", label: "Use cases" },
-  { href: "/nineline", label: "NINELINE" },
   { href: "/team", label: "Team" },
   { href: "/#faq", label: "FAQ" },
 ];
@@ -18,7 +40,32 @@ const links = [
     </a>
 
     <nav class="nav" aria-label="Primary">
-      {links.map((l) => <a href={l.href}>{l.label}</a>)}
+      {links.map((l) =>
+        l.children ? (
+          <div class="has-menu" data-has-menu>
+            <button type="button" class="menu-trigger" aria-expanded="false" aria-haspopup="true" data-submenu-trigger>
+              {l.label}
+              <svg class="caret" width="10" height="6" viewBox="0 0 10 6" aria-hidden="true">
+                <path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+            <div class="dropdown">
+              <ul>
+                {l.children.map((c) => (
+                  <li>
+                    <a href={c.href}>
+                      <span class="dd-label">{c.label}</span>
+                      <span class="dd-desc">{c.desc}</span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ) : (
+          <a href={l.href}>{l.label}</a>
+        )
+      )}
     </nav>
 
     <div class="actions">
@@ -37,12 +84,23 @@ const links = [
     </button>
   </div>
 
-  <!-- Mobile menu — hidden ≥1000px, toggled by the hamburger below it -->
+  <!-- Mobile menu — hidden ≥900px, toggled by the hamburger below it -->
   <nav id="mobile-menu" class="mobile-menu" aria-label="Primary (mobile)" data-mobile-menu hidden>
     <ul>
-      {links.map((l) => (
-        <li><a href={l.href} data-menu-link>{l.label}</a></li>
-      ))}
+      {links.map((l) =>
+        l.children ? (
+          <li class="group">
+            <span class="group-label">{l.label}</span>
+            <ul class="sub">
+              {l.children.map((c) => (
+                <li><a href={c.href} data-menu-link>{c.label}</a></li>
+              ))}
+            </ul>
+          </li>
+        ) : (
+          <li><a href={l.href} data-menu-link>{l.label}</a></li>
+        )
+      )}
     </ul>
     <a href="/contact" class="btn btn-primary mobile-cta" data-menu-link>Book a scoping call →</a>
   </nav>
@@ -62,10 +120,51 @@ const links = [
     font-family: var(--font-display); font-weight: 600; letter-spacing: 0.22em;
     font-size: 15px; color: var(--text);
   }
-  .nav { display: none; gap: 26px; }
-  .nav a { font-size: 14px; color: var(--text-dim); transition: color .2s ease; }
-  .nav a:hover { color: var(--text); }
+  /* Nav stretches the full bar height so the dropdown's `top: 100%` lands
+     exactly on the header's bottom border — and so there's no dead gap for the
+     pointer to fall through between trigger and panel. */
+  .nav { display: none; gap: 30px; align-self: stretch; align-items: stretch; }
+  .nav > a {
+    display: inline-flex; align-items: center;
+    font-size: 14px; color: var(--text-dim); transition: color .2s ease;
+  }
+  .nav > a:hover { color: var(--text); }
   .actions { display: none; align-items: center; }
+
+  /* Solutions dropdown — opens on hover and on keyboard focus. Pure CSS, so it
+     still works if the sync script below never runs. */
+  .has-menu { position: relative; display: flex; align-items: stretch; }
+  .menu-trigger {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-family: var(--font-body); font-size: 14px; color: var(--text-dim);
+    background: transparent; border: 0; padding: 0; cursor: pointer;
+    transition: color .2s ease;
+  }
+  .has-menu:hover .menu-trigger,
+  .has-menu:focus-within .menu-trigger { color: var(--text); }
+  .caret { opacity: 0.7; transition: transform .2s ease; }
+  .has-menu:hover .caret,
+  .has-menu:focus-within .caret { transform: rotate(180deg); }
+
+  .dropdown {
+    position: absolute; top: 100%; left: -20px; min-width: 312px;
+    background: rgba(8, 9, 13, 0.97);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--rule); border-radius: var(--radius-sm);
+    box-shadow: var(--shadow); padding: 8px;
+    opacity: 0; visibility: hidden; transform: translateY(-6px);
+    transition: opacity .18s ease, transform .18s ease, visibility .18s;
+  }
+  .has-menu:hover .dropdown,
+  .has-menu:focus-within .dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
+  .dropdown ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
+  .dropdown a {
+    display: grid; gap: 3px; padding: 11px 12px; border-radius: 8px;
+    transition: background .18s ease;
+  }
+  .dropdown a:hover { background: var(--surface-2); }
+  .dd-label { font-size: 14px; font-weight: 500; color: var(--text); }
+  .dd-desc { font-size: 12.5px; line-height: 1.45; color: var(--text-faint); }
 
   /* Hamburger — mobile only */
   .menu-toggle {
@@ -96,16 +195,33 @@ const links = [
     box-shadow: var(--shadow);
   }
   .mobile-menu[hidden] { display: none; }
-  .mobile-menu ul { list-style: none; margin: 0 0 8px; padding: 0; display: grid; }
+  .mobile-menu > ul { list-style: none; margin: 0 0 8px; padding: 0; display: grid; }
   .mobile-menu li { border-bottom: 1px solid var(--rule); }
   .mobile-menu li a {
     display: block; padding: 15px 4px; font-family: var(--font-display); font-weight: 500;
     font-size: 1.05rem; color: var(--text); transition: color .2s ease;
   }
   .mobile-menu li a:hover { color: var(--sunset); }
+
+  /* Grouped section — flattened, since a nested accordion on a 5-item menu is
+     more taps than it saves. */
+  .mobile-menu .group { padding: 14px 0 6px; }
+  .group-label {
+    display: block; padding: 0 4px; margin-bottom: 4px;
+    font-family: var(--font-mono); font-size: 11px; text-transform: uppercase;
+    letter-spacing: 0.14em; color: var(--text-faint);
+  }
+  .mobile-menu .sub { list-style: none; margin: 0; padding: 0; display: grid; }
+  .mobile-menu .sub li { border-bottom: 0; }
+  .mobile-menu .sub li a {
+    padding: 11px 0 11px 14px; font-size: 1rem;
+    border-left: 2px solid var(--rule); transition: color .2s ease, border-color .2s ease;
+  }
+  .mobile-menu .sub li a:hover { border-left-color: var(--sunset); }
+
   .mobile-cta { width: 100%; justify-content: center; margin-top: 18px; padding: 14px 22px; }
 
-  @media (min-width: 1000px) {
+  @media (min-width: 900px) {
     .nav { display: flex; }
     .actions { display: flex; }
     .menu-toggle { display: none; }
@@ -119,29 +235,53 @@ const links = [
     if (!header) return;
     const toggle = header.querySelector("[data-menu-toggle]");
     const menu = header.querySelector("[data-mobile-menu]");
-    if (!toggle || !menu) return;
 
     const setOpen = (open) => {
+      if (!toggle || !menu) return;
       header.toggleAttribute("data-open", open);
       toggle.setAttribute("aria-expanded", String(open));
       toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
       menu.hidden = !open;
     };
 
-    toggle.addEventListener("click", () => {
-      setOpen(toggle.getAttribute("aria-expanded") !== "true");
+    if (toggle && menu) {
+      toggle.addEventListener("click", () => {
+        setOpen(toggle.getAttribute("aria-expanded") !== "true");
+      });
+
+      // Close after a link tap (anchors scroll within the same page)
+      menu.querySelectorAll("[data-menu-link]").forEach((a) =>
+        a.addEventListener("click", () => setOpen(false))
+      );
+
+      const mq = window.matchMedia("(min-width: 900px)");
+      mq.addEventListener("change", (e) => { if (e.matches) setOpen(false); });
+    }
+
+    // Keep aria-expanded honest about the CSS-driven dropdown state, and let a
+    // tap on the trigger close a submenu that focus already opened.
+    header.querySelectorAll("[data-has-menu]").forEach((wrap) => {
+      const trigger = wrap.querySelector("[data-submenu-trigger]");
+      if (!trigger) return;
+
+      const sync = () => {
+        const open = wrap.matches(":hover") || wrap.contains(document.activeElement);
+        trigger.setAttribute("aria-expanded", String(open));
+      };
+      ["mouseenter", "mouseleave", "focusin", "focusout"].forEach((ev) =>
+        wrap.addEventListener(ev, () => requestAnimationFrame(sync))
+      );
+
+      trigger.addEventListener("click", () => {
+        if (trigger.getAttribute("aria-expanded") === "true") trigger.blur();
+      });
     });
 
-    // Close after a link tap (anchors scroll within the same page)
-    menu.querySelectorAll("[data-menu-link]").forEach((a) =>
-      a.addEventListener("click", () => setOpen(false))
-    );
-
-    // Close on Escape, and when the viewport grows past the desktop breakpoint
     document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") setOpen(false);
+      if (e.key !== "Escape") return;
+      setOpen(false);
+      const active = document.activeElement;
+      if (active instanceof HTMLElement && active.closest("[data-has-menu]")) active.blur();
     });
-    const mq = window.matchMedia("(min-width: 1000px)");
-    mq.addEventListener("change", (e) => { if (e.matches) setOpen(false); });
   })();
 </script>
