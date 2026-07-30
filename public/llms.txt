@@ -12,6 +12,12 @@
 - **Website:** https://gooptimal.io
 - **Contact:** ryan@gooptimal.io
 
+## Leadership
+
+- **Ryan Gutwein** — Founder & Chief Executive Officer. Service-disabled veteran.
+  Scoping calls and engagement delivery are led by the founder directly.
+  Profile: https://gooptimal.io/team
+
 ## Certifications & set-aside eligibility
 
 - **Service-Disabled Veteran-Owned Small Business (SDVOSB)** — SBA-certified.
@@ -52,6 +58,7 @@ Benchmarks, DISA STIG, ISO 42001, SOC 2.
 ## Key pages
 
 - Home: https://gooptimal.io/
+- Team / leadership: https://gooptimal.io/team
 - Contact / book a scoping call: https://gooptimal.io/contact
 - Use case — Regulated cloud: https://gooptimal.io/use-cases/regulated-cloud
 - Use case — On-prem & air-gapped: https://gooptimal.io/use-cases/air-gapped
