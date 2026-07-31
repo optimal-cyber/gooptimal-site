@@ -9,11 +9,33 @@ const posts = (await getCollection("blog")).sort(
 );
 const fmt = (d: Date) =>
   new Date(d).toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" });
+
+// Blog node with the posts enumerated — lets a crawler take the whole index in
+// one pass instead of discovering posts link by link.
+const blogSchema = {
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  name: "Optimal — Field notes",
+  description:
+    "Notes on GCC High, CMMC readiness, and AI security from Optimal — threat models, defenses, and secure engineering for the defense industrial base.",
+  url: "https://gooptimal.io/blog",
+  inLanguage: "en-US",
+  publisher: { "@type": "Organization", name: "Optimal", url: "https://gooptimal.io" },
+  blogPost: posts.map((p) => ({
+    "@type": "BlogPosting",
+    headline: p.data.title,
+    description: p.data.description,
+    datePublished: new Date(p.data.date).toISOString(),
+    url: `https://gooptimal.io/blog/${p.id}`,
+  })),
+};
 ---
 
 <Layout
-  title="Field notes — Optimal"
-  description="Notes on AI security, guardrails, and running frontier models where the rules are strict — threat models, defenses, and secure engineering."
+  title="Field notes — GCC High, CMMC & AI security | Optimal"
+  description="Notes on GCC High, CMMC readiness, and AI security from Optimal — threat models, defenses, and secure engineering for the defense industrial base and the teams adopting frontier AI."
+  breadcrumbs={[{ name: "Home", href: "/" }]}
+  jsonLd={[blogSchema]}
 >
   <Header />
 

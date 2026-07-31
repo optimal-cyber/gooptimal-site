@@ -67,10 +67,10 @@ const personSchema = {
   title="Team — Ryan Gutwein, Founder & CEO of Optimal"
   description="Optimal is led by founder and CEO Ryan Gutwein, a service-disabled veteran. Optimal, LLC is an SBA-certified Service-Disabled Veteran-Owned Small Business (SDVOSB) building and managing CMMC-ready GCC High enclaves and governed AI for the defense industrial base."
   keywords="Ryan Gutwein, Optimal LLC founder, Optimal CEO, SDVOSB leadership, service-disabled veteran owned, GCC High MSP leadership, defense industrial base, CMMC, governed AI"
+  breadcrumbs={[{ name: "Home", href: "/" }]}
+  jsonLd={[personSchema]}
 >
   <Header />
-
-  <script type="application/ld+json" set:html={JSON.stringify(personSchema)} is:inline />
 
   <!-- HERO / LEADERSHIP -->
   <section class="hero relative">

@@ -155,6 +155,8 @@ const serviceSchema = {
   title="Managed Microsoft 365 GCC High enclaves for CMMC compliance | Optimal"
   description="Optimal builds, migrates, and manages CMMC-ready Microsoft 365 GCC High enclaves for the defense industrial base. Aligned to DFARS 252.204-7012, NIST SP 800-171, and CMMC Level 2, with CUI and ITAR support, GCC High G5 licensing, and governed AI inside the boundary. An SDVOSB."
   keywords="GCC High, Microsoft 365 GCC High, managed GCC High, GCC High migration, GCC High MSP, CMMC, CMMC Level 2, CMMC compliance, NIST SP 800-171, DFARS 252.204-7012, CUI, Controlled Unclassified Information, ITAR compliant cloud, defense industrial base, DIB, DoD contractor, CUI enclave, GCC High G5, Azure Government, SDVOSB"
+  breadcrumbs={[{ name: "Home", href: "/" }]}
+  jsonLd={[serviceSchema, faqSchema]}
 >
   <Header />
 
@@ -333,9 +335,6 @@ const serviceSchema = {
   </section>
 
   <Footer />
-
-  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} is:inline />
-  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} is:inline />
 </Layout>
 
 <style>

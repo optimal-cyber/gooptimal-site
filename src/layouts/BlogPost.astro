@@ -13,12 +13,56 @@ interface Props {
   imageAlt?: string;
 }
 const { title, description, date, category = "Industry Insights", tags = [], image, imageAlt } = Astro.props;
-const dateStr = new Date(date).toLocaleDateString("en-US", {
+const published = new Date(date);
+const dateStr = published.toLocaleDateString("en-US", {
   year: "numeric", month: "long", day: "numeric",
 });
+
+const SITE = "https://gooptimal.io";
+const url = new URL(Astro.url.pathname, Astro.site).href;
+
+// BlogPosting — the node that lets a post be attributed and cited rather than
+// read as an anonymous page. Without datePublished and a resolvable author,
+// answer engines have nothing to date or credit the passage to.
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: title,
+  description,
+  articleSection: category,
+  keywords: tags.join(", ") || undefined,
+  datePublished: published.toISOString(),
+  dateModified: published.toISOString(),
+  inLanguage: "en-US",
+  image: image ? new URL(image, Astro.site).href : `${SITE}/optimal-social-preview.png`,
+  url,
+  mainEntityOfPage: { "@type": "WebPage", "@id": url },
+  author: {
+    "@type": "Organization",
+    name: "Optimal",
+    url: SITE,
+  },
+  publisher: {
+    "@type": "Organization",
+    name: "Optimal",
+    url: SITE,
+    logo: { "@type": "ImageObject", url: `${SITE}/optimal-horizon-512.png` },
+  },
+  isPartOf: { "@type": "Blog", name: "Optimal — Field notes", url: `${SITE}/blog` },
+};
 ---
 
-<Layout title={`${title} — Optimal`} description={description} image={image}>
+<Layout
+  title={`${title} — Optimal`}
+  description={description}
+  image={image}
+  type="article"
+  publishedTime={published.toISOString()}
+  modifiedTime={published.toISOString()}
+  keywords={tags.length ? tags.join(", ") : undefined}
+  breadcrumbs={[{ name: "Home", href: "/" }, { name: "Field notes", href: "/blog" }]}
+  jsonLd={[articleSchema]}
+>
   <Header />
 
   <article class="section">

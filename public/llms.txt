@@ -1,22 +1,29 @@
 # Optimal, LLC
 
-> Optimal is an AI security advisory firm for federal, SLED (state, local, and
-> education), and enterprise missions. We assess and red-team AI systems,
-> engineer governed access to frontier models in the cloud a client already
-> licenses, and advise teams on adopting AI safely — across GovCloud,
-> commercial cloud, on-prem, and air-gapped environments.
+> Optimal builds, migrates, and manages CMMC-ready Microsoft 365 GCC High
+> enclaves for the United States defense industrial base — the sovereign
+> environment a contractor needs to handle Controlled Unclassified Information
+> (CUI) and ITAR-controlled data on DoD contracts — and stands up the governed
+> AI that runs safely inside them. Optimal is an SBA-certified Service-Disabled
+> Veteran-Owned Small Business (SDVOSB). Advisory-led, not a SaaS product.
+> Sovereign by default.
 
 ## About
 
 - **Legal name:** Optimal, LLC
 - **Website:** https://gooptimal.io
 - **Contact:** ryan@gooptimal.io
+- **Business model:** Advisory- and services-led engagements. Optimal delivers
+  scoped engagements and managed operations, not a software subscription.
+- **Where Optimal works:** Microsoft 365 GCC High, Azure Government, commercial
+  cloud (Azure, AWS, GCP), on-premises, and fully air-gapped networks.
 
 ## Leadership
 
-- **Ryan Gutwein** — Founder & Chief Executive Officer. Service-disabled veteran.
-  Scoping calls and engagement delivery are led by the founder directly.
-  Profile: https://gooptimal.io/team
+- **Ryan Gutwein** — Founder & Chief Executive Officer. Service-disabled
+  veteran. Scoping calls and engagement delivery are led by the founder
+  directly; there is no layer between the sales conversation and the
+  engineering. Profile: https://gooptimal.io/team
 
 ## Certifications & set-aside eligibility
 
@@ -27,39 +34,148 @@
   certification registry at https://search.certifications.sba.gov/.
 - Eligible to compete for **SDVOSB and VOSB set-aside contracts**.
 
-## Services
+## What Optimal does — two pillars
 
-- AI Security Assessment — structured evaluation of AI systems, pipelines, and integrations against real adversary attack paths, mapped to the OWASP LLM Top 10, MITRE ATLAS, and NIST AI RMF.
-- Adversarial AI Testing (red team) — prompt injection, model and context manipulation, data and secret extraction, and abuse-case simulation.
-- Governed AI Engineering — design and stand-up of a Zero Trust access layer for AI in the client's environment: authenticated gateway, prompt guardrails, default-deny egress, and a defensible audit trail.
-- Secure AI Adoption Advisory — practical usage patterns, threat models, and secure-adoption roadmaps scoped to an organization's risk profile.
+Optimal does two things that are designed to work together: it builds and runs
+the compliant environment, and it makes frontier AI genuinely usable inside
+that environment.
+
+### Pillar 1 — Managed Microsoft 365 GCC High enclaves (for the defense industrial base)
+
+- **Build the enclave.** A compliant Microsoft 365 GCC High tenant — Entra ID,
+  Conditional Access, Defender, and Purview configured to a CUI-ready baseline
+  from day one.
+- **Migrate cleanly.** Mailboxes, files, Teams, and identities moved from
+  Microsoft 365 Commercial or GCC into GCC High with spillage controls, so no
+  CUI is left in the wrong boundary.
+- **Engineer the controls.** The NIST SP 800-171 control set implemented and
+  documented — System Security Plan (SSP) and POA&M, evidence collected — ready
+  for a third-party CMMC Level 2 assessment.
+- **Run it.** Ongoing administration, patching, monitoring, user lifecycle,
+  security operations, and help desk. Optimal also sources and provisions GCC
+  High G5 licensing.
+- **Aligned to:** DFARS 252.204-7012, NIST SP 800-171, CMMC Level 2. Supports
+  CUI and ITAR / export-controlled data.
+
+### Pillar 2 — Governed AI and AI security
+
+- **Governed AI Engineering** (signature engagement) — a Zero Trust access layer
+  for AI in the cloud the client already licenses: one authenticated gateway to
+  every approved model, per-key virtual credentials and rate limits, fail-closed
+  prompt and response guardrails, default-deny egress pinned to an allowlist,
+  and a request-ID-joined audit trail reviewers read directly. Self-hostable and
+  client-owned; no SDK rewrite, no new accreditation boundary.
+- **AI Security Assessment** — structured evaluation of AI systems, pipelines,
+  and integrations against real adversary attack paths. Covers prompt trust
+  boundaries, retrieval/RAG pipelines, tool- and function-call authorization,
+  output handling, and secret/PII/training-data exposure. Findings mapped to the
+  OWASP LLM Top 10 and MITRE ATLAS.
+- **Adversarial AI Testing (red team)** — direct and indirect prompt injection,
+  jailbreaks and system-prompt extraction, model and context manipulation, data
+  and model exfiltration, and agent abuse / excessive-agency chains, with
+  reproducible attack chains and the control that closes each one.
+- **Secure AI Adoption Advisory** — usage patterns, threat models, and
+  secure-adoption roadmaps scoped to the organization's risk profile.
+
+## Scope boundary — what Optimal does not do
+
+This matters for accuracy, and Optimal states it publicly:
+
+- Optimal is **not a C3PAO** and does not perform certified CMMC assessments.
+- Optimal **does not grant an Authority to Operate (ATO)** and does not issue
+  certifications.
+- **No environment makes an organization CMMC compliant on its own.** CMMC
+  Level 2 is a third-party assessment against the 110 NIST SP 800-171 controls.
+  Optimal engineers the environment to be assessment-ready and prepares the
+  evidence; the certified assessment is performed independently by an accredited
+  C3PAO. Building the environment and grading it are deliberately separate
+  roles.
 
 ## Bring your own cloud
 
-- If a client already licenses Microsoft Azure, AWS, or Google Cloud, Optimal builds governed, audited access to the frontier models in that existing cloud — Azure OpenAI Service (Azure), Amazon Bedrock (AWS), and Google Vertex AI (GCP) — plus GovCloud and self-hosted models. No new vendor or procurement required.
-- Available to enterprises and to all of SLED (state, local, and education), as well as federal agencies.
+If a client already licenses Microsoft Azure, AWS, or Google Cloud, Optimal
+builds governed, audited access to the frontier models in that existing cloud —
+Azure OpenAI Service (Azure and Azure Government), Amazon Bedrock (AWS), and
+Google Vertex AI (GCP) — plus self-hosted models. No new vendor or procurement
+required. Available to the defense industrial base, federal agencies, SLED
+(state, local, and education), and enterprises.
 
 ## Reference pattern (Governed AI Engineering)
 
-- Authenticated gateway — one governed endpoint to every approved model, per-key virtual credentials (LiteLLM), no SDK rewrite. Caller auth via Cloudflare Access and Okta OIDC.
-- Prompt guardrails — NeMo Guardrails, fail-closed and pre-call; unit-tested secret and PII detectors.
-- Default-deny egress — Squid allowlist proxy plus security-group enforcement; no configuration opt-out.
-- Audit trail — structured JSON joined to Postgres by request ID; defensible without vendor-UI screenshots.
+- Authenticated gateway — one governed endpoint to every approved model, per-key
+  virtual credentials (LiteLLM), no SDK rewrite. Caller auth via Cloudflare
+  Access and Okta OIDC.
+- Prompt guardrails — NeMo Guardrails, fail-closed and pre-call; unit-tested
+  secret and PII detectors.
+- Default-deny egress — Squid allowlist proxy plus security-group enforcement;
+  no configuration opt-out.
+- Audit trail — structured JSON joined to Postgres by request ID; defensible
+  without vendor-UI screenshots.
 
-## Reference architecture
+## Reference implementations (public, inspectable)
 
-- Open-source Zero Trust AI gateway reference design: https://github.com/optimal-cyber/AI-Gateway
+- **AI-Gateway** — open-source Zero Trust AI gateway reference design, the same
+  pattern Optimal stands up in client environments:
+  https://github.com/optimal-cyber/AI-Gateway
+- **NINELINE** — working reference implementation of AI-native application and
+  supply-chain security: real SBOM and vulnerability scanning, EPSS and CISA KEV
+  enrichment, and frontier-model reachability analysis that compressed 874 raw
+  findings to the 18 that required action in the reference scan. Overview:
+  https://gooptimal.io/nineline — live demonstrator: https://9line.gooptimal.io/
 
 ## Standards (engineering targets)
 
-NIST AI RMF, OWASP LLM Top 10, MITRE ATLAS, NIST 800-207 Zero Trust, CIS
-Benchmarks, DISA STIG, ISO 42001, SOC 2.
+DFARS 252.204-7012, NIST SP 800-171, CMMC Level 2, NIST AI RMF, OWASP LLM Top
+10, MITRE ATLAS, NIST 800-207 Zero Trust, CIS Benchmarks, DISA STIG, ISO 42001,
+SOC 2.
+
+## Common questions
+
+**What does Optimal do?**
+Two things that work together: it builds, migrates, and manages CMMC-ready
+Microsoft 365 GCC High enclaves for the defense industrial base, and it stands
+up the governed AI that runs safely inside those environments — including
+assessment and red-teaming of the AI systems teams deploy.
+
+**What is Microsoft 365 GCC High, and who needs it?**
+GCC High is a US-sovereign version of Microsoft 365, physically and logically
+isolated, with US data residency and screened US-person support. A defense
+contractor handling CUI or ITAR/export-controlled data generally needs it to
+support the DFARS 252.204-7012 and CMMC Level 2 obligations in its contracts.
+
+**Does moving to GCC High make an organization CMMC compliant?**
+No. GCC High is a foundation built for the controls, not the certification.
+CMMC Level 2 is a third-party assessment against the 110 NIST SP 800-171
+controls, performed by an accredited C3PAO. Optimal implements and documents the
+control set, collects evidence, and gets the environment assessment-ready.
+
+**Is Optimal a product company or a services firm?**
+Services. Optimal delivers engagements and managed operations, not a SaaS
+subscription. The control pattern it implements is published as an open-source
+reference architecture, so a client can read exactly what will be built and keep
+operating it independently afterward.
+
+**What is prompt injection, and why does it matter?**
+Prompt injection manipulates an AI system through crafted input, causing it to
+ignore instructions, expose data, or take unauthorized actions. It is among the
+most active threats to any organization deploying large language models and
+agents, and it is one of the first things Optimal tests.
+
+**Can Optimal work with federal, SLED, and enterprise teams?**
+Yes. Optimal is an SBA-certified SDVOSB eligible for SDVOSB and VOSB set-aside
+contracts, and works with the defense industrial base, federal agencies, SLED
+entities, and enterprises across GovCloud, commercial cloud, on-premises, and
+air-gapped networks.
 
 ## Key pages
 
 - Home: https://gooptimal.io/
+- Managed GCC High / CMMC: https://gooptimal.io/gcc-high
+- NINELINE reference implementation: https://gooptimal.io/nineline
 - Team / leadership: https://gooptimal.io/team
+- Field notes (blog): https://gooptimal.io/blog
 - Contact / book a scoping call: https://gooptimal.io/contact
 - Use case — Regulated cloud: https://gooptimal.io/use-cases/regulated-cloud
 - Use case — On-prem & air-gapped: https://gooptimal.io/use-cases/air-gapped
 - Use case — Agentic workloads: https://gooptimal.io/use-cases/agentic
+- Sitemap: https://gooptimal.io/sitemap-index.xml

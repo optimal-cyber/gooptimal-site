@@ -90,12 +90,38 @@ const dib = [
     d: "Model provenance, license, and lineage tooling barely exists while the DIB adopts AI fast. The AI-BOM view surfaces the license conflicts that stop a model from reaching production.",
   },
 ];
+
+// NINELINE is a working demonstrator with a reachable URL, so it is typed as an
+// application rather than as prose about one. No `offers` node — it is a
+// reference implementation Optimal stands up, not a product with a price.
+const ninelineSchema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "NINELINE",
+  applicationCategory: "SecurityApplication",
+  operatingSystem: "Web-based; deployable in the client's own environment",
+  url: "https://gooptimal.io/nineline",
+  sameAs: DEMO_URL,
+  author: { "@type": "Organization", name: "Optimal", url: "https://gooptimal.io" },
+  publisher: { "@type": "Organization", name: "Optimal", url: "https://gooptimal.io" },
+  description:
+    "NINELINE is Optimal's reference implementation of AI-native application and supply-chain security. It combines real SBOM and vulnerability scanning (syft and grype), EPSS exploitation probability and CISA KEV enrichment, and frontier-model reachability analysis that reads the actual codebase to determine whether a vulnerable path is reachable from an entry point. In the reference scan it compressed 874 raw findings to the 18 that required action.",
+  featureList: [
+    "Agentic reachability analysis against the real codebase",
+    "Mission-context triage fusing EPSS, CISA KEV, and dependency position",
+    "Reachability-gated automated remediation pull requests",
+    "SBOM drift narration and AI-BOM model risk assessment",
+    "Grounded natural-language query over real scan data",
+  ],
+};
 ---
 
 <Layout
   title="NINELINE — a reference implementation from Optimal"
   description="NINELINE is Optimal's reference implementation of AI-native application and supply-chain security: real SBOM and vulnerability scanning, EPSS and CISA KEV enrichment, and frontier-model reachability analysis that compresses thousands of findings down to the handful that actually matter. Built to run in your environment — sovereign by default."
   keywords="AI supply chain security, SBOM, reachability analysis, CISA KEV, EPSS, AI-BOM, CMMC, continuous ATO, defense industrial base"
+  breadcrumbs={[{ name: "Home", href: "/" }]}
+  jsonLd={[ninelineSchema]}
 >
   <Header />
 
