@@ -4,11 +4,35 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import GatewayCanvas from "../components/GatewayCanvas.astro";
 import VetBadge from "../components/VetBadge.astro";
+
+const contactSchema = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  name: "Book a scoping call with Optimal",
+  url: "https://gooptimal.io/contact",
+  description:
+    "Scope a managed GCC High enclave, a CMMC readiness engagement, or an AI security assessment with Optimal. Calls are run by the founder directly.",
+  mainEntity: {
+    "@type": "Organization",
+    name: "Optimal",
+    url: "https://gooptimal.io",
+    email: "ryan@gooptimal.io",
+    contactPoint: {
+      "@type": "ContactPoint",
+      contactType: "sales",
+      email: "ryan@gooptimal.io",
+      areaServed: "US",
+      availableLanguage: "English",
+    },
+  },
+};
 ---
 
 <Layout
-  title="Book a scoping call — Optimal"
-  description="Tell us your environment and the models you need. We'll stand up authorized, audited AI access across your clouds — GovCloud, on-prem, or air-gapped."
+  title="Book a scoping call — managed GCC High & AI security | Optimal"
+  description="Scope a managed Microsoft 365 GCC High enclave, CMMC Level 2 readiness, or an AI security assessment. Tell us your contracts, your data, and your environment — GovCloud, commercial cloud, on-prem, or air-gapped. Calls are run by the founder directly."
+  breadcrumbs={[{ name: "Home", href: "/" }]}
+  jsonLd={[contactSchema]}
 >
   <Header />
 

@@ -1,4 +1,109 @@
+# gooptimal.io — robots policy
+#
+# Optimal wants to be read, quoted, and cited. The wildcard rule below already
+# permits every crawler; the named groups that follow exist so that intent is
+# explicit and survives future edits — a later "block the scrapers" change has
+# to delete these lines deliberately rather than silently cut the site out of
+# AI search results.
+#
+# Two of these are opt-out tokens rather than crawlers: Google-Extended gates
+# whether pages ground Gemini and Vertex AI answers, and Applebot-Extended does
+# the same for Apple Intelligence. Neither fetches anything itself, and both
+# treat "no rule" as permission — the entries are here so the permission is on
+# the record.
+
 User-agent: *
+Allow: /
+
+# --- Search engines ---
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+# --- OpenAI ---
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# --- Anthropic ---
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# --- Google & Apple AI grounding (opt-out tokens) ---
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# --- Answer engines & assistants ---
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: DuckAssistBot
+Allow: /
+
+User-agent: MistralAI-User
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+# --- Open training corpora ---
+User-agent: CCBot
+Allow: /
+
+# --- Link unfurlers ---
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: Slackbot
 Allow: /
 
 Sitemap: https://gooptimal.io/sitemap-index.xml

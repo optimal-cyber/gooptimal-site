@@ -13,9 +13,27 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const { Content } = await render(entry);
 const { title, description, eyebrow, subhead } = entry.data;
+
+// Each use case is a deployment scenario for the same offering — typed as a
+// Service so it resolves to something Optimal sells, not a loose article.
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: title,
+  serviceType: eyebrow,
+  description,
+  provider: { "@type": "Organization", name: "Optimal", url: "https://gooptimal.io" },
+  areaServed: "United States",
+  url: new URL(Astro.url.pathname, Astro.site).href,
+};
 ---
 
-<Layout title={`${title} — Optimal`} description={description}>
+<Layout
+  title={`${title} — Optimal`}
+  description={description}
+  breadcrumbs={[{ name: "Home", href: "/" }]}
+  jsonLd={[serviceSchema]}
+>
   <Header />
 
   <section class="hero relative">

@@ -255,6 +255,7 @@ const faqSchema = {
 <Layout
   title="Optimal — Managed GCC High enclaves & governed AI for the defense industrial base"
   description="Optimal builds, migrates, and manages CMMC-ready Microsoft 365 GCC High enclaves for the defense industrial base — and stands up the governed AI that runs safely inside them. Aligned to DFARS 252.204-7012, NIST SP 800-171, and CMMC Level 2, with support for CUI and ITAR-controlled data. An SBA-certified Service-Disabled Veteran-Owned Small Business (SDVOSB)."
+  jsonLd={[faqSchema]}
 >
   <Header />
 
@@ -587,7 +588,6 @@ const faqSchema = {
 
   <Footer />
 
-  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} is:inline />
 </Layout>
 
 <style>
