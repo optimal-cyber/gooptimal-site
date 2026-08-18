@@ -428,6 +428,47 @@ const serviceSchema = {
     </div>
   </section>
 
+  <!-- VULNERABILITY MANAGEMENT & EVIDENCE ENGINE -->
+  <section id="evidence" class="section--tight evidence relative">
+    <div class="container z">
+      <div class="sec-head wide">
+        <span class="ix">Included in the managed service</span>
+        <h2 class="h2">Vulnerability management that produces evidence, not a backlog.</h2>
+        <p class="lead" style="margin-top:14px;">
+          800-171 expects you to inventory what you run, find the flaws in it, and show that you
+          remediated the ones that mattered. Most contractors answer that with a scanner report nobody
+          can act on. Your enclave runs NINELINE — Optimal&rsquo;s reference implementation of AI-native
+          supply-chain security, deployed inside your boundary.
+        </p>
+      </div>
+      <ul class="ev-points">
+        <li>
+          <h3>Continuous SBOM</h3>
+          <p class="muted">An authoritative bill of materials for the software you build and run, differenced on every change, with new dependencies narrated in mission terms as they land.</p>
+        </li>
+        <li>
+          <h3>Reachability-ranked findings</h3>
+          <p class="muted">A frontier model reads the actual codebase — grepping, opening files, tracing call chains — to decide whether a vulnerable path is reachable from an entry point. In the reference scan that took 874 raw findings down to the 18 that required action.</p>
+        </li>
+        <li>
+          <h3>CISA KEV &amp; EPSS enrichment</h3>
+          <p class="muted">Known-exploited status and exploitation probability fused with the reachability verdict, so the queue is ordered by what an adversary can actually use — not by CVSS score.</p>
+        </li>
+        <li>
+          <h3>Assessment-ready evidence</h3>
+          <p class="muted">Asset inventory, flaw remediation, and risk-assessment artifacts your assessor can read directly — and the continuous-monitoring posture a continuous-ATO program expects.</p>
+        </li>
+      </ul>
+      <p class="muted note">
+        <strong>It runs inside the boundary</strong> — your tenant, your infrastructure, air-gap capable.
+        That is the difference between this and a SaaS scanner: the bill of materials for a defense
+        program&rsquo;s codebase is itself sensitive, and most tooling that analyzes it requires you to ship
+        it to somebody else&rsquo;s cloud. A migration-only MSP doesn&rsquo;t offer this at all.
+        <a class="inline-link" href="/nineline">See how NINELINE works →</a>
+      </p>
+    </div>
+  </section>
+
   <!-- THE AI EDGE -->
   <section id="ai-edge" class="section ai-edge relative">
     <div class="glow"></div>
@@ -608,6 +649,14 @@ const serviceSchema = {
   .chip:hover { color: var(--text); border-color: var(--rule-strong); }
   .boundary { margin-top: 28px; font-size: 14.5px; line-height: 1.7; max-width: 74ch; }
   .boundary strong { color: var(--text); }
+
+  /* EVIDENCE ENGINE */
+  .evidence { background: var(--surface); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+  .ev-points { list-style: none; margin: 38px 0 0; padding: 0; display: grid; gap: 20px; }
+  @media (min-width: 760px) { .ev-points { grid-template-columns: repeat(2, 1fr); gap: 24px 40px; } }
+  .ev-points li { padding-top: 18px; border-top: 1px solid var(--rule); }
+  .ev-points h3 { font-size: 1.05rem; margin-bottom: 9px; }
+  .ev-points p { font-size: 13.5px; line-height: 1.65; }
 
   /* AI EDGE */
   .ai-edge { background: var(--bg); }

@@ -139,6 +139,12 @@ const ninelineSchema = {
         actively exploited &mdash; the targets that matter. Named for the close air support brief:
         strip everything down to the target.
       </p>
+      <p class="framing">
+        <strong>How you get it:</strong> NINELINE is deployed for clients inside their own environment
+        as part of an engagement — your tenant, your infrastructure, air-gap capable. It is not a SaaS
+        subscription and there is no seat to buy. Optimal is advisory-led; this is what our engineering
+        looks like when it is running.
+      </p>
       <p class="hero-caps">
         SBOM <span>/</span> Reachability <span>/</span> EPSS + CISA KEV <span>/</span> AI-BOM <span>/</span> Auto-remediation
       </p>
@@ -302,6 +308,13 @@ const ninelineSchema = {
   .hero .eyebrow { margin-bottom: 22px; }
   .hero h1 { margin-bottom: 24px; }
   .hero .lead { font-size: clamp(17px, 2.2vw, 21px); }
+  .framing {
+    margin-top: 24px; max-width: 68ch; padding: 16px 20px;
+    border: 1px solid var(--rule); border-left: 2px solid var(--sunset);
+    border-radius: var(--radius-sm); background: var(--surface);
+    color: var(--text-dim); font-size: 14.5px; line-height: 1.7;
+  }
+  .framing strong { color: var(--text); }
   .hero-caps {
     margin-top: 22px; font-family: var(--font-mono); font-size: 12.5px;
     letter-spacing: 0.06em; color: var(--text-dim); text-transform: uppercase;
