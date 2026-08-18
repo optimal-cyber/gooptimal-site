@@ -46,6 +46,7 @@ const services = [
   {
     idx: "01",
     title: "AI Security Assessment",
+    duration: "typically 2–4 weeks",
     accent: "var(--sunset)",
     lede: "A structured evaluation of the AI systems you're putting into production — models, prompts, retrieval, tool calls, identities, and the plumbing around them. We map the attack paths an adversary would actually take, not a control checklist.",
     scopeLabel: "We examine",
@@ -62,6 +63,7 @@ const services = [
   {
     idx: "02",
     title: "Adversarial AI Testing",
+    duration: "typically 4–6 weeks",
     accent: "var(--steel)",
     lede: "Offensive, hands-on testing of AI-enabled systems and agents. We operate the way an adversary would, then show you exactly how a failure happens — and the specific control that closes it.",
     scopeLabel: "We attempt",
@@ -78,6 +80,7 @@ const services = [
   {
     idx: "03",
     title: "Governed AI Engineering",
+    duration: "typically 4–8 weeks",
     accent: "var(--coral)",
     lede: "Our signature engagement. We design and stand up the access layer for AI in the cloud you already license — Azure, AWS, GCP, or GovCloud — built on our open-source Zero Trust reference architecture.",
     scopeLabel: "We build",
@@ -94,6 +97,9 @@ const services = [
   {
     idx: "04",
     title: "Secure AI Adoption Advisory",
+    // No duration: advisory is scoped to a client's cycle, and inventing a
+    // week count for it would be the only unearned number on the page.
+    duration: "scoped to your cycle",
     accent: "var(--seafoam)",
     lede: "Help your teams adopt AI without flying blind. Engineering-grounded guidance scoped to your risk profile and grounded in real attack paths — not paperwork.",
     scopeLabel: "We deliver",
@@ -279,6 +285,9 @@ const faqSchema = {
         <a href="/contact" class="btn btn-primary">Book a scoping call →</a>
         <a href="/gcc-high" class="btn btn-ghost">Explore managed GCC High</a>
       </div>
+      <p class="cta-aside muted">
+        Not sure yet? <a href="/do-i-need-gcc-high">Do I actually need GCC High? Get the 2-minute answer →</a>
+      </p>
       <div class="hero-meta muted">
         <span>Sovereign by default</span><span class="dot">•</span>
         <span>CUI &amp; ITAR-ready</span><span class="dot">•</span>
@@ -387,7 +396,7 @@ const faqSchema = {
       <div class="sec-head wide">
         <span class="ix">02 / Services</span>
         <h2 class="h2">Four ways we secure AI for the mission.</h2>
-        <p class="lead" style="margin-top:14px;">Assess it the way an adversary would. Prove the failure. Engineer the controls that stop it. Keep the whole program governed. Engagements are scoped to your stack — most run four to eight weeks.</p>
+        <p class="lead" style="margin-top:14px;">Assess it the way an adversary would. Prove the failure. Engineer the controls that stop it. Keep the whole program governed. Engagements are scoped to your stack — most run two to eight weeks.</p>
       </div>
       <div class="svc-grid">
         {services.map((s) => (
@@ -396,6 +405,7 @@ const faqSchema = {
               <span class="svc-ix" style={`color:${s.accent}`}>{s.idx}</span>
               <h3>{s.title}</h3>
             </header>
+            <span class="svc-dur">{s.duration}</span>
             <p class="muted svc-lede">{s.lede}</p>
             <div class="svc-scope">
               <span class="scope-label" style={`color:${s.accent}`}>{s.scopeLabel}</span>
@@ -651,6 +661,9 @@ const faqSchema = {
   .hero-caps span { color: var(--text-faint); margin: 0 4px; }
   .cta-row { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 30px; }
   .hero-meta { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-top: 30px; font-size: 13px; }
+  .cta-aside { margin-top: 18px; font-size: 13.5px; }
+  .cta-aside a { color: var(--sunset); font-weight: 600; }
+  .cta-aside a:hover { color: var(--ember); }
   .hero-meta .dot { opacity: 0.4; }
 
   /* STANDARDS WALL */
@@ -684,7 +697,11 @@ const faqSchema = {
   .svc-grid { display: grid; gap: 20px; margin-top: 42px; }
   @media (min-width: 800px) { .svc-grid { grid-template-columns: repeat(2, 1fr); } }
   .svc { display: flex; flex-direction: column; }
-  .svc-top { display: flex; align-items: baseline; gap: 12px; margin-bottom: 12px; }
+  .svc-top { display: flex; align-items: baseline; gap: 12px; margin-bottom: 8px; }
+  .svc-dur {
+    display: block; margin-bottom: 12px; font-family: var(--font-mono);
+    font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-faint);
+  }
   .svc-ix { font-family: var(--font-mono); font-size: 13px; font-weight: 600; letter-spacing: 0.05em; }
   .svc h3 { font-size: 1.3rem; }
   .svc-lede { font-size: 14.5px; line-height: 1.7; }
