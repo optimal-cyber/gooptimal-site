@@ -1,0 +1,188 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import GatewayCanvas from "../components/GatewayCanvas.astro";
+
+// The low-commitment entry point. "Book a scoping call" asks for a calendar
+// slot from someone who isn't yet sure they have the problem — this page gives
+// them the answer first and asks for nothing. It is deliberately static: the
+// questions are the ones we'd ask on the call anyway, so a reader can answer
+// them honestly without talking to us.
+//
+// TODO: email capture. If Ryan wants this gated or wants a PDF version, the
+// site's existing form provider is Formspree (see /contact, f/xovqzpkj) — a
+// second endpoint plus a download link is the smallest change that works.
+// Nothing here is gated today, on purpose: gating the answer contradicts the
+// honest-broker positioning the rest of the page relies on.
+
+const checks = [
+  {
+    idx: "01",
+    accent: "var(--sunset)",
+    q: "Does DFARS 252.204-7012 appear in any contract or flow-down you've signed?",
+    yes: "Then you have already agreed to safeguard covered defense information to NIST SP 800-171 and to report incidents within 72 hours. This is the single strongest signal.",
+    no: "Check the subcontract flow-downs, not just the prime award. The clause usually arrives through a prime's terms rather than directly.",
+  },
+  {
+    idx: "02",
+    accent: "var(--steel)",
+    q: "Do you receive, create, or store Controlled Unclassified Information?",
+    yes: "Drawings, specifications, test data, program schedules, and anything marked CUI or CDI. If it lives in email or a shared drive today, it lives outside a boundary built to hold it.",
+    no: "Be careful here. Most contractors who say no are thinking of markings; CUI is defined by category, and plenty of it arrives unmarked from a prime.",
+  },
+  {
+    idx: "03",
+    accent: "var(--coral)",
+    q: "Do you handle ITAR or EAR export-controlled technical data?",
+    yes: "Export-controlled technical data has to stay with US persons on US soil. That is an access-control requirement your commercial tenant cannot meet — support staff location alone can put you out of compliance.",
+    no: "If you make, design, or test anything on the US Munitions List, verify with your export-control officer before answering no.",
+  },
+  {
+    idx: "04",
+    accent: "var(--seafoam)",
+    q: "Is CMMC Level 2 in a solicitation you intend to bid?",
+    yes: "Level 2 is assessed against all 110 NIST SP 800-171 controls by an accredited third party. Building the environment after you win is the expensive order to do it in.",
+    no: "Check the pipeline, not just the current backlog. The requirement is phasing into DoD solicitations now, and the lead time on an environment is measured in months.",
+  },
+  {
+    idx: "05",
+    accent: "var(--sunset)",
+    q: "Is your SPRS score self-attested against an environment you can actually evidence?",
+    yes: "Good — that is the position you want to be in when an assessor asks for evidence rather than for a score.",
+    no: "A score submitted against controls nobody implemented is the most common finding we see, and it is the one with the most exposure attached to it.",
+  },
+];
+
+const verdicts = [
+  {
+    k: "Yes to 1, 2, or 3",
+    v: "You almost certainly need GCC High. Export-controlled data and a signed DFARS clause are not requirements you can engineer around inside commercial Microsoft 365, and a prime will eventually ask you to prove where the data lives.",
+  },
+  {
+    k: "Yes to 4 only",
+    v: "You need a plan, and probably an environment, before you bid. Whether that means a full move or a scoped set of seats depends on how much of your business actually touches CUI.",
+  },
+  {
+    k: "No across the board",
+    v: "You may not need GCC High at all. Commercial Microsoft 365 or GCC with the right controls is sometimes enough, and we will tell you that rather than sell you a larger environment than your contracts require.",
+  },
+];
+---
+
+<Layout
+  title="Do I actually need GCC High? A 2-minute answer | Optimal"
+  description="Five questions that tell a defense contractor whether Microsoft 365 GCC High is actually required — DFARS 252.204-7012, CUI, ITAR and export-controlled data, CMMC Level 2, and SPRS. No form, no gate, and an honest answer if the answer is no."
+  keywords="do I need GCC High, GCC High requirements, DFARS 252.204-7012, CUI, ITAR, CMMC Level 2, SPRS score, GCC vs GCC High, defense contractor compliance"
+  breadcrumbs={[{ name: "Home", href: "/" }, { name: "Managed GCC High", href: "/gcc-high" }]}
+>
+  <Header />
+
+  <section class="hero relative">
+    <div class="glow"></div>
+    <GatewayCanvas variant="hero" density={0.8} />
+    <div class="container z">
+      <span class="eyebrow">2-minute answer</span>
+      <h1 class="display htitle">Do you actually<br /><span class="grad">need GCC High?</span></h1>
+      <p class="lead">
+        Five questions. No form, no gate, and an honest answer if the answer is no — these are the
+        same questions we would ask on a scoping call, so you may as well have them first.
+      </p>
+    </div>
+  </section>
+
+  <section class="section--tight checks">
+    <div class="container">
+      <ol class="check-list">
+        {checks.map((c) => (
+          <li class="card check">
+            <span class="check-ix" style={`color:${c.accent}`}>{c.idx}</span>
+            <h2 class="check-q">{c.q}</h2>
+            <p class="ans"><span class="ans-k" style={`color:${c.accent}`}>If yes</span>{c.yes}</p>
+            <p class="ans"><span class="ans-k">If no</span>{c.no}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section id="answer" class="section--tight verdict relative">
+    <div class="container z">
+      <div class="sec-head wide">
+        <span class="ix">What your answers mean</span>
+        <h2 class="h2">The honest read.</h2>
+      </div>
+      <dl class="verdicts">
+        {verdicts.map((v) => (
+          <div class="v-row">
+            <dt>{v.k}</dt>
+            <dd class="muted">{v.v}</dd>
+          </div>
+        ))}
+      </dl>
+      <p class="muted note">
+        Whatever the answer, no environment makes you compliant on its own. CMMC Level 2 is a
+        third-party assessment against the 110 NIST SP 800-171 controls, performed independently by an
+        accredited C3PAO. Optimal engineers the environment and prepares the evidence — we prepare, we
+        don't grade.
+      </p>
+    </div>
+  </section>
+
+  <section class="section cta relative">
+    <div class="glow"></div>
+    <GatewayCanvas variant="ambient" align="center" density={0.7} />
+    <div class="container z cta-inner">
+      <h2 class="display" style="font-size:clamp(2rem,5vw,3.4rem);">Answered yes<br />more than once?</h2>
+      <p class="lead" style="margin:18px auto 0;">Bring us the clauses and we'll scope it — how much of your business actually needs to move, what it costs, and what the alternative looks like if a smaller scope covers your obligations.</p>
+      <div class="cta-row center">
+        <a href="/contact" class="btn btn-primary">Book a scoping call →</a>
+        <a href="/gcc-high" class="btn btn-ghost">See the managed service</a>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<style>
+  .ix {
+    display: inline-block; font-family: var(--font-mono); font-size: 12px;
+    letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-faint);
+    margin-bottom: 16px;
+  }
+  .sec-head.wide { max-width: 62ch; }
+  .note { margin-top: 30px; font-size: 14px; line-height: 1.7; max-width: 74ch; }
+
+  .hero { padding: clamp(72px, 11vw, 130px) 0 clamp(36px, 5vw, 64px); }
+  .hero .eyebrow { margin-bottom: 20px; }
+  .htitle { font-size: clamp(2.2rem, 5.5vw, 4rem); margin-bottom: 22px; }
+
+  .checks { background: var(--bg); }
+  .check-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 18px; }
+  @media (min-width: 900px) { .check-list { grid-template-columns: repeat(2, 1fr); } }
+  .check-ix { font-family: var(--font-mono); font-size: 13px; font-weight: 600; letter-spacing: 0.05em; }
+  .check-q { font-size: 1.15rem; margin: 12px 0 16px; }
+  .ans {
+    display: grid; gap: 5px; padding-top: 14px; margin-top: 14px;
+    border-top: 1px solid var(--rule); font-size: 13.5px; line-height: 1.65; color: var(--text-dim);
+  }
+  .ans:first-of-type { margin-top: 0; }
+  .ans-k {
+    font-family: var(--font-mono); font-size: 11px; text-transform: uppercase;
+    letter-spacing: 0.12em; color: var(--text-faint);
+  }
+
+  .verdict { background: var(--surface); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+  .verdicts { margin: 34px 0 0; display: grid; gap: 0; }
+  .v-row { display: grid; gap: 6px; padding: 18px 0; border-bottom: 1px solid var(--rule); }
+  .v-row:first-child { border-top: 1px solid var(--rule); }
+  @media (min-width: 760px) { .v-row { grid-template-columns: 220px 1fr; gap: 28px; align-items: baseline; } }
+  .verdicts dt { font-family: var(--font-display); font-weight: 600; font-size: 1rem; color: var(--text); }
+  .verdicts dd { margin: 0; font-size: 14.5px; line-height: 1.7; max-width: 70ch; }
+
+  .cta { background: var(--bg); }
+  .cta-inner { text-align: center; max-width: 720px; margin: 0 auto; }
+  .cta-row { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 28px; }
+  .cta-row.center { justify-content: center; }
+</style>

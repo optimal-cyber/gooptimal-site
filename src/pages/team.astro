@@ -8,18 +8,36 @@ import VetBadge from "../components/VetBadge.astro";
 // ---------------------------------------------------------------------------
 // Leadership facts. Everything rendered below is asserted publicly on a site
 // that sells to the defense industrial base — so nothing here is inferred or
-// approximated. The two arrays below are intentionally empty until the real
-// specifics are supplied; their sections do not render while empty.
+// approximated. Entries are seeded with the credentials Ryan named, but each
+// one renders only once its `detail` stops being a {{TOKEN}} placeholder.
 //
-//   service     — branch, role/rating, and years. e.g.
-//                 { label: "U.S. Army", detail: "Infantry · 2004–2012" }
-//   credentials — certifications, clearances, degrees. e.g.
-//                 { label: "CISSP", detail: "ISC² · active" }
+// This matters more here than anywhere else on the site. A clearance claim
+// without its current status, or an assessor credential without its issuing
+// body, is the kind of thing a contracting officer checks — and being wrong
+// about it costs more than being silent about it.
+//
+// TODO: Ryan to confirm each `detail` below, then delete the ones that don't apply.
 // ---------------------------------------------------------------------------
-const service: { label: string; detail: string }[] = [];
-const credentials: { label: string; detail: string }[] = [];
+const service: { label: string; detail: string }[] = [
+  // e.g. { label: "U.S. Army", detail: "Infantry · 2004–2012" }
+  { label: "{{SERVICE_BRANCH}}", detail: "{{SERVICE_ROLE_AND_YEARS}}" },
+];
+const credentials: { label: string; detail: string }[] = [
+  // Certified CMMC Professional — issuing body is the Cyber AB. Confirm status.
+  { label: "Certified CMMC Professional (CCP)", detail: "{{CCP_STATUS}}" },
+  // Clearance — confirm level and current status before this goes live.
+  { label: "Security clearance", detail: "{{CLEARANCE_LEVEL_AND_STATUS}}" },
+  // CMMC assessment experience — confirm the honest phrasing.
+  { label: "CMMC assessment experience", detail: "{{ASSESSOR_EXPERIENCE}}" },
+];
 
-const hasBackground = service.length > 0 || credentials.length > 0;
+// Anything still holding a placeholder stays off the page.
+const confirmed = (list: { label: string; detail: string }[]) =>
+  list.filter((i) => !i.label.startsWith("{{") && !i.detail.startsWith("{{"));
+
+const confirmedService = confirmed(service);
+const confirmedCredentials = confirmed(credentials);
+const hasBackground = confirmedService.length > 0 || confirmedCredentials.length > 0;
 
 // What the founder holds the firm to. These restate commitments the rest of the
 // site already makes — they are positioning, not biography.
@@ -162,11 +180,11 @@ const personSchema = {
           <h2 class="cov-title">Service and credentials.</h2>
         </div>
         <div class="bg-cols">
-          {service.length > 0 && (
+          {confirmedService.length > 0 && (
             <div class="bg-col">
               <h4 class="bg-h">Military service</h4>
               <ul class="factlist">
-                {service.map((s) => (
+                {confirmedService.map((s) => (
                   <li class="fact">
                     <span class="fact-k">{s.label}</span>
                     <span class="fact-v muted">{s.detail}</span>
@@ -175,11 +193,11 @@ const personSchema = {
               </ul>
             </div>
           )}
-          {credentials.length > 0 && (
+          {confirmedCredentials.length > 0 && (
             <div class="bg-col">
               <h4 class="bg-h">Certifications &amp; education</h4>
               <ul class="factlist">
-                {credentials.map((c) => (
+                {confirmedCredentials.map((c) => (
                   <li class="fact">
                     <span class="fact-k">{c.label}</span>
                     <span class="fact-v muted">{c.detail}</span>

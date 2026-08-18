@@ -1,5 +1,13 @@
 ---
 import VetBadge from "./VetBadge.astro";
+import {
+  CAGE,
+  UEI,
+  NAICS_CODES,
+  FERMENTED_OPINIONS,
+  capabilityStatementHref,
+  pending,
+} from "../data/company.ts";
 
 const year = 2026;
 const cols = [
@@ -7,6 +15,7 @@ const cols = [
     title: "Services",
     links: [
       { href: "/gcc-high", label: "Managed GCC High" },
+      { href: "/do-i-need-gcc-high", label: "Do I need GCC High?" },
       { href: "/#services", label: "AI Security Assessment" },
       { href: "/#services", label: "Adversarial AI Testing" },
       { href: "/#services", label: "Governed AI Engineering" },
@@ -16,6 +25,7 @@ const cols = [
   {
     title: "Use cases",
     links: [
+      { href: "/sled", label: "State, local & education" },
       { href: "/use-cases/regulated-cloud", label: "Regulated cloud" },
       { href: "/use-cases/air-gapped", label: "On-prem & air-gapped" },
       { href: "/use-cases/agentic", label: "Agentic workloads" },
@@ -25,11 +35,21 @@ const cols = [
     title: "Company",
     links: [
       { href: "/team", label: "Team" },
-      { href: "/nineline", label: "NINELINE" },
+      { href: capabilityStatementHref, label: "Capability statement" },
       { href: "/contact", label: "Contact" },
+      { href: FERMENTED_OPINIONS, label: "Fermented Opinions ↗" },
+      { href: "/nineline", label: "What we build (NINELINE)" },
       { href: "https://github.com/optimal-cyber/AI-Gateway", label: "Reference architecture ↗" },
     ],
   },
+];
+
+// Contracting details, for the contracting officer or prime scanning for them.
+// CAGE and UEI are confirmed; NAICS renders only once it is filled in.
+const govcon = [
+  { k: "CAGE", v: CAGE },
+  { k: "UEI", v: UEI },
+  ...(pending(NAICS_CODES) ? [] : [{ k: "NAICS", v: NAICS_CODES }]),
 ];
 ---
 
@@ -41,7 +61,7 @@ const cols = [
           <img src="/optimal-horizon.svg" alt="" width="26" height="26" class="mark" aria-hidden="true" />
           <span class="wordmark">OPTIMAL</span>
         </div>
-        <p class="muted blurb">AI security advisory for the organizations that keep critical missions moving. We assess, red-team, and engineer governed AI in your environment — sovereign by default.</p>
+        <p class="muted blurb">Managed Microsoft 365 GCC High enclaves for the defense industrial base — and the governed AI that runs safely inside them. An SBA-certified Service-Disabled Veteran-Owned Small Business. Sovereign by default.</p>
         <VetBadge size={76} class="footer-vet" />
       </div>
       {cols.map((c) => (
@@ -50,6 +70,12 @@ const cols = [
           <ul>{c.links.map((l) => <li><a href={l.href}>{l.label}</a></li>)}</ul>
         </div>
       ))}
+    </div>
+    <div class="govcon">
+      {govcon.map((g) => (
+        <span class="gc-item"><span class="gc-k">{g.k}</span>{g.v}</span>
+      ))}
+      <span class="gc-item"><span class="gc-k">Set-aside</span>SDVOSB · SBA VetCert</span>
     </div>
     <div class="bottom">
       <span class="muted">© {year} Optimal, LLC. Sovereign by default.</span>
@@ -71,6 +97,15 @@ const cols = [
   .col ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
   .col a { font-size: 14px; color: var(--text-dim); transition: color .2s ease; }
   .col a:hover { color: var(--sunset); }
-  .bottom { display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--rule); font-size: 13px; }
+  .govcon {
+    display: flex; flex-wrap: wrap; gap: 10px 26px; align-items: center;
+    margin-top: 44px; padding-top: 24px; border-top: 1px solid var(--rule);
+  }
+  .gc-item { font-family: var(--font-mono); font-size: 12.5px; color: var(--text-dim); letter-spacing: 0.02em; }
+  .gc-k {
+    display: inline-block; margin-right: 8px; font-size: 11px;
+    text-transform: uppercase; letter-spacing: 0.14em; color: var(--text-faint);
+  }
+  .bottom { display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; margin-top: 22px; font-size: 13px; }
   @media (min-width: 820px) { .top { grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 48px; } }
 </style>

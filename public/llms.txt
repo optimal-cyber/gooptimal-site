@@ -17,6 +17,10 @@
   scoped engagements and managed operations, not a software subscription.
 - **Where Optimal works:** Microsoft 365 GCC High, Azure Government, commercial
   cloud (Azure, AWS, GCP), on-premises, and fully air-gapped networks.
+- **CAGE code:** 14HQ0
+- **UEI:** TYMSGKDF2K48
+- **Capability statement:** https://gooptimal.io/capability-statement
+- **Publication:** Fermented Opinions — https://fermentedopinions.substack.com/
 
 ## Leadership
 
@@ -57,6 +61,32 @@ that environment.
 - **Aligned to:** DFARS 252.204-7012, NIST SP 800-171, CMMC Level 2. Supports
   CUI and ITAR / export-controlled data.
 
+**Delivery model — this is the part vendors differ on.** Optimal manages the
+client's own GCC High tenant. It is not a hosted enclave: the subscription is
+registered to the client, and the data, keys, and audit logs stay under the
+client's control. Replacing Optimal does not require migrating CUI out of a
+vendor's boundary. Licensing is scoped to the client's actual CUI footprint —
+only the users who handle CUI need GCC High seats, and the rest of the business
+can remain on commercial Microsoft 365 with the boundary enforced between them.
+
+**Cost structure.** A managed GCC High engagement prices as three lines: a
+fixed-scope build and migration project; a monthly per-user managed-operations
+fee; and Microsoft licensing (GCC High G3 or G5) at Microsoft's per-seat list
+price. Microsoft raised GCC High list pricing in July 2026 — roughly 8% on G3
+and 5% on G5.
+
+**External Service Provider (ESP) relationship.** Under 32 CFR 170 an MSP/ESP
+relationship must be documented in the client's System Security Plan, and
+assessors expect a Customer Responsibility Matrix. Optimal delivers a Shared
+Responsibility Matrix with every managed engagement, mapping all 110 NIST SP
+800-171 controls to Optimal-owned, client-owned, or shared, with the supporting
+evidence artifact, maintained as the environment changes.
+
+**Vulnerability management and evidence.** The managed service includes
+NINELINE — continuous SBOM, reachability-ranked findings, CISA KEV and EPSS
+enrichment, and assessment-ready artifacts — running inside the client's
+boundary and air-gap capable.
+
 ### Pillar 2 — Governed AI and AI security
 
 - **Governed AI Engineering** (signature engagement) — a Zero Trust access layer
@@ -91,6 +121,15 @@ This matters for accuracy, and Optimal states it publicly:
   C3PAO. Building the environment and grading it are deliberately separate
   roles.
 
+## State, local & education (SLED)
+
+For state agencies, counties and cities, K-12 districts, and higher education,
+Optimal leads with governed AI rather than federal compliance framing: governed,
+audited access to the frontier models inside the cloud the organization already
+licenses; AI security assessment and governance; cloud security review and
+hardening; data protection for CJIS, HIPAA, PCI DSS, and FERPA data; and IT risk
+advisory. Details: https://gooptimal.io/sled
+
 ## Bring your own cloud
 
 If a client already licenses Microsoft Azure, AWS, or Google Cloud, Optimal
@@ -117,7 +156,8 @@ required. Available to the defense industrial base, federal agencies, SLED
 - **AI-Gateway** — open-source Zero Trust AI gateway reference design, the same
   pattern Optimal stands up in client environments:
   https://github.com/optimal-cyber/AI-Gateway
-- **NINELINE** — working reference implementation of AI-native application and
+- **NINELINE** — deployed inside a client's own environment as part of an
+  engagement, not sold as a SaaS subscription. Working reference implementation of AI-native application and
   supply-chain security: real SBOM and vulnerability scanning, EPSS and CISA KEV
   enrichment, and frontier-model reachability analysis that compressed 874 raw
   findings to the 18 that required action in the reference scan. Overview:
@@ -171,6 +211,9 @@ air-gapped networks.
 
 - Home: https://gooptimal.io/
 - Managed GCC High / CMMC: https://gooptimal.io/gcc-high
+- Do I actually need GCC High? (2-minute checklist): https://gooptimal.io/do-i-need-gcc-high
+- State, local & education: https://gooptimal.io/sled
+- Capability statement: https://gooptimal.io/capability-statement
 - NINELINE reference implementation: https://gooptimal.io/nineline
 - Team / leadership: https://gooptimal.io/team
 - Field notes (blog): https://gooptimal.io/blog

@@ -1,0 +1,204 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import VetBadge from "../components/VetBadge.astro";
+import {
+  CAGE,
+  UEI,
+  NAICS_CODES,
+  RPO_STATUS,
+  PAST_PERFORMANCE,
+  pending,
+} from "../data/company.ts";
+
+// One-page capability statement, built from content already asserted elsewhere
+// on the site so the two can't drift apart. Everything here is either confirmed
+// registration data or a restatement of an existing service description —
+// nothing is written for this page alone. Styled to print to a clean PDF, which
+// is what a contracting officer will actually do with it.
+
+const competencies = [
+  {
+    title: "Managed Microsoft 365 GCC High",
+    body: "Design, build, migration, and ongoing management of CMMC-ready GCC High environments for contractors handling CUI and ITAR-controlled data. Tenant provisioning and hardening, Entra ID and Conditional Access, Defender and Purview, migration with spillage controls, and sustained operations after go-live. The tenant is registered to the client; Optimal manages it.",
+  },
+  {
+    title: "CMMC readiness & NIST SP 800-171 engineering",
+    body: "Implementation of the 110-control set inside the enclave, System Security Plan authoring, POA&M tracking, evidence collection, and a Shared Responsibility Matrix documenting the External Service Provider relationship required under 32 CFR 170.",
+  },
+  {
+    title: "Governed AI engineering",
+    body: "A Zero Trust access layer for AI in the cloud the client already licenses — one authenticated gateway to every approved model, per-key virtual credentials, fail-closed prompt and response guardrails, default-deny egress, and a request-ID-joined audit trail. Self-hostable and client-owned.",
+  },
+  {
+    title: "AI security assessment & adversarial testing",
+    body: "Structured evaluation and offensive red-team testing of AI-enabled systems and agents — prompt injection, system-prompt extraction, model and context manipulation, data and model exfiltration, and excessive-agency chains. Measured to the OWASP LLM Top 10, MITRE ATLAS, and the NIST AI RMF.",
+  },
+];
+
+const differentiators = [
+  {
+    title: "The compliant environment and the AI inside it, from one vendor",
+    body: "Most GCC High providers migrate mailboxes and stop. Most AI security firms have never stood up an enclave. Optimal does both, which is why the governed path can be made the fastest path instead of the one users route around.",
+  },
+  {
+    title: "The client owns the tenant",
+    body: "Not a hosted enclave. The GCC High subscription, the data, the keys, and the audit logs are registered to the client. Replacing Optimal does not mean migrating CUI out of a vendor's boundary.",
+  },
+  {
+    title: "Published reference architecture",
+    body: "The control pattern Optimal implements is open source and inspectable before an engagement starts, and the client keeps operating it afterward. NINELINE, the AI-native supply-chain security reference implementation, runs inside the client boundary and is air-gap capable.",
+  },
+  {
+    title: "Independence preserved",
+    body: "Optimal engineers environments to be assessment-ready. Optimal is not a C3PAO, does not perform certified CMMC assessments, and does not grant Authority to Operate. Building the environment and grading it are deliberately separate roles.",
+  },
+];
+
+const companyData = [
+  { k: "Legal name", v: "Optimal, LLC" },
+  { k: "CAGE code", v: CAGE },
+  { k: "UEI", v: UEI },
+  ...(pending(NAICS_CODES) ? [] : [{ k: "NAICS", v: NAICS_CODES }]),
+  { k: "Set-aside status", v: "SDVOSB and VOSB — SBA-certified via VetCert" },
+  ...(pending(RPO_STATUS) ? [] : [{ k: "Cyber AB", v: RPO_STATUS }]),
+  { k: "Contact", v: "ryan@gooptimal.io" },
+  { k: "Website", v: "gooptimal.io" },
+];
+---
+
+<Layout
+  title="Capability statement — Optimal, LLC (SDVOSB)"
+  description="Capability statement for Optimal, LLC — an SBA-certified Service-Disabled Veteran-Owned Small Business delivering managed Microsoft 365 GCC High enclaves, CMMC readiness and NIST SP 800-171 engineering, governed AI engineering, and AI security assessment. CAGE 14HQ0 · UEI TYMSGKDF2K48."
+  keywords="Optimal LLC capability statement, SDVOSB capability statement, CAGE 14HQ0, UEI TYMSGKDF2K48, managed GCC High, CMMC Level 2, NIST SP 800-171, governed AI, AI security, defense industrial base, set-aside contractor"
+  breadcrumbs={[{ name: "Home", href: "/" }]}
+>
+  <Header />
+
+  <section class="section--tight capstate">
+    <div class="container">
+      <header class="cap-head">
+        <div class="cap-title">
+          <span class="eyebrow">Capability statement</span>
+          <h1 class="h2">Optimal, LLC</h1>
+          <p class="lead" style="margin-top:14px;">
+            Managed Microsoft&nbsp;365 GCC&nbsp;High enclaves for the defense industrial base — and the
+            governed AI that runs safely inside them. An SBA-certified Service-Disabled Veteran-Owned
+            Small Business.
+          </p>
+        </div>
+        <VetBadge size={96} />
+      </header>
+
+      <div class="cap-grid">
+        <section class="cap-block">
+          <h2 class="cap-h">Core competencies</h2>
+          <ul class="cap-list">
+            {competencies.map((c) => (
+              <li>
+                <h3>{c.title}</h3>
+                <p class="muted">{c.body}</p>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        <section class="cap-block">
+          <h2 class="cap-h">Differentiators</h2>
+          <ul class="cap-list">
+            {differentiators.map((d) => (
+              <li>
+                <h3>{d.title}</h3>
+                <p class="muted">{d.body}</p>
+              </li>
+            ))}
+          </ul>
+        </section>
+      </div>
+
+      <section class="cap-block">
+        <h2 class="cap-h">Past performance</h2>
+        {PAST_PERFORMANCE.length > 0 ? (
+          <ul class="cap-list two">
+            {PAST_PERFORMANCE.map((r) => (
+              <li>
+                <h3>{r.title}</h3>
+                <p class="muted">{r.detail}</p>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p class="muted cap-note">
+            References available on request. Optimal does not publish customer names or engagement
+            details without written permission — including, and especially, for work inside a CUI
+            boundary.
+          </p>
+        )}
+      </section>
+
+      <section class="cap-block">
+        <h2 class="cap-h">Company data</h2>
+        <dl class="cap-data">
+          {companyData.map((d) => (
+            <div class="cap-row">
+              <dt>{d.k}</dt>
+              <dd>{d.v}</dd>
+            </div>
+          ))}
+        </dl>
+        <p class="muted cap-note">
+          Optimal engineers environments to be assessment-ready. Optimal is not a C3PAO, does not
+          perform certified CMMC assessments, and does not grant an Authority to Operate.
+        </p>
+      </section>
+
+      <div class="cap-cta">
+        <a href="/contact" class="btn btn-primary">Book a scoping call →</a>
+        <a href="/gcc-high" class="btn btn-ghost">Managed GCC High</a>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<style>
+  .capstate { background: var(--bg); }
+  .cap-head {
+    display: flex; flex-wrap: wrap; gap: 28px; align-items: flex-start;
+    justify-content: space-between; padding-bottom: 34px; border-bottom: 1px solid var(--rule);
+  }
+  .cap-title { max-width: 62ch; }
+  .cap-grid { display: grid; gap: 40px; }
+  @media (min-width: 900px) { .cap-grid { grid-template-columns: repeat(2, 1fr); gap: 56px; } }
+  .cap-block { margin-top: 40px; }
+  .cap-h {
+    font-family: var(--font-mono); font-size: 12px; font-weight: 500;
+    letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-faint);
+    padding-bottom: 14px; border-bottom: 1px solid var(--rule);
+  }
+  .cap-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 22px; padding-top: 22px; }
+  @media (min-width: 900px) { .cap-list.two { grid-template-columns: repeat(2, 1fr); gap: 22px 56px; } }
+  .cap-list h3 { font-size: 1.05rem; margin-bottom: 8px; }
+  .cap-list p { font-size: 13.5px; line-height: 1.65; }
+  .cap-note { margin-top: 20px; font-size: 13.5px; line-height: 1.7; max-width: 74ch; }
+  .cap-data { margin: 22px 0 0; display: grid; gap: 0; }
+  .cap-row {
+    display: grid; gap: 4px; padding: 12px 0; border-bottom: 1px solid var(--rule);
+  }
+  @media (min-width: 600px) { .cap-row { grid-template-columns: 200px 1fr; gap: 18px; align-items: baseline; } }
+  .cap-data dt {
+    font-family: var(--font-mono); font-size: 11px; text-transform: uppercase;
+    letter-spacing: 0.14em; color: var(--text-faint);
+  }
+  .cap-data dd { margin: 0; font-size: 14.5px; color: var(--text); }
+  .cap-cta { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 44px; }
+
+  /* A contracting officer prints this. Make the print look like a document. */
+  @media print {
+    :global(.site-header), :global(.site-footer), .cap-cta { display: none !important; }
+    .capstate { padding: 0; }
+    .cap-block { break-inside: avoid; }
+  }
+</style>

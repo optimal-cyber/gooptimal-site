@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import { CAGE, UEI, NAICS_CODES, pending } from "../data/company.ts";
 
 interface Props {
   title?: string;
@@ -21,7 +22,7 @@ const {
   title = "Optimal — Managed GCC High enclaves & governed AI for the defense industrial base",
   description = "Optimal builds, migrates, and manages CMMC-ready Microsoft 365 GCC High enclaves for the defense industrial base — and stands up the governed AI that runs safely inside them. Aligned to DFARS 252.204-7012, NIST SP 800-171, and CMMC Level 2, with support for CUI and ITAR-controlled data. An SBA-certified Service-Disabled Veteran-Owned Small Business (SDVOSB).",
   image = "/optimal-social-preview.png",
-  keywords = "GCC High, Microsoft 365 GCC High, managed GCC High, GCC High migration, GCC High MSP, CMMC, CMMC 2.0, CMMC Level 2, CMMC compliance, NIST SP 800-171, DFARS 252.204-7012, CUI, Controlled Unclassified Information, ITAR compliant cloud, defense industrial base, DIB, DoD contractor compliance, CUI enclave, SDVOSB, Service-Disabled Veteran-Owned Small Business, SBA VetCert, governed AI, secure AI gateway, AI guardrails, Zero Trust AI, GovCloud AI, air-gapped AI, AI red-teaming, NIST AI RMF, OWASP LLM Top 10, Azure OpenAI, Azure Government, Amazon Bedrock, Google Vertex AI",
+  keywords = "GCC High, Microsoft 365 GCC High, managed GCC High, GCC High migration, GCC High MSP, CMMC, CMMC 2.0, CMMC Level 2, CMMC compliance, NIST SP 800-171, DFARS 252.204-7012, CUI, Controlled Unclassified Information, ITAR compliant cloud, defense industrial base, DIB, DoD contractor compliance, CUI enclave, SDVOSB, Service-Disabled Veteran-Owned Small Business, SBA VetCert, governed AI, secure AI gateway, AI guardrails, Zero Trust AI, GovCloud AI, air-gapped AI, AI red-teaming, NIST AI RMF, OWASP LLM Top 10, Azure OpenAI, Azure Government, Amazon Bedrock, Google Vertex AI, GCC High cost, GCC High pricing, External Service Provider, shared responsibility matrix, SLED AI security, public sector AI governance, capability statement, CAGE 14HQ0, UEI TYMSGKDF2K48",
   type = "website",
   publishedTime,
   modifiedTime,
@@ -105,7 +106,15 @@ const orgSchema = {
   sameAs: [
     "https://github.com/optimal-cyber",
     "https://search.certifications.sba.gov/",
+    "https://fermentedopinions.substack.com/",
   ],
+  // Federal registration identifiers. A GovCon buyer resolves a vendor by CAGE
+  // and UEI, so they belong in the graph rather than only in footer text.
+  identifier: [
+    { "@type": "PropertyValue", propertyID: "CAGE", value: CAGE },
+    { "@type": "PropertyValue", propertyID: "UEI", value: UEI },
+  ],
+  ...(pending(NAICS_CODES) ? {} : { naics: NAICS_CODES }),
   contactPoint: [
     {
       "@type": "ContactPoint",
@@ -142,6 +151,15 @@ const orgSchema = {
         name: "CMMC Readiness & NIST 800-171 Engineering",
         description:
           "Implementation of the NIST SP 800-171 control set inside a GCC High enclave, with System Security Plan (SSP) and POA&M support, evidence collection, and readiness for a third-party (C3PAO) CMMC Level 2 assessment. Optimal prepares the environment; the certified assessment is performed independently.",
+      },
+    },
+    {
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Service",
+        name: "Governed AI Access for State, Local & Education",
+        description:
+          "Governed, audited access to frontier models inside the cloud a public-sector organization already licenses — Azure OpenAI Service, Amazon Bedrock, or Google Vertex AI — plus cloud security review, data-protection engineering for CJIS, HIPAA, PCI DSS, and FERPA data, and IT risk advisory.",
       },
     },
     {
@@ -203,6 +221,11 @@ const orgSchema = {
     "Amazon Bedrock",
     "Google Vertex AI",
     "Service-Disabled Veteran-Owned Small Business",
+    "External Service Provider (ESP) shared responsibility",
+    "CJIS",
+    "HIPAA",
+    "FERPA",
+    "State, local and education (SLED) technology",
   ],
   hasCredential: [
     {
