@@ -4,6 +4,16 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import GatewayCanvas from "../components/GatewayCanvas.astro";
 import VetBadge from "../components/VetBadge.astro";
+import { CAGE, UEI, NAICS_CODES, capabilityStatementHref, pending } from "../data/company.ts";
+
+// What a contracting officer or a prime's subcontracts group looks for before
+// they bother with the form. NAICS renders once the codes are confirmed.
+const contracting = [
+  { k: "CAGE", v: CAGE },
+  { k: "UEI", v: UEI },
+  ...(pending(NAICS_CODES) ? [] : [{ k: "NAICS", v: NAICS_CODES }]),
+  { k: "Set-aside", v: "SDVOSB · VOSB (SBA VetCert)" },
+];
 
 const contactSchema = {
   "@context": "https://schema.org",
@@ -42,12 +52,12 @@ const contactSchema = {
     <div class="container z wrap">
       <div class="intro">
         <span class="eyebrow">Book a scoping call</span>
-        <h1 class="h2">Let&rsquo;s scope your AI security engagement.</h1>
+        <h1 class="h2">Let&rsquo;s scope the work.</h1>
         <p class="lead" style="margin-top:16px;">
-          Tell us your environment, the models you&rsquo;re adopting, and where
-          you&rsquo;re worried. We&rsquo;ll scope the right engagement — assessment,
-          red team, governed engineering, or advisory — across GovCloud, on-prem,
-          or air-gapped.
+          Tell us the contracts you&rsquo;re chasing, the data you handle, and where you
+          are today. We&rsquo;ll scope the right engagement — a managed GCC&nbsp;High
+          environment, CMMC readiness, an AI assessment or red team, or governed AI
+          engineering — across GovCloud, commercial cloud, on-prem, or air-gapped.
         </p>
         <p class="muted email">
           Prefer email? <a href="mailto:ryan@gooptimal.io">ryan@gooptimal.io</a>
@@ -58,6 +68,19 @@ const contactSchema = {
             Optimal, LLC is an SBA-certified Service-Disabled Veteran-Owned Small
             Business (SDVOSB), eligible for SDVOSB and VOSB set-aside contracts.
           </p>
+        </div>
+
+        <div class="contracting">
+          <h2 class="ct-h">Contracting details</h2>
+          <dl class="ct-list">
+            {contracting.map((c) => (
+              <div class="ct-row">
+                <dt>{c.k}</dt>
+                <dd>{c.v}</dd>
+              </div>
+            ))}
+          </dl>
+          <a href={capabilityStatementHref} class="btn btn-ghost ct-cta">Download capability statement →</a>
         </div>
       </div>
 
@@ -73,7 +96,9 @@ const contactSchema = {
           <label>Organization<input type="text" name="organization" /></label>
           <label>Environment
             <select name="boundary">
-              <option>Commercial</option>
+              <option>Commercial Microsoft 365</option>
+              <option>GCC</option>
+              <option>GCC High</option>
               <option>FedRAMP</option>
               <option>IL4 / IL5</option>
               <option>IL6</option>
@@ -97,6 +122,20 @@ const contactSchema = {
   .email a { color: var(--sunset); }
   .vet-wrap { margin-top: 28px; padding-top: 24px; border-top: 1px solid var(--rule); display: flex; flex-wrap: wrap; align-items: center; gap: 18px; }
   .vet-wrap .vet-note { font-size: 13px; max-width: 34ch; flex: 1 1 220px; }
+  .contracting { margin-top: 28px; padding-top: 24px; border-top: 1px solid var(--rule); }
+  .ct-h {
+    font-family: var(--font-mono); font-size: 12px; font-weight: 500;
+    letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-faint);
+  }
+  .ct-list { margin: 16px 0 0; display: grid; gap: 0; }
+  .ct-row { display: grid; gap: 3px; padding: 10px 0; border-bottom: 1px solid var(--rule); }
+  @media (min-width: 480px) { .ct-row { grid-template-columns: 110px 1fr; gap: 16px; align-items: baseline; } }
+  .ct-list dt {
+    font-family: var(--font-mono); font-size: 11px; text-transform: uppercase;
+    letter-spacing: 0.14em; color: var(--text-faint);
+  }
+  .ct-list dd { margin: 0; font-family: var(--font-mono); font-size: 13.5px; color: var(--text-dim); }
+  .ct-cta { margin-top: 22px; }
   .form { display: grid; gap: 16px; }
   .hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
   .row { display: grid; gap: 16px; }

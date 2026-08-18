@@ -51,5 +51,12 @@ export const capabilityStatementHref = pending(CAPABILITY_STATEMENT_URL)
   ? "/capability-statement"
   : CAPABILITY_STATEMENT_URL;
 
+// TODO: Ryan to confirm — past performance. One entry per reference, only what
+// can be said publicly. Customer names need permission; an unnamed but specific
+// entry ("prime contractor, 120-seat GCC High migration, 2026") is still worth
+// more than nothing. The capability statement renders this list when non-empty
+// and shows an honest "available on request" line while it is empty.
+export const PAST_PERFORMANCE: { title: string; detail: string }[] = [];
+
 /** Ryan's publication — the content engine, hosted off-site. */
 export const FERMENTED_OPINIONS = "https://fermentedopinions.substack.com/";

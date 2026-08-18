@@ -4,6 +4,7 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import GatewayCanvas from "../components/GatewayCanvas.astro";
 import VetBadge from "../components/VetBadge.astro";
+import { capabilityStatementHref } from "../data/company.ts";
 
 const standards = [
   "NIST AI RMF", "OWASP LLM Top 10", "MITRE ATLAS", "NIST 800-207",
@@ -295,10 +296,13 @@ const faqSchema = {
       </div>
       <div class="vet-strip">
         <VetBadge size={84} />
-        <p class="vet-note muted">
-          Optimal, LLC is a <strong>Service-Disabled Veteran-Owned Small Business</strong> —
-          SBA-certified and eligible for veteran set-aside contracts.
-        </p>
+        <div class="vet-copy">
+          <p class="vet-note muted">
+            Optimal, LLC is a <strong>Service-Disabled Veteran-Owned Small Business</strong> —
+            SBA-certified and eligible for veteran set-aside contracts. CAGE 14HQ0 · UEI TYMSGKDF2K48.
+          </p>
+          <a href={capabilityStatementHref} class="usecase-link">Download capability statement →</a>
+        </div>
       </div>
     </div>
   </section>
@@ -664,6 +668,7 @@ const faqSchema = {
     gap: 14px 18px; margin-top: 30px; padding-top: 26px;
     border-top: 1px solid var(--rule);
   }
+  .vet-copy { display: grid; gap: 10px; justify-items: center; }
   .vet-note { font-size: 13px; max-width: 52ch; text-align: center; }
   .vet-note strong { color: var(--text); font-weight: 600; }
 
