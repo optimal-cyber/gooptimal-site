@@ -1,0 +1,240 @@
+---
+/**
+ * Governed AI gateway — the reference pattern, drawn.
+ *
+ * The four bands were only ever described in prose, which meant the one thing
+ * that actually distinguishes this architecture — that a blocked request never
+ * reaches the provider, and that every stage writes the same audit row — was
+ * left for the reader to assemble. The diagram shows the mechanism: the
+ * boundary, the two fail paths out of it, the egress allowlist, and the audit
+ * sink underneath all of it.
+ *
+ * The step cards render here too, so hovering either a card or a node can
+ * highlight its counterpart without reaching across component scope.
+ */
+interface Step {
+  idx: string;
+  n: string;
+  stack: string;
+  d: string;
+}
+interface Props {
+  steps: Step[];
+}
+const { steps } = Astro.props;
+
+// Node accents follow the same 01–04 order the services and deliver grids use.
+const accents = ["var(--sunset)", "var(--steel)", "var(--coral)", "var(--seafoam)"];
+
+const stages = [
+  { id: "01", label: "Authorize", sub: "allowlist check", x: 269 },
+  { id: "02", label: "Guard", sub: "fail-closed, pre-call", x: 456 },
+  { id: "03", label: "Forward", sub: "per-key credentials", x: 643 },
+];
+
+const callers = ["Agents", "Users", "CI / CD"];
+const models = ["Azure OpenAI", "Amazon Bedrock", "Google Vertex AI", "Self-hosted"];
+---
+
+<div class="arch">
+  <figure class="viz-wrap">
+    <div class="viz-scroll">
+      <svg
+        class="viz"
+        viewBox="0 0 1160 470"
+        role="img"
+        aria-labelledby="archTitle archDesc"
+        preserveAspectRatio="xMidYMid meet"
+      >
+        <title id="archTitle">Governed AI gateway reference architecture</title>
+        <desc id="archDesc">
+          Callers — agents, users, and CI systems — enter a governed boundary that sits in the
+          client's own tenant. Inside it, a request passes Authorize, then Guard, then Forward
+          before reaching an approved model. A request that fails the allowlist check at Authorize
+          is denied, and a request that trips a guardrail at Guard is blocked before the provider is
+          called. Egress is pinned to an allowlist, so any destination that is not an approved model
+          is dropped. Every stage writes to one structured audit row joined by request ID.
+        </desc>
+
+        <defs>
+          <radialGradient id="archGlow" cx="50%" cy="42%" r="62%">
+            <stop offset="0%" stop-color="var(--sunset)" stop-opacity="0.11" />
+            <stop offset="55%" stop-color="var(--steel)" stop-opacity="0.05" />
+            <stop offset="100%" stop-color="var(--sunset)" stop-opacity="0" />
+          </radialGradient>
+          <marker id="arw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0 0 L10 5 L0 10 z" class="arw-head" />
+          </marker>
+          <marker id="arwDim" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M0 0 L10 5 L0 10 z" class="arw-head dim" />
+          </marker>
+        </defs>
+
+        <!-- ── CALLERS ────────────────────────────────────────────────── -->
+        <text x="20" y="92" class="col-label">CALLERS</text>
+        {callers.map((c, i) => (
+          <g class="chip">
+            <rect x="20" y={112 + i * 56} width="150" height="44" rx="10" />
+            <text x="95" y={139 + i * 56} class="chip-t">{c}</text>
+          </g>
+        ))}
+        <path d="M170 134 L 200 134 L 200 190" class="feeder" />
+        <path d="M170 246 L 200 246 L 200 190" class="feeder" />
+        <path d="M170 190 L 200 190" class="feeder" />
+        <path d="M200 190 L 250 190" class="flowline" marker-end="url(#arw)" />
+
+        <!-- ── BOUNDARY ───────────────────────────────────────────────── -->
+        <rect x="238" y="44" width="604" height="392" rx="24" class="boundary-glow" />
+        <rect x="250" y="56" width="580" height="368" rx="16" class="boundary" />
+        <text x="266" y="84" class="boundary-t">
+          GOVERNED BOUNDARY
+          <tspan class="boundary-sub"> · your tenant · your keys · your logs</tspan>
+        </text>
+
+        <!-- stage nodes -->
+        {stages.map((s, i) => (
+          <g class="node" data-stage={s.id} style={`--accent:${accents[i]}`}>
+            <rect x={s.x} y={104} width="168" height="96" rx="12" class="node-box" />
+            <rect x={s.x} y={104} width="168" height="3" rx="1.5" class="node-bar" />
+            <text x={s.x + 16} y={132} class="node-ix">{s.id}</text>
+            <text x={s.x + 16} y={156} class="node-t">{s.label}</text>
+            <text x={s.x + 16} y={178} class="node-s">{s.sub}</text>
+          </g>
+        ))}
+
+        <!-- request path between stages -->
+        <path d="M437 152 L 456 152" class="flowline" marker-end="url(#arw)" />
+        <path d="M624 152 L 643 152" class="flowline" marker-end="url(#arw)" />
+
+        <!-- fail paths — the part prose kept losing -->
+        <path d="M353 200 L 353 236" class="denyline" marker-end="url(#arwDim)" />
+        <text x="353" y="256" class="deny-t">✗ not on the allowlist</text>
+        <text x="353" y="272" class="deny-s">no token issued</text>
+
+        <path d="M540 200 L 540 236" class="denyline" marker-end="url(#arwDim)" />
+        <text x="540" y="256" class="deny-t">✗ guardrail trips</text>
+        <text x="540" y="272" class="deny-s">provider never called</text>
+
+        <!-- every stage writes the same row -->
+        <path d="M353 288 L 353 304" class="auditline" />
+        <path d="M540 288 L 540 304" class="auditline" />
+        <path d="M727 200 L 727 304" class="auditline" />
+
+        <g class="node prove" data-stage="04" style={`--accent:${accents[3]}`}>
+          <rect x="275" y="304" width="530" height="72" rx="12" class="node-box" />
+          <rect x="275" y="304" width="530" height="3" rx="1.5" class="node-bar" />
+          <text x="291" y="330" class="node-ix">04</text>
+          <text x="291" y="352" class="node-t prove-t">Prove<tspan class="node-s"> — one structured audit row, joined by request ID</tspan></text>
+        </g>
+
+        <!-- ── APPROVED MODELS ────────────────────────────────────────── -->
+        <path d="M811 152 L 890 152" class="flowline" marker-end="url(#arw)" />
+        <text x="890" y="92" class="col-label">APPROVED MODELS</text>
+        <rect x="890" y="104" width="250" height="176" rx="12" class="models" />
+        {models.map((m, i) => (
+          <text x="912" y={136 + i * 40} class="model-t">{m}</text>
+        ))}
+
+        <!-- default-deny egress — branches off the outbound path, since it is
+             Forward's allowlist that drops the destination, not the audit sink -->
+        <path d="M860 158 L 860 376" class="denyline" marker-end="url(#arwDim)" />
+        <text x="860" y="400" class="deny-t">✗ every other destination</text>
+        <text x="860" y="416" class="deny-s">dropped at the egress allowlist</text>
+      </svg>
+    </div>
+    <figcaption class="viz-cap muted">
+      One governed endpoint. A request that fails at <strong>Authorize</strong> never gets a token,
+      and one that trips a guardrail at <strong>Guard</strong> never reaches the provider — both
+      still land in the audit row.
+    </figcaption>
+  </figure>
+
+  <div class="flow">
+    {steps.map((f, i) => (
+      <div class="step" data-stage={f.idx} style={`--accent:${accents[i] ?? accents[0]}`}>
+        <div class="step-n">{f.idx}</div>
+        <h4>{f.n}</h4>
+        <p class="step-stack">{f.stack}</p>
+        <p class="muted">{f.d}</p>
+      </div>
+    ))}
+  </div>
+</div>
+
+<style>
+  .viz-wrap { margin: 42px 0 0; }
+  /* The diagram has a floor below which the labels stop being readable, so it
+     scrolls in its own track rather than shrinking the page into one. */
+  .viz-scroll { overflow-x: auto; overscroll-behavior-x: contain; }
+  .viz { display: block; width: 100%; min-width: 860px; height: auto; }
+  .viz-cap { margin-top: 16px; font-size: 13.5px; line-height: 1.7; max-width: 76ch; }
+  .viz-cap strong { color: var(--text); font-weight: 600; }
+
+  /* ── SVG type ─────────────────────────────────────────────────────── */
+  .col-label, .node-ix, .node-s, .deny-t, .deny-s, .boundary-t, .model-t, .chip-t {
+    font-family: var(--font-mono);
+  }
+  .col-label { font-size: 11px; letter-spacing: 0.16em; fill: var(--text-faint); }
+  .boundary-t { font-size: 11px; letter-spacing: 0.16em; fill: var(--text-dim); }
+  .boundary-sub { fill: var(--text-faint); letter-spacing: 0.1em; }
+  .node-ix { font-size: 12px; font-weight: 600; letter-spacing: 0.06em; fill: var(--accent); }
+  .node-t { font-family: var(--font-display); font-size: 17px; font-weight: 600; fill: var(--text); }
+  .node-s { font-size: 11px; fill: var(--text-faint); font-family: var(--font-mono); font-weight: 400; }
+  .prove-t { font-size: 16px; }
+  .chip-t { font-size: 12.5px; fill: var(--text-dim); text-anchor: middle; }
+  .model-t { font-size: 13px; fill: var(--text-dim); }
+  .deny-t { font-size: 11.5px; fill: var(--text-faint); text-anchor: middle; }
+  .deny-s { font-size: 10.5px; fill: var(--text-faint); opacity: 0.72; text-anchor: middle; }
+
+  /* ── SVG shapes ───────────────────────────────────────────────────── */
+  .chip rect { fill: var(--surface-2); stroke: var(--rule); stroke-width: 1; }
+  .boundary-glow { fill: url(#archGlow); }
+  .boundary {
+    fill: rgba(255, 138, 61, 0.015); stroke: var(--rule-strong);
+    stroke-width: 1; stroke-dasharray: 5 5;
+    animation: arch-breathe 5.5s ease-in-out infinite;
+  }
+  @keyframes arch-breathe { 0%, 100% { stroke-opacity: 0.6; } 50% { stroke-opacity: 1; } }
+  .feeder { stroke: var(--rule); stroke-width: 1.25; fill: none; }
+  .node-box { fill: var(--surface-2); stroke: var(--rule); stroke-width: 1; transition: stroke .2s ease, fill .2s ease; }
+  .node-bar { fill: var(--accent); filter: drop-shadow(0 0 6px var(--accent)); }
+  .models { fill: var(--surface-2); stroke: var(--rule); stroke-width: 1; }
+
+  .arw-head { fill: var(--rule-strong); }
+  .arw-head.dim { fill: var(--text-faint); opacity: 0.5; }
+
+  .flowline { stroke: var(--rule-strong); stroke-width: 1.5; fill: none; stroke-dasharray: 5 7; animation: arch-flow 1.1s linear infinite; }
+  @keyframes arch-flow { to { stroke-dashoffset: -12; } }
+
+  .denyline { stroke: var(--text-faint); stroke-width: 1.25; fill: none; stroke-dasharray: 3 4; opacity: 0.55; }
+  .auditline { stroke: var(--seafoam); stroke-width: 1.25; fill: none; stroke-dasharray: 2 5; opacity: 0.45; }
+
+  /* ── Hover sync between a node and its card ───────────────────────── */
+  .arch:has(.step[data-stage="01"]:hover) .node[data-stage="01"] .node-box,
+  .arch:has(.step[data-stage="02"]:hover) .node[data-stage="02"] .node-box,
+  .arch:has(.step[data-stage="03"]:hover) .node[data-stage="03"] .node-box,
+  .arch:has(.step[data-stage="04"]:hover) .node[data-stage="04"] .node-box,
+  .node:hover .node-box {
+    stroke: var(--accent);
+    fill: var(--surface-3);
+  }
+  .arch:has(.node[data-stage="01"]:hover) .step[data-stage="01"],
+  .arch:has(.node[data-stage="02"]:hover) .step[data-stage="02"],
+  .arch:has(.node[data-stage="03"]:hover) .step[data-stage="03"],
+  .arch:has(.node[data-stage="04"]:hover) .step[data-stage="04"] {
+    border-color: var(--accent);
+  }
+  .node { cursor: default; }
+
+  /* ── Step cards — unchanged visual contract, now accent-aware ─────── */
+  .flow { display: grid; gap: 18px; margin-top: 42px; }
+  .step {
+    padding: 24px; border: 1px solid var(--rule); border-radius: var(--radius);
+    background: var(--surface-2); transition: border-color .2s ease;
+  }
+  .step-n { font-family: var(--font-mono); font-weight: 600; color: var(--accent); font-size: 13px; letter-spacing: 0.06em; margin-bottom: 12px; }
+  .step h4 { font-size: 1.1rem; margin-bottom: 6px; }
+  .step-stack { font-family: var(--font-mono); font-size: 11.5px; color: var(--steel); letter-spacing: 0.01em; margin-bottom: 12px; }
+  .step p.muted { font-size: 13.5px; line-height: 1.65; }
+  @media (min-width: 860px) { .flow { grid-template-columns: repeat(4, 1fr); } }
+</style>
