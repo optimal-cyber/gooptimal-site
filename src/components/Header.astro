@@ -1,9 +1,13 @@
 ---
-// Primary navigation. "Solutions" collapses the three offer destinations —
-// managed GCC High, the AI security services, and the NINELINE reference
-// implementation — into one top-level item. Keeping "Services" as a sibling of
-// "Solutions" would have read as two labels for the same thing, so it moves
-// inside too.
+// Primary navigation. "Solutions" collapses the offer destinations — managed
+// GCC High, the AI security services, and the SLED practice — into one
+// top-level item. Keeping "Services" as a sibling of "Solutions" would have
+// read as two labels for the same thing, so it moves inside too.
+//
+// NINELINE is deliberately absent: it is a reference implementation we deploy
+// inside an engagement, not a third thing we sell. Top-level billing framed it
+// as a peer of the two pillars and contradicted the advisory-led positioning.
+// It is reached from the AI services section, the GCC High page, and the footer.
 const links = [
   {
     label: "Solutions",
@@ -19,9 +23,9 @@ const links = [
         desc: "Assess, red-team, engineer, and advise",
       },
       {
-        href: "/nineline",
-        label: "NINELINE",
-        desc: "Our working reference implementation",
+        href: "/sled",
+        label: "State, local & education",
+        desc: "Governed AI and cloud security in the cloud you already license",
       },
     ],
   },
