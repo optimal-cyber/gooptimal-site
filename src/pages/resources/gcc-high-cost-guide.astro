@@ -1,0 +1,234 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import {
+  MANAGED_STARTING_PRICE,
+  BUILD_PROJECT_RANGE,
+  G3_LIST_PRICE,
+  G5_LIST_PRICE,
+  pending,
+} from "../../data/company.ts";
+
+// ---------------------------------------------------------------------------
+// DRAFT — outline only. Not linked from the nav or footer, and noindex until
+// the sections below are written and the figures in company.ts are confirmed.
+//
+// Every substantive claim here is a restatement of copy already approved on
+// /gcc-high, so the two cannot drift. Sections that need new writing are stubs
+// with a TODO rather than filled-in prose — a cost guide that guesses at
+// numbers is worse than no cost guide.
+//
+// TODO: Ryan to confirm — before publishing:
+//   1. Fill MANAGED_STARTING_PRICE, BUILD_PROJECT_RANGE, G3_LIST_PRICE and
+//      G5_LIST_PRICE in src/data/company.ts. The cost-driver figures below
+//      render on their own once the tokens are replaced.
+//   2. Write the three stub sections marked TODO in the outline.
+//   3. Replace the worked example with a real anonymised engagement shape.
+//   4. Flip `noindex` to false, add the page to the footer under a Resources
+//      column, and link it from the /gcc-high pricing section.
+// ---------------------------------------------------------------------------
+
+const DRAFT = true;
+
+// The three lines a GCC High quote actually breaks into. Wording matches the
+// pricing section on /gcc-high verbatim so the guide and the page agree.
+const costLines = [
+  {
+    idx: "01",
+    accent: "var(--sunset)",
+    title: "Build and migration",
+    body:
+      "A fixed-scope project: tenant provisioning and hardening, identity and Conditional Access, Defender and Purview configuration, and the migration itself — driven by user count, data volume, and what you are migrating from.",
+    figure: BUILD_PROJECT_RANGE,
+    unit: "typical project range",
+  },
+  {
+    idx: "02",
+    accent: "var(--steel)",
+    title: "Managed operations",
+    body:
+      "The monthly fee for running it: administration, patching, monitoring, drift control, security operations, help desk, and keeping your SSP and evidence current between assessments.",
+    figure: MANAGED_STARTING_PRICE,
+    unit: "per user / month, starting at",
+  },
+  {
+    idx: "03",
+    accent: "var(--seafoam)",
+    title: "Microsoft licensing",
+    body:
+      "GCC High G3 or G5, per user per month, on Microsoft's price list. We source and provision it so there is no separate reseller to chase — and only the seats inside your CUI footprint need it.",
+    figure: pending(G5_LIST_PRICE) ? G5_LIST_PRICE : `${G3_LIST_PRICE} G3 · ${G5_LIST_PRICE} G5`,
+    unit: "per user / month, list",
+  },
+];
+
+// Outline. `body` filled = approved copy restated from /gcc-high.
+// `body` null = still to be written.
+const sections = [
+  {
+    id: "three-lines",
+    h: "A GCC High quote breaks into three lines",
+    body:
+      "Nobody should have to reverse-engineer a GCC High quote. A managed environment costs money in three places — the project that builds it, the operations that run it, and the Microsoft licensing underneath both. Priced separately, they are all legible.",
+  },
+  {
+    id: "scoping",
+    h: "Scope decides most of the cost",
+    body:
+      "Only the users who actually handle CUI or export-controlled technical data need to be inside the GCC High boundary. In most contractors that is engineering, contracts, and program management — not the whole company. The rest can stay on commercial Microsoft 365 with the boundary enforced between the two. Scoping the CUI footprint first is where most of the cost is decided.",
+  },
+  {
+    id: "licensing",
+    h: "Licensing is the line that moves without you",
+    body:
+      "The tier you need — G3 or G5 — depends on which security and compliance capabilities your control set relies on. Microsoft raised GCC High list pricing in July 2026, roughly 8% on G3 and 5% on G5, so budgets written before that need revisiting.",
+  },
+  {
+    id: "ownership",
+    h: "Owning the tenant changes the cost profile",
+    body:
+      "Some vendors sell a hosted enclave — their infrastructure, their tenant, your CUI living inside a boundary they own. A tenant you own scales with your headcount, holds your data under your keys and your audit logs, and stays yours if you replace your provider. The exit cost of a hosted enclave belongs in any honest comparison.",
+  },
+  {
+    id: "underestimated",
+    h: "What buyers usually underestimate",
+    // TODO: Ryan to confirm — the real recurring surprises from delivered
+    // engagements. Candidates seen in the field, none asserted yet: spillage
+    // remediation on migration, legacy app remediation, mobile and endpoint
+    // management, the ongoing evidence burden between assessments.
+    body: null,
+  },
+  {
+    id: "worked-example",
+    h: "What a typical engagement looks like",
+    // TODO: Ryan to confirm — one anonymised engagement shape (seat count,
+    // source environment, timeline, the three lines filled in). Needs real
+    // delivered numbers; do not model this from list prices.
+    body: null,
+  },
+  {
+    id: "questions-to-ask",
+    h: "Questions worth asking any GCC High provider",
+    // TODO: Ryan to confirm — the diligence list. Should include who owns the
+    // tenant, whether a Shared Responsibility Matrix is delivered, and what
+    // happens to the data on exit.
+    body: null,
+  },
+];
+---
+
+<Layout
+  title="What managed GCC High actually costs — Optimal"
+  description="How managed Microsoft 365 GCC High is priced: the build and migration project, monthly managed operations, and Microsoft G3/G5 licensing — plus how scoping your CUI footprint changes the total."
+  keywords="GCC High cost, GCC High pricing, managed GCC High pricing, GCC High licensing cost, GCC High G3 price, GCC High G5 price, CMMC cost, CUI enclave cost, GCC High migration cost, defense industrial base"
+  breadcrumbs={[{ name: "Home", href: "/" }]}
+  noindex={DRAFT}
+>
+  <Header />
+
+  <section class="section--tight">
+    <div class="container guide">
+      {DRAFT && (
+        <p class="draft-flag">
+          <strong>Draft — not published.</strong> Outline only. Figures render once confirmed in
+          <code>src/data/company.ts</code>; three sections still need writing. This page is
+          <code>noindex</code> and unlinked until then.
+        </p>
+      )}
+
+      <header class="guide-head">
+        <span class="eyebrow">Cost guide</span>
+        <h1 class="h2">What managed GCC High actually costs</h1>
+        <p class="lead" style="margin-top:14px;">
+          Three lines, priced separately, quoted before you sign. This is how the number is built —
+          including the parts that move without us.
+        </p>
+      </header>
+
+      <div class="cost-lines">
+        {costLines.map((c) => (
+          <article class="card cost-line">
+            <span class="cost-idx" style={`color:${c.accent}`}>{c.idx}</span>
+            <h2 class="cost-h">{c.title}</h2>
+            <p class="muted">{c.body}</p>
+            {!pending(c.figure) ? (
+              <p class="cost-fig">
+                <span class="cost-num" style={`color:${c.accent}`}>{c.figure}</span>
+                <span class="muted cost-unit">{c.unit}</span>
+              </p>
+            ) : (
+              <p class="cost-pending muted">Figure pending confirmation</p>
+            )}
+          </article>
+        ))}
+      </div>
+
+      <div class="guide-body">
+        {sections.map((s) => (
+          <section id={s.id} class="guide-section">
+            <h2 class="cost-h">{s.h}</h2>
+            {s.body ? (
+              <p class="muted">{s.body}</p>
+            ) : (
+              <p class="stub muted">Section outlined, not yet written.</p>
+            )}
+          </section>
+        ))}
+      </div>
+
+      <aside class="guide-cta card">
+        <h2 class="cost-h">Not sure how much of your business is actually in scope?</h2>
+        <p class="muted">
+          We'll review your contracts and CUI footprint and tell you what you actually need —
+          including when a smaller scope is enough.
+        </p>
+        <div class="guide-actions">
+          <a href="/contact" class="btn btn-primary">Book a scoping call</a>
+          <a href="/gcc-high" class="btn btn-ghost">Managed GCC High →</a>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<style>
+  .guide { max-width: 900px; }
+  .guide-head { margin-bottom: 40px; }
+
+  .draft-flag {
+    border: 1px dashed var(--rule-strong);
+    border-radius: var(--radius-sm);
+    padding: 12px 16px;
+    margin-bottom: 32px;
+    color: var(--text-dim);
+    font-size: 0.92rem;
+  }
+  .draft-flag strong { color: var(--sunset); }
+  .draft-flag code { font-family: var(--font-mono); font-size: 0.86em; }
+
+  .cost-lines { display: grid; gap: 16px; grid-template-columns: 1fr; margin-bottom: 48px; }
+  @media (min-width: 860px) { .cost-lines { grid-template-columns: repeat(3, 1fr); } }
+
+  .cost-line { padding: 24px; }
+  .cost-idx { font-family: var(--font-mono); font-size: 0.8rem; letter-spacing: 0.08em; }
+  .cost-h { font-family: var(--font-display); font-size: 1.15rem; margin: 10px 0 8px; }
+  .cost-fig { margin-top: 16px; display: flex; flex-direction: column; gap: 2px; }
+  .cost-num { font-family: var(--font-display); font-size: 1.6rem; }
+  .cost-unit { font-size: 0.82rem; }
+  .cost-pending {
+    margin-top: 16px;
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--text-faint);
+  }
+
+  .guide-section { padding: 28px 0; border-top: 1px solid var(--rule); }
+  .guide-section h2 { margin-bottom: 10px; }
+  .stub { font-family: var(--font-mono); font-size: 0.82rem; color: var(--text-faint); }
+
+  .guide-cta { margin-top: 40px; padding: 28px; }
+  .guide-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 18px; }
+</style>
