@@ -9,11 +9,12 @@ export default defineConfig({
   integrations: [sitemap()],
   // Static build emits meta-refresh redirect pages so retired URLs don't 404.
   // /demo → the old "request access" flow, now the scoping-call form at /contact.
-  // /industries/* → retired vertical pages, replaced by deployment-scenario use cases.
+  // /industries/* → retired vertical pages, replaced by deployment-scenario use
+  //   cases — except SLED, which now has a real landing page again at /sled.
   redirects: {
     "/demo": "/contact",
     "/industries/healthcare": "/use-cases/regulated-cloud",
     "/industries/financial-services": "/use-cases/regulated-cloud",
-    "/industries/sled": "/use-cases/regulated-cloud",
+    "/industries/sled": "/sled",
   },
 });

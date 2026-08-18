@@ -1,0 +1,404 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import GatewayCanvas from "../components/GatewayCanvas.astro";
+import VetBadge from "../components/VetBadge.astro";
+
+// State, local, and education. Deliberately NOT led by federal compliance
+// framing: a county CIO or a district CISO is not buying a defense-contract
+// obligation, they are buying governed AI, cloud security, and protection for
+// the data regimes that already apply to them. The DIB story lives on
+// /gcc-high and stays there.
+
+const clouds = [
+  { name: "Microsoft Azure", svc: "Azure OpenAI Service" },
+  { name: "Amazon Web Services", svc: "Amazon Bedrock" },
+  { name: "Google Cloud", svc: "Vertex AI" },
+];
+
+const services = [
+  {
+    idx: "01",
+    accent: "var(--sunset)",
+    title: "AI security & governance",
+    body: "An honest read on the AI already running in your organization — the sanctioned deployments and the ones nobody approved. We assess what is exposed, threat-model what is planned, and write acceptable-use guardrails your staff will actually follow instead of route around.",
+  },
+  {
+    idx: "02",
+    accent: "var(--steel)",
+    title: "Governed access to frontier models",
+    body: "One authenticated gateway to the models already available in the cloud you license. Per-key identity and rate limits, fail-closed prompt and response guardrails, default-deny egress, and a request-ID-joined audit trail. No new vendor, no new procurement, no SDK rewrite.",
+  },
+  {
+    idx: "03",
+    accent: "var(--coral)",
+    title: "Cloud security",
+    body: "Review and hardening of the cloud you already run — identity and access, logging, network egress, and the quiet misconfigurations that turn into a public-records incident. Findings come with the fix and a retest, not a spreadsheet.",
+  },
+  {
+    idx: "04",
+    accent: "var(--seafoam)",
+    title: "IT risk advisory",
+    body: "Where the risk actually is, in priority order, written for a council, a board, or a cabinet — not for a security team. Engineering-grounded, tied to real attack paths, and scoped to a public-sector budget cycle.",
+  },
+];
+
+const regimes = ["CJIS", "HIPAA", "PCI DSS", "FERPA", "State privacy statutes", "Public records law"];
+
+const audience = [
+  { k: "State agencies", v: "Health and human services, transportation, revenue, and the enterprise IT shops that serve all of them." },
+  { k: "Counties & cities", v: "Where one team runs everything from the 911 center to the permit portal, and the AI questions arrive faster than headcount." },
+  { k: "K-12 districts", v: "Student data under FERPA, staff adopting AI tools independently, and a security team that is often one person." },
+  { k: "Higher education", v: "Research data, health systems, and a user population that will find the ungoverned path if the governed one is slower." },
+];
+
+const faqs = [
+  {
+    q: "Do we have to buy a new AI platform?",
+    a: "No — and that is usually the point. If you already license Microsoft Azure, Amazon Web Services, or Google Cloud, the frontier models are already available to you through Azure OpenAI Service, Amazon Bedrock, or Google Vertex AI. Optimal builds the governed, audited access layer on top of the cloud you already pay for, inside your own tenant. No new vendor, no new procurement cycle.",
+  },
+  {
+    q: "Our staff are already using AI tools we never approved. Where do we start?",
+    a: "That is the normal starting condition, and banning the capability does not work — people who have a real reason to use it will find an ungoverned path. We start by finding what is actually in use and what data is reaching it, then make the governed path the fastest one: one authenticated gateway, guardrails that catch sensitive data before a request leaves your boundary, and an audit trail you can produce when someone asks.",
+  },
+  {
+    q: "How does this work with CJIS, HIPAA, PCI, or FERPA data?",
+    a: "Those regimes do not stop applying because the request went to a model. The gateway sits between your users and the model, so prompt and response inspection, PII and secret detection, and default-deny egress all happen inside your boundary before anything leaves it — and every call is logged with a request ID you can join to your existing records. We scope the controls to the data you actually hold rather than to a generic checklist.",
+  },
+  {
+    q: "Can you work with our existing cloud and security team?",
+    a: "Yes. Everything we build is self-hostable and yours to operate — the reference architecture is open source, so your engineers can read exactly what we are standing up before we stand it up, and keep running it after we leave. We are not trying to become a dependency you cannot remove.",
+  },
+  {
+    q: "Is Optimal eligible for set-aside or small-business contracting?",
+    a: "Optimal, LLC is an SBA-certified Service-Disabled Veteran-Owned Small Business (SDVOSB) and Veteran-Owned Small Business (VOSB), listed on the SBA certification registry, and eligible for SDVOSB and VOSB set-aside contracts. Many state and local programs recognize veteran-owned status in their own procurement preferences — we are happy to work through your specific vehicle or to team with an existing prime.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "AI security and governed AI access for state, local, and education",
+  serviceType: "AI security, cloud security, and governed AI access for the public sector",
+  provider: { "@type": "Organization", name: "Optimal", url: "https://gooptimal.io" },
+  areaServed: "United States state and local government and education",
+  audience: {
+    "@type": "Audience",
+    audienceType: "State agencies, county and municipal government, K-12 districts, and higher education",
+  },
+  description:
+    "Optimal builds governed, audited access to frontier AI models inside the cloud a public-sector organization already licenses — Azure OpenAI Service, Amazon Bedrock, or Google Vertex AI — and delivers AI security assessment, cloud security, data-protection engineering for CJIS, HIPAA, PCI DSS and FERPA data, and IT risk advisory. An SBA-certified Service-Disabled Veteran-Owned Small Business.",
+};
+---
+
+<Layout
+  title="AI security & governed AI for state, local & education | Optimal"
+  description="Optimal helps state agencies, counties, cities, school districts, and universities adopt AI safely — governed, audited access to frontier models inside the cloud you already license (Azure OpenAI, Amazon Bedrock, Google Vertex AI), plus cloud security, data protection for CJIS, HIPAA, PCI and FERPA data, and IT risk advisory. An SBA-certified SDVOSB."
+  keywords="SLED AI security, state and local government AI, K-12 AI governance, higher education AI security, public sector AI governance, governed AI access, Azure OpenAI, Amazon Bedrock, Google Vertex AI, CJIS, HIPAA, PCI DSS, FERPA, cloud security, IT risk advisory, SDVOSB, veteran-owned small business"
+  breadcrumbs={[{ name: "Home", href: "/" }]}
+  jsonLd={[serviceSchema, faqSchema]}
+>
+  <Header />
+
+  <!-- HERO -->
+  <section class="hero relative">
+    <div class="glow"></div>
+    <GatewayCanvas variant="hero" />
+    <div class="container z">
+      <span class="eyebrow">State, local &amp; education</span>
+      <h1 class="display">AI your organization<br /><span class="grad">can actually approve.</span></h1>
+      <p class="lead">
+        Public-sector teams are being handed AI faster than they can govern it. Optimal stands up
+        governed access to the frontier models already sitting inside the cloud you license — one
+        authenticated gateway, guardrails that fail closed, and an audit trail your auditor and your
+        records officer can both read. Then we secure the cloud underneath it.
+      </p>
+      <p class="hero-caps">
+        Governed AI <span>/</span> Cloud security <span>/</span> Data protection <span>/</span> Risk advisory
+      </p>
+      <div class="cta-row">
+        <a href="/contact" class="btn btn-primary">Book a scoping call →</a>
+        <a href="#services" class="btn btn-ghost">See what we do</a>
+      </div>
+      <div class="hero-meta muted">
+        <span>Runs in your cloud</span><span class="dot">•</span>
+        <span>No new procurement</span><span class="dot">•</span>
+        <span>SDVOSB-certified</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE PROBLEM -->
+  <section id="why" class="section--tight why relative">
+    <div class="container z">
+      <div class="sec-head wide">
+        <span class="ix">Why now</span>
+        <h2 class="h2">The AI is already in your organization.</h2>
+        <p class="lead" style="margin-top:14px;">
+          Someone in your agency has already pasted a case file, a student record, or a draft
+          procurement into a consumer chatbot. Not maliciously — because it was the fastest way to get
+          the work done. Banning the capability does not fix that; it just moves it somewhere you
+          cannot see. The answer is to make the governed path the fast one.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRING YOUR OWN CLOUD -->
+  <section id="cloud" class="section byoc relative">
+    <div class="glow"></div>
+    <div class="container z">
+      <div class="sec-head wide">
+        <span class="ix">Bring your own cloud</span>
+        <h2 class="h2">Already licensed with Azure, AWS, or Google Cloud?<br />The models are already there.</h2>
+        <p class="lead" style="margin-top:14px;">
+          You don't need a new vendor to reach frontier models safely. Optimal builds governed, audited
+          access to the models in the cloud you already pay for — inside your own tenant, on contracts
+          you already hold.
+        </p>
+      </div>
+      <ul class="clouds">
+        {clouds.map((c) => (
+          <li class="cloud-item">
+            <span class="cloud-name">{c.name}</span>
+            <span class="cloud-svc">{c.svc}</span>
+          </li>
+        ))}
+      </ul>
+      <p class="muted note">
+        Or self-host the models entirely. Either way, every call runs through one governed boundary
+        with a defensible audit trail. <a class="inline-link" href="/#how">See the architecture →</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="section--tight services relative">
+    <div class="container z">
+      <div class="sec-head wide">
+        <span class="ix">What we do</span>
+        <h2 class="h2">Four ways we help public-sector teams.</h2>
+        <p class="lead" style="margin-top:14px;">Scoped to a public-sector budget cycle and to the team you actually have — not to the security organization a vendor wishes you had.</p>
+      </div>
+      <div class="svc-grid">
+        {services.map((s) => (
+          <article class="card svc">
+            <span class="svc-ix" style={`color:${s.accent}`}>{s.idx}</span>
+            <h3>{s.title}</h3>
+            <p class="muted">{s.body}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- DATA PROTECTION -->
+  <section id="data" class="section data relative">
+    <div class="glow"></div>
+    <div class="container z sec-split">
+      <div class="sec-head">
+        <span class="ix">Data protection</span>
+        <h2 class="h2">The rules don't stop applying because it went to a model.</h2>
+      </div>
+      <div class="data-body">
+        <p>
+          Criminal justice data, patient records, cardholder data, student records — the regimes that
+          already govern how you hold them govern how a model may see them. Most AI incidents in the
+          public sector are not exotic attacks. They are ordinary data leaving a boundary nobody had
+          drawn yet.
+        </p>
+        <p>
+          So we draw it. Prompt and response inspection, PII and secret detection, and default-deny
+          egress all run inside your boundary before anything leaves it, and every call is logged with
+          a request ID you can join to the records you already keep. The controls get scoped to the
+          data you actually hold.
+        </p>
+        <div class="regimes">
+          {regimes.map((r) => <span class="chip">{r}</span>)}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO IT'S FOR -->
+  <section id="who" class="section--tight who relative">
+    <div class="container z who-inner">
+      <div class="who-copy">
+        <span class="ix">Who it's for</span>
+        <h2 class="h2">Built for the teams doing this with the staff they have.</h2>
+        <ul class="aud">
+          {audience.map((a) => (
+            <li>
+              <span class="aud-k">{a.k}</span>
+              <span class="aud-v muted">{a.v}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div class="vet-card">
+        <VetBadge size={72} />
+        <p class="muted">
+          Optimal, LLC is an SBA-certified <strong>Service-Disabled Veteran-Owned Small Business</strong> —
+          eligible for SDVOSB and VOSB set-asides, and available to team with an incumbent prime.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="section faq relative">
+    <div class="glow"></div>
+    <div class="container z">
+      <div class="sec-head wide">
+        <span class="ix">FAQ</span>
+        <h2 class="h2">Questions public-sector teams ask first.</h2>
+      </div>
+      <div class="faq-list">
+        {faqs.map((f) => (
+          <details class="faq-item">
+            <summary>
+              <span class="faq-q">{f.q}</span>
+              <span class="faq-mark" aria-hidden="true"></span>
+            </summary>
+            <p class="muted faq-a">{f.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section cta relative">
+    <div class="glow"></div>
+    <GatewayCanvas variant="ambient" align="center" density={0.7} />
+    <div class="container z cta-inner">
+      <h2 class="display" style="font-size:clamp(2rem,5vw,3.4rem);">Let's govern<br />the AI you already have.</h2>
+      <p class="lead" style="margin:18px auto 0;">Tell us which cloud you run, what data you hold, and what your staff are already doing with AI. We'll scope the work — assessment, governed access, cloud security, or advisory.</p>
+      <a href="/contact" class="btn btn-primary" style="margin-top:28px;">Book a scoping call →</a>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<style>
+  .ix {
+    display: inline-block; font-family: var(--font-mono); font-size: 12px;
+    letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-faint);
+    margin-bottom: 16px;
+  }
+  .sec-head.wide { max-width: 64ch; }
+  .inline-link { color: var(--sunset); font-weight: 600; }
+  .inline-link:hover { color: var(--ember); }
+  .note { margin-top: 26px; font-size: 14px; max-width: 70ch; }
+
+  /* HERO */
+  .hero { padding: clamp(72px, 12vw, 140px) 0 clamp(48px, 7vw, 84px); }
+  .hero .eyebrow { margin-bottom: 22px; }
+  .hero h1 { margin-bottom: 24px; }
+  .hero .lead { font-size: clamp(17px, 2.2vw, 21px); }
+  .hero-caps {
+    margin-top: 22px; font-family: var(--font-mono); font-size: 12.5px;
+    letter-spacing: 0.06em; color: var(--text-dim); text-transform: uppercase;
+  }
+  .hero-caps span { color: var(--text-faint); margin: 0 4px; }
+  .cta-row { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 30px; }
+  .hero-meta { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-top: 30px; font-size: 13px; }
+  .hero-meta .dot { opacity: 0.4; }
+
+  /* WHY */
+  .why { background: var(--surface); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+
+  /* BRING YOUR OWN CLOUD */
+  .byoc { background: var(--bg); }
+  .clouds { list-style: none; margin: 36px 0 0; padding: 0; display: grid; gap: 16px; }
+  @media (min-width: 720px) { .clouds { grid-template-columns: repeat(3, 1fr); } }
+  .cloud-item {
+    display: flex; flex-direction: column; gap: 8px; padding: 22px 24px;
+    border: 1px solid var(--rule); border-radius: var(--radius);
+    background: linear-gradient(180deg, var(--surface-2), var(--surface));
+    transition: border-color .2s ease, transform .2s ease;
+  }
+  .cloud-item:hover { border-color: var(--rule-strong); transform: translateY(-2px); }
+  .cloud-name {
+    font-family: var(--font-mono); font-size: 11.5px; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--text-dim);
+  }
+  .cloud-svc { font-family: var(--font-display); font-size: 1.15rem; color: var(--text); }
+
+  /* SERVICES */
+  .services { background: var(--surface); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+  .svc-grid { display: grid; gap: 20px; margin-top: 40px; }
+  @media (min-width: 820px) { .svc-grid { grid-template-columns: repeat(2, 1fr); } }
+  .svc-ix { font-family: var(--font-mono); font-size: 13px; font-weight: 600; letter-spacing: 0.05em; }
+  .svc h3 { font-size: 1.2rem; margin: 12px 0 10px; }
+  .svc p { font-size: 14px; line-height: 1.7; }
+
+  /* DATA PROTECTION */
+  .data { background: var(--bg); }
+  .sec-split { display: grid; gap: 26px; }
+  .data-body { display: grid; gap: 18px; max-width: 64ch; }
+  .data-body p { color: var(--text-dim); font-size: clamp(15px, 1.8vw, 17px); line-height: 1.75; }
+  .regimes { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 6px; }
+  .chip {
+    font-family: var(--font-mono); font-weight: 500; font-size: 12.5px; letter-spacing: 0.02em;
+    color: var(--text-dim); border: 1px solid var(--rule); border-radius: 7px;
+    padding: 7px 13px; transition: color .2s, border-color .2s;
+  }
+  .chip:hover { color: var(--text); border-color: var(--rule-strong); }
+  @media (min-width: 900px) {
+    .sec-split { grid-template-columns: 0.85fr 1.15fr; gap: 56px; align-items: start; }
+  }
+
+  /* WHO */
+  .who { background: var(--surface); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+  .who-inner { display: grid; gap: 30px; align-items: start; }
+  .who-copy { max-width: 64ch; }
+  .aud { list-style: none; margin: 34px 0 0; padding: 0; display: grid; gap: 0; }
+  .aud li { display: grid; gap: 5px; padding: 16px 0; border-bottom: 1px solid var(--rule); }
+  .aud li:first-child { border-top: 1px solid var(--rule); }
+  .aud-k { font-family: var(--font-display); font-weight: 600; font-size: 1rem; color: var(--text); }
+  .aud-v { font-size: 13.5px; line-height: 1.65; }
+  .vet-card {
+    display: flex; flex-direction: column; gap: 14px; align-items: flex-start;
+    padding: 26px; border: 1px solid var(--rule); border-radius: var(--radius);
+    background: linear-gradient(180deg, var(--surface-2), var(--surface));
+  }
+  .vet-card p { font-size: 13.5px; line-height: 1.6; }
+  .vet-card strong { color: var(--text); }
+  @media (min-width: 900px) { .who-inner { grid-template-columns: 1.4fr 1fr; gap: 48px; } }
+
+  /* FAQ */
+  .faq { background: var(--bg); }
+  .faq-list { margin-top: 34px; max-width: 82ch; border-top: 1px solid var(--rule); }
+  .faq-item { border-bottom: 1px solid var(--rule); }
+  .faq-item summary {
+    display: flex; align-items: center; justify-content: space-between; gap: 18px;
+    padding: 20px 4px; cursor: pointer; list-style: none;
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-q { font-family: var(--font-display); font-weight: 600; font-size: clamp(1rem, 2vw, 1.15rem); color: var(--text); letter-spacing: -0.01em; }
+  .faq-mark { position: relative; flex: 0 0 auto; width: 14px; height: 14px; }
+  .faq-mark::before, .faq-mark::after {
+    content: ""; position: absolute; background: var(--sunset); transition: transform .2s ease, opacity .2s ease;
+  }
+  .faq-mark::before { top: 6px; left: 0; width: 14px; height: 2px; }
+  .faq-mark::after { top: 0; left: 6px; width: 2px; height: 14px; }
+  .faq-item[open] .faq-mark::after { transform: scaleY(0); opacity: 0; }
+  .faq-a { padding: 0 4px 22px; font-size: 15px; line-height: 1.75; max-width: 74ch; }
+
+  /* CTA */
+  .cta { background: var(--surface); border-top: 1px solid var(--rule); }
+  .cta-inner { text-align: center; max-width: 720px; margin: 0 auto; }
+</style>
