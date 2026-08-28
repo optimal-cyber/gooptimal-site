@@ -35,7 +35,7 @@ The authorization blast radius is what the agent can do through its permitted to
 
 ## What the whitepaper covers
 
-*Securing Agentic AI: Governing What the System Does, Not What It Says* is a 19-page reference architecture for running autonomous agents in regulated environments. Inside:
+*Securing Agentic AI: Governing What the System Does, Not What It Says* is a reference architecture for running autonomous agents in regulated environments. Inside:
 
 - A threat model spanning goal hijack, indirect injection, memory and vector-store poisoning, tool supply chain, and the internal trust trap in multi-agent systems
 - The enforcement argument: authorization verified at the tool boundary, by a component the agent cannot influence. If a control fails when the model is compromised, it was advice, not enforcement
@@ -43,6 +43,9 @@ The authorization blast radius is what the agent can do through its permitted to
 - An evaluation methodology with numeric promotion gates: attack success rate ceilings per harm tier, pass^k rather than pass@k, adaptive adversaries, pinned model versions
 - A continuous authorization (cATO) mapping, because point-in-time authorization certifies a snapshot of a system that changes with every model update
 - A control crosswalk to NIST SP 800-53 Rev 5 and ISO/IEC 42001, so the architecture drops into an SSP instead of staying a position paper
+
+<a href="/blog/authorization-boundary.png" target="_blank">![Authorization boundary reference deployment](/blog/authorization-boundary.png)</a>
+*The deployment view: a FedRAMP-style authorization boundary for the agentic platform, AWS GovCloud shown with Azure Government and Google Cloud equivalents.*
 
 ![Evaluation suites, promotion gates, and re-authorization triggers](/blog/evaluation-pipeline.png)
 *Numeric promotion gates plus continuous evaluation: a cATO model for agents.*

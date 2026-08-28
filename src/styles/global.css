@@ -150,6 +150,7 @@ p { margin: 0; }
 .prose a { color: var(--sunset); text-decoration: none; border-bottom: 1px solid color-mix(in srgb, var(--sunset) 35%, transparent); }
 .prose a:hover { color: var(--ember); }
 .prose a.btn { border-bottom: 0; }
+.prose a:has(> img) { border-bottom: 0; display: block; }
 .prose a.btn-primary { color: #1a0e06; }
 .prose a.btn-ghost { color: var(--text); }
 .prose a.btn-ghost:hover { color: var(--sunset); }
