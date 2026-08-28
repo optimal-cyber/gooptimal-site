@@ -1,0 +1,174 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import GatewayCanvas from "../../components/GatewayCanvas.astro";
+
+// Whitepaper downloads post here, then Formspree redirects to the PDF.
+//
+// This currently shares the contact form's endpoint. Swap this one line for a
+// dedicated endpoint when there is one, so whitepaper leads land in their own
+// inbox instead of beside scoping requests. Until then `_subject` below is what
+// separates the two in the inbox.
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/xovqzpkj";
+
+// The gate is soft by design: this file stays at a public URL and is linked
+// from the PDF itself. The form is for attribution, not access control.
+const PDF_PATH = "/whitepapers/securing-agentic-ai.pdf";
+const pdfUrl = new URL(PDF_PATH, Astro.site).href;
+
+const covers = [
+  "A threat model spanning goal hijack, indirect injection, memory and vector-store poisoning, tool supply chain, and the internal trust trap in multi-agent systems",
+  "Authorization verified at the tool boundary, by a component the agent cannot influence",
+  "Delegation that narrows and never widens, using token exchange with attenuation",
+  "An evaluation methodology with numeric promotion gates and adaptive adversaries",
+  "A continuous authorization (cATO) mapping for systems that change with every model update",
+  "A control crosswalk to NIST SP 800-53 Rev 5 and ISO/IEC 42001",
+];
+---
+
+<Layout
+  title="Securing Agentic AI — whitepaper | Optimal"
+  description="A reference architecture for running autonomous agents in regulated environments: enforcement at the tool boundary, bounded authorization blast radius, continuous authorization, and a control crosswalk to NIST SP 800-53 and ISO/IEC 42001."
+  breadcrumbs={[{ name: "Home", href: "/" }]}
+>
+  <Header />
+
+  <section class="section relative">
+    <div class="glow"></div>
+    <GatewayCanvas variant="ambient" align="center" density={0.55} />
+    <div class="container z wrap">
+      <div class="intro">
+        <span class="eyebrow">Whitepaper</span>
+        <h1 class="h2">Securing Agentic AI</h1>
+        <p class="sub">Governing What the System Does, Not What It Says</p>
+        <p class="lead" style="margin-top:16px;">
+          Your agent is perfectly sandboxed. It can still delete the production
+          database, because deleting the database is something it was permitted
+          to do. This is a reference architecture for bounding what agents are
+          allowed to do — written for FedRAMP, CJIS, and CMMC boundaries.
+        </p>
+
+        <h2 class="ct-h">What&rsquo;s inside</h2>
+        <ul class="covers">
+          {covers.map((c) => <li>{c}</li>)}
+        </ul>
+
+        <p class="muted read-first">
+          Prefer the short version first? Read
+          <a href="/blog/authorization-blast-radius/">The Authorization Blast Radius</a>.
+        </p>
+      </div>
+
+      <form class="card form" id="wp-form" method="POST" action={FORMSPREE_ENDPOINT} data-pdf={PDF_PATH}>
+        <!-- Formspree config: subject line, post-submit redirect, honeypot trap -->
+        <input type="hidden" name="_subject" value="Optimal · Whitepaper download — Securing Agentic AI" />
+        <!-- _next is a paid Formspree feature and is ignored on the free plan.
+           The script below handles the redirect instead; this stays so the
+           no-JS path works correctly if the account is ever upgraded. -->
+        <input type="hidden" name="_next" value={pdfUrl} />
+        <input type="hidden" name="asset" value="Securing Agentic AI" />
+        <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+        <p class="form-h">Get the whitepaper</p>
+        <label>Name<input type="text" name="name" required /></label>
+        <label>Work email<input type="email" name="email" required /></label>
+        <label>Organization<input type="text" name="organization" /></label>
+        <button type="submit" class="btn btn-primary">Download the whitepaper →</button>
+        <p class="status" id="wp-status" role="status" aria-live="polite" hidden></p>
+        <noscript>
+          <p class="muted privacy">
+            JavaScript is off, so the form cannot hand you the file directly.
+            <a href={PDF_PATH}>Download the whitepaper</a> instead.
+          </p>
+        </noscript>
+        <p class="muted privacy">
+          We use this to know who&rsquo;s reading and to follow up once if it looks
+          relevant. No list, no sharing, no tracking pixels. Email
+          <a href="mailto:ryan@gooptimal.io">ryan@gooptimal.io</a> and we&rsquo;ll delete it.
+        </p>
+      </form>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<script>
+  // Formspree's "custom thank-you redirect" (_next) is a paid feature, so on the
+  // free plan a native POST lands the reader on Formspree's own page and never
+  // hands over the PDF. Submitting over AJAX works on every plan: Formspree
+  // answers with JSON, and we do the redirect ourselves.
+  const form = document.getElementById("wp-form");
+  const status = document.getElementById("wp-status");
+  const pdf = form?.dataset.pdf;
+
+  form?.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const button = form.querySelector("button[type=submit]");
+    button.disabled = true;
+    status.hidden = true;
+
+    try {
+      const res = await fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { Accept: "application/json" },
+      });
+
+      if (res.ok) {
+        window.location.href = pdf;
+        return;
+      }
+
+      // Most likely cause is the monthly submission quota being spent. Never
+      // withhold the file over a backend problem that is not the reader's.
+      const body = await res.json().catch(() => null);
+      const detail = body?.errors?.map((x) => x.message).join(", ");
+      status.textContent = detail
+        ? `Could not record that (${detail}). Opening the whitepaper anyway…`
+        : "Could not record that. Opening the whitepaper anyway…";
+      status.hidden = false;
+      setTimeout(() => { window.location.href = pdf; }, 1600);
+    } catch {
+      status.textContent = "Network error. Opening the whitepaper anyway…";
+      status.hidden = false;
+      setTimeout(() => { window.location.href = pdf; }, 1600);
+    }
+  });
+</script>
+
+<style>
+  .wrap { display: grid; gap: 40px; align-items: start; }
+  .intro { padding-top: 6px; }
+  .sub {
+    margin-top: 8px; font-size: 15px; color: var(--text-dim);
+    font-style: italic;
+  }
+  .ct-h {
+    margin-top: 30px;
+    font-family: var(--font-mono); font-size: 12px; font-weight: 500;
+    letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-faint);
+  }
+  .covers { margin: 16px 0 0; padding-left: 1.15em; display: grid; gap: 0.55em; color: var(--text-dim); font-size: 15px; }
+  .covers li::marker { color: var(--sunset); }
+  .read-first { margin-top: 24px; font-size: 14px; }
+  .read-first a { color: var(--sunset); }
+  .form { display: grid; gap: 16px; }
+  .form-h { font-family: var(--font-body); font-weight: 600; color: var(--text); font-size: 16px; }
+  .hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
+  label { display: grid; gap: 7px; font-size: 13px; color: var(--text-dim); }
+  input {
+    width: 100%; font: inherit; color: var(--text);
+    background: var(--bg); border: 1px solid var(--rule); border-radius: var(--radius-sm);
+    padding: 11px 13px; outline: none; transition: border-color .2s ease;
+  }
+  input:focus { border-color: var(--sunset); }
+  .form .btn { justify-self: start; margin-top: 6px; }
+  .privacy { font-size: 12.5px; line-height: 1.6; }
+  .status { font-size: 13px; color: var(--sunset); }
+  .privacy a { color: var(--sunset); }
+  @media (min-width: 900px) {
+    .wrap { grid-template-columns: 1fr 1fr; gap: 64px; }
+  }
+</style>

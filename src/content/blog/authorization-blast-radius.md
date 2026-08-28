@@ -55,7 +55,7 @@ The authorization blast radius is what the agent can do through its permitted to
 The deeper argument is about governance tempo. An agent's behavior shifts with every model version, tool manifest change, and memory write, faster than any annual assessment cycle can observe. The organizations that deploy agents successfully will not be the fastest or the most cautious. They will be the ones that bound the authorization blast radius precisely enough to let autonomy operate inside it, and instrument it well enough that the authorization never goes stale.
 
 <p>
-  <a class="btn btn-primary" href="/whitepapers/securing-agentic-ai.pdf">Download the whitepaper →</a>
+  <a class="btn btn-primary" href="/whitepapers/securing-agentic-ai/">Download the whitepaper →</a>
   &nbsp;
   <a class="btn btn-ghost" href="/contact">Book a scoping call</a>
 </p>
