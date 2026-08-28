@@ -61,12 +61,13 @@ export const PAST_PERFORMANCE: { title: string; detail: string }[] = [];
 /** Ryan's publication — the content engine, hosted off-site. */
 export const FERMENTED_OPINIONS = "https://fermentedopinions.substack.com/";
 
-// TODO: Ryan to confirm — Web3Forms access key for the whitepaper download gate.
-// Get one free at https://web3forms.com (enter ryan@gooptimal.io; they email the
-// key back). It is a public UUID, not a secret — it is meant to sit in client
-// HTML and only identifies which inbox a submission is delivered to.
+// Web3Forms access key for the whitepaper download gate ("Whitepaper Form
+// Request", registered to gooptimal.io/whitepapers/securing-agentic-ai).
 //
-// While this is an unfilled token the whitepaper page skips the form entirely
-// and links straight to the PDF, so the download never breaks waiting on it.
-export const WEB3FORMS_ACCESS_KEY = "{{WEB3FORMS_ACCESS_KEY}}";
+// Public by design: it is a destination identifier, not a credential, and is
+// meant to sit in client HTML. It cannot read submissions or change settings.
+//
+// Emptying this back to a {{TOKEN}} turns the gate off and the page falls back
+// to linking the PDF directly, so the download survives a key rotation.
+export const WEB3FORMS_ACCESS_KEY = "93c34072-aab8-4525-9dcb-e9d361c8c696";
 
