@@ -15,7 +15,7 @@ interface Props {
 const { title, description, date, category = "Industry Insights", tags = [], image, imageAlt } = Astro.props;
 const published = new Date(date);
 const dateStr = published.toLocaleDateString("en-US", {
-  year: "numeric", month: "long", day: "numeric",
+  year: "numeric", month: "long", day: "numeric", timeZone: "UTC",
 });
 
 const SITE = "https://gooptimal.io";
