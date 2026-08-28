@@ -60,3 +60,13 @@ export const PAST_PERFORMANCE: { title: string; detail: string }[] = [];
 
 /** Ryan's publication — the content engine, hosted off-site. */
 export const FERMENTED_OPINIONS = "https://fermentedopinions.substack.com/";
+
+// TODO: Ryan to confirm — Web3Forms access key for the whitepaper download gate.
+// Get one free at https://web3forms.com (enter ryan@gooptimal.io; they email the
+// key back). It is a public UUID, not a secret — it is meant to sit in client
+// HTML and only identifies which inbox a submission is delivered to.
+//
+// While this is an unfilled token the whitepaper page skips the form entirely
+// and links straight to the PDF, so the download never breaks waiting on it.
+export const WEB3FORMS_ACCESS_KEY = "{{WEB3FORMS_ACCESS_KEY}}";
+

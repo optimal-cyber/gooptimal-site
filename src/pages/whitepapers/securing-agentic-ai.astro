@@ -4,13 +4,19 @@ import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 import GatewayCanvas from "../../components/GatewayCanvas.astro";
 
-// Whitepaper downloads post here, then Formspree redirects to the PDF.
+// Whitepaper downloads post to Web3Forms, then we redirect to the PDF.
 //
-// This currently shares the contact form's endpoint. Swap this one line for a
-// dedicated endpoint when there is one, so whitepaper leads land in their own
-// inbox instead of beside scoping requests. Until then `_subject` below is what
-// separates the two in the inbox.
-const FORMSPREE_ENDPOINT = "https://formspree.io/f/xovqzpkj";
+// Web3Forms over Formspree: the free tier allows 250 submissions/month rather
+// than 50, that quota is not shared with the contact form, and `redirect` works
+// without paying. The access key is a public UUID by design — it identifies the
+// destination inbox, it is not a credential.
+import { WEB3FORMS_ACCESS_KEY, pending } from "../../data/company.ts";
+
+const WEB3FORMS_ENDPOINT = "https://api.web3forms.com/submit";
+
+// No key yet? Skip the gate rather than render a form that silently drops
+// leads. The page still sells the whitepaper and hands over the PDF.
+const gated = !pending(WEB3FORMS_ACCESS_KEY);
 
 // The gate is soft by design: this file stays at a public URL and is linked
 // from the PDF itself. The form is for attribution, not access control.
@@ -60,15 +66,16 @@ const covers = [
         </p>
       </div>
 
-      <form class="card form" id="wp-form" method="POST" action={FORMSPREE_ENDPOINT} data-pdf={PDF_PATH}>
-        <!-- Formspree config: subject line, post-submit redirect, honeypot trap -->
-        <input type="hidden" name="_subject" value="Optimal · Whitepaper download — Securing Agentic AI" />
-        <!-- _next is a paid Formspree feature and is ignored on the free plan.
-           The script below handles the redirect instead; this stays so the
-           no-JS path works correctly if the account is ever upgraded. -->
-        <input type="hidden" name="_next" value={pdfUrl} />
+      {gated ? (
+      <form class="card form" id="wp-form" method="POST" action={WEB3FORMS_ENDPOINT} data-pdf={PDF_PATH}>
+        <input type="hidden" name="access_key" value={WEB3FORMS_ACCESS_KEY} />
+        <input type="hidden" name="subject" value="Optimal · Whitepaper download — Securing Agentic AI" />
+        <input type="hidden" name="from_name" value="gooptimal.io" />
         <input type="hidden" name="asset" value="Securing Agentic AI" />
-        <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
+        {/* Works on the free tier, so the no-JS path still lands on the PDF. */}
+        <input type="hidden" name="redirect" value={pdfUrl} />
+        {/* Web3Forms' honeypot: any submission with this filled is dropped. */}
+        <input type="checkbox" name="botcheck" class="hp" tabindex="-1" style="display:none" />
 
         <p class="form-h">Get the whitepaper</p>
         <label>Name<input type="text" name="name" required /></label>
@@ -76,18 +83,22 @@ const covers = [
         <label>Organization<input type="text" name="organization" /></label>
         <button type="submit" class="btn btn-primary">Download the whitepaper →</button>
         <p class="status" id="wp-status" role="status" aria-live="polite" hidden></p>
-        <noscript>
-          <p class="muted privacy">
-            JavaScript is off, so the form cannot hand you the file directly.
-            <a href={PDF_PATH}>Download the whitepaper</a> instead.
-          </p>
-        </noscript>
         <p class="muted privacy">
           We use this to know who&rsquo;s reading and to follow up once if it looks
           relevant. No list, no sharing, no tracking pixels. Email
           <a href="mailto:ryan@gooptimal.io">ryan@gooptimal.io</a> and we&rsquo;ll delete it.
         </p>
       </form>
+      ) : (
+      <div class="card form">
+        <p class="form-h">Get the whitepaper</p>
+        <p class="muted privacy">
+          19 pages on bounding what autonomous agents are allowed to do, free and
+          no sign-up.
+        </p>
+        <a class="btn btn-primary" href={PDF_PATH}>Download the whitepaper →</a>
+      </div>
+      )}
     </div>
   </section>
 
@@ -95,10 +106,9 @@ const covers = [
 </Layout>
 
 <script>
-  // Formspree's "custom thank-you redirect" (_next) is a paid feature, so on the
-  // free plan a native POST lands the reader on Formspree's own page and never
-  // hands over the PDF. Submitting over AJAX works on every plan: Formspree
-  // answers with JSON, and we do the redirect ourselves.
+  // Web3Forms' `redirect` field works on the free tier, so the no-JS path is
+  // already correct. Submitting over AJAX is still better: the reader never
+  // bounces through a third-party page, and we can fail open.
   const form = document.getElementById("wp-form");
   const status = document.getElementById("wp-status");
   const pdf = form?.dataset.pdf;
@@ -115,18 +125,17 @@ const covers = [
         body: new FormData(form),
         headers: { Accept: "application/json" },
       });
+      const body = await res.json().catch(() => null);
 
-      if (res.ok) {
+      if (res.ok && body?.success) {
         window.location.href = pdf;
         return;
       }
 
-      // Most likely cause is the monthly submission quota being spent. Never
-      // withhold the file over a backend problem that is not the reader's.
-      const body = await res.json().catch(() => null);
-      const detail = body?.errors?.map((x) => x.message).join(", ");
-      status.textContent = detail
-        ? `Could not record that (${detail}). Opening the whitepaper anyway…`
+      // Never withhold the file over a backend problem that is not the
+      // reader's — a spent quota or a bad key must not cost them the download.
+      status.textContent = body?.message
+        ? `Could not record that (${body.message}). Opening the whitepaper anyway…`
         : "Could not record that. Opening the whitepaper anyway…";
       status.hidden = false;
       setTimeout(() => { window.location.href = pdf; }, 1600);
