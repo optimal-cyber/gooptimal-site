@@ -1,4 +1,4 @@
-Shelved because they sit in the ATO / FedRAMP / authorization-consulting lane
-(a conflict of interest with current employers) or describe a product that does
-not exist yet. Preserved here in-repo (and in git history) for possible rewrite
-into COI-safe AI-security topics later.
+The ATO / FedRAMP / authorization posts shelved here in July 2026 were
+restored to src/content/blog/ in September 2026. What remains is the Q1 2026
+"platform update" post, which describes a product that does not exist yet.
+Preserved here in-repo (and in git history) for possible rewrite later.
