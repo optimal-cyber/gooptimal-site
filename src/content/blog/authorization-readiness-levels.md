@@ -3,7 +3,7 @@ title: "Authorization Readiness Levels"
 image: "/blog/authorization-readiness-levels.png"
 imageAlt: "Authorization Readiness Levels framework: 5 ATO pathways by 9 readiness levels"
 description: "A framework mapping 5 ATO pathways × 9 readiness levels for dual-use companies navigating FedRAMP, DoD RMF, Impact Level, cATO, and CMMC authorization."
-date: 2026-03-26
+date: 2026-09-01
 category: "Industry Insights"
 tags:
   - "ATO"
