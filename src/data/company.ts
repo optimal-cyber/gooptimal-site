@@ -71,3 +71,10 @@ export const FERMENTED_OPINIONS = "https://fermentedopinions.substack.com/";
 // to linking the PDF directly, so the download survives a key rotation.
 export const WEB3FORMS_ACCESS_KEY = "93c34072-aab8-4525-9dcb-e9d361c8c696";
 
+// Web3Forms access key for the /contact scoping-call form ("Lead Generation",
+// registered to gooptimal.io/contact). Its own form so contact requests get a
+// separate dashboard and submission list from whitepaper downloads — note the
+// 250/month free quota is account-wide and shared across both keys.
+// Public by design, same as above.
+export const WEB3FORMS_CONTACT_KEY = "2dee866f-c7c3-486f-a846-b9501e7df2d7";
+

@@ -4,14 +4,14 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import GatewayCanvas from "../components/GatewayCanvas.astro";
 import VetBadge from "../components/VetBadge.astro";
-import { CAGE, UEI, NAICS_CODES, capabilityStatementHref, pending, WEB3FORMS_ACCESS_KEY } from "../data/company.ts";
+import { CAGE, UEI, NAICS_CODES, capabilityStatementHref, pending, WEB3FORMS_CONTACT_KEY } from "../data/company.ts";
 
 // The old Formspree form (f/xovqzpkj) now returns "Form not found" — dead
 // endpoint, submissions silently lost. Scoping requests post to Web3Forms
-// instead, on the same access key as the whitepaper gate; the `subject`
-// hidden field is what tells the two apart in the inbox.
+// instead, on its own form ("Lead Generation") so scoping requests keep a
+// separate dashboard and submission list from whitepaper downloads.
 const WEB3FORMS_ENDPOINT = "https://api.web3forms.com/submit";
-const formLive = !pending(WEB3FORMS_ACCESS_KEY);
+const formLive = !pending(WEB3FORMS_CONTACT_KEY);
 
 // What a contracting officer or a prime's subcontracts group looks for before
 // they bother with the form. NAICS renders once the codes are confirmed.
@@ -94,7 +94,7 @@ const contactSchema = {
       {formLive ? (
       <form class="card form" id="contact-form" method="POST" action={WEB3FORMS_ENDPOINT}>
         <!-- Web3Forms config: destination key, email subject, honeypot spam trap -->
-        <input type="hidden" name="access_key" value={WEB3FORMS_ACCESS_KEY} />
+        <input type="hidden" name="access_key" value={WEB3FORMS_CONTACT_KEY} />
         <input type="hidden" name="subject" value="Optimal · Scoping call request" />
         <input type="hidden" name="from_name" value="gooptimal.io" />
         <input type="checkbox" name="botcheck" class="hp" tabindex="-1" style="display:none" />
