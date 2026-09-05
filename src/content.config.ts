@@ -11,6 +11,8 @@ const blog = defineCollection({
     tags: z.array(z.string()).default([]),
     image: z.string().optional(),
     imageAlt: z.string().optional(),
+    /** Overrides `image` for og/social cards only (1200x630); the page hero still uses `image`. */
+    socialImage: z.string().optional(),
   }),
 });
 

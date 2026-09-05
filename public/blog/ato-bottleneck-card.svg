@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" font-family="Inter, ui-sans-serif, -apple-system, 'Segoe UI', Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#08090d"/><stop offset="1" stop-color="#0d1017"/></linearGradient>
+    <linearGradient id="sunset" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ff9a4d"/><stop offset="0.6" stop-color="#ff6a3d"/><stop offset="1" stop-color="#ff5c72"/></linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <text x="80" y="96" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="15" letter-spacing="4" fill="#ff8a3d">FIELD NOTES · THE ATO BOTTLENECK</text>
+
+  <text x="80" y="182" font-size="58" font-weight="700" fill="#eef1f7">18 months to authorize.</text>
+  <text x="80" y="254" font-size="58" font-weight="700" fill="#eef1f7"><tspan fill="#ff8a3d">Two of them</tspan> touch security work.</text>
+
+  <!-- 1040px = 18 months, fat bar -->
+  <g>
+    <rect x="80"   y="330" width="287" height="64" rx="6" fill="#3d4557"/>
+    <rect x="369"  y="330" width="171" height="64" rx="6" fill="#4a5568"/>
+    <rect x="542"  y="330" width="229" height="64" rx="6" fill="#57637a"/>
+    <rect x="773"  y="330" width="229" height="64" rx="6" fill="#646f88"/>
+    <rect x="1004" y="330" width="116" height="64" rx="6" fill="url(#sunset)"/>
+  </g>
+  <text x="541" y="368" text-anchor="middle" font-size="19" fill="#cdd3e0">sixteen months of paperwork, evidence chasing, and queues</text>
+
+  <line x1="1062" y1="402" x2="1062" y2="428" stroke="#ff8a3d" stroke-width="2"/>
+  <text x="1120" y="452" text-anchor="end" font-size="19" fill="#ff8a3d">the security work</text>
+
+  <text x="80" y="560" font-size="17" fill="#9aa3b2">Why authorization takes so long, and what actually fixes it.</text>
+  <text x="1120" y="560" text-anchor="end" font-family="ui-monospace, Menlo, monospace" font-size="15" letter-spacing="2" fill="#ff8a3d">gooptimal.io</text>
+</svg>

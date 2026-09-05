@@ -1,6 +1,7 @@
 ---
 title: "The ATO Bottleneck: Why Authorization Takes So Long and What Actually Fixes It"
 image: "/blog/ato-bottleneck.png"
+socialImage: "/blog/ato-bottleneck-card.png"
 imageAlt: "The document-driven ATO pipeline, 12 to 18 months, versus the continuous evidence-driven model measured in weeks"
 description: "The ATO process was designed to manage risk. Instead it has become the risk, delaying mission-critical deployments by 12 to 18 months while actual security posture degrades. Where the time really goes, why the Pentagon's SWFT and CSRMC push is necessary but not sufficient, and what actually fixes it."
 date: 2026-09-05
