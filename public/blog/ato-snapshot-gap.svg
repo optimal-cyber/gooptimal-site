@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1456 420" width="1456" height="420" font-family="Inter, ui-sans-serif, -apple-system, 'Segoe UI', Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#08090d"/><stop offset="1" stop-color="#0d1017"/></linearGradient>
+    <marker id="dimArrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0.5 L7.5 4 L0 7.5 Z" fill="#4a5568"/></marker>
+  </defs>
+  <rect width="1456" height="420" fill="url(#bg)"/>
+  <text x="64" y="62" font-size="24" font-weight="600" fill="#eef1f7">The Authorizing Official decides from a still photograph</text>
+
+  <!-- the live system -->
+  <rect x="64" y="110" width="360" height="204" rx="14" fill="#0e1018" stroke="rgba(255,255,255,0.08)"/>
+  <text x="92" y="150" font-size="15" font-weight="600" fill="#eef1f7">The live system</text>
+  <polyline points="92,240 132,238 158,214 184,246 216,222 244,248 276,212 308,240 338,226 368,244 396,232" fill="none" stroke="#ff8a3d" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+  <text x="92" y="292" font-size="12.5" fill="#6b7382">changes with every deploy, patch,</text>
+  <text x="92" y="310" font-size="12.5" fill="#6b7382">and dependency bump</text>
+
+  <line x1="438" y1="212" x2="558" y2="212" stroke="#4a5568" stroke-width="1.5" marker-end="url(#dimArrow)"/>
+  <text x="500" y="194" text-anchor="middle" font-family="ui-monospace, Menlo, monospace" font-size="11" fill="#6b7382">captured once</text>
+
+  <!-- the package -->
+  <rect x="574" y="110" width="310" height="204" rx="14" fill="#0e1018" stroke="rgba(255,255,255,0.16)" stroke-dasharray="6 5"/>
+  <text x="602" y="150" font-size="15" font-weight="600" fill="#eef1f7">The package</text>
+  <g font-family="ui-monospace, Menlo, monospace" font-size="12.5" fill="#9aa3b2">
+    <text x="602" y="188">SSP · hundreds of pages</text>
+    <text x="602" y="212">SAR · findings and tests</text>
+    <text x="602" y="236">POA&amp;M · promised fixes</text>
+  </g>
+  <text x="602" y="292" font-size="12.5" fill="#6b7382">a snapshot, weeks or</text>
+  <text x="602" y="310" font-size="12.5" fill="#6b7382">months old</text>
+
+  <line x1="898" y1="212" x2="1018" y2="212" stroke="#4a5568" stroke-width="1.5" marker-end="url(#dimArrow)"/>
+  <text x="960" y="194" text-anchor="middle" font-family="ui-monospace, Menlo, monospace" font-size="11" fill="#6b7382">lands on the desk</text>
+
+  <!-- the decision -->
+  <rect x="1034" y="110" width="358" height="204" rx="14" fill="#0e1018" stroke="rgba(255,138,61,0.35)"/>
+  <text x="1062" y="150" font-size="15" font-weight="600" fill="#eef1f7">The decision</text>
+  <text x="1062" y="188" font-size="13" fill="#9aa3b2">approve it, delay it, or reject it,</text>
+  <text x="1062" y="210" font-size="13" fill="#9aa3b2">with their name on the letter</text>
+  <text x="1062" y="272" font-size="13" fill="#ff8a3d">based on how the system</text>
+  <text x="1062" y="292" font-size="13" fill="#ff8a3d">used to look</text>
+
+  <text x="64" y="378" font-size="14" fill="#ff8a3d">The gap between the live system and the package is the risk nobody signs for.</text>
+</svg>

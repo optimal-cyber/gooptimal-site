@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1456 450" width="1456" height="450" font-family="Inter, ui-sans-serif, -apple-system, 'Segoe UI', Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#08090d"/><stop offset="1" stop-color="#0d1017"/></linearGradient>
+    <linearGradient id="sunset" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ff9a4d"/><stop offset="0.6" stop-color="#ff6a3d"/><stop offset="1" stop-color="#ff5c72"/></linearGradient>
+  </defs>
+  <rect width="1456" height="450" fill="url(#bg)"/>
+  <text x="64" y="62" font-size="24" font-weight="600" fill="#eef1f7">What an authorization push does to an acquired engineering team</text>
+  <text x="64" y="92" font-size="14" fill="#9aa3b2">Illustrative capacity allocation</text>
+
+  <!-- 100% = 1092px wide, bars start at x=300; 2px gaps -->
+  <text x="64" y="187" font-size="13.5" fill="#9aa3b2">Before acquisition</text>
+  <g>
+    <rect x="300" y="160" width="708" height="44" rx="4" fill="url(#sunset)"/>
+    <rect x="1010" y="160" width="271" height="44" rx="4" fill="#5f6a80"/>
+    <rect x="1283" y="160" width="109" height="44" rx="4" fill="#3d4557"/>
+  </g>
+  <g font-family="ui-monospace, Menlo, monospace" font-size="12" text-anchor="middle">
+    <text x="654" y="187" fill="#1a0e06" font-weight="600">65%</text>
+    <text x="1145" y="187" fill="#cdd3e0">25%</text>
+    <text x="1337" y="187" fill="#cdd3e0">10%</text>
+  </g>
+
+  <text x="64" y="287" font-size="13.5" fill="#9aa3b2">During the ATO push</text>
+  <g>
+    <rect x="300" y="260" width="107" height="44" rx="4" fill="url(#sunset)"/>
+    <rect x="409" y="260" width="216" height="44" rx="4" fill="#5f6a80"/>
+    <rect x="627" y="260" width="765" height="44" rx="4" fill="#3d4557"/>
+  </g>
+  <g font-family="ui-monospace, Menlo, monospace" font-size="12" text-anchor="middle">
+    <text x="353" y="287" fill="#1a0e06" font-weight="600">10%</text>
+    <text x="517" y="287" fill="#cdd3e0">20%</text>
+    <text x="1009" y="287" fill="#cdd3e0">70%</text>
+  </g>
+
+  <!-- legend -->
+  <g font-size="12.5" fill="#9aa3b2">
+    <rect x="300" y="346" width="14" height="14" rx="3" fill="url(#sunset)"/>
+    <text x="322" y="358">New product development</text>
+    <rect x="530" y="346" width="14" height="14" rx="3" fill="#5f6a80"/>
+    <text x="552" y="358">Maintenance and tech debt</text>
+    <rect x="768" y="346" width="14" height="14" rx="3" fill="#3d4557"/>
+    <text x="790" y="358">Compliance and evidence work</text>
+  </g>
+  <text x="64" y="410" font-size="14" fill="#ff8a3d">The roadmap that justified the deal is the first casualty.</text>
+</svg>

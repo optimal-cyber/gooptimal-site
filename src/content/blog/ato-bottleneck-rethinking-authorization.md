@@ -27,6 +27,9 @@ This is not a new observation. But the gap between what the ATO process could be
 
 When you break down an 18-month ATO timeline, the distribution of effort is revealing. Very little of that time is spent on what most people would consider "security work." The majority goes to documentation production, evidence assembly, organizational coordination, and waiting in queues. Understanding where the bottlenecks cluster is the first step toward fixing them.
 
+![Illustrative breakdown of an 18 month authorization: five months of SSP writing, three of evidence collection, four of assessment, four in queues, two of security engineering](/blog/ato-time-breakdown.png)
+*An illustrative 18 month authorization. The security engineering is the sliver.*
+
 ### Documentation That Describes Instead of Proves
 
 The [NIST Risk Management Framework (RMF)](https://csrc.nist.gov/projects/risk-management/about-rmf) structures the ATO process through seven phases: Prepare, Categorize, Select, Implement, Assess, Authorize, and Monitor. At the center of most implementations is the System Security Plan (SSP), a document that describes how each [NIST 800-53](https://csrc.nist.gov/publications/detail/sp/800-53/rev-5/final) control is implemented for a given system.
@@ -57,6 +60,9 @@ At the center of every ATO is a human being, the Authorizing Official, who is le
 
 In the current model, an AO is handed a stack of static documents: the SSP, the Security Assessment Report (SAR), the Plan of Action and Milestones (POA&M). From that stack they are asked to make a risk determination. These documents represent a point-in-time snapshot assembled weeks or months ago. The AO has no way to verify whether the system still looks the way the documents describe. They are making a decision about a moving system based on a still photograph.
 
+![The live system, the static package assembled from it, and the AO decision made from that snapshot](/blog/ato-snapshot-gap.png)
+*The package describes the system as it was. The AO signs for the system as it is.*
+
 When the information is incomplete, ambiguous, or stale, the AO faces an impossible choice: approve a system they are not confident about, delay the authorization to demand more information (adding months), or reject and trigger a full rework cycle. Risk-averse AOs, which is most of them because their name is on the authorization letter, default to delay. Not because they are obstructionist, but because the information they are receiving does not give them the confidence to decide.
 
 > The ATO bottleneck is not fundamentally a documentation problem or a process problem. It is an information quality problem. Authorizing Officials are making high-stakes decisions based on low-fidelity evidence. Fix the evidence, and the decisions get faster.
@@ -67,11 +73,17 @@ Nothing exposes the cost of the bottleneck like an acquisition. When a defense p
 
 The numbers are brutal. A traditional FedRAMP Rev 5 authorization runs 18 to 24 months and routinely costs more than $3 million in consultant fees, 3PAO assessments, and internal labor. For that entire stretch the acquired team's roadmap effectively freezes: the senior engineers who were supposed to be building the integrated product are instead writing control narratives, retrofitting audit logging, and replacing third-party dependencies that cannot clear federal requirements. The freeze lands at exactly the moment the board expects cross-sell revenue to appear. M&A research has long held that 30 to 50 percent of anticipated deal value evaporates when integration drags, and post-merger attrition compounds it: roughly half of employees leave within the first year of a merger, and the engineers who walk are usually the ones who knew how the system actually works.
 
+![Illustrative engineering capacity before acquisition versus during the authorization push, with new product development collapsing from 65 to 10 percent](/blog/ato-capacity-shift.png)
+*Illustrative capacity allocation before acquisition and during the authorization push.*
+
 None of that spending buys security. It buys documentation of security, produced by hand, under deadline, by a team that would rather be shipping. That is the compliance tax in its purest form, and the escape routes are the same ones this post argues for: inherit as much of the boundary as possible instead of building it, generate evidence from the pipeline instead of writing it, and authorize continuously instead of annually. Under [FedRAMP 20x](/blog/fedramp-20x-reality-check/) pilots, simple environments have cleared authorization in as little as 90 days. The same mechanics that fix the bottleneck for a program office fix it for a deal thesis.
 
 ## The Pentagon Has Noticed. The Bottleneck Has Not Moved.
 
 The pressure to fix this now comes from the very top of the department. In March 2025, Secretary of War Pete Hegseth directed the department to make [modern software acquisition the default](https://www.airandspaceforces.com/pentagon-opening-throttle-new-rules-software/), pushing programs onto the Software Acquisition Pathway and commercial-first contracting. The CIO's office followed with the [Software Fast Track](https://defensescoop.com/2025/06/09/katie-arrington-swft-software-fast-track/), launched as a pilot in June 2025 and made the department's default road for software authorization by early 2026. In September 2025 the department went after the framework itself, announcing the [Cybersecurity Risk Management Construct](https://breakingdefense.com/2025/09/dod-issues-replacement-for-risk-management-framework/) to replace the RMF: five phases aligned to how systems are actually built, with automation, continuous monitoring, and reciprocity as first-class requirements. Congress leaned the same way, mandating authorization reciprocity in the FY25 NDAA.
+
+![Timeline of the 2024 to 2026 policy push, from the FY25 NDAA through SWFT and CSRMC, ending with ATO timelines still stalling in mid 2026](/blog/ato-policy-timeline.png)
+*Eighteen months of policy momentum, and the queue at the end has not moved.*
 
 That is the right diagnosis at the top, and it deserves to be said plainly: leadership deciding that speed is a security property, rather than a threat to one, is real progress. But a year and a half into the push, [reporting from inside the building](https://www.defenseone.com/sponsors/2026/06/policy-says-move-faster-so-why-are-ato-timelines-still-stalling-mission-software/413706/) says ATO timelines are still stalling. The governing instructions that would give Authorizing Officials legal standing to decide differently are still catching up to the memos, and no memo can manufacture the thing the process is actually starved of: current, machine-verifiable evidence. This is the systemic part. The bottleneck does not live in the framework's name. It lives in the evidence layer, the organizational queues, the incentives, and the workforce, and those survive a rebranding intact. Replace the RMF with the CSRMC and keep hand-assembled evidence, and you have the old process wearing a new acronym. Policy has opened the lane for continuous, automated, reciprocal authorization. The evidence layer still decides who gets to drive in it.
 
