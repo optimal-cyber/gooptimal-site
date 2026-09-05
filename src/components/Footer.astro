@@ -5,6 +5,7 @@ import {
   UEI,
   NAICS_CODES,
   FERMENTED_OPINIONS,
+  FERMENTED_OPINIONS_PODCAST,
   capabilityStatementHref,
   pending,
 } from "../data/company.ts";
@@ -32,15 +33,22 @@ const cols = [
     ],
   },
   {
+    title: "Resources",
+    links: [
+      { href: "/blog", label: "Field notes" },
+      { href: "/whitepapers/securing-agentic-ai/", label: "Whitepaper" },
+      { href: FERMENTED_OPINIONS_PODCAST, label: "Podcast ↗" },
+      { href: FERMENTED_OPINIONS, label: "Newsletter ↗" },
+      { href: "https://github.com/optimal-cyber/AI-Gateway", label: "Reference architecture ↗" },
+    ],
+  },
+  {
     title: "Company",
     links: [
       { href: "/team", label: "Team" },
       { href: capabilityStatementHref, label: "Capability statement" },
       { href: "/contact", label: "Contact" },
-      { href: "/blog", label: "Field notes" },
-      { href: FERMENTED_OPINIONS, label: "Fermented Opinions ↗" },
       { href: "/nineline", label: "What we build (NINELINE)" },
-      { href: "https://github.com/optimal-cyber/AI-Gateway", label: "Reference architecture ↗" },
     ],
   },
 ];
@@ -108,5 +116,5 @@ const govcon = [
     text-transform: uppercase; letter-spacing: 0.14em; color: var(--text-faint);
   }
   .bottom { display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; margin-top: 22px; font-size: 13px; }
-  @media (min-width: 820px) { .top { grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 48px; } }
+  @media (min-width: 820px) { .top { grid-template-columns: 1.6fr 1fr 1fr 1fr 1fr; gap: 40px; } }
 </style>

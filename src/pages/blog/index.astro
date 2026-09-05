@@ -3,6 +3,7 @@ import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 import { getCollection } from "astro:content";
+import { FERMENTED_OPINIONS_PODCAST, FERMENTED_OPINIONS } from "../../data/company.ts";
 
 const posts = (await getCollection("blog")).sort(
   (a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf()
@@ -63,6 +64,22 @@ const blogSchema = {
           </a>
         ))}
       </div>
+
+      <!-- The podcast lives on Substack; this is its on-site home. -->
+      <aside class="card podcast">
+        <div class="pod-copy">
+          <span class="eyebrow">The podcast</span>
+          <h2 class="pod-h">Fermented Opinions</h2>
+          <p class="muted pod-sub">
+            The technology behind national security, and the people betting the
+            mission on it. Conversations from the same trenches these notes come from.
+          </p>
+        </div>
+        <div class="pod-ctas">
+          <a class="btn btn-primary" href={FERMENTED_OPINIONS_PODCAST}>Listen to the podcast →</a>
+          <a class="btn btn-ghost" href={FERMENTED_OPINIONS}>Read the newsletter</a>
+        </div>
+      </aside>
     </div>
   </section>
 
@@ -85,4 +102,9 @@ const blogSchema = {
   .post h3 { font-size: 1.2rem; line-height: 1.25; }
   .post .excerpt { font-size: 14px; line-height: 1.6; flex: 1; }
   .post .date { font-size: 12px; color: var(--text-faint); font-family: var(--font-display); }
+  .podcast { margin-top: 42px; display: grid; gap: 24px; align-items: center; }
+  .pod-h { font-size: 1.5rem; margin-top: 10px; }
+  .pod-sub { margin-top: 10px; font-size: 14.5px; line-height: 1.65; max-width: 56ch; }
+  .pod-ctas { display: flex; flex-wrap: wrap; gap: 12px; }
+  @media (min-width: 820px) { .podcast { grid-template-columns: 1fr auto; } }
 </style>

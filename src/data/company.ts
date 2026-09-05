@@ -61,6 +61,9 @@ export const PAST_PERFORMANCE: { title: string; detail: string }[] = [];
 /** Ryan's publication — the content engine, hosted off-site. */
 export const FERMENTED_OPINIONS = "https://fermentedopinions.substack.com/";
 
+/** The Fermented Opinions podcast tab on the same Substack. */
+export const FERMENTED_OPINIONS_PODCAST = "https://fermentedopinions.substack.com/podcast";
+
 // Web3Forms access key for the whitepaper download gate ("Whitepaper Form
 // Request", registered to gooptimal.io/whitepapers/securing-agentic-ai).
 //
