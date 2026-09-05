@@ -146,7 +146,9 @@ p { margin: 0; }
   margin-top: 1.6em; margin-bottom: 0.1em;
 }
 .prose h4 { color: var(--text); font-weight: 600; margin-top: 1.4em; }
-.prose p { margin: 0; }
+.prose p { margin-bottom: 0; }
+.prose > p:first-child { margin-top: 0; }
+.prose blockquote > p, .prose li > p { margin: 0; }
 .prose a { color: var(--sunset); text-decoration: none; border-bottom: 1px solid color-mix(in srgb, var(--sunset) 35%, transparent); }
 .prose a:hover { color: var(--ember); }
 .prose a.btn { border-bottom: 0; }
