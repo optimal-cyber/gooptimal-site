@@ -4,7 +4,14 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import GatewayCanvas from "../components/GatewayCanvas.astro";
 import VetBadge from "../components/VetBadge.astro";
-import { CAGE, UEI, NAICS_CODES, capabilityStatementHref, pending } from "../data/company.ts";
+import { CAGE, UEI, NAICS_CODES, capabilityStatementHref, pending, WEB3FORMS_ACCESS_KEY } from "../data/company.ts";
+
+// The old Formspree form (f/xovqzpkj) now returns "Form not found" — dead
+// endpoint, submissions silently lost. Scoping requests post to Web3Forms
+// instead, on the same access key as the whitepaper gate; the `subject`
+// hidden field is what tells the two apart in the inbox.
+const WEB3FORMS_ENDPOINT = "https://api.web3forms.com/submit";
+const formLive = !pending(WEB3FORMS_ACCESS_KEY);
 
 // What a contracting officer or a prime's subcontracts group looks for before
 // they bother with the form. NAICS renders once the codes are confirmed.
@@ -84,10 +91,13 @@ const contactSchema = {
         </div>
       </div>
 
-      <form class="card form" method="POST" action="https://formspree.io/f/xovqzpkj">
-        <!-- Formspree config: email subject + honeypot spam trap -->
-        <input type="hidden" name="_subject" value="Optimal · Scoping call request" />
-        <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
+      {formLive ? (
+      <form class="card form" id="contact-form" method="POST" action={WEB3FORMS_ENDPOINT}>
+        <!-- Web3Forms config: destination key, email subject, honeypot spam trap -->
+        <input type="hidden" name="access_key" value={WEB3FORMS_ACCESS_KEY} />
+        <input type="hidden" name="subject" value="Optimal · Scoping call request" />
+        <input type="hidden" name="from_name" value="gooptimal.io" />
+        <input type="checkbox" name="botcheck" class="hp" tabindex="-1" style="display:none" />
         <div class="row">
           <label>Name<input type="text" name="name" required /></label>
           <label>Work email<input type="email" name="email" required /></label>
@@ -108,12 +118,56 @@ const contactSchema = {
         </div>
         <label>What do you need?<textarea name="message" rows="4" placeholder="Models, clouds, timeline…"></textarea></label>
         <button type="submit" class="btn btn-primary">Send request →</button>
+        <p class="status" id="contact-status" role="status" aria-live="polite" hidden></p>
       </form>
+      ) : (
+      <div class="card form">
+        <p>The request form is briefly offline. Email
+          <a href="mailto:ryan@gooptimal.io">ryan@gooptimal.io</a> and we&rsquo;ll take it from there.</p>
+      </div>
+      )}
     </div>
   </section>
 
   <Footer />
 </Layout>
+
+<script>
+  // Submit over AJAX so the visitor never bounces through Web3Forms' own
+  // thank-you page — success and failure both land as an inline note here.
+  const form = document.getElementById("contact-form");
+  const status = document.getElementById("contact-status");
+
+  form?.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const button = form.querySelector("button[type=submit]");
+    button.disabled = true;
+    status.hidden = true;
+
+    try {
+      const res = await fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { Accept: "application/json" },
+      });
+      const body = await res.json().catch(() => null);
+
+      if (res.ok && body?.success) {
+        status.textContent = "Request sent — we'll get back to you within one business day.";
+        status.hidden = false;
+        form.reset();
+      } else {
+        status.textContent = "That didn't go through. Email ryan@gooptimal.io and we'll take it from there.";
+        status.hidden = false;
+        button.disabled = false;
+      }
+    } catch {
+      status.textContent = "Network error — email ryan@gooptimal.io and we'll take it from there.";
+      status.hidden = false;
+      button.disabled = false;
+    }
+  });
+</script>
 
 <style>
   .wrap { display: grid; gap: 40px; align-items: start; }
@@ -147,6 +201,7 @@ const contactSchema = {
   }
   input:focus, select:focus, textarea:focus { border-color: var(--sunset); }
   .form .btn { justify-self: start; margin-top: 6px; }
+  .status { font-size: 13px; color: var(--sunset); }
   @media (min-width: 900px) {
     .wrap { grid-template-columns: 1fr 1fr; gap: 64px; }
     .row { grid-template-columns: 1fr 1fr; }
