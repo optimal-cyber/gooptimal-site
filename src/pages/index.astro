@@ -27,95 +27,15 @@ const pillars = [
     title: "AI you can actually use on the mission",
     body: "Most GCC High shops stop at email and files. We stand up governed access to the frontier models authorized for your sovereign cloud — one gateway, fail-closed guardrails, a defensible audit trail — plus assessment and red-teaming of the AI you deploy.",
     points: ["Governed AI gateway", "Adversarial AI red-teaming", "AI security assessments", "Secure-adoption advisory"],
-    href: "#services",
-    cta: "AI security services →",
+    href: "/nineline",
+    cta: "See what we build, running →",
   },
 ];
 
 // Managed GCC High — the four bands of the managed service.
-const gccBands = [
-  { idx: "01", n: "Build the enclave", d: "A compliant Microsoft 365 GCC High tenant — Entra ID, Conditional Access, Defender, and Purview configured to a CUI-ready baseline from day one." },
-  { idx: "02", n: "Migrate cleanly", d: "Mailboxes, files, Teams, and identities moved from Commercial or GCC into GCC High with spillage controls — no CUI left in the wrong boundary." },
-  { idx: "03", n: "Engineer the controls", d: "The NIST SP 800-171 control set implemented and documented — SSP and POA&M, evidence collected, ready for your C3PAO's CMMC Level 2 assessment." },
-  { idx: "04", n: "Run it for you", d: "Ongoing administration, patching, monitoring, user lifecycle, and help desk — the managed operations that keep the enclave compliant after go-live." },
-];
-
 // Advisory-led services — the four engagements Optimal runs, arced
 // find it → prove it → build the controls → keep the program governed.
 // Each carries concrete scope and a named deliverable, not benefit copy.
-const services = [
-  {
-    idx: "01",
-    title: "AI Security Assessment",
-    duration: "typically 2–4 weeks",
-    accent: "var(--sunset)",
-    lede: "A structured evaluation of the AI systems you're putting into production — models, prompts, retrieval, tool calls, identities, and the plumbing around them. We map the attack paths an adversary would actually take, not a control checklist.",
-    scopeLabel: "We examine",
-    scope: [
-      "System- and user-prompt trust boundaries",
-      "Retrieval / RAG pipelines and context injection",
-      "Tool- and function-call authorization",
-      "Model output handling and downstream sinks",
-      "Secrets, PII, and training-data exposure",
-    ],
-    outcome:
-      "Findings mapped to the OWASP LLM Top 10 and MITRE ATLAS, ranked attack narratives with reproduction steps, prioritized remediation, and a retest.",
-  },
-  {
-    idx: "02",
-    title: "Adversarial AI Testing",
-    duration: "typically 4–6 weeks",
-    accent: "var(--steel)",
-    lede: "Offensive, hands-on testing of AI-enabled systems and agents. We operate the way an adversary would, then show you exactly how a failure happens — and the specific control that closes it.",
-    scopeLabel: "We attempt",
-    scope: [
-      "Direct and indirect prompt injection",
-      "Jailbreaks and system-prompt extraction",
-      "Model and context manipulation",
-      "Data, secret, and model exfiltration",
-      "Agent abuse and excessive-agency chains",
-    ],
-    outcome:
-      "Reproducible attack chains with evidence, impact rated to your environment, and the control that would have stopped each one.",
-  },
-  {
-    idx: "03",
-    title: "Governed AI Engineering",
-    duration: "typically 4–8 weeks",
-    accent: "var(--coral)",
-    lede: "Our signature engagement. We design and stand up the access layer for AI in the cloud you already license — Azure, AWS, GCP, or GovCloud — built on our open-source Zero Trust reference architecture.",
-    scopeLabel: "We build",
-    scope: [
-      "One authenticated gateway to every approved model — Azure OpenAI, Bedrock, Vertex, or self-hosted",
-      "Per-key virtual credentials and rate limits",
-      "Fail-closed prompt and response guardrails",
-      "Default-deny egress, pinned to an allowlist",
-      "A request-ID-joined audit trail reviewers read directly",
-    ],
-    outcome:
-      "A governed, self-hostable control plane you own and operate — no SDK rewrite, no vendor lock-in, no new accreditation boundary.",
-  },
-  {
-    idx: "04",
-    title: "Secure AI Adoption Advisory",
-    // No duration: advisory is scoped to a client's cycle, and inventing a
-    // week count for it would be the only unearned number on the page.
-    duration: "scoped to your cycle",
-    accent: "var(--seafoam)",
-    lede: "Help your teams adopt AI without flying blind. Engineering-grounded guidance scoped to your risk profile and grounded in real attack paths — not paperwork.",
-    scopeLabel: "We deliver",
-    scope: [
-      "AI usage patterns and acceptable-use guardrails",
-      "Threat models for your specific AI workloads",
-      "A secure-adoption roadmap tied to real risk",
-      "Reference designs your engineers can follow",
-      "Working sessions with the teams shipping AI",
-    ],
-    outcome:
-      "Your people know the guardrails and why they exist; you get the evidence they held.",
-  },
-];
-
 // Standard security-assessment methodology, written to AI systems.
 const phases = [
   {
@@ -186,30 +106,7 @@ const flow = [
   },
 ];
 
-const work = [
-  {
-    tag: "Regulated cloud",
-    title: "Governed AI inside the cloud you already operate",
-    body: "Route agents and users to approved models with a full audit trail. Every request authorized, every token logged — without standing up a new accreditation boundary.",
-    href: "/use-cases/regulated-cloud",
-    cta: "Regulated cloud →",
-  },
-  {
-    tag: "On-prem & air-gapped",
-    title: "Frontier-class AI with zero egress",
-    body: "Self-host the gateway and models where nothing leaves the wire. Default-deny egress is structural, not a checkbox — the same control bands, fully disconnected.",
-    href: "/use-cases/air-gapped",
-    cta: "On-prem & air-gapped →",
-  },
-  {
-    tag: "Agentic workloads",
-    title: "Keep autonomous agents accountable",
-    body: "Per-key identity and rate limits, model and tool allowlists, and an audit of every call an agent makes — so autonomy never means unaccountable.",
-    href: "/use-cases/agentic",
-    cta: "Agentic workloads →",
-  },
-];
-
+// OWASP Top 10 for LLM Applications (2025) — the threat taxonomy we test to.
 const faqs = [
   {
     q: "What does Optimal do?",
@@ -226,18 +123,6 @@ const faqs = [
   {
     q: "Is Optimal a product company or a services firm?",
     a: "Advisory-led. We deliver engagements, not a SaaS subscription. The control pattern we implement is published as an open-source Zero Trust reference architecture — so you can read exactly what we build before we build it, and keep operating it yourself afterward.",
-  },
-  {
-    q: "How do you test AI systems for vulnerabilities?",
-    a: "We test real attack paths — prompt injection, model and context manipulation, data and secret extraction, and abuse-case simulation — scoped to your specific environment and risk profile rather than a generic checklist. Findings are measured against the OWASP LLM Top 10 and MITRE ATLAS and come with the evidence and the fix.",
-  },
-  {
-    q: "What is prompt injection, and why does it matter?",
-    a: "Prompt injection manipulates an AI system through crafted input, causing it to ignore its instructions, expose data, or take actions it shouldn't. It's one of the most active threats facing any organization deploying large language models and agents — and one of the first things we test.",
-  },
-  {
-    q: "How do you help teams adopt AI safely?",
-    a: "We build practical, engineering-grounded usage patterns, threat models, and secure-adoption roadmaps tied to real-world risk. We review how AI is actually being used, identify where data and access are exposed, and give your teams guardrails they can follow — so adoption moves fast without moving blind.",
   },
   {
     q: "We already have Azure, AWS, or GCP — can you work in our cloud?",
@@ -271,16 +156,14 @@ const faqSchema = {
   <section class="hero relative">
     <div class="glow"></div>
     <GatewayCanvas variant="hero" />
+    <div class="hero-scrim" aria-hidden="true"></div>
     <div class="container z">
       <span class="eyebrow">Managed GCC High · Governed AI · SDVOSB</span>
-      <h1 class="display">The sovereign environment<br /><span class="grad">your mission runs on.</span></h1>
+      <h1 class="display">Your GCC&nbsp;High enclave.<br /><span class="grad">Built, managed, CMMC-ready.</span></h1>
       <p class="lead">
-        Optimal builds, migrates, and manages CMMC-ready Microsoft&nbsp;365 GCC&nbsp;High enclaves for
-        the defense industrial base — and stands up the governed AI that runs safely inside them.
-        One veteran-owned partner for the compliant cloud and the intelligence on top of it.
-      </p>
-      <p class="hero-caps">
-        GCC&nbsp;High enclave <span>/</span> CMMC readiness <span>/</span> Governed AI <span>/</span> Red team
+        Optimal builds, migrates, and runs Microsoft&nbsp;365 GCC&nbsp;High for defense
+        contractors — and stands up the governed AI that works safely inside it.
+        One veteran-owned partner for the enclave and the intelligence on top of it.
       </p>
       <div class="cta-row">
         <a href="/contact" class="btn btn-primary">Book a scoping call →</a>
@@ -314,6 +197,21 @@ const faqSchema = {
           <a href={capabilityStatementHref} class="usecase-link">Download capability statement →</a>
         </div>
       </div>
+      <!-- Proof of work: no customer logos yet, so the evidence is the work itself. -->
+      <div class="proof-row">
+        <a class="proof" href="https://github.com/optimal-cyber/AI-Gateway">
+          <span class="proof-k">Open reference architecture</span>
+          <span class="proof-v muted">The Zero Trust AI gateway, public on GitHub ↗</span>
+        </a>
+        <a class="proof" href="/whitepapers/securing-agentic-ai/">
+          <span class="proof-k">Published whitepaper</span>
+          <span class="proof-v muted">Securing Agentic AI — threat model to control crosswalk</span>
+        </a>
+        <a class="proof" href="/blog">
+          <span class="proof-k">Field notes</span>
+          <span class="proof-v muted">How we think about ATOs, boundaries, and agents</span>
+        </a>
+      </div>
     </div>
   </section>
 
@@ -342,130 +240,21 @@ const faqSchema = {
     </div>
   </section>
 
-  <!-- MANAGED GCC HIGH -->
-  <section id="gcc-high" class="section gcc relative">
+  <!-- ARCHITECTURE / HOW IT WORKS -->
+  <section id="how" class="section how relative">
     <div class="glow"></div>
     <div class="container z">
       <div class="sec-head wide">
-        <span class="ix">Managed GCC High · For the DIB</span>
-        <h2 class="h2">A CMMC-ready enclave, built and run for you.</h2>
-        <p class="lead" style="margin-top:14px;">If you handle CUI or ITAR-controlled data on a DoD contract, you need a sovereign environment that meets DFARS 252.204-7012 and CMMC Level 2. Optimal stands up your Microsoft&nbsp;365 GCC&nbsp;High enclave, migrates you into it, engineers the controls, and manages it — so compliance stops being the thing that costs you the contract. <a class="inline-link" href="/gcc-high">See the full managed service →</a></p>
+        <span class="ix">04 / Architecture</span>
+        <h2 class="h2">Agents in. Approved resources out.<br />Everything in between, governed.</h2>
+        <p class="lead" style="margin-top:14px;">The reference pattern behind our Governed AI Engineering work — the same open-source Zero Trust design we stand up in your environment. <a class="inline-link" href="https://github.com/optimal-cyber/AI-Gateway">Read the architecture ↗</a></p>
       </div>
-      <ol class="gcc-flow">
-        {gccBands.map((b) => (
-          <li class="gcc-step">
-            <span class="gcc-ix">{b.idx}</span>
-            <div>
-              <h4>{b.n}</h4>
-              <p class="muted">{b.d}</p>
-            </div>
-          </li>
-        ))}
-      </ol>
-      <p class="muted note">GCC High G5 licensing and provisioning included. Optimal prepares and manages the environment; the certified CMMC assessment is performed independently by your C3PAO.</p>
+      <ArchitectureDiagram steps={flow} />
+      <p class="muted note">No wrapper, no SDK rewrite — point your existing OpenAI- or Anthropic-compatible client at the gateway and every call is governed and logged.</p>
     </div>
   </section>
 
-  <!-- APPROACH / PHILOSOPHY -->
-  <section id="approach" class="section approach relative">
-    <div class="glow"></div>
-    <div class="container z sec-split">
-      <div class="sec-head">
-        <span class="ix">01 / Approach</span>
-        <h2 class="h2">Adversary-informed,<br />not compliance-driven.</h2>
-      </div>
-      <div class="approach-body">
-        <p>
-          Most teams meet AI security through a checklist. We start from the adversary — how a prompt
-          gets injected, how a model leaks its own context, how an agent is talked into acting outside
-          its lane. Compliance frameworks are where we finish, engineering targets we build toward,
-          never where we begin.
-        </p>
-        <p>
-          Expertise leads every engagement. We use AI and our own open-source tooling to move
-          faster, but the judgment — what to test, what a finding means, what to build — stays human.
-          We don't hand you a product and walk away. We scope to your stack, your risk, and your
-          environment, and leave you able to run what we build.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- SERVICES -->
-  <section id="services" class="section">
-    <div class="container">
-      <div class="sec-head wide">
-        <span class="ix">02 / Services</span>
-        <h2 class="h2">Four ways we secure AI for the mission.</h2>
-        <p class="lead" style="margin-top:14px;">Assess it the way an adversary would. Prove the failure. Engineer the controls that stop it. Keep the whole program governed. Engagements are scoped to your stack — most run two to eight weeks.</p>
-      </div>
-      <div class="svc-grid">
-        {services.map((s) => (
-          <article class="card svc">
-            <header class="svc-top">
-              <span class="svc-ix" style={`color:${s.accent}`}>{s.idx}</span>
-              <h3>{s.title}</h3>
-            </header>
-            <span class="svc-dur">{s.duration}</span>
-            <p class="muted svc-lede">{s.lede}</p>
-            <div class="svc-scope">
-              <span class="scope-label" style={`color:${s.accent}`}>{s.scopeLabel}</span>
-              <ul>
-                {s.scope.map((item) => <li>{item}</li>)}
-              </ul>
-            </div>
-            <p class="svc-outcome"><span class="muted">Deliverable</span> {s.outcome}</p>
-          </article>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- NINELINE — PROOF OF CAPABILITY, INSIDE THE AI SERVICES NARRATIVE -->
-  <section id="nineline" class="section--tight nl-teaser">
-    <div class="container nl-inner">
-      <div class="nl-copy">
-        <span class="ix">Proof of capability</span>
-        <h2 class="h2">What our engineering looks like, running.</h2>
-        <p class="lead" style="margin-top:14px;">
-          NINELINE is our reference implementation of that work. Real SBOM and vulnerability
-          scanning, EPSS and CISA KEV enrichment, and frontier-model reachability analysis that cuts
-          <strong>874 raw findings down to the 18 that actually matter</strong> — then drafts the
-          reachability-gated fix. We stand it up inside a client&rsquo;s environment as part of an
-          engagement, not as a subscription. Everything we claim we can build, we have built.
-        </p>
-        <div class="cta-row" style="margin-top:26px;">
-          <a href="/nineline" class="btn btn-ghost">See how it works →</a>
-          <a href="https://9line.gooptimal.io/" class="btn btn-ghost" target="_blank" rel="noopener">Open the live demo ↗</a>
-        </div>
-      </div>
-      <ul class="nl-stats">
-        <li><span class="nl-num">874 → 18</span><span class="nl-lab">raw findings → require action</span></li>
-        <li><span class="nl-num grad">−97.9%</span><span class="nl-lab">noise eliminated</span></li>
-        <li><span class="nl-num">2 of 8</span><span class="nl-lab">KEV findings actually reachable</span></li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- THREAT COVERAGE — OWASP LLM TOP 10 -->
-  <section id="coverage" class="section--tight coverage relative">
-    <div class="container z">
-      <div class="cov-head">
-        <span class="ix">Threat coverage</span>
-        <h3 class="cov-title">We test to the OWASP Top&nbsp;10 for LLM Applications —<br class="dtop" /> and the MITRE ATLAS techniques behind them.</h3>
-      </div>
-      <ul class="owasp">
-        {owasp.map(([code, name]) => (
-          <li class="owasp-item">
-            <span class="owasp-code">{code}</span>
-            <span class="owasp-name">{name}</span>
-          </li>
-        ))}
-      </ul>
-    </div>
-  </section>
-
-  <!-- METHODOLOGY / PROCESS -->
+            <!-- METHODOLOGY / PROCESS -->
   <section id="process" class="section process relative">
     <div class="glow"></div>
     <div class="container z">
@@ -488,68 +277,7 @@ const faqSchema = {
     </div>
   </section>
 
-  <!-- ARCHITECTURE / HOW IT WORKS -->
-  <section id="how" class="section how relative">
-    <div class="glow"></div>
-    <div class="container z">
-      <div class="sec-head wide">
-        <span class="ix">04 / Architecture</span>
-        <h2 class="h2">Agents in. Approved resources out.<br />Everything in between, governed.</h2>
-        <p class="lead" style="margin-top:14px;">The reference pattern behind our Governed AI Engineering work — the same open-source Zero Trust design we stand up in your environment. <a class="inline-link" href="https://github.com/optimal-cyber/AI-Gateway">Read the architecture ↗</a></p>
-      </div>
-      <ArchitectureDiagram steps={flow} />
-      <p class="muted note">No wrapper, no SDK rewrite — point your existing OpenAI- or Anthropic-compatible client at the gateway and every call is governed and logged.</p>
-    </div>
-  </section>
-
-  <!-- BRING YOUR OWN CLOUD -->
-  <section id="cloud" class="section byoc relative">
-    <div class="glow"></div>
-    <div class="container z">
-      <div class="sec-head wide">
-        <span class="ix">Bring your own cloud</span>
-        <h2 class="h2">Already licensed with Azure, AWS, or GCP?<br />We build the governed access on top.</h2>
-        <p class="lead" style="margin-top:14px;">You don&rsquo;t need a new vendor to reach frontier models safely. If you already run Microsoft Azure, Amazon Web Services, or Google Cloud, Optimal stands up governed, audited access to the frontier models in the cloud you already license — the same authenticated gateway, guardrails, and defensible audit trail. Built for enterprises and for all of SLED: state, local, and education.</p>
-      </div>
-      <ul class="clouds">
-        <li class="cloud-item">
-          <span class="cloud-name">Microsoft Azure</span>
-          <span class="cloud-svc">Azure OpenAI Service</span>
-        </li>
-        <li class="cloud-item">
-          <span class="cloud-name">Amazon Web Services</span>
-          <span class="cloud-svc">Amazon Bedrock</span>
-        </li>
-        <li class="cloud-item">
-          <span class="cloud-name">Google Cloud</span>
-          <span class="cloud-svc">Vertex AI</span>
-        </li>
-      </ul>
-      <p class="muted byoc-note">Reach for the models in the cloud you already pay for — or self-host them. Either way, every call runs through one governed boundary with a defensible audit trail.</p>
-    </div>
-  </section>
-
-  <!-- USE CASES -->
-  <section id="work" class="section">
-    <div class="container">
-      <div class="sec-head wide">
-        <span class="ix">05 / Use cases</span>
-        <h2 class="h2">Built for the missions that can&rsquo;t get it wrong.</h2>
-      </div>
-      <div class="grid grid-3" style="margin-top:38px;">
-        {work.map((w) => (
-          <div class="card usecase">
-            <span class="tag">{w.tag}</span>
-            <h3>{w.title}</h3>
-            <p class="muted">{w.body}</p>
-            <a href={w.href} class="usecase-link">{w.cta}</a>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
+        <!-- FAQ -->
   <section id="faq" class="section faq relative">
     <div class="glow"></div>
     <div class="container z">
@@ -571,23 +299,13 @@ const faqSchema = {
     </div>
   </section>
 
-  <!-- QUOTE -->
-  <section class="section--tight">
-    <div class="container">
-      <blockquote class="quote">
-        <p>&ldquo;We don&rsquo;t hand you a scan and walk away. We show you how an adversary gets in, engineer the controls that stop them, and leave you the evidence that they held.&rdquo;</p>
-        <footer class="muted">Optimal — expertise-led AI security.</footer>
-      </blockquote>
-    </div>
-  </section>
-
-  <!-- CTA -->
+    <!-- CTA -->
   <section class="section cta relative">
     <div class="glow"></div>
     <GatewayCanvas variant="ambient" align="center" density={0.7} />
     <div class="container z cta-inner">
-      <h2 class="display" style="font-size:clamp(2rem,5vw,3.4rem);">Let&rsquo;s secure<br />your AI.</h2>
-      <p class="lead" style="margin:18px auto 0;">Tell us your environment, the models you&rsquo;re adopting, and where you&rsquo;re worried. We&rsquo;ll scope an engagement — assessment, red team, governed engineering, or advisory — across GovCloud, on-prem, or air-gapped.</p>
+      <h2 class="display" style="font-size:clamp(2rem,5vw,3.4rem);">Let&rsquo;s scope<br />the work.</h2>
+      <p class="lead" style="margin:18px auto 0;">Tell us the contracts you&rsquo;re chasing and where you are today. We&rsquo;ll scope the engagement — a managed GCC&nbsp;High enclave, CMMC readiness, or the governed AI inside it. Calls are run by the founder.</p>
       <a href="/contact" class="btn btn-primary" style="margin-top:28px;">Book a scoping call →</a>
     </div>
   </section>
@@ -597,6 +315,18 @@ const faqSchema = {
 </Layout>
 
 <style>
+  /* Keeps hero copy legible over the brightest part of the constellation. */
+  .hero-scrim {
+    position: absolute; inset: 0; z-index: 1; pointer-events: none;
+    background: linear-gradient(90deg, rgba(8,9,13,0.92) 0%, rgba(8,9,13,0.66) 52%, rgba(8,9,13,0) 82%);
+  }
+  .proof-row { margin-top: 28px; padding-top: 24px; border-top: 1px solid var(--rule); display: grid; gap: 18px; }
+  .proof { display: grid; gap: 4px; text-decoration: none; }
+  .proof-k { font-size: 14px; font-weight: 600; color: var(--text); }
+  .proof:hover .proof-k { color: var(--sunset); }
+  .proof-v { font-size: 12.5px; }
+  @media (min-width: 820px) { .proof-row { grid-template-columns: 1fr 1fr 1fr; gap: 32px; } }
+
   /* Shared editorial section-index kicker */
   .ix {
     display: inline-block; font-family: var(--font-mono); font-size: 12px;
