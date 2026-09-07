@@ -15,20 +15,20 @@ const standards = [
 // The two pillars — the compliant environment, and the governed AI inside it.
 const pillars = [
   {
-    tag: "Managed environment",
-    title: "CMMC-ready GCC High enclaves",
-    body: "We stand up your Microsoft 365 GCC High tenant, migrate your people and data into it, engineer the NIST 800-171 controls, and run it for you — so you stay eligible to win and keep DoD work that touches CUI or ITAR-controlled data.",
-    points: ["Design, build & migration", "NIST 800-171 / CMMC L2 alignment", "Fully managed operations", "GCC High G5 licensing"],
-    href: "/gcc-high",
-    cta: "Managed GCC High →",
-  },
-  {
     tag: "Governed intelligence",
     title: "AI you can actually use on the mission",
     body: "Most GCC High shops stop at email and files. We stand up governed access to the frontier models authorized for your sovereign cloud — one gateway, fail-closed guardrails, a defensible audit trail — plus assessment and red-teaming of the AI you deploy.",
     points: ["Governed AI gateway", "Adversarial AI red-teaming", "AI security assessments", "Secure-adoption advisory"],
     href: "/nineline",
     cta: "See what we build, running →",
+  },
+  {
+    tag: "Managed environment",
+    title: "CMMC-ready GCC High enclaves",
+    body: "We stand up your Microsoft 365 GCC High tenant, migrate your people and data into it, engineer the NIST 800-171 controls, and run it for you — so you stay eligible to win and keep DoD work that touches CUI or ITAR-controlled data.",
+    points: ["Design, build & migration", "NIST 800-171 / CMMC L2 alignment", "Fully managed operations", "GCC High G5 licensing"],
+    href: "/gcc-high",
+    cta: "Managed GCC High →",
   },
 ];
 
@@ -146,8 +146,8 @@ const faqSchema = {
 ---
 
 <Layout
-  title="Optimal — Managed GCC High enclaves & governed AI for the defense industrial base"
-  description="Optimal builds, migrates, and manages CMMC-ready Microsoft 365 GCC High enclaves for the defense industrial base — and stands up the governed AI that runs safely inside them. Aligned to DFARS 252.204-7012, NIST SP 800-171, and CMMC Level 2, with support for CUI and ITAR-controlled data. An SBA-certified Service-Disabled Veteran-Owned Small Business (SDVOSB)."
+  title="Optimal — Governed AI & managed GCC High enclaves for the defense industrial base"
+  description="Optimal secures and governs AI for the defense industrial base — assessments, red teams, and governed gateways inside regulated boundaries — and builds and manages the CMMC-ready Microsoft 365 GCC High enclaves it runs in. An SBA-certified Service-Disabled Veteran-Owned Small Business (SDVOSB)."
   jsonLd={[faqSchema]}
 >
   <Header />
@@ -158,16 +158,17 @@ const faqSchema = {
     <GatewayCanvas variant="hero" />
     <div class="hero-scrim" aria-hidden="true"></div>
     <div class="container z">
-      <span class="eyebrow">Managed GCC High · Governed AI · SDVOSB</span>
-      <h1 class="display">Your GCC&nbsp;High enclave.<br /><span class="grad">Built, managed, CMMC-ready.</span></h1>
+      <span class="eyebrow">Governed AI · AI security · SDVOSB</span>
+      <h1 class="display">Governed AI for the mission.<br /><span class="grad">Designed, red-teamed, run.</span></h1>
       <p class="lead">
-        Optimal builds, migrates, and runs Microsoft&nbsp;365 GCC&nbsp;High for defense
-        contractors — and stands up the governed AI that works safely inside it.
-        One veteran-owned partner for the enclave and the intelligence on top of it.
+        Optimal builds and breaks AI systems for regulated environments — governed
+        gateways, adversarial testing, and security assessments inside FedRAMP, CMMC,
+        GovCloud, and air-gapped boundaries. Need the compliant Microsoft&nbsp;365
+        enclave underneath it? We build and manage that too.
       </p>
       <div class="cta-row">
         <a href="/contact" class="btn btn-primary">Book a scoping call →</a>
-        <a href="/gcc-high" class="btn btn-ghost">Explore managed GCC High</a>
+        <a href="/nineline" class="btn btn-ghost">See what we build, running</a>
       </div>
       <p class="cta-aside muted">
         Not sure yet? <a href="/do-i-need-gcc-high">Do I actually need GCC High? Get the 2-minute answer →</a>
@@ -222,7 +223,7 @@ const faqSchema = {
       <div class="sec-head wide">
         <span class="ix">What we do</span>
         <h2 class="h2">Two things, built to work together.</h2>
-        <p class="lead" style="margin-top:14px;">Optimal gives the defense industrial base a compliant place to operate — and the governed AI to operate faster inside it. The sovereign cloud and the intelligence on top of it, from one veteran-owned partner.</p>
+        <p class="lead" style="margin-top:14px;">Optimal secures the AI the defense industrial base is putting into production — and builds the compliant place to run it. The intelligence and the sovereign cloud underneath it, from one veteran-owned partner.</p>
       </div>
       <div class="pillar-grid">
         {pillars.map((p) => (
@@ -305,7 +306,7 @@ const faqSchema = {
     <GatewayCanvas variant="ambient" align="center" density={0.7} />
     <div class="container z cta-inner">
       <h2 class="display" style="font-size:clamp(2rem,5vw,3.4rem);">Let&rsquo;s scope<br />the work.</h2>
-      <p class="lead" style="margin:18px auto 0;">Tell us the contracts you&rsquo;re chasing and where you are today. We&rsquo;ll scope the engagement — a managed GCC&nbsp;High enclave, CMMC readiness, or the governed AI inside it. Calls are run by the founder.</p>
+      <p class="lead" style="margin:18px auto 0;">Tell us the contracts you&rsquo;re chasing and where you are today. We&rsquo;ll scope the engagement — an AI assessment or red team, governed AI engineering, or the managed GCC&nbsp;High enclave underneath it. Calls are run by the founder.</p>
       <a href="/contact" class="btn btn-primary" style="margin-top:28px;">Book a scoping call →</a>
     </div>
   </section>
