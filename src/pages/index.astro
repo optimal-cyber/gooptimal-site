@@ -246,9 +246,13 @@ const faqSchema = {
     <div class="glow"></div>
     <div class="container z">
       <div class="sec-head wide">
-        <span class="ix">04 / Architecture</span>
+        <span class="ix">NINELINE · The reference implementation</span>
         <h2 class="h2">Agents in. Approved resources out.<br />Everything in between, governed.</h2>
-        <p class="lead" style="margin-top:14px;">The reference pattern behind our Governed AI Engineering work — the same open-source Zero Trust design we stand up in your environment. <a class="inline-link" href="https://github.com/optimal-cyber/AI-Gateway">Read the architecture ↗</a></p>
+        <p class="lead" style="margin-top:14px;">This is <strong>NINELINE</strong> — your 9-line for software and AI, and the working proof behind our Governed AI Engineering. The same open-source Zero Trust design we stand up in your environment, running.</p>
+        <div class="nl-ctas">
+          <a class="btn btn-ghost" href="/nineline">See NINELINE running →</a>
+          <a class="inline-link" href="https://github.com/optimal-cyber/AI-Gateway">Read the architecture ↗</a>
+        </div>
       </div>
       <ArchitectureDiagram steps={flow} />
       <p class="muted note">No wrapper, no SDK rewrite — point your existing OpenAI- or Anthropic-compatible client at the gateway and every call is governed and logged.</p>
@@ -301,6 +305,28 @@ const faqSchema = {
   </section>
 
     <!-- CTA -->
+  <!-- WHO YOU'RE HIRING — services are bought on the person; put the person on the page. -->
+  <section id="founder" class="section--tight relative">
+    <div class="container">
+      <div class="card founder-card">
+        <img class="founder-photo" src="/team/ryan-gutwein.jpg" alt="Ryan Gutwein, founder and CEO of Optimal" width="112" height="112" loading="lazy" />
+        <div class="founder-copy">
+          <span class="ix">Who you&rsquo;re hiring</span>
+          <h2 class="founder-name">Ryan Gutwein</h2>
+          <p class="muted founder-bio">
+            Founder &amp; CEO. Service-disabled veteran, with years on the assessor side of
+            federal authorizations — now building and breaking agentic systems for regulated
+            environments. Scoping calls are run by Ryan, not a sales team.
+          </p>
+          <div class="founder-links">
+            <a class="usecase-link" href="/team">Meet the team →</a>
+            <a class="usecase-link" href="https://fermentedopinions.substack.com/">Fermented Opinions ↗</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="section cta relative">
     <div class="glow"></div>
     <GatewayCanvas variant="ambient" align="center" density={0.7} />
@@ -316,6 +342,14 @@ const faqSchema = {
 </Layout>
 
 <style>
+  .nl-ctas { margin-top: 20px; display: flex; flex-wrap: wrap; align-items: center; gap: 18px; }
+  .founder-card { display: grid; gap: 22px; align-items: center; }
+  .founder-photo { width: 112px; height: 112px; border-radius: 50%; object-fit: cover; border: 1px solid var(--rule-strong); }
+  .founder-name { font-size: 1.35rem; margin-top: 10px; }
+  .founder-bio { margin-top: 10px; font-size: 14.5px; line-height: 1.65; max-width: 62ch; }
+  .founder-links { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 22px; }
+  @media (min-width: 720px) { .founder-card { grid-template-columns: auto 1fr; gap: 32px; } }
+
   /* Keeps hero copy legible over the brightest part of the constellation. */
   .hero-scrim {
     position: absolute; inset: 0; z-index: 1; pointer-events: none;
