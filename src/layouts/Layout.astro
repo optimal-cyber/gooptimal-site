@@ -248,6 +248,55 @@ const orgSchema = {
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- Apollo visitor tracking. `is:inline` is load-bearing: a bare <script>
+         gets bundled by Astro and the tracker dies silently. Gated to the
+         production host so localhost and preview traffic never pollute the data. -->
+    <script is:inline>
+      if (location.hostname === "gooptimal.io") {
+        (function initApollo() {
+          var n = Math.random().toString(36).substring(7);
+          var o = document.createElement("script");
+          o.src = "https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache=" + n;
+          o.async = true;
+          o.defer = true;
+          o.onload = function () {
+            window.trackingFunctions.onLoad({ appId: "698c8b7248beb80019d50b7e" });
+          };
+          document.head.appendChild(o);
+        })();
+      }
+    </script>
+    <!-- First-touch UTM capture: stored once, then attached to every form via
+         input[data-utm] fields. localStorage keeps it across pages; nothing
+         here is PII. -->
+    <script is:inline>
+      (function () {
+        try {
+          var K = "optimal_first_touch";
+          if (!localStorage.getItem(K)) {
+            var p = new URLSearchParams(location.search);
+            var out = {};
+            var any = false;
+            ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content"].forEach(function (k) {
+              var v = p.get(k);
+              if (v) { out[k] = v.slice(0, 120); any = true; }
+            });
+            if (any) {
+              out.landing = location.pathname;
+              out.first_touch_at = new Date().toISOString();
+              localStorage.setItem(K, JSON.stringify(out));
+            }
+          }
+          document.addEventListener("DOMContentLoaded", function () {
+            var d = JSON.parse(localStorage.getItem(K) || "null");
+            if (!d) return;
+            document.querySelectorAll("input[data-utm]").forEach(function (el) {
+              el.value = d[el.getAttribute("data-utm")] || "";
+            });
+          });
+        } catch (e) { /* storage blocked — forms simply submit without attribution */ }
+      })();
+    </script>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>

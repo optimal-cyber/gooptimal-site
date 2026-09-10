@@ -19,16 +19,13 @@ import VetBadge from "../components/VetBadge.astro";
 // TODO: Ryan to confirm each `detail` below, then delete the ones that don't apply.
 // ---------------------------------------------------------------------------
 const service: { label: string; detail: string }[] = [
-  // e.g. { label: "U.S. Army", detail: "Infantry · 2004–2012" }
-  { label: "{{SERVICE_BRANCH}}", detail: "{{SERVICE_ROLE_AND_YEARS}}" },
+  { label: "U.S. Air Force", detail: "Security Forces · service-disabled veteran" },
 ];
 const credentials: { label: string; detail: string }[] = [
-  // Certified CMMC Professional — issuing body is the Cyber AB. Confirm status.
-  { label: "Certified CMMC Professional (CCP)", detail: "{{CCP_STATUS}}" },
-  // Clearance — confirm level and current status before this goes live.
-  { label: "Security clearance", detail: "{{CLEARANCE_LEVEL_AND_STATUS}}" },
-  // CMMC assessment experience — confirm the honest phrasing.
-  { label: "CMMC assessment experience", detail: "{{ASSESSOR_EXPERIENCE}}" },
+  { label: "Security clearance", detail: "TS/SCI" },
+  { label: "CISSP · CCSP", detail: "ISC2" },
+  { label: "Certified CMMC Professional (CCP)", detail: "Cyber AB" },
+  { label: "CMMC assessment experience", detail: "C3PAO lead assessor" },
 ];
 
 // Anything still holding a placeholder stays off the page.

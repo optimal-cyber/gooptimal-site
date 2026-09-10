@@ -258,6 +258,10 @@ const serviceSchema = {
       <p class="hero-caps">
         Build <span>/</span> Migrate <span>/</span> Engineer controls <span>/</span> Manage
       </p>
+      <p class="cred-strip">
+        Led by a former <strong>C3PAO lead assessor</strong> — TS/SCI · CISSP · CCSP · CCP ·
+        U.S. Air Force Security Forces. <a href="/team">The person your assessor will meet →</a>
+      </p>
       <div class="cta-row">
         <a href="/contact" class="btn btn-primary">Book a scoping call →</a>
         <a href="#deliver" class="btn btn-ghost">See what's included</a>
@@ -556,6 +560,13 @@ const serviceSchema = {
 </Layout>
 
 <style>
+  .cred-strip {
+    margin-top: 18px; font-size: 13.5px; color: var(--text-dim);
+    padding: 10px 16px; border: 1px solid var(--rule); border-left: 2px solid var(--sunset);
+    border-radius: var(--radius-sm); max-width: 62ch;
+  }
+  .cred-strip strong { color: var(--text); }
+  .cred-strip a { color: var(--sunset); }
   .ix {
     display: inline-block; font-family: var(--font-mono); font-size: 12px;
     letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-faint);
