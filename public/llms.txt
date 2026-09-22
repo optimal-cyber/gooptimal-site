@@ -156,11 +156,11 @@ required. Available to the defense industrial base, federal agencies, SLED
 - **AI-Gateway** — open-source Zero Trust AI gateway reference design, the same
   pattern Optimal stands up in client environments:
   https://github.com/optimal-cyber/AI-Gateway
-- **NINELINE** — deployed inside a client's own environment as part of an
-  engagement, not sold as a SaaS subscription. Working reference implementation of AI-native application and
-  supply-chain security: real SBOM and vulnerability scanning, EPSS and CISA KEV
-  enrichment, and frontier-model reachability analysis that compressed 874 raw
-  findings to the 18 that required action in the reference scan. Overview:
+- **NINELINE** — Optimal's AI-native application and supply-chain security
+  platform, deployed inside a client's own environment (air-gap capable): real
+  SBOM and vulnerability scanning, EPSS and CISA KEV enrichment, and
+  frontier-model reachability analysis that compressed 874 raw findings to the
+  18 that required action in the reference scan. Overview:
   https://gooptimal.io/nineline — live demonstrator: https://9line.gooptimal.io/
 
 ## Standards (engineering targets)
@@ -214,7 +214,7 @@ air-gapped networks.
 - Do I actually need GCC High? (2-minute checklist): https://gooptimal.io/do-i-need-gcc-high
 - State, local & education: https://gooptimal.io/sled
 - Capability statement: https://gooptimal.io/capability-statement
-- NINELINE reference implementation: https://gooptimal.io/nineline
+- NINELINE (AI-native supply-chain security): https://gooptimal.io/nineline — live demo: https://9line.gooptimal.io/
 - Team / leadership: https://gooptimal.io/team
 - Field notes (blog): https://gooptimal.io/blog
 - Contact / book a scoping call: https://gooptimal.io/contact
