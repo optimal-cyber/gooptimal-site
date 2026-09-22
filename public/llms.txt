@@ -160,7 +160,8 @@ required. Available to the defense industrial base, federal agencies, SLED
   platform, deployed inside a client's own environment (air-gap capable): real
   SBOM and vulnerability scanning, EPSS and CISA KEV enrichment, and
   frontier-model reachability analysis that compressed 874 raw findings to the
-  18 that required action in the reference scan. Overview:
+  18 that required action in the reference scan — every verdict carrying its
+  evidence and exportable as VEX for SWFT/SBOM compliance artifacts. Overview:
   https://gooptimal.io/nineline — live demonstrator: https://9line.gooptimal.io/
 
 ## Standards (engineering targets)
