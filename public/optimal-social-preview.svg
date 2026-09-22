@@ -24,6 +24,7 @@
   </g>
   <!-- Wordmark -->
   <text x="492" y="305" font-family="'Space Grotesk', ui-sans-serif, sans-serif" font-weight="600" font-size="64" letter-spacing="14" fill="#eef1f7">OPTIMAL</text>
-  <text x="600" y="396" text-anchor="middle" font-family="Inter, ui-sans-serif, sans-serif" font-size="25" fill="#9aa3b2">Governed AI &amp; secure enclaves for the defense industrial base</text>
+  <text x="600" y="396" text-anchor="middle" font-family="Inter, ui-sans-serif, sans-serif" font-size="25" fill="#9aa3b2">Governed AI &amp; secure enclaves for regulated industries</text>
+  <text x="600" y="438" text-anchor="middle" font-family="ui-monospace, Menlo, monospace" font-size="16" letter-spacing="2.9" fill="#ff8a3d">DEFENSE &#183; HEALTHCARE &#183; FINANCIAL SERVICES &#183; SLED</text>
   <text x="600" y="582" text-anchor="middle" font-family="ui-monospace, Menlo, monospace" font-size="18" letter-spacing="5.4" fill="#6b7382">GOOPTIMAL.IO</text>
 </svg>
