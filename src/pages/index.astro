@@ -213,6 +213,19 @@ const faqSchema = {
           <span class="proof-v muted">How we think about ATOs, boundaries, and agents</span>
         </a>
       </div>
+      <!-- Client testimonial — attribution per client policy: name initial + title only. -->
+      <figure class="testimonial">
+        <blockquote>
+          <p>&ldquo;Optimal assessed the Azure sandbox where our AI agents are being built before anything
+          went live. The report was clear and prioritized, gave us a straight answer on where the build
+          actually stood, and our developer could act on it right away. Fast turnaround and easy to work
+          with.&rdquo;</p>
+        </blockquote>
+        <figcaption>
+          <span class="t-name">Maurisa S.</span>
+          <span class="t-title muted">IT Director &middot; AI security assessment</span>
+        </figcaption>
+      </figure>
     </div>
   </section>
 
@@ -392,6 +405,22 @@ const faqSchema = {
     background: linear-gradient(90deg, rgba(8,9,13,0.92) 0%, rgba(8,9,13,0.66) 52%, rgba(8,9,13,0) 82%);
   }
   .proof-row { margin-top: 28px; padding-top: 24px; border-top: 1px solid var(--rule); display: grid; gap: 18px; }
+
+  /* Client testimonial */
+  .testimonial {
+    margin: 34px 0 0; padding: 26px 30px;
+    border: 1px solid var(--rule); border-left: 3px solid var(--sunset);
+    border-radius: var(--radius-sm); background: var(--surface-2);
+    max-width: 74ch;
+  }
+  .testimonial blockquote { margin: 0; }
+  .testimonial blockquote p {
+    font-family: var(--font-display); font-size: clamp(1.05rem, 2vw, 1.3rem);
+    line-height: 1.5; letter-spacing: -0.01em; color: var(--text); margin: 0;
+  }
+  .testimonial figcaption { margin-top: 16px; display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: baseline; }
+  .t-name { font-weight: 600; color: var(--text); }
+  .t-title { font-size: 13.5px; }
   .proof { display: grid; gap: 4px; text-decoration: none; }
   .proof-k { font-size: 14px; font-weight: 600; color: var(--text); }
   .proof:hover .proof-k { color: var(--sunset); }
