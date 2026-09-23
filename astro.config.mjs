@@ -7,9 +7,26 @@ import sitemap from "@astrojs/sitemap";
 /** Pages that are noindex while unfinished — kept out of the sitemap. */
 const DRAFT_PAGES = ["/resources/gcc-high-cost-guide/"];
 
+/**
+ * Writes dist/llms-full.txt after every build — the llms.txt index plus the
+ * full markdown of the blog and use-case content — so LLM crawlers can ingest
+ * the site's actual content in one fetch. Runs as an integration (not a
+ * package.json chain) so it fires however `astro build` is invoked.
+ */
+const llmsFull = {
+  name: "llms-full",
+  hooks: {
+    "astro:build:done": async () => {
+      const { execFileSync } = await import("node:child_process");
+      execFileSync("node", ["scripts/generate-llms-full.mjs"], { stdio: "inherit" });
+    },
+  },
+};
+
 export default defineConfig({
   site: "https://gooptimal.io",
   integrations: [
+    llmsFull,
     sitemap({
       // The sitemap integration has no view of a page's `noindex` prop, so
       // draft pages have to be excluded here or the two signals contradict

@@ -1,12 +1,15 @@
 # Optimal, LLC
 
-> Optimal builds, migrates, and manages CMMC-ready Microsoft 365 GCC High
-> enclaves for the United States defense industrial base — the sovereign
-> environment a contractor needs to handle Controlled Unclassified Information
-> (CUI) and ITAR-controlled data on DoD contracts — and stands up the governed
-> AI that runs safely inside them. Optimal is an SBA-certified Service-Disabled
-> Veteran-Owned Small Business (SDVOSB). Advisory-led, not a SaaS product.
-> Sovereign by default.
+> Optimal secures and governs AI wherever regulated data lives — defense,
+> healthcare, financial services, and state & local government. It builds,
+> migrates, and manages CMMC-ready Microsoft 365 GCC High enclaves for the
+> United States defense industrial base, stands up the governed AI that runs
+> safely inside compliance boundaries, and makes NINELINE, an AI-native
+> application and supply-chain security platform deployed in the client's own
+> environment. Optimal is an SBA-certified Service-Disabled Veteran-Owned Small
+> Business (SDVOSB). Sovereign by default.
+>
+> Full site content for LLM ingestion: https://gooptimal.io/llms-full.txt
 
 ## About
 
@@ -191,10 +194,23 @@ controls, performed by an accredited C3PAO. Optimal implements and documents the
 control set, collects evidence, and gets the environment assessment-ready.
 
 **Is Optimal a product company or a services firm?**
-Services. Optimal delivers engagements and managed operations, not a SaaS
-subscription. The control pattern it implements is published as an open-source
-reference architecture, so a client can read exactly what will be built and keep
-operating it independently afterward.
+Both. Optimal is advisory-led — scoped engagements and managed operations — and
+makes NINELINE, an AI-native application and supply-chain security platform
+deployed inside the client's own environment rather than sold as multi-tenant
+SaaS. The control patterns Optimal implements are published as open-source
+reference architecture, so a client can read exactly what will be built and
+keep operating it independently afterward.
+
+**What is NINELINE?**
+NINELINE is Optimal's AI-native application and supply-chain security platform:
+real SBOM and vulnerability scanning (syft, grype), EPSS and CISA KEV
+enrichment, and frontier-model reachability analysis that reads the actual
+codebase to determine whether a vulnerable path is reachable — turning
+thousands of raw findings into an evidence-backed action queue and an
+exportable VEX record for SWFT and SBOM compliance artifacts. In the reference
+scan it compressed 874 raw findings to the 18 that required action. It deploys
+in the client's environment and is air-gap capable. Live demonstrator:
+https://9line.gooptimal.io/
 
 **What is prompt injection, and why does it matter?**
 Prompt injection manipulates an AI system through crafted input, causing it to
@@ -207,6 +223,39 @@ Yes. Optimal is an SBA-certified SDVOSB eligible for SDVOSB and VOSB set-aside
 contracts, and works with the defense industrial base, federal agencies, SLED
 entities, and enterprises across GovCloud, commercial cloud, on-premises, and
 air-gapped networks.
+
+## Published writing (full text in llms-full.txt)
+
+- Whitepaper — Securing Agentic AI: Governing What the System Does, Not What
+  It Says: https://gooptimal.io/whitepapers/securing-agentic-ai/
+- Whitepaper — Authorization Readiness Levels (ARL): 5 ATO pathways × 9
+  readiness levels, extending MIT's Dual-Use Readiness Levels for ATO strategy:
+  https://gooptimal.io/blog/authorization-readiness-levels/Authorization-Readiness-Levels.pdf
+- The ATO Bottleneck: Why Authorization Takes So Long and What Actually Fixes
+  It: https://gooptimal.io/blog/ato-bottleneck-rethinking-authorization
+- Authorization Readiness Levels: https://gooptimal.io/blog/authorization-readiness-levels
+- The Authorization Blast Radius (agentic AI security):
+  https://gooptimal.io/blog/authorization-blast-radius
+- Navigating DoW Impact Level Authorization (IL2–IL6):
+  https://gooptimal.io/blog/dow-il-authorization-guide
+- Building a Compliant CI/CD Pipeline for Public Sector:
+  https://gooptimal.io/blog/fedramp-cicd-pipeline-compliance
+- FedRAMP 20x: A Step Forward on Paper, A Marathon in Practice:
+  https://gooptimal.io/blog/fedramp-20x-reality-check
+- How to Accelerate the ATO Process Without Cutting Corners:
+  https://gooptimal.io/blog/accelerating-ato-process
+- SBOM Best Practices: From Executive Order to Operational Reality:
+  https://gooptimal.io/blog/sbom-best-practices-2026
+- Securing AI Models in the Defense Sector:
+  https://gooptimal.io/blog/ai-security-defense-sector
+
+## Client proof
+
+- "Optimal assessed the Azure sandbox where our AI agents are being built
+  before anything went live. The report was clear and prioritized, gave us a
+  straight answer on where the build actually stood, and our developer could
+  act on it right away. Fast turnaround and easy to work with." — Maurisa S.,
+  IT Director (AI security assessment client)
 
 ## Key pages
 
