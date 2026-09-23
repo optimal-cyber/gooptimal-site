@@ -1,8 +1,8 @@
 ---
-// Primary navigation. "Solutions" collapses the offer destinations — managed
-// GCC High, the AI security services, and the SLED practice — into one
-// top-level item. Keeping "Services" as a sibling of "Solutions" would have
-// read as two labels for the same thing, so it moves inside too.
+// Primary navigation, kept deliberately small: Solutions (all offer
+// destinations, including use cases), the NINELINE product, Field notes, and
+// Team. Homepage anchors (Architecture, FAQ) are sections you scroll to, not
+// destinations — they live on the page and in the footer, not up here.
 //
 // NINELINE gets top-level billing: it is the product Optimal is actively
 // marketing, with a live demonstrator at 9line.gooptimal.io.
@@ -25,14 +25,16 @@ const links = [
         label: "State, local & education",
         desc: "Governed AI and cloud security in the cloud you already license",
       },
+      {
+        href: "/#work",
+        label: "Use cases",
+        desc: "Regulated cloud, air-gapped, and agentic workloads",
+      },
     ],
   },
   { href: "/nineline", label: "NINELINE" },
-  { href: "/#how", label: "Architecture" },
-  { href: "/#work", label: "Use cases" },
   { href: "/blog", label: "Field notes" },
   { href: "/team", label: "Team" },
-  { href: "/#faq", label: "FAQ" },
 ];
 ---
 

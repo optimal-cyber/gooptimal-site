@@ -153,6 +153,8 @@ The DevSecOps-native pathway to continuous authorization, aligned with the DoW E
 
 The Cybersecurity Maturity Model Certification pathway for protecting CUI across the defense industrial base, governed by 32 CFR Part 170 and DFARS 252.204-7021. Affects an estimated 80,000+ contractors in the DIB.
 
+> **Update (September 2026):** The Department of War has suspended the CMMC Phase II requirements that were scheduled for November 10, 2026. During the suspension, program managers may only require Level 1 or Level 2 self-assessments — not C3PAO or DIBCAC assessments — while a reform task force reviews the program. The 32 CFR rule and DFARS 252.204-7021 remain on the books, NIST 800-171 obligations under DFARS 252.204-7012 are unchanged, and the levels below still describe the certification pathway — but treat hard certification deadlines as paused, not imminent.
+
 1. **Awareness & Level Determination**
 2. **CUI Scoping & Asset ID**
 3. **NIST 800-171 Gap & SPRS**
