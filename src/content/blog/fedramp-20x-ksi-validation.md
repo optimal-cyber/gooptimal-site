@@ -192,6 +192,36 @@ For 20x Classes B, C and D, providers MUST include all KSIs in a FedRAMP indepen
 
 If you're aiming for Class C, a year of daily data means your measurement pipeline has to be running well before the assessment window opens.
 
+## From rules to certification: the Class A lifecycle
+
+The rules read as a flat list, but the journey through them has a sequence, and the sequence matters. Class A is the entry point: self-service, with the independent assessment a MAY rather than a MUST (`IVV-CSO-FIA`), which makes it the cleanest view of the lifecycle every class shares. Scope gates everything at the front, the Security Decision Record is the bulk of the middle, and continuous monitoring never ends.
+
+<style>
+  .fig20x-phr { display: flex; gap: 10px; padding: 8px 10px; border-radius: 8px; transition: background .15s; }
+  .fig20x-phr:hover { background: var(--surface-3); }
+  .fig20x-phn { flex: none; width: 24px; height: 24px; border-radius: 50%; background: var(--grad-sunset); color: #14060a; font-family: var(--font-display); font-weight: 700; font-size: 12.5px; display: flex; align-items: center; justify-content: center; margin-top: 1px; }
+  .fig20x-phb b { display: block; font-family: var(--font-display); font-weight: 600; font-size: 13px; color: var(--text); }
+  .fig20x-phb p { margin: 1px 0 3px !important; font-size: 11.5px !important; line-height: 1.45 !important; color: var(--text-dim); }
+  .fig20x-phb .ids { font-family: var(--font-mono); font-size: 9.5px; color: var(--text-faint); letter-spacing: 0.02em; }
+  .fig20x-phr.ever .fig20x-phn { background: var(--surface-2); color: var(--sunset); border: 1.5px solid var(--sunset); }
+</style>
+<figure class="fig20x" role="img" aria-label="The nine phases of the FedRAMP 20x Class A lifecycle, from prerequisites through Marketplace listing, scope, the Security Decision Record, package validation, optional assessment, application, and perpetual continuous monitoring">
+  <div class="fig20x-kicker">FedRAMP 20x Class A</div>
+  <div class="fig20x-title">The lifecycle, end to end</div>
+  <div class="fig20x-phr"><span class="fig20x-phn">0</span><span class="fig20x-phb"><b>Prerequisites</b><p>Eligibility, a persistent point of contact, and the assessment scope identified before any work starts.</p><span class="ids">MAS-CSO-IIR · FRC-CSO-POP · FRC-CLA-ASF</span></span></div>
+  <div class="fig20x-phr"><span class="fig20x-phn">1</span><span class="fig20x-phb"><b>Get listed in the Marketplace</b><p>The offering is listed and the listing is kept accurate from day one.</p><span class="ids">MKT-CSO-MLR · MKT-CSO-PML · CDS-CSO-PUB</span></span></div>
+  <div class="fig20x-phr"><span class="fig20x-phn">2</span><span class="fig20x-phb"><b>Build the scope content</b><p>Information resources, data flows, and third-party reliance documented for the package overview.</p><span class="ids">MAS-CSO-FLO · MAS-CSO-TPR · CPO-CSO-OVR</span></span></div>
+  <div class="fig20x-phr"><span class="fig20x-phn">3</span><span class="fig20x-phb"><b>Build the Security Decision Record</b><p>The heavy lift: satisfy the mandatory rules, with incident reporting and change management wired in.</p><span class="ids">SDR-CSX-KSI · IVV-CSX-AIA · IEC-CSO-* · AFC-CSO-*</span></span></div>
+  <div class="fig20x-phr"><span class="fig20x-phn">4</span><span class="fig20x-phb"><b>Assemble and validate the package</b><p>Machine-readable artifacts validated against the published FedRAMP schemas.</p><span class="ids">FRC-CSO-JSN · FRC-CSO-PKG · FRC-CSO-MRA</span></span></div>
+  <div class="fig20x-phr"><span class="fig20x-phn">5</span><span class="fig20x-phb"><b>Independent assessment (optional at Class A)</b><p>A MAY at Class A, a MUST at Classes B through D; if performed, findings are included without modification.</p><span class="ids">IVV-CSO-FIA · IVV-CSO-ICP · FRC-CLA-IVV</span></span></div>
+  <div class="fig20x-phr"><span class="fig20x-phn">6</span><span class="fig20x-phb"><b>Freshen and apply</b><p>Refresh the package content and submit the application.</p><span class="ids">FRC-APP-FCP · FRC-APP-NTP · FRC-APP-USA</span></span></div>
+  <div class="fig20x-phr ever"><span class="fig20x-phn">7</span><span class="fig20x-phb"><b>Continuous monitoring and assurance, forever</b><p>Vulnerability detection and response, availability reporting, and annual cycles continue for the life of the certification.</p><span class="ids">VDR-CSO-* · VER-TFR-* · CDS-CSO-AVR · IVV-CSX-AIA</span></span></div>
+  <div class="fig20x-phr"><span class="fig20x-phn">8</span><span class="fig20x-phb"><b>Optional and conditional items</b><p>Quarterly collaboration meetings, public status mechanisms, and significant change notifications as they apply.</p><span class="ids">CCM-QTR-MTG · CDS-CSO-PSM · SCN-CSO-EVA</span></span></div>
+  <div class="fig20x-src">Phases and rule groupings derived from the FedRAMP Consolidated Rules for 2026 (github.com/FedRAMP/rules), version 2026.09.13.02.</div>
+</figure>
+
+*The Class A lifecycle. Classes B through D follow the same shape with the assessment made mandatory and heavier metric history.*
+
 ## Scope comes first
 
 Validation only means something if the boundary is right. The Minimum Assessment Scope rules require providers to identify every information resource "likely to handle federal customer data or likely to impact the confidentiality, integrity, or availability" of that data (`MAS-CSO-IIR`), to document information flows and security categories for all of those resources, and to address how third-party resources could affect federal data.
