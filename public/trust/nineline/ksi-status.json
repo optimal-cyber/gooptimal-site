@@ -1,0 +1,1371 @@
+{
+  "schema": "nineline.trust-public/1",
+  "kind": "ksi-status",
+  "generatedAt": "2026-10-16T15:47:26+00:00",
+  "rulesVersion": "2026.10.13.01",
+  "sdrUpdated": "2026-10-16T15:08:24+00:00",
+  "certificationClass": "C",
+  "requirement": "At least two automated validation methods per KSI (FRC-CSX-VVK); 30 days of daily data (SDR-CSX-KMT).",
+  "totals": {
+    "Implemented": 0,
+    "Partially Implemented": 5,
+    "Not Implemented": 41,
+    "ksis": 46
+  },
+  "themes": [
+    {
+      "abbr": "CED",
+      "name": "Cybersecurity Education",
+      "ksis": [
+        {
+          "id": "KSI-CED-RAT",
+          "name": "Reviewing All Training",
+          "force": "MUST",
+          "statement": "The effectiveness of relevant cybersecurity education and training is persistently reviewed, including at least general training for all employees, role-specific training for employees in high risk roles, training for development and engineering staff on secure software delivery, and training for staff involved with incident response or disaster recovery.",
+          "controls": [
+            "at-2",
+            "at-2.2",
+            "at-2.3",
+            "at-3",
+            "at-3.5",
+            "at-4",
+            "cm-11",
+            "cp-3",
+            "cp-3.1",
+            "ir-2",
+            "ir-2.1",
+            "ir-2.2",
+            "ir-2.3",
+            "ir-9.2",
+            "ir-9.4",
+            "pl-4",
+            "pl-4.1",
+            "ps-6",
+            "sr-11.1"
+          ],
+          "status": "Not Implemented",
+          "validationMethods": {
+            "automatedOperating": 0,
+            "automatedPlanned": 2,
+            "manualOperating": 0,
+            "manualPlanned": 1
+          },
+          "dailyValidation": null
+        }
+      ]
+    },
+    {
+      "abbr": "CMT",
+      "name": "Change Management",
+      "ksis": [
+        {
+          "id": "KSI-CMT-LMC",
+          "name": "Logging Changes",
+          "force": "MUST",
+          "statement": "Modifications to the cloud service offering are logged and monitored.",
+          "controls": [
+            "au-2",
+            "ca-7.4",
+            "cm-3",
+            "cm-3.1",
+            "cm-3.2",
+            "cm-3.6",
+            "cm-4.2",
+            "cm-6",
+            "cm-8.3"
+          ],
+          "status": "Partially Implemented",
+          "validationMethods": {
+            "automatedOperating": 1,
+            "automatedPlanned": 2,
+            "manualOperating": 0,
+            "manualPlanned": 0
+          },
+          "dailyValidation": null
+        },
+        {
+          "id": "KSI-CMT-RMV",
+          "name": "Redeploying vs Modifying",
+          "force": "MUST",
+          "statement": "Changes to machine-based information resources are executed through the redeployment of version controlled resources rather than direct modification wherever reasonable.",
+          "controls": [
+            "cm-2",
+            "cm-3",
+            "cm-5",
+            "cm-6",
+            "cm-7",
+            "cm-8.1",
+            "si-3"
+          ],
+          "status": "Not Implemented",
+          "validationMethods": {
+            "automatedOperating": 0,
+            "automatedPlanned": 3,
+            "manualOperating": 0,
+            "manualPlanned": 0
+          },
+          "dailyValidation": null
+        },
+        {
+          "id": "KSI-CMT-RVP",
+          "name": "Reviewing Change Procedures",
+          "force": "MUST",
+          "statement": "The effectiveness of documented change management procedures is persistently reviewed.",
+          "controls": [
+            "cm-3",
+            "cm-3.2",
+            "cm-3.4",
+            "cm-5",
+            "cm-7.1",
+            "cm-9"
+          ],
+          "status": "Not Implemented",
+          "validationMethods": {
+            "automatedOperating": 0,
+            "automatedPlanned": 2,
+            "manualOperating": 0,
+            "manualPlanned": 1
+          },
+          "dailyValidation": null
+        },
+        {
+          "id": "KSI-CMT-VTD",
+          "name": "Validating Throughout Deployment",
+          "force": "MUST",
+          "statement": "Persistent testing and validation of changes throughout deployment is automated.",
+          "controls": [
+            "cm-3",
+            "cm-3.2",
+            "cm-4.2",
+            "cm-6.2",
+            "ir-9.4",
+            "si-2"
+          ],
+          "status": "Partially Implemented",
+          "validationMethods": {
+            "automatedOperating": 2,
+            "automatedPlanned": 2,
+            "manualOperating": 0,
+            "manualPlanned": 0
+          },
+          "dailyValidation": null
+        }
+      ]
+    },
+    {
+      "abbr": "CNA",
+      "name": "Cloud Native Architecture",
+      "ksis": [
+        {
+          "id": "KSI-CNA-DFP",
+          "name": "Defining Functionality and Privileges",
+          "force": "MUST",
+          "statement": "The functionality and privileges for infrastructure and services are strictly defined.",
+          "controls": [
+            "cm-2",
+            "cm-8.4",
+            "cp-10.4",
+            "ir-9.4",
+            "si-3"
+          ],
+          "status": "Not Implemented",
+          "validationMethods": {
+            "automatedOperating": 0,
+            "automatedPlanned": 2,
+            "manualOperating": 0,
+            "manualPlanned": 0
+          },
+          "dailyValidation": null
+        },
+        {
+          "id": "KSI-CNA-EIS",
+          "name": "Enforcing Intended State",
+          "force": "MUST",
+          "statement": "Automated services are used to persistently assess the security of all machine-based information resources and automatically enforce their intended operational state.",
+          "controls": [
+            "ca-2.1",
+            "cm-11",
+            "cm-6.2",
+            "cp-10.4",
+            "ir-9.4",
+            "sc-24",
+            "sc-7.18",
+            "si-4.22",
+            "si-7",
+            "si-7.1",
+            "si-7.5",
+            "si-7.7"
+          ],
+          "status": "Not Implemented",
+          "validationMethods": {
+            "automatedOperating": 0,
+            "automatedPlanned": 2,
+            "manualOperating": 0,
+            "manualPlanned": 0
+          },
+          "dailyValidation": null
+        },
+        {
+          "id": "KSI-CNA-IBP",
+          "name": "Implementing Best Practices",
+          "force": "MUST",
+          "statement": "The use and configuration of third-party machine-based information resources is persistently compared against the original provider's best practices and guidance.",
+          "controls": [
+            "ac-17.3",
+            "cm-2",
+            "pl-10",
+            "sc-7.18"
+          ],
+          "status": "Not Implemented",
+          "validationMethods": {
+            "automatedOperating": 0,
+            "automatedPlanned": 2,
+            "manualOperating": 0,
+            "manualPlanned": 0
+          },
+          "dailyValidation": null
+        },
+        {
+          "id": "KSI-CNA-MAT",
+          "name": "Minimizing Attack Surface",
+          "force": "MUST",
+          "statement": "Machine-based information resources are persistently reviewed to ensure they have a minimal attack surface and that lateral movement is minimized if compromised.",
+          "controls": [
+            "ac-17.3",
+            "ac-18.1",
+            "ac-18.3",
+            "ac-20.1",
+            "ca-9",
+            "sc-10",
+            "sc-7.18",
+            "sc-7.3",
+            "sc-7.4",
+            "sc-7.5",
+            "sc-7.8",
+            "sc-8",
+            "si-10",
+            "si-11",
+            "si-16"
+          ],
+          "status": "Not Implemented",
+          "validationMethods": {
+            "automatedOperating": 0,
+            "automatedPlanned": 3,
+            "manualOperating": 0,
+            "manualPlanned": 0
+          },
+          "dailyValidation": null
+        },
+        {
+          "id": "KSI-CNA-OFA",
+          "name": "Optimizing for Availability",
+          "force": "MUST",
+          "statement": "Machine-based information resources are persistently reviewed to ensure they are appropriately optimized for high availability and rapid recovery.",
+          "controls": [
+            "cp-2.5",
+            "sc-12.1"
+          ],
+          "status": "Not Implemented",
+          "validationMethods": {
+            "automatedOperating": 0,
+            "automatedPlanned": 2,
+            "manualOperating": 0,
+            "manualPlanned": 0
+          },
+          "dailyValidation": null
+        },
+        {
+          "id": "KSI-CNA-RNT",
+          "name": "Restricting Network Traffic",
+          "force": "MUST",
+          "statement": "Machine-based information resources are persistently reviewed to ensure they are appropriately configured to limit inbound and outbound network traffic.",
+          "controls": [
+            "ac-17.3",
+            "ca-9",
+            "cm-7.1",
+            "sc-7.10",
+            "sc-7.18",
+            "sc-7.20",
+            "sc-7.21",
+            "sc-7.5",
+            "si-10",
+            "si-4.11",
+            "si-4.18",
+            "si-4.4",
+            "si-8"
+          ],
+          "status": "Not Implemented",
+          "validationMethods": {
+            "automatedOperating": 0,
+            "automatedPlanned": 3,
+            "manualOperating": 0,
+            "manualPlanned": 0
+          },
+          "dailyValidation": null
+        },
+        {
+          "id": "KSI-CNA-RVP",
+          "name": "Reviewing Protections",
+          "force": "MUST",
+          "statement": "The effectiveness of protection against denial of service attacks and other unwanted activity for machine-based information resources is persistently reviewed.",
+          "controls": [
+            "ir-4.2",
+            "sc-5",
+            "sc-7.18",
+            "si-8",
+            "si-8.2"
+          ],
+          "status": "Not Implemented",
+          "validationMethods": {
+            "automatedOperating": 0,
+            "automatedPlanned": 2,
+            "manualOperating": 0,
+            "manualPlanned": 0
+          },
+          "dailyValidation": null
+        },
+        {
+          "id": "KSI-CNA-ULN",
+          "name": "Using Logical Networking",
+          "force": "MUST",
+          "statement": "Logical networking and related capabilities are used and persistently reviewed to enforce traffic flow controls.",
+          "controls": [
+            "ac-12",
+            "ac-17.3",
+            "ac-4.21",
+            "ca-9",
+            "cm-11",
+            "sc-10",
+            "sc-4",
+            "sc-7",
+            "sc-7.20",
+            "sc-7.21",
+            "sc-7.7",
+            "sc-8"
+          ],
+          "status": "Not Implemented",
+          "validationMethods": {
+            "automatedOperating": 0,
+            "automatedPlanned": 2,
+            "manualOperating": 0,
+            "manualPlanned": 0
+          },
+          "dailyValidation": null
+        }
+      ]
+    },
+    {
+      "abbr": "IAM",
+      "name": "Identity and Access Management",
+      "ksis": [
+        {
+          "id": "KSI-IAM-AAM",
+          "name": "Automating Account Management",
+          "force": "MUST",
+          "statement": "The lifecycle and privileges of all accounts, roles, and groups are securely managed using automation.",
+          "controls": [
+            "ac-2.13",
+            "ac-2.2",
+            "ac-2.3",
+            "ac-6.7",
+            "ia-12",
+            "ia-12.2",
+            "ia-12.3",
+            "ia-12.5",
+            "ia-4.4",
+            "ia-8.4"
+          ],
+          "status": "Not Implemented",
+          "validationMethods": {
+            "automatedOperating": 0,
+            "automatedPlanned": 2,
+            "manualOperating": 0,
+            "manualPlanned": 0
+          },
+          "dailyValidation": null
+        },
+        {
+          "id": "KSI-IAM-APM",
+          "name": "Adopting Passwordless Methods",
+          "force": "MUST",
+          "statement": "Secure passwordless methods are used for user authentication and authorization when feasible, otherwise strong passwords with phishing-resistant MFA is used.",
+          "controls": [
+            "ac-2",
+            "ac-3",
+            "ia-2",
+            "ia-2.1",
+            "ia-2.2",
+            "ia-2.6",
+            "ia-2.8",
+            "ia-5",
+            "ia-5.1",
+            "ia-5.2",
+            "ia-5.6",
+            "ia-5.8",
+            "ia-6",
+            "ia-8",
+            "ia-8.2",
+            "ia-8.4",
+            "sc-23"
+          ],
+          "status": "Not Implemented",
+          "validationMethods": {
+            "automatedOperating": 0,
+            "automatedPlanned": 3,
+            "manualOperating": 0,
+            "manualPlanned": 0
+          },
+          "dailyValidation": null
+        },
+        {
+          "id": "KSI-IAM-ELP",
+          "name": "Ensuring Least Privilege",
+          "force": "MUST",
+          "statement": "Identity and access management measures are used and persistently reviewed to ensure each user or device can only access the resources they need.",
+          "controls": [
+            "ac-12",
+            "ac-14",
+            "ac-17",
+            "ac-17.1",
+            "ac-17.2",
+            "ac-17.3",
+            "ac-18.4",
+            "ac-2.11",
+            "ac-2.5",
+            "ac-2.6",
+            "ac-2.7",
+            "ac-2.9",
+            "ac-20",
+            "ac-20.1",
+            "ac-21",
+            "ac-3",
+            "ac-4",
+            "ac-6",
+            "ac-6.3",
+            "ac-6.8",
+            "au-12.3",
+            "au-6.7",
+            "cm-2.7",
+            "cm-5.1",
+            "cm-5.5",
+            "cm-7.2",
+            "cm-9",
+            "ia-11",
+            "ia-2",
+            "ia-3",
+            "ia-4",
+            "ia-4.4",
+            "ia-5.2",
+            "ia-5.6",
+            "ir-4.6",
+            "ir-9.4",
+            "ps-2",
+            "ps-3",
+            "ps-4",
+            "ps-5",
+            "ps-6",
+            "ra-5.5",
+            "sc-2",
+            "sc-20",
+            "sc-21",
+            "sc-22",
+            "sc-23",
+            "sc-3",
+            "sc-39",
+            "sc-4",
+            "si-3",
+            "si-4.19"
+          ],
+          "status": "Not Implemented",
+          "validationMethods": {
+            "automatedOperating": 0,
+            "automatedPlanned": 2,
+            "manualOperating": 0,
+            "manualPlanned": 0
+          },
+          "dailyValidation": null
+        },
+        {
+          "id": "KSI-IAM-JIT",
+          "name": "Authorizing Just-in-Time",
+          "force": "MUST",
+          "statement": "A least-privileged, role and attribute-based, and just-in-time security authorization model is used and persistently reviewed for all user and non-user accounts and services.",
+          "controls": [
+            "ac-17",
+            "ac-17.4",
+            "ac-2",
+            "ac-2.1",
+            "ac-2.11",
+            "ac-2.2",
+            "ac-2.3",
+            "ac-2.4",
+            "ac-2.6",
+            "ac-2.7",
+            "ac-20.1",
+            "ac-21",
+            "ac-3",
+            "ac-4",
+            "ac-5",
+            "ac-6",
+            "ac-6.1",
+            "ac-6.10",
+            "ac-6.2",
+            "ac-6.3",
+            "ac-6.5",
+            "ac-6.7",
+            "ac-6.8",
+            "ac-6.9",
+            "ac-7",
+            "au-10",
+            "au-12.3",
+            "au-9.4",
+            "ca-3.6",
+            "cm-5",
+            "cm-5.1",
+            "cm-5.5",
+            "cm-7",
+            "cm-7.2",
+            "cm-7.5",
+            "cm-9",
+            "ia-4",
+            "ia-4.4",
+            "ia-7",
+            "ir-4.6",
+            "ps-2",
+            "ps-3",
+            "ps-4",
+            "ps-5",
+            "ps-6",
+            "ps-9",
+            "ra-5.5",
+            "sc-2",
+            "sc-23",
+            "sc-3",
+            "sc-39"
+          ],
+          "status": "Not Implemented",
+          "validationMethods": {
+            "automatedOperating": 0,
+            "automatedPlanned": 2,
+            "manualOperating": 0,
+            "manualPlanned": 1
+          },
+          "dailyValidation": null
+        },
+        {
+          "id": "KSI-IAM-SNU",
+          "name": "Securing Non-User Authentication",
+          "force": "MUST",
+          "statement": "Appropriately secure authentication methods are used and persistently reviewed for non-user accounts and services.",
+          "controls": [
+            "ac-2",
+            "ac-2.2",
+            "ac-2.9",
+            "ac-4",
+            "ac-6.5",
+            "au-10",
+            "ia-2.5",
+            "ia-3",
+            "ia-5.2",
+            "ra-5.5"
+          ],
+          "status": "Not Implemented",
+          "validationMethods": {
+            "automatedOperating": 1,
+            "automatedPlanned": 2,
+            "manualOperating": 0,
+            "manualPlanned": 0
+          },
+          "dailyValidation": null
+        },
+        {
+          "id": "KSI-IAM-SUS",
+          "name": "Responding to Suspicious Activity",
+          "force": "MUST",
+          "statement": "Accounts with privileged access are disabled or otherwise secured in response to suspicious activity.",
+          "controls": [
+            "ac-2",
+            "ac-2.1",
+            "ac-2.11",
+            "ac-2.12",
+            "ac-2.13",
+            "ac-2.3",
+            "ac-7",
+            "au-6.5",
+            "cm-5.1",
+            "cm-6.2",
+            "ir-4.2",
+            "ir-4.6",
+            "ps-4",
+            "ps-8",
+            "si-4",
+            "si-4.1",
+            "si-4.19",
+            "si-4.20",
+            "si-4.22",
+            "si-4.4"
+          ],
+          "status": "Not Implemented",
+          "validationMethods": {
+            "automatedOperating": 0,
+            "automatedPlanned": 2,
+            "manualOperating": 0,
+            "manualPlanned": 0
+          },
+          "dailyValidation": null
+        }
+      ]
+    },
+    {
+      "abbr": "INR",
+      "name": "Incident Response",
+      "ksis": [
+        {
+          "id": "KSI-INR-AAR",
+          "name": "Generating After Action Reports",
+          "force": "MUST",
+          "statement": "Incident after action reports are generated and lessons learned are persistently incorporated.",
+          "controls": [
+            "ir-3",
+            "ir-4",
+            "ir-4.1",
+            "ir-5.1",
+            "ir-8",
+            "ir-9.3"
+          ],
+          "status": "Not Implemented",
+          "validationMethods": {
+            "automatedOperating": 0,
+            "automatedPlanned": 2,
+            "manualOperating": 0,
+            "manualPlanned": 0
+          },
+          "dailyValidation": null
+        },
+        {
+          "id": "KSI-INR-RIR",
+          "name": "Reviewing Incident Response Procedures",
+          "force": "MUST",
+          "statement": "The effectiveness of documented incident response procedures is persistently reviewed.",
+          "controls": [
+            "ir-4",
+            "ir-4.1",
+            "ir-4.11",
+            "ir-6",
+            "ir-6.1",
+            "ir-6.3",
+            "ir-7",
+            "ir-7.1",
+            "ir-8",
+            "ir-8.1",
+            "ir-9.3",
+            "si-4.5"
+          ],
+          "status": "Not Implemented",
+          "validationMethods": {
+            "automatedOperating": 0,
+            "automatedPlanned": 2,
+            "manualOperating": 0,
+            "manualPlanned": 1
+          },
+          "dailyValidation": null
+        },
+        {
+          "id": "KSI-INR-RPI",
+          "name": "Reviewing Past Incidents",
+          "force": "MUST",
+          "statement": "Past incidents are persistently reviewed for patterns or vulnerabilities that were not previously apparent or identified.",
+          "controls": [
+            "ir-3",
+            "ir-4",
+            "ir-4.1",
+            "ir-4.11",
+            "ir-4.4",
+            "ir-5",
+            "ir-5.1",
+            "ir-8",
+            "ra-5.8"
+          ],
+          "status": "Not Implemented",
+          "validationMethods": {
+            "automatedOperating": 0,
+            "automatedPlanned": 2,
+            "manualOperating": 0,
+            "manualPlanned": 0
+          },
+          "dailyValidation": null
+        }
+      ]
+    },
+    {
+      "abbr": "MLA",
+      "name": "Monitoring, Logging, and Auditing",
+      "ksis": [
+        {
+          "id": "KSI-MLA-ALA",
+          "name": "Authorizing Log Access",
+          "force": "MUST",
+          "statement": "A least-privileged, role and attribute-based, and just-in-time access authorization model is used and persistently reviewed for access to log data based on organizationally defined data sensitivity.",
+          "controls": [
+            "au-12.3",
+            "au-6.7",
+            "si-11"
+          ],
+          "status": "Not Implemented",
+          "validationMethods": {
+            "automatedOperating": 0,
+            "automatedPlanned": 2,
+            "manualOperating": 0,
+            "manualPlanned": 0
+          },
+          "dailyValidation": null
+        },
+        {
+          "id": "KSI-MLA-EVC",
+          "name": "Evaluating Configurations",
+          "force": "MUST",
+          "statement": "The configuration of machine-based information resources, especially infrastructure as code, is persistently evaluated and tested.",
+          "controls": [
+            "ac-19",
+            "ca-7",
+            "cm-2",
+            "cm-6",
+            "cm-6.1",
+            "ra-3",
+            "si-7.7"
+          ],
+          "status": "Not Implemented",
+          "validationMethods": {
+            "automatedOperating": 0,
+            "automatedPlanned": 2,
+            "manualOperating": 0,
+            "manualPlanned": 0
+          },
+          "dailyValidation": null
+        },
+        {
+          "id": "KSI-MLA-LET",
+          "name": "Logging Event Types",
+          "force": "MUST",
+          "statement": "A list of information resources and event types that will be logged, monitored, and audited is maintained and persistently reviewed to ensure these activities occur.",
+          "controls": [
+            "ac-17.1",
+            "ac-2.4",
+            "ac-20.1",
+            "ac-6.9",
+            "au-10",
+            "au-12",
+            "au-2",
+            "au-7",
+            "au-7.1",
+            "cm-5.1",
+            "ir-9.4",
+            "si-4.19",
+            "si-4.20",
+            "si-4.4",
+            "si-4.5",
+            "si-7.7"
+          ],
+          "status": "Not Implemented",
+          "validationMethods": {
+            "automatedOperating": 0,
+            "automatedPlanned": 2,
+            "manualOperating": 0,
+            "manualPlanned": 1
+          },
+          "dailyValidation": null
+        },
+        {
+          "id": "KSI-MLA-OSM",
+          "name": "Operating SIEM Capability",
+          "force": "MUST",
+          "statement": "A Security Information and Event Management (SIEM) or similar system(s) is used and persistently reviewed for centralized, tamper-resistant logging of events, activities, and changes.",
+          "controls": [
+            "ac-17.1",
+            "ac-20.1",
+            "au-11",
+            "au-12.1",
+            "au-2",
+            "au-3",
+            "au-3.1",
+            "au-4",
+            "au-5",
+            "au-5.1",
+            "au-6.1",
+            "au-6.3",
+            "au-6.4",
+            "au-6.5",
+            "au-7",
+            "au-7.1",
+            "au-8",
+            "au-9",
+            "ir-4.1",
+            "si-4.16",
+            "si-4.2",
+            "si-4.4"
+          ],
+          "status": "Not Implemented",
+          "validationMethods": {
+            "automatedOperating": 0,
+            "automatedPlanned": 3,
+            "manualOperating": 0,
+            "manualPlanned": 0
+          },
+          "dailyValidation": null
+        },
+        {
+          "id": "KSI-MLA-RVL",
+          "name": "Reviewing Logs",
+          "force": "MUST",
+          "statement": "Logs are persistently reviewed and audited.",
+          "controls": [
+            "ac-2.4",
+            "ac-6.9",
+            "au-2",
+            "au-6",
+            "au-6.1",
+            "au-7",
+            "ra-5.8",
+            "si-4",
+            "si-4.19",
+            "si-4.4"
+          ],
+          "status": "Not Implemented",
+          "validationMethods": {
+            "automatedOperating": 0,
+            "automatedPlanned": 2,
+            "manualOperating": 0,
+            "manualPlanned": 0
+          },
+          "dailyValidation": null
+        }
+      ]
+    },
+    {
+      "abbr": "PIY",
+      "name": "Policy and Inventory",
+      "ksis": [
+        {
+          "id": "KSI-PIY-GIV",
+          "name": "Generating Inventories",
+          "force": "MUST",
+          "statement": "Authoritative sources are used to automatically generate real-time inventories of all information resources when needed.",
+          "controls": [
+            "cm-12",
+            "cm-12.1",
+            "cm-2.2",
+            "cm-7.5",
+            "cm-8",
+            "cm-8.1",
+            "cm-8.2",
+            "cm-8.4",
+            "cp-2.8"
+          ],
+          "status": "Not Implemented",
+          "validationMethods": {
+            "automatedOperating": 0,
+            "automatedPlanned": 2,
+            "manualOperating": 0,
+            "manualPlanned": 0
+          },
+          "dailyValidation": null
+        },
+        {
+          "id": "KSI-PIY-RES",
+          "name": "Reviewing Executive Support",
+          "force": "MUST",
+          "statement": "Executive support for achieving the provider's security goals is persistently reviewed and demonstrated.",
+          "controls": [],
+          "status": "Not Implemented",
+          "validationMethods": {
+            "automatedOperating": 0,
+            "automatedPlanned": 2,
+            "manualOperating": 0,
+            "manualPlanned": 0
+          },
+          "dailyValidation": null
+        },
+        {
+          "id": "KSI-PIY-RIS",
+          "name": "Reviewing Investments in Security",
+          "force": "MUST",
+          "statement": "The effectiveness of the provider's investments in achieving security goals is persistently reviewed.",
+          "controls": [
+            "ac-5",
+            "ca-2",
+            "ca-2.2",
+            "cp-2.1",
+            "cp-4.1",
+            "ir-3.2",
+            "ir-4.11",
+            "pm-3",
+            "sa-2",
+            "sa-3",
+            "sr-2.1"
+          ],
+          "status": "Not Implemented",
+          "validationMethods": {
+            "automatedOperating": 0,
+            "automatedPlanned": 2,
+            "manualOperating": 0,
+            "manualPlanned": 0
+          },
+          "dailyValidation": null
+        },
+        {
+          "id": "KSI-PIY-RSD",
+          "name": "Reviewing Security in the SDLC",
+          "force": "MUST",
+          "statement": "The effectiveness of building security and privacy considerations into the Software Development Lifecycle and aligning with CISA Secure By Design principles is persistently reviewed.",
+          "controls": [
+            "ac-5",
+            "au-3.3",
+            "cm-3.4",
+            "ia-5.7",
+            "pl-8",
+            "pm-7",
+            "ra-9",
+            "sa-3",
+            "sa-8",
+            "sc-18",
+            "sc-4",
+            "si-10",
+            "si-11",
+            "si-16"
+          ],
+          "status": "Partially Implemented",
+          "validationMethods": {
+            "automatedOperating": 2,
+            "automatedPlanned": 0,
+            "manualOperating": 0,
+            "manualPlanned": 1
+          },
+          "dailyValidation": null
+        },
+        {
+          "id": "KSI-PIY-RVD",
+          "name": "Reviewing Vulnerability Disclosures",
+          "force": "MUST",
+          "statement": "The effectiveness of the provider's vulnerability disclosure program is persistently reviewed.",
+          "controls": [
+            "ra-5.11"
+          ],
+          "status": "Not Implemented",
+          "validationMethods": {
+            "automatedOperating": 0,
+            "automatedPlanned": 2,
+            "manualOperating": 0,
+            "manualPlanned": 0
+          },
+          "dailyValidation": null
+        }
+      ]
+    },
+    {
+      "abbr": "RPL",
+      "name": "Recovery Planning",
+      "ksis": [
+        {
+          "id": "KSI-RPL-ABO",
+          "name": "Aligning Backups with Objectives",
+          "force": "MUST",
+          "statement": "The alignment of machine-based information resource backups with defined recovery objectives is persistently reviewed.",
+          "controls": [
+            "cm-2.3",
+            "cp-6",
+            "cp-9",
+            "cp-10",
+            "cp-10.2"
+          ],
+          "status": "Not Implemented",
+          "validationMethods": {
+            "automatedOperating": 0,
+            "automatedPlanned": 2,
+            "manualOperating": 0,
+            "manualPlanned": 0
+          },
+          "dailyValidation": null
+        },
+        {
+          "id": "KSI-RPL-ARP",
+          "name": "Aligning Recovery Plan",
+          "force": "MUST",
+          "statement": "The alignment of recovery plans with defined recovery objectives is persistently reviewed.",
+          "controls": [
+            "cp-2",
+            "cp-2.1",
+            "cp-2.3",
+            "cp-4.1",
+            "cp-6",
+            "cp-6.1",
+            "cp-6.3",
+            "cp-7",
+            "cp-7.1",
+            "cp-7.2",
+            "cp-7.3",
+            "cp-8",
+            "cp-8.1",
+            "cp-8.2",
+            "cp-10",
+            "cp-10.2"
+          ],
+          "status": "Not Implemented",
+          "validationMethods": {
+            "automatedOperating": 0,
+            "automatedPlanned": 2,
+            "manualOperating": 0,
+            "manualPlanned": 0
+          },
+          "dailyValidation": null
+        },
+        {
+          "id": "KSI-RPL-RRO",
+          "name": "Reviewing Recovery Objectives",
+          "force": "MUST",
+          "statement": "The desired Recovery Time Objectives (RTO) and Recovery Point Objectives (RPO) are defined and persistently reviewed for alignment with the provider's business needs and capabilities.",
+          "controls": [
+            "cp-2.3",
+            "cp-10"
+          ],
+          "status": "Partially Implemented",
+          "validationMethods": {
+            "automatedOperating": 0,
+            "automatedPlanned": 2,
+            "manualOperating": 0,
+            "manualPlanned": 1
+          },
+          "dailyValidation": null
+        },
+        {
+          "id": "KSI-RPL-TRC",
+          "name": "Testing Recovery Capabilities",
+          "force": "MUST",
+          "statement": "The capability to recover from incidents and contingencies aligned with defined recovery objectives is persistently tested.",
+          "controls": [
+            "cp-10",
+            "cp-2.1",
+            "cp-2.3",
+            "cp-4",
+            "cp-4.1",
+            "cp-6",
+            "cp-6.1",
+            "cp-9.1",
+            "ir-3",
+            "ir-3.2",
+            "ir-9.3",
+            "sc-12.1"
+          ],
+          "status": "Not Implemented",
+          "validationMethods": {
+            "automatedOperating": 0,
+            "automatedPlanned": 2,
+            "manualOperating": 0,
+            "manualPlanned": 1
+          },
+          "dailyValidation": null
+        }
+      ]
+    },
+    {
+      "abbr": "SCR",
+      "name": "Supply Chain Risk",
+      "ksis": [
+        {
+          "id": "KSI-SCR-MIT",
+          "name": "Mitigating Supply Chain Risk",
+          "force": "MUST",
+          "statement": "Persistently identify, review, and mitigate potential supply chain risks.",
+          "controls": [
+            "ac-19",
+            "ac-20",
+            "ca-7.4",
+            "ra-3",
+            "ra-3.1",
+            "sa-10",
+            "sa-11",
+            "sa-11.1",
+            "sa-11.2",
+            "sa-15",
+            "sa-15.3",
+            "sa-16",
+            "sa-17",
+            "sa-21",
+            "sa-22",
+            "sa-4",
+            "sa-4.1",
+            "sa-4.2",
+            "sa-4.5",
+            "sa-4.9",
+            "sa-9",
+            "sa-9.1",
+            "sa-9.2",
+            "sa-9.5",
+            "sc-18",
+            "si-7.1",
+            "si-7.15",
+            "sr-2",
+            "sr-3",
+            "sr-5",
+            "sr-6"
+          ],
+          "status": "Partially Implemented",
+          "validationMethods": {
+            "automatedOperating": 0,
+            "automatedPlanned": 2,
+            "manualOperating": 0,
+            "manualPlanned": 1
+          },
+          "dailyValidation": null
+        },
+        {
+          "id": "KSI-SCR-MON",
+          "name": "Monitoring Supply Chain Risk",
+          "force": "MUST",
+          "statement": "Third party software information resources are automatically monitored for upstream vulnerabilities using mechanisms that may include contractual notification requirements or active monitoring services.",
+          "controls": [
+            "ac-19",
+            "ac-20",
+            "ca-2.3",
+            "ca-3",
+            "ir-6.3",
+            "ps-7",
+            "ra-3",
+            "ra-5",
+            "sa-9",
+            "si-5",
+            "sr-3",
+            "sr-5",
+            "sr-6",
+            "sr-8"
+          ],
+          "status": "Not Implemented",
+          "validationMethods": {
+            "automatedOperating": 0,
+            "automatedPlanned": 2,
+            "manualOperating": 0,
+            "manualPlanned": 0
+          },
+          "dailyValidation": null
+        }
+      ]
+    },
+    {
+      "abbr": "SVC",
+      "name": "Service Configuration",
+      "ksis": [
+        {
+          "id": "KSI-SVC-ACM",
+          "name": "Automating Configuration Management",
+          "force": "MUST",
+          "statement": "The configuration of machine-based information resources is managed using automation and persistently reviewed for drift.",
+          "controls": [
+            "ac-2.4",
+            "ac-6.8",
+            "cm-2",
+            "cm-2.2",
+            "cm-2.3",
+            "cm-6",
+            "cm-7.1",
+            "pl-10",
+            "pl-9",
+            "sa-5",
+            "sc-45",
+            "sc-45.1",
+            "sc-7.18",
+            "si-5",
+            "sr-10"
+          ],
+          "status": "Not Implemented",
+          "validationMethods": {
+            "automatedOperating": 0,
+            "automatedPlanned": 2,
+            "manualOperating": 0,
+            "manualPlanned": 0
+          },
+          "dailyValidation": null
+        },
+        {
+          "id": "KSI-SVC-ASM",
+          "name": "Automating Secret Management",
+          "force": "MUST",
+          "statement": "Management, protection, and regular rotation of digital keys, certificates, and other secrets is automated and persistently reviewed.",
+          "controls": [
+            "ac-17.2",
+            "ia-5.2",
+            "ia-5.6",
+            "sc-12",
+            "sc-12.1",
+            "sc-17"
+          ],
+          "status": "Not Implemented",
+          "validationMethods": {
+            "automatedOperating": 1,
+            "automatedPlanned": 1,
+            "manualOperating": 0,
+            "manualPlanned": 0
+          },
+          "dailyValidation": null
+        },
+        {
+          "id": "KSI-SVC-EIS",
+          "name": "Evaluating and Improving Security",
+          "force": "MUST",
+          "statement": "Information resources are persistently evaluated for opportunities to improve security and those improvements are persistently made.",
+          "controls": [
+            "ca-7.4",
+            "cm-12.1",
+            "cm-5.5",
+            "cm-7.1",
+            "ir-9.4",
+            "pl-8",
+            "ra-3",
+            "sc-39",
+            "sc-7",
+            "si-2.2",
+            "si-4",
+            "sr-10"
+          ],
+          "status": "Not Implemented",
+          "validationMethods": {
+            "automatedOperating": 0,
+            "automatedPlanned": 2,
+            "manualOperating": 0,
+            "manualPlanned": 0
+          },
+          "dailyValidation": null
+        },
+        {
+          "id": "KSI-SVC-PRR",
+          "name": "Preventing Residual Risk",
+          "force": "MUST",
+          "statement": "Plans, procedures, and the state of information resources are persistently reviewed after making changes to limit and remove unwanted residual elements that would likely negatively affect the confidentiality, integrity, or availability of federal customer data.",
+          "controls": [
+            "ac-19",
+            "ir-9.4",
+            "sc-12.1",
+            "sc-4",
+            "sc-7.18"
+          ],
+          "status": "Not Implemented",
+          "validationMethods": {
+            "automatedOperating": 0,
+            "automatedPlanned": 2,
+            "manualOperating": 0,
+            "manualPlanned": 0
+          },
+          "dailyValidation": null
+        },
+        {
+          "id": "KSI-SVC-RUD",
+          "name": "Removing Unwanted Data",
+          "force": "MUST",
+          "statement": "Unwanted federal customer data is removed promptly when requested by an agency in alignment with customer agreements, including from backups if appropriate; this typically applies when a customer spills information or when a customer seeks to remove information from a service due to a change in usage.",
+          "controls": [
+            "ir-9",
+            "si-12.3",
+            "si-18.4",
+            "si-8",
+            "si-8.2"
+          ],
+          "status": "Not Implemented",
+          "validationMethods": {
+            "automatedOperating": 0,
+            "automatedPlanned": 2,
+            "manualOperating": 0,
+            "manualPlanned": 0
+          },
+          "dailyValidation": null
+        },
+        {
+          "id": "KSI-SVC-SIN",
+          "name": "Securing Information",
+          "force": "MUST",
+          "statement": "Information is encrypted or otherwise secured from unwanted access or modification.",
+          "controls": [
+            "ac-11",
+            "ac-11.1",
+            "ac-17.2",
+            "ac-19.5",
+            "ac-21",
+            "cp-9.8",
+            "ir-9.4",
+            "sc-13",
+            "sc-20",
+            "sc-21",
+            "sc-22",
+            "sc-23",
+            "sc-28",
+            "sc-28.1",
+            "sc-4",
+            "sc-7.18",
+            "sc-8",
+            "sc-8.1",
+            "si-4.18"
+          ],
+          "status": "Not Implemented",
+          "validationMethods": {
+            "automatedOperating": 0,
+            "automatedPlanned": 2,
+            "manualOperating": 0,
+            "manualPlanned": 0
+          },
+          "dailyValidation": null
+        },
+        {
+          "id": "KSI-SVC-VCM",
+          "name": "Validating Communications",
+          "force": "MUST",
+          "statement": "The authenticity and integrity of communications between machine-based information resources is persistently validated using automation.",
+          "controls": [
+            "ac-10",
+            "ac-17.4",
+            "ac-18",
+            "ac-19",
+            "sc-23",
+            "si-4.22",
+            "si-7.1"
+          ],
+          "status": "Not Implemented",
+          "validationMethods": {
+            "automatedOperating": 0,
+            "automatedPlanned": 2,
+            "manualOperating": 0,
+            "manualPlanned": 0
+          },
+          "dailyValidation": null
+        },
+        {
+          "id": "KSI-SVC-VRI",
+          "name": "Validating Resource Integrity",
+          "force": "MUST",
+          "statement": "Use cryptographic methods to validate the integrity of machine-based information resources.",
+          "controls": [
+            "ac-17.4",
+            "ac-18",
+            "ac-19",
+            "au-9.3",
+            "cm-14",
+            "cm-2.2",
+            "cm-8.3",
+            "sc-13",
+            "sc-23",
+            "si-7",
+            "si-7.1",
+            "si-7.15",
+            "sr-10",
+            "sr-11"
+          ],
+          "status": "Not Implemented",
+          "validationMethods": {
+            "automatedOperating": 0,
+            "automatedPlanned": 2,
+            "manualOperating": 0,
+            "manualPlanned": 0
+          },
+          "dailyValidation": null
+        }
+      ]
+    }
+  ],
+  "dailyValidationRunning": false
+}

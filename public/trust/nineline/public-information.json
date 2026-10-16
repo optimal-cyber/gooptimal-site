@@ -1,0 +1,35 @@
+{
+  "schema": "nineline.trust-public/1",
+  "kind": "public-information",
+  "generatedAt": "2026-10-16T15:47:26+00:00",
+  "rule": "CDS-CSO-PUB",
+  "fedRampId": "Optimal, LLC (NINELINE)",
+  "fedRampIdAssigned": false,
+  "provider": "Optimal, LLC",
+  "service": "NINELINE",
+  "description": "Software and AI supply-chain adjudication: a customer submits a repository or container image; NINELINE produces a CycloneDX SBOM, matches it against vulnerability data, and adjudicates each finding with a deterministic call-graph engine, returning a VEX document in which every statement carries its evidence.",
+  "certificationType": "20x",
+  "certificationClassSought": "C",
+  "certificationPath": "Program",
+  "serviceModel": [
+    "SaaS"
+  ],
+  "deploymentModel": "Government Community Cloud",
+  "businessCategory": [
+    "Cybersecurity & Risk Management",
+    "Artificial Intelligence (AI)",
+    "Development Tools"
+  ],
+  "ueiNumber": "TYMSGKDF2K48",
+  "salesContact": {
+    "contactName": "Ryan Gutwein",
+    "contactEmail": "ryan@gooptimal.io"
+  },
+  "securityContact": {
+    "contactName": "Ryan Gutwein, ISSO",
+    "contactEmail": "ryan@gooptimal.io"
+  },
+  "productWebsite": "https://gooptimal.io/nineline",
+  "logo": "https://gooptimal.io/optimal-logo.svg",
+  "certificationPackageOverview": "https://gooptimal.io/trust/nineline/cpo.json"
+}

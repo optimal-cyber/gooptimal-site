@@ -1,0 +1,78 @@
+{
+  "schema": "nineline.trust-public/1",
+  "kind": "progress",
+  "generatedAt": "2026-10-16T15:47:26+00:00",
+  "rule": "MKT-IIP-DCP",
+  "goal": "FedRAMP 20x Class C certification of NINELINE on the Program path",
+  "milestones": [
+    {
+      "id": "M1",
+      "title": "Optimal signing infrastructure in AWS GovCloud (US)",
+      "detail": "Release and vulnerability-database signing key in KMS, signing roles limited to the release workflow, signing log in CloudTrail.",
+      "status": "done",
+      "done": "2026-10-15",
+      "target": null
+    },
+    {
+      "id": "M2",
+      "title": "FedRAMP Marketplace listing request",
+      "detail": "Certification Package Overview published in FedRAMP's JSON schema and the listing request submitted (FRC-APP-MLF).",
+      "status": "in_progress",
+      "done": null,
+      "target": null
+    },
+    {
+      "id": "M3",
+      "title": "Authorization boundary foundation and daily KSI validation",
+      "detail": "Audit logging into immutable storage, AWS Config with the FedRAMP Moderate conformance pack, Security Hub, GuardDuty, Inspector, and automated daily validation of all 46 Key Security Indicators.",
+      "status": "in_progress",
+      "done": null,
+      "target": null
+    },
+    {
+      "id": "M4",
+      "title": "NINELINE hosted inside the boundary",
+      "detail": "The service behind WAF in a network with an egress allowlist, sign-in with MFA, DNSSEC-signed domain, model inference on Amazon Bedrock.",
+      "status": "in_progress",
+      "done": null,
+      "target": null
+    },
+    {
+      "id": "M5",
+      "title": "Change control enforced in source control",
+      "detail": "Repository on GitHub Enterprise Cloud with required review and required checks on every change.",
+      "status": "not_started",
+      "done": null,
+      "target": null
+    },
+    {
+      "id": "M6",
+      "title": "30 days of persistent KSI validation data",
+      "detail": "The daily metrics and summaries the Security Decision Record carries (SDR-CSX-KMT).",
+      "status": "not_started",
+      "done": null,
+      "target": null
+    },
+    {
+      "id": "M7",
+      "title": "Independent assessment scheduled",
+      "detail": "A FedRAMP Recognized assessor with no advisory role in the prior two years (REC-IAS-SEP).",
+      "status": "not_started",
+      "done": null,
+      "target": null
+    },
+    {
+      "id": "M8",
+      "title": "FedRAMP 20x Class C certification application",
+      "detail": "Certification package (CPO and SDR) and assessment submitted to FedRAMP.",
+      "status": "not_started",
+      "done": null,
+      "target": null
+    }
+  ],
+  "counts": {
+    "done": 1,
+    "in_progress": 3,
+    "not_started": 4
+  }
+}
