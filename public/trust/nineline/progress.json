@@ -1,7 +1,7 @@
 {
   "schema": "nineline.trust-public/1",
   "kind": "progress",
-  "generatedAt": "2026-10-16T15:47:26+00:00",
+  "generatedAt": "2026-10-16T19:39:31+00:00",
   "rule": "MKT-IIP-DCP",
   "goal": "FedRAMP 20x Class C certification of NINELINE on the Program path",
   "milestones": [
@@ -15,8 +15,16 @@
     },
     {
       "id": "M2",
-      "title": "FedRAMP Marketplace listing request",
-      "detail": "Certification Package Overview published in FedRAMP's JSON schema and the listing request submitted (FRC-APP-MLF).",
+      "title": "FedRAMP Marketplace listing request submitted",
+      "detail": "Certification Package Overview published in FedRAMP's JSON schema and the listing request submitted (FRC-APP-MLF, MKT-CSO-PML); received by the FedRAMP Intake Team.",
+      "status": "done",
+      "done": "2026-10-16",
+      "target": null
+    },
+    {
+      "id": "M2a",
+      "title": "Listed on the FedRAMP Marketplace as Initial Implementation",
+      "detail": "After FedRAMP's JSON schema validation and human review of the listing request.",
       "status": "in_progress",
       "done": null,
       "target": null
@@ -71,7 +79,7 @@
     }
   ],
   "counts": {
-    "done": 1,
+    "done": 2,
     "in_progress": 3,
     "not_started": 4
   }

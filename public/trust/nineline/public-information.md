@@ -16,4 +16,4 @@ Software and AI supply-chain adjudication: a customer submits a repository or co
 | Security contact | Ryan Gutwein, ISSO <ryan@gooptimal.io> |
 | Product website | https://gooptimal.io/nineline |
 
-Generated 2026-10-16T15:47:26+00:00 (CDS-CSO-PUB). Machine-readable: public-information.json.
+Generated 2026-10-16T19:39:31+00:00 (CDS-CSO-PUB). Machine-readable: public-information.json.

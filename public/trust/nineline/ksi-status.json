@@ -1,7 +1,7 @@
 {
   "schema": "nineline.trust-public/1",
   "kind": "ksi-status",
-  "generatedAt": "2026-10-16T15:47:26+00:00",
+  "generatedAt": "2026-10-16T19:39:31+00:00",
   "rulesVersion": "2026.10.13.01",
   "sdrUpdated": "2026-10-16T15:08:24+00:00",
   "certificationClass": "C",
