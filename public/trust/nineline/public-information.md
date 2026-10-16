@@ -4,8 +4,8 @@ Software and AI supply-chain adjudication: a customer submits a repository or co
 
 | Field | Value |
 |---|---|
-| FedRAMP ID | Optimal, LLC (NINELINE) (assigned on listing) |
-| Provider | Optimal, LLC |
+| FedRAMP ID | Optimal Labs (NINELINE) (assigned on listing) |
+| Provider | Optimal Labs |
 | Service | NINELINE |
 | Certification sought | 20x Class C, Program path |
 | Service model | SaaS |
@@ -16,4 +16,4 @@ Software and AI supply-chain adjudication: a customer submits a repository or co
 | Security contact | Ryan Gutwein, ISSO <ryan@gooptimal.io> |
 | Product website | https://gooptimal.io/nineline |
 
-Generated 2026-10-16T19:39:31+00:00 (CDS-CSO-PUB). Machine-readable: public-information.json.
+Generated 2026-10-16T19:41:55+00:00 (CDS-CSO-PUB). Machine-readable: public-information.json.

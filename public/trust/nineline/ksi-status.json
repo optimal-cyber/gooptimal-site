@@ -1,9 +1,9 @@
 {
   "schema": "nineline.trust-public/1",
   "kind": "ksi-status",
-  "generatedAt": "2026-10-16T19:39:31+00:00",
+  "generatedAt": "2026-10-16T19:41:55+00:00",
   "rulesVersion": "2026.10.13.01",
-  "sdrUpdated": "2026-10-16T15:08:24+00:00",
+  "sdrUpdated": "2026-10-16T19:41:12+00:00",
   "certificationClass": "C",
   "requirement": "At least two automated validation methods per KSI (FRC-CSX-VVK); 30 days of daily data (SDR-CSX-KMT).",
   "totals": {

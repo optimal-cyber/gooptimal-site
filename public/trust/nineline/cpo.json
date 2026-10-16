@@ -1,8 +1,8 @@
 {
   "serviceIdentification": {
-    "fedRampPackageId": "Optimal, LLC (NINELINE)",
+    "fedRampPackageId": "Optimal Labs (NINELINE)",
     "ueiNumber": "TYMSGKDF2K48",
-    "providerName": "Optimal, LLC",
+    "providerName": "Optimal Labs",
     "serviceName": "NINELINE",
     "serviceAcronym": "NINELINE",
     "serviceDescription": "Software and AI supply-chain adjudication: a customer submits a repository or container image; NINELINE produces a CycloneDX SBOM, matches it against vulnerability data, and adjudicates each finding with a deterministic call-graph engine, returning a VEX document in which every statement carries its evidence.",
