@@ -12,6 +12,8 @@ import Footer from "../../components/Footer.astro";
 import pub from "../../../public/trust/nineline/public-information.json";
 import ksi from "../../../public/trust/nineline/ksi-status.json";
 import progress from "../../../public/trust/nineline/progress.json";
+import vdr from "../../../public/trust/nineline/vdr-ver-status.json";
+import vuln from "../../../public/trust/nineline/vulnerability-summary.json";
 
 const STATUS: Record<string, { label: string; cls: string }> = {
   "Implemented": { label: "Implemented", cls: "ok" },
@@ -26,6 +28,8 @@ const MS: Record<string, { label: string; cls: string }> = {
 const date = (iso: string) => iso ? new Date(iso).toISOString().slice(0, 10) : "";
 const t = ksi.totals;
 const pct = (n: number) => `${(100 * n / t.ksis).toFixed(1)}%`;
+const vt = vdr.totals;
+const RATING_COLS = ["N5", "N4", "N3", "N2", "N1", "N0", "unrated"] as const;
 
 const facts: [string, string][] = [
   ["FedRAMP ID", pub.fedRampIdAssigned ? pub.fedRampId : `${pub.fedRampId} (FedRAMP assigns an ID on listing)`],
@@ -44,6 +48,8 @@ const files = [
   { name: "Public information", json: "public-information.json", md: "public-information.md", rule: "CDS-CSO-PUB" },
   { name: "Key Security Indicator status", json: "ksi-status.json", md: "ksi-status.md", rule: "KSI" },
   { name: "Progress toward certification", json: "progress.json", md: "progress.md", rule: "MKT-IIP-DCP" },
+  { name: "Vulnerability rules (VDR and VER) status", json: "vdr-ver-status.json", md: "vdr-ver-status.md", rule: "VDR, VER" },
+  { name: "Open vulnerabilities by resource and rating", json: "vulnerability-summary.json", md: "vulnerability-summary.md", rule: "VER-EVA-EPA" },
 ];
 
 const orgSchema = {
@@ -78,6 +84,8 @@ const orgSchema = {
       </div>
       <div class="jump">
         <a class="btn btn-ghost" href="#ksi">Key Security Indicators</a>
+        <a class="btn btn-ghost" href="#vdr">Vulnerability rules</a>
+        <a class="btn btn-ghost" href="#vulns">Vulnerabilities by rating</a>
         <a class="btn btn-ghost" href="#progress">Progress</a>
         <a class="btn btn-ghost" href="#package">Certification package</a>
         <a class="btn btn-ghost" href="#data">Machine-readable data</a>
@@ -150,6 +158,85 @@ const orgSchema = {
         ))}
       </div>
       <p class="src">Statements: FedRAMP Consolidated Rules {ksi.rulesVersion} (github.com/FedRAMP/rules). Status: NINELINE Security Decision Record, updated {date(ksi.sdrUpdated)}.</p>
+    </div>
+  </section>
+
+  <section id="vdr" class="section--tight">
+    <div class="container">
+      <h2 class="h2">Vulnerability detection, evaluation and reporting</h2>
+      <p class="muted narrow">
+        FedRAMP 20x sets {vt.rules} rules for how a provider detects vulnerabilities and responds (VDR) and how it
+        evaluates and reports them (VER). They are required for new 20x applications from {vdr.effective.required},
+        with grace to {vdr.effective.graceUntil}. Each entry below is FedRAMP's rule as it applies at Class C,
+        with the status of NINELINE's own boundary against it. NINELINE implements these same rules for the
+        customers it runs inside; the status here is Optimal's hosted service, which is being deployed.
+      </p>
+      <div class="totals">
+        <div class="bar">
+          <span class="seg ok" style={`width:${(100 * vt.Implemented / vt.rules).toFixed(1)}%`}></span>
+          <span class="seg part" style={`width:${(100 * vt["Partially Implemented"] / vt.rules).toFixed(1)}%`}></span>
+          <span class="seg none" style={`width:${(100 * vt["Not Implemented"] / vt.rules).toFixed(1)}%`}></span>
+        </div>
+        <ul class="legend">
+          <li><span class="dot ok"></span>{vt.Implemented} implemented</li>
+          <li><span class="dot part"></span>{vt["Partially Implemented"]} partially implemented</li>
+          <li><span class="dot none"></span>{vt["Not Implemented"]} not yet implemented</li>
+        </ul>
+      </div>
+      <div class="themes rules">
+        {vdr.families.map((f) => (
+          <div class="theme">
+            <div class="theme-h"><span class="abbr">{f.family}</span><b>{f.name}</b><span class="n">{f.rules.length}</span></div>
+            {f.rules.map((r) => {
+              const s = STATUS[r.status] ?? STATUS["Not Implemented"];
+              return (
+                <details class="ksi">
+                  <summary>
+                    <span class="kname">{r.name}</span>
+                    <span class={`pill ${s.cls}`}>{s.label}</span>
+                    <span class="kid">{r.id} · {r.force}{r.timeframeAtClassC ? ` · ${r.timeframeAtClassC}` : ""}</span>
+                  </summary>
+                  <div class="kbody">
+                    <p class="stmt">{r.statement}</p>
+                    {r.details.length > 0 && <ul class="stmt-list">{r.details.map((b) => <li>{b}</li>)}</ul>}
+                  </div>
+                </details>
+              );
+            })}
+          </div>
+        ))}
+      </div>
+      <p class="src">Rule text: FedRAMP Consolidated Rules {vdr.rulesVersion}. Status: NINELINE Security Decision Record.</p>
+    </div>
+  </section>
+
+  <section id="vulns" class="section--tight">
+    <div class="container">
+      <h2 class="h2">Open vulnerabilities by information resource and rating</h2>
+      <p class="muted narrow">
+        Every vulnerability NINELINE detects, whatever it lives in, is evaluated the same way: is it
+        internet-reachable, is it likely exploitable, and what is its Potential Agency Impact, the N0 to N5
+        rating FedRAMP uses to set remediation timeframes (VER-EVA-EPA). This table counts the open ones by
+        the type of information resource and by rating. Counts only; the vulnerabilities themselves are in
+        the certification package.
+      </p>
+      {vuln.running ? (
+        <table class="dl matrix">
+          <thead><tr><th>Resource type</th><th>Resources</th><th>Open</th><th>KEV</th>{RATING_COLS.map((c) => <th>{c === "unrated" ? "Unrated" : c}</th>)}</tr></thead>
+          <tbody>
+            {vuln.types.map((r) => (
+              <tr><td>{r.label}</td><td>{r.resources}</td><td>{r.open}</td><td>{r.kev}</td>{RATING_COLS.map((c) => <td>{r.byRating[c]}</td>)}</tr>
+            ))}
+            <tr class="total"><td>All</td><td>{vuln.totals.resources}</td><td>{vuln.totals.open}</td><td>{vuln.totals.kev}</td>{RATING_COLS.map((c) => <td>{vuln.totals.byRating[c]}</td>)}</tr>
+          </tbody>
+        </table>
+      ) : (
+        <div class="card pending">
+          <p><strong>Not running yet.</strong> {vuln.note}</p>
+          <ul class="types">{vuln.resourceTypes.map((x) => <li>{x}</li>)}</ul>
+        </div>
+      )}
+      {vuln.running && <p class="src">As of {vuln.asOf}. Source: NINELINE, GET /api/fedramp/pain-summary.</p>}
     </div>
   </section>
 
@@ -263,6 +350,15 @@ const orgSchema = {
   .kfacts dd { margin: 2px 0 0; color: var(--text); }
   .mono { font-family: var(--font-mono); font-size: 12px; }
   .src { color: var(--text-faint); font-size: 13px; margin-top: 18px; }
+  .rules { grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); }
+  .stmt-list { margin: 0 0 10px; padding-left: 1.2em; color: var(--text-dim); font-size: 13px; display: grid; gap: 4px; }
+  .matrix td, .matrix th { text-align: right; }
+  .matrix td:first-child, .matrix th:first-child { text-align: left; }
+  .matrix .total td { color: var(--text); font-weight: 600; border-top: 1px solid var(--rule-strong); }
+  .pending p { margin: 0 0 12px; color: var(--text-dim); }
+  .pending strong { color: var(--text); }
+  .types { margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 8px; }
+  .types li { font-size: 13px; color: var(--text-dim); border: 1px solid var(--rule-strong); border-radius: 99px; padding: 3px 10px; }
   .milestones { list-style: none; padding: 0; margin: 0; display: grid; gap: 1px; background: var(--rule);
     border: 1px solid var(--rule); border-radius: var(--radius-sm); overflow: hidden; }
   .milestones li { background: var(--surface); padding: 16px; display: grid; grid-template-columns: 110px 1fr; gap: 14px; align-items: start; }
@@ -278,7 +374,7 @@ const orgSchema = {
   .dl th { color: var(--text-faint); font-weight: 500; font-size: 12px; text-transform: uppercase; letter-spacing: 0.07em; }
   .dl a { color: var(--sunset); }
   @media (max-width: 560px) {
-    .themes { grid-template-columns: 1fr; }
+    .themes, .rules { grid-template-columns: 1fr; }
     .kfacts { grid-template-columns: 1fr; }
     .milestones li { grid-template-columns: 1fr; gap: 8px; }
     .dl { font-size: 13px; }

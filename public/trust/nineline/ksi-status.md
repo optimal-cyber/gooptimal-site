@@ -100,4 +100,4 @@ At least two automated validation methods per KSI (FRC-CSX-VVK); 30 days of dail
 | KSI-SVC-VCM | Validating Communications | Not Implemented | 0 / 2 | not running yet |
 | KSI-SVC-VRI | Validating Resource Integrity | Not Implemented | 0 / 2 | not running yet |
 
-Generated 2026-10-16T19:47:07+00:00. Machine-readable: ksi-status.json.
+Generated 2026-10-19T16:30:29+00:00. Machine-readable: ksi-status.json.
