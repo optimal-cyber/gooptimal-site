@@ -55,18 +55,18 @@ const files = [
 const orgSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  name: "NINELINE Trust Center",
+  name: "9line Trust Center",
   url: "https://gooptimal.io/trust/",
-  about: { "@type": "SoftwareApplication", name: "NINELINE", url: pub.productWebsite },
+  about: { "@type": "SoftwareApplication", name: "9line", url: pub.productWebsite },
   publisher: { "@type": "Organization", name: pub.provider, url: "https://gooptimal.io" },
   dateModified: ksi.generatedAt,
 };
 ---
 
 <Layout
-  title="NINELINE Trust Center — FedRAMP 20x Class C progress — Optimal"
-  description="NINELINE's trust center: public FedRAMP information, the status of every FedRAMP 20x Key Security Indicator, progress toward Class C certification, and access to the certification package for agencies, FedRAMP and assessors."
-  breadcrumbs={[{ name: "Home", href: "/" }, { name: "NINELINE", href: "/nineline" }]}
+  title="9line Trust Center — FedRAMP 20x Class C progress — Optimal"
+  description="9line's trust center: public FedRAMP information, the status of every FedRAMP 20x Key Security Indicator, progress toward Class C certification, and access to the certification package for agencies, FedRAMP and assessors."
+  breadcrumbs={[{ name: "Home", href: "/" }, { name: "9line", href: "/nineline" }]}
   jsonLd={[orgSchema]}
 >
   <Header />
@@ -75,7 +75,7 @@ const orgSchema = {
     <div class="glow"></div>
     <div class="container z">
       <span class="eyebrow">Trust center · {pub.service}</span>
-      <h1 class="display trust-h1">NINELINE Trust Center</h1>
+      <h1 class="display trust-h1">9line Trust Center</h1>
       <p class="lead">{pub.description}</p>
       <div class="notice">
         <strong>Status: pursuing FedRAMP 20x Class C. Not FedRAMP certified.</strong>
@@ -157,7 +157,7 @@ const orgSchema = {
           </div>
         ))}
       </div>
-      <p class="src">Statements: FedRAMP Consolidated Rules {ksi.rulesVersion} (github.com/FedRAMP/rules). Status: NINELINE Security Decision Record, updated {date(ksi.sdrUpdated)}.</p>
+      <p class="src">Statements: FedRAMP Consolidated Rules {ksi.rulesVersion} (github.com/FedRAMP/rules). Status: 9line Security Decision Record, updated {date(ksi.sdrUpdated)}.</p>
     </div>
   </section>
 
@@ -168,7 +168,7 @@ const orgSchema = {
         FedRAMP 20x sets {vt.rules} rules for how a provider detects vulnerabilities and responds (VDR) and how it
         evaluates and reports them (VER). They are required for new 20x applications from {vdr.effective.required},
         with grace to {vdr.effective.graceUntil}. Each entry below is FedRAMP's rule as it applies at Class C,
-        with the status of NINELINE's own boundary against it. NINELINE implements these same rules for the
+        with the status of 9line's own boundary against it. 9line implements these same rules for the
         customers it runs inside; the status here is Optimal's hosted service, which is being deployed.
       </p>
       <div class="totals">
@@ -206,7 +206,7 @@ const orgSchema = {
           </div>
         ))}
       </div>
-      <p class="src">Rule text: FedRAMP Consolidated Rules {vdr.rulesVersion}. Status: NINELINE Security Decision Record.</p>
+      <p class="src">Rule text: FedRAMP Consolidated Rules {vdr.rulesVersion}. Status: 9line Security Decision Record.</p>
     </div>
   </section>
 
@@ -214,7 +214,7 @@ const orgSchema = {
     <div class="container">
       <h2 class="h2">Open vulnerabilities by information resource and rating</h2>
       <p class="muted narrow">
-        Every vulnerability NINELINE detects, whatever it lives in, is evaluated the same way: is it
+        Every vulnerability 9line detects, whatever it lives in, is evaluated the same way: is it
         internet-reachable, is it likely exploitable, and what is its Potential Agency Impact, the N0 to N5
         rating FedRAMP uses to set remediation timeframes (VER-EVA-EPA). This table counts the open ones by
         the type of information resource and by rating. Counts only; the vulnerabilities themselves are in
@@ -236,7 +236,7 @@ const orgSchema = {
           <ul class="types">{vuln.resourceTypes.map((x) => <li>{x}</li>)}</ul>
         </div>
       )}
-      {vuln.running && <p class="src">As of {vuln.asOf}. Source: NINELINE, GET /api/fedramp/pain-summary.</p>}
+      {vuln.running && <p class="src">As of {vuln.asOf}. Source: 9line, GET /api/fedramp/pain-summary.</p>}
     </div>
   </section>
 
@@ -273,7 +273,7 @@ const orgSchema = {
           an account with multi-factor authentication; every access is logged.
         </p>
         <p class="muted">
-          To request access, email <a href={`mailto:${pub.securityContact.contactEmail}?subject=NINELINE%20trust%20center%20access`}>{pub.securityContact.contactEmail}</a>
+          To request access, email <a href={`mailto:${pub.securityContact.contactEmail}?subject=9line%20trust%20center%20access`}>{pub.securityContact.contactEmail}</a>
           from your government address with your agency and role.
         </p>
         <button class="btn btn-ghost" type="button" disabled title="Sign-in opens when the trust center service is live">Sign in (opening soon)</button>

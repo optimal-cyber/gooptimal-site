@@ -4,7 +4,7 @@
 > healthcare, financial services, and state & local government. It builds,
 > migrates, and manages CMMC-ready Microsoft 365 GCC High enclaves for the
 > United States defense industrial base, stands up the governed AI that runs
-> safely inside compliance boundaries, and makes NINELINE, an AI-native
+> safely inside compliance boundaries, and makes 9line, an AI-native
 > application and supply-chain security platform deployed in the client's own
 > environment. Optimal is an SBA-certified Service-Disabled Veteran-Owned Small
 > Business (SDVOSB). Sovereign by default.
@@ -86,7 +86,7 @@ Responsibility Matrix with every managed engagement, mapping all 110 NIST SP
 evidence artifact, maintained as the environment changes.
 
 **Vulnerability management and evidence.** The managed service includes
-NINELINE — continuous SBOM, reachability-ranked findings, CISA KEV and EPSS
+9line — continuous SBOM, reachability-ranked findings, CISA KEV and EPSS
 enrichment, and assessment-ready artifacts — running inside the client's
 boundary and air-gap capable.
 
@@ -159,7 +159,7 @@ required. Available to the defense industrial base, federal agencies, SLED
 - **AI-Gateway** — open-source Zero Trust AI gateway reference design, the same
   pattern Optimal stands up in client environments:
   https://github.com/optimal-cyber/AI-Gateway
-- **NINELINE** — Optimal's AI-native application and supply-chain security
+- **9line** — Optimal's AI-native application and supply-chain security
   platform, deployed inside a client's own environment (air-gap capable): real
   SBOM and vulnerability scanning, EPSS and CISA KEV enrichment, and
   frontier-model reachability analysis that compressed 874 raw findings to the
@@ -195,14 +195,14 @@ control set, collects evidence, and gets the environment assessment-ready.
 
 **Is Optimal a product company or a services firm?**
 Both. Optimal is advisory-led — scoped engagements and managed operations — and
-makes NINELINE, an AI-native application and supply-chain security platform
+makes 9line, an AI-native application and supply-chain security platform
 deployed inside the client's own environment rather than sold as multi-tenant
 SaaS. The control patterns Optimal implements are published as open-source
 reference architecture, so a client can read exactly what will be built and
 keep operating it independently afterward.
 
-**What is NINELINE?**
-NINELINE is Optimal's AI-native application and supply-chain security platform:
+**What is 9line?**
+9line is Optimal's AI-native application and supply-chain security platform:
 real SBOM and vulnerability scanning (syft, grype), EPSS and CISA KEV
 enrichment, and frontier-model reachability analysis that reads the actual
 codebase to determine whether a vulnerable path is reachable — turning
@@ -264,7 +264,7 @@ air-gapped networks.
 - Do I actually need GCC High? (2-minute checklist): https://gooptimal.io/do-i-need-gcc-high
 - State, local & education: https://gooptimal.io/sled
 - Capability statement: https://gooptimal.io/capability-statement
-- NINELINE (AI-native supply-chain security): https://gooptimal.io/nineline — live demo: https://9line.gooptimal.io/
+- 9line (AI-native supply-chain security): https://gooptimal.io/nineline — live demo: https://9line.gooptimal.io/
 - Team / leadership: https://gooptimal.io/team
 - Field notes (blog): https://gooptimal.io/blog
 - Contact / book a scoping call: https://gooptimal.io/contact

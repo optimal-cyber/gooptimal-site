@@ -4,7 +4,7 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import GatewayCanvas from "../components/GatewayCanvas.astro";
 
-// The deployed NINELINE demonstrator. Swap for a custom domain (e.g.
+// The deployed 9line demonstrator. Swap for a custom domain (e.g.
 // nineline.gooptimal.io) once DNS is pointed.
 const DEMO_URL = "https://9line.gooptimal.io/";
 
@@ -75,11 +75,11 @@ const sources = [
 const dib = [
   {
     n: "SWFT & SBOM mandates",
-    d: "DoW's Software Fast Track moved from pilot to an evolving requirement in January 2026: machine-readable SBOMs that update with every code change, plus continuous risk artifacts. The Army now demands actual SBOM data, not self-attestations, and OMB M-26-05 lets agencies request raw SBOMs. NINELINE produces exactly those artifacts — the SBOM, the reachability-ranked findings, and the VEX record.",
+    d: "DoW's Software Fast Track moved from pilot to an evolving requirement in January 2026: machine-readable SBOMs that update with every code change, plus continuous risk artifacts. The Army now demands actual SBOM data, not self-attestations, and OMB M-26-05 lets agencies request raw SBOMs. 9line produces exactly those artifacts — the SBOM, the reachability-ranked findings, and the VEX record.",
   },
   {
     n: "Evidence that survives an audit",
-    d: "A verdict that suppresses a vulnerability alert has to be defensible — to your assessor, your AO, and your program office. Every NINELINE determination carries the call chain, the tool trace, and the record it was derived from, exported as VEX your reviewers can re-derive.",
+    d: "A verdict that suppresses a vulnerability alert has to be defensible — to your assessor, your AO, and your program office. Every 9line determination carries the call chain, the tool trace, and the record it was derived from, exported as VEX your reviewers can re-derive.",
   },
   {
     n: "Continuous ATO",
@@ -91,13 +91,13 @@ const dib = [
   },
 ];
 
-// NINELINE is a working demonstrator with a reachable URL, so it is typed as an
+// 9line is a working demonstrator with a reachable URL, so it is typed as an
 // application rather than as prose about one. No `offers` node — it is a
 // reference implementation Optimal stands up, not a product with a price.
 const ninelineSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  name: "NINELINE",
+  name: "9line",
   applicationCategory: "SecurityApplication",
   operatingSystem: "Web-based; deployable in the client's own environment",
   url: "https://gooptimal.io/nineline",
@@ -105,7 +105,7 @@ const ninelineSchema = {
   author: { "@type": "Organization", name: "Optimal", url: "https://gooptimal.io" },
   publisher: { "@type": "Organization", name: "Optimal", url: "https://gooptimal.io" },
   description:
-    "NINELINE is Optimal's AI-native application and supply-chain security platform. It combines real SBOM and vulnerability scanning (syft and grype), EPSS exploitation probability and CISA KEV enrichment, and frontier-model reachability analysis that reads the actual codebase to determine whether a vulnerable path is reachable from an entry point — with every verdict carrying its evidence and exportable as VEX. In the reference scan it compressed 874 raw findings to the 18 that required action.",
+    "9line is Optimal's AI-native application and supply-chain security platform. It combines real SBOM and vulnerability scanning (syft and grype), EPSS exploitation probability and CISA KEV enrichment, and frontier-model reachability analysis that reads the actual codebase to determine whether a vulnerable path is reachable from an entry point — with every verdict carrying its evidence and exportable as VEX. In the reference scan it compressed 874 raw findings to the 18 that required action.",
   featureList: [
     "Agentic reachability analysis against the real codebase",
     "Evidence-backed verdicts exportable as VEX",
@@ -118,8 +118,8 @@ const ninelineSchema = {
 ---
 
 <Layout
-  title="NINELINE — AI-native software & supply-chain security from Optimal"
-  description="NINELINE is Optimal's AI-native application and supply-chain security platform: real SBOM and vulnerability scanning, EPSS and CISA KEV enrichment, and frontier-model reachability analysis that turns thousands of raw findings into an evidence-backed action queue and an exportable VEX record. Deployed in your environment — sovereign by default, air-gap capable."
+  title="9line — AI-native software & supply-chain security from Optimal"
+  description="9line is Optimal's AI-native application and supply-chain security platform: real SBOM and vulnerability scanning, EPSS and CISA KEV enrichment, and frontier-model reachability analysis that turns thousands of raw findings into an evidence-backed action queue and an exportable VEX record. Deployed in your environment — sovereign by default, air-gap capable."
   keywords="AI supply chain security, SBOM, VEX, reachability analysis, CISA KEV, EPSS, AI-BOM, SWFT, continuous ATO, CMMC, defense industrial base"
   breadcrumbs={[{ name: "Home", href: "/" }]}
   jsonLd={[ninelineSchema]}
@@ -132,9 +132,9 @@ const ninelineSchema = {
     <GatewayCanvas variant="hero" />
     <div class="container z">
       <span class="eyebrow">Product · Live demonstrator online</span>
-      <h1 class="display">NINELINE.<br /><span class="grad">Your 9-line for software and AI.</span></h1>
+      <h1 class="display">9line.<br /><span class="grad">Your 9-line for software and AI.</span></h1>
       <p class="lead">
-        NINELINE is Optimal&rsquo;s AI-native application and supply-chain security platform.
+        9line is Optimal&rsquo;s AI-native application and supply-chain security platform.
         Real scanners, real repositories, and frontier-model reasoning compress thousands of raw
         findings down to the handful that are actually reachable and actively exploited &mdash;
         and every verdict ships with its evidence: the call chain, the tool trace, and an
@@ -142,7 +142,7 @@ const ninelineSchema = {
         close air support brief: strip everything down to the target.
       </p>
       <p class="framing">
-        <strong>How you get it:</strong> NINELINE is deployed inside your own environment — your
+        <strong>How you get it:</strong> 9line is deployed inside your own environment — your
         tenant, your infrastructure, air-gap capable — and delivered with an engagement from the
         team that built it. Your code and scan data never leave your boundary.
       </p>
@@ -270,7 +270,7 @@ const ninelineSchema = {
   <section class="section--tight">
     <div class="container">
       <blockquote class="quote">
-        <p>&ldquo;Scanners are commodity. The product is the verdict &mdash; and a verdict is only worth what its evidence can prove. NINELINE ships the evidence.&rdquo;</p>
+        <p>&ldquo;Scanners are commodity. The product is the verdict &mdash; and a verdict is only worth what its evidence can prove. 9line ships the evidence.&rdquo;</p>
         <footer class="muted">Optimal &mdash; expertise-led AI security. Sovereign by default.</footer>
       </blockquote>
     </div>

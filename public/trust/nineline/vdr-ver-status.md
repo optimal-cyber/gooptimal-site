@@ -1,4 +1,4 @@
-# NINELINE: FedRAMP 20x vulnerability rules (VDR and VER), Class C
+# 9line: FedRAMP 20x vulnerability rules (VDR and VER), Class C
 
 36 rules apply: 0 implemented, 0 partially implemented, 36 not implemented. Required for new 20x applications from 2026-12-07 (grace to 2027-03-07). FedRAMP Consolidated Rules 2026.10.13.01.
 

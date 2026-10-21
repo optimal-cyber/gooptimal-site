@@ -3,7 +3,7 @@
   "kind": "progress",
   "generatedAt": "2026-10-19T16:30:29+00:00",
   "rule": "MKT-IIP-DCP",
-  "goal": "FedRAMP 20x Class C certification of NINELINE on the Program path",
+  "goal": "FedRAMP 20x Class C certification of 9line on the Program path",
   "milestones": [
     {
       "id": "M1",
@@ -39,7 +39,7 @@
     },
     {
       "id": "M4",
-      "title": "NINELINE hosted inside the boundary",
+      "title": "9line hosted inside the boundary",
       "detail": "The service behind WAF in a network with an egress allowlist, sign-in with MFA, DNSSEC-signed domain, model inference on Amazon Bedrock.",
       "status": "in_progress",
       "done": null,

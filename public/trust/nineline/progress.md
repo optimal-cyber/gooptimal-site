@@ -1,6 +1,6 @@
 # Progress toward certification
 
-Goal: FedRAMP 20x Class C certification of NINELINE on the Program path.
+Goal: FedRAMP 20x Class C certification of 9line on the Program path.
 
 | | Milestone | Status | Target | Done |
 |---|---|---|---|---|
@@ -8,7 +8,7 @@ Goal: FedRAMP 20x Class C certification of NINELINE on the Program path.
 | M2 | FedRAMP Marketplace listing request submitted | Done | not set | 2026-10-16 |
 | M2a | Listed on the FedRAMP Marketplace as Initial Implementation | In progress | not set |  |
 | M3 | Authorization boundary foundation and daily KSI validation | In progress | not set |  |
-| M4 | NINELINE hosted inside the boundary | In progress | not set |  |
+| M4 | 9line hosted inside the boundary | In progress | not set |  |
 | M5 | Change control enforced in source control | Not started | not set |  |
 | M6 | 30 days of persistent KSI validation data | Not started | not set |  |
 | M7 | Independent assessment scheduled | Not started | not set |  |
