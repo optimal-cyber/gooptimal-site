@@ -4,7 +4,7 @@ Software and AI supply-chain adjudication: a customer submits a repository or co
 
 | Field | Value |
 |---|---|
-| FedRAMP ID | Optimal Labs (9line) (assigned on listing) |
+| FedRAMP ID | FR2701857797 |
 | Provider | Optimal Labs |
 | Service | 9line |
 | Certification sought | 20x Class C, Program path |
@@ -16,4 +16,4 @@ Software and AI supply-chain adjudication: a customer submits a repository or co
 | Security contact | Ryan Gutwein, ISSO <ryan@gooptimal.io> |
 | Product website | https://gooptimal.io/nineline |
 
-Generated 2026-10-19T16:30:29+00:00 (CDS-CSO-PUB). Machine-readable: public-information.json.
+Generated 2026-10-21T17:50:14+00:00 (CDS-CSO-PUB). Machine-readable: public-information.json.

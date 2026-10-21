@@ -1,6 +1,6 @@
 # 9line: Key Security Indicators (20x Class C)
 
-46 indicators: 0 implemented, 5 partially implemented, 41 not implemented. FedRAMP Consolidated Rules 2026.10.13.01; SDR updated 2026-10-16T19:46:44+00:00.
+46 indicators: 0 implemented, 5 partially implemented, 41 not implemented. FedRAMP Consolidated Rules 2026.10.13.01; SDR updated 2026-10-21T17:50:14+00:00.
 
 At least two automated validation methods per KSI (FRC-CSX-VVK); 30 days of daily data (SDR-CSX-KMT).
 
@@ -100,4 +100,4 @@ At least two automated validation methods per KSI (FRC-CSX-VVK); 30 days of dail
 | KSI-SVC-VCM | Validating Communications | Not Implemented | 0 / 2 | not running yet |
 | KSI-SVC-VRI | Validating Resource Integrity | Not Implemented | 0 / 2 | not running yet |
 
-Generated 2026-10-19T16:30:29+00:00. Machine-readable: ksi-status.json.
+Generated 2026-10-21T17:50:14+00:00. Machine-readable: ksi-status.json.

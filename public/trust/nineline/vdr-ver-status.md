@@ -147,4 +147,4 @@
 
 **VER-TFR-NRI: Non-Internet-Reachable Incidents.** Providers with Class C Certifications MAY treat likely exploitable vulnerabilities that are NOT internet-reachable where Potential Agency Impact N-rating = 5 as a FedRAMP Reportable Incident until they are partially mitigated vulnerabilities at N4 or below.
 
-Generated 2026-10-19T16:30:29+00:00. Machine-readable: vdr-ver-status.json.
+Generated 2026-10-21T17:50:14+00:00. Machine-readable: vdr-ver-status.json.

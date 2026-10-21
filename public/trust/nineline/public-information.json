@@ -1,10 +1,10 @@
 {
   "schema": "nineline.trust-public/1",
   "kind": "public-information",
-  "generatedAt": "2026-10-19T16:30:29+00:00",
+  "generatedAt": "2026-10-21T17:50:14+00:00",
   "rule": "CDS-CSO-PUB",
-  "fedRampId": "Optimal Labs (9line)",
-  "fedRampIdAssigned": false,
+  "fedRampId": "FR2701857797",
+  "fedRampIdAssigned": true,
   "provider": "Optimal Labs",
   "service": "9line",
   "description": "Software and AI supply-chain adjudication: a customer submits a repository or container image; 9line produces a CycloneDX SBOM, matches it against vulnerability data, and adjudicates each finding with a deterministic call-graph engine, returning a VEX document in which every statement carries its evidence.",
