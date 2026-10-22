@@ -12,8 +12,8 @@ Software and AI supply-chain adjudication: a customer submits a repository or co
 | Deployment model | Government Community Cloud |
 | Business category | Cybersecurity & Risk Management, Artificial Intelligence (AI), Development Tools |
 | UEI | TYMSGKDF2K48 |
-| Sales contact | Ryan Gutwein <ryan@gooptimal.io> |
-| Security contact | Ryan Gutwein, ISSO <ryan@gooptimal.io> |
+| Sales contact | Ryan Gutwein <support@gooptimal.io> |
+| Security contact | Ryan Gutwein, ISSO <support@gooptimal.io> |
 | Product website | https://gooptimal.io/nineline |
 
-Generated 2026-10-21T17:50:14+00:00 (CDS-CSO-PUB). Machine-readable: public-information.json.
+Generated 2026-10-22T01:50:55+00:00 (CDS-CSO-PUB). Machine-readable: public-information.json.
