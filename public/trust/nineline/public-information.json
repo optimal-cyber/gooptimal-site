@@ -1,7 +1,7 @@
 {
   "schema": "nineline.trust-public/1",
   "kind": "public-information",
-  "generatedAt": "2026-10-21T17:50:14+00:00",
+  "generatedAt": "2026-10-22T01:50:55+00:00",
   "rule": "CDS-CSO-PUB",
   "fedRampId": "FR2701857797",
   "fedRampIdAssigned": true,
@@ -23,11 +23,11 @@
   "ueiNumber": "TYMSGKDF2K48",
   "salesContact": {
     "contactName": "Ryan Gutwein",
-    "contactEmail": "ryan@gooptimal.io"
+    "contactEmail": "support@gooptimal.io"
   },
   "securityContact": {
     "contactName": "Ryan Gutwein, ISSO",
-    "contactEmail": "ryan@gooptimal.io"
+    "contactEmail": "support@gooptimal.io"
   },
   "productWebsite": "https://gooptimal.io/nineline",
   "logo": "https://gooptimal.io/optimal-logo.svg",
