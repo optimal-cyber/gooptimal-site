@@ -1,6 +1,6 @@
 # 9line: public information
 
-Software and AI supply-chain adjudication: a customer submits a repository or container image; 9line produces a CycloneDX SBOM, matches it against vulnerability data, and adjudicates each finding with a deterministic call-graph engine, returning a VEX document in which every statement carries its evidence.
+9line tells agencies which vulnerabilities in their software and AI supply chain actually affect them, with evidence an assessor can re-check. A customer submits a repository or container image through the web application or API. 9line generates a CycloneDX SBOM, inventories the AI models and agents it contains, matches components against vulnerability data, and determines whether each vulnerable code path is reachable using a deterministic call-graph engine. It returns a VEX document in which every statement carries its evidence. An in-boundary model (Amazon Bedrock in AWS GovCloud) explains verdicts but cannot clear a finding.
 
 | Field | Value |
 |---|---|
@@ -16,4 +16,4 @@ Software and AI supply-chain adjudication: a customer submits a repository or co
 | Security contact | Ryan Gutwein, ISSO <support@gooptimal.io> |
 | Product website | https://gooptimal.io/nineline |
 
-Generated 2026-10-22T01:50:55+00:00 (CDS-CSO-PUB). Machine-readable: public-information.json.
+Generated 2026-10-22T01:58:59+00:00 (CDS-CSO-PUB). Machine-readable: public-information.json.
